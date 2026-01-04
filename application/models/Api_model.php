@@ -98,7 +98,7 @@ class API_Model extends CI_Model {
 	function access($key = '') {
 
 		// No key = no access, mate
-		if (!$key) {
+		if ((!$key) || ($key == '')) {
 			return $status = "No Key Found";
 		}
 
