@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-03 19:16+0000\n"
-"PO-Revision-Date: 2026-01-04 02:43+0000\n"
+"PO-Revision-Date: 2026-01-04 16:01+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
-"Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/ja/>\n"
+"Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19157,6 +19157,9 @@ msgid ""
 "processed. %s Please make sure you export the LoTW certificate from tqsl "
 "application without password! %s"
 msgstr ""
+"ファイル %s 内の証明書にはパスワードが含まれており、処理できません。%stqsl ア"
+"プリケーションから LoTW 証明書をエクスポートする際は、パスワードなしで実行し"
+"てください！%s"
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -19165,16 +19168,19 @@ msgid ""
 "contains 'key-only' this is typically a certificate request which has not "
 "been processed by LoTW yet."
 msgstr ""
+"ファイルから証明書を抽出する際の一般的なエラー %s 。ファイル名に「key-only」"
+"が含まれている場合、これは通常、LoTW によってまだ処理されていない証明書要求で"
+"す。"
 
 #: application/controllers/Lotw.php:457
 #, php-format
 msgid "Generic error processing the certificate in file %s."
-msgstr ""
+msgstr "ファイル内の証明書の処理中に一般的なエラーが発生しました %s 。"
 
 #: application/controllers/Lotw.php:469
 #, php-format
 msgid "Generic error extracting the private key from certificate in file %s."
-msgstr ""
+msgstr "ファイル内の証明書から秘密鍵を抽出する際に一般的なエラーが発生しました %s 。"
 
 #~ msgid "Column"
 #~ msgstr "カラム"
