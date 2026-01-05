@@ -645,7 +645,7 @@ class Update_model extends CI_Model {
 		$xml = @simplexml_load_string($response);
 
 		if ($xml === false) {
-			log_message('error', 'vuccgrids.dat upadte from primary location failed.');
+			log_message('error', 'vuccgrids.dat update from primary location failed.');
 
 			// Try our own mirror in case upstream fails
 			$url = 'https://raw.githubusercontent.com/wavelog/dxcc_data/refs/heads/master/vuccgrids.dat';
@@ -655,7 +655,7 @@ class Update_model extends CI_Model {
 			$response = curl_exec($curl);
 			$xml = @simplexml_load_string($response);
 			if ($xml === false) {
-				log_message('error', 'vuccgrids.dat upadte from backup location failed.');
+				log_message('error', 'vuccgrids.dat update from backup location failed.');
 				return "Failed to parse TQSL VUCC grid file XML.";
 			}
 		}
