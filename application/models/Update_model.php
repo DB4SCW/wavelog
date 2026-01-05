@@ -655,6 +655,7 @@ class Update_model extends CI_Model {
 			$response = curl_exec($curl);
 			$xml = @simplexml_load_string($response);
 			if ($xml === false) {
+				log_message('error', 'vuccgrids.dat upadte from backup location failed.');
 				return "Failed to parse TQSL VUCC grid file XML.";
 			}
 		}
