@@ -10529,6 +10529,7 @@ msgstr ""
 #: application/views/dcl_views/upload_cert.php:33
 #: application/views/lotw_views/upload_cert.php:8
 #: application/views/lotw_views/upload_cert.php:33
+#: application/views/lotw_views/upload_cert.php:34
 msgid "Upload Logbook of the World .p12 Certificate"
 msgstr "Dünya Kayıt Defterinin .p12 Sertifikasını Yükle"
 
@@ -10569,6 +10570,7 @@ msgstr "Aldığınız sertifikayı aşağıdan yükleyin"
 
 #: application/views/dcl_views/upload_cert.php:37
 #: application/views/lotw_views/upload_cert.php:37
+#: application/views/lotw_views/upload_cert.php:38
 msgid "Upload File"
 msgstr "Dosya Yükle"
 
@@ -19257,6 +19259,22 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
+msgstr ""
+
+#: application/controllers/Lotw.php:448
+#, php-format
+msgid ""
+"The certificate found in file %s contains a password and cannot be "
+"processed. %sPlease make sure you export the LoTW certificate from tqsl "
+"application without password!%s For further information please visit the "
+"%sLoTW FAQ page%s in the Wavelog Wiki."
+msgstr ""
+
+#: application/views/lotw_views/upload_cert.php:28
+#, php-format
+msgid ""
+"For further information please visit the %sLoTW FAQ page%s in the Wavelog "
+"Wiki"
 msgstr ""
 
 #, php-format

@@ -10466,6 +10466,7 @@ msgstr ""
 #: application/views/dcl_views/upload_cert.php:33
 #: application/views/lotw_views/upload_cert.php:8
 #: application/views/lotw_views/upload_cert.php:33
+#: application/views/lotw_views/upload_cert.php:34
 msgid "Upload Logbook of the World .p12 Certificate"
 msgstr "Logbook of the World .p1証明書をアップロードしてください"
 
@@ -10506,6 +10507,7 @@ msgstr "以下のファイルをアップロードしてください"
 
 #: application/views/dcl_views/upload_cert.php:37
 #: application/views/lotw_views/upload_cert.php:37
+#: application/views/lotw_views/upload_cert.php:38
 msgid "Upload File"
 msgstr "ファイルをアップロード"
 
@@ -19208,6 +19210,22 @@ msgstr "ファイル内の証明書の処理中に一般的なエラーが発生
 msgid "Generic error extracting the private key from certificate in file %s."
 msgstr ""
 "ファイル内の証明書から秘密鍵を抽出する際に一般的なエラーが発生しました %s 。"
+
+#: application/controllers/Lotw.php:448
+#, php-format
+msgid ""
+"The certificate found in file %s contains a password and cannot be "
+"processed. %sPlease make sure you export the LoTW certificate from tqsl "
+"application without password!%s For further information please visit the "
+"%sLoTW FAQ page%s in the Wavelog Wiki."
+msgstr ""
+
+#: application/views/lotw_views/upload_cert.php:28
+#, php-format
+msgid ""
+"For further information please visit the %sLoTW FAQ page%s in the Wavelog "
+"Wiki"
+msgstr ""
 
 #~ msgid "Column"
 #~ msgstr "カラム"
