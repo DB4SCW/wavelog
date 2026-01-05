@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-05 13:21+0000\n"
-"PO-Revision-Date: 2026-01-05 19:45+0000\n"
+"PO-Revision-Date: 2026-01-06 04:59+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
-"Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/ru/>\n"
+"Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/ru/>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2709,7 +2709,7 @@ msgstr "Пожалуйста, проверьте значение QTH локат
 #: application/views/interface_assets/header.php:474
 #: application/views/interface_assets/header.php:608
 msgid "Station Setup"
-msgstr "Настройка станции"
+msgstr "Настройка журналов"
 
 #: application/controllers/Stationsetup.php:76
 #: application/controllers/Stationsetup.php:94
@@ -12452,7 +12452,7 @@ msgstr "Выберите профиль QTH"
 #: application/views/interface_assets/header.php:608
 msgid "You miss station-locations here? Go to stationsetup and fav them"
 msgstr ""
-"Не видите нужных профилей QTH? Перейдите в \"Настройки станции\" и добавьте "
+"Не видите нужных профилей QTH? Перейдите в \"Настройки журналов\" и добавьте "
 "их в избранное"
 
 #: application/views/interface_assets/header.php:645
@@ -12874,12 +12874,12 @@ msgid ""
 "The following QSOs were found to have a different CQ zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
-"Были найдены следующие QSO с отличающейся зоной CQ от той, в которую входит "
-"данный DXCC (максимум показано 5000 QSO):"
+"Были найдены следующие QSO с отличающимся значением зоны CQ от того, которое "
+"обычно соответствует данному DXCC (максимум показано 5000 QSO):"
 
 #: application/views/logbookadvanced/checkresult.php:267
 msgid "Force update even if DXCC covers multiple CQ zones"
-msgstr "Принудительное обновление, даже если DXCC охватывает несколько зон CQ"
+msgstr "Принудительно обновить, даже если DXCC охватывает несколько зон CQ"
 
 #: application/views/logbookadvanced/checkresult.php:268
 msgid ""
@@ -12889,6 +12889,12 @@ msgid ""
 "are updated. This checkbox overrides this but might result in wrong data. "
 "Use with caution!"
 msgstr ""
+"Функция обновления может установить значение только основной зоны CQ, "
+"которая назначена для данного DXCC. Если DXCC охватывает несколько зон CQ, "
+"есть вероятность, что это приведёт к установке неверного значения. Поэтому "
+"по умолчанию обновляются QSO только в случае, если DXCC назначена только "
+"одна зона CQ. Этот флажок отменяет данное ограничение, но может привести к "
+"записи неправильных данных. Используйте с осторожностью!"
 
 #: application/views/logbookadvanced/checkresult.php:285
 #: application/views/search/cqzones_result.php:14
@@ -12939,10 +12945,12 @@ msgid ""
 "The following QSOs were found to have a different ITU zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
+"Были найдены следующие QSO с отличающимся значением зоны ITU от того, "
+"которое обычно соответствует данному DXCC (максимум показано 5000 QSO):"
 
 #: application/views/logbookadvanced/checkresult.php:343
 msgid "Force update even if DXCC covers multiple ITU zones"
-msgstr ""
+msgstr "Принудительное обновить, даже если DXCC охватывает несколько зон ITU"
 
 #: application/views/logbookadvanced/checkresult.php:344
 msgid ""
@@ -12952,6 +12960,12 @@ msgid ""
 "are updated. This checkbox overrides this but might result in wrong data. "
 "Use with caution!"
 msgstr ""
+"Функция обновления может установить значение только основной зоны ITU, "
+"которая назначена для данного DXCC. Если DXCC охватывает несколько зон ITU, "
+"есть вероятность, что это приведёт к установке неверного значения. Поэтому "
+"по умолчанию обновляются QSO только в случае, если DXCC назначена только "
+"одна зона ITU. Этот флажок отменяет данное ограничение, но может привести к "
+"записи неправильных данных. Используйте с осторожностью!"
 
 #: application/views/logbookadvanced/checkresult.php:361
 #: application/views/search/ituzones_result.php:14
@@ -12960,7 +12974,7 @@ msgstr "ITU зона DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:4
 msgid "Data Repair Tools"
-msgstr "Инструменты для восстановления данных"
+msgstr "Инструменты для корректировки данных"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:6
 msgid "Wiki Help"
@@ -12971,14 +12985,17 @@ msgid ""
 "Warning. This tool can be dangerous to your data, and should only be used if "
 "you know what you are doing."
 msgstr ""
+"Предупреждение. Этот инструмент может быть опасен для ваших данных и должен "
+"использоваться только в том случае, если вы знаете, что делаете."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:12
 msgid "Check all QSOs in the logbook for incorrect CQ Zones"
 msgstr ""
+"Проверка всех QSO в журнале на предмет указания неверных значений зон CQ"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:13
 msgid "Use Wavelog to determine CQ Zone for all QSOs."
-msgstr ""
+msgstr "Использовать Wavelog для определения значений зоны CQ для всех QSO."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:17
 #: application/views/logbookadvanced/dbtoolsdialog.php:28
@@ -12994,18 +13011,19 @@ msgstr "Проверка"
 #: application/views/logbookadvanced/dbtoolsdialog.php:23
 msgid "Check all QSOs in the logbook for incorrect ITU Zones"
 msgstr ""
+"Проверка всех QSO в журнале на предмет указания неверных значений зон ITU"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:24
 msgid "Use Wavelog to determine ITU Zone for all QSOs."
-msgstr ""
+msgstr "Использовать Wavelog для определения значений зоны ITU для всех QSO."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:34
 msgid "Check Gridsquares"
-msgstr ""
+msgstr "Проверка квадратов"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:35
 msgid "Check gridsquares that does not match the DXCC"
-msgstr ""
+msgstr "Проверка квадратов, которые не совпадают с DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:45
 msgid "Fix Continent"
@@ -13030,7 +13048,7 @@ msgstr "Рассчитать и обновить информацию о дис�
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:78
 msgid "Check all QSOs in the logbook for incorrect DXCC"
-msgstr ""
+msgstr "Проверка всех QSO в журнале на предмет неверного DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:79
 msgid "Use Wavelog to determine DXCC for all QSOs."
@@ -13613,7 +13631,7 @@ msgstr "Поиск дубликатов"
 
 #: application/views/logbookadvanced/index.php:78
 msgid "Show less"
-msgstr ""
+msgstr "Показать меньше"
 
 #: application/views/logbookadvanced/index.php:309
 msgid "From"
@@ -13662,7 +13680,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/index.php:512
 msgid "Sort column"
-msgstr ""
+msgstr "Сортировать по столбцу"
 
 #: application/views/logbookadvanced/index.php:514
 #: application/views/oqrs/showrequests.php:87
@@ -13671,19 +13689,19 @@ msgstr "Время QSO"
 
 #: application/views/logbookadvanced/index.php:517
 msgid "QSO Modified"
-msgstr ""
+msgstr "QSO изменено"
 
 #: application/views/logbookadvanced/index.php:521
 msgid "Sort direction"
-msgstr ""
+msgstr "Направление сортировки"
 
 #: application/views/logbookadvanced/index.php:523
 msgid "Descending"
-msgstr ""
+msgstr "По убыванию"
 
 #: application/views/logbookadvanced/index.php:524
 msgid "Ascending"
-msgstr ""
+msgstr "По возрастанию"
 
 #: application/views/logbookadvanced/index.php:532
 #: application/views/logbookadvanced/index.php:714
@@ -13997,7 +14015,7 @@ msgstr "Инструменты для работы с базой данных"
 #: application/views/logbookadvanced/index.php:896
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "Last modified"
-msgstr ""
+msgstr "Последние изменённые"
 
 #: application/views/logbookadvanced/index.php:899
 #: application/views/logbookadvanced/useroptions.php:28
@@ -14233,45 +14251,46 @@ msgstr "В настоящее время поддерживаются DXCC"
 
 #: application/views/logbookadvanced/useroptions.php:15
 msgid "Basic QSO Information"
-msgstr ""
+msgstr "Основная информация о QSO"
 
 #: application/views/logbookadvanced/useroptions.php:72
 msgid "Station Details"
-msgstr ""
+msgstr "Подробная информация о станции"
 
 #: application/views/logbookadvanced/useroptions.php:105
 msgid "Confirmation Services"
-msgstr ""
+msgstr "Сервисы подтверждения"
 
 #: application/views/logbookadvanced/useroptions.php:162
 msgid "Geographic Information"
-msgstr ""
+msgstr "Географическая информация"
 
 #: application/views/logbookadvanced/useroptions.php:207
 msgid "Awards Programs"
-msgstr ""
+msgstr "Дипломные программы"
 
 #: application/views/logbookadvanced/useroptions.php:258
 msgid "Additional Information"
-msgstr ""
+msgstr "Дополнительная информация"
 
 #: application/views/logbookadvanced/useroptions.php:297
 msgid "Technical Details"
-msgstr ""
+msgstr "Технические детали"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "For debugging only"
-msgstr ""
+msgstr "Только для отладки"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid ""
 "This is meant for debugging purposes only and not designed to be displayed "
 "by default"
 msgstr ""
+"Только для целей отладки и не предназначено для отображения по умолчанию"
 
 #: application/views/logbookadvanced/useroptions.php:347
 msgid "Map Layers"
-msgstr ""
+msgstr "Слои карты"
 
 #: application/views/lookup/index.php:11
 #: application/views/qso/award_tabs.php:53
@@ -16618,7 +16637,7 @@ msgstr "Квадрат автоматически определён справ�
 
 #: application/views/search/result.php:65
 msgid "Source callbook"
-msgstr ""
+msgstr "Исходный колбук"
 
 #: application/views/search/search_result_ajax.php:463
 #: application/views/view_log/partial/log.php:142
@@ -17575,7 +17594,7 @@ msgstr "По годам"
 #: application/views/statistics/index.php:15
 #: application/views/statistics/index.php:99
 msgid "Months"
-msgstr ""
+msgstr "Месяцы"
 
 #: application/views/statistics/index.php:19
 msgid "Number of QSOs worked each year"
@@ -17583,55 +17602,55 @@ msgstr "Количество QSO проведённых в каждом году
 
 #: application/views/statistics/index.php:20
 msgid "Number of QSOs worked each month"
-msgstr ""
+msgstr "Количество проведённых QSO за каждый месяц"
 
 #: application/views/statistics/index.php:31
 msgid "January"
-msgstr ""
+msgstr "Январь"
 
 #: application/views/statistics/index.php:32
 msgid "February"
-msgstr ""
+msgstr "Февраль"
 
 #: application/views/statistics/index.php:33
 msgid "March"
-msgstr ""
+msgstr "Март"
 
 #: application/views/statistics/index.php:34
 msgid "April"
-msgstr ""
+msgstr "Апрель"
 
 #: application/views/statistics/index.php:35
 msgid "May"
-msgstr ""
+msgstr "Май"
 
 #: application/views/statistics/index.php:36
 msgid "June"
-msgstr ""
+msgstr "Июнь"
 
 #: application/views/statistics/index.php:37
 msgid "July"
-msgstr ""
+msgstr "Июль"
 
 #: application/views/statistics/index.php:38
 msgid "August"
-msgstr ""
+msgstr "Август"
 
 #: application/views/statistics/index.php:39
 msgid "September"
-msgstr ""
+msgstr "Сентябрь"
 
 #: application/views/statistics/index.php:40
 msgid "October"
-msgstr ""
+msgstr "Октябрь"
 
 #: application/views/statistics/index.php:41
 msgid "November"
-msgstr ""
+msgstr "Ноябрь"
 
 #: application/views/statistics/index.php:42
 msgid "December"
-msgstr ""
+msgstr "Декабрь"
 
 #: application/views/statistics/index.php:50
 msgid "Explore the logbook."
@@ -19263,65 +19282,65 @@ msgstr "Получено"
 
 #: application/views/zonechecker/index.php:3
 msgid "Gridsquare Zone identification"
-msgstr ""
+msgstr "Идентификация зоны по квадратам"
 
 #: application/views/zonechecker/index.php:15
 msgid "Zone Type"
-msgstr ""
+msgstr "Тип зоны"
 
 #: application/views/zonechecker/index.php:20
 msgid "Start Zone Check"
-msgstr ""
+msgstr "Проверка стартовой зоны"
 
 #: application/views/zonechecker/index.php:39
 #: application/views/zonechecker/index.php:62
 msgid "Processing..."
-msgstr ""
+msgstr "Подождите..."
 
 #: application/views/zonechecker/index.php:50
 #: application/views/zonechecker/index.php:73
 msgid "An error occurred while processing the request."
-msgstr ""
+msgstr "При обработке запроса произошла ошибка."
 
 #: application/views/zonechecker/result.php:16
 msgid "Callsigns Tested"
-msgstr ""
+msgstr "Проверено позывных"
 
 #: application/views/zonechecker/result.php:17
 msgid "Execution Time"
-msgstr ""
+msgstr "Время выполнения"
 
 #: application/views/zonechecker/result.php:18
 msgid "Potential Wrong Zones"
-msgstr ""
+msgstr "Потенциальные неверные значения зон"
 
 #: application/views/zonechecker/result.php:19
 msgid "Cache Hits"
-msgstr ""
+msgstr "Кэш-хиты"
 
 #: application/views/zonechecker/result.php:20
 msgid "Cache Misses"
-msgstr ""
+msgstr "Промахи кеша"
 
 #: application/views/zonechecker/result.php:21
 msgid "Hit Rate"
-msgstr ""
+msgstr "Коэффициент попадания"
 
 #: application/views/zonechecker/result.php:55
 msgid "ITUz"
-msgstr ""
+msgstr "ITU"
 
 #: application/views/zonechecker/result.php:56
 msgid "ITUz geojson"
-msgstr ""
+msgstr "ITU geojson"
 
 #: application/views/zonechecker/result.php:58
 msgid "CQz"
-msgstr ""
+msgstr "CQ"
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
-msgstr ""
+msgstr "CQ geojson"
 
 #: application/controllers/Lotw.php:448
 #, php-format
@@ -19331,6 +19350,10 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"Сертификат, найденный в файле %s, содержит пароль и не может быть обработан. "
+"%sУбедитесь, что экспортируете сертификат LoTW из приложения tqsl без "
+"пароля!%s Для получения дополнительной информации, пожалуйста, посетите "
+"%sстраницу FAQ LoTW%s в Wavelog Wiki."
 
 #: application/views/lotw_views/upload_cert.php:28
 #, php-format
@@ -19338,6 +19361,8 @@ msgid ""
 "For further information please visit the %sLoTW FAQ page%s in the Wavelog "
 "Wiki"
 msgstr ""
+"Для получения дополнительной информации, посетите страницу %sLoTW FAQ%s в "
+"Wavelog Wiki"
 
 #, php-format
 #~ msgid ""
