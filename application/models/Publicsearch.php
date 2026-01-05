@@ -15,7 +15,7 @@ class Publicsearch extends CI_Model {
 					AND station_profile.user_id = ?
 					AND station_logbooks.public_slug = ?
 					AND ".$this->config->item('table_name').".COL_CALL LIKE ?";
-			$query = $this->db->query($sql, array($userid, $slug, $callsign));
+			$query = $this->db->query($sql, array($userid, $slug, '%'.$callsign.'%'));
 			return $query;
 		}
 		return false;
