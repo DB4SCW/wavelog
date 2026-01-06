@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-03 10:28+0000\n"
-"PO-Revision-Date: 2026-01-04 16:01+0000\n"
+"PO-Revision-Date: 2026-01-06 21:05+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
-"Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/sv/>\n"
+"Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/sv/>\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19657,19 +19657,25 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"Certifikatet som hittas i filen %s innehåller ett lösenord och kan inte "
+"behandlas. %sVar vänlig se till att du exporterar LoTW-certifikatet från "
+"tqsl-applikationen utan lösenord!%s För mer information, vänligen besök "
+"%sLoTW FAQ-sidan%s i Wavelog Wiki."
 
 #: application/views/lotw_views/upload_cert.php:28
 #, php-format
 msgid ""
 "For further information please visit the %sLoTW FAQ page%s in the Wavelog "
 "Wiki"
-msgstr ""
+msgstr "För mer information, besök %sLoTW FAQ-sidan%s i Wavelog Wiki"
 
 #: application/views/adif/dcl_success.php:26
 msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Det finns olika data för DOK i din logg jämfört med DCL eller uppdateringar "
+"gjordes inte eftersom QSOs inte är bekräftade i DCL."
 
 #: application/views/adif/import.php:342
 #, php-format
@@ -19677,10 +19683,12 @@ msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
+"Mer information om bekräftelsestatusen i DCL finns på %sDCL Confluence-"
+"sidan%s."
 
 #: application/views/logbookadvanced/edit.php:25
 msgid "DARC DOK"
-msgstr ""
+msgstr "DARC DOK"
 
 #~ msgid "Column"
 #~ msgstr "Kolumn"
