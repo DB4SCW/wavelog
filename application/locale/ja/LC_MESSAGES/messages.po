@@ -3715,6 +3715,7 @@ msgstr "QSOが更新されました"
 #: application/views/user/edit.php:325 application/views/user/edit.php:350
 #: application/views/view_log/partial/log_ajax.php:20
 #: application/models/Logbook_model.php:6440
+#: application/models/Logbook_model.php:6439
 msgid "Bearing"
 msgstr "方位"
 
@@ -19420,6 +19421,23 @@ msgstr ""
 msgid ""
 "For further information please visit the %sLoTW FAQ page%s in the Wavelog "
 "Wiki"
+msgstr ""
+
+#: application/views/adif/dcl_success.php:26
+msgid ""
+"There is different data for DOK in your log compared to DCL or updates where "
+"not done because QSOs are not confirmed in DCL."
+msgstr ""
+
+#: application/views/adif/import.php:342
+#, php-format
+msgid ""
+"More information regarding the confirmation status in DCL can be found on "
+"the %sDCL Confluence page%s."
+msgstr ""
+
+#: application/views/logbookadvanced/edit.php:25
+msgid "DARC DOK"
 msgstr ""
 
 #~ msgid "Column"
