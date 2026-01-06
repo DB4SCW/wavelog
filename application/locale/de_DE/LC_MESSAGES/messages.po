@@ -27,10 +27,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-04 07:42+0000\n"
-"PO-Revision-Date: 2026-01-06 07:04+0000\n"
+"PO-Revision-Date: 2026-01-06 21:05+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
-"Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/de/>\n"
+"Language-Team: German <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -8186,7 +8186,7 @@ msgstr "Erweiterte Filter"
 
 #: application/views/bandmap/list.php:287
 msgid "Hold"
-msgstr "Pause"
+msgstr "Drücke"
 
 #: application/views/bandmap/list.php:287
 msgid "and click to select multiple options"
@@ -19656,6 +19656,9 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Es gibt unterschiedliche Angaben zum DOK in deinem Log im Vergleich mit dem "
+"DCL oder Updates wurden nicht vorgenommen, weil die QSOs im DCL nicht "
+"bestätigt sind."
 
 #: application/views/adif/import.php:342
 #, php-format
@@ -19663,10 +19666,12 @@ msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
+"Weitere Informationen zum Bestätigungsstatus im DCL findest du auf der %sDCL "
+"Confluence Seite%s."
 
 #: application/views/logbookadvanced/edit.php:25
 msgid "DARC DOK"
-msgstr ""
+msgstr "DARC DOK"
 
 #, php-format
 #~ msgid ""
