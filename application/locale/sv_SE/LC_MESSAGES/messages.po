@@ -471,6 +471,7 @@ msgstr " och "
 #: application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
+#: application/controllers/Logbook.php:1385
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -492,6 +493,7 @@ msgstr "SOTA"
 #: application/views/user/edit.php:295 application/views/user/edit.php:318
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:10
+#: application/controllers/Logbook.php:1386
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -515,6 +517,7 @@ msgstr "WWFF"
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:11
 #: application/views/logbookadvanced/index.php:974
+#: application/controllers/Logbook.php:1387
 msgid "POTA"
 msgstr "POTA"
 
@@ -795,6 +798,7 @@ msgstr "Ingen användare har konfigurerat Clublog."
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:571
 #: application/views/view_log/qso.php:576
+#: application/controllers/Logbook.php:753
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -1314,6 +1318,7 @@ msgid "Paper was deleted."
 msgstr "Papperet raderades."
 
 #: application/controllers/Logbook.php:37
+#: application/controllers/Logbook.php:36
 msgid ""
 "No logbooks were found. You need to define a logbook under Station Logbooks! "
 "Do it here:"
@@ -1323,6 +1328,7 @@ msgstr ""
 
 #: application/controllers/Logbook.php:37
 #: application/views/stationsetup/stationsetup.php:21
+#: application/controllers/Logbook.php:36
 msgid "Station Logbooks"
 msgstr "Stationsloggböcker"
 
@@ -1330,6 +1336,7 @@ msgstr "Stationsloggböcker"
 #: application/views/interface_assets/header.php:113
 #: application/views/logbookadvanced/useroptions.php:4
 #: application/views/view_log/index.php:11
+#: application/controllers/Logbook.php:57
 msgid "Logbook"
 msgstr "Loggbok"
 
@@ -1362,6 +1369,8 @@ msgstr "Loggbok"
 #: application/views/timeline/index.php:56 application/views/user/edit.php:624
 #: application/views/user/edit.php:821
 #: application/views/logbookadvanced/index.php:935
+#: application/controllers/Logbook.php:741
+#: application/controllers/Logbook.php:756
 msgid "QSL"
 msgstr "QSL"
 
@@ -1403,6 +1412,7 @@ msgstr "QSL"
 #: application/views/timeline/index.php:60 application/views/user/edit.php:625
 #: application/views/user/edit.php:831 application/views/view_log/qso.php:537
 #: application/views/view_log/qso.php:542
+#: application/controllers/Logbook.php:744
 msgid "LoTW"
 msgstr "LoTW"
 
@@ -1439,6 +1449,7 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:309
 #: application/views/timeline/index.php:64 application/views/user/edit.php:626
 #: application/views/user/edit.php:839 application/views/user/edit.php:913
+#: application/controllers/Logbook.php:747
 msgid "eQSL"
 msgstr "eQSL"
 
@@ -1539,6 +1550,7 @@ msgstr "eQSL"
 #: application/views/widgets/qsos.php:18
 #: application/views/logbookadvanced/index.php:516
 #: application/views/logbookadvanced/index.php:905
+#: application/controllers/Logbook.php:1380
 msgid "Mode"
 msgstr "Trafiksätt"
 
@@ -1569,6 +1581,7 @@ msgstr "Trafiksätt"
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
 #: application/views/logbookadvanced/index.php:908
+#: application/controllers/Logbook.php:1381
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1600,6 +1613,7 @@ msgstr "RST (S)"
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
 #: application/views/logbookadvanced/index.php:911
+#: application/controllers/Logbook.php:1382
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1621,6 +1635,7 @@ msgstr "RST (R)"
 #: application/views/view_log/qso.php:337
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
+#: application/controllers/Logbook.php:1383
 msgid "Country"
 msgstr "Land"
 
@@ -1651,6 +1666,7 @@ msgstr "Land"
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
 #: application/views/logbookadvanced/index.php:971
+#: application/controllers/Logbook.php:1384
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1683,6 +1699,7 @@ msgstr "IOTA"
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
 #: application/views/logbookadvanced/index.php:959
+#: application/controllers/Logbook.php:1388
 msgid "State"
 msgstr "Delstat"
 
@@ -1736,6 +1753,7 @@ msgstr "Delstat"
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
 #: application/views/logbookadvanced/index.php:920
+#: application/controllers/Logbook.php:1389
 msgid "Gridsquare"
 msgstr "Lokatorruta"
 
@@ -1767,6 +1785,7 @@ msgstr "Lokatorruta"
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
 #: application/views/logbookadvanced/index.php:1010
+#: application/controllers/Logbook.php:1390
 msgid "Distance"
 msgstr "Avstånd"
 
@@ -1863,6 +1882,7 @@ msgstr "Avstånd"
 #: application/views/widgets/qsos.php:21
 #: application/views/logbookadvanced/index.php:515
 #: application/views/logbookadvanced/index.php:914
+#: application/controllers/Logbook.php:1391
 msgid "Band"
 msgstr "Band"
 
@@ -1891,6 +1911,7 @@ msgstr "Band"
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
 #: application/views/logbookadvanced/index.php:917
+#: application/controllers/Logbook.php:1392
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -1916,6 +1937,7 @@ msgstr "Frekvens"
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
 #: application/views/logbookadvanced/index.php:992
+#: application/controllers/Logbook.php:1393
 msgid "Operator"
 msgstr "Operatör"
 
@@ -1945,6 +1967,7 @@ msgstr "Operatör"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
+#: application/controllers/Logbook.php:1414
 msgid "Deleted DXCC"
 msgstr "Struket DXCC"
 
