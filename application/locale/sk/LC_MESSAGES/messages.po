@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-06 09:24+0000\n"
-"PO-Revision-Date: 2026-01-07 05:25+0000\n"
-"Last-Translator: CS7AFM <sergio.t.mata@gmail.com>\n"
-"Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/sk/>\n"
+"PO-Revision-Date: 2026-01-07 19:22+0000\n"
+"Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
+"Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1989,6 +1989,9 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"Certifikát nájdený v súbore %s obsahuje heslo a nemôže byť spracovaný. "
+"%sUistite sa, že exportujete LoTW certifikát z tqsl aplikácie bez hesla!%s "
+"Pre ďalšie informácie navštívte %sLoTW FAQ stránku%s vo Wavelog Wiki."
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -1997,16 +2000,20 @@ msgid ""
 "contains 'key-only' this is typically a certificate request which has not "
 "been processed by LoTW yet."
 msgstr ""
+"Vyskytla sa všeobecná chyba pri extrahovaní certifikátu zo súboru %s. Ak "
+"názov súboru obsahuje 'key-only', ide zvyčajne o žiadosť o certifikát, ktorá "
+"ešte nebola spracovaná službou LoTW."
 
 #: application/controllers/Lotw.php:457
 #, php-format
 msgid "Generic error processing the certificate in file %s."
-msgstr ""
+msgstr "Všeobecná chyba pri spracovaní certifikátu v súbore %s."
 
 #: application/controllers/Lotw.php:469
 #, php-format
 msgid "Generic error extracting the private key from certificate in file %s."
 msgstr ""
+"Všeobecná chyba pri extrahovaní súkromného kľúča z certifikátu v súbore %s."
 
 #: application/controllers/Lotw.php:685
 msgid "LoTW ADIF Information"
@@ -2014,7 +2021,7 @@ msgstr "LoTW ADIF Informácie"
 
 #: application/controllers/Lotw.php:858
 msgid "Connection to LoTW failed."
-msgstr ""
+msgstr "Pripojenie k LoTW zlyhalo."
 
 #: application/controllers/Lotw.php:863
 #, php-format
@@ -4576,6 +4583,8 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Vo vašom logu sú pre DOK iné údaje v porovnaní s DCL alebo aktualizácie "
+"neboli vykonané, pretože QSO nie sú potvrdené v DCL."
 
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
@@ -4956,6 +4965,8 @@ msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
+"Viac informácií o stave potvrdenia v DCL nájdete na %s stránke DCL "
+"Confluence %s."
 
 #: application/views/adif/import.php:349
 msgid "Only import DOK data from QSOs confirmed on DCL."
@@ -12384,15 +12395,15 @@ msgstr "DCL export"
 
 #: application/views/interface_assets/header.php:537
 msgid "Internal tools"
-msgstr ""
+msgstr "Interné nástroje"
 
 #: application/views/interface_assets/header.php:539
 msgid "Callsign DXCC checker"
-msgstr ""
+msgstr "Overenie DXCC podľa značiek"
 
 #: application/views/interface_assets/header.php:540
 msgid "GeoJSON QSO Map"
-msgstr ""
+msgstr "QSO mapa GeoJSON"
 
 #: application/views/interface_assets/header.php:541
 msgid "Gridsquare Zone checker"
@@ -13110,7 +13121,7 @@ msgstr "Výkon stanice"
 
 #: application/views/logbookadvanced/edit.php:25
 msgid "DARC DOK"
-msgstr ""
+msgstr "DARC DOK"
 
 #: application/views/logbookadvanced/edit.php:31
 #: application/views/logbookadvanced/index.php:989
@@ -13684,7 +13695,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/index.php:512
 msgid "Sort column"
-msgstr ""
+msgstr "Zoradiť stĺpec"
 
 #: application/views/logbookadvanced/index.php:514
 #: application/views/oqrs/showrequests.php:87
@@ -13693,19 +13704,19 @@ msgstr "Čas QSO"
 
 #: application/views/logbookadvanced/index.php:517
 msgid "QSO Modified"
-msgstr ""
+msgstr "Spojenie upravené"
 
 #: application/views/logbookadvanced/index.php:521
 msgid "Sort direction"
-msgstr ""
+msgstr "Smer radenia"
 
 #: application/views/logbookadvanced/index.php:523
 msgid "Descending"
-msgstr ""
+msgstr "Klesajúci"
 
 #: application/views/logbookadvanced/index.php:524
 msgid "Ascending"
-msgstr ""
+msgstr "Stúpajúci"
 
 #: application/views/logbookadvanced/index.php:532
 #: application/views/logbookadvanced/index.php:714
@@ -14019,7 +14030,7 @@ msgstr "Databázové nástroje"
 #: application/views/logbookadvanced/index.php:896
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "Last modified"
-msgstr ""
+msgstr "Naposledy upravené"
 
 #: application/views/logbookadvanced/index.php:899
 #: application/views/logbookadvanced/useroptions.php:28
@@ -14263,45 +14274,46 @@ msgstr "Aktuálne podporované krajiny"
 
 #: application/views/logbookadvanced/useroptions.php:15
 msgid "Basic QSO Information"
-msgstr ""
+msgstr "Základné informácie o spojení"
 
 #: application/views/logbookadvanced/useroptions.php:72
 msgid "Station Details"
-msgstr ""
+msgstr "Detaily stanice"
 
 #: application/views/logbookadvanced/useroptions.php:105
 msgid "Confirmation Services"
-msgstr ""
+msgstr "Potvrdzovacie služby"
 
 #: application/views/logbookadvanced/useroptions.php:162
 msgid "Geographic Information"
-msgstr ""
+msgstr "Geografické informácie"
 
 #: application/views/logbookadvanced/useroptions.php:207
 msgid "Awards Programs"
-msgstr ""
+msgstr "Diplomové programy"
 
 #: application/views/logbookadvanced/useroptions.php:258
 msgid "Additional Information"
-msgstr ""
+msgstr "Ďalšie informácie"
 
 #: application/views/logbookadvanced/useroptions.php:297
 msgid "Technical Details"
-msgstr ""
+msgstr "Technické detaily"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "For debugging only"
-msgstr ""
+msgstr "Len na ladenie"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid ""
 "This is meant for debugging purposes only and not designed to be displayed "
 "by default"
 msgstr ""
+"Je určené iba na účely ladenia a nie je určené na zobrazenie ako predvolené"
 
 #: application/views/logbookadvanced/useroptions.php:347
 msgid "Map Layers"
-msgstr ""
+msgstr "Mapové vrstvy"
 
 #: application/views/lookup/index.php:11
 #: application/views/qso/award_tabs.php:53
@@ -14484,7 +14496,7 @@ msgstr "Ďalšia automatická synchronizácia s LoTW prebehne o: "
 msgid ""
 "For further information please visit the %sLoTW FAQ page%s in the Wavelog "
 "Wiki"
-msgstr ""
+msgstr "Ďalšie informácie nájdete na stránke %sLoTW FAQ page%s vo Wavelog Wiki"
 
 #: application/views/map/qso_map.php:15
 msgid "Select Country:"
@@ -19269,61 +19281,61 @@ msgstr ""
 
 #: application/views/zonechecker/index.php:15
 msgid "Zone Type"
-msgstr ""
+msgstr "Typ zóny"
 
 #: application/views/zonechecker/index.php:20
 msgid "Start Zone Check"
-msgstr ""
+msgstr "Spustiť kontrolu zón"
 
 #: application/views/zonechecker/index.php:39
 #: application/views/zonechecker/index.php:62
 msgid "Processing..."
-msgstr ""
+msgstr "Spracovanie..."
 
 #: application/views/zonechecker/index.php:50
 #: application/views/zonechecker/index.php:73
 msgid "An error occurred while processing the request."
-msgstr ""
+msgstr "Pri spracovávaní žiadosti došlo k chybe."
 
 #: application/views/zonechecker/result.php:16
 msgid "Callsigns Tested"
-msgstr ""
+msgstr "Overované volacie značky"
 
 #: application/views/zonechecker/result.php:17
 msgid "Execution Time"
-msgstr ""
+msgstr "Čas vykonania"
 
 #: application/views/zonechecker/result.php:18
 msgid "Potential Wrong Zones"
-msgstr ""
+msgstr "Potenciálne nesprávne zóny"
 
 #: application/views/zonechecker/result.php:19
 msgid "Cache Hits"
-msgstr ""
+msgstr "Zásahy do vyrovnávacej pamäte"
 
 #: application/views/zonechecker/result.php:20
 msgid "Cache Misses"
-msgstr ""
+msgstr "Vynechané ukladanie do vyrovnávacej pamäte"
 
 #: application/views/zonechecker/result.php:21
 msgid "Hit Rate"
-msgstr ""
+msgstr "Úspešnosť"
 
 #: application/views/zonechecker/result.php:55
 msgid "ITUz"
-msgstr ""
+msgstr "ITUz"
 
 #: application/views/zonechecker/result.php:56
 msgid "ITUz geojson"
-msgstr ""
+msgstr "ITUz geojson"
 
 #: application/views/zonechecker/result.php:58
 msgid "CQz"
-msgstr ""
+msgstr "CQz"
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
-msgstr ""
+msgstr "CQz geojson"
 
 #~ msgid "There is different data for DOK in your log compared to DCL"
 #~ msgstr "Vo vašom denníku sú odlišné údaje pre DOK oproti DCL"
