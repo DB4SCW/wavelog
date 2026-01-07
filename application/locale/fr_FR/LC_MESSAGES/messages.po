@@ -3751,6 +3751,7 @@ msgstr "Azimut"
 #: application/models/Logbookadvanced_model.php:1658
 #: application/models/Logbookadvanced_model.php:1666
 #: application/models/Logbookadvanced_model.php:1660
+#: application/models/Logbookadvanced_model.php:1662
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr ""
 "La table VuccGrids est vide. Veuillez d'abord importer les données des "

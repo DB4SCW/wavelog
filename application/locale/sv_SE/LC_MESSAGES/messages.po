@@ -3755,6 +3755,7 @@ msgstr "Bäring"
 #: application/models/Logbookadvanced_model.php:1658
 #: application/models/Logbookadvanced_model.php:1666
 #: application/models/Logbookadvanced_model.php:1660
+#: application/models/Logbookadvanced_model.php:1662
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccLokator-tabellen är tom. Importera VUCC-lokatordata först."
 
