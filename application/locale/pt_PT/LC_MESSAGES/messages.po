@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-06 09:24+0000\n"
-"PO-Revision-Date: 2026-01-06 21:05+0000\n"
+"PO-Revision-Date: 2026-01-07 05:25+0000\n"
 "Last-Translator: CS7AFM <sergio.t.mata@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://translate.wavelog.org/projects/"
 "wavelog/main-translation/pt_PT/>\n"
@@ -206,7 +206,7 @@ msgstr "Mapa dos activadores"
 
 #: application/controllers/Adif.php:61 application/controllers/Adif.php:73
 msgid "You're not allowed to access this functionality!"
-msgstr ""
+msgstr "Sem permissões para aceder a esta funcionalidade!"
 
 #: application/controllers/Adif.php:80
 msgid "valid date"
@@ -567,7 +567,7 @@ msgstr "Gridsquares confirmadas via QSL em papel"
 #: application/controllers/Awards.php:1049
 #: application/controllers/Awards.php:1085
 msgid "Total Gridsquares worked"
-msgstr ""
+msgstr "Total de Gridsquares trabalhadas"
 
 #: application/controllers/Awards.php:1066
 msgid "Fred Fish Memorial Award (FFMA)"
@@ -620,7 +620,7 @@ msgstr "WPX"
 #: application/views/awards/pl_polska/index.php:37
 #: application/views/interface_assets/header.php:270
 msgid "\"Polska\" Award"
-msgstr ""
+msgstr "Diploma \"Polska\""
 
 #: application/controllers/Backup.php:15 application/views/backup/main.php:14
 #: application/views/interface_assets/header.php:336
