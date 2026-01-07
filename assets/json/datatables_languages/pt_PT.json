@@ -48,7 +48,7 @@
         },
         "clearAll": "Limpar tudo",
         "condition": "Condição",
-        "data": "Data",
+        "data": "Dados",
         "title": {
             "0": "Procurar builder",
             "_": "Procurar builder (%d)"
@@ -100,7 +100,7 @@
         },
         "add": "Adicionar condição",
         "deleteTitle": "Apagar regra de filtro",
-        "logicAnd": "e",
+        "logicAnd": "E",
         "logicOr": "ou",
         "leftTitle": "Critério de recuo",
         "rightTitle": "Critério de avanço"
@@ -179,68 +179,68 @@
             "submit": "Delete",
             "title": "Delete",
             "confirm": {
-                "_": "Are you sure you wish to delete %d rows?",
-                "1": "Are you sure you wish to delete 1 row?"
+                "_": "Tem a certeza que pretende apagar %d linhas?",
+                "1": "Tem a certeza que pretende apagar 1 linha?"
             }
         },
         "error": {
-            "system": "A system error has occurred (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">More information&lt;\\/a&gt;).</a>"
+            "system": "Ocorreu um erro de sistema (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">Mais informação&lt;\\/a&gt;).</a>"
         }
     },
-    "loadingRecords": "Loading...",
+    "loadingRecords": "A carregar...",
     "processing": "Processing...",
     "decimal": ".",
-    "emptyTable": "No data available in table",
+    "emptyTable": "Sem dados disponíveis na tabela",
     "select": {
         "cells": {
-            "1": "1 cell selected",
-            "_": "%d cells selected"
+            "1": "1 célula celecionada",
+            "_": "%d células selecionadas"
         },
         "columns": {
-            "1": "1 column selected",
-            "_": "%d columns selected"
+            "1": "1 coluna celecionada",
+            "_": "%d colunas celecionadas"
         },
         "rows": {
-            "1": "1 row selected",
-            "_": "%d rows selected"
+            "1": "1 linha selecionada",
+            "_": "%d linhas selecionadas"
         }
     },
-    "zeroRecords": "No matching records found",
+    "zeroRecords": "Nenhum registro encontrado",
     "stateRestore": {
         "creationModal": {
-            "button": "Create",
+            "button": "Criar",
             "columns": {
-                "search": "Column search",
-                "visible": "Column visibility"
+                "search": "Pesquisar coluna",
+                "visible": "Visibilidade coluna"
             },
             "name": "Name:",
-            "order": "Sorting",
-            "paging": "Paging",
-            "search": "Search",
+            "order": "Ordenar",
+            "paging": "Paginar",
+            "search": "Procurar",
             "searchBuilder": "Search builder",
-            "select": "Select",
-            "title": "Create new state",
-            "toggleLabel": "Include:",
+            "select": "Selecionar",
+            "title": "Criar novo estado",
+            "toggleLabel": "Incluir:",
             "scroller": "Scroll position"
         },
-        "duplicateError": "A state with this name already exists.",
-        "emptyError": "Name cannot be empty.",
-        "emptyStates": "No saved states",
-        "removeConfirm": "Are you sure you want to remove %s?",
-        "removeError": "Failed to remove state.",
-        "removeJoiner": "and",
-        "removeSubmit": "Remove",
-        "removeTitle": "Remove state",
-        "renameButton": "Rename",
-        "renameLabel": "New name for %s:",
-        "renameTitle": "Rename state"
+        "duplicateError": "Já existe um estado com este nome.",
+        "emptyError": "Nome não pode estar vazio.",
+        "emptyStates": "Sem estados salvos",
+        "removeConfirm": "Tem a certeza que pretende remover %s?",
+        "removeError": "Falha ao remover o estado.",
+        "removeJoiner": "e",
+        "removeSubmit": "Remover",
+        "removeTitle": "Remover estado",
+        "renameButton": "Renomear",
+        "renameLabel": "Novo nome para %s:",
+        "renameTitle": "Renomear estado"
     },
-    "info": "Showing _START_ to _END_ of _TOTAL_ entries",
-    "infoEmpty": "Showing 0 to 0 of 0 entries",
-    "infoFiltered": "(filtered from _MAX_ total entries)",
-    "lengthMenu": "Show _MENU_ entries",
+    "info": "Mostrar _INÍCIO_ ao _FIM_ do _TOTAL_ de_entradas",
+    "infoEmpty": "Mostrar 0 a 0 de 0 entradas",
+    "infoFiltered": "(filtrado do total de entradas _MAX_)",
+    "lengthMenu": "Mostar_MENU_entradas",
     "aria": {
-        "sortAscending": ": activate to sort column ascending",
-        "sortDescending": ": activate to sort column descending"
+        "sortAscending": ": ativar para ordenar a coluna em ascendente",
+        "sortDescending": ": ativar para ordenar a coluna em descendente"
     }
 }
