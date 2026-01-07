@@ -843,7 +843,7 @@ class API extends CI_Controller {
 			$user_id=$this->session->userdata('user_id');
 		}
 
-		if (($raw_input['qrz'] ?? '' == 'true') && (($raw_input['callsign'] ?? '') != '')) {
+		if (($raw_input['callbook'] ?? '' == 'true') && (($raw_input['callsign'] ?? '') != '')) {
 			$this->load->library('callbook');
 			$this->load->model('logbook_model');
 			$lookupcall = $this->callbook->get_plaincall($raw_input['callsign']);
