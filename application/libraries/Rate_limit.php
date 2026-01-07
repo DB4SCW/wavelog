@@ -166,7 +166,6 @@ class Rate_limit {
      * @param int $retry_after Seconds until retry is allowed
      */
     public function send_limit_exceeded_response($retry_after) {
-	log_message("Error","Rate limit exceeded");
         http_response_code(429);
         header('Retry-After: ' . $retry_after);
         echo json_encode([
