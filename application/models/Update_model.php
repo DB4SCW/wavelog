@@ -643,6 +643,7 @@ class Update_model extends CI_Model {
 		$response = curl_exec($curl);
 
 		$xml = @simplexml_load_string($response);
+      $xml = false;
 
 		if ($xml === false) {
 			log_message('error', 'vuccgrids.dat update from primary location failed.');
