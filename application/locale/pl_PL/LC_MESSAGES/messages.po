@@ -3646,6 +3646,7 @@ msgstr "DXCC musi być numeryczne"
 
 #: application/models/Logbook_model.php:4744
 #: application/models/Logbook_model.php:4759
+#: application/models/Logbook_model.php:4754
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
@@ -3654,6 +3655,7 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4758
 #: application/models/Logbook_model.php:4773
+#: application/models/Logbook_model.php:4768
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3663,11 +3665,13 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4767
 #: application/models/Logbook_model.php:4782
+#: application/models/Logbook_model.php:4777
 msgid "QSO on"
 msgstr "QSO w dniu"
 
 #: application/models/Logbook_model.php:4767
 #: application/models/Logbook_model.php:4782
+#: application/models/Logbook_model.php:4777
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3677,6 +3681,7 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4816
 #: application/models/Logbook_model.php:4831
+#: application/models/Logbook_model.php:4826
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3687,22 +3692,26 @@ msgstr ""
 
 #: application/models/Logbook_model.php:5081
 #: application/models/Logbook_model.php:5096
+#: application/models/Logbook_model.php:5091
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate jest nieprawidłowa (RRRRMMDD)"
 
 #: application/models/Logbook_model.php:5092
 #: application/models/Logbook_model.php:5107
+#: application/models/Logbook_model.php:5102
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate jest nieprawidłowa (RRRRMMDD)"
 
 #: application/models/Logbook_model.php:5153
 #: application/models/Logbook_model.php:5168
+#: application/models/Logbook_model.php:5163
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date jest nieprawidłowy (RRRRMMDD)"
 
 #: application/models/Logbook_model.php:5528
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5543
+#: application/models/Logbook_model.php:5538
 msgid "Duplicate for"
 msgstr "Duplikat dla"
 
@@ -3710,31 +3719,38 @@ msgstr "Duplikat dla"
 #: application/models/Logbook_model.php:5688
 #: application/models/Logbook_model.php:5608
 #: application/models/Logbook_model.php:5703
+#: application/models/Logbook_model.php:5603
+#: application/models/Logbook_model.php:5698
 msgid "QSO could not be matched"
 msgstr "QSO nie mogło zostać dopasowane"
 
 #: application/models/Logbook_model.php:5601
 #: application/models/Logbook_model.php:5616
+#: application/models/Logbook_model.php:5611
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "potwierdzone przez LoTW/ClubLog/eQSL/zawody"
 
 #: application/models/Logbook_model.php:5607
 #: application/models/Logbook_model.php:5622
+#: application/models/Logbook_model.php:5617
 msgid "confirmed by award manager"
 msgstr "potwierdzone przez award managera"
 
 #: application/models/Logbook_model.php:5611
 #: application/models/Logbook_model.php:5626
+#: application/models/Logbook_model.php:5621
 msgid "confirmed by cross-check of DCL data"
 msgstr "potwierdzone przez weryfikację danych DCL"
 
 #: application/models/Logbook_model.php:5615
 #: application/models/Logbook_model.php:5630
+#: application/models/Logbook_model.php:5625
 msgid "confirmation pending"
 msgstr "oczekiwanie na potwierdzenie"
 
 #: application/models/Logbook_model.php:5618
 #: application/models/Logbook_model.php:5633
+#: application/models/Logbook_model.php:5628
 msgid "unconfirmed"
 msgstr "niepotwierdzone"
 
@@ -3743,16 +3759,19 @@ msgstr "niepotwierdzone"
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 #: application/models/Logbook_model.php:5636
+#: application/models/Logbook_model.php:5631
 msgid "unknown"
 msgstr "nieznany"
 
 #: application/models/Logbook_model.php:5691
 #: application/models/Logbook_model.php:5706
+#: application/models/Logbook_model.php:5701
 msgid "POTA reference already in log"
 msgstr "Referencja POTA już znajduje się w dzienniku"
 
 #: application/models/Logbook_model.php:5694
 #: application/models/Logbook_model.php:5709
+#: application/models/Logbook_model.php:5704
 msgid "QSO updated"
 msgstr "QSO zaktualizowane"
 
@@ -3769,6 +3788,7 @@ msgstr "QSO zaktualizowane"
 #: application/views/view_log/partial/log_ajax.php:20
 #: application/models/Logbook_model.php:6440
 #: application/models/Logbook_model.php:6439
+#: application/models/Logbook_model.php:6434
 msgid "Bearing"
 msgstr "Kierunek"
 
