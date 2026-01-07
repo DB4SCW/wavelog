@@ -380,6 +380,9 @@ msgstr "DOK (Almanya Bölge İşletme Kodu)"
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:33
 #: application/views/timeplotter/index.php:24
+#: application/views/logbookadvanced/checkresult.php:162
+#: application/views/logbookadvanced/checkresult.php:242
+#: application/views/logbookadvanced/checkresult.php:318
 msgid "DXCC"
 msgstr "DXCC (Ülke)"
 
@@ -1419,6 +1422,8 @@ msgstr "QSL"
 #: application/views/view_log/qso.php:542
 #: application/controllers/Logbook.php:744
 #: application/views/qso/edit_ajax.php:426
+#: application/views/logbookadvanced/checkresult.php:102
+#: application/views/logbookadvanced/checkresult.php:160
 msgid "LoTW"
 msgstr "LoTW"
 
@@ -1557,6 +1562,10 @@ msgstr "eQSL"
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
 #: application/controllers/Logbook.php:1380
+#: application/views/logbookadvanced/checkresult.php:101
+#: application/views/logbookadvanced/checkresult.php:159
+#: application/views/logbookadvanced/checkresult.php:237
+#: application/views/logbookadvanced/checkresult.php:313
 msgid "Mode"
 msgstr "Mod"
 
@@ -1757,6 +1766,10 @@ msgstr "Eyalet"
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
 #: application/controllers/Logbook.php:1389
+#: application/views/logbookadvanced/checkresult.php:163
+#: application/views/logbookadvanced/checkresult.php:239
+#: application/views/logbookadvanced/checkresult.php:315
+#: application/views/logbookadvanced/showUpdateResult.php:44
 msgid "Gridsquare"
 msgstr "Gridsquare"
 
@@ -1884,6 +1897,10 @@ msgstr "Mesafe"
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
 #: application/controllers/Logbook.php:1391
+#: application/views/logbookadvanced/checkresult.php:100
+#: application/views/logbookadvanced/checkresult.php:158
+#: application/views/logbookadvanced/checkresult.php:238
+#: application/views/logbookadvanced/checkresult.php:314
 msgid "Band"
 msgstr "Bant"
 
@@ -4542,6 +4559,11 @@ msgstr "Hiçbir kayıt bulunamadı!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:672
 #: application/views/zonechecker/result.php:50
+#: application/views/logbookadvanced/checkresult.php:98
+#: application/views/logbookadvanced/checkresult.php:156
+#: application/views/logbookadvanced/checkresult.php:234
+#: application/views/logbookadvanced/checkresult.php:310
+#: application/views/logbookadvanced/showUpdateResult.php:43
 msgid "Callsign"
 msgstr "Çağrı işareti"
 
@@ -4653,6 +4675,8 @@ msgstr "Logunuzdaki DOK ile DCL’deki DOK farklı"
 #: application/views/view_log/partial/log_ajax.php:196
 #: application/views/visitor/index.php:151
 #: application/views/widgets/qsos.php:16
+#: application/views/logbookadvanced/checkresult.php:235
+#: application/views/logbookadvanced/checkresult.php:311
 msgid "Date"
 msgstr "Tarih"
 
@@ -4689,6 +4713,8 @@ msgstr "Tarih"
 #: application/views/view_log/partial/log.php:6
 #: application/views/view_log/partial/log_ajax.php:198
 #: application/views/visitor/index.php:154
+#: application/views/logbookadvanced/checkresult.php:236
+#: application/views/logbookadvanced/checkresult.php:312
 msgid "Time"
 msgstr "Saat"
 
@@ -5595,6 +5621,7 @@ msgstr "Toplam QSO"
 #: application/views/timeplotter/index.php:44
 #: application/views/user/modals/first_login_wizard.php:74
 #: application/views/zonechecker/index.php:17
+#: application/views/logbookadvanced/checkresult.php:240
 msgid "CQ Zone"
 msgstr "CQ Alanı"
 
@@ -6575,6 +6602,7 @@ msgstr "Silindi"
 #: application/views/user/modals/first_login_wizard.php:84
 #: application/views/zonechecker/index.php:18
 #: application/views/qso/edit_ajax.php:317
+#: application/views/logbookadvanced/checkresult.php:316
 msgid "ITU Zone"
 msgstr "ITU Bölgesi"
 
@@ -7435,6 +7463,8 @@ msgstr "Bant / Uydu / Yörünge"
 #: application/views/oqrs/showrequests.php:86
 #: application/views/simplefle/index.php:78
 #: application/views/zonechecker/result.php:51
+#: application/views/logbookadvanced/checkresult.php:99
+#: application/views/logbookadvanced/checkresult.php:157
 msgid "QSO Date"
 msgstr "QSO Tarihi"
 
@@ -8861,6 +8891,8 @@ msgstr ""
 #: application/views/qso/edit_ajax.php:620
 #: application/views/qso/edit_ajax.php:634
 #: application/views/qso/edit_ajax.php:646
+#: application/views/logbookadvanced/checkresult.php:116
+#: application/views/logbookadvanced/checkresult.php:174
 msgid "Yes"
 msgstr "Evet"
 
@@ -8947,6 +8979,8 @@ msgstr "Evet"
 #: application/views/qso/edit_ajax.php:619
 #: application/views/qso/edit_ajax.php:633
 #: application/views/qso/edit_ajax.php:645
+#: application/views/logbookadvanced/checkresult.php:116
+#: application/views/logbookadvanced/checkresult.php:174
 msgid "No"
 msgstr "Hayır"
 
@@ -9034,6 +9068,8 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:147
 #: application/views/logbookadvanced/checkresult.php:205
 #: application/views/zonechecker/result.php:52
+#: application/views/logbookadvanced/checkresult.php:103
+#: application/views/logbookadvanced/checkresult.php:161
 msgid "Station Profile"
 msgstr "İstasyon Profili"
 
@@ -9042,6 +9078,7 @@ msgstr "İstasyon Profili"
 #: application/views/calltester/comparison_result.php:135
 #: application/views/calltester/result.php:25
 #: application/views/logbookadvanced/checkresult.php:148
+#: application/views/logbookadvanced/checkresult.php:104
 msgid "Existing DXCC"
 msgstr "Mevcut DXCC"
 
@@ -9057,6 +9094,7 @@ msgstr "Mevcut ADIF"
 #: application/views/calltester/comparison_result.php:137
 #: application/views/calltester/result.php:27
 #: application/views/logbookadvanced/checkresult.php:149
+#: application/views/logbookadvanced/checkresult.php:105
 msgid "Result DXCC"
 msgstr "Sonuç DXCC"
 
@@ -9104,11 +9142,13 @@ msgstr "DXCC sınıfı ve kayıt defteri modelini karşılaştırın"
 
 #: application/views/calltester/result.php:4
 #: application/views/logbookadvanced/checkresult.php:126
+#: application/views/logbookadvanced/checkresult.php:82
 msgid "Callsigns tested: "
 msgstr "Çağrı işaretleri test edildi: "
 
 #: application/views/calltester/result.php:5
 #: application/views/logbookadvanced/checkresult.php:127
+#: application/views/logbookadvanced/checkresult.php:83
 msgid "Execution time: "
 msgstr "Çalışma süresi: "
 
@@ -10940,6 +10980,8 @@ msgstr "Yeni sürümü kontrol et"
 #: application/views/logbookadvanced/checkresult.php:109
 #: application/views/logbookadvanced/checkresult.php:119
 #: application/views/logbookadvanced/index.php:57
+#: application/views/logbookadvanced/checkresult.php:49
+#: application/views/logbookadvanced/checkresult.php:65
 msgid "Update now"
 msgstr "Şimdi güncelle"
 
@@ -12840,6 +12882,7 @@ msgid ""
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:49
+#: application/views/logbookadvanced/checkresult.php:39
 msgid "Distance Check Results"
 msgstr ""
 
@@ -12849,11 +12892,15 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:94
 #: application/views/logbookadvanced/checkresult.php:105
 #: application/views/logbookadvanced/checkresult.php:116
+#: application/views/logbookadvanced/checkresult.php:40
+#: application/views/logbookadvanced/checkresult.php:56
+#: application/views/logbookadvanced/checkresult.php:72
 msgid "QSOs to update found:"
 msgstr "Güncellenmesi gereken QSO/QSO'lar bulundu:"
 
 #: application/views/logbookadvanced/checkresult.php:53
 #: application/views/logbookadvanced/distancedialog.php:2
+#: application/views/logbookadvanced/checkresult.php:43
 msgid ""
 "Update all QSOs with the distance based on your gridsquare set in the "
 "station profile, and the gridsquare of the QSO partner. Distance will be "
@@ -12865,32 +12912,38 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:54
 #: application/views/logbookadvanced/distancedialog.php:3
+#: application/views/logbookadvanced/checkresult.php:44
 msgid "This is useful if you have imported QSOs without distance information."
 msgstr "Bu, mesafe bilgisi olmadan QSO’ları içe aktardıysanız faydalıdır."
 
 #: application/views/logbookadvanced/checkresult.php:55
 #: application/views/logbookadvanced/distancedialog.php:4
+#: application/views/logbookadvanced/checkresult.php:45
 msgid "Update will only set the distance for QSOs where the distance is empty."
 msgstr ""
 "Güncelleme sadece mesafenin boş olduğu QSO'lar için mesafeyi ayarlayacaktır."
 
 #: application/views/logbookadvanced/checkresult.php:65
+#: application/views/logbookadvanced/checkresult.php:55
 msgid "Continent Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:69
 #: application/views/logbookadvanced/continentdialog.php:2
+#: application/views/logbookadvanced/checkresult.php:59
 msgid ""
 "Update all QSOs with the continent based on the DXCC country of the QSO."
 msgstr "Tüm QSO’ları, QSO’nun DXCC ülkesine göre kıta bilgisi ile güncelle."
 
 #: application/views/logbookadvanced/checkresult.php:70
 #: application/views/logbookadvanced/continentdialog.php:3
+#: application/views/logbookadvanced/checkresult.php:60
 msgid "This is useful if you have imported QSOs without continent information."
 msgstr "Bu, kıta bilgisi olmadan QSO’ları içe aktardıysanız faydalıdır."
 
 #: application/views/logbookadvanced/checkresult.php:71
 #: application/views/logbookadvanced/continentdialog.php:4
+#: application/views/logbookadvanced/checkresult.php:61
 msgid ""
 "Update will only set the continent for QSOs where the continent is empty."
 msgstr ""
@@ -12899,6 +12952,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:81
 #: application/views/logbookadvanced/checkresult.php:124
+#: application/views/logbookadvanced/checkresult.php:80
 msgid "DXCC Check Results"
 msgstr ""
 
@@ -12909,55 +12963,69 @@ msgstr "Düzeltmeyi çalıştır"
 
 #: application/views/logbookadvanced/checkresult.php:93
 #: application/views/logbookadvanced/checkresult.php:260
+#: application/views/logbookadvanced/checkresult.php:216
 msgid "CQ Zone Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:104
 #: application/views/logbookadvanced/checkresult.php:336
+#: application/views/logbookadvanced/checkresult.php:292
 msgid "ITU Zone Check Results"
 msgstr "ITU Bölge Kontrol Sonuçları"
 
 #: application/views/logbookadvanced/checkresult.php:115
 #: application/views/logbookadvanced/checkresult.php:187
+#: application/views/logbookadvanced/checkresult.php:71
+#: application/views/logbookadvanced/checkresult.php:143
 msgid "Gridsquare Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:133
 #: application/views/logbookadvanced/checkresult.php:272
 #: application/views/logbookadvanced/checkresult.php:348
+#: application/views/logbookadvanced/checkresult.php:89
+#: application/views/logbookadvanced/checkresult.php:228
+#: application/views/logbookadvanced/checkresult.php:304
 msgid "Update selected"
 msgstr "Seçilenleri güncelle"
 
 #: application/views/logbookadvanced/checkresult.php:194
+#: application/views/logbookadvanced/checkresult.php:150
 msgid "These QSOs MAY have incorrect gridsquares."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:195
+#: application/views/logbookadvanced/checkresult.php:151
 msgid ""
 "Results depends on the correct DXCC. The gridsquare list comes from the TQSL "
 "gridsquare database."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:208
+#: application/views/logbookadvanced/checkresult.php:164
 msgid "DXCC Gridsquare"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:231
 #: application/views/logbookadvanced/index.php:77
+#: application/views/logbookadvanced/checkresult.php:187
 msgid "Show more"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:262
+#: application/views/logbookadvanced/checkresult.php:218
 msgid ""
 "The following QSOs were found to have a different CQ zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:267
+#: application/views/logbookadvanced/checkresult.php:223
 msgid "Force update even if DXCC covers multiple CQ zones"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:268
+#: application/views/logbookadvanced/checkresult.php:224
 msgid ""
 "The update function can only set the main CQ zone which is assigned to the "
 "DXCC. If the DXCC covers multiple CQ zones there is a chance that this is "
@@ -12968,6 +13036,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:285
 #: application/views/search/cqzones_result.php:14
+#: application/views/logbookadvanced/checkresult.php:241
 msgid "DXCC CQ Zone"
 msgstr "DXCC CQ Bölgesi"
 
@@ -13000,6 +13069,8 @@ msgstr "DXCC CQ Bölgesi"
 #: application/views/view_log/qso.php:742
 #: application/views/view_log/qso.php:749
 #: application/views/view_log/qso.php:754
+#: application/views/logbookadvanced/checkresult.php:243
+#: application/views/logbookadvanced/checkresult.php:319
 msgid "Station"
 msgstr "İstasyon"
 
@@ -13007,20 +13078,25 @@ msgstr "İstasyon"
 #: application/views/logbookadvanced/checkresult.php:407
 #: application/views/search/cqzones_result.php:51
 #: application/views/search/ituzones_result.php:51
+#: application/views/logbookadvanced/checkresult.php:287
+#: application/views/logbookadvanced/checkresult.php:363
 msgid "No incorrect CQ Zones were found."
 msgstr "Hatalı CQ Bölgesi bulunamadı."
 
 #: application/views/logbookadvanced/checkresult.php:338
+#: application/views/logbookadvanced/checkresult.php:294
 msgid ""
 "The following QSOs were found to have a different ITU zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:343
+#: application/views/logbookadvanced/checkresult.php:299
 msgid "Force update even if DXCC covers multiple ITU zones"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:344
+#: application/views/logbookadvanced/checkresult.php:300
 msgid ""
 "The update function can only set the main ITU zone which is assigned to the "
 "DXCC. If the DXCC covers multiple ITU zones there is a chance that this is "
@@ -13031,6 +13107,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:361
 #: application/views/search/ituzones_result.php:14
+#: application/views/logbookadvanced/checkresult.php:317
 msgid "DXCC ITU Zone"
 msgstr "DXCC ITU Bölgesi"
 
@@ -14237,6 +14314,7 @@ msgstr "Sebep"
 #: application/views/logbookadvanced/showUpdateResult.php:62
 #: application/views/logbookadvanced/showUpdateResult.php:106
 #: application/views/search/lotw_unconfirmed.php:32
+#: application/views/logbookadvanced/showUpdateResult.php:45
 msgid "Station location"
 msgstr "İstasyon Konumu"
 
