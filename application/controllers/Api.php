@@ -42,7 +42,7 @@ class API extends CI_Controller {
 		$result = $this->rate_limit->check($endpoint, $identifier);
 
 		if (!$result['allowed']) {
-			log_message("Debug","Rate limit for ".$endpoint." and ID:".($identifier ?? '')." exceeded");
+			log_message("Debug","Rate limit for endpoint ".$endpoint." and ID: ".($identifier ?? '')." exceeded");
 			$this->rate_limit->send_limit_exceeded_response($result['retry_after']);
 			return false;
 		}
