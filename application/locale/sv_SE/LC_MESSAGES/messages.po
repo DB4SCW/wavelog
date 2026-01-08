@@ -130,6 +130,7 @@ msgstr ""
 #: application/controllers/Lotw.php:993 application/controllers/Qso.php:217
 #: application/controllers/Qso.php:348 application/controllers/Qso.php:369
 #: application/controllers/Qso.php:392 application/controllers/Qso.php:692
+#: application/controllers/Operator.php:13
 msgid "You're not allowed to do that!"
 msgstr "Det är inte tillåtet!"
 

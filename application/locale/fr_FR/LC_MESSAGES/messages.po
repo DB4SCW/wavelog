@@ -133,7 +133,7 @@ msgstr ""
 #: application/controllers/Usermode.php:15
 #: application/controllers/Webadif.php:91
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/Operator.php:13
 msgid "You're not allowed to do that!"
 msgstr "Vous n'avez pas le droit de faire ça !"
 

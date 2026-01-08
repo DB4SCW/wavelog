@@ -131,6 +131,7 @@ msgstr ""
 #: application/models/Club_model.php:52 application/controllers/Qso.php:217
 #: application/controllers/Qso.php:348 application/controllers/Qso.php:369
 #: application/controllers/Qso.php:392 application/controllers/Qso.php:692
+#: application/controllers/Operator.php:13
 msgid "You're not allowed to do that!"
 msgstr "Bunu yapmanıza izin verilmiyor!"
 
