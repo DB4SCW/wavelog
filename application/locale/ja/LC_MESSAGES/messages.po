@@ -131,6 +131,7 @@ msgstr ""
 #: application/controllers/Qso.php:348 application/controllers/Qso.php:369
 #: application/controllers/Qso.php:392 application/controllers/Qso.php:692
 #: application/controllers/Operator.php:13
+#: application/controllers/Statistics.php:10
 msgid "You're not allowed to do that!"
 msgstr "それは許されません！"
 
@@ -418,6 +419,7 @@ msgstr "ログ表示 - VUCC"
 #: application/controllers/Timeline.php:135
 #: application/controllers/Timeline.php:138
 #: application/controllers/Timeline.php:141
+#: application/controllers/Statistics.php:372
 msgid "Log View"
 msgstr "ログ表示"
 
@@ -2909,27 +2911,32 @@ msgstr "局の所在地一覧"
 
 #: application/controllers/Statistics.php:26
 #: application/views/interface_assets/header.php:154
+#: application/controllers/Statistics.php:23
 msgid "Statistics"
 msgstr "統計"
 
 #: application/controllers/Statistics.php:302
 #: application/views/interface_assets/header.php:158
 #: application/views/statistics/qsltable.php:5
+#: application/controllers/Statistics.php:299
 msgid "QSL Statistics"
 msgstr "QSL統計"
 
 #: application/controllers/Statistics.php:317
 #: application/views/interface_assets/header.php:156
 #: application/views/statistics/antennaanalytics.php:3
+#: application/controllers/Statistics.php:314
 msgid "Antenna Analytics"
 msgstr "アンテナ分析"
 
 #: application/controllers/Statistics.php:375
+#: application/controllers/Statistics.php:372
 msgid "Satellite QSOs"
 msgstr "衛星QSO"
 
 #: application/controllers/Statistics.php:391
 #: application/views/interface_assets/header.php:182
+#: application/controllers/Statistics.php:388
 msgid "EME Initials"
 msgstr "EME Initials"
 

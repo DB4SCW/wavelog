@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-08 07:20+0000\n"
+"POT-Creation-Date: 2026-01-08 08:41+0000\n"
 "PO-Revision-Date: 2024-11-19 01:22+0000\n"
 "Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: Latvian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -109,6 +109,7 @@ msgstr ""
 #: application/controllers/Simplefle.php:7
 #: application/controllers/Station.php:17
 #: application/controllers/Stationsetup.php:16
+#: application/controllers/Statistics.php:10
 #: application/controllers/Themes.php:17
 #: application/controllers/Timeline.php:10
 #: application/controllers/Timeplotter.php:11
@@ -400,7 +401,7 @@ msgstr ""
 #: application/controllers/Awards.php:560
 #: application/controllers/Callstats.php:100
 #: application/controllers/Distancerecords.php:86
-#: application/controllers/Statistics.php:375
+#: application/controllers/Statistics.php:372
 #: application/controllers/Timeline.php:126
 #: application/controllers/Timeline.php:129
 #: application/controllers/Timeline.php:132
@@ -2815,28 +2816,28 @@ msgstr ""
 msgid "Station location list"
 msgstr ""
 
-#: application/controllers/Statistics.php:26
+#: application/controllers/Statistics.php:23
 #: application/views/interface_assets/header.php:154
 msgid "Statistics"
 msgstr ""
 
-#: application/controllers/Statistics.php:302
+#: application/controllers/Statistics.php:299
 #: application/views/interface_assets/header.php:158
 #: application/views/statistics/qsltable.php:5
 msgid "QSL Statistics"
 msgstr ""
 
-#: application/controllers/Statistics.php:317
+#: application/controllers/Statistics.php:314
 #: application/views/interface_assets/header.php:156
 #: application/views/statistics/antennaanalytics.php:3
 msgid "Antenna Analytics"
 msgstr ""
 
-#: application/controllers/Statistics.php:375
+#: application/controllers/Statistics.php:372
 msgid "Satellite QSOs"
 msgstr ""
 
-#: application/controllers/Statistics.php:391
+#: application/controllers/Statistics.php:388
 #: application/views/interface_assets/header.php:182
 msgid "EME Initials"
 msgstr ""

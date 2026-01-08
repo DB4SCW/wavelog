@@ -130,6 +130,7 @@ msgstr ""
 #: application/controllers/Webadif.php:91
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52 application/controllers/Operator.php:13
+#: application/controllers/Statistics.php:10
 msgid "You're not allowed to do that!"
 msgstr "Вам нельзя это делать!"
 
@@ -417,6 +418,7 @@ msgstr "Журнал — VUCC"
 #: application/controllers/Timeline.php:135
 #: application/controllers/Timeline.php:138
 #: application/controllers/Timeline.php:141
+#: application/controllers/Statistics.php:372
 msgid "Log View"
 msgstr "Просмотр журнала"
 
@@ -2924,27 +2926,32 @@ msgstr "Список профилей QTH"
 
 #: application/controllers/Statistics.php:26
 #: application/views/interface_assets/header.php:154
+#: application/controllers/Statistics.php:23
 msgid "Statistics"
 msgstr "Статистика"
 
 #: application/controllers/Statistics.php:302
 #: application/views/interface_assets/header.php:158
 #: application/views/statistics/qsltable.php:5
+#: application/controllers/Statistics.php:299
 msgid "QSL Statistics"
 msgstr "Статистика QSL"
 
 #: application/controllers/Statistics.php:317
 #: application/views/interface_assets/header.php:156
 #: application/views/statistics/antennaanalytics.php:3
+#: application/controllers/Statistics.php:314
 msgid "Antenna Analytics"
 msgstr "Аналитика антенн"
 
 #: application/controllers/Statistics.php:375
+#: application/controllers/Statistics.php:372
 msgid "Satellite QSOs"
 msgstr "QSO через спутник"
 
 #: application/controllers/Statistics.php:391
 #: application/views/interface_assets/header.php:182
+#: application/controllers/Statistics.php:388
 msgid "EME Initials"
 msgstr "Первые EME контакты"
 
