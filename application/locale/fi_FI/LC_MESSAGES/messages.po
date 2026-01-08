@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-08 08:41+0000\n"
+"POT-Creation-Date: 2026-01-08 08:42+0000\n"
 "PO-Revision-Date: 2025-08-19 17:14+0000\n"
 "Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -70,9 +70,9 @@ msgstr ""
 #: application/controllers/Lotw.php:90 application/controllers/Lotw.php:116
 #: application/controllers/Lotw.php:414 application/controllers/Lotw.php:437
 #: application/controllers/Lotw.php:801 application/controllers/Lotw.php:888
-#: application/controllers/Lotw.php:993 application/controllers/Map.php:12
-#: application/controllers/Map.php:27 application/controllers/Mode.php:15
-#: application/controllers/Notes.php:10 application/controllers/Operator.php:13
+#: application/controllers/Map.php:12 application/controllers/Map.php:27
+#: application/controllers/Mode.php:15 application/controllers/Notes.php:10
+#: application/controllers/Operator.php:13
 #: application/controllers/Options.php:14 application/controllers/Oqrs.php:15
 #: application/controllers/Oqrs.php:165 application/controllers/Qrbcalc.php:13
 #: application/controllers/Qrz.php:200 application/controllers/Qrz.php:287
@@ -2006,24 +2006,8 @@ msgstr ""
 msgid "LoTW ADIF Import"
 msgstr ""
 
-#: application/controllers/Lotw.php:920 application/controllers/Lotw.php:1028
+#: application/controllers/Lotw.php:920
 msgid "You have not defined your ARRL LoTW credentials!"
-msgstr ""
-
-#: application/controllers/Lotw.php:995
-msgid "LoTW .TQ8 Upload"
-msgstr ""
-
-#: application/controllers/Lotw.php:1073
-msgid "Your ARRL username and/or password is incorrect."
-msgstr ""
-
-#: application/controllers/Lotw.php:1092 application/controllers/Lotw.php:1097
-msgid "LoTW .TQ8 Sent"
-msgstr ""
-
-#: application/controllers/Lotw.php:1104
-msgid "LoTW .TQ8 Not Sent"
 msgstr ""
 
 #: application/controllers/Map.php:48
