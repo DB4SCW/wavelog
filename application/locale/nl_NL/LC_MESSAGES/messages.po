@@ -134,6 +134,8 @@ msgstr ""
 #: application/controllers/Qso.php:392 application/controllers/Qso.php:692
 #: application/controllers/Operator.php:13
 #: application/controllers/Statistics.php:10
+#: application/controllers/Webadif.php:11
+#: application/controllers/Webadif.php:101
 msgid "You're not allowed to do that!"
 msgstr "Je mag dat niet doen!"
 
@@ -3408,6 +3410,8 @@ msgstr "Kaart exporteren"
 #: application/controllers/Webadif.php:95
 #: application/controllers/Webadif.php:142
 #: application/views/interface_assets/header.php:520
+#: application/controllers/Webadif.php:105
+#: application/controllers/Webadif.php:152
 msgid "QO-100 Dx Club Upload"
 msgstr "QO-100 Dx Club Upload"
 
