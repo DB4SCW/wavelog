@@ -192,7 +192,7 @@ function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_f
 					 // Add country name if selected
 					const countryName = getSelectedCountryName();
 					if (countryName) {
-						html += '<h4>Country: ' + countryName + '</h4>';
+						html += '<h4>DXCC: ' + countryName + '</h4>';
 					}
 
 					html += "<table border=\"0\">";
