@@ -2081,10 +2081,11 @@ class Logbookadvanced_model extends CI_Model {
 	/*
 	 * Get list of QSOs with IOTA that do not match the IOTAs listed for the DXCC.
 	 * Some islands are excluded as they can be in multiple DXCCs.
-	 * These are excluded:
+	 *
+	 * These are excluded by not having a dxccid or dxccid = 0 in the iota table.
 	 * 'AF-034','AF-055','AF-071','AS-004','AS-034','AS-035','AS-052','EU-005','EU-053',
 	 * 'EU-098','EU-115','EU-117','EU-129','EU-154','EU-191','EU-192','NA-015','NA-096',
-	 * 'NA-105','OC-034','OC-061','OC-088','OC-148','SA-008', 'OC-295'
+	 * 'NA-105','OC-034','OC-061','OC-088','OC-148','SA-008','OC-295'
 	 */
 	public function checkIota() {
 
@@ -2099,6 +2100,7 @@ class Logbookadvanced_model extends CI_Model {
 		from " . $this->config->item('table_name') . " thcv
 		join station_profile on thcv.station_id = station_profile.station_id
 		join dxcc_entities on dxcc_entities.adif = thcv.COL_DXCC
+		join iota on thcv.col_iota = iota.tag
 		where station_profile.user_id = ?
 		and thcv.col_dxcc > 0
 		and not exists (
@@ -2107,13 +2109,23 @@ class Logbookadvanced_model extends CI_Model {
 			where dxccid = thcv.col_dxcc
 			and tag = thcv.col_iota
 		)
-		and thcv.col_dxcc > 0
 		and thcv.col_iota is not null
 		and thcv.col_iota <> ''
-		and thcv.col_iota not in ('AF-034','AF-055','AF-071','AS-004','AS-034','AS-035','AS-052','EU-005','EU-053',
-		'EU-098','EU-115','EU-117','EU-129','EU-154','EU-191','EU-192','NA-015','NA-096',
-		'NA-105','OC-034','OC-061','OC-088','OC-148','SA-008', 'OC-295')
+		and iota.dxccid is not null
+		and iota.dxccid > 0
 		order by station_profile_name, col_time_on desc;";
+
+		$sql = "select col_primary_key, col_time_on, col_call, col_band, col_gridsquare, col_dxcc, col_country, station_profile_name, col_lotw_qsl_rcvd, col_mode, col_submode, col_iota, iotadxcc.name as correctdxcc
+		from  " . $this->config->item('table_name') . "  thcv
+		join station_profile on thcv.station_id = station_profile.station_id
+		join dxcc_entities on dxcc_entities.adif = thcv.COL_DXCC
+		join iota on thcv.col_iota = iota.tag
+		join dxcc_entities iotadxcc on iota.dxccid = iotadxcc.adif
+		where station_profile.user_id = ?
+		and thcv.col_dxcc > 0
+		and thcv.col_dxcc <> iota.dxccid
+		and iota.dxccid > 0
+		order by station_profile_name, col_time_on desc";
 
 		$bindings[] = [$this->session->userdata('user_id')];
 
