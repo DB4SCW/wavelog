@@ -2130,20 +2130,20 @@ class Logbookadvanced_model extends CI_Model {
 	public function checkMultiDxccIota() {
 		// Define IOTA tags that span multiple DXCCs with their valid prefixes
 		$multiDxccIotas = [
-			'AS-004' => ['5b', 'zc'],
-			'EU-053' => ['oj0', 'sm'],
-			'EU-115' => ['ei', 'gi', 'mi'],
-			'EU-117' => ['r1m', 'oh'],
-			'EU-129' => ['dl', 'sp1'],
-			'EU-191' => ['yo', 'ur'],
-			'EU-192' => ['sm', 'oh'],
-			'NA-015' => ['co', 'kg4'],
-			'NA-096' => ['hh', 'hi'],
-			'NA-105' => ['fs', 'pj7'],
-			'OC-034' => ['p2', 'yb9'],
-			'OC-088' => ['9m6', '9m8', 'v85', 'yb7'],
-			'OC-148' => ['yb9', '4w'],
-			'SA-008' => ['lu', 'ce8'],
+			'AS-004' => [215, 283], // 5B4, ZC4
+			'EU-053' => [167, 284], // OJ0, SM
+			'EU-115' => [245, 265], // EI, GI
+			'EU-117' => [151, 224], // R1M, OH
+			'EU-129' => [230, 269], // DL, SP
+			'EU-191' => [275, 288], // YO, UR
+			'EU-192' => [284, 224], // SM, OH
+			'NA-015' => [70, 105], // CO, KG4
+			'NA-096' => [72, 78], // HH, HI
+			'NA-105' => [213, 518], // FS, PJ7
+			'OC-034' => [163, 327], // P2, YB
+			'OC-088' => [46, 327, 345], // 9M6, V8, YB
+			'OC-148' => [327, 511], // YB, 4W
+			'SA-008' => [100, 112] // LU, CE
 		];
 
 		$allResults = [];
@@ -2159,10 +2159,10 @@ class Logbookadvanced_model extends CI_Model {
 					JOIN station_profile ON thcv.station_id = station_profile.station_id
 					JOIN dxcc_entities ON dxcc_entities.adif = thcv.COL_DXCC
 					JOIN iota ON thcv.col_iota = iota.tag
-					JOIN dxcc_entities iotadxcc ON LOWER(iotadxcc.prefix) IN ($prefixList)
+					JOIN dxcc_entities iotadxcc ON iotadxcc.adif IN ($prefixList)
 					WHERE station_profile.user_id = ?
 					AND thcv.col_iota = ?
-					AND LOWER(dxcc_entities.prefix) NOT IN ($prefixList)
+					AND dxcc_entities.adif NOT IN ($prefixList)
 					ORDER BY station_profile_name, col_time_on DESC";
 
 			$bindings = [$this->session->userdata('user_id'), $iotaTag];
