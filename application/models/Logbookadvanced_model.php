@@ -2148,21 +2148,25 @@ class Logbookadvanced_model extends CI_Model {
 
 		$allResults = [];
 
-		foreach ($multiDxccIotas as $iotaTag => $prefixes) {
+		foreach ($multiDxccIotas as $iotaTag => $adifList) {
 			// Build IN clause for SQL
-			$prefixList = "'" . implode("','", $prefixes) . "'";
+			$adifListStr = implode(',', $adifList);
 
-			$sql = "SELECT col_primary_key, col_time_on, col_call, col_band, col_gridsquare,
-					col_dxcc, col_country, station_profile_name, col_lotw_qsl_rcvd,
-					col_mode, col_submode, col_iota, iotadxcc.name as correctdxcc
+			$sql = "SELECT thcv.col_primary_key, thcv.col_time_on, thcv.col_call, thcv.col_band, thcv.col_gridsquare,
+					thcv.col_dxcc, thcv.col_country, station_profile.station_profile_name, thcv.col_lotw_qsl_rcvd,
+					thcv.col_mode, thcv.col_submode, thcv.col_iota,
+					(
+						SELECT GROUP_CONCAT(DISTINCT d.name ORDER BY d.name SEPARATOR ', ')
+						FROM dxcc_entities d
+						WHERE d.adif IN ($adifListStr)
+					) as correctdxcc
 					FROM " . $this->config->item('table_name') . " thcv
 					JOIN station_profile ON thcv.station_id = station_profile.station_id
 					JOIN dxcc_entities ON dxcc_entities.adif = thcv.COL_DXCC
 					JOIN iota ON thcv.col_iota = iota.tag
-					JOIN dxcc_entities iotadxcc ON iotadxcc.adif IN ($prefixList)
 					WHERE station_profile.user_id = ?
 					AND thcv.col_iota = ?
-					AND dxcc_entities.adif NOT IN ($prefixList)
+					AND dxcc_entities.adif NOT IN ($adifListStr)
 					ORDER BY station_profile_name, col_time_on DESC";
 
 			$bindings = [$this->session->userdata('user_id'), $iotaTag];
