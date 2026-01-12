@@ -13042,7 +13042,6 @@ msgid "Check IOTA against DXCC"
 msgstr "Controleer IOTA ten opzichte van DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
-#, fuzzy
 msgid "Use Wavelog to check IOTA against DXCC"
 msgstr "Gebruik Wavelog om IOTA tegen DXCC te controleren."
 
