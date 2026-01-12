@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-12 11:41+0000\n"
-"Last-Translator: PE1PQX <Andre@pe1pqx.eu>\n"
+"PO-Revision-Date: 2026-01-13 01:48+0000\n"
+"Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/nl/>\n"
 "Language: nl_NL\n"
@@ -12926,7 +12926,7 @@ msgstr "IOTA Check resultaten"
 
 #: application/views/logbookadvanced/checkresult.php:378
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr "Deze QSOs bevatten mogelijk foutieve IOTA referenties"
+msgstr "Deze QSOs bevatten mogelijk foutieve IOTA referenties."
 
 #: application/views/logbookadvanced/checkresult.php:379
 msgid ""
@@ -13043,7 +13043,7 @@ msgstr "Controleer IOTA ten opzichte van DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
 msgid "Use Wavelog to check IOTA against DXCC"
-msgstr "Gebruik Wavelog om IOTA tegen DXCC te controleren."
+msgstr "Gebruik Wavelog om IOTA tegen DXCC te controleren"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"
