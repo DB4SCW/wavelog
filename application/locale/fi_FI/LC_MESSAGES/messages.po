@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2026-01-08 08:50+0000\n"
 "PO-Revision-Date: 2026-01-10 10:49+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
-"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
-"main-translation/fi/>\n"
+"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
+"translation/fi/>\n"
 "Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1532,6 +1532,11 @@ msgstr "eQSL"
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
+#: application/views/logbookadvanced/checkresult.php:104
+#: application/views/logbookadvanced/checkresult.php:162
+#: application/views/logbookadvanced/checkresult.php:240
+#: application/views/logbookadvanced/checkresult.php:316
+#: application/views/logbookadvanced/checkresult.php:387
 msgid "Mode"
 msgstr "Lähetelaji"
 
@@ -1848,6 +1853,11 @@ msgstr "Etäisyys"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
+#: application/views/logbookadvanced/checkresult.php:103
+#: application/views/logbookadvanced/checkresult.php:161
+#: application/views/logbookadvanced/checkresult.php:241
+#: application/views/logbookadvanced/checkresult.php:317
+#: application/views/logbookadvanced/checkresult.php:386
 msgid "Band"
 msgstr "Bandi"
 
@@ -4457,6 +4467,11 @@ msgstr "Mitään ei löytynyt!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:672
 #: application/views/zonechecker/result.php:50
+#: application/views/logbookadvanced/checkresult.php:101
+#: application/views/logbookadvanced/checkresult.php:159
+#: application/views/logbookadvanced/checkresult.php:237
+#: application/views/logbookadvanced/checkresult.php:313
+#: application/views/logbookadvanced/checkresult.php:384
 msgid "Callsign"
 msgstr "Radioamatöörikutsu"
 
@@ -4572,6 +4587,8 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:196
 #: application/views/visitor/index.php:151
 #: application/views/widgets/qsos.php:16
+#: application/views/logbookadvanced/checkresult.php:238
+#: application/views/logbookadvanced/checkresult.php:314
 msgid "Date"
 msgstr "Päivä"
 
@@ -4608,6 +4625,8 @@ msgstr "Päivä"
 #: application/views/view_log/partial/log.php:6
 #: application/views/view_log/partial/log_ajax.php:198
 #: application/views/visitor/index.php:154
+#: application/views/logbookadvanced/checkresult.php:239
+#: application/views/logbookadvanced/checkresult.php:315
 msgid "Time"
 msgstr "Aika"
 
@@ -4893,9 +4912,9 @@ msgid ""
 "with DOK info."
 msgstr ""
 "Mene %s ja vie lokikirjasi vahvistettujen DOK-yhteyksien kanssa. Prosessin "
-"nopeuttamiseksi voit valita vain DL QSOt ladattavaksi "
-"(eli laita 'DL' prefiksilistaan). Ladattu ADIF-tiedosto voidaan ladata tänne "
-"päivittääksesi QSOt DOK-tiedolla."
+"nopeuttamiseksi voit valita vain DL QSOt ladattavaksi (eli laita 'DL' "
+"prefiksilistaan). Ladattu ADIF-tiedosto voidaan ladata tänne päivittääksesi "
+"QSOt DOK-tiedolla."
 
 #: application/views/adif/import.php:342
 #, php-format
@@ -5021,8 +5040,8 @@ msgid ""
 "If unchecked, this will erase the default serial number that (for example) "
 "N1MM+ produces. If checked, it will correct the serial number if necessary."
 msgstr ""
-"Jos tätä ei ole valittuna, poistuu oletussarjanumero, jonka esimerkiksi N1MM+"
-" tuottaa. Jos se on valittuna, se korjaa sarjanumeron tarvittaessa."
+"Jos tätä ei ole valittuna, poistuu oletussarjanumero, jonka esimerkiksi "
+"N1MM+ tuottaa. Jos se on valittuna, se korjaa sarjanumeron tarvittaessa."
 
 #: application/views/adif/import_failed.php:15
 msgid "The ADIF file could not be parsed correctly."
@@ -5385,8 +5404,8 @@ msgid ""
 "Fields taken for this Award: Propagation-Mode and SAT-Name (ADIF: "
 "PROP_MODE=SAT, SAT_NAME='AO-73')"
 msgstr ""
-"Tätä awardia varten käytetyt kentät: Propagaatio ja SAT-nimi "
-"(ADIF: PROP_MODE=SAT, SAT_NAME='AO-73')"
+"Tätä awardia varten käytetyt kentät: Propagaatio ja SAT-nimi (ADIF: "
+"PROP_MODE=SAT, SAT_NAME='AO-73')"
 
 #: application/views/awards/73on73/index.php:32
 #: application/views/awards/jcc/index.php:153
@@ -5423,10 +5442,10 @@ msgid ""
 "contacts with specified numbers of U.S. counties under rules and conditions "
 "you can find %s."
 msgstr ""
-"Yhdysvaltain piirikuntapalkinto (USA-CA), jonka sponsori on MARAC "
-"(Mobile Amateur Radio Awards Club), myönnetään vahvistetuista "
-"kaksisuuntaisista radiokontakteista tiettyyn määrään Yhdysvaltain "
-"piirikuntia sääntöjen ja ehtojen mukaisesti, jotka löydät %s."
+"Yhdysvaltain piirikuntapalkinto (USA-CA), jonka sponsori on MARAC (Mobile "
+"Amateur Radio Awards Club), myönnetään vahvistetuista kaksisuuntaisista "
+"radiokontakteista tiettyyn määrään Yhdysvaltain piirikuntia sääntöjen ja "
+"ehtojen mukaisesti, jotka löydät %s."
 
 #: application/views/awards/counties/index.php:9
 msgid ""
@@ -5450,9 +5469,9 @@ msgid ""
 "Fields taken for this Award: State (ADIF: STATE), Stations County (ADIF: "
 "CNTY), DXCC (Must be one of 291 (U.S.A.) ,6 (ALASKA) or 110 (HAWAII))"
 msgstr ""
-"Awardia varten käytetyt kentät: Osavaltio (ADIF: STATE), Aseman lääni "
-"(ADIF: CNTY), DXCC (Pitää olla yksi seuraavista: 291 (U.S.A.), 6 (ALASKA) "
-"tai 110 (HAWAII))"
+"Awardia varten käytetyt kentät: Osavaltio (ADIF: STATE), Aseman lääni (ADIF: "
+"CNTY), DXCC (Pitää olla yksi seuraavista: 291 (U.S.A.), 6 (ALASKA) tai 110 "
+"(HAWAII))"
 
 #: application/views/awards/counties/index.php:22
 msgid "Counties Worked"
@@ -5894,10 +5913,9 @@ msgid ""
 "is a common mistake, often being logged as the letter O."
 msgstr ""
 "DOK koostuu kirjaimesta piiriä varten ja kaksinumeroisesta luvusta "
-"paikallista osastoa varten, kuten P03 Friedrichshafen "
-"(kaupunki, jossa on 'Hamradio-näyttely') tai F41 Baunatal "
-"(DARC:n päämajan sijainti). Huomio: Nolla DOK:ssa on yleinen virhe, joka "
-"kirjataan usein kirjaimena O."
+"paikallista osastoa varten, kuten P03 Friedrichshafen (kaupunki, jossa on "
+"'Hamradio-näyttely') tai F41 Baunatal (DARC:n päämajan sijainti). Huomio: "
+"Nolla DOK:ssa on yleinen virhe, joka kirjataan usein kirjaimena O."
 
 #: application/views/awards/dok/index.php:10
 msgid "DARC website"
@@ -6023,8 +6041,8 @@ msgid ""
 "Fields taken for this Award: DXCC (Needs to be a valid one out of the DXCC-"
 "ADIF-Spec-List"
 msgstr ""
-"Tässä awardissa käytetyt kentät: DXCC "
-"(Täytyy olla kelvollinen DXCC-ADIF-Spec-Listan mukainen)"
+"Tässä awardissa käytetyt kentät: DXCC (Täytyy olla kelvollinen DXCC-ADIF-"
+"Spec-Listan mukainen)"
 
 #: application/views/awards/dxcc/index.php:44
 msgid "Show DXCC Map"
@@ -6218,9 +6236,8 @@ msgid ""
 "Fields taken for this Award: DXCC (Must be USA), Gridsquare (Must contain a "
 "grid from one of the 488 mainland gridsquares!), Band must be 6M."
 msgstr ""
-"Tähän awardiin käytetyt kentät: DXCC (Täytyy olla USA), Gridsquare "
-"(Täytyy sisältää ruudukko yhdestä 488 manner-ruudusta!), bandin on oltava 6 "
-"metriä."
+"Tähän awardiin käytetyt kentät: DXCC (Täytyy olla USA), Gridsquare (Täytyy "
+"sisältää ruudukko yhdestä 488 manner-ruudusta!), bandin on oltava 6 metriä."
 
 #: application/views/awards/gridmaster/index.php:12
 msgid "US Gridmaster Award"
@@ -6274,9 +6291,8 @@ msgid ""
 "grid from one of the 488 mainland gridsquares!), Propagation-Mode and SAT-"
 "Name"
 msgstr ""
-"Awardiin käytetyt kentät: DXCC (täytyy olla USA), Gridsquare "
-"(sisältää yhden 488 mantereesta lokaattoriruudusta!), Propagation-mode ja "
-"SAT-Name"
+"Awardiin käytetyt kentät: DXCC (täytyy olla USA), Gridsquare (sisältää yhden "
+"488 mantereesta lokaattoriruudusta!), Propagation-mode ja SAT-Name"
 
 #: application/views/awards/gridmaster/index.php:18
 msgid "Gridmaster Award"
@@ -6364,8 +6380,8 @@ msgid ""
 "Fields taken for this Award: DXCC (Must be Switzerland) and STATE (Must "
 "contain a valid state abbreviation!)"
 msgstr ""
-"Tämän awardin käyttämät kentät: DXCC (Täytyy olla Sveitsi) ja STATE "
-"(Täytyy sisältää kelvollisen osavaltion lyhenteen!)"
+"Tämän awardin käyttämät kentät: DXCC (Täytyy olla Sveitsi) ja STATE (Täytyy "
+"sisältää kelvollisen osavaltion lyhenteen!)"
 
 #: application/views/awards/helvetia/index.php:118
 msgid "Show Helvetia Map"
@@ -6413,17 +6429,17 @@ msgid ""
 "an Honor Roll and annual listings, as well as recognizing it with "
 "certificates and prestigious awards."
 msgstr ""
-"Sitä hallinnoi Islands On The Air (IOTA) Ltd "
-"(jota kutsutaan IOTA Managementiksi) yhteistyössä Iso-Britannian radioseuran "
-"(RSGB) kanssa. IOTA Management on ryhmitellyt maailman saaret noin 1200 "
-"'IOTA-ryhmään', joilla jokaisella on vaihteleva määrä 'laskijoita', jotka "
-"ovat kelpoisia saaria. Nämä luettelot julkaistaan IOTA-hakemistossa ja IOTA-"
-"verkkosivustolla. IOTA Island Chaserin tavoitteena on ottaa radiokontakti "
-"vähintään yhteen laskijaan mahdollisimman monesta näistä ryhmistä. "
-"Ohjelmalla on selkeästi määritellyt säännöt ja se kannustaa ystävälliseen "
-"kilpailuun jahdareiden kesken julkaisemalla osallistujien suorituskyvyn "
-"Honor Rollissa ja vuosittaisissa luetteloissa sekä tunnustamalla sen "
-"sertifikaateilla ja arvostetuilla palkinnoilla."
+"Sitä hallinnoi Islands On The Air (IOTA) Ltd (jota kutsutaan IOTA "
+"Managementiksi) yhteistyössä Iso-Britannian radioseuran (RSGB) kanssa. IOTA "
+"Management on ryhmitellyt maailman saaret noin 1200 'IOTA-ryhmään', joilla "
+"jokaisella on vaihteleva määrä 'laskijoita', jotka ovat kelpoisia saaria. "
+"Nämä luettelot julkaistaan IOTA-hakemistossa ja IOTA-verkkosivustolla. IOTA "
+"Island Chaserin tavoitteena on ottaa radiokontakti vähintään yhteen "
+"laskijaan mahdollisimman monesta näistä ryhmistä. Ohjelmalla on selkeästi "
+"määritellyt säännöt ja se kannustaa ystävälliseen kilpailuun jahdareiden "
+"kesken julkaisemalla osallistujien suorituskyvyn Honor Rollissa ja "
+"vuosittaisissa luetteloissa sekä tunnustamalla sen sertifikaateilla ja "
+"arvostetuilla palkinnoilla."
 
 #: application/views/awards/iota/index.php:21
 #, php-format
@@ -6555,8 +6571,8 @@ msgid ""
 "Fields taken for this Award: DXCC (Japan) and County (Must contain a valid "
 "reference!)"
 msgstr ""
-"Tätä awardia varten käytetyt kentät ovat: DXCC (Japani) ja County "
-"(Täytyy sisältää kelvollinen viite!)"
+"Tätä awardia varten käytetyt kentät ovat: DXCC (Japani) ja County (Täytyy "
+"sisältää kelvollinen viite!)"
 
 #: application/views/awards/jcc/index.php:117
 msgid "Show JCC Map"
@@ -6617,8 +6633,9 @@ msgid ""
 "Bronze (3), Silver (7), Gold (12). All 16 voivodeships required."
 msgstr ""
 "Awardiluokat: MIXED (kaikki modet/kaistat), PHONE (SSB/AM/FM/SSTV), CW, DIGI "
-"(RTTY/PSK/FSK), ja yksittäiset bandit (160M-2M). Luokat: Perus (1 QSO/läänit)"
-", Pronssi (3), Hopea (7), Kulta (12). Kaikki 16 voivodikuntaa vaaditaan."
+"(RTTY/PSK/FSK), ja yksittäiset bandit (160M-2M). Luokat: Perus (1 QSO/"
+"läänit), Pronssi (3), Hopea (7), Kulta (12). Kaikki 16 voivodikuntaa "
+"vaaditaan."
 
 #: application/views/awards/pl_polska/index.php:40
 #, php-format
@@ -6842,8 +6859,8 @@ msgstr ""
 #: application/views/awards/pota/index.php:11
 msgid "Fields taken for this Award: POTA_REF (must contain Park-Reference)"
 msgstr ""
-"Tätä awardia varten käytetyt kentät ovat: POTA_REF "
-"(täytyy sisältää puistoreferenssi)"
+"Tätä awardia varten käytetyt kentät ovat: POTA_REF (täytyy sisältää "
+"puistoreferenssi)"
 
 #: application/views/awards/pota/index.php:32
 #: application/views/qso/index.php:326 application/views/qso/index.php:623
@@ -6977,8 +6994,8 @@ msgstr ""
 "on oma yhdistyksensä, joka määrittelee kyseisen yhdistyksen SOTA-huiput. "
 "Jokaisesta huipusta saa aktivaattoreille ja hunttereille pisteitä, jotka "
 "liittyvät huipun korkeuteen. Erilaisista pistemääristä saa todistuksia, "
-"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' -"
-"palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
+"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' "
+"-palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
 "SOTAn online-tietokannassa."
 
 #: application/views/awards/vucc/index.php:7
@@ -7008,8 +7025,8 @@ msgid ""
 "Fields taken for this Award: Gridsquare and vucc_grids (ADIF: GRIDSQUARE, "
 "VUCC_GRIDS)"
 msgstr ""
-"Tämä awardi käyttää seuraavia kenttiä: Gridsquare ja vucc_grids "
-"(ADIF: GRIDSQUARE, VUCC_GRIDS)"
+"Tämä awardi käyttää seuraavia kenttiä: Gridsquare ja vucc_grids (ADIF: "
+"GRIDSQUARE, VUCC_GRIDS)"
 
 #: application/views/awards/vucc/index.php:23
 msgid "Grids Worked"
@@ -7163,8 +7180,8 @@ msgid ""
 "Fields taken for this Award: DXCC (Japan) and STATE (Must contain a valid "
 "prefecture!)"
 msgstr ""
-"Tämä awardi käyttää seuraavia kenttiä: DXCC (Japani) ja OSAVALTION "
-"(Täytyy sisältää kelvollisen prefektuurin!)"
+"Tämä awardi käyttää seuraavia kenttiä: DXCC (Japani) ja OSAVALTION (Täytyy "
+"sisältää kelvollisen prefektuurin!)"
 
 #: application/views/awards/waja/index.php:122
 msgid "Show WAJA Map"
@@ -7210,11 +7227,11 @@ msgid ""
 "encourages operators to engage with a diverse range of stations across the "
 "country, promoting both national connectivity and operational skill."
 msgstr ""
-"VRZA (Vereniging voor Radio Zend Amateurs) tarjoaa Worked All Provinces (WAP)"
-" -awardinradioamatööreille, jotka ovat saaneet vahvistetut yhteydet asemilta "
-"kaikista Alankomaiden kahdestatoista provinssista. Tämä palkinto kannustaa "
-"operaattoreita ottamaan yhteyttä monenlaisiin asemaryhmiin ympäri maata, "
-"edistäen sekä kansallista yhteydenpitoa että operatiivisia taitoja."
+"VRZA (Vereniging voor Radio Zend Amateurs) tarjoaa Worked All Provinces "
+"(WAP) -awardinradioamatööreille, jotka ovat saaneet vahvistetut yhteydet "
+"asemilta kaikista Alankomaiden kahdestatoista provinssista. Tämä palkinto "
+"kannustaa operaattoreita ottamaan yhteyttä monenlaisiin asemaryhmiin ympäri "
+"maata, edistäen sekä kansallista yhteydenpitoa että operatiivisia taitoja."
 
 #: application/views/awards/wap/index.php:24
 #, php-format
@@ -7329,9 +7346,9 @@ msgid ""
 "Fields taken for this Award: DXCC (Must be one of U.S.A., Alaska or Hawaii) "
 "and STATE (Must contain a valid U.S. state abbreviation!)"
 msgstr ""
-"Tämä awardi käyttää seuraavia kenttiä: DXCC "
-"(täytyy olla yksi seuraavista: USA, Alaska tai Havaiji) ja STATE "
-"(täytyy sisältää voimassa olevan Yhdysvaltojen osavaltion lyhenteen!)"
+"Tämä awardi käyttää seuraavia kenttiä: DXCC (täytyy olla yksi seuraavista: "
+"USA, Alaska tai Havaiji) ja STATE (täytyy sisältää voimassa olevan "
+"Yhdysvaltojen osavaltion lyhenteen!)"
 
 #: application/views/awards/was/index.php:120
 msgid "Show WAS Map"
@@ -7562,8 +7579,8 @@ msgstr "Suosikkien lataus epäonnistui"
 #: application/views/bandmap/list.php:43
 msgid "Modes applied. Band filter preserved (CAT connection is active)"
 msgstr ""
-"Liikennetila käytössä. Kaistanpäästösuodin säilytetty "
-"(CAT-yhteys on aktiivinen)"
+"Liikennetila käytössä. Kaistanpäästösuodin säilytetty (CAT-yhteys on "
+"aktiivinen)"
 
 #: application/views/bandmap/list.php:44
 msgid "Applied your favorite bands and modes"
@@ -7914,7 +7931,8 @@ msgstr "Ole hyvä ja odota"
 #: application/views/bandmap/list.php:145
 #, php-format
 msgid "Please wait %s seconds before sending another callsign to the QSO form"
-msgstr "Odota %s sekuntia ennen kuin lisäät toisen kutsumerkin QSO-lomakkeeseen"
+msgstr ""
+"Odota %s sekuntia ennen kuin lisäät toisen kutsumerkin QSO-lomakkeeseen"
 
 #: application/views/bandmap/list.php:148
 msgid "Loading spots..."
@@ -8580,8 +8598,8 @@ msgid ""
 "For the RSGB-IOTA contest this information contains the IOTA name (not the "
 "IOTA reference code)."
 msgstr ""
-"RSGB-IOTA-kilpailussa tämä tieto sisältää IOTA-nimen "
-"(Ei IOTA-referenssinumeroa)."
+"RSGB-IOTA-kilpailussa tämä tieto sisältää IOTA-nimen (Ei IOTA-"
+"referenssinumeroa)."
 
 #: application/views/cabrillo/index.php:48
 #: application/views/logbookadvanced/index.php:832
@@ -8754,6 +8772,9 @@ msgstr ""
 #: application/views/user/edit.php:1001 application/views/user/edit.php:1009
 #: application/views/user/edit.php:1029 application/views/user/edit.php:1058
 #: application/views/user/edit.php:1090 application/views/user/edit.php:1115
+#: application/views/logbookadvanced/checkresult.php:119
+#: application/views/logbookadvanced/checkresult.php:177
+#: application/views/logbookadvanced/checkresult.php:402
 msgid "Yes"
 msgstr "Kyllä"
 
@@ -8822,6 +8843,9 @@ msgstr "Kyllä"
 #: application/views/user/edit.php:1000 application/views/user/edit.php:1028
 #: application/views/user/edit.php:1059 application/views/user/edit.php:1089
 #: application/views/user/edit.php:1114
+#: application/views/logbookadvanced/checkresult.php:119
+#: application/views/logbookadvanced/checkresult.php:177
+#: application/views/logbookadvanced/checkresult.php:402
 msgid "No"
 msgstr "Ei"
 
@@ -10752,6 +10776,9 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:65
 #: application/views/logbookadvanced/checkresult.php:75
 #: application/views/logbookadvanced/index.php:57
+#: application/views/logbookadvanced/checkresult.php:52
+#: application/views/logbookadvanced/checkresult.php:68
+#: application/views/logbookadvanced/checkresult.php:78
 msgid "Update now"
 msgstr ""
 
@@ -12548,17 +12575,22 @@ msgid ""
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:39
+#: application/views/logbookadvanced/checkresult.php:42
 msgid "Distance Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:40
 #: application/views/logbookadvanced/checkresult.php:56
 #: application/views/logbookadvanced/checkresult.php:72
+#: application/views/logbookadvanced/checkresult.php:43
+#: application/views/logbookadvanced/checkresult.php:59
+#: application/views/logbookadvanced/checkresult.php:75
 msgid "QSOs to update found:"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:43
 #: application/views/logbookadvanced/distancedialog.php:2
+#: application/views/logbookadvanced/checkresult.php:46
 msgid ""
 "Update all QSOs with the distance based on your gridsquare set in the "
 "station profile, and the gridsquare of the QSO partner. Distance will be "
@@ -12567,84 +12599,104 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:44
 #: application/views/logbookadvanced/distancedialog.php:3
+#: application/views/logbookadvanced/checkresult.php:47
 msgid "This is useful if you have imported QSOs without distance information."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:45
 #: application/views/logbookadvanced/distancedialog.php:4
+#: application/views/logbookadvanced/checkresult.php:48
 msgid "Update will only set the distance for QSOs where the distance is empty."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:55
+#: application/views/logbookadvanced/checkresult.php:58
 msgid "Continent Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:59
 #: application/views/logbookadvanced/continentdialog.php:2
+#: application/views/logbookadvanced/checkresult.php:62
 msgid ""
 "Update all QSOs with the continent based on the DXCC country of the QSO."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:60
 #: application/views/logbookadvanced/continentdialog.php:3
+#: application/views/logbookadvanced/checkresult.php:63
 msgid "This is useful if you have imported QSOs without continent information."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:61
 #: application/views/logbookadvanced/continentdialog.php:4
+#: application/views/logbookadvanced/checkresult.php:64
 msgid ""
 "Update will only set the continent for QSOs where the continent is empty."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:71
 #: application/views/logbookadvanced/checkresult.php:143
+#: application/views/logbookadvanced/checkresult.php:74
+#: application/views/logbookadvanced/checkresult.php:146
 msgid "Gridsquare Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:80
+#: application/views/logbookadvanced/checkresult.php:83
 msgid "DXCC Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:89
 #: application/views/logbookadvanced/checkresult.php:228
 #: application/views/logbookadvanced/checkresult.php:304
+#: application/views/logbookadvanced/checkresult.php:92
+#: application/views/logbookadvanced/checkresult.php:231
+#: application/views/logbookadvanced/checkresult.php:307
 msgid "Update selected"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:150
+#: application/views/logbookadvanced/checkresult.php:153
 msgid "These QSOs MAY have incorrect gridsquares."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:151
+#: application/views/logbookadvanced/checkresult.php:154
 msgid ""
 "Results depends on the correct DXCC. The gridsquare list comes from the TQSL "
 "gridsquare database."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:164
+#: application/views/logbookadvanced/checkresult.php:167
 msgid "DXCC Gridsquare"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:187
 #: application/views/logbookadvanced/index.php:77
+#: application/views/logbookadvanced/checkresult.php:190
 msgid "Show more"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:216
+#: application/views/logbookadvanced/checkresult.php:219
 msgid "CQ Zone Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:218
+#: application/views/logbookadvanced/checkresult.php:221
 msgid ""
 "The following QSOs were found to have a different CQ zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:223
+#: application/views/logbookadvanced/checkresult.php:226
 msgid "Force update even if DXCC covers multiple CQ zones"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:224
+#: application/views/logbookadvanced/checkresult.php:227
 msgid ""
 "The update function can only set the main CQ zone which is assigned to the "
 "DXCC. If the DXCC covers multiple CQ zones there is a chance that this is "
@@ -12655,6 +12707,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:241
 #: application/views/search/cqzones_result.php:14
+#: application/views/logbookadvanced/checkresult.php:244
 msgid "DXCC CQ Zone"
 msgstr ""
 
@@ -12687,6 +12740,8 @@ msgstr ""
 #: application/views/view_log/qso.php:742
 #: application/views/view_log/qso.php:749
 #: application/views/view_log/qso.php:754
+#: application/views/logbookadvanced/checkresult.php:246
+#: application/views/logbookadvanced/checkresult.php:322
 msgid "Station"
 msgstr "Asema"
 
@@ -12694,24 +12749,30 @@ msgstr "Asema"
 #: application/views/logbookadvanced/checkresult.php:363
 #: application/views/search/cqzones_result.php:51
 #: application/views/search/ituzones_result.php:51
+#: application/views/logbookadvanced/checkresult.php:290
+#: application/views/logbookadvanced/checkresult.php:366
 msgid "No incorrect CQ Zones were found."
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:292
+#: application/views/logbookadvanced/checkresult.php:295
 msgid "ITU Zone Check Results"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:294
+#: application/views/logbookadvanced/checkresult.php:297
 msgid ""
 "The following QSOs were found to have a different ITU zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:299
+#: application/views/logbookadvanced/checkresult.php:302
 msgid "Force update even if DXCC covers multiple ITU zones"
 msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:300
+#: application/views/logbookadvanced/checkresult.php:303
 msgid ""
 "The update function can only set the main ITU zone which is assigned to the "
 "DXCC. If the DXCC covers multiple ITU zones there is a chance that this is "
@@ -12722,6 +12783,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:317
 #: application/views/search/ituzones_result.php:14
+#: application/views/logbookadvanced/checkresult.php:320
 msgid "DXCC ITU Zone"
 msgstr ""
 
@@ -12755,6 +12817,7 @@ msgstr ""
 #: application/views/logbookadvanced/dbtoolsdialog.php:72
 #: application/views/logbookadvanced/dbtoolsdialog.php:83
 #: application/views/logbookadvanced/dbtoolsdialog.php:96
+#: application/views/logbookadvanced/dbtoolsdialog.php:108
 msgid "Check"
 msgstr ""
 
@@ -18682,6 +18745,36 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
+msgstr ""
+
+#: application/views/logbookadvanced/checkresult.php:371
+msgid "IOTA Check Results"
+msgstr ""
+
+#: application/views/logbookadvanced/checkresult.php:378
+msgid "These QSOs MAY have an incorrect IOTA reference."
+msgstr ""
+
+#: application/views/logbookadvanced/checkresult.php:379
+msgid ""
+"Results depends on the correct DXCC, and it will only be checked against "
+"current DXCC. False positive results may occur."
+msgstr ""
+
+#: application/views/logbookadvanced/checkresult.php:390
+msgid "QSO DXCC"
+msgstr ""
+
+#: application/views/logbookadvanced/checkresult.php:392
+msgid "IOTA DXCC"
+msgstr ""
+
+#: application/views/logbookadvanced/dbtoolsdialog.php:103
+msgid "Check IOTA against DXCC"
+msgstr ""
+
+#: application/views/logbookadvanced/dbtoolsdialog.php:104
+msgid "Use Wavelog to check IOTA against DXCC"
 msgstr ""
 
 #~ msgid "Bandmap"
