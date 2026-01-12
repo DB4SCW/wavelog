@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-10 10:49+0000\n"
+"PO-Revision-Date: 2026-01-13 01:48+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
-"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/fi/>\n"
+"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/fi/>\n"
 "Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -270,7 +270,7 @@ msgstr "API-kuvaus"
 
 #: application/controllers/Api.php:64
 msgid "API Key is required. Do not change this field"
-msgstr "API-avain on pakollinen. Älä muuta tätä kenttää."
+msgstr "API-avain on pakollinen. Älä muuta tätä kenttää"
 
 #: application/controllers/Api.php:69
 msgid "Edit API Description"
@@ -10291,54 +10291,54 @@ msgstr "Vuoden QSOt"
 
 #: application/views/dayswithqso/index.php:35
 msgid "Number of days with QSOs each year"
-msgstr ""
+msgstr "Päivien lukumäärä, joina on ollut QSOja vuosittain"
 
 #: application/views/dayswithqso/index.php:51
 msgid "Days"
-msgstr ""
+msgstr "Päivät"
 
 #: application/views/dayswithqso/index.php:67
 msgid "QSOs breakdown by day of the week"
-msgstr ""
+msgstr "QSO-erittely viikonpäivittäin"
 
 #: application/views/dayswithqso/index.php:73
 msgid "QSOs breakdown by month of the year"
-msgstr ""
+msgstr "QSOjen jakauma kuukausittain per vuosi"
 
 #: application/views/dayswithqso/index.php:87
 msgid "QSOs per Year"
-msgstr ""
+msgstr "QSO:t per vuosi"
 
 #: application/views/dayswithqso/index.php:95
 msgid "Less"
-msgstr ""
+msgstr "Vähemmän"
 
 #: application/views/dayswithqso/index.php:100
 msgid "More"
-msgstr ""
+msgstr "Enemmän"
 
 #: application/views/dayswithqso/index.php:102
 msgid "Calendar with QSOs"
-msgstr ""
+msgstr "QSO-kalenteri"
 
 #: application/views/dayswithqso/index.php:111
 msgid "Longest streak with QSOs in the log"
-msgstr ""
+msgstr "Pisin yhtäjaksoinen QSO-jakso lokissa"
 
 #: application/views/dayswithqso/index.php:112
 msgid "A maximum of the 10 longest streaks are shown!"
-msgstr ""
+msgstr "Vain 10 pisintä yhtenäistä jaksoa näytetään!"
 
 #: application/views/dayswithqso/index.php:130
 msgid "Streak (continuous days with QSOs)"
-msgstr ""
+msgstr "Yhtenäinen jakso (päiviä, joina on QSOja)"
 
 #: application/views/dayswithqso/index.php:131
 #: application/views/dayswithqso/index.php:159
 #: application/views/dayswithqso/index.php:181
 #: application/views/lotw/satupdate.php:7
 msgid "Start Date"
-msgstr ""
+msgstr "Aloituspäivämäärä"
 
 #: application/views/dayswithqso/index.php:132
 #: application/views/dayswithqso/index.php:160
@@ -10346,31 +10346,33 @@ msgstr ""
 #: application/views/lotw/satupdate.php:7
 #: application/views/timeline/index.php:202
 msgid "End Date"
-msgstr ""
+msgstr "Lopetuspäivämäärä"
 
 #: application/views/dayswithqso/index.php:148
 msgctxt "Days with QSOs"
 msgid "No streak found!"
-msgstr ""
+msgstr "Yhtään QSO:jen putkea ei löytynyt!"
 
 #: application/views/dayswithqso/index.php:152
 msgid "Current streak with QSOs in the log"
-msgstr ""
+msgstr "Nykyinen QSO:jen putki lokissa"
 
 #: application/views/dayswithqso/index.php:158
 #: application/views/dayswithqso/index.php:180
 msgid "Current streak (continuous days with QSOs)"
-msgstr ""
+msgstr "Nykyinen putki (peräkkäisiä päiviä QSO:ja)"
 
 #: application/views/dayswithqso/index.php:175
 msgid ""
 "If you make a QSO today, you can continue to extend your streak... or else "
 "your current streak will be broken!"
 msgstr ""
+"Jos pidät tänään QSO:n, voit jatkaa QSO-putkesi pidentämistä... tai muuten "
+"nykyinen putkesi katkeaa!"
 
 #: application/views/dayswithqso/index.php:196
 msgid "No current streak found!"
-msgstr ""
+msgstr "Ei löytynyt nykyistä QSO-putkea!"
 
 #: application/views/dcl_views/import.php:12
 #: application/views/lotw/import.php:12
@@ -10379,11 +10381,11 @@ msgstr "Tuonnin asetukset"
 
 #: application/views/dcl_views/import.php:25
 msgid "Pull DCL data for me"
-msgstr ""
+msgstr "Hae DCL-tiedot minulle"
 
 #: application/views/dcl_views/import.php:36
 msgid "Select callsign to pull DCL confirmations for."
-msgstr ""
+msgstr "Valitse kutsumerkki DCL-vahvistusten hakemiseksi."
 
 #: application/views/dcl_views/import.php:50
 msgid ""
@@ -10392,38 +10394,42 @@ msgid ""
 "confirmations since chosen date, or since your last DCL confirmation "
 "(fetched from your log), up until now."
 msgstr ""
+"Wavelog käyttää käyttäjäprofiiliisi tallennettuja DCL-avainkoodeja "
+"ladatakseen raportin DCL:ltä sinulle. Raportti, jonka Wavelog lataa, "
+"sisältää kaikki vahvistukset valitusta päivästä tai edellisestä DCL-"
+"vahvistuksestasi (haettu lokistasi) tähän hetkeen asti."
 
 #: application/views/dcl_views/import.php:54
 msgid "Import DCL Matches"
-msgstr ""
+msgstr "Tuo DCL:stä vastaavuudet"
 
 #: application/views/dcl_views/index.php:8
 msgid "Delete Keys"
-msgstr ""
+msgstr "Poista avaimet"
 
 #: application/views/dcl_views/index.php:9
 msgid "Available DCL-Keys"
-msgstr ""
+msgstr "Saatavilla olevat DCL-avaimet"
 
 #: application/views/dcl_views/index.php:9
 msgid "Request DCL Key"
-msgstr ""
+msgstr "Pyydä DCL-avainta"
 
 #: application/views/dcl_views/index.php:28
 msgid "Valid from"
-msgstr ""
+msgstr "Voimassa alkaen"
 
 #: application/views/dcl_views/index.php:29
 msgid "Valid till"
-msgstr ""
+msgstr "Voimassa asti"
 
 #: application/views/dcl_views/index.php:61
 msgid "You need to request DCL keys to use this function."
-msgstr ""
+msgstr "Tarvitset DCL-avaimet käyttääksesi tätä toimintoa."
 
 #: application/views/dcl_views/index.php:80
 msgid "The next automatic sync with DCL will happen at: "
-msgstr ""
+msgstr "Seuraava automaattinen synkronointi DCL:n kanssa tapahtuu: "
 
 #: application/views/dcl_views/index.php:82
 #: application/views/lotw_views/index.php:166
@@ -10433,42 +10439,46 @@ msgstr "Synkronoi yhteydet manuaalisesti"
 #: application/views/dcl_views/index.php:84
 #: application/views/lotw_views/index.php:168
 msgid "running..."
-msgstr ""
+msgstr "työskentelee..."
 
 #: application/views/dcl_views/key_import.php:8
 msgid "DCL Key Management"
-msgstr ""
+msgstr "DCL-avainhallinta"
 
 #: application/views/dcl_views/key_import.php:13
 msgid "Import Key"
-msgstr ""
+msgstr "Tuo avain"
 
 #: application/views/dcl_views/key_import.php:14
 msgid ""
 "You requested a key for DCL-Dataexchange, which was successful. The "
 "following data has been imported"
 msgstr ""
+"Avaimen hakeminen DCL:ltä onnistui. Seuraavat tiedot tuotiin DCL-avaimen "
+"avulla"
 
 #: application/views/dcl_views/key_import.php:19
 msgid "Received a valid DCL-Key"
-msgstr ""
+msgstr "Vastaanotettu kelvollinen DCL-avain"
 
 #: application/views/dcl_views/key_import.php:20
 msgid "DOK History"
-msgstr ""
+msgstr "DOK-historia"
 
 #: application/views/dcl_views/key_import.php:24
 #: application/views/dcl_views/key_import.php:46
 msgid "Validity"
-msgstr ""
+msgstr "Voimassaolo"
 
 #: application/views/dcl_views/key_import.php:42
 msgid "Call History"
-msgstr ""
+msgstr "Kutsumerkin historia"
 
 #: application/views/dcl_views/key_import.php:63
 msgid "Received an invalid DCL-Key. Please check your DCL-Login, and try again"
 msgstr ""
+"Virheellinen DCL-avain vastaanotettu. Tarkista DCL-kirjautumisesi ja yritä "
+"uudelleen"
 
 #: application/views/dcl_views/upload_cert.php:8
 #: application/views/dcl_views/upload_cert.php:33
@@ -10485,7 +10495,7 @@ msgstr "Vie .p12 tiedoston ohjeistus"
 #: application/views/dcl_views/upload_cert.php:22
 #: application/views/lotw_views/upload_cert.php:22
 msgid "Use at least version 2.7 of TQSL"
-msgstr ""
+msgstr "Käytä vähintään TQSL-versiota 2.7"
 
 #: application/views/dcl_views/upload_cert.php:23
 #: application/views/lotw_views/upload_cert.php:23
@@ -10502,17 +10512,17 @@ msgstr "Klikkaa hiiren oikealla näppäimella haluamaasi kutsua"
 #: application/views/dcl_views/upload_cert.php:25
 #: application/views/lotw_views/upload_cert.php:25
 msgid "Click 'Save Callsign Certificate File'"
-msgstr ""
+msgstr "Tallenna kutsumerkkisertifikaattitiedosto"
 
 #: application/views/dcl_views/upload_cert.php:26
 #: application/views/lotw_views/upload_cert.php:26
 msgid "Do not add a password"
-msgstr ""
+msgstr "ÄLÄ lisää salasanaa"
 
 #: application/views/dcl_views/upload_cert.php:27
 #: application/views/lotw_views/upload_cert.php:27
 msgid "Upload File below"
-msgstr ""
+msgstr "Lataa tiedosto tähän"
 
 #: application/views/dcl_views/upload_cert.php:37
 #: application/views/lotw_views/upload_cert.php:38
@@ -10521,7 +10531,7 @@ msgstr "Lataa tiedosto"
 
 #: application/views/debug/index.php:23
 msgid "Wavelog Information"
-msgstr ""
+msgstr "Wavelog-informaatio"
 
 #: application/views/debug/index.php:27
 msgid "Version"
@@ -10529,11 +10539,11 @@ msgstr "Versio"
 
 #: application/views/debug/index.php:30
 msgid "Latest Version"
-msgstr ""
+msgstr "Viimeisin versio"
 
 #: application/views/debug/index.php:36
 msgid "Latest Release"
-msgstr ""
+msgstr "Uusin versio"
 
 #: application/views/debug/index.php:41
 msgid "Language"
@@ -10541,19 +10551,19 @@ msgstr "Kieli"
 
 #: application/views/debug/index.php:45
 msgid "Base URL"
-msgstr ""
+msgstr "Perusosoite (URL)"
 
 #: application/views/debug/index.php:49
 msgid "Migration"
-msgstr ""
+msgstr "Migraatio"
 
 #: application/views/debug/index.php:50
 msgid "There is something wrong with your Migration in Database!"
-msgstr ""
+msgstr "Tietokannan migraatio epäonnistui!"
 
 #: application/views/debug/index.php:55
 msgid "Migration is outdated and locked!"
-msgstr ""
+msgstr "Tietokantamigraatio on vanhentunut ja lukittu!"
 
 #: application/views/debug/index.php:56
 #, php-format
@@ -10563,77 +10573,83 @@ msgid ""
 "locked due to a previously failed process. Delete the file %s to force the "
 "migration to run again."
 msgstr ""
+"Nykyinen migraatio ei ole se versio, jonka sen pitäisi olla. Lataa tämä sivu "
+"uudelleen %s sekunnin kuluttua. Jos tämä varoitus jatkuu, migraatiosi on "
+"todennäköisesti lukittunut aiemman virheen vuoksi. Poista tiedosto %s "
+"pakottaaksesi migraation uudelleen."
 
 #: application/views/debug/index.php:57
 #, php-format
 msgid "Check this wiki article %shere%s for more information."
-msgstr ""
+msgstr "Tarkista tämä wiki-artikkeli %stässä%s saadaksesi lisätietoja."
 
 #: application/views/debug/index.php:58
 #, php-format
 msgid "Current migration is %s"
-msgstr ""
+msgstr "Nykyinen migraatio on %s"
 
 #: application/views/debug/index.php:59
 #, php-format
 msgid "Migration should be %s"
-msgstr ""
+msgstr "MIgraation pitäisi olla %s"
 
 #: application/views/debug/index.php:64
 msgid "Environment"
-msgstr ""
+msgstr "Järjestelmäympäristö"
 
 #: application/views/debug/index.php:68
 msgid "System Time"
-msgstr ""
+msgstr "Järjestelmän aika"
 
 #: application/views/debug/index.php:76
 msgid "Total QSO on this instance"
-msgstr ""
+msgstr "Tällä instanssilla olevat QSOt"
 
 #: application/views/debug/index.php:80
 msgid "Total User"
-msgstr ""
+msgstr "Käyttäjiä yhteensä"
 
 #: application/views/debug/index.php:81 application/views/user/index.php:27
 msgid "User"
 msgid_plural "Users"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Käyttäjä"
+msgstr[1] "Käyttäjät"
 
 #: application/views/debug/index.php:88
 msgid "Server Information"
-msgstr ""
+msgstr "Palvelimen tiedot"
 
 #: application/views/debug/index.php:92
 msgid "Server Software"
-msgstr ""
+msgstr "Palvelinohjelmisto"
 
 #: application/views/debug/index.php:97
 msgid "PHP Version"
-msgstr ""
+msgstr "PHP versio"
 
 #: application/views/debug/index.php:103
 msgid "Deprecated"
-msgstr ""
+msgstr "Vanhentunut"
 
 #: application/views/debug/index.php:110
 msgid "MySQL Version"
-msgstr ""
+msgstr "MySQL versio"
 
 #: application/views/debug/index.php:114
 msgid "Codeigniter Version"
-msgstr ""
+msgstr "Codeigniter versio"
 
 #: application/views/debug/index.php:122
 msgid "Folder Permissions"
-msgstr ""
+msgstr "Kansioiden käyttöoikeudet"
 
 #: application/views/debug/index.php:124
 msgid ""
 "This verifies that the folders used by Wavelog have read and write "
 "permissions by PHP."
 msgstr ""
+"Tämä varmistaa, että Wavelogin käyttämillä kansioilla on PHP:n kautta luku- "
+"ja kirjoitusoikeudet."
 
 #: application/views/debug/index.php:130 application/views/debug/index.php:141
 #: application/views/debug/index.php:152 application/views/debug/index.php:163
@@ -10650,43 +10666,46 @@ msgstr "Epäonnistui"
 
 #: application/views/debug/index.php:187
 msgid "Config Maintenance"
-msgstr ""
+msgstr "Asetusten ylläpito"
 
 #: application/views/debug/index.php:193
 msgid "Your authentication mode is outdated and possibly unsafe"
 msgstr ""
+"Käytössä oleva tunnistautumistapa on vanhentunut ja saattaa olla turvaton"
 
 #: application/views/debug/index.php:195 application/views/debug/index.php:212
 #, php-format
 msgid "Please edit your %s File:"
-msgstr ""
+msgstr "Muokkaa tiedostoa %s:"
 
 #: application/views/debug/index.php:196
 msgid ""
 "Go to your application/config Folder and compare config.sample.php with your "
 "config.php"
 msgstr ""
+"Siirry application/config-kansioon ja vertaa config.sample.php-tiedostoa "
+"omaan config.php-tiedostoosi"
 
 #: application/views/debug/index.php:197
 #, php-format
 msgid "Change %s to the value %s (Strongly recommended)"
-msgstr ""
+msgstr "Aseta %s arvoksi %s (erittäin suositeltavaa)"
 
 #: application/views/debug/index.php:203
 msgid "Authentication Mode is set correctly"
-msgstr ""
+msgstr "Todennustustapa on asetettu oikein"
 
 #: application/views/debug/index.php:203 application/views/debug/index.php:220
 msgid "Ok"
-msgstr ""
+msgstr "OK"
 
 #: application/views/debug/index.php:210
 msgid "You use the default encryption key. You should change it!"
-msgstr ""
+msgstr "Salausavaimena on oletusavain – se kannattaa vaihtaa!"
 
 #: application/views/debug/index.php:213
 msgid "This will also enable the 'Keep me logged in' feature."
-msgstr ""
+msgstr "Tämä ottaa myös käyttöön “Pysy kirjautuneena” -toiminnon."
 
 #: application/views/debug/index.php:214
 #, php-format
@@ -10694,24 +10713,28 @@ msgid ""
 "Change the value of %s to a new encryption key other then "
 "'flossie1234555541'. Choose a safe and long password. (Strongly recommended)"
 msgstr ""
+"Vaihda %s:n arvoksi uusi salausavain, joka ei ole “flossie1234555541”. On "
+"erittäin suositeltavaa valita turvallinen ja pitkä salasana."
 
 #: application/views/debug/index.php:220
 msgid "You do not use the default encryption key"
-msgstr ""
+msgstr "Oletussalausavain ei ole käytössä"
 
 #: application/views/debug/index.php:227
 msgid "Migrate Userdata"
-msgstr ""
+msgstr "Siirrä käyttäjätiedot"
 
 #: application/views/debug/index.php:229
 msgid ""
 "Here you can migrate existing QSL cards and eQSL cards to the new userdata "
 "folder."
 msgstr ""
+"Täällä voit yhdistää olemassa olevat QSL- ja eQSL-kortit uuteen "
+"käyttäjätietokansioon."
 
 #: application/views/debug/index.php:242
 msgid "Modules"
-msgstr ""
+msgstr "Moduulit"
 
 #: application/views/debug/index.php:248 application/views/debug/index.php:259
 #: application/views/debug/index.php:270 application/views/debug/index.php:281
@@ -10727,33 +10750,33 @@ msgstr "Ei asennettu"
 
 #: application/views/debug/index.php:441
 msgid "Git Information"
-msgstr ""
+msgstr "Git-informaatio"
 
 #: application/views/debug/index.php:445
 msgid "Branch"
-msgstr ""
+msgstr "Haara"
 
 #: application/views/debug/index.php:456 application/views/debug/index.php:467
 #: application/views/debug/index.php:477
 #: application/views/lotw_views/index.php:95
 msgid "n/a"
-msgstr ""
+msgstr "n/a"
 
 #: application/views/debug/index.php:462
 msgid "Commit"
-msgstr ""
+msgstr "Commit"
 
 #: application/views/debug/index.php:472
 msgid "Tag"
-msgstr ""
+msgstr "Tagi"
 
 #: application/views/debug/index.php:482
 msgid "Last Fetch"
-msgstr ""
+msgstr "Viimeksi haettu"
 
 #: application/views/debug/index.php:494
 msgid "Check for new version"
-msgstr ""
+msgstr "Tarkista päivitykset"
 
 #: application/views/debug/index.php:495
 #: application/views/logbookadvanced/checkresult.php:52
@@ -10761,23 +10784,23 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:78
 #: application/views/logbookadvanced/index.php:57
 msgid "Update now"
-msgstr ""
+msgstr "Päivitä nyt"
 
 #: application/views/debug/index.php:513
 msgid "File download date"
-msgstr ""
+msgstr "Tiedoston latauspäivä"
 
 #: application/views/debug/index.php:517
 msgid "File"
-msgstr ""
+msgstr "Tiedosto"
 
 #: application/views/debug/index.php:518
 msgid "Last update"
-msgstr ""
+msgstr "Viimeisin päivitys"
 
 #: application/views/debug/index.php:522
 msgid "DXCC update from Club Log"
-msgstr ""
+msgstr "DXCC-tietojen päivitys Club Logista"
 
 #: application/views/debug/index.php:524 application/views/debug/index.php:530
 #: application/views/debug/index.php:535 application/views/debug/index.php:540
@@ -10787,80 +10810,81 @@ msgstr ""
 #: application/views/debug/index.php:575
 #: application/views/station_profile/edit.php:53
 msgid "Update"
-msgstr ""
+msgstr "Päivitä"
 
 #: application/views/debug/index.php:528
 msgid "DOK file download"
-msgstr ""
+msgstr "Lataa DOK-tiedosto"
 
 #: application/views/debug/index.php:533
 msgid "LoTW users download"
-msgstr ""
+msgstr "LoTW-käyttäjien lataus"
 
 #: application/views/debug/index.php:538
 msgid "POTA file download"
-msgstr ""
+msgstr "POTA-tiedoston lataus"
 
 #: application/views/debug/index.php:543
 msgid "SCP file download"
-msgstr ""
+msgstr "SCP-tiedoston lataus"
 
 #: application/views/debug/index.php:548
 msgid "SOTA file download"
-msgstr ""
+msgstr "SOTA-tiedoston lataus"
 
 #: application/views/debug/index.php:553
 msgid "WWFF file download"
-msgstr ""
+msgstr "WWFF-tiedoston lataus"
 
 #: application/views/debug/index.php:558
 msgid "TLE update"
-msgstr ""
+msgstr "TLE päivitys"
 
 #: application/views/debug/index.php:563
 msgid "Hams Of Note update"
-msgstr ""
+msgstr "Hams Of Note päivitys"
 
 #: application/views/debug/index.php:568
 msgid "HAMqsl"
-msgstr ""
+msgstr "HAMqsl"
 
 #: application/views/debug/index.php:573
 msgid "VUCC Grids"
-msgstr ""
+msgstr "VUCC Lokaattorit"
 
 #: application/views/debug/index.php:582
 msgid "QSO-DB Maintenance"
-msgstr ""
+msgstr "QSO-tietokannan ylläpito"
 
 #: application/views/debug/index.php:586
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
 "The Database contains %d QSOs without a station-profile (location)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tietokanta sisältää %d QSO-yhteyden ilman asemaprofiilia (sijaintia)"
+msgstr[1] "Tietokanta sisältää %d QSO-yhteyttä ilman asemaprofiilia (sijaintia)"
 
 #: application/views/debug/index.php:624
 msgid "Please mark QSOs and reassign them to an existing station location:"
-msgstr ""
+msgstr "Valitse QSOt ja määritä ne olemassa olevalle asemasijainnille:"
 
 #: application/views/debug/index.php:632
 msgctxt "Stationlocation"
 msgid "Target Location"
-msgstr ""
+msgstr "Kohdesijainti"
 
 #: application/views/debug/index.php:633 application/views/debug/index.php:644
 msgid "Reassign"
-msgstr ""
+msgstr "määritä uudelleen"
 
 #: application/views/debug/index.php:653
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr ""
+"Kaikilla tietokannan QSO-yhteyksillä on määritetty asemaprofiili (sijainti)"
 
 #: application/views/debug/index.php:653
 msgid "Everything ok"
-msgstr ""
+msgstr "Kaikki kunnossa"
 
 #: application/views/debug/index.php:678
 msgid "Albanian"
@@ -10981,37 +11005,39 @@ msgstr "turkkilainen"
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
 msgstr ""
+"Tällä sivulla esitetään satelliittikohtaiset pisimmät etäisyydet "
+"lokaattoritietojen perusteella."
 
 #: application/views/distancerecords/index.php:20
 msgid "My Gridsquare"
-msgstr ""
+msgstr "Minun lokaattorini"
 
 #: application/views/distancerecords/index.php:21
 msgid "DX Gridsquare"
-msgstr ""
+msgstr "DX lokaattori"
 
 #: application/views/distances/index.php:7
 #: application/views/interface_assets/footer.php:31
 #: application/views/simplefle/index.php:72
 msgid "QSO Data"
-msgstr ""
+msgstr "QSO-tiedot"
 
 #: application/views/distances/index.php:9
 #, php-format
 msgid "contacts were plotted.%s Your furthest contact was with"
-msgstr ""
+msgstr "Yhteydet on esitetty.%s Pisimmän etäisyyden yhteytesi oli"
 
 #: application/views/distances/index.php:10
 msgid "in gridsquare"
-msgstr ""
+msgstr "lokaattoriruudussa"
 
 #: application/views/distances/index.php:11
 msgid "the distance was"
-msgstr ""
+msgstr "etäisyys oli"
 
 #: application/views/distances/index.php:14
 msgid "Callsign(s) worked (max 5 shown)"
-msgstr ""
+msgstr "Työskennellyt kutsumerkit (enintään 5 näytetään)"
 
 #: application/views/distances/index.php:19
 msgid "Band selection"
@@ -11019,51 +11045,53 @@ msgstr "Bandin valinta"
 
 #: application/views/dxatlas/index.php:3
 msgid "DX Atlas Export"
-msgstr ""
+msgstr "DX Atlas vienti"
 
 #: application/views/dxatlas/index.php:7
 msgid ""
 "Export your logbook for use in DX Atlas to display worked / confirmed "
 "gridsquares."
 msgstr ""
+"Vie lokikirja DX Atlasiin työskenneltyjen ja vahvistettujen ruutujen "
+"näyttämistä varten."
 
 #: application/views/dxatlas/index.php:11 application/views/kml/index.php:11
 msgid "Only QSOs with a gridsquare defined will be exported!"
-msgstr ""
+msgstr "Vain QSOt, joilla on määritelty lokaattori, viedään!"
 
 #: application/views/dxcalendar/index.php:13
 #: application/views/view_log/qso.php:495
 msgid "QSL Info"
-msgstr ""
+msgstr "QSL-info"
 
 #: application/views/dxcalendar/index.php:14
 msgid "Source"
-msgstr ""
+msgstr "Lähde"
 
 #: application/views/email/admin_reset_password.php:3
 #: application/views/email/forgot_password.php:3
 msgid "Wavelog Account Password Reset"
-msgstr ""
+msgstr "Wavelog-tilin salasanan nollaus"
 
 #: application/views/email/admin_reset_password.php:5
 #, php-format
 msgid "Hello %s"
-msgstr ""
+msgstr "Hei %s"
 
 #: application/views/email/admin_reset_password.php:7
 msgid "An admin initiated a password reset for your Wavelog account."
-msgstr ""
+msgstr "Ylläpitäjä aloitti salasanan nollauksen Wavelog-tilillesi."
 
 #: application/views/email/admin_reset_password.php:9
 #, php-format
 msgid "Your username is: %s"
-msgstr ""
+msgstr "Käyttäjätunnuksesi on: %s"
 
 #: application/views/email/admin_reset_password.php:11
 #: application/views/email/forgot_password.php:11
 #, php-format
 msgid "Click here to reset your password: %s"
-msgstr ""
+msgstr "Klikkaa tästä nollataksesi salasanasi: %s"
 
 #: application/views/email/admin_reset_password.php:13
 msgid ""
@@ -11074,11 +11102,17 @@ msgid ""
 "\n"
 "Wavelog"
 msgstr ""
+"Jos et pyytänyt salasanan palautusta, ohita tämä sähköposti ja ota yhteyttä "
+"Wavelog-asennuksesi ylläpitäjään.\n"
+"\n"
+"Terveisin,\n"
+"\n"
+"Wavelog"
 
 #: application/views/email/club/modified_member.php:3
 #, php-format
 msgid "Your permission level for Clubstation %s has been changed"
-msgstr ""
+msgstr "Lupatasosi %s kerhoasemalle on muutettu"
 
 #: application/views/email/club/modified_member.php:5
 #, php-format
@@ -11088,11 +11122,15 @@ msgid ""
 "Your permission level for Clubstation %s has been changed. You can access "
 "this callsign through your account at %s."
 msgstr ""
+"Hyvä %s,\n"
+"\n"
+"Lupatasosi klubiasemalle %s on muuttunut. Voit käyttää tätä tunnusta tilisi "
+"kautta osoitteessa %s."
 
 #: application/views/email/club/modified_member.php:9
 #, php-format
 msgid "Your new permission level is: %s"
-msgstr ""
+msgstr "Uusi käyttöoikeustasosi on: %s"
 
 #: application/views/email/club/modified_member.php:11
 #: application/views/email/club/new_member.php:11
@@ -11103,11 +11141,16 @@ msgid ""
 "\n"
 "Wavelog"
 msgstr ""
+"Kirjaudu sisään ja tarkista se!\n"
+"\n"
+"Terveisin,\n"
+"\n"
+"Wavelog"
 
 #: application/views/email/club/new_member.php:3
 #, php-format
 msgid "New %s Membership on Wavelog!"
-msgstr ""
+msgstr "Uusi %s jäsenyys Wavelogissa!"
 
 #: application/views/email/club/new_member.php:5
 #, php-format
@@ -11117,11 +11160,15 @@ msgid ""
 "You have been added to the Clubstation %s. You can now access this callsign "
 "through your account on %s."
 msgstr ""
+"Hyvä %s\n"
+"\n"
+"Sinut on lisätty kerhoasemaan %s. Voit nyt käyttää tätä kutsumerkkiä tilisi "
+"kautta %s."
 
 #: application/views/email/club/new_member.php:9
 #, php-format
 msgid "Your permission level is: %s"
-msgstr ""
+msgstr "Käyttöoikeustasosi on: %s"
 
 #: application/views/email/forgot_password.php:5
 msgid ""
@@ -11129,6 +11176,9 @@ msgid ""
 "\n"
 "You or someone else has requested a password reset on your Wavelog account."
 msgstr ""
+"Hei,\n"
+"\n"
+"Sinä tai joku muu on pyytänyt salasanan palautusta Wavelog-tiliisi."
 
 #: application/views/email/forgot_password.php:13
 msgid ""
@@ -11138,19 +11188,24 @@ msgid ""
 "\n"
 "Wavelog"
 msgstr ""
+"Jos et pyytänyt tätä, jätä vain huomiotta.\n"
+"\n"
+"Terveisin,\n"
+"\n"
+"Wavelog"
 
 #: application/views/email/oqrs_request.php:3
 #, php-format
 msgid "Wavelog OQRS from %s"
-msgstr ""
+msgstr "Wavelog OQRS %s:lta"
 
 #: application/views/email/oqrs_request.php:6
 msgid "The user entered the following message: "
-msgstr ""
+msgstr "Käyttäjä kirjoitti seuraavan viestin: "
 
 #: application/views/email/oqrs_request.php:11
 msgid "The user did not enter any additional message."
-msgstr ""
+msgstr "Käyttäjä ei kirjoittanut lisäviestiä."
 
 #: application/views/email/oqrs_request.php:14
 #, php-format
@@ -11159,6 +11214,9 @@ msgid ""
 "\n"
 "You got an OQRS request from %s."
 msgstr ""
+"Hei,\n"
+"\n"
+"Sait OQRS-pyynnön käyttäjältä %s."
 
 #: application/views/email/oqrs_request.php:20
 msgid ""
@@ -11168,10 +11226,15 @@ msgid ""
 "\n"
 "Wavelog"
 msgstr ""
+"Kirjaudu Wavelogiin ja käsittele se.\n"
+"\n"
+"Ystävällisin terveisin,\n"
+"\n"
+"Wavelog"
 
 #: application/views/email/testmail.php:3
 msgid "Wavelog Test-Mail"
-msgstr ""
+msgstr "Wavelog:n testisähköposti"
 
 #: application/views/email/testmail.php:5
 msgid ""
@@ -11185,13 +11248,22 @@ msgid ""
 "\n"
 "Wavelog"
 msgstr ""
+"Hei,\n"
+"\n"
+"Tämä on testisähköposti Wavelog-instanssistasi.\n"
+"\n"
+"Jos sait tämän sähköpostin, sähköpostiasetuksesi ovat oikein.\n"
+"\n"
+"Terveisin,\n"
+"\n"
+"Wavelog"
 
 #: application/views/eqsl/analysis.php:14
 #: application/views/eqsl/download.php:13 application/views/eqsl/export.php:12
 #: application/views/eqsl/import.php:11 application/views/eqsl/result.php:14
 #: application/views/eqsl/tools.php:11
 msgid "Upload QSOs"
-msgstr ""
+msgstr "Lataa QSO:t"
 
 #: application/views/eqsl/analysis.php:17
 #: application/views/eqsl/download.php:17 application/views/eqsl/export.php:16
@@ -11199,56 +11271,60 @@ msgstr ""
 #: application/views/eqsl/tools.php:15
 #: application/views/interface_assets/header.php:301
 msgid "Tools"
-msgstr ""
+msgstr "Työkalut"
 
 #: application/views/eqsl/analysis.php:20
 #: application/views/eqsl/download.php:20 application/views/eqsl/export.php:19
 #: application/views/eqsl/import.php:18 application/views/eqsl/result.php:20
 #: application/views/eqsl/tools.php:19
 msgid "Download eQSL cards"
-msgstr ""
+msgstr "Lataa eQSL-kortit"
 
 #: application/views/eqsl/analysis.php:41
 msgid "eQSL Received Date"
-msgstr ""
+msgstr "eQSL:n vastaanottopäivä"
 
 #: application/views/eqsl/analysis.php:42
 msgid "Log Status"
-msgstr ""
+msgstr "Lokikirjan tila"
 
 #: application/views/eqsl/analysis.php:43 application/views/eqsl/result.php:38
 msgid "eQSL Status"
-msgstr ""
+msgstr "eQSL:n tila"
 
 #: application/views/eqsl/analysis.php:68
 msgid "There are no QSO confirmations waiting for you at eQSL.cc"
-msgstr ""
+msgstr "Sinulla ei ole odottavia QSO-vahvistuksia eQSL.cc:ssä"
 
 #: application/views/eqsl/download.php:31
 msgid ""
 "Below is a table of QSOs that have been confirmed on eQSL but QSL images "
 "have not been downloaded yet."
 msgstr ""
+"Alla on taulukko QSO-yhteyksistä, jotka on vahvistettu eQSL:ssä, mutta "
+"joiden QSL-kuvia ei ole vielä ladattu."
 
 #: application/views/eqsl/download.php:42
 #: application/views/eqslcard/index.php:34
 #: application/views/view_log/qso.php:550
 msgid "QSL Message"
-msgstr ""
+msgstr "QSL-viesti"
 
 #: application/views/eqsl/download.php:44
 msgid "eQSL Receive Date"
-msgstr ""
+msgstr "eQSL:n vastaanottopäivä"
 
 #: application/views/eqsl/download.php:72
 msgid "View/Download"
-msgstr ""
+msgstr "Näytä/Lataa"
 
 #: application/views/eqsl/download.php:83 application/views/eqsl/import.php:54
 msgid ""
 "Wavelog will use the eQSL credentials from your Wavelog user profile to "
 "connect to eQSL and download confirmations."
 msgstr ""
+"Wavelog käyttää Wavelog-käyttäjäprofiilisi eQSL-tunnistetietoja "
+"yhdistääkseen eQSL:ään ja ladatakseen vahvistuksia."
 
 #: application/views/eqsl/download.php:85
 msgid ""
@@ -11257,48 +11333,58 @@ msgid ""
 "to call this function several times depending on the amount of outstanding "
 "cards. This may run into a script timeout depending on the PHP configuration."
 msgstr ""
+"Koska eQSL-kuvien lataamiselle on noin 10 sekunnin rajoitus per kuva, tämän "
+"toiminnon suorittaminen vie kauan! Siksi sinun on ehkä kutsuttava tätä "
+"toimintoa useita kertoja riippuen avoinna olevien korttien määrästä. Tämä "
+"saattaa johtaa skriptin aikakatkaisuun PHP-konfiguraatiosta riippuen."
 
 #: application/views/eqsl/download.php:93
 msgid ""
 "There are no QSOs whose eQSL card images have not yet been downloaded. Go "
 "log some more QSOs!"
 msgstr ""
+"Ei ole QSOs, joiden eQSL-korttikuvia ei olisi vielä ladattu. Kirjoita lisää "
+"QSOs!"
 
 #: application/views/eqsl/export.php:31
 msgid "Below is a table of QSOs that have not yet been sent to eQSL."
-msgstr ""
+msgstr "Alla on taulukko yhteyksistä, joita ei vielä ole lähetetty eQSL:ään."
 
 #: application/views/eqsl/export.php:33
 msgid ""
 "Please make sure the 'eQSL QTH Nickname' field is set in your station "
 "profile and that the value matches the QTH Nickname you set within eQSL."
 msgstr ""
+"Varmista, että 'eQSL QTH Nickname' -kenttä on määritetty asemaprofiiliisi ja "
+"että arvo vastaa eQSL:ssä määrittämääsi QTH-nimimerkkiä."
 
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
-msgstr ""
+msgstr "Napsauttamalla 'Upload QSOs' lähetät QSO-tiedot eQSL.cc-palveluun."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
-msgstr ""
+msgstr "Seuraavat QSO:t lähetettiin eQSL:ään."
 
 #: application/views/eqsl/export.php:51
 msgid ""
 "There are no QSOs that need to be sent to eQSL at this time. Go log some "
 "more QSOs!"
 msgstr ""
+"Tällä hetkellä ei ole QSOja, jotka tarvitsisi lähettää eQSL:lle. Mene "
+"kirjaamaan lisää QSOja!"
 
 #: application/views/eqsl/import.php:28
 msgid "The next automatic sync with eQSL will happen at: "
-msgstr ""
+msgstr "Seuraava automaattinen synkronointi eQSL:n kanssa tapahtuu: "
 
 #: application/views/eqsl/import.php:31
 msgid "Import from file..."
-msgstr ""
+msgstr "Tuo tiedostosta..."
 
 #: application/views/eqsl/import.php:34
 msgid "Download Inbox"
-msgstr ""
+msgstr "Lataa saapuneet viestit"
 
 #: application/views/eqsl/import.php:34
 #, php-format
@@ -11306,10 +11392,12 @@ msgid ""
 "Upload the Exported ADIF file from eQSL from the %s page, to mark QSOs as "
 "confirmed on eQSL."
 msgstr ""
+"Lataa viety ADIF-tiedosto eQSL:stä %s-sivulta QSOn merkitsemiseksi "
+"vahvistetuksi eQSL:ssä."
 
 #: application/views/eqsl/import.php:35
 msgid "Choose Station(location) eQSL File belongs to:"
-msgstr ""
+msgstr "Valitse asema (sijainti), jolle eQSL-tiedosto kuuluu:"
 
 #: application/views/eqsl/import.php:46 application/views/lotw/import.php:25
 msgid "Log files must have the file type .adi"
@@ -11317,34 +11405,38 @@ msgstr "Lokitiedoston pitää olla ADI-tiedosto --> .adi"
 
 #: application/views/eqsl/import.php:53
 msgid "Import directly from eQSL"
-msgstr ""
+msgstr "Tuo suoraan eQSL:stä"
 
 #: application/views/eqsl/tools.php:27
 msgid ""
 "This does NOT upload any QSOs. It only marks QSOs as sent. If you use this "
 "button you need to upload them manually on the eQSL.cc website."
 msgstr ""
+"Tämä ei lataa mitään QSOja. Se vain merkitsee QSO:t lähetetyiksi. Jos käytät "
+"tätä nappia, sinun täytyy ladata ne manuaalisesti eQSL.cc-sivustolle."
 
 #: application/views/eqsl/tools.php:29
 msgid "Mark All QSOs as Sent to eQSL"
-msgstr ""
+msgstr "Merkitse kaikki QSO:t lähetetyiksi eQSL:ään"
 
 #: application/views/eqsl/tools.php:29
 msgid ""
 "Use this if you have lots of QSOs to upload to eQSL it will save the server "
 "timing out."
 msgstr ""
+"Käytä tätä, jos sinulla on paljon QSO:ita ladattavana eQSL:ään, se estää "
+"palvelimen aikakatkaisuja."
 
 #: application/views/eqslcard/index.php:10
 #, php-format
 msgid "You are using %s of disk space to store eQSL Card assets"
-msgstr ""
+msgstr "Käytät %s levytilaa eQSL-korttien tallentamiseen"
 
 #: application/views/eqslcard/index.php:35
 #: application/views/qslcard/index.php:44
 #: application/views/qslcard/index.php:120
 msgid "QSL Date"
-msgstr ""
+msgstr "QSL-päivämäärä"
 
 #: application/views/eqslcard/index.php:64
 #: application/views/interface_assets/footer.php:2765
@@ -11354,7 +11446,7 @@ msgstr ""
 #: application/views/qslcard/index.php:77
 #: application/views/view_log/qso.php:786
 msgid "View"
-msgstr ""
+msgstr "Näytä"
 
 #: application/views/hamsat/index.php:22
 #, php-format
@@ -11362,68 +11454,75 @@ msgid ""
 "Cannot filter workable passes only without private feed key. Please set the "
 "feed key in %s."
 msgstr ""
+"Ilman %s-tiedostoon asetettua avainta ei voida suodattaa työskenneltäviä "
+"lentoratoja."
 
 #: application/views/hamsat/index.php:22
 msgid "your profile"
-msgstr ""
+msgstr "profiilisi"
 
 #: application/views/hrdlog/export.php:13 application/views/qrz/export.php:18
 #: application/views/webadif/export.php:13
 msgid "Mark QSOs"
-msgstr ""
+msgstr "Merkitse QSO:t"
 
 #: application/views/hrdlog/export.php:22
 msgid ""
 "Here you can see all QSOs which have not been previously uploaded to a "
 "HRDLog logbook."
 msgstr ""
+"Tässä näet kaikki QSO:t, joita ei ole aiemmin ladattu HRDLog;n lokikirjaan."
 
 #: application/views/hrdlog/export.php:23
 msgid ""
 "You need to set a HRDLog Logbook API Code in your station profile. Only "
 "station profiles with an API Key set are displayed."
 msgstr ""
+"Aseta HRDLog-päiväkirjan API-koodi asemaprofiiliisi. Vain ne asemaprofiilit, "
+"joissa on asetettu avain, näytetään."
 
 #: application/views/hrdlog/export.php:24
 #, php-format
 msgid "The Code can be requested at %s"
-msgstr ""
+msgstr "Koodin voi pyytää osoitteesta %s"
 
 #: application/views/hrdlog/export.php:25
 #: application/views/webadif/export.php:34
 msgid "This might take a while as QSO uploads are processed sequentially."
-msgstr ""
+msgstr "Tämä saattaa kestää hetken, sillä QSO-lataukset käsitellään peräkkäin."
 
 #: application/views/hrdlog/export.php:60
 msgid ""
 "No Station Locations with valid HRDlog-Settings found. Check the HRDlog "
 "Credentials in the Station Location Settings!"
 msgstr ""
+"Ei aseman sijainteja, joissa olisi voimassa olevat HRDlog-asetukset. "
+"Tarkista HRDlog-kirjautumistiedot aseman sijaintiasetuksista!"
 
 #: application/views/hrdlog/export.php:74 application/views/qrz/export.php:96
 #: application/views/webadif/export.php:94
 msgid "If a date range is not selected then all QSOs will be marked!"
-msgstr ""
+msgstr "Jos aikaväliä ei ole valittu, kaikki QSOT merkitään!"
 
 #: application/views/hrdlog/export.php:87
 msgid "Mark QSOs as exported to HRDLog Logbook"
-msgstr ""
+msgstr "Merkitse QSO:t viedyiksi HRDLog-lokikirjaan"
 
 #: application/views/hrdlog/mark_hrdlog.php:12
 #: application/views/qrz/mark_qrz.php:12
 #: application/views/webadif/mark_webadif.php:12
 msgid "QSOs marked"
-msgstr ""
+msgstr "QSOa merkitty"
 
 #: application/views/hrdlog/mark_hrdlog.php:15
 #: application/views/qrz/mark_qrz.php:15
 #: application/views/webadif/mark_webadif.php:15
 msgid "Yay, it's done!"
-msgstr ""
+msgstr "Jee, se on tehty!"
 
 #: application/views/hrdlog/mark_hrdlog.php:16
 msgid "The QSOs are marked as exported to HRDLog Logbook."
-msgstr ""
+msgstr "QSO:t on merkitty viedyksi HRDLog Lokikirjaan."
 
 #: application/views/interface_assets/footer.php:32
 #: application/views/search/search_result_ajax.php:456
@@ -11435,82 +11534,84 @@ msgstr "Muokkaa QSO:a"
 
 #: application/views/interface_assets/footer.php:33
 msgid "Share QSO"
-msgstr ""
+msgstr "Jaa QSO"
 
 #: application/views/interface_assets/footer.php:35
 #: application/views/logbookadvanced/index.php:50
 msgid "ERROR"
-msgstr ""
+msgstr "VIRHE"
 
 #: application/views/interface_assets/footer.php:36
 msgid "Attention"
-msgstr ""
+msgstr "Huomio"
 
 #: application/views/interface_assets/footer.php:43
 msgid "Warning! Are you sure you want delete QSO with "
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti poistaa tämän QSO-yhteyden: "
 
 #: application/views/interface_assets/footer.php:44
 #: application/views/user/edit.php:544
 msgid "Colors"
-msgstr ""
+msgstr "Värit"
 
 #: application/views/interface_assets/footer.php:46
 msgid "Worked not confirmed"
-msgstr ""
+msgstr "Työskennelty, ei vahvistettu"
 
 #: application/views/interface_assets/footer.php:53
 #: application/views/qso/edit_ajax.php:213
 #: application/views/qso/edit_ajax.php:569
 msgid "Propagation mode is not supported by LoTW. LoTW QSL fields disabled."
 msgstr ""
+"Tämä propagaatiomuoto ei ole tuettu LoTW:ssa. LoTW QSL -kentät on poistettu "
+"käytöstä."
 
 #: application/views/interface_assets/footer.php:54
 msgid "No states for this DXCC available"
-msgstr ""
+msgstr "Tälle DXCC:lle ei ole osavaltioita saatavilla"
 
 #: application/views/interface_assets/footer.php:55
 msgid "Compute QRB and QTF"
-msgstr ""
+msgstr "Laske QRB ja QTF"
 
 #: application/views/interface_assets/footer.php:56
 msgid "Error in locators. Please check."
-msgstr ""
+msgstr "Virhe lokaattorissa. Ole hyvä ja tarkista se."
 
 #: application/views/interface_assets/footer.php:57
 #: application/views/user/index.php:20 application/views/user/index.php:144
 msgid "Refresh List"
-msgstr ""
+msgstr "Päivitä luettelo"
 
 #: application/views/interface_assets/footer.php:58
 msgid "Please Wait ..."
-msgstr ""
+msgstr "Ole hyvä ja odota..."
 
 #: application/views/interface_assets/footer.php:59
 msgctxt ""
 "Word for country states that are deprecated but kept for legacy reasons."
 msgid "deprecated"
-msgstr ""
+msgstr "vanhentunut"
 
 #: application/views/interface_assets/footer.php:60
 msgid "Satellite Information"
-msgstr ""
+msgstr "Satelliittitiedot"
 
 #: application/views/interface_assets/footer.php:62
 msgid "Error loading notes"
-msgstr ""
+msgstr "Virhe muistiinpanojen lataamisessa"
 
 #: application/views/interface_assets/footer.php:63
 msgid "Sorting"
-msgstr ""
+msgstr "Lajittelu"
 
 #: application/views/interface_assets/footer.php:64
 msgid "Duplication is disabled for Contacts notes"
-msgstr ""
+msgstr "Duplikointi on poistettu käytöstä yhteyden muistiinpanoille"
 
 #: application/views/interface_assets/footer.php:66
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplikaatti"
 
 #: application/views/interface_assets/footer.php:67
 #: application/views/notes/view.php:48
@@ -11519,340 +11620,356 @@ msgstr "Poista muistiinpano"
 
 #: application/views/interface_assets/footer.php:68
 msgid "Duplicate Note"
-msgstr ""
+msgstr "Kopioi muistiinpano"
 
 #: application/views/interface_assets/footer.php:69
 msgid "Delete this note?"
-msgstr ""
+msgstr "Haluatko poistaa tämän muistiinpanon?"
 
 #: application/views/interface_assets/footer.php:70
 msgid "Duplicate this note?"
-msgstr ""
+msgstr "Haluatko tuplata tämän muistiinpanon?"
 
 #: application/views/interface_assets/footer.php:71
 msgid "Duplication Disabled"
-msgstr ""
+msgstr "Duplikointi ei ole käytössä"
 
 #: application/views/interface_assets/footer.php:72
 msgid "No notes were found"
-msgstr ""
+msgstr "Muistiinpanoja ei löytynyt"
 
 #: application/views/interface_assets/footer.php:73
 msgid "No notes for this callsign"
-msgstr ""
+msgstr "Ei muistiinpanoja tälle kutsumerkille"
 
 #: application/views/interface_assets/footer.php:74
 msgid "Callsign Note"
-msgstr ""
+msgstr "Kutsumerkin Muistio"
 
 #: application/views/interface_assets/footer.php:75
 msgid "Note deleted successfully"
-msgstr ""
+msgstr "Muistiinpano poistettu onnistuneesti"
 
 #: application/views/interface_assets/footer.php:76
 msgid "Note created successfully"
-msgstr ""
+msgstr "Muistiinpano luotu onnistuneesti"
 
 #: application/views/interface_assets/footer.php:77
 msgid "Note saved successfully"
-msgstr ""
+msgstr "Muistiinpano tallennettu onnistuneesti"
 
 #: application/views/interface_assets/footer.php:78
 msgid "Error saving note"
-msgstr ""
+msgstr "Virhe muistiinpanon tallentamisessa"
 
 #: application/views/interface_assets/footer.php:79
 #, php-format
 msgid "QSO with %s by %s was added to logbook."
-msgstr ""
+msgstr "QSO %s:n kanssa (%s) on lisätty lokikirjaan."
 
 #: application/views/interface_assets/footer.php:80
 msgid "QSO Added to Backlog"
-msgstr ""
+msgstr "QSO lisätty käsittelyjonoon"
 
 #: application/views/interface_assets/footer.php:81
 #, php-format
 msgid "Send email to %s"
-msgstr ""
+msgstr "Lähetä sähköposti osoitteeseen %s"
 
 #: application/views/interface_assets/footer.php:82
 msgid ""
 "Callsign was already worked and confirmed in the past on this band and mode!"
 msgstr ""
+"Kutsumerkki on jo aiemmin työskennelty ja vahvistettu tällä bandilla ja "
+"modella!"
 
 #: application/views/interface_assets/footer.php:83
 msgid "Callsign was already worked in the past on this band and mode!"
 msgstr ""
+"Kutsumerkki on jo aiemmin työskennelty ja vahvistettu tällä bandilla ja "
+"modella!"
 
 #: application/views/interface_assets/footer.php:84
 msgid "New Callsign!"
-msgstr ""
+msgstr "Uusi kutsumerkki!"
 
 #: application/views/interface_assets/footer.php:85
 msgid "Grid was already worked and confirmed in the past"
-msgstr ""
+msgstr "Tämä lokaattori on jo aiemmin työskennelty ja vahvistettu"
 
 #: application/views/interface_assets/footer.php:86
 msgid "Grid was already worked in the past"
-msgstr ""
+msgstr "Lokaattori on jo aiemmin työskennelty"
 
 #: application/views/interface_assets/footer.php:87
 msgid "New grid!"
-msgstr ""
+msgstr "Uusi lokaattori!"
 
 #: application/views/interface_assets/footer.php:88
 msgid "Are you sure to delete Fav?"
-msgstr ""
+msgstr "Haluatko varmasti poistaa suosikin?"
 
 #: application/views/interface_assets/footer.php:89
 msgid ""
 "DXCC was already worked and confirmed in the past on this band and mode!"
 msgstr ""
+"Tämä DXCC on jo aiemmin työskennelty ja vahvistettu kyseisellä bandilla ja "
+"modella!"
 
 #: application/views/interface_assets/footer.php:90
 msgid "DXCC was already worked in the past on this band and mode!"
 msgstr ""
+"Tämä DXCC on jo aiemmin työskennelty ja vahvistettu kyseisellä bandilla ja "
+"modella!"
 
 #: application/views/interface_assets/footer.php:91
 msgid "New DXCC, not worked on this band and mode!"
 msgstr ""
+"Uusi DXCC; tätä ei ole vielä työskennelty tällä bandilla ja tällä modella!"
 
 #: application/views/interface_assets/footer.php:92
 #, php-format
 msgid "Lookup %s info on %s"
-msgstr ""
+msgstr "Hae tietoja %s:stä täältä %s"
 
 #: application/views/interface_assets/footer.php:93
 #, php-format
 msgid "Lookup %s summit info on %s"
-msgstr ""
+msgstr "Tarkista %s:n SOTA-infot %s:stä"
 
 #: application/views/interface_assets/footer.php:94
 #, php-format
 msgid "Lookup %s reference info on %s"
-msgstr ""
+msgstr "Tarkista %s:n referenssin info %s:stä"
 
 #: application/views/interface_assets/footer.php:95
 msgid "Error loading bearing!"
-msgstr ""
+msgstr "Virhe suuntiman lataamisessa!"
 
 #: application/views/interface_assets/footer.php:96
 msgid "Aliases"
-msgstr ""
+msgstr "Aliakset"
 
 #: application/views/interface_assets/footer.php:97
 msgid "Previously"
-msgstr ""
+msgstr "Aiemmin"
 
 #: application/views/interface_assets/footer.php:98
 msgid "Born"
-msgstr ""
+msgstr "Syntynyt"
 
 #: application/views/interface_assets/footer.php:99
 msgid "years old"
-msgstr ""
+msgstr "vuotias"
 
 #: application/views/interface_assets/footer.php:100
 msgid "License"
-msgstr ""
+msgstr "Lisenssi"
 
 #: application/views/interface_assets/footer.php:101
 msgid "from"
-msgstr ""
+msgstr "alkaen"
 
 #: application/views/interface_assets/footer.php:102
 msgid "years"
-msgstr ""
+msgstr "vuotta"
 
 #: application/views/interface_assets/footer.php:103
 msgid "expired on"
-msgstr ""
+msgstr "vanhentunut"
 
 #: application/views/interface_assets/footer.php:104
 msgid "Website"
-msgstr ""
+msgstr "Verkkosivusto"
 
 #: application/views/interface_assets/footer.php:105
 msgid "Local time"
-msgstr ""
+msgstr "Paikallinen aika"
 
 #: application/views/interface_assets/footer.php:107
 msgid "View location on Google Maps (Satellite)"
-msgstr ""
+msgstr "Näytä sijainti Google Mapsissa (Satelliitti)"
 
 #: application/views/interface_assets/footer.php:108
 msgid "Novice"
-msgstr ""
+msgstr "Noviisi"
 
 #: application/views/interface_assets/footer.php:109
 msgid "Technician"
-msgstr ""
+msgstr "Tekninen"
 
 #: application/views/interface_assets/footer.php:111
 #: application/views/interface_assets/header.php:117
 msgid "Advanced"
-msgstr ""
+msgstr "Edistynyt"
 
 #: application/views/interface_assets/footer.php:112
 msgid "Extra"
-msgstr ""
+msgstr "Extra"
 
 #: application/views/interface_assets/footer.php:113
 msgid "Gridsquare Formatting"
-msgstr ""
+msgstr "Lokaattorin muotoilu"
 
 #: application/views/interface_assets/footer.php:114
 msgid ""
 "Enter multiple (4-digit) grids separated with commas. For example: IO77,IO78"
 msgstr ""
+"Syötä useita (4-numeroisia) ruutuja pilkulla erotettuna. Esimerkiksi: "
+"IO77,IO78"
 
 #: application/views/interface_assets/footer.php:115
 msgid "live"
-msgstr ""
+msgstr "live"
 
 #: application/views/interface_assets/footer.php:116
 msgid "polling"
-msgstr ""
+msgstr "kysely"
 
 #: application/views/interface_assets/footer.php:117
 msgid ""
 "Note: Periodic polling is slow. When operating locally, WebSockets are a "
 "more convenient way to control your radio in real-time."
 msgstr ""
+"Huomautus: Säännöllinen kysely on hidasta. Jos työskennellään paikallisesti, "
+"WebSocketit ovat parempi tapa ohjata radiota reaaliajassa."
 
 #: application/views/interface_assets/footer.php:118
 msgid "TX"
-msgstr ""
+msgstr "TX"
 
 #: application/views/interface_assets/footer.php:119
 msgid "RX"
-msgstr ""
+msgstr "RX"
 
 #: application/views/interface_assets/footer.php:120
 msgid "TX/RX"
-msgstr ""
+msgstr "TX/RX"
 
 #: application/views/interface_assets/footer.php:122
 msgid "Power"
-msgstr ""
+msgstr "Teho"
 
 #: application/views/interface_assets/footer.php:123
 msgid "Radio connection error"
-msgstr ""
+msgstr "Virhe radiolaitteeseen yhdistettäessä"
 
 #: application/views/interface_assets/footer.php:124
 msgid "Connection lost, please select another radio."
-msgstr ""
+msgstr "Yhteys katkennut, valitse toinen radio."
 
 #: application/views/interface_assets/footer.php:125
 msgid "Radio connection timeout"
-msgstr ""
+msgstr "Radioyhteyden aikakatkaisu"
 
 #: application/views/interface_assets/footer.php:126
 msgid "Data is stale, please select another radio."
-msgstr ""
+msgstr "Data on vanhentunut, valitse toinen radio."
 
 #: application/views/interface_assets/footer.php:127
 msgid "You're not logged in. Please log in."
-msgstr ""
+msgstr "Et ole kirjautunut sisään. Ole hyvä ja kirjaudu sisään."
 
 #: application/views/interface_assets/footer.php:128
 msgid "Radio Tuning Failed"
-msgstr ""
+msgstr "Radion asetusten määrittäminen epäonnistui"
 
 #: application/views/interface_assets/footer.php:129
 msgid "Failed to tune radio to"
-msgstr ""
+msgstr "Radion virittäminen epäonnistui arvoon"
 
 #: application/views/interface_assets/footer.php:130
 msgid "CAT interface not responding. Please check your radio connection."
-msgstr ""
+msgstr "CAT-ohjaus ei vastaa. Tarkista yhteys radiolaitteeseen."
 
 #: application/views/interface_assets/footer.php:131
 msgid "No CAT URL configured for this radio"
-msgstr ""
+msgstr "Tälle radiolaitteelle ei ole määritetty CAT-URL-osoitetta"
 
 #: application/views/interface_assets/footer.php:132
 msgid "WebSocket Radio"
-msgstr ""
+msgstr "WebSocket Radio"
 
 #: application/views/interface_assets/footer.php:133
 msgid "Location is fetched from provided gridsquare"
-msgstr ""
+msgstr "Sijainti haetaan annetusta lokaattorista"
 
 #: application/views/interface_assets/footer.php:134
 msgid "Location is fetched from DXCC coordinates (no gridsquare provided)"
-msgstr ""
+msgstr "Sijainti haetaan DXCC-koordinaateista (ei lokaattoria annettu)"
 
 #: application/views/interface_assets/footer.php:137
 msgid "Working without CAT connection"
-msgstr ""
+msgstr "Työskentele ilman CAT-yhteyttä"
 
 #: application/views/interface_assets/footer.php:138
 msgid ""
 "CAT connection is currently disabled. Enable CAT connection to work in "
 "online mode with your radio."
 msgstr ""
+"CAT-yhteys on tällä hetkellä poistettu käytöstä. Aktivoi CAT-yhteys, jotta "
+"voit työskennellä radion kanssa online-tilassa."
 
 #: application/views/interface_assets/footer.php:139
 msgid ""
 "To connect your radio to Wavelog, visit the Wavelog Wiki for setup "
 "instructions."
 msgstr ""
+"Yhdistääksesi radiosi Wavelogiin, käy Wavelog-wikissä asennusohjeita varten."
 
 #: application/views/interface_assets/footer.php:223
 #: application/views/interface_assets/header.php:547
 #: application/views/options/sidebar.php:10
 msgid "Version Info"
-msgstr ""
+msgstr "Versioinfo"
 
 #: application/views/interface_assets/footer.php:277
 #: application/views/interface_assets/footer.php:292
 msgid "Failed to load the modal. Please try again."
-msgstr ""
+msgstr "Virhe modaalin lataamisessa. Yritä uudelleen."
 
 #: application/views/interface_assets/footer.php:532
 msgid "Description:"
-msgstr ""
+msgstr "Kuvaus:"
 
 #: application/views/interface_assets/footer.php:535
 msgid "Query description"
-msgstr ""
+msgstr "Kyselyn kuvaus"
 
 #: application/views/interface_assets/footer.php:551
 msgid "Your query has been saved!"
-msgstr ""
+msgstr "Kyselysi on tallennettu!"
 
 #: application/views/interface_assets/footer.php:553
 #: application/views/search/filter.php:49
 msgid "Edit queries"
-msgstr ""
+msgstr "Muokkaa kyselyjä"
 
 #: application/views/interface_assets/footer.php:555
 msgid "Stored queries:"
-msgstr ""
+msgstr "Tallennetut kyselyt:"
 
 #: application/views/interface_assets/footer.php:560
 #: application/views/search/filter.php:63
 msgid "Run Query"
-msgstr ""
+msgstr "Suorita kysely"
 
 #: application/views/interface_assets/footer.php:572
 #: application/views/interface_assets/footer.php:708
 #: application/views/interface_assets/footer.php:778
 msgid "Stored Queries"
-msgstr ""
+msgstr "Tallennetut kyselyt"
 
 #: application/views/interface_assets/footer.php:577
 #: application/views/interface_assets/footer.php:783
 msgid "You need to make a query before you search!"
-msgstr ""
+msgstr "Sinun täytyy tehdä kysely ennen kuin voit suorittaa hakua!"
 
 #: application/views/interface_assets/footer.php:598
 #: application/views/interface_assets/footer.php:735
 #: application/views/search/filter.php:82
 msgid "Export to ADIF"
-msgstr ""
+msgstr "Vie ADIF-muotoon"
 
 #: application/views/interface_assets/footer.php:599
 #: application/views/interface_assets/footer.php:736
@@ -11860,27 +11977,27 @@ msgstr ""
 #: application/views/search/ituzones.php:40
 #: application/views/search/main.php:37
 msgid "Open in the Advanced Logbook"
-msgstr ""
+msgstr "Avaa laajennettu lokikirja"
 
 #: application/views/interface_assets/footer.php:643
 msgid "Warning! Are you sure you want delete this stored query?"
-msgstr ""
+msgstr "Varoitus! Oletko varma, että haluat poistaa tämän tallennetun kyselyn?"
 
 #: application/views/interface_assets/footer.php:657
 msgid "The stored query has been deleted!"
-msgstr ""
+msgstr "Tallennettu kysely on poistettu!"
 
 #: application/views/interface_assets/footer.php:666
 msgid "The stored query could not be deleted. Please try again!"
-msgstr ""
+msgstr "Tallennettua kyselyä ei voitu poistaa. Yritä uudelleen!"
 
 #: application/views/interface_assets/footer.php:692
 msgid "The query description has been updated!"
-msgstr ""
+msgstr "Kyselyn kuvausta on päivitetty!"
 
 #: application/views/interface_assets/footer.php:696
 msgid "Something went wrong with the save. Please try again!"
-msgstr ""
+msgstr "Tallennuksessa tapahtui virhe. Yritä uudelleen!"
 
 #: application/views/interface_assets/footer.php:825
 msgid ""
@@ -11894,11 +12011,11 @@ msgstr ""
 
 #: application/views/interface_assets/footer.php:879
 msgid "Count: "
-msgstr ""
+msgstr "Lukumäärä: "
 
 #: application/views/interface_assets/footer.php:880
 msgid "Grids: "
-msgstr ""
+msgstr "Lokaattoriruudut: "
 
 #: application/views/interface_assets/footer.php:1198
 #: application/views/logbookadvanced/index.php:13
@@ -11906,7 +12023,7 @@ msgstr ""
 #: application/views/satellite/flightpath.php:11
 msgctxt "Map Options"
 msgid "Gridsquares"
-msgstr ""
+msgstr "Lokaattoriruudut"
 
 #: application/views/interface_assets/footer.php:1573
 #: application/views/interface_assets/footer.php:1577
@@ -11915,52 +12032,52 @@ msgstr ""
 #: application/views/interface_assets/footer.php:1721
 #: application/views/interface_assets/footer.php:1724
 msgid "grid square"
-msgstr ""
+msgstr "Lokaattori"
 
 #: application/views/interface_assets/footer.php:1580
 #: application/views/interface_assets/footer.php:1724
 msgid "Total count"
-msgstr ""
+msgstr "Yhteensä"
 
 #: application/views/interface_assets/footer.php:2502
 msgid "QSL Card for "
-msgstr ""
+msgstr "QSL-kortti "
 
 #: application/views/interface_assets/footer.php:2522
 msgid "Warning! Are you sure you want to delete this QSL card?"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti poistaa tämän QSL-kortin?"
 
 #: application/views/interface_assets/footer.php:2562
 #: application/views/view_log/qso.php:43
 msgid "eQSL Card"
-msgstr ""
+msgstr "eQSL-kortti"
 
 #: application/views/interface_assets/footer.php:2564
 msgid "eQSL Card for "
-msgstr ""
+msgstr "eQSL-kortti "
 
 #: application/views/interface_assets/footer.php:2776
 #: application/views/interface_assets/footer.php:2815
 #: application/views/view_log/qso.php:776
 msgid "QSL image file"
-msgstr ""
+msgstr "QSL-kuvatiedosto"
 
 #: application/views/interface_assets/footer.php:2795
 msgid "Front QSL Card:"
-msgstr ""
+msgstr "QSL-kortin etupuoli:"
 
 #: application/views/interface_assets/footer.php:2833
 msgid "Back QSL Card:"
-msgstr ""
+msgstr "QSL-kortin takapuoli:"
 
 #: application/views/interface_assets/footer.php:2844
 #: application/views/interface_assets/footer.php:2869
 msgid "Add additional QSOs to a QSL Card"
-msgstr ""
+msgstr "Liitä muita QSOja QSL-korttiin"
 
 #: application/views/interface_assets/footer.php:2880
 msgid "Something went wrong. Please try again!"
-msgstr ""
+msgstr "Jokin meni pieleen. Yritä uudelleen!"
 
 #: application/views/interface_assets/header.php:99
 msgid "Developer Mode"
@@ -11968,12 +12085,12 @@ msgstr "Kehittäjätila"
 
 #: application/views/interface_assets/header.php:102
 msgid "Maintenance Mode"
-msgstr ""
+msgstr "Huoltotila"
 
 #: application/views/interface_assets/header.php:105
 #: application/views/user/edit.php:89
 msgid "Clubstation"
-msgstr ""
+msgstr "Kerhoasema"
 
 #: application/views/interface_assets/header.php:115
 msgid "Overview"
@@ -11989,23 +12106,23 @@ msgstr "Näytä eQSL"
 
 #: application/views/interface_assets/header.php:125
 msgid "View last confirmations"
-msgstr ""
+msgstr "Näytä viimeiset vahvistukset"
 
 #: application/views/interface_assets/header.php:133
 msgid "Live QSO"
-msgstr ""
+msgstr "Live QSO"
 
 #: application/views/interface_assets/header.php:135
 msgid "Post QSO"
-msgstr ""
+msgstr "Mennyt QSO"
 
 #: application/views/interface_assets/header.php:140
 msgid "Live Contest Logging"
-msgstr ""
+msgstr "Live-kilpailuloki"
 
 #: application/views/interface_assets/header.php:142
 msgid "Post Contest Logging"
-msgstr ""
+msgstr "Mennyt kilpailuloki"
 
 #: application/views/interface_assets/header.php:152
 msgid "Analytics"
@@ -12017,104 +12134,104 @@ msgstr "Aktivoidut ruudut"
 
 #: application/views/interface_assets/header.php:180
 msgid "Callsign Statistics"
-msgstr ""
+msgstr "Kutsumerkkitilastot"
 
 #: application/views/interface_assets/header.php:188
 msgid "International"
-msgstr ""
+msgstr "Kansainvälinen"
 
 #: application/views/interface_assets/header.php:190
 msgid "CQ WAZ"
-msgstr ""
+msgstr "CQ WAZ"
 
 #: application/views/interface_assets/header.php:194
 msgid "ITU"
-msgstr ""
+msgstr "ITU"
 
 #: application/views/interface_assets/header.php:200
 msgid "Worked All Europe (WAE)"
-msgstr ""
+msgstr "Worked All Europe (WAE)"
 
 #: application/views/interface_assets/header.php:204
 msgid "Worked All Prefixes (WPX)"
-msgstr ""
+msgstr "Worked All Prefixes (WPX)"
 
 #: application/views/interface_assets/header.php:226
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 #: application/views/interface_assets/header.php:232
 msgid "China"
-msgstr ""
+msgstr "Kiina"
 
 #: application/views/interface_assets/header.php:238
 msgid "Germany"
-msgstr ""
+msgstr "Saksa"
 
 #: application/views/interface_assets/header.php:242
 msgid "DL Gridmaster"
-msgstr ""
+msgstr "DL Gridmaster"
 
 #: application/views/interface_assets/header.php:246
 msgid "Great Britain"
-msgstr ""
+msgstr "Iso-Britannia"
 
 #: application/views/interface_assets/header.php:248
 msgid "WAB"
-msgstr ""
+msgstr "WAB"
 
 #: application/views/interface_assets/header.php:252
 msgid "Japan"
-msgstr ""
+msgstr "Japani"
 
 #: application/views/interface_assets/header.php:258
 msgid "JA Gridmaster"
-msgstr ""
+msgstr "JA Gridmaster"
 
 #: application/views/interface_assets/header.php:262
 msgid "Luxemburg"
-msgstr ""
+msgstr "Luxemburg"
 
 #: application/views/interface_assets/header.php:264
 msgid "LX Gridmaster"
-msgstr ""
+msgstr "LX Gridmaster"
 
 #: application/views/interface_assets/header.php:268
 msgid "Poland"
-msgstr ""
+msgstr "Puola"
 
 #: application/views/interface_assets/header.php:274
 msgid "Switzerland"
-msgstr ""
+msgstr "Sveitsi"
 
 #: application/views/interface_assets/header.php:280
 msgid "The Netherlands"
-msgstr ""
+msgstr "Alankomaat"
 
 #: application/views/interface_assets/header.php:282
 msgid "WAP Worked All Provinces"
-msgstr ""
+msgstr "WAP Worked All Provinces"
 
 #: application/views/interface_assets/header.php:286
 msgid "USA"
-msgstr ""
+msgstr "USA"
 
 #: application/views/interface_assets/header.php:292
 msgid "US Gridmaster"
-msgstr ""
+msgstr "US Gridmaster"
 
 #: application/views/interface_assets/header.php:311
 msgid "SAT Timers"
-msgstr ""
+msgstr "SAT-timers"
 
 #: application/views/interface_assets/header.php:315
 msgid "Satellite Pass"
-msgstr ""
+msgstr "Satelliitin ylilento"
 
 #: application/views/interface_assets/header.php:321
 #: application/views/stationsetup/stationsetup.php:118
 msgid "Admin"
-msgstr ""
+msgstr "Ylläpitäjä"
 
 #: application/views/interface_assets/header.php:326
 msgid "Global Options"
@@ -12126,72 +12243,72 @@ msgstr "Päivitä Country Files"
 
 #: application/views/interface_assets/header.php:342
 msgid "Debug Information"
-msgstr ""
+msgstr "Virheenkorjaustiedot"
 
 #: application/views/interface_assets/header.php:389
 msgid "Add/Search Callsign"
-msgstr ""
+msgstr "Lisää/etsi kutsumerkki"
 
 #: application/views/interface_assets/header.php:391
 msgid "Log"
-msgstr ""
+msgstr "Kirjaa"
 
 #: application/views/interface_assets/header.php:398
 #: application/views/logbookadvanced/index.php:738
 #: application/views/oqrs/index.php:28 application/views/user/edit.php:491
 #: application/views/visitor/layout/header.php:95
 msgid "Search Callsign"
-msgstr ""
+msgstr "Etsi kutsumerkkiä"
 
 #: application/views/interface_assets/header.php:425
 #, php-format
 msgctxt "Operator: Callsign"
 msgid "Op: %s"
-msgstr ""
+msgstr "Op: %s"
 
 #: application/views/interface_assets/header.php:436
 #: application/views/user/edit.php:53
 msgid "Account"
-msgstr ""
+msgstr "Käyttäjätili"
 
 #: application/views/interface_assets/header.php:444
 msgid "Band Edges"
-msgstr ""
+msgstr "Bandin rajat"
 
 #: application/views/interface_assets/header.php:450
 msgid "Switch to Clubstation:"
-msgstr ""
+msgstr "Vaihda kerhoasemaan:"
 
 #: application/views/interface_assets/header.php:454
 #, php-format
 msgid "Switch to %s"
-msgstr ""
+msgstr "Vaihda %s"
 
 #: application/views/interface_assets/header.php:458
 #, php-format
 msgctxt "Managing a Club Callsign"
 msgid "Manage %s"
-msgstr ""
+msgstr "Hallinnoi %s"
 
 #: application/views/interface_assets/header.php:467
 msgid "No Clubstations available"
-msgstr ""
+msgstr "Ei kerhoasemia saatavilla"
 
 #: application/views/interface_assets/header.php:479
 msgid "Other Export Options"
-msgstr ""
+msgstr "Muut vientivaihtoehdot"
 
 #: application/views/interface_assets/header.php:487
 msgid "Cabrillo Export"
-msgstr ""
+msgstr "Cabrillo-vienti"
 
 #: application/views/interface_assets/header.php:489
 msgid "EDI Export"
-msgstr ""
+msgstr "EDI-vienti"
 
 #: application/views/interface_assets/header.php:511
 msgid "QSL Queue"
-msgstr ""
+msgstr "QSL-jono"
 
 #: application/views/interface_assets/header.php:512
 msgid "Labels"
@@ -12199,7 +12316,7 @@ msgstr "Tarrat"
 
 #: application/views/interface_assets/header.php:514
 msgid "Third-Party Services"
-msgstr ""
+msgstr "Kolmannen osapuolen palvelut"
 
 #: application/views/interface_assets/header.php:517
 msgid "eQSL Import / Export"
@@ -12211,32 +12328,32 @@ msgstr "HRDLog Logi"
 
 #: application/views/interface_assets/header.php:521
 msgid "Clublog Import / Export"
-msgstr ""
+msgstr "Clublogin tuonti / vienti"
 
 #: application/views/interface_assets/header.php:524
 msgid "DCL Export"
-msgstr ""
+msgstr "DCL-vienti"
 
 #: application/views/interface_assets/header.php:537
 msgid "Internal tools"
-msgstr ""
+msgstr "Sisäiset työkalut"
 
 #: application/views/interface_assets/header.php:539
 msgid "Callsign DXCC checker"
-msgstr ""
+msgstr "Kutsumerkkien DXCC-tarkistin"
 
 #: application/views/interface_assets/header.php:540
 msgid "GeoJSON QSO Map"
-msgstr ""
+msgstr "GeoJSON-muotoinen QSO-kartta"
 
 #: application/views/interface_assets/header.php:541
 msgid "Gridsquare Zone checker"
-msgstr ""
+msgstr "Locator-ruutujen vyöhykkeiden tarkistus"
 
 #: application/views/interface_assets/header.php:548
 #: application/views/logbookadvanced/index.php:879
 msgid "Help"
-msgstr ""
+msgstr "Apua"
 
 #: application/views/interface_assets/header.php:549
 msgid "Forum"
@@ -12245,12 +12362,12 @@ msgstr "Foorumi"
 #: application/views/interface_assets/header.php:553
 #, php-format
 msgid "Stop impersonate and switch back to %s"
-msgstr ""
+msgstr "Lopeta toisena käyttäjänä toimiminen ja palaa käyttäjään %s"
 
 #: application/views/interface_assets/header.php:554
 #, php-format
 msgid "Switch back to %s"
-msgstr ""
+msgstr "Vaihda takaisin käyttäjään %s"
 
 #: application/views/interface_assets/header.php:558
 msgid "Logout"
@@ -12258,234 +12375,240 @@ msgstr "Kirjaudu ulos"
 
 #: application/views/interface_assets/header.php:566
 msgid "Select a Location"
-msgstr ""
+msgstr "Valitse asemasijainti"
 
 #: application/views/interface_assets/header.php:608
 msgid "You miss station-locations here? Go to stationsetup and fav them"
 msgstr ""
+"Puuttuuko sinulta asemasijainteja täältä? Mene asemien asetuksiin ja "
+"merkitse ne suosikeiksi"
 
 #: application/views/interface_assets/header.php:645
 msgid "Extras"
-msgstr ""
+msgstr "Extrat"
 
 #: application/views/kml/index.php:7
 msgid "Export your logbook to a KML file for use in Google Earth."
-msgstr ""
+msgstr "Vie lokikirjasi KML-tiedostona Google Earthia varten."
 
 #: application/views/labels/create.php:24
 msgid ""
 "Label name used for display purposes, so pick something meaningful, perhaps "
 "the label style."
 msgstr ""
+"Tarran nimi, joka näytetään. Käytä siis jotain kuvaavaa, esimerkiksi tarran "
+"tyyliä."
 
 #: application/views/labels/create.php:39
 #: application/views/labels/createpaper.php:41
 #: application/views/labels/edit.php:41
 #: application/views/labels/editpaper.php:41
 msgid "Measurement used"
-msgstr ""
+msgstr "Käytettävä mittayksikkö"
 
 #: application/views/labels/create.php:42
 #: application/views/labels/createpaper.php:44
 #: application/views/labels/edit.php:44
 #: application/views/labels/editpaper.php:44
 msgid "Millimeters"
-msgstr ""
+msgstr "Millimetriä"
 
 #: application/views/labels/create.php:43
 #: application/views/labels/createpaper.php:45
 #: application/views/labels/edit.php:45
 #: application/views/labels/editpaper.php:45
 msgid "Inches"
-msgstr ""
+msgstr "Tuumaa"
 
 #: application/views/labels/create.php:49 application/views/labels/edit.php:51
 msgid "Margin Top"
-msgstr ""
+msgstr "Yläreunan marginaali"
 
 #: application/views/labels/create.php:52 application/views/labels/edit.php:54
 msgid "Top margin of labels"
-msgstr ""
+msgstr "Tarrojen ylämarginaali"
 
 #: application/views/labels/create.php:55 application/views/labels/edit.php:57
 msgid "Margin Left"
-msgstr ""
+msgstr "Vasen marginaali"
 
 #: application/views/labels/create.php:58 application/views/labels/edit.php:60
 msgid "Left margin of labels."
-msgstr ""
+msgstr "Tarran vasemman reunan marginaali."
 
 #: application/views/labels/create.php:63 application/views/labels/edit.php:65
 msgid "Labels horizontally"
-msgstr ""
+msgstr "Tarroja vaakasuunnassa"
 
 #: application/views/labels/create.php:66 application/views/labels/edit.php:68
 msgid "Number of labels horizontally across the page."
-msgstr ""
+msgstr "Tarrojen määrä vaakasuunnassa sivulla."
 
 #: application/views/labels/create.php:69 application/views/labels/edit.php:71
 msgid "Labels vertically"
-msgstr ""
+msgstr "Tarroja pystysuunnassa"
 
 #: application/views/labels/create.php:72 application/views/labels/edit.php:74
 msgid "Number of labels vertically across the page."
-msgstr ""
+msgstr "Tarrojen määrä pystysuunnassa sivulla."
 
 #: application/views/labels/create.php:77 application/views/labels/edit.php:79
 msgid "Horizontal space"
-msgstr ""
+msgstr "Vaakasuuntainen väli"
 
 #: application/views/labels/create.php:80 application/views/labels/edit.php:82
 msgid "Horizontal space between 2 labels."
-msgstr ""
+msgstr "Vaakasuora tila kahden tarran välillä."
 
 #: application/views/labels/create.php:83 application/views/labels/edit.php:85
 msgid "Vertical space"
-msgstr ""
+msgstr "Pystysuora tila"
 
 #: application/views/labels/create.php:86 application/views/labels/edit.php:88
 msgid "Vertical space between 2 labels."
-msgstr ""
+msgstr "Pystyväli kahden etiketin välillä."
 
 #: application/views/labels/create.php:91 application/views/labels/edit.php:93
 msgid "Width of label"
-msgstr ""
+msgstr "Tarran leveys"
 
 #: application/views/labels/create.php:94 application/views/labels/edit.php:96
 msgid "Total width of one label."
-msgstr ""
+msgstr "Yhden tarran kokonaisleveys."
 
 #: application/views/labels/create.php:97 application/views/labels/edit.php:99
 msgid "Height of label"
-msgstr ""
+msgstr "Tarran korkeus"
 
 #: application/views/labels/create.php:100
 #: application/views/labels/edit.php:102
 msgid "Total height of one label"
-msgstr ""
+msgstr "Yhden tarran kokonaiskorkeus"
 
 #: application/views/labels/create.php:105
 #: application/views/labels/edit.php:107 application/views/labels/index.php:80
 msgid "Font Size"
-msgstr ""
+msgstr "Fonttikoko"
 
 #: application/views/labels/create.php:108
 #: application/views/labels/edit.php:110
 msgid "Font size used on the label don't go too big."
-msgstr ""
+msgstr "Tarrassa käytetty fonttikoko ei saisi olla liian suuri."
 
 #: application/views/labels/create.php:111
 #: application/views/labels/edit.php:113
 msgid "QSOs on label"
-msgstr ""
+msgstr "QSOja tarrassa"
 
 #: application/views/labels/create.php:117
 #: application/views/labels/edit.php:118
 msgid "Save Label Type"
-msgstr ""
+msgstr "Tallenna tarran tyyppi"
 
 #: application/views/labels/createpaper.php:36
 #: application/views/labels/editpaper.php:36
 msgid "Paper Type Name"
-msgstr ""
+msgstr "Paperityypin nimi"
 
 #: application/views/labels/createpaper.php:39
 #: application/views/labels/editpaper.php:39
 msgid "Paper name used for display purposes, so pick something meaningful."
-msgstr ""
+msgstr "Näytettävä paperin nimi. Käytä siis jotain kuvaavaa nimeä."
 
 #: application/views/labels/createpaper.php:51
 #: application/views/labels/editpaper.php:51
 msgid "Width of paper"
-msgstr ""
+msgstr "Paperin leveys"
 
 #: application/views/labels/createpaper.php:54
 #: application/views/labels/editpaper.php:54
 #: application/views/labels/editpaper.php:60
 msgid "Total width of paper."
-msgstr ""
+msgstr "Paperin kokonaisleveys."
 
 #: application/views/labels/createpaper.php:57
 #: application/views/labels/editpaper.php:57
 msgid "Height of paper"
-msgstr ""
+msgstr "Paperin korkeus"
 
 #: application/views/labels/createpaper.php:60
 msgid "Total height of paper"
-msgstr ""
+msgstr "Paperin kokonaiskorkeus"
 
 #: application/views/labels/createpaper.php:65
 #: application/views/labels/createpaper.php:71
 #: application/views/labels/editpaper.php:65
 #: application/views/labels/editpaper.php:71
 msgid "Orientation of paper"
-msgstr ""
+msgstr "Paperin suunta"
 
 #: application/views/labels/createpaper.php:68
 #: application/views/labels/editpaper.php:68
 #: application/views/labels/index.php:60
 msgctxt "Orientation"
 msgid "Landscape"
-msgstr ""
+msgstr "Vaakasuuntainen"
 
 #: application/views/labels/createpaper.php:69
 #: application/views/labels/editpaper.php:69
 #: application/views/labels/index.php:60
 msgctxt "Orientation"
 msgid "Portrait"
-msgstr ""
+msgstr "Pystysuuntainen"
 
 #: application/views/labels/createpaper.php:75
 #: application/views/labels/editpaper.php:75
 msgid "Save Paper Type"
-msgstr ""
+msgstr "Tallenna paperityyppi"
 
 #: application/views/labels/edit.php:24
 msgid ""
 "Label name used for display purposes so pick something meaningful perhaps "
 "the label style."
 msgstr ""
+"Tarran nimi, joka näytetään. Käytä siis jotain kuvaavaa, esimerkiksi tarran "
+"tyyliä."
 
 #: application/views/labels/index.php:2
 #: application/views/logbookadvanced/startatform.php:39
 msgid "Mark QSL as printed"
-msgstr ""
+msgstr "Merkitse QSL tulostetuksi"
 
 #: application/views/labels/index.php:3 application/views/labels/index.php:128
 msgid "Print"
-msgstr ""
+msgstr "Tulosta"
 
 #: application/views/labels/index.php:33
 msgid "Create New Label Type"
-msgstr ""
+msgstr "Luo uusi tarratyyppi"
 
 #: application/views/labels/index.php:34
 msgid "Create New Paper Type"
-msgstr ""
+msgstr "Luo uusi paperityyppi"
 
 #: application/views/labels/index.php:37
 msgid "Paper types"
-msgstr ""
+msgstr "Paperityypit"
 
 #: application/views/labels/index.php:43 application/views/labels/index.php:78
 msgid "Width"
-msgstr ""
+msgstr "Leveys"
 
 #: application/views/labels/index.php:44 application/views/labels/index.php:79
 msgid "Height"
-msgstr ""
+msgstr "Korkeus"
 
 #: application/views/labels/index.php:45
 msgid "Used by labels"
-msgstr ""
+msgstr "Käytetty tarroissa"
 
 #: application/views/labels/index.php:46
 msgid "Orientation"
-msgstr ""
+msgstr "Suunta"
 
 #: application/views/labels/index.php:71
 msgid "Label types"
-msgstr ""
+msgstr "Tarratyypit"
 
 #: application/views/labels/index.php:81
 #: application/views/logbookadvanced/statecheckresult.php:12
@@ -12497,73 +12620,79 @@ msgstr "QSO:t"
 
 #: application/views/labels/index.php:82
 msgid "Use For Print"
-msgstr ""
+msgstr "Käytä tulostusta varten"
 
 #: application/views/labels/index.php:92
 msgid "No paper assigned"
-msgstr ""
+msgstr "Paperia ei ole määritetty"
 
 #: application/views/labels/index.php:117
 msgid "QSL Card Labels Pending"
-msgstr ""
+msgstr "QSL-korttien odottavat tarrat"
 
 #: application/views/labels/index.php:126
 msgid "QSOs Waiting"
-msgstr ""
+msgstr "Odottavat QSOt"
 
 #: application/views/labels/index.php:127
 msgid "View QSOs"
-msgstr ""
+msgstr "Näytä QSQt"
 
 #: application/views/labels/startatform.php:4
 #: application/views/logbookadvanced/startatform.php:3
 msgid "Include Grid?"
-msgstr ""
+msgstr "SIsällytä lokaattori?"
 
 #: application/views/labels/startatform.php:10
 #: application/views/logbookadvanced/startatform.php:9
 msgid ""
 "Include reference? (SIG, SOTA, POTA, IOTA, WWFF; If available in location)"
 msgstr ""
+"Sisällytä referenssi? "
+"(Sig, SOTA, POTA, IOTA, WWFF; jos saatavilla asemasijainnissa)"
 
 #: application/views/labels/startatform.php:16
 msgid "Include Via (if filled)?"
-msgstr ""
+msgstr "Sisällytä via (jos täytetty)?"
 
 #: application/views/labels/startatform.php:22
 msgid "Include QSLMSG (if filled)?"
-msgstr ""
+msgstr "Sisällytä QSLMSG (jos täytetty)?"
 
 #: application/views/labels/startatform.php:28
 msgid "Include TNX message?"
-msgstr ""
+msgstr "Sisällytä TNX-viesti?"
 
 #: application/views/labels/startatform.php:34
 #: application/views/logbookadvanced/startatform.php:33
 msgid "Start printing at?"
-msgstr ""
+msgstr "Mistä tulostus aloitetaan?"
 
 #: application/views/logbookadvanced/callbookdialog.php:5
 msgid ""
 "If a QSO has a 4‑char locator (e.g., JO90), try to refine it using callbook "
 "data."
 msgstr ""
+"Jos QSOssa on neljän merkin lokaattori (esim. JO90), yritä tarkentaa sitä "
+"käyttämällä callbook-tietoja."
 
 #: application/views/logbookadvanced/callbookdialog.php:6
 msgid ""
 "We’ll keep the original value and add a more precise locator (e.g., JO90AB "
 "or JO90AB12) when a match is confident."
 msgstr ""
+"Alkuperäinen arvo säilytetään ja lokaattoria tarkennetaan, jos osuma löytyy "
+"(esim. JO90AB tai JO90AB12)."
 
 #: application/views/logbookadvanced/checkresult.php:42
 msgid "Distance Check Results"
-msgstr ""
+msgstr "Etäisyystarkistuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:43
 #: application/views/logbookadvanced/checkresult.php:59
 #: application/views/logbookadvanced/checkresult.php:75
 msgid "QSOs to update found:"
-msgstr ""
+msgstr "Päivitettävät QSOt:"
 
 #: application/views/logbookadvanced/checkresult.php:46
 #: application/views/logbookadvanced/distancedialog.php:2
@@ -12572,85 +12701,93 @@ msgid ""
 "station profile, and the gridsquare of the QSO partner. Distance will be "
 "calculated based on if short path or long path is set."
 msgstr ""
+"Päivitä kaikki QSO:t etäisyydellä, joka perustuu asemaprofiiliisi asetettuun "
+"lokaattoriin ja QSO-kumppanin lokaattoriin. Etäisyys lasketaan sen mukaan, "
+"onko valittu lyhyt- vai pitkäreitti."
 
 #: application/views/logbookadvanced/checkresult.php:47
 #: application/views/logbookadvanced/distancedialog.php:3
 msgid "This is useful if you have imported QSOs without distance information."
-msgstr ""
+msgstr "Tämä on hyödyllistä, jos olet tuonut QSOja ilman etäisyystietoja."
 
 #: application/views/logbookadvanced/checkresult.php:48
 #: application/views/logbookadvanced/distancedialog.php:4
 msgid "Update will only set the distance for QSOs where the distance is empty."
 msgstr ""
+"Päivitys asettaa etäisyyden vain niille QSO:ille, joissa etäisyys on tyhjä."
 
 #: application/views/logbookadvanced/checkresult.php:58
 msgid "Continent Check Results"
-msgstr ""
+msgstr "Maanosatarkistuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:62
 #: application/views/logbookadvanced/continentdialog.php:2
 msgid ""
 "Update all QSOs with the continent based on the DXCC country of the QSO."
-msgstr ""
+msgstr "Päivitä kaikki QSOt maanosalla QSOn DXCC-maan perusteella."
 
 #: application/views/logbookadvanced/checkresult.php:63
 #: application/views/logbookadvanced/continentdialog.php:3
 msgid "This is useful if you have imported QSOs without continent information."
-msgstr ""
+msgstr "Tämä on hyödyllistä, jos olet tuonut QSOja ilman maanosa-tietoja."
 
 #: application/views/logbookadvanced/checkresult.php:64
 #: application/views/logbookadvanced/continentdialog.php:4
 msgid ""
 "Update will only set the continent for QSOs where the continent is empty."
-msgstr ""
+msgstr "Päivitys asettaa maanosan vain niille QSQille, joissa maanosa on tyhjä."
 
 #: application/views/logbookadvanced/checkresult.php:74
 #: application/views/logbookadvanced/checkresult.php:146
 msgid "Gridsquare Check Results"
-msgstr ""
+msgstr "Lokaattoritarkistuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:83
 msgid "DXCC Check Results"
-msgstr ""
+msgstr "DXCC-tarkistuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:92
 #: application/views/logbookadvanced/checkresult.php:231
 #: application/views/logbookadvanced/checkresult.php:307
 msgid "Update selected"
-msgstr ""
+msgstr "Päivitä valitut"
 
 #: application/views/logbookadvanced/checkresult.php:153
 msgid "These QSOs MAY have incorrect gridsquares."
-msgstr ""
+msgstr "Nämä yhteydet SAATTAVAT sisältää virheellisiä lokaattoreita."
 
 #: application/views/logbookadvanced/checkresult.php:154
 msgid ""
 "Results depends on the correct DXCC. The gridsquare list comes from the TQSL "
 "gridsquare database."
 msgstr ""
+"Tulokset riippuvat oikeasta DXCC:stä. Lokaattorilista tulee TQSL:n "
+"lokaattoritietokannasta."
 
 #: application/views/logbookadvanced/checkresult.php:167
 msgid "DXCC Gridsquare"
-msgstr ""
+msgstr "DXCC Lokaattori"
 
 #: application/views/logbookadvanced/checkresult.php:190
 #: application/views/logbookadvanced/index.php:77
 msgid "Show more"
-msgstr ""
+msgstr "Näytä lisää"
 
 #: application/views/logbookadvanced/checkresult.php:219
 msgid "CQ Zone Check Results"
-msgstr ""
+msgstr "CQ-aluetarkistuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:221
 msgid ""
 "The following QSOs were found to have a different CQ zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
+"Seuraavilla QSOilla havaittiin eri CQ-alue verrattuna siihen, mitä tämä DXCC "
+"normaalisti sisältää (näytetään enintään 5000 QSOa):"
 
 #: application/views/logbookadvanced/checkresult.php:226
 msgid "Force update even if DXCC covers multiple CQ zones"
-msgstr ""
+msgstr "Pakota päivitys, vaikka DXCC kattaa useita CQ-vyöhykkeitä"
 
 #: application/views/logbookadvanced/checkresult.php:227
 msgid ""
@@ -12660,11 +12797,16 @@ msgid ""
 "are updated. This checkbox overrides this but might result in wrong data. "
 "Use with caution!"
 msgstr ""
+"Päivitys voi asettaa vain DXCC:hen liitetyn pää-CQ-vyöhykkeen. Jos DXCC "
+"ulottuu useammalle CQ-vyöhykkeelle, tämä arvo ei todennäköisesti ole oikein. "
+"Tämän vuoksi oletuksena päivitetään vain ne QSOt, joiden DXCC sijaitsee "
+"yhdessä CQ-vyöhykkeessä. Tämä valintaruutu ohittaa kyseisen toiminnan ja voi "
+"johtaa virheellisiin tietoihin. Käytä varoen!"
 
 #: application/views/logbookadvanced/checkresult.php:244
 #: application/views/search/cqzones_result.php:14
 msgid "DXCC CQ Zone"
-msgstr ""
+msgstr "DXCC CQ-alue"
 
 #: application/views/logbookadvanced/checkresult.php:246
 #: application/views/logbookadvanced/checkresult.php:322
@@ -12703,21 +12845,23 @@ msgstr "Asema"
 #: application/views/search/cqzones_result.php:51
 #: application/views/search/ituzones_result.php:51
 msgid "No incorrect CQ Zones were found."
-msgstr ""
+msgstr "Väärin olevia CQ-vyöhykkeitä ei löytynyt."
 
 #: application/views/logbookadvanced/checkresult.php:295
 msgid "ITU Zone Check Results"
-msgstr ""
+msgstr "ITU-aluetarkastuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:297
 msgid ""
 "The following QSOs were found to have a different ITU zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
+"Seuraavilla QSOilla todettiin olevan eri ITU-alue verrattuna siihen, mikä "
+"tällä DXCC:llä normaalisti on (näytetään enintään 5000 QSOa):"
 
 #: application/views/logbookadvanced/checkresult.php:302
 msgid "Force update even if DXCC covers multiple ITU zones"
-msgstr ""
+msgstr "Päivitä väkisin, vaikka DXCC kattaisi useita ITU-alueita"
 
 #: application/views/logbookadvanced/checkresult.php:303
 msgid ""
@@ -12727,55 +12871,64 @@ msgid ""
 "are updated. This checkbox overrides this but might result in wrong data. "
 "Use with caution!"
 msgstr ""
+"Päivitys voi asettaa vain DXCC:hen liitetyn pää-ITU-vyöhykkeen. Jos DXCC "
+"ulottuu useammalle ITU-vyöhykkeelle, tämä arvo ei todennäköisesti ole "
+"oikein. Tämän vuoksi oletuksena päivitetään vain ne QSOt, joiden DXCC "
+"sijaitsee yhdessä ITU-vyöhykkeessä. Tämä valintaruutu ohittaa kyseisen "
+"toiminnan ja voi johtaa virheellisiin tietoihin. Käytä varoen!"
 
 #: application/views/logbookadvanced/checkresult.php:320
 #: application/views/search/ituzones_result.php:14
 msgid "DXCC ITU Zone"
-msgstr ""
+msgstr "DXCC ITU-alue"
 
 #: application/views/logbookadvanced/checkresult.php:371
 msgid "IOTA Check Results"
-msgstr ""
+msgstr "IOTA-tarkistuksen tulokset"
 
 #: application/views/logbookadvanced/checkresult.php:378
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr ""
+msgstr "Näissä QSOissa VOI olla virheellinen IOTA-referenssi."
 
 #: application/views/logbookadvanced/checkresult.php:379
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
+"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä DXCC:"
+"tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
 
 #: application/views/logbookadvanced/checkresult.php:390
 msgid "QSO DXCC"
-msgstr ""
+msgstr "QSO DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:392
 msgid "IOTA DXCC"
-msgstr ""
+msgstr "IOTA DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:4
 msgid "Data Repair Tools"
-msgstr ""
+msgstr "Datankorjaustyökalut"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:6
 msgid "Wiki Help"
-msgstr ""
+msgstr "Ohje-Wiki"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:8
 msgid ""
 "Warning. This tool can be dangerous to your data, and should only be used if "
 "you know what you are doing."
 msgstr ""
+"Varoitus. Tämä työkalu voi aiheuttaa peruuttamattomia muutoksia, ja sitä "
+"tulisi käyttää vain, jos tiedät mitä teet."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:12
 msgid "Check all QSOs in the logbook for incorrect CQ Zones"
-msgstr ""
+msgstr "Tarkista kaikki QSOt lokikirjasta virheellisten CQ-alueiden varalta"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:13
 msgid "Use Wavelog to determine CQ Zone for all QSOs."
-msgstr ""
+msgstr "Käytä Wavelogia määrittämään CQ-vyöhyke kaikille QSOille."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:17
 #: application/views/logbookadvanced/dbtoolsdialog.php:28
@@ -12787,112 +12940,113 @@ msgstr ""
 #: application/views/logbookadvanced/dbtoolsdialog.php:96
 #: application/views/logbookadvanced/dbtoolsdialog.php:108
 msgid "Check"
-msgstr ""
+msgstr "Tarkista"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:23
 msgid "Check all QSOs in the logbook for incorrect ITU Zones"
-msgstr ""
+msgstr "Tarkista kaikki QSOt lokikirjasta virheellisten ITU-alueiden varalta"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:24
 msgid "Use Wavelog to determine ITU Zone for all QSOs."
-msgstr ""
+msgstr "Käytä Wavelogia ITU-alueen määrittämiseen kaikille QSOille."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:34
 msgid "Check Gridsquares"
-msgstr ""
+msgstr "Tarkista lokaattoriruudut"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:35
 msgid "Check gridsquares that does not match the DXCC"
-msgstr ""
+msgstr "Tarkista lokaattoriruudut jotka eivät vastaa DXCC:tä"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:45
 msgid "Fix Continent"
-msgstr ""
+msgstr "Korjaa manner"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:46
 msgid "Update missing or incorrect continent information"
-msgstr ""
+msgstr "Päivitä puuttuvat tai virheelliset maanosatiedot"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:57
 msgid "Update missing state/province information"
-msgstr ""
+msgstr "Päivitä puuttuvat osavaltio/provinssitiedot"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:67
 #: application/views/logbookadvanced/index.php:68
 msgid "Update Distances"
-msgstr ""
+msgstr "Päivitä etäisyydet"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:68
 msgid "Calculate and update distance information for QSOs"
-msgstr ""
+msgstr "Laske ja päivitä etäisyystiedot QSOille"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:78
 msgid "Check all QSOs in the logbook for incorrect DXCC"
 msgstr ""
+"Tarkista kaikki QSO:t lokikirjasta virheellisten DXCC-merkintöjen varalta"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:79
 msgid "Use Wavelog to determine DXCC for all QSOs."
-msgstr ""
+msgstr "Käytä Wavelogia määrittääksesi DXCC kaikille QSO:ille."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:90
 msgid "Lookup QSOs with missing grid in callbook"
-msgstr ""
+msgstr "Etsi ja tarkista lokista QSOt, joista puuttuu lokaattoriruutu"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:91
 msgid "Use callbook lookup to set gridsquare"
-msgstr ""
+msgstr "Käytä callbook-palvelua lokaattoriruudun asettamiseen"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:92
 msgid "This is limited to 150 callsigns for each run!"
-msgstr ""
+msgstr "Tämä on rajoitettu 150 kutsumerkkiin per ajo!"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
-msgstr ""
+msgstr "Tarkista IOTA DXCCtä vastaan"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
 msgid "Use Wavelog to check IOTA against DXCC"
-msgstr ""
+msgstr "Käytä Wavelogia tarkistaaksesi IOTA DXCCtä vastaan"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"
-msgstr ""
+msgstr "Etsi duplikaatteja käyttäen:"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:16
 msgid "Match QSOs within 1800s (30min) of each other"
-msgstr ""
+msgstr "Yhdistä QSOt, jotka ovat 1800 sekunnin (30 min) sisällä toisistaan"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:25
 msgid "Match QSOs with the same mode (SSB, CW, FM, etc.)"
-msgstr ""
+msgstr "Yhdistä QSOt saman modin (SSB, CW, FM, jne.) mukaan"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:34
 msgid "Match QSOs on the same band"
-msgstr ""
+msgstr "Yhdistä QSOt samalla bandilla"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:43
 msgid "Match QSOs using the same satellite"
-msgstr ""
+msgstr "Yhdistä saman satelliitin kautta tehdyt QSOt"
 
 #: application/views/logbookadvanced/edit.php:1
 msgid "Please choose the column to be edited:"
-msgstr ""
+msgstr "Valitse muokattava sarake:"
 
 #: application/views/logbookadvanced/edit.php:5
 msgid "QSO details"
-msgstr ""
+msgstr "QSOn tiedot"
 
 #: application/views/logbookadvanced/edit.php:9
 msgid "Contest Exch (S)"
-msgstr ""
+msgstr "Kilpailusanoma (S)"
 
 #: application/views/logbookadvanced/edit.php:19
 msgid "Station Power"
-msgstr ""
+msgstr "Lähetysteho"
 
 #: application/views/logbookadvanced/edit.php:25
 msgid "DARC DOK"
-msgstr ""
+msgstr "DARC DOK"
 
 #: application/views/logbookadvanced/edit.php:31
 #: application/views/logbookadvanced/index.php:989
@@ -12900,92 +13054,92 @@ msgstr ""
 #: application/views/qso/edit_ajax.php:328 application/views/qso/index.php:490
 #: application/views/view_log/qso.php:481
 msgid "Region"
-msgstr ""
+msgstr "Alue"
 
 #: application/views/logbookadvanced/edit.php:37
 msgid "QSL / LoTW / Clublog / eQSL / QRZ / DCL"
-msgstr ""
+msgstr "QSL / LoTW / Clublog / eQSL / QRZ / DCL"
 
 #: application/views/logbookadvanced/edit.php:38
 msgid "Clublog Received"
-msgstr ""
+msgstr "Clublog vastaanotettu"
 
 #: application/views/logbookadvanced/edit.php:39
 msgid "Clublog Sent"
-msgstr ""
+msgstr "Clublog lähetetty"
 
 #: application/views/logbookadvanced/edit.php:40
 msgid "DCL Sent"
-msgstr ""
+msgstr "DCL lähetetty"
 
 #: application/views/logbookadvanced/edit.php:41
 msgid "DCL Received"
-msgstr ""
+msgstr "DCL vastaanotettu"
 
 #: application/views/logbookadvanced/edit.php:42
 msgid "eQSL Received"
-msgstr ""
+msgstr "eQSL vastaanotettu"
 
 #: application/views/logbookadvanced/edit.php:43
 msgid "eQSL Sent"
-msgstr ""
+msgstr "eQSL lähetetty"
 
 #: application/views/logbookadvanced/edit.php:44
 msgid "LoTW Received"
-msgstr ""
+msgstr "LoTW vastaanotettu"
 
 #: application/views/logbookadvanced/edit.php:45
 msgid "LoTW Sent"
-msgstr ""
+msgstr "LoTW lähetetty"
 
 #: application/views/logbookadvanced/edit.php:46
 msgid "QRZ Received"
-msgstr ""
+msgstr "QRZ vastaanotettu"
 
 #: application/views/logbookadvanced/edit.php:47
 msgid "QRZ Sent"
-msgstr ""
+msgstr "QRZ lähetetty"
 
 #: application/views/logbookadvanced/edit.php:48
 msgid "QSL Received"
-msgstr ""
+msgstr "QSL vastaanotettu"
 
 #: application/views/logbookadvanced/edit.php:49
 msgid "QSL Sent"
-msgstr ""
+msgstr "QSL lähetetty"
 
 #: application/views/logbookadvanced/edit.php:50
 msgid "QSLMSG"
-msgstr ""
+msgstr "QSLMSG"
 
 #: application/views/logbookadvanced/edit.php:51
 msgid "QSL Received Method"
-msgstr ""
+msgstr "QSLn vastaanottotapa"
 
 #: application/views/logbookadvanced/edit.php:52
 msgid "QSL Sent Method"
-msgstr ""
+msgstr "QSLn lähetystapa"
 
 #: application/views/logbookadvanced/edit.php:53
 #: application/views/logbookadvanced/index.php:681
 #: application/views/logbookadvanced/index.php:929
 #: application/views/logbookadvanced/useroptions.php:97
 msgid "QSL via"
-msgstr ""
+msgstr "QSL via"
 
 #: application/views/logbookadvanced/edit.php:107
 #: application/views/satellite/edit.php:51
 #: application/views/satellite/index.php:55
 msgid "SAT Mode"
-msgstr ""
+msgstr "SAT-tila"
 
 #: application/views/logbookadvanced/edit.php:110
 msgid "Band TX"
-msgstr ""
+msgstr "TX bandi"
 
 #: application/views/logbookadvanced/edit.php:123
 msgid "Band RX"
-msgstr ""
+msgstr "RX bandi"
 
 #: application/views/logbookadvanced/edit.php:171
 #: application/views/logbookadvanced/edit.php:178
@@ -12996,7 +13150,7 @@ msgstr ""
 #: application/views/logbookadvanced/index.php:496
 #: application/views/logbookadvanced/index.php:849
 msgid "Invalid"
-msgstr ""
+msgstr "Virheellinen"
 
 #: application/views/logbookadvanced/edit.php:179
 #: application/views/logbookadvanced/edit.php:205
@@ -13005,7 +13159,7 @@ msgstr ""
 #: application/views/logbookadvanced/index.php:633
 #: application/views/logbookadvanced/index.php:657
 msgid "Verified"
-msgstr ""
+msgstr "Vahvistettu"
 
 #: application/views/logbookadvanced/edit.php:210
 #: application/views/logbookadvanced/index.php:574
@@ -13024,7 +13178,7 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:345
 #: src/QSLManager/QSO.php:437 src/QSLManager/QSO.php:480
 msgid "Direct"
-msgstr ""
+msgstr "Direkti"
 
 #: application/views/logbookadvanced/edit.php:211
 #: application/views/logbookadvanced/index.php:573
@@ -13045,7 +13199,7 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:342
 #: src/QSLManager/QSO.php:434 src/QSLManager/QSO.php:477
 msgid "Bureau"
-msgstr ""
+msgstr "Bureau"
 
 #: application/views/logbookadvanced/edit.php:212
 #: application/views/logbookadvanced/index.php:575
@@ -13064,7 +13218,7 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:351
 #: src/QSLManager/QSO.php:443 src/QSLManager/QSO.php:486
 msgid "Electronic"
-msgstr ""
+msgstr "Elektroninen"
 
 #: application/views/logbookadvanced/edit.php:213
 #: application/views/logbookadvanced/index.php:576
@@ -13081,104 +13235,114 @@ msgstr "Manageri"
 #: application/views/logbookadvanced/edit.php:229
 #: application/views/qso/edit_ajax.php:331 application/views/qso/index.php:493
 msgid "NONE"
-msgstr ""
+msgstr "NONE"
 
 #: application/views/logbookadvanced/edit.php:230
 #: application/views/qso/edit_ajax.php:332 application/views/qso/index.php:494
 msgid "African Italy"
-msgstr ""
+msgstr "African Italy"
 
 #: application/views/logbookadvanced/edit.php:231
 #: application/views/qso/edit_ajax.php:333 application/views/qso/index.php:495
 msgid "Bear Island"
-msgstr ""
+msgstr "Bear Island"
 
 #: application/views/logbookadvanced/edit.php:232
 #: application/views/qso/edit_ajax.php:334 application/views/qso/index.php:496
 msgid "European Turkey"
-msgstr ""
+msgstr "Euroopan Turkki"
 
 #: application/views/logbookadvanced/edit.php:233
 #: application/views/qso/edit_ajax.php:335 application/views/qso/index.php:497
 msgid "ITU Vienna"
-msgstr ""
+msgstr "ITU Wien"
 
 #: application/views/logbookadvanced/edit.php:234
 #: application/views/qso/edit_ajax.php:336 application/views/qso/index.php:498
 msgid "Kosovo"
-msgstr ""
+msgstr "Kosovo"
 
 #: application/views/logbookadvanced/edit.php:235
 #: application/views/qso/edit_ajax.php:337 application/views/qso/index.php:499
 msgid "Shetland Islands"
-msgstr ""
+msgstr "Shetlannin saaret"
 
 #: application/views/logbookadvanced/edit.php:236
 #: application/views/qso/edit_ajax.php:338 application/views/qso/index.php:500
 msgid "Sicily"
-msgstr ""
+msgstr "Sisilia"
 
 #: application/views/logbookadvanced/edit.php:239
 msgid ""
 "Distance (in km). Leave blank to recalculate distance. (It will only work if "
 "a gridsquare is set)."
 msgstr ""
+"Etäisyys (km). Jätä tyhjäksi laskeaksesi etäisyys uudelleen. "
+"(Toimii vain, jos lokaattori on asetettu)."
 
 #: application/views/logbookadvanced/help.php:2
 msgid "In the text input searches, you can search in the following way:"
-msgstr ""
+msgstr "Tekstihakuhauissa voit etsiä seuraavilla tavoilla:"
 
 #: application/views/logbookadvanced/help.php:3
 msgid "* - means search for everything."
-msgstr ""
+msgstr "* - tarkoittaa hakua kaikesta."
 
 #: application/views/logbookadvanced/help.php:4
 msgid "Remove star and leave blank, means to search where column is empty."
 msgstr ""
+"Poista tähti ja jätä kenttä tyhjäksi, jos haluat hakea merkintöjä, joissa "
+"sarake on tyhjä."
 
 #: application/views/logbookadvanced/help.php:5
 msgid "!empty - means to search where column is not empty."
 msgstr ""
+"!empty – tarkoittaa, että haetaan merkintöjä, joissa sarake ei ole tyhjä."
 
 #: application/views/logbookadvanced/help.php:7
 msgid ""
 "The dupe search checks for duplicate QSOs with the same callsign, mode, "
 "submode, station callsign, band and satellite within 1500 seconds."
 msgstr ""
+"Duplikaattihaku tarkistaa toistuvat QSOt samalla tunnuksella, modella, "
+"alamodella (submode), aseman tunnuksella, bandilla ja satelliitilla 1500 "
+"sekunnin sisällä."
 
 #: application/views/logbookadvanced/help.php:9
 msgid "The invalid search checks for the following conditions:"
-msgstr ""
+msgstr "Virheellinen haku tarkistaa seuraavat ehdot:"
 
 #: application/views/logbookadvanced/help.php:10
 msgid "Mode is blank or set to 0."
-msgstr ""
+msgstr "Mode on tyhjä tai asetettu arvoon 0."
 
 #: application/views/logbookadvanced/help.php:11
 msgid "Band is blank."
-msgstr ""
+msgstr "Bandi on tyhjä."
 
 #: application/views/logbookadvanced/help.php:12
 msgid "Callsign is blank."
-msgstr ""
+msgstr "Kutsumerkki on tyhjä."
 
 #: application/views/logbookadvanced/help.php:13
 msgid "Time and date is not set."
-msgstr ""
+msgstr "Aikaa ja päivämäärää ei ole asetettu."
 
 #: application/views/logbookadvanced/help.php:14
 msgid "Date is set to 1970-01-01."
-msgstr ""
+msgstr "Päivämääräksi on asetettu 1970-01-01."
 
 #: application/views/logbookadvanced/help.php:15
 msgid "Continent different from AF, AN, AS, EU, NA, OC or SA."
-msgstr ""
+msgstr "Mannermaa, joka on eri kuin AF, AN, AS, EU, NA, OC tai SA."
 
 #: application/views/logbookadvanced/help.php:17
 msgid ""
 "The map uses the same search criteria as the normal search. All QSOs in the "
 "search result will be mapped, unless you have checked one or more QSOs."
 msgstr ""
+"Kartta käyttää samoja hakuehtoja kuin tavallinen haku. Kaikki hakutuloksissa "
+"olevat QSOt näytetään kartalla, ellet ole valinnut yhtä tai useampaa QSOta."
 
 #: application/views/logbookadvanced/help.php:19
 msgid ""
@@ -13186,113 +13350,116 @@ msgid ""
 "will be exported (all for selected location), unless you have checked one or "
 "more QSOs."
 msgstr ""
+"ADIF-vienti käyttää samoja hakukriteereitä kuin normaali haku. Kaikki "
+"yhteydet viedään (kaikki valitusta sijainnista), ellei ole valittu yhtä tai "
+"useampaa yhteyttä."
 
 #: application/views/logbookadvanced/index.php:16
 #: application/views/stationsetup/exportmapoptions.php:23
 msgctxt "Map Options"
 msgid "Path lines"
-msgstr ""
+msgstr "Yhteysviivat"
 
 #: application/views/logbookadvanced/index.php:17
 msgid "Show Callsigns"
-msgstr ""
+msgstr "Näytä kutsumerkit"
 
 #: application/views/logbookadvanced/index.php:18
 #: application/views/map/qso_map.php:5
 msgctxt "Map Options"
 msgid "CQ Zones"
-msgstr ""
+msgstr "CQ-vyöhykkeet"
 
 #: application/views/logbookadvanced/index.php:19
 #: application/views/map/qso_map.php:6
 msgctxt "Map Options"
 msgid "ITU Zones"
-msgstr ""
+msgstr "ITU-vyöhykkeet"
 
 #: application/views/logbookadvanced/index.php:20
 msgctxt "Map Options"
 msgid "Night Shadow"
-msgstr ""
+msgstr "Yövarjo"
 
 #: application/views/logbookadvanced/index.php:23
 msgid "Advanced Logbook Help"
-msgstr ""
+msgstr "Laajennetun lokikirjan ohje"
 
 #: application/views/logbookadvanced/index.php:24
 msgid "Continent fix"
-msgstr ""
+msgstr "Aseta maanosa"
 
 #: application/views/logbookadvanced/index.php:25
 msgid "There was a problem fixing ITU Zones."
-msgstr ""
+msgstr "ITU-alueiden korjaamisessa esiintyi ongelma."
 
 #: application/views/logbookadvanced/index.php:26
 msgid "There was a problem fixing CQ Zones."
-msgstr ""
+msgstr "CQ-Zonien korjaamisessa esiintyi ongelma."
 
 #: application/views/logbookadvanced/index.php:27
 msgid "ITU Zones updated successfully!"
-msgstr ""
+msgstr "ITU-alueet päivitettiin onnistuneesti!"
 
 #: application/views/logbookadvanced/index.php:28
 msgid "CQ Zones updated successfully!"
-msgstr ""
+msgstr "CQ-alueet päivitetty onnistuneesti!"
 
 #: application/views/logbookadvanced/index.php:29
 msgid "You need to select at least 1 row to fix ITU Zones!"
-msgstr ""
+msgstr "Sinun täytyy valita vähintään 1 rivi korjataksesi ITU-alueet!"
 
 #: application/views/logbookadvanced/index.php:30
 msgid "You need to select at least 1 row to fix CQ Zones!"
-msgstr ""
+msgstr "Sinun täytyy valita vähintään 1 rivi korjataksesi CQ-alueet!"
 
 #: application/views/logbookadvanced/index.php:31
 msgid "You need to select at least 1 row to fix State!"
-msgstr ""
+msgstr "Sinun täytyy valita vähintään 1 rivi korjataksesi osavaltion!"
 
 #: application/views/logbookadvanced/index.php:32
 msgid "State updated successfully!"
-msgstr ""
+msgstr "Osavaltio päivitetty onnistuneesti!"
 
 #: application/views/logbookadvanced/index.php:33
 msgid "There was a problem fixing State."
-msgstr ""
+msgstr "Osavaltion korjaamisessa esiintyi ongelma."
 
 #: application/views/logbookadvanced/index.php:34
 msgid "Fixing State"
-msgstr ""
+msgstr "Korjataan osavaltiota"
 
 #: application/views/logbookadvanced/index.php:35
 #, php-format
 msgid "Fixing State (%s QSOs)"
-msgstr ""
+msgstr "Korjataan osavaltiotietoja (%s QSOs)"
 
 #: application/views/logbookadvanced/index.php:36
 #, php-format
 msgid "Fixing State: %s remaining"
-msgstr ""
+msgstr "Korjaataan osavaltiotietoja: %s jäljellä"
 
 #: application/views/logbookadvanced/index.php:37
 msgid "Fixed"
-msgstr ""
+msgstr "Korjattu"
 
 #: application/views/logbookadvanced/index.php:38
 #, php-format
 msgid "Fixed: %s"
-msgstr ""
+msgstr "Korjattu: %s"
 
 #: application/views/logbookadvanced/index.php:39
 msgid "Skipped"
-msgstr ""
+msgstr "Ohitettu"
 
 #: application/views/logbookadvanced/index.php:40
 #, php-format
 msgid "Skipped: %s, see details for skipped rows below"
-msgstr ""
+msgstr "Ohitettu: %s, katso ohitettujen rivien tiedot alta"
 
 #: application/views/logbookadvanced/index.php:41
 msgid "State Fix Complete"
-msgstr ""
+msgstr "Osavaltiotietojen korjaus valmis"
 
 #: application/views/logbookadvanced/index.php:42
 #, php-format
@@ -13301,107 +13468,115 @@ msgid ""
 "countries, please create a ticket at %s with the GeoJSON file and desired "
 "letter coding for your country."
 msgstr ""
+"Kaikilla DXCC-mailla ei ole osavaltiotietoja. Jos tarvitset tukea muille "
+"maille, luo %s-palveluun tukipyyntö ja liitä mukaan GeoJSON-tiedosto sekä "
+"kyseistä maata varten toivottu koodaus."
 
 #: application/views/logbookadvanced/index.php:45
 msgid "Only 1 row can be selected for Quickfilter!"
-msgstr ""
+msgstr "Vain yksi rivi voidaan valita Pikasuodattimelle!"
 
 #: application/views/logbookadvanced/index.php:46
 msgid "You need to select a row to use the Quickfilters!"
-msgstr ""
+msgstr "Sinun täytyy valita rivi käyttääksesi Pikasuodattimia!"
 
 #: application/views/logbookadvanced/index.php:47
 msgid "You need to select a least 1 row to display a QSL card!"
-msgstr ""
+msgstr "Näyttääksesi QSL-kortin sinun täytyy valita vähintään 1 rivi!"
 
 #: application/views/logbookadvanced/index.php:48
 msgid "Continents updated successfully!"
-msgstr ""
+msgstr "Mannertiedot päivitetty onnistuneesti!"
 
 #: application/views/logbookadvanced/index.php:49
 msgid "There was a problem fixing Continents."
-msgstr ""
+msgstr "Maanosatietojen päivittämisessä ilmeni ongelma."
 
 #: application/views/logbookadvanced/index.php:51
 msgid "SUCCESS"
-msgstr ""
+msgstr "ONNISTUI"
 
 #: application/views/logbookadvanced/index.php:52
 msgid "INFO"
-msgstr ""
+msgstr "INFO"
 
 #: application/views/logbookadvanced/index.php:58
 msgid "Options for the Advanced Logbook"
-msgstr ""
+msgstr "Laajennetun lokikirjan asetukset"
 
 #: application/views/logbookadvanced/index.php:59
 msgid ""
 "Something went wrong with label print. Go to labels and check if you have "
 "defined a label, and that it is set for print!"
 msgstr ""
+"Tarratulostuksessa tapahtui virhe. Mene Tarrat-osioon ja tarkista, että olet "
+"määrittänyt tarran ja että se on valittu tulostusta varten!"
 
 #: application/views/logbookadvanced/index.php:60
 msgid "You need to select a least 1 row!"
-msgstr ""
+msgstr "Sinun on valittava vähintään 1 rivi!"
 
 #: application/views/logbookadvanced/index.php:61
 msgid "Start printing at which label?"
-msgstr ""
+msgstr "Mistä tarrasta tulostus aloitetaan?"
 
 #: application/views/logbookadvanced/index.php:62
 msgid "You need to select at least 1 row to print a label!"
-msgstr ""
+msgstr "Sinun on valittava vähintään yksi rivi tulostaaksesi tarran!"
 
 #: application/views/logbookadvanced/index.php:63
 msgid "An error occurred while saving options: "
-msgstr ""
+msgstr "Tapahtui virhe tallennettaessa asetuksia: "
 
 #: application/views/logbookadvanced/index.php:64
 msgid "You need to select a least 1 row to delete!"
-msgstr ""
+msgstr "Sinun on valittava vähintään yksi rivi poistaaksesi!"
 
 #: application/views/logbookadvanced/index.php:65
 msgid "You need to select a least 1 row to update from callbook!"
 msgstr ""
+"Sinun täytyy valita vähintään yksi rivi päivitykseen callbookpalvelusta!"
 
 #: application/views/logbookadvanced/index.php:66
 #: application/views/oqrs/showrequests.php:10
 msgid "An error ocurred while making the request"
-msgstr ""
+msgstr "Pyynnön toteuttamisessa tapahtui virhe"
 
 #: application/views/logbookadvanced/index.php:67
 msgid "You need to select at least 1 location to do a search!"
-msgstr ""
+msgstr "Sinun täytyy valita vähintään yksi sijainti tehdaksesi haun!"
 
 #: application/views/logbookadvanced/index.php:69
 msgid "QSO records updated."
-msgstr ""
+msgstr "QSO-tiedot päivitetty."
 
 #: application/views/logbookadvanced/index.php:70
 msgid "There was a problem updating distances."
-msgstr ""
+msgstr "Etäisyyksien päivittämisessä ilmeni ongelma."
 
 #: application/views/logbookadvanced/index.php:71
 msgid "Distances updated successfully!"
-msgstr ""
+msgstr "Etäisyydet päivitetty onnistuneesti!"
 
 #: application/views/logbookadvanced/index.php:73
 msgid ""
 "Are you sure you want to fix all QSOs with missing DXCC information? This "
 "action cannot be undone."
 msgstr ""
+"Oletko varma, että haluat korjata kaikki QSOt, joista puuttuu DXCC-tiedot? "
+"Tätä toimintoa ei voi kumota."
 
 #: application/views/logbookadvanced/index.php:74
 msgid "Duplicate Search"
-msgstr ""
+msgstr "Duplikaattien etsintä"
 
 #: application/views/logbookadvanced/index.php:78
 msgid "Show less"
-msgstr ""
+msgstr "Näytä vähemmän"
 
 #: application/views/logbookadvanced/index.php:309
 msgid "From"
-msgstr ""
+msgstr "alkaen"
 
 #: application/views/logbookadvanced/index.php:313
 msgid "To"
@@ -13411,7 +13586,7 @@ msgstr "to"
 #: application/views/logbookadvanced/index.php:902
 #: application/views/logbookadvanced/useroptions.php:34
 msgid "Dx"
-msgstr ""
+msgstr "Dx"
 
 #: application/views/logbookadvanced/index.php:318
 #: application/views/logbookadvanced/index.php:343
@@ -13429,52 +13604,54 @@ msgstr ""
 #: application/views/logbookadvanced/index.php:507
 #: application/views/logbookadvanced/index.php:682
 msgid "Empty"
-msgstr ""
+msgstr "Tyhjä"
 
 #: application/views/logbookadvanced/index.php:395
 msgctxt "Propagation Mode"
 msgid "None/Empty"
-msgstr ""
+msgstr "Ei mitään"
 
 #: application/views/logbookadvanced/index.php:506
 msgid ""
 "Distance in kilometers. Search will look for distances greater than or equal "
 "to this value."
 msgstr ""
+"Etäisyys kilometreinä. Haku etsii etäisyyksiä, jotka ovat suurempia tai yhtä "
+"suuria kuin tämä arvo."
 
 #: application/views/logbookadvanced/index.php:512
 msgid "Sort column"
-msgstr ""
+msgstr "Lajittele sarake"
 
 #: application/views/logbookadvanced/index.php:514
 #: application/views/oqrs/showrequests.php:87
 msgid "QSO Time"
-msgstr ""
+msgstr "QSO-aika"
 
 #: application/views/logbookadvanced/index.php:517
 msgid "QSO Modified"
-msgstr ""
+msgstr "QSO Muokattu"
 
 #: application/views/logbookadvanced/index.php:521
 msgid "Sort direction"
-msgstr ""
+msgstr "Lajittelusuunta"
 
 #: application/views/logbookadvanced/index.php:523
 msgid "Descending"
-msgstr ""
+msgstr "Laskeva"
 
 #: application/views/logbookadvanced/index.php:524
 msgid "Ascending"
-msgstr ""
+msgstr "Nouseva"
 
 #: application/views/logbookadvanced/index.php:532
 #: application/views/logbookadvanced/index.php:714
 msgid "Apply filters"
-msgstr ""
+msgstr "Käytä suodatinta"
 
 #: application/views/logbookadvanced/index.php:542
 msgid "QSL Filters"
-msgstr ""
+msgstr "QSL-suodattimet"
 
 #: application/views/logbookadvanced/index.php:548
 msgid "QSL sent"
