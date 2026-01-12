@@ -27,10 +27,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-06 21:05+0000\n"
+"PO-Revision-Date: 2026-01-12 11:41+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
-"Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/de/>\n"
+"Language-Team: German <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12991,25 +12991,27 @@ msgstr "DXCC ITU Zone"
 
 #: application/views/logbookadvanced/checkresult.php:371
 msgid "IOTA Check Results"
-msgstr ""
+msgstr "Ergebnisse der IOTA-Prüfung"
 
 #: application/views/logbookadvanced/checkresult.php:378
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr ""
+msgstr "Diese QSOs haben MÖGLICHERWEISE falsche IOTA-Referenzen."
 
 #: application/views/logbookadvanced/checkresult.php:379
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
+"Ergebnisse basieren auf dem korrekten DXCC und es wird nur gegen das "
+"exisitierende DXCC geprüft. Es können falsche Ergebnisse auftauchen."
 
 #: application/views/logbookadvanced/checkresult.php:390
 msgid "QSO DXCC"
-msgstr ""
+msgstr "QSO DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:392
 msgid "IOTA DXCC"
-msgstr ""
+msgstr "IOTA DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:4
 msgid "Data Repair Tools"
@@ -13106,11 +13108,11 @@ msgstr "Dies ist auf 150 Rufzeichen pro Lauf begrenzt!"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
-msgstr ""
+msgstr "Prüfe IOTA gegen DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
 msgid "Use Wavelog to check IOTA against DXCC"
-msgstr ""
+msgstr "Wavelog benutzen, um IOTA gegen DXCC zu prüfen"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"

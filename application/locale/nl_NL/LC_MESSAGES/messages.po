@@ -4,17 +4,17 @@
 #
 # Casper van Lieburg <pa7dx@yahoo.com>, 2024.
 # Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025.
-# PE1PQX <Andre@pe1pqx.eu>, 2025.
+# PE1PQX <Andre@pe1pqx.eu>, 2025, 2026.
 # Alexander <alexander@pa8s.nl>, 2025, 2026.
 # "Erkin Mercan (TA4AQG-SP9AQG)" <ekomeko066@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-06 21:05+0000\n"
-"Last-Translator: Alexander <alexander@pa8s.nl>\n"
-"Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/nl/>\n"
+"PO-Revision-Date: 2026-01-12 11:41+0000\n"
+"Last-Translator: PE1PQX <Andre@pe1pqx.eu>\n"
+"Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/nl/>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12922,25 +12922,27 @@ msgstr "DXCC ITU Zone"
 
 #: application/views/logbookadvanced/checkresult.php:371
 msgid "IOTA Check Results"
-msgstr ""
+msgstr "IOTA Check resultaten"
 
 #: application/views/logbookadvanced/checkresult.php:378
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr ""
+msgstr "Deze QSOs bevatten mogelijk foutieve IOTA referenties"
 
 #: application/views/logbookadvanced/checkresult.php:379
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
+"Resultaat afhankelijk van correcte DXCC, en zal alleen gecontroleerd worden "
+"op huidige DXCC. Foutieve resultaten kunnen voorkomen."
 
 #: application/views/logbookadvanced/checkresult.php:390
 msgid "QSO DXCC"
-msgstr ""
+msgstr "QSO DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:392
 msgid "IOTA DXCC"
-msgstr ""
+msgstr "IOTA DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:4
 msgid "Data Repair Tools"
@@ -13037,11 +13039,12 @@ msgstr "Dit is beperkt tot 150 roepnamen per keer!"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
-msgstr ""
+msgstr "Controleer IOTA ten opzichte van DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
+#, fuzzy
 msgid "Use Wavelog to check IOTA against DXCC"
-msgstr ""
+msgstr "Gebruik Wavelog om IOTA tegen DXCC te controleren."
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"
