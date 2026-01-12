@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-06 04:59+0000\n"
+"PO-Revision-Date: 2026-01-12 11:41+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
-"Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/ru/>\n"
+"Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/ru/>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4543,6 +4543,8 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Данные DOK в вашем журнале отличаются от DCL или обновление не выполнено, "
+"потому что QSO не подтверждены в DCL."
 
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
@@ -4921,6 +4923,8 @@ msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
+"Дополнительную информацию о статусе подтверждения в DCL можно найти на "
+"странице Confluence %sDCL%s."
 
 #: application/views/adif/import.php:349
 msgid "Only import DOK data from QSOs confirmed on DCL."
@@ -12958,25 +12962,27 @@ msgstr "ITU зона DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:371
 msgid "IOTA Check Results"
-msgstr ""
+msgstr "Результаты проверки IOTA"
 
 #: application/views/logbookadvanced/checkresult.php:378
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr ""
+msgstr "В этих QSO МОЖЕТ быть указана неправильная референция IOTA."
 
 #: application/views/logbookadvanced/checkresult.php:379
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
+"Результаты зависят от правильного указания DXCC, проверка будет проводиться "
+"только относительно текущего DXCC. Возможны ложноположительные результаты."
 
 #: application/views/logbookadvanced/checkresult.php:390
 msgid "QSO DXCC"
-msgstr ""
+msgstr "DXCC QSO"
 
 #: application/views/logbookadvanced/checkresult.php:392
 msgid "IOTA DXCC"
-msgstr ""
+msgstr "DXCC IOTA"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:4
 msgid "Data Repair Tools"
@@ -13076,11 +13082,11 @@ msgstr "Ограничение: до 150 позывных за один запу
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
-msgstr ""
+msgstr "Проверка IOTA по DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
 msgid "Use Wavelog to check IOTA against DXCC"
-msgstr ""
+msgstr "Использование Wavelog, для проверки IOTA по DXCC"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"
@@ -13120,7 +13126,7 @@ msgstr "Выходная мощность"
 
 #: application/views/logbookadvanced/edit.php:25
 msgid "DARC DOK"
-msgstr ""
+msgstr "DARC DOK"
 
 #: application/views/logbookadvanced/edit.php:31
 #: application/views/logbookadvanced/index.php:989
