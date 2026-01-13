@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-12 08:56+0000\n"
+"POT-Creation-Date: 2026-01-13 20:02+0000\n"
 "PO-Revision-Date: 2026-01-07 19:22+0000\n"
 "Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
 "Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/main-"
@@ -14210,6 +14210,10 @@ msgstr "posledné nahratie"
 #: application/views/lookup/lotwuser.php:14
 msgid "No LoTW User"
 msgstr "Nie je LoTW používateľ"
+
+#: application/views/lookup/result.php:16
+msgid "This gridsquare exists in the following DXCC(s):"
+msgstr ""
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"

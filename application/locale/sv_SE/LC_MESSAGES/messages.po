@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-12 08:56+0000\n"
+"POT-Creation-Date: 2026-01-13 20:02+0000\n"
 "PO-Revision-Date: 2026-01-06 21:05+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -14207,6 +14207,10 @@ msgstr "senaste uppladdning"
 #: application/views/lookup/lotwuser.php:14
 msgid "No LoTW User"
 msgstr "Ingen LoTW-användare"
+
+#: application/views/lookup/result.php:16
+msgid "This gridsquare exists in the following DXCC(s):"
+msgstr ""
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"
