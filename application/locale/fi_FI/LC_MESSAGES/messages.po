@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-13 17:31+0000\n"
+"PO-Revision-Date: 2026-01-13 18:52+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/fi/>\n"
@@ -13869,16 +13869,16 @@ msgstr " QSOt tullaan poistamaan"
 
 #: application/views/logbookadvanced/index.php:798
 msgid "With selected: "
-msgstr ""
+msgstr "Valituissa: "
 
 #: application/views/logbookadvanced/index.php:802
 #: application/views/qso/edit_ajax.php:726
 msgid "Update from Callbook"
-msgstr ""
+msgstr "Päivitä Callbook:sta"
 
 #: application/views/logbookadvanced/index.php:803
 msgid "Queue Bureau"
-msgstr ""
+msgstr "Lisää jonoon (Bureau)"
 
 #: application/views/logbookadvanced/index.php:804
 msgid "Queue Direct"
