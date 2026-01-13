@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-13 18:52+0000\n"
+"PO-Revision-Date: 2026-01-13 21:54+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
-"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/fi/>\n"
+"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/fi/>\n"
 "Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13885,167 +13885,167 @@ msgstr "Lisää jonoon (Bureau)"
 
 #: application/views/logbookadvanced/index.php:804
 msgid "Queue Direct"
-msgstr ""
+msgstr "Lisää jonoon (direkti)"
 
 #: application/views/logbookadvanced/index.php:805
 msgid "Queue Electronic"
-msgstr ""
+msgstr "Lisää jonoon (elektroninen)"
 
 #: application/views/logbookadvanced/index.php:806
 msgid "Sent (Bureau)"
-msgstr ""
+msgstr "Lähetetty (bureau)"
 
 #: application/views/logbookadvanced/index.php:807
 msgid "Sent (Direct)"
-msgstr ""
+msgstr "Lähetetty (direkti)"
 
 #: application/views/logbookadvanced/index.php:808
 msgid "Sent (Electronic)"
-msgstr ""
+msgstr "Lähetetty (elektroninen)"
 
 #: application/views/logbookadvanced/index.php:809
 msgid "Not Sent"
-msgstr ""
+msgstr "Ei lähetetty"
 
 #: application/views/logbookadvanced/index.php:810
 msgid "QSL Not Required"
-msgstr ""
+msgstr "QSL-korttia ei tarvita"
 
 #: application/views/logbookadvanced/index.php:811
 msgid "Not Received"
-msgstr ""
+msgstr "Ei vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:812
 msgid "Received (Bureau)"
-msgstr ""
+msgstr "Vastaanotettu (bureau)"
 
 #: application/views/logbookadvanced/index.php:813
 msgid "Received (Direct)"
-msgstr ""
+msgstr "Vastaanotettu (direkti)"
 
 #: application/views/logbookadvanced/index.php:814
 msgid "Received (Electronic)"
-msgstr ""
+msgstr "Vastaanotettu (elektroninen)"
 
 #: application/views/logbookadvanced/index.php:815
 msgid "Create ADIF"
-msgstr ""
+msgstr "Luo ADIF"
 
 #: application/views/logbookadvanced/index.php:816
 msgid "Print Label"
-msgstr ""
+msgstr "Tulosta tarra"
 
 #: application/views/logbookadvanced/index.php:817
 msgid "QSL Slideshow"
-msgstr ""
+msgstr "QSL diaesitys"
 
 #: application/views/logbookadvanced/index.php:825
 #: application/views/oqrs/showrequests.php:58
 msgid "# Results"
-msgstr ""
+msgstr "# Tulokset"
 
 #: application/views/logbookadvanced/index.php:846
 msgid "Dupes"
-msgstr ""
+msgstr "Duplikaatit"
 
 #: application/views/logbookadvanced/index.php:862
 msgid "Globe map"
-msgstr ""
+msgstr "Karttapallo"
 
 #: application/views/logbookadvanced/index.php:869
 msgid "Database Tools"
-msgstr ""
+msgstr "Tietokantatyökalut"
 
 #: application/views/logbookadvanced/index.php:896
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "Last modified"
-msgstr ""
+msgstr "Viimeksi muokattu"
 
 #: application/views/logbookadvanced/index.php:899
 #: application/views/logbookadvanced/useroptions.php:28
 msgid "De"
-msgstr ""
+msgstr "De"
 
 #: application/views/logbookadvanced/index.php:944
 #: application/views/logbookadvanced/useroptions.php:136
 #: application/views/qso/edit_ajax.php:429
 #: application/views/timeline/index.php:72 application/views/user/edit.php:627
 msgid "QRZ"
-msgstr ""
+msgstr "QRZ"
 
 #: application/views/logbookadvanced/index.php:950
 #: application/views/logbookadvanced/useroptions.php:148
 #: application/views/qso/edit_ajax.php:528
 msgid "QSL Msg (S)"
-msgstr ""
+msgstr "QSL Msg (S)"
 
 #: application/views/logbookadvanced/index.php:953
 #: application/views/logbookadvanced/useroptions.php:154
 #: application/views/qso/edit_ajax.php:537
 msgid "QSL Msg (R)"
-msgstr ""
+msgstr "QSL Msg (R)"
 
 #: application/views/logbookadvanced/index.php:1004
 #: application/views/logbookadvanced/useroptions.php:289
 msgid "My Refs"
-msgstr ""
+msgstr "Referenssini"
 
 #: application/views/logbookadvanced/index.php:1013
 msgid "Ant az"
-msgstr ""
+msgstr "Ant az"
 
 #: application/views/logbookadvanced/index.php:1013
 #: application/views/logbookadvanced/useroptions.php:311
 msgid "Antenna azimuth"
-msgstr ""
+msgstr "Antenniatsimuutti"
 
 #: application/views/logbookadvanced/index.php:1016
 msgid "Ant el"
-msgstr ""
+msgstr "Ant el"
 
 #: application/views/logbookadvanced/index.php:1016
 #: application/views/logbookadvanced/useroptions.php:317
 msgid "Antenna elevation"
-msgstr ""
+msgstr "Antennielevaatio"
 
 #: application/views/logbookadvanced/index.php:1022
 #: application/views/logbookadvanced/useroptions.php:329
 msgid "Station power"
-msgstr ""
+msgstr "Lähetysteho"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
 msgid "QSL picture #"
-msgstr ""
+msgstr "QSL-kuva #"
 
 #: application/views/logbookadvanced/qslcarousel.php:67
 #: application/views/qslcard/qslcarousel.php:32
 msgid "Previous"
-msgstr ""
+msgstr "Edellinen"
 
 #: application/views/logbookadvanced/qslcarousel.php:71
 #: application/views/qslcard/qslcarousel.php:36
 msgid "Next"
-msgstr ""
+msgstr "Seuraava"
 
 #: application/views/logbookadvanced/showMissingDxccQsos.php:14
 #, php-format
 msgid "Found %s QSO(s) missing DXCC information."
-msgstr ""
+msgstr "Löytyi %s QSOa, joilta puuttuu DXCC-tiedot."
 
 #: application/views/logbookadvanced/showMissingDxccQsos.php:47
 #: application/views/logbookadvanced/showStateQsos.php:49
 msgid "No Issues Found"
-msgstr ""
+msgstr "Ongelmia ei löytynyt"
 
 #: application/views/logbookadvanced/showStateQsos.php:16
 #, php-format
 msgid "Found %s QSO(s) missing state information for DXCC %s."
-msgstr ""
+msgstr "Löydettiin %s QSOa, joista puuttuu osavaltiotieto DXCC:lle %s."
 
 #: application/views/logbookadvanced/showUpdateResult.php:22
 msgid "Results for state update:"
-msgstr ""
+msgstr "Osavaltiopäivityksen tulokset:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:24
 #: application/views/logbookadvanced/showUpdateResult.php:26
