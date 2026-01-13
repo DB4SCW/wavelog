@@ -197,6 +197,13 @@ class Satellite_model extends CI_Model {
 		return $query->row();
 	}
 
+	function lotw_support($sat) {
+		$this->db->select('satellite.lotw AS lotw_support');
+		$this->db->where('name', $sat);
+		$query = $this->db->get('satellite');
+		return $query->row();
+	}
+
 }
 
 ?>

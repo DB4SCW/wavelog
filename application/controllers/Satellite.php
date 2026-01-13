@@ -237,6 +237,15 @@ class Satellite extends CI_Controller {
 		echo json_encode($satellite_data, JSON_FORCE_OBJECT);
 	}
 
+	public function lotw_support() {
+		$sat = $this->security->xss_clean($this->input->post('sat'));
+		$this->load->model('satellite_model');
+		$lotw_data = $this->satellite_model->lotw_support($sat);
+
+		header('Content-Type: application/json');
+		echo json_encode($lotw_data);
+	}
+
 	public function pass() {
 
 		$this->load->model('satellite_model');

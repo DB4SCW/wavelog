@@ -933,10 +933,19 @@ $("#sat_name").on('change', function () {
 		$("#selectPropagation").val("");
 		stop_az_ele_ticker();
 	} else {
+		$('#lotw_support').text("");
+		$('#lotw_support').removeClass();
 		get_tles();
+		get_lotw_support();
 	}
 });
 
+$("#sat_name").on('focusout', function () {
+	if ($(this).val().length == 0) {
+		$('#lotw_support').text("");
+		$('#lotw_support').removeClass();
+	}
+});
 
 var satupdater;
 
@@ -1012,6 +1021,37 @@ function get_tles() {
 		},
 		error: function (data) {
 			console.log('Something went wrong while trying to fetch TLE for sat: '+$("#sat_name"));
+		},
+	});
+}
+
+function get_lotw_support() {
+	$.ajax({
+		url: base_url + 'index.php/satellite/lotw_support',
+		type: 'post',
+		data: {
+			sat: $("#sat_name").val(),
+		},
+		success: function (data) {
+			if (data == null) {
+				$('#lotw_support').html(lang_qso_sat_lotw_support_not_found).fadeIn("slow");
+				$('#lotw_support').addClass('badge bg-warning');
+			//} else if (typeof data === 'string') {
+			} else {
+				console.log("TEST "+data.lotw_support);
+				if (data) {
+					if (data.lotw_support == 'Y') {
+						$('#lotw_support').html(lang_qso_sat_lotw_supported).fadeIn("slow");
+						$('#lotw_support').addClass('badge bg-success');
+					} else if (data.lotw_support == 'N') {
+						$('#lotw_support').html(lang_qso_sat_lotw_not_supported).fadeIn("slow");
+						$('#lotw_support').addClass('badge bg-danger');
+					}
+				}
+			}
+		},
+		error: function (data) {
+			console.log('Something went wrong while trying to determine LoTW support for sat: '+$("#sat_name"));
 		},
 	});
 }
@@ -1214,6 +1254,8 @@ function reset_fields() {
 	pendingReferencesMap.clear();
 
 	$('#locator_info').text("");
+	$('#lotw_support').text("");
+	$('#lotw_support').removeClass();
 	$('#comment').val("");
 	$('#country').val("");
 	$('#continent').val("");
@@ -2846,6 +2888,8 @@ function highlightSCP(term, base) {
 function resetDefaultQSOFields() {
 	$('#callsign_info').text("");
 	$('#locator_info').text("");
+	$('#lotw_support').text("");
+	$('#lotw_support').removeClass();
 	$('#country').val("");
 	$('#continent').val("");
 	$("#distance").val("");
