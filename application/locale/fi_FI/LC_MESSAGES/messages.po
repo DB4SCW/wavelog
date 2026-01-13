@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
 "PO-Revision-Date: 2026-01-13 18:52+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
-"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
-"main-translation/fi/>\n"
+"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
+"translation/fi/>\n"
 "Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -6980,8 +6980,8 @@ msgstr ""
 "on oma yhdistyksensä, joka määrittelee kyseisen yhdistyksen SOTA-huiput. "
 "Jokaisesta huipusta saa aktivaattoreille ja hunttereille pisteitä, jotka "
 "liittyvät huipun korkeuteen. Erilaisista pistemääristä saa todistuksia, "
-"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' -"
-"palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
+"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' "
+"-palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
 "SOTAn online-tietokannassa."
 
 #: application/views/awards/vucc/index.php:7
@@ -10861,8 +10861,10 @@ msgstr "QSO-tietokannan ylläpito"
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
 "The Database contains %d QSOs without a station-profile (location)"
-msgstr[0] "Tietokanta sisältää %d QSO-yhteyden ilman asemaprofiilia (sijaintia)"
-msgstr[1] "Tietokanta sisältää %d QSO-yhteyttä ilman asemaprofiilia (sijaintia)"
+msgstr[0] ""
+"Tietokanta sisältää %d QSO-yhteyden ilman asemaprofiilia (sijaintia)"
+msgstr[1] ""
+"Tietokanta sisältää %d QSO-yhteyttä ilman asemaprofiilia (sijaintia)"
 
 #: application/views/debug/index.php:624
 msgid "Please mark QSOs and reassign them to an existing station location:"
@@ -12648,8 +12650,8 @@ msgstr "SIsällytä lokaattori?"
 msgid ""
 "Include reference? (SIG, SOTA, POTA, IOTA, WWFF; If available in location)"
 msgstr ""
-"Sisällytä referenssi? "
-"(Sig, SOTA, POTA, IOTA, WWFF; jos saatavilla asemasijainnissa)"
+"Sisällytä referenssi? (Sig, SOTA, POTA, IOTA, WWFF; jos saatavilla "
+"asemasijainnissa)"
 
 #: application/views/labels/startatform.php:16
 msgid "Include Via (if filled)?"
@@ -12735,7 +12737,8 @@ msgstr "Tämä on hyödyllistä, jos olet tuonut QSOja ilman maanosa-tietoja."
 #: application/views/logbookadvanced/continentdialog.php:4
 msgid ""
 "Update will only set the continent for QSOs where the continent is empty."
-msgstr "Päivitys asettaa maanosan vain niille QSQille, joissa maanosa on tyhjä."
+msgstr ""
+"Päivitys asettaa maanosan vain niille QSQille, joissa maanosa on tyhjä."
 
 #: application/views/logbookadvanced/checkresult.php:74
 #: application/views/logbookadvanced/checkresult.php:146
@@ -12895,8 +12898,8 @@ msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
-"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä DXCC:"
-"tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
+"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä "
+"DXCC:tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
 
 #: application/views/logbookadvanced/checkresult.php:390
 msgid "QSO DXCC"
@@ -13277,8 +13280,8 @@ msgid ""
 "Distance (in km). Leave blank to recalculate distance. (It will only work if "
 "a gridsquare is set)."
 msgstr ""
-"Etäisyys (km). Jätä tyhjäksi laskeaksesi etäisyys uudelleen. "
-"(Toimii vain, jos lokaattori on asetettu)."
+"Etäisyys (km). Jätä tyhjäksi laskeaksesi etäisyys uudelleen. (Toimii vain, "
+"jos lokaattori on asetettu)."
 
 #: application/views/logbookadvanced/help.php:2
 msgid "In the text input searches, you can search in the following way:"
@@ -18898,6 +18901,10 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
+msgstr ""
+
+#: application/views/lookup/result.php:16
+msgid "This gridsquare exists in the following DXCC(s):"
 msgstr ""
 
 #~ msgid "Bandmap"

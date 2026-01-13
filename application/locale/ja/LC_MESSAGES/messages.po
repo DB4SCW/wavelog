@@ -8,11 +8,11 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-12 08:56+0000\n"
+"POT-Creation-Date: 2026-01-13 20:02+0000\n"
 "PO-Revision-Date: 2026-01-12 11:41+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
-"Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/"
-"main-translation/ja/>\n"
+"Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
+"translation/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12853,7 +12853,8 @@ msgstr "これらの QSO には誤った IOTA 参照がある可能性があり�
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
-msgstr "結果は正しいDXCCに依存し、現在のDXCCとのみ照合されます。誤検知が発生する可能"
+msgstr ""
+"結果は正しいDXCCに依存し、現在のDXCCとのみ照合されます。誤検知が発生する可能"
 "性があります。"
 
 #: application/views/logbookadvanced/checkresult.php:390
@@ -14175,6 +14176,10 @@ msgstr "最終アップロード"
 #: application/views/lookup/lotwuser.php:14
 msgid "No LoTW User"
 msgstr "LoTWユーザーなし"
+
+#: application/views/lookup/result.php:16
+msgid "This gridsquare exists in the following DXCC(s):"
+msgstr ""
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"
