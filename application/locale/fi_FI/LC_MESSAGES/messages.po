@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-13 01:48+0000\n"
+"PO-Revision-Date: 2026-01-13 17:31+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/fi/>\n"
@@ -13655,7 +13655,7 @@ msgstr "QSL-suodattimet"
 
 #: application/views/logbookadvanced/index.php:548
 msgid "QSL sent"
-msgstr ""
+msgstr "QSL lähetetty"
 
 #: application/views/logbookadvanced/index.php:554
 #: application/views/logbookadvanced/index.php:598
@@ -13685,7 +13685,7 @@ msgstr ""
 #: src/QSLManager/QSO.php:655 src/QSLManager/QSO.php:682
 #: src/QSLManager/QSO.php:726 src/QSLManager/QSO.php:806
 msgid "Queued"
-msgstr ""
+msgstr "Jonossa"
 
 #: application/views/logbookadvanced/index.php:555
 #: application/views/logbookadvanced/index.php:565
@@ -13745,127 +13745,127 @@ msgstr "Virheellinen (Ohita)"
 
 #: application/views/logbookadvanced/index.php:559
 msgid "QSL received"
-msgstr ""
+msgstr "QSL vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:570
 msgid "QSL send. method"
-msgstr ""
+msgstr "QSL lähetetty. Tavalla"
 
 #: application/views/logbookadvanced/index.php:580
 msgid "QSL recv. method"
-msgstr ""
+msgstr "QSL vastaanotettu. Tavalla"
 
 #: application/views/logbookadvanced/index.php:592
 msgid "LoTW sent"
-msgstr ""
+msgstr "LoTW lähetetty"
 
 #: application/views/logbookadvanced/index.php:603
 msgid "LoTW received"
-msgstr ""
+msgstr "LoTW vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:615
 msgid "Clublog sent"
-msgstr ""
+msgstr "Clublog lähetetty"
 
 #: application/views/logbookadvanced/index.php:626
 msgid "Clublog received"
-msgstr ""
+msgstr "Clublog vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:639
 msgid "eQSL sent"
-msgstr ""
+msgstr "eQSL lähetetty"
 
 #: application/views/logbookadvanced/index.php:650
 msgid "eQSL received"
-msgstr ""
+msgstr "eQSL vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:661
 msgid "DCL sent"
-msgstr ""
+msgstr "DCL lähetetty"
 
 #: application/views/logbookadvanced/index.php:670
 msgid "DCL received"
-msgstr ""
+msgstr "DCL vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:685
 msgid "QSL Images"
-msgstr ""
+msgstr "QSL-kuvat"
 
 #: application/views/logbookadvanced/index.php:693
 msgid "QRZ sent"
-msgstr ""
+msgstr "QRZ lähetetty"
 
 #: application/views/logbookadvanced/index.php:702
 msgid "QRZ received"
-msgstr ""
+msgstr "QRZ vastaanotettu"
 
 #: application/views/logbookadvanced/index.php:725
 msgid "Quickfilters"
-msgstr ""
+msgstr "Pikasuodattimet"
 
 #: application/views/logbookadvanced/index.php:730
 msgid "Quicksearch with selected: "
-msgstr ""
+msgstr "Pikahaku valituista: "
 
 #: application/views/logbookadvanced/index.php:735
 msgid "Search Date"
-msgstr ""
+msgstr "Hakupäivämäärä"
 
 #: application/views/logbookadvanced/index.php:741
 msgid "Search DXCC"
-msgstr ""
+msgstr "ETsi DXCC"
 
 #: application/views/logbookadvanced/index.php:744
 msgid "Search State"
-msgstr ""
+msgstr "Etsi osavaltio"
 
 #: application/views/logbookadvanced/index.php:747
 msgid "Search Gridsquare"
-msgstr ""
+msgstr "Etsi lokaattori"
 
 #: application/views/logbookadvanced/index.php:750
 msgid "Search CQ Zone"
-msgstr ""
+msgstr "Etsi CQ-alue"
 
 #: application/views/logbookadvanced/index.php:753
 msgid "Search ITU Zone"
-msgstr ""
+msgstr "Etsi ITU-alue"
 
 #: application/views/logbookadvanced/index.php:756
 msgid "Search Mode"
-msgstr ""
+msgstr "Etsi mode"
 
 #: application/views/logbookadvanced/index.php:759
 msgid "Search Band"
-msgstr ""
+msgstr "Etsi bandi"
 
 #: application/views/logbookadvanced/index.php:762
 msgid "Search IOTA"
-msgstr ""
+msgstr "etsi IOTA"
 
 #: application/views/logbookadvanced/index.php:765
 msgid "Search SOTA"
-msgstr ""
+msgstr "Etsi SOTA"
 
 #: application/views/logbookadvanced/index.php:768
 msgid "Search POTA"
-msgstr ""
+msgstr "Etsi POTA"
 
 #: application/views/logbookadvanced/index.php:771
 msgid "Search WWFF"
-msgstr ""
+msgstr "Etsi WWFF"
 
 #: application/views/logbookadvanced/index.php:774
 msgid "Search Operator"
-msgstr ""
+msgstr "Etsi operaattori"
 
 #: application/views/logbookadvanced/index.php:793
 msgid "Warning! Are you sure you want to delete the marked QSO(s)?"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti poistaa merkityt QSOt?"
 
 #: application/views/logbookadvanced/index.php:794
 msgid " QSO(s) will be deleted"
-msgstr ""
+msgstr " QSOt tullaan poistamaan"
 
 #: application/views/logbookadvanced/index.php:798
 msgid "With selected: "
