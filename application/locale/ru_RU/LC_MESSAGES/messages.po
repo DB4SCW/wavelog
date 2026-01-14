@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-13 20:02+0000\n"
-"PO-Revision-Date: 2026-01-12 11:41+0000\n"
+"PO-Revision-Date: 2026-01-14 13:23+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
-"Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/ru/>\n"
+"Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/ru/>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14320,7 +14320,7 @@ msgstr "Не использует LoTW"
 
 #: application/views/lookup/result.php:16
 msgid "This gridsquare exists in the following DXCC(s):"
-msgstr ""
+msgstr "Этот квадрат присутствует в следующих DXCC:"
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"
@@ -17651,7 +17651,7 @@ msgstr "Статистика журнала."
 #: application/views/statistics/index.php:114
 #: application/views/statistics/index.php:159
 msgid "Unique callsigns"
-msgstr "по уникальным позывным"
+msgstr "Уникальные позывные"
 
 #: application/views/statistics/index.php:162
 msgid "Unique Grids"
