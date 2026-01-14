@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-13 20:02+0000\n"
-"PO-Revision-Date: 2026-01-14 13:23+0000\n"
+"PO-Revision-Date: 2026-01-14 13:47+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/ru/>\n"
@@ -17646,7 +17646,7 @@ msgstr "Декабрь"
 
 #: application/views/statistics/index.php:50
 msgid "Explore the logbook."
-msgstr "Статистика журнала."
+msgstr "."
 
 #: application/views/statistics/index.php:114
 #: application/views/statistics/index.php:159
