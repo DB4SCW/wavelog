@@ -144,6 +144,7 @@ class Labels_model extends CI_Model {
                 FROM " . $table_name . "
                 JOIN station_profile ON station_profile.station_id = " . $table_name . ".station_id
                 JOIN dxcc_entities ON station_profile.station_dxcc = dxcc_entities.adif
+                JOIN dxcc_entities dxc2 ON ".$table_name.".COL_DXCC = dxc2.adif
                 WHERE station_profile.user_id = ?
                 AND COL_QSL_SENT IN ('R', 'Q')";
 
@@ -157,7 +158,7 @@ class Labels_model extends CI_Model {
             $binding[] = $station_id;
         }
 
-        $sql .= " ORDER BY dxcc_entities.prefix ASC, COL_CALL ASC, COL_SAT_NAME ASC, COL_SAT_MODE ASC, COL_BAND_RX ASC, COL_TIME_ON ASC, COL_MODE ASC";
+        $sql .= " ORDER BY dxc2.prefix ASC, COL_CALL ASC, COL_SAT_NAME ASC, COL_SAT_MODE ASC, COL_BAND_RX ASC, COL_TIME_ON ASC, COL_MODE ASC";
 
         $query = $this->db->query($sql, $binding);
 
@@ -172,6 +173,7 @@ class Labels_model extends CI_Model {
                 FROM " . $table_name . "
                 JOIN station_profile ON station_profile.station_id = " . $table_name . ".station_id
                 JOIN dxcc_entities ON station_profile.station_dxcc = dxcc_entities.adif
+                JOIN dxcc_entities dxc2 ON ".$table_name.".COL_DXCC = dxc2.adif
                 WHERE station_profile.user_id = ?
                 AND COL_PRIMARY_KEY IN (";
 
@@ -179,7 +181,7 @@ class Labels_model extends CI_Model {
 
         $placeholders = array_fill(0, count($ids), '?');
         $sql .= implode(',', $placeholders);
-        $sql .= ") ORDER BY dxcc_entities.prefix ASC, COL_CALL ASC, COL_SAT_NAME ASC, COL_SAT_MODE ASC, COL_BAND_RX ASC, COL_TIME_ON ASC, COL_MODE ASC";
+        $sql .= ") ORDER BY dxc2.prefix ASC, COL_CALL ASC, COL_SAT_NAME ASC, COL_SAT_MODE ASC, COL_BAND_RX ASC, COL_TIME_ON ASC, COL_MODE ASC";
 
         $binding = array_merge($binding, $ids);
 
