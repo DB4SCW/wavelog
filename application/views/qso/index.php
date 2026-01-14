@@ -38,9 +38,9 @@ switch ($date_format) {
   var lang_qso_wait_before_saving = "<?= __("Please wait before saving another QSO"); ?>";
   var latlng=[<?php echo $lat.','.$lng;?>];
   var user_date_format = "<?php echo $date_format; ?>"; // Pass the user's date format to JavaScript
-  var lang_qso_sat_lotw_support_not_found = "<?= __("Satelite not found"); ?>";
-  var lang_qso_sat_lotw_supported = "<?= __("LoTW support"); ?>";
-  var lang_qso_sat_lotw_not_supported = "<?= __("No LoTW support"); ?>";
+  var lang_qso_sat_lotw_support_not_found = "<?= __("Satellite not found"); ?>";
+  var lang_qso_sat_lotw_supported = "<?= __("Supported by LoTW"); ?>";
+  var lang_qso_sat_lotw_not_supported = "<?= __("Not supported by LoTW"); ?>";
 </script>
 
 <!--- DX Waterfall --->
