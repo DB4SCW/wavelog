@@ -1036,9 +1036,7 @@ function get_lotw_support() {
 			if (data == null) {
 				$('#lotw_support').html(lang_qso_sat_lotw_support_not_found).fadeIn("slow");
 				$('#lotw_support').addClass('badge bg-warning');
-			//} else if (typeof data === 'string') {
 			} else {
-				console.log("TEST "+data.lotw_support);
 				if (data) {
 					if (data.lotw_support == 'Y') {
 						$('#lotw_support').html(lang_qso_sat_lotw_supported).fadeIn("slow");
