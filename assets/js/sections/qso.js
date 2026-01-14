@@ -935,8 +935,7 @@ $("#sat_name").on('change', function () {
 	} else {
 		$('#lotw_support').text("");
 		$('#lotw_support').removeClass();
-		get_tles();
-		get_lotw_support();
+		get_sat_info();
 	}
 });
 
@@ -1006,56 +1005,39 @@ function start_az_ele_ticker(tle) {
 	satupdater=setInterval(updateAzEl, 1000);
 }
 
-function get_tles() {
+function get_sat_info() {
 	stop_az_ele_ticker();
 	$.ajax({
-		url: base_url + 'index.php/satellite/get_tle',
+		url: base_url + 'index.php/satellite/get_sat_info',
 		type: 'post',
 		data: {
 			sat: $("#sat_name").val(),
 		},
 		success: function (data) {
 			if (data !== null) {
-				start_az_ele_ticker(data);
-			}
-		},
-		error: function (data) {
-			console.log('Something went wrong while trying to fetch TLE for sat: '+$("#sat_name"));
-		},
-	});
-}
-
-function get_lotw_support() {
-	$.ajax({
-		url: base_url + 'index.php/satellite/lotw_support',
-		type: 'post',
-		data: {
-			sat: $("#sat_name").val(),
-		},
-		success: function (data) {
-			if (data == null) {
+				if (data.tle) {
+					start_az_ele_ticker(data);
+				}
+				if (data.lotw_support == 'Y') {
+					$('#lotw_support').html(lang_qso_sat_lotw_supported).fadeIn("slow");
+					$('#lotw_support').addClass('badge bg-success');
+				} else if (data.lotw_support == 'N') {
+					$('#lotw_support').html(lang_qso_sat_lotw_not_supported).fadeIn("slow");
+					$('#lotw_support').addClass('badge bg-danger');
+				}
+			} else {
 				$('#lotw_support').html(lang_qso_sat_lotw_support_not_found).fadeIn("slow");
 				$('#lotw_support').addClass('badge bg-warning');
-			} else {
-				if (data) {
-					if (data.lotw_support == 'Y') {
-						$('#lotw_support').html(lang_qso_sat_lotw_supported).fadeIn("slow");
-						$('#lotw_support').addClass('badge bg-success');
-					} else if (data.lotw_support == 'N') {
-						$('#lotw_support').html(lang_qso_sat_lotw_not_supported).fadeIn("slow");
-						$('#lotw_support').addClass('badge bg-danger');
-					}
-				}
 			}
 		},
 		error: function (data) {
-			console.log('Something went wrong while trying to determine LoTW support for sat: '+$("#sat_name"));
+			console.log('Something went wrong while trying to fetch info for sat: '+$("#sat_name"));
 		},
 	});
 }
 
 if ($("#sat_name").val() !== '') {
-	get_tles();
+	get_sat_info();
 }
 
 $('#stateDropdown').on('change', function () {
