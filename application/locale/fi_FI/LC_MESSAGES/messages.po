@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-15 17:11+0000\n"
+"PO-Revision-Date: 2026-01-15 22:21+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/fi/>\n"
@@ -1960,15 +1960,15 @@ msgstr "Logbook of the World"
 
 #: application/controllers/Lotw.php:161
 msgid "Certificate Imported."
-msgstr "Sertifikaatti tuotu."
+msgstr "Varmenne tuotu."
 
 #: application/controllers/Lotw.php:168
 msgid "Certificate Updated."
-msgstr "Sertifikaatti päivitetty."
+msgstr "Varmenne päivitetty."
 
 #: application/controllers/Lotw.php:420
 msgid "Certificate Deleted."
-msgstr "Sertifikaatti poistettu."
+msgstr "Varmenne poistettu."
 
 #: application/controllers/Lotw.php:448
 #, php-format
@@ -1990,14 +1990,14 @@ msgid ""
 "contains 'key-only' this is typically a certificate request which has not "
 "been processed by LoTW yet."
 msgstr ""
-"Yleinen virhe sertifikaattia purettaessa tiedostosta %s. Jos tiedostonimessä "
-"on \"key-only\", tämä on yleensä sertifikaattipyyntö, jota LoTW ei ole vielä "
+"Yleinen virhe varmennetta purettaessa tiedostosta %s. Jos tiedostonimessä on "
+"\"key-only\", tämä on yleensä varmennepyyntö, jota LoTW ei ole vielä "
 "käsitellyt."
 
 #: application/controllers/Lotw.php:457
 #, php-format
 msgid "Generic error processing the certificate in file %s."
-msgstr "Yleinen virhe käsiteltäessä sertifikaattia tiedostossa %s."
+msgstr "Yleinen virhe käsiteltäessä varmennetta tiedostossa %s."
 
 #: application/controllers/Lotw.php:469
 #, php-format
@@ -8683,7 +8683,7 @@ msgstr "Osoitteen maa"
 
 #: application/views/cabrillo/index.php:193
 msgid "Certificate"
-msgstr "Sertifikaatti"
+msgstr "Varmenne"
 
 #: application/views/cabrillo/index.php:193
 msgid ""
@@ -10512,7 +10512,7 @@ msgstr "Klikkaa hiiren oikealla näppäimella haluamaasi kutsua"
 #: application/views/dcl_views/upload_cert.php:25
 #: application/views/lotw_views/upload_cert.php:25
 msgid "Click 'Save Callsign Certificate File'"
-msgstr "Tallenna kutsumerkkisertifikaattitiedosto"
+msgstr "Tallenna kutsumerkin varmennetiedosto"
 
 #: application/views/dcl_views/upload_cert.php:26
 #: application/views/lotw_views/upload_cert.php:26
@@ -14120,115 +14120,123 @@ msgstr "Suorita korjaus"
 
 #: application/views/logbookadvanced/statecheckresult.php:43
 msgid "No QSOs were found where state information can be fixed."
-msgstr ""
+msgstr "QSOja ei löytynyt, joissa osavaltiotieto olisi voitu korjata."
 
 #: application/views/logbookadvanced/statedialog.php:2
 msgid ""
 "Update QSOs with state/province information based on gridsquare and DXCC "
 "country."
 msgstr ""
+"Päivitä QSOt osavaltio-/provinssitiedoilla lokaattorin ja DXCC-maan "
+"perusteella."
 
 #: application/views/logbookadvanced/statedialog.php:3
 msgid ""
 "This feature uses GeoJSON boundary data to determine the state/province from "
 "the gridsquare locator."
 msgstr ""
+"Tämä laajennus käyttää GeoJSON-rajatietoja määrittääkseen osavaltion/"
+"provinssin lokaattorin perusteella."
 
 #: application/views/logbookadvanced/statedialog.php:4
 msgid "Update will only set the state for QSOs where:"
-msgstr ""
+msgstr "Päivitys päivittää osavaltion vain seuraaville:"
 
 #: application/views/logbookadvanced/statedialog.php:6
 msgid "The state field is empty"
-msgstr ""
+msgstr "Osavaltiotieto puuttuu"
 
 #: application/views/logbookadvanced/statedialog.php:7
 msgid "A gridsquare is present (at least 6 characters)"
-msgstr ""
+msgstr "Lokaattori on määritetty (vähintään 6 merkkiä)"
 
 #: application/views/logbookadvanced/statedialog.php:8
 msgid "The DXCC country supports state lookup"
-msgstr ""
+msgstr "DXCC-maa on käytettävissä osavaltion tunnistamiseen"
 
 #: application/views/logbookadvanced/statedialog.php:10
 msgid "Currently supported countries"
-msgstr ""
+msgstr "Tällä hetkellä tuetut maat"
 
 #: application/views/logbookadvanced/useroptions.php:15
 msgid "Basic QSO Information"
-msgstr ""
+msgstr "QSOn perustiedot"
 
 #: application/views/logbookadvanced/useroptions.php:72
 msgid "Station Details"
-msgstr ""
+msgstr "Asematiedot"
 
 #: application/views/logbookadvanced/useroptions.php:105
 msgid "Confirmation Services"
-msgstr ""
+msgstr "Vahvistuspalvelut"
 
 #: application/views/logbookadvanced/useroptions.php:162
 msgid "Geographic Information"
-msgstr ""
+msgstr "Maantieteellinen tieto"
 
 #: application/views/logbookadvanced/useroptions.php:207
 msgid "Awards Programs"
-msgstr ""
+msgstr "Awardiohjelmat"
 
 #: application/views/logbookadvanced/useroptions.php:258
 msgid "Additional Information"
-msgstr ""
+msgstr "Lisätiedot"
 
 #: application/views/logbookadvanced/useroptions.php:297
 msgid "Technical Details"
-msgstr ""
+msgstr "Tekniset tiedot"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "For debugging only"
-msgstr ""
+msgstr "Vain virheenkorjausta varten"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid ""
 "This is meant for debugging purposes only and not designed to be displayed "
 "by default"
 msgstr ""
+"Tämä on tarkoitettu vain vianetsintää varten, eikä sitä ole tarkoitus "
+"näyttää oletusarvoisesti"
 
 #: application/views/logbookadvanced/useroptions.php:347
 msgid "Map Layers"
-msgstr ""
+msgstr "Karttatasot"
 
 #: application/views/lookup/index.php:11
 #: application/views/qso/award_tabs.php:53
 msgid "US State"
-msgstr ""
+msgstr "USA:n osavaltio"
 
 #: application/views/lookup/index.php:13
 msgid "LoTW user"
-msgstr ""
+msgstr "LoTW-käyttäjä"
 
 #: application/views/lookup/index.php:77
 msgid "Choose a State"
-msgstr ""
+msgstr "Valitse osavaltio"
 
 #: application/views/lookup/lotwuser.php:12
 #: application/views/search/result.php:82
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d päivä sitten"
+msgstr[1] "%d päivää sitten"
 
 #: application/views/lookup/lotwuser.php:12
 #: application/views/search/result.php:82
 msgid "last upload"
-msgstr ""
+msgstr "Viimeisin lataus"
 
 #: application/views/lookup/lotwuser.php:14
 msgid "No LoTW User"
-msgstr ""
+msgstr "Ei LoTW-käyttäjä"
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"
 msgstr ""
+"Tietoja ei tuotu. Tarkista valittu päivämäärä, sillä sen täytyy olla "
+"menneisyydessä!"
 
 #: application/views/lotw/import.php:22
 msgid "Upload a File"
@@ -14236,7 +14244,7 @@ msgstr "Lataa tiedosto"
 
 #: application/views/lotw/import.php:24
 msgid "Download Report"
-msgstr ""
+msgstr "Lataa raportti"
 
 #: application/views/lotw/import.php:24
 #, php-format
@@ -14244,6 +14252,8 @@ msgid ""
 "Upload the Exported ADIF file from LoTW from the %s Area, to mark QSOs as "
 "confirmed on LoTW."
 msgstr ""
+"Lataa LoTW:n %s-alueelta viety ADIF-tiedosto merkitäksesi QSOt LoTW:ssä "
+"vahvistetuiksi."
 
 #: application/views/lotw/import.php:27
 msgid "Choose file"
@@ -14255,7 +14265,7 @@ msgstr "Lataa ja tuo LoTW:n data"
 
 #: application/views/lotw/import.php:48
 msgid "Select callsign to pull LoTW confirmations for."
-msgstr ""
+msgstr "Valitse kutsumerkki, jolle LoTW-vahvistukset noudetaan."
 
 #: application/views/lotw/import.php:62
 msgid ""
@@ -14276,11 +14286,11 @@ msgstr "Tuo LoTW:n osumat"
 #: application/views/lotw/satupdate.php:7
 #: application/views/satellite/index.php:53
 msgid "Display Name"
-msgstr ""
+msgstr "Näyttönimi"
 
 #: application/views/lotw_views/index.php:4
 msgid "Upload folder is not writable. Please contact your admin."
-msgstr ""
+msgstr "Lataushakemistoon ei voida kirjoittaa. Ota yhteyttä ylläpitäjään."
 
 #: application/views/lotw_views/index.php:8
 msgid "LoTW Import"
@@ -14317,41 +14327,41 @@ msgstr "Last upload"
 
 #: application/views/lotw_views/index.php:95
 msgid "Last change:"
-msgstr ""
+msgstr "Viimeisin muutos:"
 
 #: application/views/lotw_views/index.php:95
 msgid "Serial number:"
-msgstr ""
+msgstr "Sarjanumero:"
 
 #: application/views/lotw_views/index.php:97
 msgid "Certificate superseded"
-msgstr ""
+msgstr "Varmenne korvattu"
 
 #: application/views/lotw_views/index.php:100
 msgid "Certificate expired"
-msgstr ""
+msgstr "Varmenne vanhentunut"
 
 #: application/views/lotw_views/index.php:102
 msgid "Certificate expiring"
-msgstr ""
+msgstr "Varmenne vanhentuu pian"
 
 #: application/views/lotw_views/index.php:104
 msgid "Certificate valid"
-msgstr ""
+msgstr "Varmenne voimassa"
 
 #: application/views/lotw_views/index.php:109
 msgid "QSO end date nearing"
-msgstr ""
+msgstr "QSO:n päättymispäivä lähestyy"
 
 #: application/views/lotw_views/index.php:121
 #, php-format
 msgid "Last success: %s"
-msgstr ""
+msgstr "Viimeisin onnistuminen: %s"
 
 #: application/views/lotw_views/index.php:124
 #, php-format
 msgid "Last fail: %s"
-msgstr ""
+msgstr "Viimeisin epäonnistuminen: %s"
 
 #: application/views/lotw_views/index.php:130
 msgid "Not Synced"
@@ -14366,94 +14376,99 @@ msgstr ""
 #: application/views/lotw_views/index.php:164
 msgid "The next automatic sync with LoTW will happen at: "
 msgstr ""
+"Seuraava automaatinen synkronointi LoTW:n kanssa on suunniteltu ajankohtaan: "
 
 #: application/views/lotw_views/upload_cert.php:28
 #, php-format
 msgid ""
 "For further information please visit the %sLoTW FAQ page%s in the Wavelog "
 "Wiki"
-msgstr ""
+msgstr "Lisätietoja on Wavelog Wikin %sLoTW UKK -sivulla%s"
 
 #: application/views/map/qso_map.php:15
 msgid "Select Country:"
-msgstr ""
+msgstr "Valitse maa:"
 
 #: application/views/map/qso_map.php:17
 msgid "Choose a country..."
-msgstr ""
+msgstr "Valitse maa..."
 
 #: application/views/mode/create.php:24 application/views/mode/edit.php:33
 msgctxt "Name of mode in ADIF-specification"
 msgid "ADIF Mode"
-msgstr ""
+msgstr "ADIF-tila"
 
 #: application/views/mode/create.php:26 application/views/mode/edit.php:35
 msgid "Name of mode in ADIF-specification"
-msgstr ""
+msgstr "Moden nimi ADIF-määrityksessä"
 
 #: application/views/mode/create.php:30 application/views/mode/edit.php:39
 msgctxt "Name of sub-mode in ADIF-specification"
 msgid "ADIF Sub-Mode"
-msgstr ""
+msgstr "ADIF Sub-Mode"
 
 #: application/views/mode/create.php:32 application/views/mode/edit.php:41
 msgid "Name of sub-mode in ADIF-specification"
-msgstr ""
+msgstr "Sub-Moden nimi ADIF-määrityksessä"
 
 #: application/views/mode/create.php:42 application/views/mode/edit.php:53
 msgid "Defines the QRG-segment in bandplan."
-msgstr ""
+msgstr "Määrittää QRG-segmentin bandisuunnitelmassa."
 
 #: application/views/mode/create.php:49 application/views/mode/edit.php:61
 #: application/views/mode/index.php:9 application/views/mode/index.php:55
 #: application/views/usermode/index.php:7
 #: application/views/usermode/index.php:51
 msgid "Not active"
-msgstr ""
+msgstr "Ei aktiivinen"
 
 #: application/views/mode/create.php:51 application/views/mode/edit.php:64
 msgid "Set to active if to be listed in Modes-list"
-msgstr ""
+msgstr "Aseta aktiiviseksi, jotta tämä mode näkyy modelistassa"
 
 #: application/views/mode/create.php:54 application/views/mode/index.php:2
 msgid "Create mode"
-msgstr ""
+msgstr "Luo mode"
 
 #: application/views/mode/edit.php:67
 msgid "Update mode"
-msgstr ""
+msgstr "Päivitä mode"
 
 #: application/views/mode/index.php:3
 msgid "Warning! Are you sure you want to delete the following mode?:"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti poistaa tämän moden:"
 
 #: application/views/mode/index.php:4 application/views/usermode/index.php:2
 msgid "Warning! Are you sure you want to activate all modes?"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti kaikki modet?"
 
 #: application/views/mode/index.php:5 application/views/usermode/index.php:3
 msgid "Warning! Are you sure you want to deactivate all modes?"
-msgstr ""
+msgstr "Varoitus! Oletko varma, että haluat poistaa kaikki modet käytöstä?"
 
 #: application/views/mode/index.php:31 application/views/usermode/index.php:29
 msgid ""
 "Using the modes list you can control which modes are shown when creating a "
 "new QSO."
 msgstr ""
+"Mode-luettelon avulla voit hallita, mitkä modet ovat käytettävissä uutta "
+"QSOa luotaessa."
 
 #: application/views/mode/index.php:34 application/views/usermode/index.php:32
 msgid ""
 "Active modes will be shown in the QSO 'Mode' drop-down, while inactive modes "
 "will be hidden and cannot be selected."
 msgstr ""
+"Aktiiviset modet näytetään QSOn 'Mode' pudotusvalikossa, kun taas "
+"epäaktiiviset tilat piilotetaan eikä niitä voi valita."
 
 #: application/views/mode/index.php:41 application/views/usermode/index.php:39
 msgid "Sub-Mode"
-msgstr ""
+msgstr "Sub-mode"
 
 #: application/views/mode/index.php:88
 msgid "Create a Mode"
-msgstr ""
+msgstr "Luo mode"
 
 #: application/views/notes/add.php:9 application/views/notes/edit.php:10
 #: application/views/notes/main.php:9 application/views/notes/view.php:10
@@ -14483,6 +14498,10 @@ msgid ""
 "store information about QSO partners. These notes are private and are not "
 "shared with other users nor exported to external services."
 msgstr ""
+"Kontaktit ovat erityinen muistiinpanokategoria, jota käytetään Wavelogissa "
+"eri paikoissa QSO-kumppaneita koskevien tietojen tallentamiseen. Nämä "
+"muistiinpanot ovat yksityisiä, eikä niitä jaeta muiden käyttäjien kanssa tai "
+"viedä ulkoisiin palveluihin."
 
 #: application/views/notes/add.php:61 application/views/notes/edit.php:56
 msgid "Note Contents"
@@ -14495,19 +14514,19 @@ msgstr "Tallenna muistiinpano"
 
 #: application/views/notes/main.php:25
 msgid "All Categories"
-msgstr ""
+msgstr "Kaikki kategoriat"
 
 #: application/views/notes/main.php:53
 msgid "Search notes (min. 3 chars)"
-msgstr ""
+msgstr "Hae muistiinpanoista (vähintään 3 merkkiä)"
 
 #: application/views/notes/main.php:54
 msgid "Add stroked zero (Ø)"
-msgstr ""
+msgstr "Lisää yliviivattu nolla (Ø)"
 
 #: application/views/notes/main.php:57
 msgid "Reset search"
-msgstr ""
+msgstr "Nollaa haku"
 
 #: application/views/notes/main.php:75
 msgid "Creation"
