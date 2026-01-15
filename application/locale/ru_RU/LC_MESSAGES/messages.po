@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-13 20:02+0000\n"
-"PO-Revision-Date: 2026-01-14 13:47+0000\n"
+"PO-Revision-Date: 2026-01-15 17:11+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/ru/>\n"
@@ -9311,7 +9311,7 @@ msgstr ""
 #: application/views/qslprint/qsolist.php:15
 #: application/views/webadif/export.php:41
 msgid "Profile name"
-msgstr "Название профиля"
+msgstr "Профиль QTH"
 
 #: application/views/clublog/export.php:35
 #: application/views/hrdlog/export.php:35
@@ -17441,7 +17441,7 @@ msgstr "Привязать профиль QTH"
 #: application/views/stationsetup/linkedlocations.php:31
 #: application/views/stationsetup/stationsetup.php:127
 msgid "Profile Name"
-msgstr "Название профиля"
+msgstr "Профиль QTH"
 
 #: application/views/stationsetup/linkedlocations.php:34
 msgid "Unlink Station Location"
