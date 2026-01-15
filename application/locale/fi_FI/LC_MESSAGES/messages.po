@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-12 08:56+0000\n"
-"PO-Revision-Date: 2026-01-13 21:54+0000\n"
+"PO-Revision-Date: 2026-01-15 17:11+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/fi/>\n"
@@ -14050,71 +14050,73 @@ msgstr "Osavaltiopäivityksen tulokset:"
 #: application/views/logbookadvanced/showUpdateResult.php:24
 #: application/views/logbookadvanced/showUpdateResult.php:26
 msgid "The number of QSOs updated for state/province in"
-msgstr ""
+msgstr "Osavaltion/provinssin osalta päivitettyjen QSOjen määrä oli"
 
 #: application/views/logbookadvanced/showUpdateResult.php:38
 msgid "These QSOs could not be updated:"
-msgstr ""
+msgstr "Näitä QSOja ei voitu päivittää:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:45
 #: application/views/search/lotw_unconfirmed.php:32
 msgid "Station location"
-msgstr ""
+msgstr "Asemasijainti"
 
 #: application/views/logbookadvanced/showUpdateResult.php:46
 msgid "Reason"
-msgstr ""
+msgstr "Peruste"
 
 #: application/views/logbookadvanced/showUpdateResult.php:69
 msgid "Results for continent update:"
-msgstr ""
+msgstr "Maanosapäivityksen tulokset:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:70
 msgid "The number of QSOs updated for continent is"
-msgstr ""
+msgstr "Maanosaa koskevien päivitettyjen QSOjen määrä on"
 
 #: application/views/logbookadvanced/showUpdateResult.php:74
 msgid "Results for distance update:"
-msgstr ""
+msgstr "Etäisyyspäivityksen tulokset:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:75
 msgid "The number of QSOs updated for distance is"
-msgstr ""
+msgstr "Etäisyyden osalta päivitettyjen QSOjen määrä on"
 
 #: application/views/logbookadvanced/showUpdateResult.php:79
 msgid "Results for gridsquare update:"
-msgstr ""
+msgstr "Lokaattoriruutujen päivityksen tulokset:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:80
 msgid "The number of QSOs updated for gridsquare is"
-msgstr ""
+msgstr "Lokaattoriruudun osalta päivitettyjen QSOjen määrä on"
 
 #: application/views/logbookadvanced/startatform.php:15
 msgid "Include Via"
-msgstr ""
+msgstr "Sisällytä Via"
 
 #: application/views/logbookadvanced/startatform.php:21
 msgid "Include QSLMSG"
-msgstr ""
+msgstr "Sisällytä QSLMSG"
 
 #: application/views/logbookadvanced/startatform.php:27
 msgid "Include TNX message"
-msgstr ""
+msgstr "Sisällytä TNX-viesti"
 
 #: application/views/logbookadvanced/statecheckresult.php:3
 #: application/views/logbookadvanced/statecheckresult.php:42
 msgid "State Check Results"
-msgstr ""
+msgstr "Osavaltiotarkistuksen tulokset"
 
 #: application/views/logbookadvanced/statecheckresult.php:4
 msgid ""
 "QSOs with missing state and gridsquares with 6 or more characters found for "
 "the following DXCCs:"
 msgstr ""
+"QSOt, joista puuttuu osavaltiotieto ja joissa lokaattoriruutu on vähintään 6 "
+"merkkiä pitkä, löydettiin seuraaville DXCC-entiteeteille:"
 
 #: application/views/logbookadvanced/statecheckresult.php:30
 msgid "Run fix"
-msgstr ""
+msgstr "Suorita korjaus"
 
 #: application/views/logbookadvanced/statecheckresult.php:43
 msgid "No QSOs were found where state information can be fixed."
