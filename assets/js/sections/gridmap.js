@@ -117,6 +117,7 @@ function gridPlot(form, visitor=true) {
 				dxcc: $('#dxcc').val(),
 				datefrom: $('#dateFrom').val(),
 				dateto: $('#dateTo').val(),
+				call: $("#call").val(),
 			},
 			success: function (data) {
 				$('.cohidden').show();
