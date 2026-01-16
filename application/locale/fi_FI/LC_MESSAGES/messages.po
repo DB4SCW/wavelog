@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-16 07:32+0000\n"
-"PO-Revision-Date: 2026-01-15 22:21+0000\n"
+"PO-Revision-Date: 2026-01-16 21:51+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
-"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
-"translation/fi/>\n"
+"Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
+"main-translation/fi/>\n"
 "Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14236,7 +14236,7 @@ msgstr "Ei LoTW-käyttäjä"
 
 #: application/views/lookup/result.php:16
 msgid "This gridsquare exists in the following DXCC(s):"
-msgstr ""
+msgstr "Tämä lokaattoriruutu ulottuu seuraaviin DXCC-entiteetteihin:"
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"
@@ -14536,29 +14536,31 @@ msgstr "Nollaa haku"
 
 #: application/views/notes/main.php:75
 msgid "Creation"
-msgstr ""
+msgstr "Luonti"
 
 #: application/views/notes/main.php:76
 msgid "Last Modification"
-msgstr ""
+msgstr "Viimeisin muutos"
 
 #: application/views/notes/view.php:20
 msgid "View Note"
-msgstr ""
+msgstr "Näytä muistiinpano"
 
 #: application/views/operator/index.php:9
 msgid ""
 "Please provide your personal call sign. This makes sure that QSOs are logged "
 "and exported with correct operator information."
 msgstr ""
+"Anna henkilökohtainen kutsumerkkisi. Näin varmistetaan, että QSO-yhteydet "
+"kirjataan ja viedään oikeilla operaattoritiedoilla."
 
 #: application/views/operator/index.php:13
 msgid "Your personal Callsign:"
-msgstr ""
+msgstr "Henkilökohtainen kutsumerkkisi:"
 
 #: application/views/operator/index.php:16
 msgid "You have to provide your personal callsign."
-msgstr ""
+msgstr "Sinun täytyy antaa henkilökohtainen kutsumerkkisi."
 
 #: application/views/options/appearance.php:39
 #: application/views/user/edit.php:171
@@ -14571,45 +14573,49 @@ msgstr "Yleisen teeman valinta, joka vaikuttaa sivuston vierailijoihin."
 
 #: application/views/options/appearance.php:55
 msgid "Logbook Map"
-msgstr ""
+msgstr "Lokikirjakartta"
 
 #: application/views/options/appearance.php:60
 msgid "This allows to disable the map in the logbook."
-msgstr ""
+msgstr "Tämän avulla voit poistaa kartan käytöstä lokikirjassa."
 
 #: application/views/options/appearance.php:64
 msgid "Public Maps"
-msgstr ""
+msgstr "Julkiset kartat"
 
 #: application/views/options/appearance.php:69
 msgid ""
 "This allows to disable all maps in the public view. This affects the main "
 "map and the gridsquares map."
 msgstr ""
+"Tämän avulla kartat voidaan poistaa käytöstä julkisella sivulla. Tämä koskee "
+"sekä pääkarttaa että lokaattoriruutukarttaa."
 
 #: application/views/options/appearance.php:73
 msgid "Public Github Button"
-msgstr ""
+msgstr "Julkinen GitHub-painike"
 
 #: application/views/options/appearance.php:78
 msgid "This enables the button to Wavelog's Github page in the public view"
-msgstr ""
+msgstr "Täällä voidaan ottaa käyttöön GitHub-linkki julkisella sivulla"
 
 #: application/views/options/appearance.php:82
 msgid "Public Login Button"
-msgstr ""
+msgstr "Julkinen kirjautumispainike"
 
 #: application/views/options/appearance.php:87
 msgid "This enables the button to login to Wavelog in the public view"
 msgstr ""
+"Tämä ottaa käyttöön painikkeen, jonka avulla voi kirjautua Wavelogiin "
+"julkiselta sivulta"
 
 #: application/views/options/dxcluster.php:38
 msgid "Provider of DXClusterCache"
-msgstr ""
+msgstr "DX-klusterin välimuistin tarjoaja"
 
 #: application/views/options/dxcluster.php:39
 msgid "DXClusterAPI"
-msgstr ""
+msgstr "DXClusterAPI"
 
 #: application/views/options/dxcluster.php:39
 #, php-format
@@ -14617,59 +14623,61 @@ msgid ""
 "The Provider of the DXCluster-Cache. You can set up your own Cache with %s "
 "or use a public one"
 msgstr ""
+"DX-klusterivälimuistin tarjoaja. Voit ottaa käyttöön oman välimuistin %s:n "
+"avulla tai käyttää julkista"
 
 #: application/views/options/dxcluster.php:41
 #, php-format
 msgid "URL of the DXCluster-Cache. e.g. %s"
-msgstr ""
+msgstr "URL DXCluster-Cache. esim. %s"
 
 #: application/views/options/dxcluster.php:44
 msgid "Maximum Age of spots taken care of"
-msgstr ""
+msgstr "Spottien enimmäisikä"
 
 #: application/views/options/dxcluster.php:46
 msgid "2 Hours"
-msgstr ""
+msgstr "2 tuntia"
 
 #: application/views/options/dxcluster.php:47
 msgid "60 Minutes"
-msgstr ""
+msgstr "60 minuuttia"
 
 #: application/views/options/dxcluster.php:48
 msgid "30 Minutes"
-msgstr ""
+msgstr "30 minuuttia"
 
 #: application/views/options/dxcluster.php:50
 msgid "The Age in Minutes of spots, that will be taken care at bandplan/lookup"
-msgstr ""
+msgstr "Spottien ikä minuutteina, jotka huomioidaan bandisuunnitelmassa/haussa"
 
 #: application/views/options/dxcluster.php:53
 msgid "Show spots which are spotted from following continent"
-msgstr ""
+msgstr "Ota huomioon vain seuraavalla mantereella havaitut spotit"
 
 #: application/views/options/dxcluster.php:63
 msgid "Only spots by spotters from this continent are shown"
-msgstr ""
+msgstr "Vain tältä mantereelta olevien spottaajien spotit näytetään"
 
 #: application/views/options/email.php:45
 msgid "Outgoing Protocol"
-msgstr ""
+msgstr "Sähköpostin lähetysprotokolla"
 
 #: application/views/options/email.php:50
 msgid "The protocol that will be used to send out emails."
-msgstr ""
+msgstr "Protokolla, jota käytetään sähköpostien lähettämiseen."
 
 #: application/views/options/email.php:54
 msgid "SMTP Encryption"
-msgstr ""
+msgstr "SMTP-salaus"
 
 #: application/views/options/email.php:56
 msgid "No Encryption"
-msgstr ""
+msgstr "Ei salausta"
 
 #: application/views/options/email.php:60
 msgid "Choose whether emails should be sent with TLS or SSL."
-msgstr ""
+msgstr "Valitse, tulisiko sähköpostit lähettää TLS:llä tai SSL:llä."
 
 #: application/views/options/email.php:64
 msgid "Email Sender Name"
@@ -14677,7 +14685,7 @@ msgstr "Lähettäjän nimi"
 
 #: application/views/options/email.php:67
 msgid "The email sender name, e.g. 'Wavelog'"
-msgstr ""
+msgstr "Sähköpostin lähettäjän nimi, esim. 'Wavelog'"
 
 #: application/views/options/email.php:72 application/views/user/edit.php:62
 #: application/views/user/forgot_password.php:47
@@ -14688,6 +14696,7 @@ msgstr "Email"
 msgid ""
 "The email address from which the emails are sent, e.g. 'wavelog@example.com'"
 msgstr ""
+"Sähköpostiosoite, josta sähköpostit lähetetään, esim. 'wavelog@example.com'"
 
 #: application/views/options/email.php:80
 msgid "SMTP Host"
