@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2026-01-13 20:02+0000\n"
 "PO-Revision-Date: 2026-01-14 17:34+0000\n"
 "Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
-"Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/"
-"main-translation/sk/>\n"
+"Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/main-"
+"translation/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1354,7 +1354,7 @@ msgstr "Logbook"
 #: application/views/qslprint/qsolist.php:18
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:108
 #: application/views/timeline/index.php:56 application/views/user/edit.php:624
-#: application/views/user/edit.php:821
+#: application/views/user/edit.php:821 application/views/gridmap/index.php:178
 msgid "QSL"
 msgstr "QSL"
 
@@ -1397,6 +1397,7 @@ msgstr "QSL"
 #: application/views/timeline/index.php:60 application/views/user/edit.php:625
 #: application/views/user/edit.php:831 application/views/view_log/qso.php:537
 #: application/views/view_log/qso.php:542
+#: application/views/gridmap/index.php:186
 msgid "LoTW"
 msgstr "LoTW"
 
@@ -1433,6 +1434,7 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:309
 #: application/views/timeline/index.php:64 application/views/user/edit.php:626
 #: application/views/user/edit.php:839 application/views/user/edit.php:913
+#: application/views/gridmap/index.php:194
 msgid "eQSL"
 msgstr "eQSL"
 
@@ -1533,6 +1535,7 @@ msgstr "eQSL"
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
+#: application/views/gridmap/index.php:141
 msgid "Mode"
 msgstr "Mód"
 
@@ -1726,6 +1729,7 @@ msgstr "Štát"
 #: application/views/view_log/qso.php:680
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
+#: application/views/gridmap/index.php:230
 msgid "Gridsquare"
 msgstr "Lokátor"
 
@@ -1756,6 +1760,7 @@ msgstr "Lokátor"
 #: application/views/user/edit.php:346
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
+#: application/views/gridmap/index.php:232
 msgid "Distance"
 msgstr "Vzdialenosť"
 
@@ -1850,7 +1855,7 @@ msgstr "Vzdialenosť"
 #: application/views/view_log/partial/log.php:12
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
-#: application/views/widgets/qsos.php:21
+#: application/views/widgets/qsos.php:21 application/views/gridmap/index.php:63
 msgid "Band"
 msgstr "Pásmo"
 
@@ -3640,6 +3645,7 @@ msgstr "QSO aktualizované"
 #: application/views/user/edit.php:279 application/views/user/edit.php:302
 #: application/views/user/edit.php:325 application/views/user/edit.php:350
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/views/gridmap/index.php:234
 msgid "Bearing"
 msgstr "Smerovanie"
 
@@ -3896,6 +3902,12 @@ msgstr "Rozdiel"
 #: application/views/timeplotter/index.php:47
 #: application/views/user/edit.php:805
 #: application/views/visitor/layout/footer.php:173
+#: application/views/gridmap/index.php:66
+#: application/views/gridmap/index.php:81
+#: application/views/gridmap/index.php:115
+#: application/views/gridmap/index.php:130
+#: application/views/gridmap/index.php:144
+#: application/views/gridmap/index.php:158
 msgid "All"
 msgstr "Všetko"
 
@@ -3944,6 +3956,7 @@ msgstr "Obdobie"
 #: application/views/timeline/index.php:79 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:21
 #: application/views/view_log/qso.php:236
+#: application/views/gridmap/index.php:78
 msgid "Propagation"
 msgstr "Šírenie"
 
@@ -3961,6 +3974,7 @@ msgstr "Všetko okrem SAT"
 #: application/views/logbookadvanced/edit.php:217
 #: application/views/logbookadvanced/index.php:488
 #: application/views/timeline/index.php:84
+#: application/views/gridmap/index.php:82
 msgid "None/Empty"
 msgstr "Žiadne/prázdne"
 
@@ -3974,6 +3988,7 @@ msgstr "Žiadne/prázdne"
 #: application/views/timeline/index.php:85
 #: application/views/view_log/partial/log_ajax.php:55
 #: application/views/view_log/qso.php:239
+#: application/views/gridmap/index.php:84
 msgctxt "Propagation Mode"
 msgid "Aircraft Scatter"
 msgstr "Aircraft Scatter"
@@ -3988,6 +4003,7 @@ msgstr "Aircraft Scatter"
 #: application/views/timeline/index.php:86
 #: application/views/view_log/partial/log_ajax.php:58
 #: application/views/view_log/qso.php:242
+#: application/views/gridmap/index.php:85
 msgctxt "Propagation Mode"
 msgid "Aurora"
 msgstr "Aurora"
@@ -4002,6 +4018,7 @@ msgstr "Aurora"
 #: application/views/timeline/index.php:87
 #: application/views/view_log/partial/log_ajax.php:61
 #: application/views/view_log/qso.php:245
+#: application/views/gridmap/index.php:86
 msgctxt "Propagation Mode"
 msgid "Aurora-E"
 msgstr "Aurora-E"
@@ -4016,6 +4033,7 @@ msgstr "Aurora-E"
 #: application/views/timeline/index.php:88
 #: application/views/view_log/partial/log_ajax.php:64
 #: application/views/view_log/qso.php:248
+#: application/views/gridmap/index.php:87
 msgctxt "Propagation Mode"
 msgid "Back scatter"
 msgstr "Back scatter"
@@ -4030,6 +4048,7 @@ msgstr "Back scatter"
 #: application/views/timeline/index.php:89
 #: application/views/view_log/partial/log_ajax.php:67
 #: application/views/view_log/qso.php:251
+#: application/views/gridmap/index.php:88
 msgctxt "Propagation Mode"
 msgid "EchoLink"
 msgstr "EchoLink"
@@ -4044,6 +4063,7 @@ msgstr "EchoLink"
 #: application/views/timeline/index.php:90
 #: application/views/view_log/partial/log_ajax.php:70
 #: application/views/view_log/qso.php:254
+#: application/views/gridmap/index.php:89
 msgctxt "Propagation Mode"
 msgid "Earth-Moon-Earth"
 msgstr "Earth-Moon-Earth"
@@ -4058,6 +4078,7 @@ msgstr "Earth-Moon-Earth"
 #: application/views/timeline/index.php:91
 #: application/views/view_log/partial/log_ajax.php:73
 #: application/views/view_log/qso.php:257
+#: application/views/gridmap/index.php:90
 msgctxt "Propagation Mode"
 msgid "Sporadic E"
 msgstr "Sporadická E vrstva"
@@ -4072,6 +4093,7 @@ msgstr "Sporadická E vrstva"
 #: application/views/timeline/index.php:92
 #: application/views/view_log/partial/log_ajax.php:76
 #: application/views/view_log/qso.php:260
+#: application/views/gridmap/index.php:91
 msgctxt "Propagation Mode"
 msgid "Field Aligned Irregularities"
 msgstr "Field Aligned Irregularities"
@@ -4086,6 +4108,7 @@ msgstr "Field Aligned Irregularities"
 #: application/views/timeline/index.php:93
 #: application/views/view_log/partial/log_ajax.php:79
 #: application/views/view_log/qso.php:263
+#: application/views/gridmap/index.php:92
 msgctxt "Propagation Mode"
 msgid "F2 Reflection"
 msgstr "F2 odraz"
@@ -4100,6 +4123,7 @@ msgstr "F2 odraz"
 #: application/views/timeline/index.php:94
 #: application/views/view_log/partial/log_ajax.php:82
 #: application/views/view_log/qso.php:266
+#: application/views/gridmap/index.php:93
 msgctxt "Propagation Mode"
 msgid "Internet-assisted"
 msgstr "Internetovo asistované"
@@ -4114,6 +4138,7 @@ msgstr "Internetovo asistované"
 #: application/views/timeline/index.php:95
 #: application/views/view_log/partial/log_ajax.php:85
 #: application/views/view_log/qso.php:269
+#: application/views/gridmap/index.php:94
 msgctxt "Propagation Mode"
 msgid "Ionoscatter"
 msgstr "Ionoscatter"
@@ -4128,6 +4153,7 @@ msgstr "Ionoscatter"
 #: application/views/timeline/index.php:96
 #: application/views/view_log/partial/log_ajax.php:88
 #: application/views/view_log/qso.php:272
+#: application/views/gridmap/index.php:95
 msgctxt "Propagation Mode"
 msgid "IRLP"
 msgstr "IRLP"
@@ -4142,6 +4168,7 @@ msgstr "IRLP"
 #: application/views/timeline/index.php:97
 #: application/views/view_log/partial/log_ajax.php:91
 #: application/views/view_log/qso.php:275
+#: application/views/gridmap/index.php:96
 msgctxt "Propagation Mode"
 msgid "Meteor scatter"
 msgstr "Meteor scatter"
@@ -4156,6 +4183,7 @@ msgstr "Meteor scatter"
 #: application/views/timeline/index.php:98
 #: application/views/view_log/partial/log_ajax.php:94
 #: application/views/view_log/qso.php:278
+#: application/views/gridmap/index.php:97
 msgctxt "Propagation Mode"
 msgid "Terrestrial or atmospheric repeater or transponder"
 msgstr "Pozemský alebo atmosférický opakovač alebo transpondér"
@@ -4170,6 +4198,7 @@ msgstr "Pozemský alebo atmosférický opakovač alebo transpondér"
 #: application/views/timeline/index.php:99
 #: application/views/view_log/partial/log_ajax.php:97
 #: application/views/view_log/qso.php:281
+#: application/views/gridmap/index.php:98
 msgctxt "Propagation Mode"
 msgid "Rain scatter"
 msgstr "Rain scatter"
@@ -4184,6 +4213,7 @@ msgstr "Rain scatter"
 #: application/views/timeline/index.php:100
 #: application/views/view_log/partial/log_ajax.php:100
 #: application/views/view_log/qso.php:284
+#: application/views/gridmap/index.php:99
 msgctxt "Propagation Mode"
 msgid "Satellite"
 msgstr "Satelit"
@@ -4198,6 +4228,7 @@ msgstr "Satelit"
 #: application/views/timeline/index.php:101
 #: application/views/view_log/partial/log_ajax.php:103
 #: application/views/view_log/qso.php:287
+#: application/views/gridmap/index.php:100
 msgctxt "Propagation Mode"
 msgid "Trans-equatorial"
 msgstr "Trans-ekvatoriálny"
@@ -4212,6 +4243,7 @@ msgstr "Trans-ekvatoriálny"
 #: application/views/timeline/index.php:102
 #: application/views/view_log/partial/log_ajax.php:106
 #: application/views/view_log/qso.php:290
+#: application/views/gridmap/index.php:101
 msgctxt "Propagation Mode"
 msgid "Tropospheric ducting"
 msgstr "Tropo ducting"
@@ -4277,6 +4309,7 @@ msgstr "Ukáž"
 #: application/views/satellite/skedtable.php:35
 #: application/views/sattimers/index.php:38
 #: application/views/statistics/index.php:27
+#: application/views/gridmap/index.php:110
 msgid "Satellite"
 msgstr "Satelit"
 
@@ -4296,6 +4329,7 @@ msgstr "Satelit"
 #: application/views/satellite/satinfo.php:12
 #: application/views/statistics/antennaanalytics.php:60
 #: application/views/statistics/antennaanalytics.php:98
+#: application/views/gridmap/index.php:125
 msgid "Orbit"
 msgstr "Obežná dráha"
 
@@ -4303,6 +4337,7 @@ msgstr "Obežná dráha"
 #: application/views/awards/wab/index.php:66
 #: application/views/gridmap/index.php:162
 #: application/views/timeline/index.php:52
+#: application/views/gridmap/index.php:169
 msgid "Confirmation"
 msgstr "Potvrdenie"
 
@@ -4325,6 +4360,7 @@ msgstr "Potvrdenie"
 #: application/views/awards/was/index.php:73
 #: application/views/awards/wpx/index.php:40
 #: application/views/gridmap/index.php:195 application/views/user/edit.php:847
+#: application/views/gridmap/index.php:202
 msgid "QRZ.com"
 msgstr "QRZ.com"
 
@@ -4343,7 +4379,7 @@ msgstr "Vymazať značky"
 #: application/views/awards/gridmaster/index.php:50
 #: application/views/gridmap/index.php:219
 #: application/views/logbookadvanced/index.php:10
-#: application/views/map/qso_map.php:59
+#: application/views/map/qso_map.php:59 application/views/gridmap/index.php:226
 msgid "Latitude"
 msgstr "Zemepisná šírka"
 
@@ -4352,7 +4388,7 @@ msgstr "Zemepisná šírka"
 #: application/views/awards/gridmaster/index.php:52
 #: application/views/gridmap/index.php:221
 #: application/views/logbookadvanced/index.php:11
-#: application/views/map/qso_map.php:61
+#: application/views/map/qso_map.php:61 application/views/gridmap/index.php:228
 msgid "Longitude"
 msgstr "Zemepisná dĺžka"
 
@@ -4457,6 +4493,7 @@ msgstr "Nič sa nenašlo!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:672
 #: application/views/zonechecker/result.php:50
+#: application/views/gridmap/index.php:56
 msgid "Callsign"
 msgstr "Volacia značka"
 
@@ -5509,6 +5546,7 @@ msgstr "Celkovo"
 #: application/views/timeplotter/index.php:44
 #: application/views/user/modals/first_login_wizard.php:74
 #: application/views/zonechecker/index.php:17
+#: application/views/gridmap/index.php:236
 msgid "CQ Zone"
 msgstr "CQ zóna"
 
@@ -6484,6 +6522,7 @@ msgstr "Zrušené"
 #: application/views/station_profile/edit.php:174
 #: application/views/user/modals/first_login_wizard.php:84
 #: application/views/zonechecker/index.php:18
+#: application/views/gridmap/index.php:238
 msgid "ITU Zone"
 msgstr "ITU zóna"
 
@@ -7262,8 +7301,8 @@ msgid ""
 "State (ADIF: DXCC and STATE)"
 msgstr ""
 "Pre tento diplom sa používajú oblasti: DXCC (musí byť jedno z Čína/318, "
-"HongKong/321, Macao/152, Taiwan/386, Pratas Isl./505 alebo Scarborough "
-"Reef/506) a platný štát (ADIF: DXCC a STATE)"
+"HongKong/321, Macao/152, Taiwan/386, Pratas Isl./505 alebo Scarborough Reef/"
+"506) a platný štát (ADIF: DXCC a STATE)"
 
 #: application/views/awards/was/index.php:3
 msgctxt "USA State"
@@ -8832,6 +8871,7 @@ msgstr "Nenašli sa žiadne contesty vo vašom logu."
 
 #: application/views/callstats/index.php:70
 #: application/views/gridmap/index.php:76
+#: application/views/gridmap/index.php:83
 msgid "All except SAT"
 msgstr "Všetko okrem SAT"
 
@@ -13585,6 +13625,7 @@ msgstr "DX"
 #: application/views/logbookadvanced/index.php:503
 #: application/views/logbookadvanced/index.php:507
 #: application/views/logbookadvanced/index.php:682
+#: application/views/gridmap/index.php:58
 msgid "Empty"
 msgstr "Prázdny"
 
