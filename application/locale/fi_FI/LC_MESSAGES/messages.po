@@ -14700,7 +14700,7 @@ msgstr ""
 
 #: application/views/options/email.php:80
 msgid "SMTP Host"
-msgstr ""
+msgstr "SMTP-palvelin"
 
 #: application/views/options/email.php:83
 msgid ""
