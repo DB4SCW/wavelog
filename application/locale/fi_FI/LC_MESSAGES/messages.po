@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-16 07:32+0000\n"
-"PO-Revision-Date: 2026-01-16 21:51+0000\n"
+"PO-Revision-Date: 2026-01-17 00:53+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/"
 "main-translation/fi/>\n"
@@ -888,8 +888,8 @@ msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
 "isn't running!%sIt should run every minute (* * * * *)."
 msgstr ""
-"Viimeisin suoritus tapahtui yli %s sekuntia sitten.%sPää-cron-tehtäväsi ei "
-"taida olla käynnissä!%sSen tulisi ajaa joka minuutti (* * * * *)."
+"Viimeisin suoritus tapahtui yli %s minuuttia sitten.%sPää-cron-tehtäväsi ei "
+"taida olla käynnissä!%sSe tulisi ajaa joka minuutti (* * * * *)."
 
 #: application/controllers/Cron.php:300 application/views/cron/index.php:42
 msgctxt "Master Cron"
@@ -14707,46 +14707,52 @@ msgid ""
 "The hostname of the mail server, e.g. 'mail.example.com' (without 'ssl://' "
 "or 'tls://')"
 msgstr ""
+"Postipalvelimen isäntänimi, esim. ”mail.example.com” "
+"(ilman ”ssl://” tai ”tls://”)"
 
 #: application/views/options/email.php:88
 msgid "SMTP Port"
-msgstr ""
+msgstr "SMTP-portti"
 
 #: application/views/options/email.php:91
 msgid ""
 "The SMTP port of the mail server, e.g. if TLS is used -> '587', if SSL is "
 "used -> '465'"
 msgstr ""
+"SMTP-portti sähköpostipalvelimelle, esim. jos TLS käytössä -> '587', jos SSL "
+"käytössä -> '465'"
 
 #: application/views/options/email.php:96
 msgid "SMTP Username"
-msgstr ""
+msgstr "SMTP-käyttäjätunnus"
 
 #: application/views/options/email.php:99
 msgid ""
 "The username to log in to the mail server, usually this is the email address "
 "that is used."
 msgstr ""
+"Mailipalvelimeen kirjautumiseen käytettävä käyttäjätunnus, yleensä se on "
+"käytössä oleva sähköpostiosoite."
 
 #: application/views/options/email.php:104
 msgid "SMTP Password"
-msgstr ""
+msgstr "SMTP-salasana"
 
 #: application/views/options/email.php:107
 msgid "The password to log in to the mail server."
-msgstr ""
+msgstr "Salasana kirjautuaksesi postipalvelimelle."
 
 #: application/views/options/email.php:116
 msgid "Send Test-Mail"
-msgstr ""
+msgstr "Lähetä testisähköposti"
 
 #: application/views/options/email.php:117
 msgid "The email will be sent to the address defined in your account settings."
-msgstr ""
+msgstr "Sähköposti lähetetään tiliasetuksissa määritettyyn osoitteeseen."
 
 #: application/views/options/hon.php:38
 msgid "Provider for Hams Of Note"
-msgstr ""
+msgstr "Hams of Note -lähde"
 
 #: application/views/options/hon.php:39
 #, php-format
@@ -14754,6 +14760,8 @@ msgid ""
 "The URL which provides the Hams Of Note List. See example and how it works "
 "here %s"
 msgstr ""
+"TXT-tiedoston URL-osoite, joka tarjoaa Hams of Note -listan. Katso tästä "
+"siihen liittyvä dokumentaatio: %s"
 
 #: application/views/options/hon.php:39
 msgid "Wiki"
@@ -14762,13 +14770,16 @@ msgstr "Wiki"
 #: application/views/options/hon.php:41
 #, php-format
 msgid "URL of the Hams Of Note List. e.g. %s"
-msgstr ""
+msgstr "Hams of Note -listan URL-osoite. Esim.: %s"
 
 #: application/views/options/index.php:13
 msgid ""
 "Wavelog Options are global settings used for all users of the installation, "
 "which are overridden if there's a setting on a user level."
 msgstr ""
+"Wavelog-asetukset ovat globaaleja asetuksia, joita käytetään kaikille "
+"asennuksen käyttäjille. Ne voidaan ohittaa käyttäjäkohtaisesti, jos vastaava "
+"asetus on saatavilla käyttäjätasolla."
 
 #: application/views/options/maptiles.php:49
 #, php-format
@@ -14777,6 +14788,9 @@ msgid ""
 "change any values here unless you are confident in what you are doing. Test "
 "each change on your %sDashboard%s!"
 msgstr ""
+"Tämä muuttaa karttalähdettä useissa kohdissa Wavelogissa. Älä muuta arvoja "
+"täällä, ellet ole varma mitä teet. Testaa jokainen muutos omassa "
+"%sDashboard%s!"
 
 #: application/views/options/maptiles.php:50
 #, php-format
@@ -14784,68 +14798,76 @@ msgid ""
 "You can find a list of tested settings and all default values in the "
 "%sWavelog Wiki%s."
 msgstr ""
+"Löydät luettelon testatuista asetuksista ja kaikista oletusarvoista "
+"%sWavelog-wikistä%s."
 
 #: application/views/options/maptiles.php:54
 msgid "Maptiles Server URL"
-msgstr ""
+msgstr "Maptile-palvelimen URL"
 
 #: application/views/options/maptiles.php:56
 msgid "URL of the map server which serves the maptiles."
-msgstr ""
+msgstr "Karttapalvelimen URL-osoite, joka karttalaatat ladataan."
 
 #: application/views/options/maptiles.php:59
 msgid "Maptiles Server URL for Dark Tiles - ONLY Static Map API"
-msgstr ""
+msgstr "Maptiles-palvelimen URL Dark Tilesille - VAIN Static Map API"
 
 #: application/views/options/maptiles.php:61
 msgid ""
 "URL of the map server which serves the dark maptiles. Only used for Static "
 "Map."
 msgstr ""
+"Karttapalvelimen URL-osoite, josta ladataan dark maptiles -laatat. Käytetään "
+"vain Static Map APIa varten."
 
 #: application/views/options/maptiles.php:64
 msgid "Subdomain System of Maptile Server"
-msgstr ""
+msgstr "Karttalaattapalvelimen alidomain-järjestelmä"
 
 #: application/views/options/maptiles.php:66
 msgid ""
 "System of the subdomains at this server ({s} in the URL). They are used for "
 "loadbalancing."
 msgstr ""
+"Tämän palvelimen alidomain-järjestelmä ({s} URL-osoitteessa). Niitä "
+"käytetään kuormantasaukseen."
 
 #: application/views/options/maptiles.php:69
 msgid "URL of the Copyright Source"
-msgstr ""
+msgstr "Tekijänoikeuslähteen URL"
 
 #: application/views/options/maptiles.php:71
 msgid "Source URL for the copyright tag."
-msgstr ""
+msgstr "Lähde-URL tekijänoikeusmerkintää varten."
 
 #: application/views/options/maptiles.php:74
 msgid "Name of the Copyright Source"
-msgstr ""
+msgstr "Tekijänoikeuslähteen nimi"
 
 #: application/views/options/maptiles.php:76
 msgid "Text for the copyright tag."
-msgstr ""
+msgstr "Teksti tekijänoikeusmerkintään."
 
 #: application/views/options/maptiles.php:81
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Palauta oletusasetukset"
 
 #: application/views/options/radios.php:38
 msgid "Radio Timeout Warning"
-msgstr ""
+msgstr "Radio-aikakatkaisun varoitus"
 
 #: application/views/options/radios.php:39
 msgid ""
 "The Radio Timeout Warning is used on the QSO entry panel to alert you to "
 "radio interface disconnects."
 msgstr ""
+"Radioajan varoitus käytetään QSO-syöttöpaneelissa ilmoittamaan sinulle "
+"radioliitännän katkeamisista."
 
 #: application/views/options/radios.php:41
 msgid "This number is in seconds."
-msgstr ""
+msgstr "Tämä numero on sekunteina."
 
 #: application/views/options/sidebar.php:5
 msgid "Radios"
@@ -14853,27 +14875,27 @@ msgstr "Radiot"
 
 #: application/views/options/version_dialog.php:47
 msgid "Version Info Header"
-msgstr ""
+msgstr "Versiotietojen otsikko"
 
 #: application/views/options/version_dialog.php:49
 msgid "You can change the header of the version info dialog."
-msgstr ""
+msgstr "Voit muuttaa versiotietoikkunan otsikkoa."
 
 #: application/views/options/version_dialog.php:53
 msgid "Version Info Mode"
-msgstr ""
+msgstr "Versiotietojen tila"
 
 #: application/views/options/version_dialog.php:57
 msgid "Only Release Notes"
-msgstr ""
+msgstr "Vain version julkaisutiedot"
 
 #: application/views/options/version_dialog.php:60
 msgid "Only Custom Text"
-msgstr ""
+msgstr "Vain mukautettu teksti"
 
 #: application/views/options/version_dialog.php:63
 msgid "Release Notes and Custom Text"
-msgstr ""
+msgstr "Version julkaisutiedot ja mukautettu teksti"
 
 #: application/views/options/version_dialog.php:68
 msgid ""
@@ -14881,75 +14903,84 @@ msgid ""
 "the dialog after he read it. Select if you want to show only release notes "
 "(fetched from github), only custom text or both."
 msgstr ""
+"Versiotiedot näytetään jokaiselle käyttäjälle. Käyttäjä voi sulkea "
+"valintaikkunan luettuaan sen. Valitse, näytetäänkö vain version "
+"julkaisutiedotteet (haetaan GitHubista), vain mukautettu teksti vai molemmat."
 
 #: application/views/options/version_dialog.php:72
 msgid "Version Info Custom Text"
-msgstr ""
+msgstr "Versiotiedot – mukautettu teksti"
 
 #: application/views/options/version_dialog.php:74
 msgid "This is the custom text which is shown in the dialog."
-msgstr ""
+msgstr "Tämä on mukautettu teksti, joka näytetään versiotietojen ikkunassa."
 
 #: application/views/options/version_dialog.php:84
 msgid "Show/Hide Version Info Dialog for all Users"
-msgstr ""
+msgstr "Näytä/piilota versiotietoikkuna kaikilta käyttäjiltä"
 
 #: application/views/options/version_dialog.php:97
 msgid "Show for all Users"
-msgstr ""
+msgstr "Näytä kaikille käyttäjille"
 
 #: application/views/options/version_dialog.php:99
 msgid ""
 "This will show the version dialog automatically to all users on their next "
 "page reload."
 msgstr ""
+"Tämä näyttää version valintaikkunan automaattisesti kaikille käyttäjille "
+"seuraavalla sivun latauksella."
 
 #: application/views/options/version_dialog.php:104
 msgid "Hide for all Users"
-msgstr ""
+msgstr "Piilota kaikilta käyttäjiltä"
 
 #: application/views/options/version_dialog.php:106
 msgid ""
 "This will deactivate the automatic popup of the version dialog for all users."
 msgstr ""
+"Tämä poistaa käytöstä versiotietoikkunan automaattisen ponnahdusikkunan "
+"kaikilta käyttäjiltä."
 
 #: application/views/oqrs/index.php:9
 msgid "Request a QSL card"
-msgstr ""
+msgstr "Pyydä QSL-korttia"
 
 #: application/views/oqrs/index.php:27
 msgid "Enter your callsign"
-msgstr ""
+msgstr "Syötä kutsumerkkisi"
 
 #: application/views/oqrs/index.php:27
 msgid "This search will search in all station locations where OQRS is active."
-msgstr ""
+msgstr "Tämä haku käy läpi kaikki asemasijainnit, joissa OQRS on käytössä."
 
 #: application/views/oqrs/index.php:54
 msgid "Select station"
-msgstr ""
+msgstr "Valitse asema"
 
 #: application/views/oqrs/notinlogform.php:2
 msgid ""
 "If you can't find your QSO in the log, please fill out the form below. You "
 "will be contacted after the log has been checked."
 msgstr ""
+"Jos et löydä QSO-yhteyttäsi lokista, täytä alla oleva lomake. Sinuun otetaan "
+"yhteyttä, kun loki on tarkistettu."
 
 #: application/views/oqrs/notinlogform.php:9
 #: application/views/oqrs/request.php:16
 #: application/views/oqrs/request_grouped.php:9
 msgid "Time (UTC)"
-msgstr ""
+msgstr "Aika (UTC)"
 
 #: application/views/oqrs/notinlogform.php:24
 msgid "Add line"
-msgstr ""
+msgstr "Lisää rivi"
 
 #: application/views/oqrs/notinlogform.php:30
 #: application/views/oqrs/request.php:56
 #: application/views/oqrs/request_grouped.php:59
 msgid "Any extra information we need to know about?"
-msgstr ""
+msgstr "Onko mitään lisätietoa, josta meidän pitäisi tietää?"
 
 #: application/views/oqrs/notinlogform.php:34
 #: application/views/oqrs/request.php:60
@@ -14959,17 +14990,17 @@ msgstr ""
 #: application/views/user/index.php:29 application/views/user/index.php:154
 #: application/views/user/profile.php:24 application/views/view_log/qso.php:488
 msgid "E-mail"
-msgstr ""
+msgstr "Sähköposti"
 
 #: application/views/oqrs/notinlogform.php:36
 #: application/views/oqrs/request.php:62
 #: application/views/oqrs/request_grouped.php:65
 msgid "Your e-mail address where we can contact you"
-msgstr ""
+msgstr "Sähköpostiosoitteesi, johon voimme ottaa sinuun yhteyttä"
 
 #: application/views/oqrs/notinlogform.php:40
 msgid "Send not in log request"
-msgstr ""
+msgstr "Lähetä ”Ei lokissa” -kysely"
 
 #: application/views/oqrs/qsolist.php:76
 #: application/views/qslprint/qslprint.php:30
@@ -14980,21 +15011,21 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:310
 #: src/QSLManager/QSO.php:440
 msgid "Via"
-msgstr ""
+msgstr "Via"
 
 #: application/views/oqrs/qsolist.php:199
 msgid "No QSOs were found. It seems you were not active at this time."
-msgstr ""
+msgstr "Ei QSOja löytynyt. Näyttää siltä ettet ollut aktiivinen tänä aikana."
 
 #: application/views/oqrs/qsolist.php:203
 #: application/views/oqrs/showrequests.php:72
 #: application/views/qslprint/qsolist.php:200
 msgid "Add to print queue"
-msgstr ""
+msgstr "Lisää tulostusjonoon"
 
 #: application/views/oqrs/qsolist.php:209
 msgid "Match QSO"
-msgstr ""
+msgstr "QSO-täsmäys"
 
 #: application/views/oqrs/request.php:9
 #: application/views/oqrs/request_grouped.php:3
@@ -15002,103 +15033,106 @@ msgid ""
 "The following QSO(s) were found. Please fill out the date and time and "
 "submit your request."
 msgstr ""
+"Seuraava(t) QSO(t) löytyi. Ole hyvä ja täytä päivämäärä ja kellonaika ja "
+"lähetä pyyntösi."
 
 #: application/views/oqrs/request.php:40
 #: application/views/oqrs/request_grouped.php:43
 msgid "QSL Route"
-msgstr ""
+msgstr "QSL-Route"
 
 #: application/views/oqrs/request.php:50
 #: application/views/oqrs/request_grouped.php:53
 msgid "Direct (write address in message below)"
-msgstr ""
+msgstr "Direkti (kirjoita osoitteesi alla olevaan viestikenttään)"
 
 #: application/views/oqrs/request.php:66
 #: application/views/oqrs/request_grouped.php:69
 msgid "Submit request"
-msgstr ""
+msgstr "Lähetä pyyntö"
 
 #: application/views/oqrs/request_grouped.php:72
 #: application/views/oqrs/result.php:40
 msgid "No QSOs found in the log."
-msgstr ""
+msgstr "QSOja ei löytynyt lokista."
 
 #: application/views/oqrs/result.php:5
 #, php-format
 msgid "Log search result for %s"
-msgstr ""
+msgstr "Lokihaun tulos kutsumerkille %s"
 
 #: application/views/oqrs/result.php:30
 #, php-format
 msgid "has %d band slot"
 msgid_plural "has %d band slots"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "saa %d bandipaikan"
+msgstr[1] "saa %d bandipaikkaa"
 
 #: application/views/oqrs/result.php:33
 #, php-format
 msgid "and has %d QSO in the log"
 msgid_plural "and has %d QSOs in the log"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ja on %d QSO lokissa"
+msgstr[1] "ja on %d QSOa lokissa"
 
 #: application/views/oqrs/result.php:37
 msgid "Request QSL"
-msgstr ""
+msgstr "Pyydä QSL"
 
 #: application/views/oqrs/result.php:44
 msgid "Not in log?"
-msgstr ""
+msgstr "Ei lokissa?"
 
 #: application/views/oqrs/showrequests.php:2
 #: application/views/oqrs/showrequests.php:50
 #: application/views/oqrs/status_info.php:10
 msgid "Open request"
-msgstr ""
+msgstr "Avoin pyyntö"
 
 #: application/views/oqrs/showrequests.php:3
 #: application/views/oqrs/showrequests.php:51
 #: application/views/oqrs/status_info.php:14
 msgid "Not in log request"
-msgstr ""
+msgstr "'Not in Log'-pyyntö"
 
 #: application/views/oqrs/showrequests.php:4
 msgid "Request done"
-msgstr ""
+msgstr "Pyyntö tehty"
 
 #: application/views/oqrs/showrequests.php:5
 msgid "Pending request"
-msgstr ""
+msgstr "Pyyntö odottaa"
 
 #: application/views/oqrs/showrequests.php:6
 msgid "Request rejected"
-msgstr ""
+msgstr "Pyyntö hylätty"
 
 #: application/views/oqrs/showrequests.php:11
 msgid "Warning! Are you sure you want to delete the marked OQRS request(s)?"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti poistaa merkityt OQRS-pyynnöt?"
 
 #: application/views/oqrs/showrequests.php:12
 msgid "Warning! Are you sure you want to reject the marked OQRS request(s)?"
 msgstr ""
+"Varoitus! Haluatko varmasti hylätä merkityn/merkityt OQRS-pyynnön/pyynnöt?"
 
 #: application/views/oqrs/showrequests.php:13
 msgid "Warning! Are you sure you want to mark the marked OQRS request(s)?"
-msgstr ""
+msgstr "Varoitus! Oletko varma, että haluat merkitä merkityt OQRS-pyynnöt?"
 
 #: application/views/oqrs/showrequests.php:14
 msgid ""
 "Warning! Are you sure you want to add the marked OQRS request(s) to the "
 "queue?"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti lisätä merkityt OQRS-pyynnöt jonoon?"
 
 #: application/views/oqrs/showrequests.php:15
 msgid "OQRS Status Information"
-msgstr ""
+msgstr "OQRS-tilatiedot"
 
 #: application/views/oqrs/showrequests.php:16
 msgid "Warning! Are you sure you want to delete the QSO match?"
-msgstr ""
+msgstr "Varoitus! Haluatko varmasti poistaa QSO-osuman?"
 
 #: application/views/oqrs/showrequests.php:42
 #: application/views/oqrs/showrequests.php:90
