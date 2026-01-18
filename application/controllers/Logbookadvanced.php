@@ -937,6 +937,8 @@ class Logbookadvanced extends CI_Controller {
 		$data['grids'] = $this->logbookadvanced_model->getGridsForDxcc($dxcc);
 		$data['dxcc'] = $dxcc;
 		$data['gridsquare'] = $this->input->post('gridsquare', true);
+		$dxccname = $this->input->post('dxccname', true);
+		$data['title'] = sprintf(__("Map for DXCC %s and gridsquare %s."), $dxccname, $data['gridsquare']);
 
 		header("Content-Type: application/json");
 		print json_encode($data);

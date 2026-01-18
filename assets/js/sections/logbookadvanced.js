@@ -2973,7 +2973,8 @@ function saveOptions() {
 			type: 'post',
 			data: {
 				gridsquare: gridsquare,
-				dxcc: dxcc
+				dxcc: dxcc,
+				dxccname: dxccname
 			},
 			success: function (data) {
 				// Add metadata to data object
@@ -2981,11 +2982,11 @@ function saveOptions() {
 				data.dxccnameDisplay = dxccname;
 
 				BootstrapDialog.show({
-					title: 'Map for DXCC ' + dxccname + ' and gridsquare ' + gridsquare,
+					title: data.title,
 					size: BootstrapDialog.SIZE_WIDE,
 					cssClass: 'mapdialog',
 					nl2br: false,
-					message: '<div class="mapgridcontent"><div id="mapgridcontainer" style="Height: 500px"></div></div>',
+					message: '<div class="mapgridcontent"><div id="mapgridcontainer" style="Height: 70vh"></div></div>',
 					onshown: function(dialog) {
 						drawMap(data);
 					},
@@ -3165,7 +3166,6 @@ function saveOptions() {
 			div.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
 
 			div.innerHTML =
-				'<h4 style="margin: 0 0 10px 0; font-size: 14px; font-weight: bold;">Legend</h4>' +
 				'<div style="display: flex; align-items: center; margin-bottom: 8px;">' +
 					'<div style="width: 20px; height: 20px; background-color: ' + confirmedColor + '; border: 1px solid #ccc; margin-right: 8px;"></div>' +
 					'<span style="font-size: 12px;">' + lang_gen_advanced_logbook_confirmedLabel + ' ' + data.dxccnameDisplay + '</span>' +
