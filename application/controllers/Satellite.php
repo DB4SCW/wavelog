@@ -383,7 +383,7 @@ class Satellite extends CI_Controller {
 		$satellites = $this->satellite_model->get_all_satellites_with_tle();
 		foreach ($satellites as $sat) {			// Loop through known SATs
 			if ( (count($input_sat) > 0) && !((count($input_sat) == 1) && (($input_sat[0] ?? '') == '')) ) {		// User wants specific SATs (which isn't "All" or empty)??
-				if (in_array($sat->satname,$input_sat)) {
+				if (in_array($sat->satname,$input_sat) || in_array($sat->displayname,$input_sat)) {
 					$tles[]=$this->satellite_model->get_tle($sat->satname);
 				} else {
 					continue;
@@ -437,7 +437,7 @@ class Satellite extends CI_Controller {
 			try {
 				$temp = preg_split('/\n/', $sat_tle->tle);
 
-				$tle     = new Predict_TLE($sat_tle->satellite, $temp[0], $temp[1]); // Instantiate it
+				$tle     = new Predict_TLE(($sat_tle->satellite ? $sat_tle->satellite : $sat_tle->displayname), $temp[0], $temp[1]); // Instantiate it
 				$sat     = new Predict_Sat($tle); // Load up the satellite data
 
 				$now     = $this->get_daynum_from_date($date)+($mintime/24); // get the current time as Julian Date (daynum)
