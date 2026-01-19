@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-16 07:32+0000\n"
-"PO-Revision-Date: 2026-01-19 17:56+0000\n"
+"PO-Revision-Date: 2026-01-20 04:17+0000\n"
 "Last-Translator: YuanRetro <lijiaxuan1811@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
@@ -36,7 +36,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -1134,7 +1134,7 @@ msgstr "下载成功： "
 
 #: application/controllers/Eqsl.php:633
 msgid "eQSL rate limit reached. Please wait before running again."
-msgstr ""
+msgstr "已达到 eQSL 访问次数限制。请等待后再运行。"
 
 #: application/controllers/Eqsl.php:645
 msgid "eQSL Card Image Download"
@@ -1949,7 +1949,7 @@ msgstr "详细日志"
 #: application/controllers/Logbookadvanced.php:924
 #, php-format
 msgid "DXCC updated for %d QSO(s)."
-msgstr ""
+msgstr "已更新%d个 QSO 的 DXCC。"
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -1985,6 +1985,8 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"文件%s中的证书包含密码，无法处理。%s请确保从 tqsl 应用程序导出 LoTW 证书时不"
+"带密码！%s如需更多信息，请访问 Wavelog Wiki 中的 %sLoTW FAQ 页面%s。"
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -1993,16 +1995,18 @@ msgid ""
 "contains 'key-only' this is typically a certificate request which has not "
 "been processed by LoTW yet."
 msgstr ""
+"从文件 %s 提取证书时发生一般错误。如果文件名包含“key-only”，通常这是一个尚未"
+"被 LoTW 处理的证书请求。"
 
 #: application/controllers/Lotw.php:457
 #, php-format
 msgid "Generic error processing the certificate in file %s."
-msgstr ""
+msgstr "在文件 %s 中处理证书时出现一般错误。"
 
 #: application/controllers/Lotw.php:469
 #, php-format
 msgid "Generic error extracting the private key from certificate in file %s."
-msgstr ""
+msgstr "从文件 %s 中提取证书的私钥时发生一般错误。"
 
 #: application/controllers/Lotw.php:685
 msgid "LoTW ADIF Information"
@@ -2010,7 +2014,7 @@ msgstr "LoTW ADIF 信息"
 
 #: application/controllers/Lotw.php:858
 msgid "Connection to LoTW failed."
-msgstr ""
+msgstr "连接到 LoTW 失败。"
 
 #: application/controllers/Lotw.php:863
 #, php-format
@@ -2043,7 +2047,7 @@ msgstr "未配置 LoTW 登录信息！"
 
 #: application/controllers/Map.php:48
 msgid "QSO Map"
-msgstr ""
+msgstr "QSO 地图"
 
 #: application/controllers/Mode.php:25 application/controllers/Usermode.php:23
 #: application/views/interface_assets/header.php:328
@@ -3328,7 +3332,7 @@ msgstr "通过标识找到多个用户"
 
 #: application/controllers/Zonechecker.php:26
 msgid "Gridsquare Zone finder"
-msgstr ""
+msgstr "网格区域查找器"
 
 #: application/libraries/Callbook.php:124
 msgid "QRZCQ Error"
@@ -3597,7 +3601,7 @@ msgstr "方位角"
 
 #: application/models/Logbookadvanced_model.php:1664
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
-msgstr ""
+msgstr "VuccGrids 表为空。请先导入 VUCC 网格数据。"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -4474,6 +4478,8 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"你的日志中的 DOK 数据与 DCL 中的不同，或者更新未完成，因为 QSO 在 DCL 中没有"
+"确认。"
 
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
@@ -4800,7 +4806,7 @@ msgstr "导出选项"
 
 #: application/views/adif/import.php:302
 msgid "Mark exported QSOs as already uploaded to LoTW"
-msgstr ""
+msgstr "将导出的通联标记为已上传至 LoTW"
 
 #: application/views/adif/import.php:311
 msgid "Export QSOs not uploaded to LoTW"
