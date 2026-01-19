@@ -364,7 +364,7 @@ class Logbook_model extends CI_Model {
 			'COL_RST_SENT' => $this->input->post('rst_sent'),
 			'COL_NAME' => $qso_name,
 			'COL_COMMENT' => $this->input->post('comment'),
-			'COL_SAT_NAME' => $this->input->post('sat_name') == null ? '' : strtoupper($this->input->post('sat_name')),
+			'COL_SAT_NAME' => $this->input->post('sat_name') == null ? null : strtoupper($this->input->post('sat_name')),
 			'COL_SAT_MODE' => $this->input->post('sat_mode') == null ? '' : strtoupper($this->input->post('sat_mode')),
 			'COL_COUNTRY' => $country,
 			'COL_CONT' => $continent,

@@ -1170,7 +1170,7 @@ class Logbookadvanced_model extends CI_Model {
 			$bandtx = $value3 == '' ? '' : $value3;
 			$bandrx = $value4 == '' ? '' : $value4;
 
-			$bindings[] = $value;
+			$bindings[] = $value == '' ? null : $value;
 			$bindings[] = $propmode;
 
 			$sql = "UPDATE ".$this->config->item('table_name')." JOIN station_profile ON ". $this->config->item('table_name').".station_id = station_profile.station_id" .
