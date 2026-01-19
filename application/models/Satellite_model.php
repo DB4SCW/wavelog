@@ -199,7 +199,17 @@ class Satellite_model extends CI_Model {
 		$this->db->where('name', $sat);
 		$this->db->or_where('displayname', $sat);
 		$query = $this->db->get('satellite');
-		return $query->row();
+		if ($query->num_rows() == 1) {
+			return $query->row();
+		} else {
+			// Looks for TLEs with displayname in case name fails
+			$this->db->select('satellite.name AS satellite, satellite.displayname AS displayname, tle.tle, tle.updated');
+			$this->db->join('tle', 'satellite.id = tle.satelliteid');
+			$this->db->where('displayname', $sat);
+			$query = $this->db->get('satellite');
+			return $query->row();
+		}
+		return null;
 	}
 
 }
