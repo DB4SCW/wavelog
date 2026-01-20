@@ -6591,6 +6591,7 @@ class Logbook_model extends CI_Model {
 		$this->db->update($this->config->item('table_name'), $data);
 		return;
 	}
+}
 
 function validateADIFDate($date, $format = 'Ymd') {
     try {
