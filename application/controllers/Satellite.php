@@ -227,14 +227,23 @@ class Satellite extends CI_Controller {
 		$this->load->view('satellite/schedule',$data);
 	}
 
-	public function get_tle() {
+	public function get_sat_info() {
 
 		$sat = $this->security->xss_clean($this->input->post('sat'));
 		$this->load->model('satellite_model');
-		$satellite_data = $this->satellite_model->get_tle($sat);
+		$satellite_data = $this->satellite_model->get_sat_info($sat);
 
 		header('Content-Type: application/json');
 		echo json_encode($satellite_data, JSON_FORCE_OBJECT);
+	}
+
+	public function lotw_support() {
+		$sat = $this->security->xss_clean($this->input->post('sat'));
+		$this->load->model('satellite_model');
+		$lotw_data = $this->satellite_model->lotw_support($sat);
+
+		header('Content-Type: application/json');
+		echo json_encode($lotw_data);
 	}
 
 	public function pass() {
@@ -384,12 +393,12 @@ class Satellite extends CI_Controller {
 		foreach ($satellites as $sat) {			// Loop through known SATs
 			if ( (count($input_sat) > 0) && !((count($input_sat) == 1) && (($input_sat[0] ?? '') == '')) ) {		// User wants specific SATs (which isn't "All" or empty)??
 				if (in_array($sat->satname,$input_sat) || in_array($sat->displayname,$input_sat)) {
-					$tles[]=$this->satellite_model->get_tle($sat->satname ? $sat->satname : $sat->displayname);
+					$tles[]=$this->satellite_model->get_sat_info($sat->satname ? $sat->satname : $sat->displayname);
 				} else {
 					continue;
 				}
 			} else {				// No specific SAT, but all
-				$tles[]=$this->satellite_model->get_tle($sat->satname ? $sat->satname : $sat->displayname);
+				$tles[]=$this->satellite_model->get_sat_info($sat->satname ? $sat->satname : $sat->displayname);
 			}
 		}
 		return $tles;
@@ -660,7 +669,7 @@ class Satellite extends CI_Controller {
 		$this->load->model('satellite_model');
 
 		$data['satinfo'] = $this->satellite_model->getsatellite($id)->result();
-		$data['tleinfo'] = $this->satellite_model->get_tle($data['satinfo'][0]->name ? $data['satinfo'][0]->name : $data['satinfo'][0]->displayname);
+		$data['tleinfo'] = $this->satellite_model->get_sat_info($data['satinfo'][0]->name ? $data['satinfo'][0]->name : $data['satinfo'][0]->displayname);
 
 		$this->load->view('satellite/tleinfo', $data);
 	}
