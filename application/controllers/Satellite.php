@@ -20,20 +20,6 @@ class Satellite extends CI_Controller {
 		$this->load->model('logbook_model');
 
 		$satellites = $this->satellite_model->get_all_satellites();
-		$qsonum = $this->logbook_model->get_sat_qso_count();
-		foreach ($satellites as $sat) {
-			if (array_key_exists($sat->satname, $qsonum)) {
-				if ($sat->satname != '') {
-					$sat->qsocount = $qsonum[$sat->satname];
-				}
-			} elseif (array_key_exists($sat->displayname, $qsonum)) {
-				if ($sat->displayname != '') {
-					$sat->qsocount = $qsonum[$sat->displayname];
-				}
-			} else {
-				$sat->qsocount = '';
-			}
-		}
 		$pageData['satellites'] = $satellites;
 
 		if($this->session->userdata('user_date_format')) {
