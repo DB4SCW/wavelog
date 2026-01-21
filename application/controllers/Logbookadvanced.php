@@ -100,6 +100,7 @@ class Logbookadvanced extends CI_Controller {
 			'assets/js/leaflet/geocoding.js',
 			'assets/js/globe/globe.gl.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/globe/globe.gl.js")),
 			'assets/js/bootstrap-multiselect.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/bootstrap-multiselect.js")),
+			'assets/js/leaflet/L.MaidenheadColouredGridMap.js',
 		];
 
 		$this->load->view('interface_assets/header', $data);
@@ -145,6 +146,10 @@ class Logbookadvanced extends CI_Controller {
 			'wwff' => xss_clean($this->input->post('wwff')),
 			'qslimages' => xss_clean($this->input->post('qslimages')),
 			'dupes' => xss_clean($this->input->post('dupes')),
+			'dupedate' => xss_clean($this->input->post('dupedate')),
+			'dupemode' => xss_clean($this->input->post('dupemode')),
+			'dupeband' => xss_clean($this->input->post('dupeband')),
+			'dupesat' => xss_clean($this->input->post('dupesat')),
 			'operator' => xss_clean($this->input->post('operator')),
 			'contest' => xss_clean($this->input->post('contest')),
 			'invalid' => xss_clean($this->input->post('invalid')),
@@ -155,6 +160,8 @@ class Logbookadvanced extends CI_Controller {
 			'qrzSent' => xss_clean($this->input->post('qrzSent')),
 			'qrzReceived' => xss_clean($this->input->post('qrzReceived')),
 			'distance' => xss_clean($this->input->post('distance')),
+			'sortcolumn' => xss_clean($this->input->post('sortcolumn')),
+			'sortdirection' => xss_clean($this->input->post('sortdirection'))
 		);
 	}
 
@@ -226,10 +233,11 @@ class Logbookadvanced extends CI_Controller {
 		$this->load->model('logbookadvanced_model');
 
 		$ids = xss_clean($this->input->post('id'));
-		$sortorder = xss_clean($this->input->post('sortorder'));
+		$sortcolumn = xss_clean($this->input->post('sortcolumn'));
+		$sortdirection = xss_clean($this->input->post('sortdirection'));
 		$user_id = (int)$this->session->userdata('user_id');
 
-		$data['qsos'] = $this->logbookadvanced_model->getQsosForAdif($ids, $user_id, $sortorder);
+		$data['qsos'] = $this->logbookadvanced_model->getQsosForAdif($ids, $user_id, $sortcolumn, $sortdirection);
 
 		$this->load->view('adif/data/exportall', $data);
 	}
@@ -384,7 +392,9 @@ class Logbookadvanced extends CI_Controller {
 			'qrzSent' => '',
 			'qrzReceived' => '',
 			'ids' => json_decode(xss_clean($this->input->post('ids'))),
-			'qsoids' => xss_clean($this->input->post('qsoids'))
+			'qsoids' => xss_clean($this->input->post('qsoids')),
+			'sortcolumn' => 'qsotime',
+			'sortdirection' => 'desc'
 		);
 
 		$result = $this->logbookadvanced_model->getSearchResultArray($searchCriteria);
@@ -611,6 +621,7 @@ class Logbookadvanced extends CI_Controller {
 		$json_string['qth']['show'] = $this->def_boolean($this->input->post('qth'));
 		$json_string['frequency']['show'] = $this->def_boolean($this->input->post('frequency'));
 		$json_string['dcl']['show'] = $this->def_boolean($this->input->post('dcl'));
+		$json_string['last_modification']['show'] = $this->def_boolean($this->input->post('last_modification'));
 
 		$obj['column_settings']= json_encode($json_string);
 
@@ -751,41 +762,10 @@ class Logbookadvanced extends CI_Controller {
 		$ids = xss_clean($this->input->post('ids'));
 
 		$this->load->model('logbookadvanced_model');
-		$this->logbookadvanced_model->fixCqZones($ids);
-
-		$data = $this->logbookadvanced_model->getQsosForAdif($ids, $this->session->userdata('user_id'));
-
-		$results = $data->result('array');
-
-		$qsos = [];
-		foreach ($results as $data) {
-			$qsos[] = new QSO($data);
-		}
-
-		$q = [];
-		// Get Date format
-		if($this->session->userdata('user_date_format')) {
-			// If Logged in and session exists
-			$custom_date_format = $this->session->userdata('user_date_format');
-		} else {
-			// Get Default date format from /config/wavelog.php
-			$custom_date_format = $this->config->item('qso_date_format');
-		}
-
-		foreach ($qsos as $qso) {
-			$singleQso = $qso->toArray();
-			$flag = $this->dxccflag->get($qso->getDXCCId());
-			if ($flag != null) {
-				$singleQso['flag'] = ' '.$flag;
-			} else {
-				$singleQso['flag'] = '';
-			}
-			$q[]=$singleQso;
-		}
+		$result = $this->logbookadvanced_model->fixCqZones($ids);
 
 		header("Content-Type: application/json");
-		print json_encode($q);
-
+		print json_encode($result);
 	}
 
 	public function fixItuZones() {
@@ -794,48 +774,21 @@ class Logbookadvanced extends CI_Controller {
 		$ids = xss_clean($this->input->post('ids'));
 
 		$this->load->model('logbookadvanced_model');
-		$this->logbookadvanced_model->fixItuZones($ids);
-
-		$data = $this->logbookadvanced_model->getQsosForAdif($ids, $this->session->userdata('user_id'));
-
-		$results = $data->result('array');
-
-		$qsos = [];
-		foreach ($results as $data) {
-			$qsos[] = new QSO($data);
-		}
-
-		$q = [];
-		// Get Date format
-		if($this->session->userdata('user_date_format')) {
-			// If Logged in and session exists
-			$custom_date_format = $this->session->userdata('user_date_format');
-		} else {
-			// Get Default date format from /config/wavelog.php
-			$custom_date_format = $this->config->item('qso_date_format');
-		}
-
-		foreach ($qsos as $qso) {
-			$singleQso = $qso->toArray();
-			$flag = $this->dxccflag->get($qso->getDXCCId());
-			if ($flag != null) {
-				$singleQso['flag'] = ' '.$flag;
-			} else {
-				$singleQso['flag'] = '';
-			}
-			$q[]=$singleQso;
-		}
+		$result = $this->logbookadvanced_model->fixItuZones($ids);
 
 		header("Content-Type: application/json");
-		print json_encode($q);
+		print json_encode($result);
 	}
 
 	public function fixContinent() {
 		$this->load->model('logbookadvanced_model');
 		$result = $this->logbookadvanced_model->check_missing_continent();
 
-		header("Content-Type: application/json");
-		print json_encode($result);
+		$data['result'] = $result;
+
+		$data['type'] = 'continent';
+
+		$this->load->view('logbookadvanced/showUpdateResult', $data);
 	}
 
 	public function fixStateProgress() {
@@ -874,14 +827,121 @@ class Logbookadvanced extends CI_Controller {
 	}
 
 	public function updateDistances() {
+		if(!clubaccess_check(9)) return;
+
 		$this->load->model('logbookadvanced_model');
 		$result = $this->logbookadvanced_model->update_distances_batch();
 
-		header("Content-Type: application/json");
-		print json_encode($result);
+		$data['result'] = $result;
+
+		$data['type'] = 'distance';
+
+		$this->load->view('logbookadvanced/showUpdateResult', $data);
 	}
 
 	public function callbookDialog() {
 		$this->load->view('logbookadvanced/callbookdialog');
 	}
+
+	public function dbtoolsDialog() {
+		$this->load->view('logbookadvanced/dbtoolsdialog');
+	}
+
+	public function checkDb() {
+		if(!clubaccess_check(9)) return;
+
+		$type = $this->input->post('type', true);
+		$this->load->model('logbookadvanced_model');
+
+		$data['result'] = $this->logbookadvanced_model->runCheckDb($type);
+		if ($type == 'checkstate') {
+			$this->load->view('logbookadvanced/statecheckresult', $data);
+		} else {
+			$data['type'] = $type;
+			$this->load->view('logbookadvanced/checkresult', $data);
+		}
+
+	}
+
+	public function fixStateBatch() {
+		if(!clubaccess_check(9)) return;
+
+		$this->load->model('logbook_model');
+		$this->load->model('logbookadvanced_model');
+
+		$dxcc = $this->input->post('dxcc', true);
+		$data['country'] = $this->input->post('country', true);
+
+		// Process for batch QSO state fix
+		$result = $this->logbookadvanced_model->fixStateBatch($dxcc);
+
+		$data['result'] = $result;
+
+		$data['type'] = 'state';
+
+		$this->load->view('logbookadvanced/showUpdateResult', $data);
+	}
+
+	public function openStateList() {
+		if(!clubaccess_check(9)) return;
+
+		$this->load->model('logbookadvanced_model');
+
+		$data['dxcc'] = $this->input->post('dxcc', true);
+		$data['country'] = $this->input->post('country', true);
+
+		// Process for batch QSO state fix
+		$data['qsos'] = $this->logbookadvanced_model->getStateListQsos($data['dxcc']);
+
+		$this->load->view('logbookadvanced/showStateQsos', $data);
+	}
+
+	public function batchFix() {
+		if(!clubaccess_check(9)) return;
+
+		$type = $this->input->post('type', true);
+		$this->load->model('logbookadvanced_model');
+		$result = $this->logbookadvanced_model->batchFix($type);
+
+		$data['result'] = $result;
+		$data['type'] = $type;
+
+		$this->load->view('logbookadvanced/showUpdateResult', $data);
+	}
+
+	function dupeSearchDialog() {
+		if(!clubaccess_check(9)) return;
+
+		$this->load->view('logbookadvanced/dupesearchdialog');
+	}
+
+	function fixDxccSelected() {
+		if(!clubaccess_check(9)) return;
+
+		$ids = xss_clean($this->input->post('ids'));
+
+		$this->load->model('logbookadvanced_model');
+		$result = $this->logbookadvanced_model->fixDxccSelected($ids);
+		$result['message'] = '<div class="alert alert-' . ($result['count'] == 0 ? 'danger' : 'success') . '" role="alert">' . sprintf(__("DXCC updated for %d QSO(s)."), $result['count']) . '</div>';
+
+		header("Content-Type: application/json");
+		print json_encode($result);
+	}
+
+	function showMapForIncorrectGrid() {
+		if(!clubaccess_check(9)) return;
+
+		$this->load->model('logbookadvanced_model');
+		$dxcc = $this->input->post('dxcc', true);
+
+		$data['grids'] = $this->logbookadvanced_model->getGridsForDxcc($dxcc);
+		$data['dxcc'] = $dxcc;
+		$data['gridsquare'] = $this->input->post('gridsquare', true);
+		$dxccname = $this->input->post('dxccname', true);
+		$data['title'] = sprintf(__("Map for DXCC %s and gridsquare %s."), $dxccname, $data['gridsquare']);
+
+		header("Content-Type: application/json");
+		print json_encode($data);
+	}
+
 }

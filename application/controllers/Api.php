@@ -1,4 +1,9 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+use Wavelog\Dxcc\Dxcc;
+
+require_once APPPATH . '../src/Dxcc/Dxcc.php';
+
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class API extends CI_Controller {
 
@@ -23,6 +28,27 @@ class API extends CI_Controller {
 		redirect('api');
 	}
 
+	/**
+	 * Check rate limit for current endpoint
+	 * Only enforced if api_rate_limits config is set
+	 *
+	 * returns True if request is allowed, false if rate limited
+	 */
+	protected function check_rate_limit($endpoint, $identifier = null) {
+		if (!$this->load->is_loaded('rate_limit')) {
+			$this->load->library('rate_limit');
+		}
+
+		$result = $this->rate_limit->check($endpoint, $identifier);
+
+		if (!$result['allowed']) {
+			log_message("Debug","Rate limit for endpoint ".$endpoint." and ID: ".($identifier ?? '')." exceeded");
+			$this->rate_limit->send_limit_exceeded_response($result['retry_after']);
+			return false;
+		}
+
+		return true;
+	}
 
 	function edit($key) {
 		$this->load->model('user_model');
@@ -32,23 +58,20 @@ class API extends CI_Controller {
 
 		$this->load->helper(array('form', 'url'));
 
-        $this->load->library('form_validation');
+		$this->load->library('form_validation');
 
-        $this->form_validation->set_rules('api_desc', __("API Description"), 'required');
-        $this->form_validation->set_rules('api_key', __("API Key is required. Do not change this field"), 'required');
+		$this->form_validation->set_rules('api_desc', __("API Description"), 'required');
+		$this->form_validation->set_rules('api_key', __("API Key is required. Do not change this field"), 'required');
 
-        $data['api_info'] = $this->api_model->key_description($key);
+		$data['api_info'] = $this->api_model->key_description($key);
 
-        if ($this->form_validation->run() == FALSE)
-        {
-  	      	$data['page_title'] = __("Edit API Description");
+		if ($this->form_validation->run() == FALSE) {
+			$data['page_title'] = __("Edit API Description");
 
 			$this->load->view('interface_assets/header', $data);
 			$this->load->view('api/description');
 			$this->load->view('interface_assets/footer');
-		}
-		else
-		{
+		} else {
 			// Success!
 
 			$this->api_model->update_key_description($this->input->post('api_key'), $this->input->post('api_desc'));
@@ -119,10 +142,23 @@ class API extends CI_Controller {
 
 	function create_station($key = '') {
 		$this->load->model('api_model');
+
 		if ($this->api_model->access($key) == "No Key Found" || $this->api_model->access($key) == "Key Disabled") {
 			$this->output->set_status_header(401)->set_content_type('application/json')->set_output(json_encode(['status' => 'error', 'message' => 'Auth Error, invalid key']));
 			return;
 		}
+
+		$this->load->model('club_model');
+		$userid = $this->api_model->key_userid($key);
+		$created_by = $this->api_model->key_created_by($key);
+		$club_perm = $this->club_model->get_permission_noui($userid,$created_by);
+		if ($userid != $created_by) { // We're dealing with a Club Member/Member ADIF or Clubofficer
+			if ((($club_perm ?? 0) == 3) || (($club_perm ?? 0) == 6)) { // Member or ADIF-Member? DENY
+				$this->output->set_status_header(401)->set_content_type('application/json')->set_output(json_encode(['status' => 'error', 'message' => 'Auth Error, not enough grants for this operation']));
+				return;
+			}
+		}
+
 		try {
 			$raw = file_get_contents("php://input");
 			if ($raw === false) {
@@ -149,8 +185,7 @@ class API extends CI_Controller {
 			$this->output->set_status_header(500)->set_content_type('application/json')->set_output(json_encode(['status' => 'error', 'message' => 'Processing error: ' . $e->getMessage()]));
 		}
 		$this->load->model('stationsetup_model');
-		$user_id = $this->api_model->key_userid($key);
-		$imported = $this->stationsetup_model->import_locations_parse($locations,$user_id);
+		$imported = $this->stationsetup_model->import_locations_parse($locations,$userid);
 		if (($imported[0] ?? '0') == 'limit') {
 			$this->output->set_status_header(201)->set_content_type('application/json')->set_output(json_encode(['status' => 'success', 'message' => ($imported[1] ?? '0')." locations imported. Maximum limit of 1000 locations reached."]));
 		} else {
@@ -187,9 +222,9 @@ class API extends CI_Controller {
 		}
 	}
 
-	function check_auth($key) {
+	function check_auth($key = '') {
 		$this->load->model('api_model');
-		if($this->api_model->access($key) == "No Key Found" || $this->api_model->access($key) == "Key Disabled") {
+		if($this->api_model->access($key ?? '') == "No Key Found" || $this->api_model->access($key ?? '') == "Key Disabled") {
 			// set the content type as json
 			header("Content-type: application/json");
 
@@ -205,7 +240,7 @@ class API extends CI_Controller {
 			// set the http response code to 200
 			http_response_code(200);
 			// return the json
-			echo json_encode(['status' => 'valid', 'rights' => $this->api_model->access($key)]);
+			echo json_encode(['status' => 'valid', 'rights' => $this->api_model->access($key ?? '')]);
 		}
 	}
 
@@ -224,6 +259,7 @@ class API extends CI_Controller {
 		$this->load->model('api_model');
 
 		$this->load->model('stations');
+		$this->load->model('club_model');
 
 		if (!$this->load->is_loaded('Qra')) {
 			$this->load->library('Qra');
@@ -241,6 +277,11 @@ class API extends CI_Controller {
 		    echo json_encode(['status' => 'failed', 'reason' => "wrong JSON"]);
 		    die();
 		}
+
+		// Check rate limit
+		$identifier = isset($obj['key']) ? $obj['key'] : null;
+		$this->check_rate_limit('qso', $identifier);
+
 		$raw='';
 
 		if(!isset($obj['key']) || $this->api_model->authorize($obj['key']) == 0) {
@@ -252,6 +293,7 @@ class API extends CI_Controller {
 
 		$userid = $this->api_model->key_userid($obj['key']);
 		$created_by = $this->api_model->key_created_by($obj['key']);
+		$club_perm = $this->club_model->get_permission_noui($userid,$created_by);
 
 		/**
 		 * As the API key user could use it also for clubstations we need to do an additional check here. Only if clubstations are enabled
@@ -260,12 +302,11 @@ class API extends CI_Controller {
 		 * If the user is not the creator of the API key, it's likely a clubstation. In this case the callsign of the clubstation
 		 * can not be the same as the callsign of the user (operator call provided by the user). If this is the case, we need to use the callsign of the creator of the API key
 		 */
-		$real_operator = null;
+		$real_operator = null;	// real_operator is only filled if its a clubstation and the used key is created by an OP. otherwise its null
 		if ($this->config->item('special_callsign')) {
 			if ($userid != $created_by) {
 				$this->load->model('user_model');
 				$real_operator = $this->user_model->get_by_id($created_by)->row()->user_callsign;
-				// TODO: It would be possible to check here if operator is allowed to use the clubstation, but this can be added later if needed
 			} else {
 				$real_operator = null;
 			}
@@ -324,6 +365,11 @@ class API extends CI_Controller {
 					// in case the provided op call is the same as the clubstation callsign, we need to use the creator of the API key as the operator
 					$recorded_operator = $record['operator'] ?? '';
 					if (key_exists('operator',$record) && $real_operator != null && ($record['operator'] == $record['station_callsign']) || ($recorded_operator == '')) {
+						$record['operator'] = $real_operator;
+					}
+
+					// in case the caller is an OP for a clubstation (real_operator is filled - see above) and the OP only has level 3 or 6 - take the OP from real_operator!
+					if ($real_operator != null && ((($club_perm ?? 0) == 3) || (($club_perm ?? 0) == 6))) {
 						$record['operator'] = $real_operator;
 					}
 
@@ -705,6 +751,10 @@ class API extends CI_Controller {
 		// Decode JSON and store
 		$obj = json_decode(file_get_contents("php://input"), true);
 
+		// Check rate limit
+		$identifier = isset($obj['key']) ? $obj['key'] : null;
+		$this->check_rate_limit('radio', $identifier);
+
 		if(!isset($obj['key']) || $this->api_model->authorize($obj['key']) == 0) {
 			http_response_code(401);
 			echo json_encode(['status' => 'failed', 'reason' => "missing api key"]);
@@ -800,6 +850,10 @@ class API extends CI_Controller {
 	function private_lookup() {
 		// Lookup Callsign and dxcc for further informations. UseCase: e.g. external Application which checks calls like FlexRadio-Overlay
 		$raw_input = json_decode(file_get_contents("php://input"), true);
+
+		// Check rate limit
+		$identifier = isset($raw_input['key']) ? $raw_input['key'] : null;
+		$this->check_rate_limit('private_lookup', $identifier);
 		$user_id='';
 		$this->load->model('user_model');
 		if (!( $this->user_model->authorize($this->config->item('auth_mode') ))) {				// User not authorized?
@@ -819,6 +873,17 @@ class API extends CI_Controller {
 		} else {
 			$user_id=$this->session->userdata('user_id');
 		}
+
+		if (($raw_input['callbook'] ?? '' == 'true') && (($raw_input['callsign'] ?? '') != '')) {
+			$this->load->library('callbook');
+			$this->load->model('logbook_model');
+			$lookupcall = $this->callbook->get_plaincall($raw_input['callsign']);
+
+			$callbook = $this->logbook_model->loadCallBook($raw_input['callsign'], $this->config->item('use_fullname'));
+		} else {
+			$callbook=null;
+		}
+
 
 		$this->load->model('stations');
 		$all_station_ids=$this->stations->all_station_ids_of_user($user_id);
@@ -977,6 +1042,9 @@ class API extends CI_Controller {
 				$return['dxcc_confirmed_on_band']=($this->logbook_model->check_if_dxcc_cnfmd_in_logbook_api($userdata->row()->user_default_confirmation,$return['dxcc_id'], $station_ids, $band, null)>0) ? true : false;
 				$return['dxcc_confirmed_on_band_mode']=($this->logbook_model->check_if_dxcc_cnfmd_in_logbook_api($userdata->row()->user_default_confirmation,$return['dxcc_id'], $station_ids, $band, $mode)>0) ? true : false;
 			}
+			if ($callbook) {
+				$return['callbook']=$callbook;
+			}
 			echo json_encode($return, JSON_PRETTY_PRINT);
 		} else {
 			echo '{"error":"callsign to lookup not given"}';
@@ -987,6 +1055,11 @@ class API extends CI_Controller {
 	function lookup() {
 		// This API provides NO information about previous QSOs. It just derivates DXCC, Lat, Long. It is used by the DXClusterAPI
 		$raw_input = json_decode(file_get_contents("php://input"), true);
+
+		// Check rate limit
+		$identifier = isset($raw_input['key']) ? $raw_input['key'] : null;
+		$this->check_rate_limit('lookup', $identifier);
+
 		$user_id = '';
 		$this->load->model('user_model');
 		if (!( $this->user_model->authorize($this->config->item('auth_mode') ))) {				// User not authorized?
@@ -1042,7 +1115,9 @@ class API extends CI_Controller {
 
 			$return['callsign'] = $lookup_callsign;
 
-			$callsign_dxcc_lookup = $this->logbook_model->dxcc_lookup($lookup_callsign, $date);
+			// Use Wavelog\Dxcc\Dxcc for faster in-memory lookup
+			$dxccobj = new Dxcc($date);
+			$callsign_dxcc_lookup = $dxccobj->dxcc_lookup($lookup_callsign, $date);
 
 			$return['dxcc_id'] = $callsign_dxcc_lookup['adif'] ?? '';
 			$return['dxcc'] = $callsign_dxcc_lookup['entity'] ?? '';

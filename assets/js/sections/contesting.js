@@ -548,6 +548,17 @@ $('#radio').change(function () {
 	}
 });
 
+// Handle manual frequency entry - sync visible field to hidden field
+$('#freq_calculated').on('change', function() {
+	// set_new_qrg() is defined in qrg_handler.js and will:
+	// 1. Parse the frequency value and convert to Hz
+	// 2. Update #frequency (hidden field)
+	// 3. Update #band selector to match the frequency
+	if (typeof set_new_qrg === 'function') {
+		set_new_qrg();
+	}
+});
+
 function setSerial(data) {
 	var serialsent = 1;
 	if (data.serialsent != "") {
@@ -957,6 +968,10 @@ function getUTCDateStamp(el) {
 		case "M d, y":
 			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 			formatted_date = monthNames[now.getUTCMonth()] + " " + parseInt(day) + ", " + short_year;
+			break;
+		case "d M y":
+			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+			formatted_date = parseInt(day) + " " + monthNames[now.getUTCMonth()] + " " + short_year;
 			break;
 		default:
 			// Default to d-m-Y format as shown in the PHP code

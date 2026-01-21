@@ -20,55 +20,65 @@
     let lang_gen_hamradio_nightshadow = '<?= _pgettext("Map Options", "Night Shadow"); ?>';
     let lang_gen_hamradio_ituzone = '<?= __("ITU Zone"); ?>';
     let lang_gen_hamradio_cqzone = '<?= __("CQ Zone"); ?>';
-	let lang_gen_advanced_logbook_help = '<?= __("Advanced Logbook Help"); ?>';
-	let lang_gen_advanced_logbook_continent_fix = '<?= __("Continent fix"); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_itu_zones = '<?= __("There was a problem fixing ITU Zones."); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_cq_zones = '<?= __("There was a problem fixing CQ Zones."); ?>';
-	let lang_gen_advanced_logbook_itu_zones_updated = '<?= __("ITU Zones updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_cq_zones_updated = '<?= __("CQ Zones updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_select_row_itu_zones = '<?= __("You need to select at least 1 row to fix ITU Zones!"); ?>';
-	let lang_gen_advanced_logbook_select_row_cq_zones = '<?= __("You need to select at least 1 row to fix CQ Zones!"); ?>';
-	let lang_gen_advanced_logbook_select_row_state = '<?= __("You need to select at least 1 row to fix State!"); ?>';
-	let lang_gen_advanced_logbook_state_updated = '<?= __("State updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_state = '<?= __("There was a problem fixing State."); ?>';
-	let lang_gen_advanced_logbook_fixing_state = '<?= __("Fixing State"); ?>';
-	let lang_gen_advanced_logbook_fixing_state_qsos = '<?= __("Fixing State (%s QSOs)"); ?>';
-	let lang_gen_advanced_logbook_fixing_state_remaining = '<?= __("Fixing State: %s remaining"); ?>';
-	let lang_gen_advanced_logbook_fixed = '<?= __("Fixed"); ?>';
-	let lang_gen_advanced_logbook_fixed_with_count = '<?= __("Fixed: %s"); ?>';
-	let lang_gen_advanced_logbook_skipped = '<?= __("Skipped"); ?>';
-	let lang_gen_advanced_logbook_skipped_with_count = '<?= __("Skipped: %s, see details for skipped rows below"); ?>';
-	let lang_gen_advanced_logbook_state_fix_complete = '<?= __("State Fix Complete"); ?>';
-	let lang_gen_advanced_logbook_state_not_supported = '<?= __("Not all DXCC entities have state support. If you need support for additional countries, please create a ticket at %s with the GeoJSON file and desired letter coding for your country."); ?>';
-	let lang_gen_advanced_logbook_github_url = 'https://github.com/wavelog/wavelog/issues';
-	let lang_gen_advanced_logbook_github_link = '<a href="https://github.com/wavelog/wavelog/issues" target="_blank">Wavelog GitHub</a>';
-	let lang_gen_advanced_logbook_select_only_one_row_quickfilter = '<?= __("Only 1 row can be selected for Quickfilter!"); ?>'
-	let lang_gen_advanced_logbook_select_at_least_one_row_quickfilter = '<?= __("You need to select a row to use the Quickfilters!"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_qslcard = '<?= __("You need to select a least 1 row to display a QSL card!"); ?>';
-	let lang_gen_advanced_logbook_continents_updated = '<?= __("Continents updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_continents = '<?= __("There was a problem fixing Continents."); ?>';
-	let lang_gen_advanced_logbook_error = '<?= __("ERROR"); ?>';
-	let lang_gen_advanced_logbook_success = '<?= __("SUCCESS"); ?>';
-	let lang_gen_advanced_logbook_info = '<?= __("INFO"); ?>';
-	let lang_gen_advanced_logbook_warning = '<?= __("WARNING"); ?>';
-	let lang_gen_advanced_logbook_qsl_card = '<?= __("QSL Card"); ?>';
-	let lang_gen_advanced_logbook_close = '<?= __("Close"); ?>';
-	let lang_gen_advanced_logbook_save = '<?= __("Save"); ?>';
-	let lang_gen_advanced_logbook_update_now = '<?= __("Update now"); ?>';
-	let lang_gen_advanced_logbook_options = '<?= __("Options for the Advanced Logbook"); ?>';
-	let lang_gen_advanced_logbook_label_print_error = '<?= __("Something went wrong with label print. Go to labels and check if you have defined a label, and that it is set for print!"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row = '<?= __("You need to select a least 1 row!"); ?>';
-	let lang_gen_advanced_logbook_start_printing_at_which_label = '<?= __("Start printing at which label?"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_label = '<?= __("You need to select at least 1 row to print a label!"); ?>';
-	let lang_gen_advanced_logbook_error_saving_options = '<?= __("An error occurred while saving options: "); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_delete = '<?= __("You need to select a least 1 row to delete!"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_callbook = '<?= __("You need to select a least 1 row to update from callbook!"); ?>';
-	let lang_gen_advanced_logbook_an_error_ocurred_while_making_request = '<?= __("An error ocurred while making the request"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_location = '<?= __("You need to select at least 1 location to do a search!"); ?>';
-	let lang_gen_advanced_logbook_update_distances = '<?= __("Update Distances"); ?>';
-	let lang_gen_advanced_logbook_records_updated = '<?= __("QSO records updated."); ?>';
-	let lang_gen_advanced_logbook_problem_updating_distances = '<?= __("There was a problem updating distances."); ?>';
-	let lang_gen_advanced_logbook_distances_updated = '<?= __("Distances updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_help = '<?= __("Advanced Logbook Help"); ?>';
+    let lang_gen_advanced_logbook_continent_fix = '<?= __("Continent fix"); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_itu_zones = '<?= __("There was a problem fixing ITU Zones."); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_cq_zones = '<?= __("There was a problem fixing CQ Zones."); ?>';
+    let lang_gen_advanced_logbook_itu_zones_updated = '<?= __("ITU Zones updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_cq_zones_updated = '<?= __("CQ Zones updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_select_row_itu_zones = '<?= __("You need to select at least 1 row to fix ITU Zones!"); ?>';
+    let lang_gen_advanced_logbook_select_row_cq_zones = '<?= __("You need to select at least 1 row to fix CQ Zones!"); ?>';
+    let lang_gen_advanced_logbook_select_row_state = '<?= __("You need to select at least 1 row to fix State!"); ?>';
+    let lang_gen_advanced_logbook_state_updated = '<?= __("State updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_state = '<?= __("There was a problem fixing State."); ?>';
+    let lang_gen_advanced_logbook_fixing_state = '<?= __("Fixing State"); ?>';
+    let lang_gen_advanced_logbook_fixing_state_qsos = '<?= __("Fixing State (%s QSOs)"); ?>';
+    let lang_gen_advanced_logbook_fixing_state_remaining = '<?= __("Fixing State: %s remaining"); ?>';
+    let lang_gen_advanced_logbook_fixed = '<?= __("Fixed"); ?>';
+    let lang_gen_advanced_logbook_fixed_with_count = '<?= __("Fixed: %s"); ?>';
+    let lang_gen_advanced_logbook_skipped = '<?= __("Skipped"); ?>';
+    let lang_gen_advanced_logbook_skipped_with_count = '<?= __("Skipped: %s, see details for skipped rows below"); ?>';
+    let lang_gen_advanced_logbook_state_fix_complete = '<?= __("State Fix Complete"); ?>';
+    let lang_gen_advanced_logbook_state_not_supported = '<?= __("Not all DXCC entities have state support. If you need support for additional countries, please create a ticket at %s with the GeoJSON file and desired letter coding for your country."); ?>';
+    let lang_gen_advanced_logbook_github_url = 'https://github.com/wavelog/wavelog/issues';
+    let lang_gen_advanced_logbook_github_link = '<a href="https://github.com/wavelog/wavelog/issues" target="_blank">Wavelog GitHub</a>';
+    let lang_gen_advanced_logbook_select_only_one_row_quickfilter = '<?= __("Only 1 row can be selected for Quickfilter!"); ?>'
+    let lang_gen_advanced_logbook_select_at_least_one_row_quickfilter = '<?= __("You need to select a row to use the Quickfilters!"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_qslcard = '<?= __("You need to select a least 1 row to display a QSL card!"); ?>';
+    let lang_gen_advanced_logbook_continents_updated = '<?= __("Continents updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_continents = '<?= __("There was a problem fixing Continents."); ?>';
+    let lang_gen_advanced_logbook_error = '<?= __("ERROR"); ?>';
+    let lang_gen_advanced_logbook_success = '<?= __("SUCCESS"); ?>';
+    let lang_gen_advanced_logbook_info = '<?= __("INFO"); ?>';
+    let lang_gen_advanced_logbook_warning = '<?= __("WARNING"); ?>';
+    let lang_gen_advanced_logbook_qsl_card = '<?= __("QSL Card"); ?>';
+    let lang_gen_advanced_logbook_close = '<?= __("Close"); ?>';
+    let lang_gen_advanced_logbook_save = '<?= __("Save"); ?>';
+    let lang_gen_advanced_logbook_update_now = '<?= __("Update now"); ?>';
+    let lang_gen_advanced_logbook_options = '<?= __("Options for the Advanced Logbook"); ?>';
+    let lang_gen_advanced_logbook_label_print_error = '<?= __("Something went wrong with label print. Go to labels and check if you have defined a label, and that it is set for print!"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row = '<?= __("You need to select a least 1 row!"); ?>';
+    let lang_gen_advanced_logbook_start_printing_at_which_label = '<?= __("Start printing at which label?"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_label = '<?= __("You need to select at least 1 row to print a label!"); ?>';
+    let lang_gen_advanced_logbook_error_saving_options = '<?= __("An error occurred while saving options: "); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_delete = '<?= __("You need to select a least 1 row to delete!"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_callbook = '<?= __("You need to select a least 1 row to update from callbook!"); ?>';
+    let lang_gen_advanced_logbook_an_error_ocurred_while_making_request = '<?= __("An error ocurred while making the request"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_location = '<?= __("You need to select at least 1 location to do a search!"); ?>';
+    let lang_gen_advanced_logbook_update_distances = '<?= __("Update Distances"); ?>';
+    let lang_gen_advanced_logbook_records_updated = '<?= __("QSO records updated."); ?>';
+    let lang_gen_advanced_logbook_problem_updating_distances = '<?= __("There was a problem updating distances."); ?>';
+    let lang_gen_advanced_logbook_distances_updated = '<?= __("Distances updated successfully!"); ?>';
+
+    let lang_gen_advanced_logbook_confirm_fix_missing_dxcc = '<?= __("Are you sure you want to fix all QSOs with missing DXCC information? This action cannot be undone."); ?>';
+    let lang_gen_advanced_logbook_dupe_search = '<?= __("Duplicate Search"); ?>';
+    let lang_gen_advanced_logbook_search = '<?= __("Search"); ?>';
+
+    let lang_gen_advanced_logbook_show_more = '<?= __("Show more"); ?>';
+    let lang_gen_advanced_logbook_show_less = '<?= __("Show less"); ?>';
+
+	let lang_gen_advanced_logbook_confirmedLabel = '<?= __("Gridsquares for"); ?>';
+	let lang_gen_advanced_logbook_workedLabel = '<?= __("Non DXCC matching gridsquare"); ?>';
 
     let homegrid ='<?php echo strtoupper($homegrid[0]); ?>';
     <?php
@@ -117,6 +127,7 @@
             \"qth\":{\"show\":\"true\"},
             \"frequency\":{\"show\":\"true\"},
             \"dcl\":{\"show\":\"true\"},
+            \"last_modification\":{\"show\":\"false\"},
         }";
     }
     $current_opts = json_decode($options);
@@ -209,23 +220,26 @@
         echo "\nvar o_template = { antennaelevation: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-	if (!isset($current_opts->county)) {
+    if (!isset($current_opts->county)) {
         echo "\nvar o_template = { county: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-	if (!isset($current_opts->qth)) {
+    if (!isset($current_opts->qth)) {
         echo "\nvar o_template = { qth: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-	if (!isset($current_opts->frequency)) {
+    if (!isset($current_opts->frequency)) {
         echo "\nvar o_template = { frequency: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-		if (!isset($current_opts->dcl)) {
+    if (!isset($current_opts->dcl)) {
         echo "\nvar o_template = { dcl: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-
+    if (!isset($current_opts->last_modification)) {
+        echo "\nvar o_template = { last_modification: {show: 'false'}};";
+        echo "\nuser_options={...user_options, ...o_template};";
+    }
 
     foreach ($mapoptions as $mo) {
 	    if ($mo != null) {
@@ -260,6 +274,10 @@ $options = json_decode($options);
             <form id="searchForm" name="searchForm" action="<?php echo base_url() . "index.php/logbookadvanced/search"; ?>" method="post">
                 <input type="hidden" id="dupes" name="dupes" value="">
 				<input type="hidden" id="invalid" name="invalid" value="">
+				<input type="hidden" id="dupedate" name="dupedate" value="">
+				<input type="hidden" id="dupemode" name="dupemode" value="">
+				<input type="hidden" id="dupeband" name="dupeband" value="">
+				<input type="hidden" id="dupesat" name="dupesat" value="">
 
         <div class="row pt-2">
 			<div class="d-flex flex-wrap btn-group w-auto mx-auto">
@@ -490,8 +508,33 @@ $options = json_decode($options);
                                         <input onclick="this.select()" type="text" name="distance" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                 </div>
+								<div class="row">
+                                    <div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="sortcolumn"><?= __("Sort column"); ?></label>
+										<select id="sortcolumn" name="sortcolumn" class="form-select form-select-sm border border-secondary">
+                                            <option value="qsotime"><?= __("QSO Time"); ?></option>
+                                            <option value="band"><?= __("Band"); ?></option>
+                                            <option value="mode"><?= __("Mode"); ?></option>
+                                            <option value="qsomodified"><?= __("QSO Modified"); ?></option>
+                                        </select>
+                                    </div>
+									<div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="sortdirection"><?= __("Sort direction"); ?></label>
+										<select id="sortdirection" name="sortdirection" class="form-select form-select-sm border border-secondary">
+                                            <option value="desc"><?= __("Descending"); ?></option>
+                                            <option value="asc"><?= __("Ascending"); ?></option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+							<div class="row">
+									<div class="col-lg-2 col-md-2 col-sm-3 col-xl">
+										<div class="d-flex flex-wrap gap-1">
+											<button type="button" class="btn btn-primary btn-sm flex-shrink-0" onclick="$('#searchForm').submit(); $('#filterDropdown').dropdown('hide');"><i class="fas fa-search"></i> <?= __("Apply filters"); ?></button>
+										</div>
+									</div>
+								</div>
+							</div>
                     </div>
 
                     <!-- QSL Filters Dropdown -->
@@ -666,6 +709,13 @@ $options = json_decode($options);
                                         </select>
                                     </div>
                                 </div>
+								<div class="row">
+									<div class="col-lg-2 col-md-2 col-sm-3 col-xl">
+										<div class="d-flex flex-wrap gap-1">
+											<button type="button" class="btn btn-primary btn-sm flex-shrink-0" onclick="$('#searchForm').submit(); $('#qslFilterDropdown').dropdown('hide');"><i class="fas fa-search"></i> <?= __("Apply filters"); ?></button>
+										</div>
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>
@@ -750,27 +800,23 @@ $options = json_decode($options);
 								</div>
 								<div class="card-body p-2">
 									<div class="d-grid gap-2">
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="btnUpdateFromCallbook"><?= __("Update from Callbook"); ?></button>
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueBureau"><?= __("Queue Bureau"); ?></button>
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueDirect"><?= __("Queue Direct"); ?></button>
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueElectronic"><?= __("Queue Electronic"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentBureau"><?= __("Sent (Bureau)"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentDirect"><?= __("Sent (Direct)"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentElectronic"><?= __("Sent (Electronic)"); ?></button>
-									<button type="button" class="btn btn-sm btn-danger dropdown-action" id="dontSend"><?= __("Not Sent"); ?></button>
-									<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notRequired"><?= __("QSL Not Required"); ?></button>
-									<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notReceived"><?= __("Not Received"); ?></button>
-									<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedBureau"><?= __("Received (Bureau)"); ?></button>
-									<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedDirect"><?= __("Received (Direct)"); ?></button>
-									<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedElectronic"><?= __("Received (Electronic)"); ?></button>
-									<button type="button" class="btn btn-sm btn-info dropdown-action" id="exportAdif"><?= __("Create ADIF"); ?></button>
-									<button type="button" class="btn btn-sm btn-info dropdown-action" id="printLabel"><?= __("Print Label"); ?></button>
-									<button type="button" class="btn btn-sm btn-info dropdown-action" id="qslSlideshow"><?= __("QSL Slideshow"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixCqZones"><?= __("Fix CQ Zones"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixItuZones"><?= __("Fix ITU Zones"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixContinent"><?= __("Fix Continent"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixState"><?= __("Fix State"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="updateDistances"><?= __("Update Distances"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="btnUpdateFromCallbook"><?= __("Update from Callbook"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueBureau"><?= __("Queue Bureau"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueDirect"><?= __("Queue Direct"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueElectronic"><?= __("Queue Electronic"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentBureau"><?= __("Sent (Bureau)"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentDirect"><?= __("Sent (Direct)"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentElectronic"><?= __("Sent (Electronic)"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="dontSend"><?= __("Not Sent"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notRequired"><?= __("QSL Not Required"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notReceived"><?= __("Not Received"); ?></button>
+										<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedBureau"><?= __("Received (Bureau)"); ?></button>
+										<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedDirect"><?= __("Received (Direct)"); ?></button>
+										<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedElectronic"><?= __("Received (Electronic)"); ?></button>
+										<button type="button" class="btn btn-sm btn-info dropdown-action" id="exportAdif"><?= __("Create ADIF"); ?></button>
+										<button type="button" class="btn btn-sm btn-info dropdown-action" id="printLabel"><?= __("Print Label"); ?></button>
+										<button type="button" class="btn btn-sm btn-info dropdown-action" id="qslSlideshow"><?= __("QSL Slideshow"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixState"><?= __("Fix State"); ?></button>
 									</div>
 								</div>
 							</div>
@@ -821,6 +867,9 @@ $options = json_decode($options);
 					<button type="options" class="btn btn-sm btn-primary me-1 flex-grow-0 mb-2" id="optionButton" aria-label="<?= __("Options"); ?>" style="white-space: nowrap;" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= __("Options"); ?>">
 						<i class="fas fa-cog"></i>
 					</button>
+					<button type="button" class="btn btn-sm btn-primary me-1 flex-grow-0 mb-2" id="dbtools" style="white-space: nowrap;" aria-label="<?= __("Database Tools"); ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="<?= __("Database Tools"); ?>">
+						<i class="fas fa-wrench"></i>
+					</button>
 					<button type="button" class="btn btn-sm btn-danger me-1 flex-grow-0 mb-2" id="deleteQsos" style="white-space: nowrap;" aria-label="<?= __("Delete"); ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="<?= __("Delete"); ?>">
 						<i class="fas fa-trash-alt"></i>
 					</button>
@@ -844,6 +893,9 @@ $options = json_decode($options);
                     <?php if (($options->datetime->show ?? "true") == "true") {
                         echo '<th>' . __("Date/Time") . '</th>';
                     } ?>
+                    <?php if (($options->last_modification->show ?? "false") == "true") {
+                        echo '<th>' . __("Last modified") . '</th>';
+                    } ?>
                     <?php if (($options->de->show ?? "true") == "true") {
                         echo '<th>' . __("De") . '</th>';
                     } ?>
@@ -862,7 +914,7 @@ $options = json_decode($options);
                     <?php if (($options->band->show ?? "true") == "true") {
                         echo '<th>' . __("Band") . '</th>';
                     } ?>
-					<?php if (($options->frequency->show ?? "true") == "true") {
+                    <?php if (($options->frequency->show ?? "true") == "true") {
                         echo '<th>' . __("Frequency") . '</th>';
                     } ?>
                     <?php if (($options->gridsquare->show ?? "true") == "true") {
@@ -871,7 +923,7 @@ $options = json_decode($options);
                     <?php if (($options->name->show ?? "true") == "true") {
                         echo '<th>' . __("Name") . '</th>';
                     } ?>
-					<?php if (($options->qth->show ?? "true") == "true") {
+                    <?php if (($options->qth->show ?? "true") == "true") {
                         echo '<th>' . __("QTH") . '</th>';
                     } ?>
                     <?php if (($options->qslvia->show ?? "true") == "true") {
@@ -883,16 +935,16 @@ $options = json_decode($options);
                     <?php if (($options->qsl->show ?? "true") == "true") {
                         echo '<th>' . __("QSL") . '</th>';
                     } ?>
-					<?php if (($options->eqsl->show ?? "true") == "true") {
-						echo '<th class="eqslconfirmation">eQSL</th>';
-					} ?>
-					<?php if (($options->lotw->show ?? "true") == "true") {
-						echo '<th class="lotwconfirmation">LoTW</th>';
-					} ?>
+                    <?php if (($options->eqsl->show ?? "true") == "true") {
+                        echo '<th class="eqslconfirmation">eQSL</th>';
+                    } ?>
+                    <?php if (($options->lotw->show ?? "true") == "true") {
+                        echo '<th class="lotwconfirmation">LoTW</th>';
+                    } ?>
                     <?php if (($options->qrz->show ?? "true") == "true") {
                         echo '<th class="qrz">' . __("QRZ") . '</th>';
                     } ?>
-					<?php if (($options->dcl->show ?? "true") == "true") {
+                    <?php if (($options->dcl->show ?? "true") == "true") {
                         echo '<th>' . __("DCL") . '</th>';
                     } ?>
                     <?php if (($options->qslmsgs->show ?? "false") == "true") {
@@ -907,7 +959,7 @@ $options = json_decode($options);
                     <?php if (($options->state->show ?? "true") == "true") {
                         echo '<th>' . __("State") . '</th>';
                     } ?>
-					<?php if (($options->county->show ?? "true") == "true") {
+                    <?php if (($options->county->show ?? "true") == "true") {
                         echo '<th>' . __("County") . '</th>';
                     } ?>
                     <?php if (($options->cqzone->show ?? "true") == "true") {

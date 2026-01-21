@@ -31,7 +31,11 @@ class QSO extends CI_Controller {
 			show_404();
 		}
 
-		$data['active_station_profile'] = $this->stations->find_active();
+		if ($this->stations->check_station_is_accessible($this->session->userdata('station_profile_id') ?? 0)) {	// Last Station from session accessible? Take it!
+			$data['active_station_profile'] = $this->session->userdata('station_profile_id');
+		} else {
+			$data['active_station_profile'] =$this->stations->find_active();
+		}
 
 		$data['notice'] = false;
 		$data['stations'] = $this->stations->all_of_user();
@@ -86,6 +90,13 @@ class QSO extends CI_Controller {
 			$data['user_dok_to_qso_tab'] = $qkey_opt[0]->option_value;
 		} else {
 			$data['user_dok_to_qso_tab'] = 0;
+		}
+
+		$qkey_opt=$this->user_options_model->get_options('qso_tab',array('option_name'=>'station','option_key'=>'show'))->result();
+		if (count($qkey_opt)>0) {
+			$data['user_station_to_qso_tab'] = $qkey_opt[0]->option_value;
+		} else {
+			$data['user_station_to_qso_tab'] = 0;
 		}
 
 		// Get status of DX Waterfall enable option
@@ -170,7 +181,7 @@ class QSO extends CI_Controller {
 			// Add QSO
 			// $this->logbook_model->add();
 			//change to create_qso function as add and create_qso duplicate functionality
-			$this->logbook_model->create_qso();
+			$adif = $this->logbook_model->create_qso();
 
 			$returner=[];
 			$actstation=$this->stations->find_active() ?? '';
@@ -179,6 +190,11 @@ class QSO extends CI_Controller {
 			$returner['activeStationTXPower'] = xss_clean($profile_info->station_power ?? '');
 			$returner['activeStationOP'] = xss_clean($this->session->userdata('operator_callsign'));
 			$returner['message']='success';
+
+			// Include ADIF for WebSocket transmission
+			if ($adif) {
+				$returner['adif'] = $adif;
+			}
 
 			// Get last 5 qsos
 			echo json_encode($returner);
