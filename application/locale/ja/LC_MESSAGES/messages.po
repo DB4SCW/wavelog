@@ -128,6 +128,16 @@ msgstr ""
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52
+#: application/controllers/Satellite.php:48
+#: application/controllers/Satellite.php:55
+#: application/controllers/Satellite.php:63
+#: application/controllers/Satellite.php:82
+#: application/controllers/Satellite.php:102
+#: application/controllers/Satellite.php:110
+#: application/controllers/Satellite.php:118
+#: application/controllers/Satellite.php:150
+#: application/controllers/Satellite.php:664
+#: application/controllers/Satellite.php:673
 msgid "You're not allowed to do that!"
 msgstr "それは許されません！"
 
@@ -2586,51 +2596,63 @@ msgstr "EDIエクスポート"
 #: application/views/satellite/index.php:40
 #: application/views/statistics/index.php:85
 #: application/views/statistics/index.php:153
+#: application/controllers/Satellite.php:41
 msgid "Satellites"
 msgstr "衛星"
 
 #: application/controllers/Satellite.php:64
+#: application/controllers/Satellite.php:50
 msgid "Create Satellite"
 msgstr "衛星を作成"
 
 #: application/controllers/Satellite.php:90
+#: application/controllers/Satellite.php:76
 msgid "Edit Satellite"
 msgstr "衛星を編集"
 
 #: application/controllers/Satellite.php:213
 #: application/views/interface_assets/header.php:313
+#: application/controllers/Satellite.php:199
 msgid "Satellite Flightpath"
 msgstr "衛星飛行経路"
 
 #: application/controllers/Satellite.php:265
+#: application/controllers/Satellite.php:251
 msgid "Satellite pass"
 msgstr "衛星パス"
 
 #: application/controllers/Satellite.php:322
+#: application/controllers/Satellite.php:308
 msgid "Failed to save pass settings!"
 msgstr "パス設定の保存に失敗しました！"
 
 #: application/controllers/Satellite.php:325
+#: application/controllers/Satellite.php:311
 msgid "Pass settings saved!"
 msgstr "パス設定が保存されました!"
 
 #: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:324
 msgid "No settings found!"
 msgstr "設定が見つかりません!"
 
 #: application/controllers/Satellite.php:352
+#: application/controllers/Satellite.php:338
 msgid "Failed to delete pass settings!"
 msgstr "パス設定の削除に失敗しました！"
 
 #: application/controllers/Satellite.php:354
+#: application/controllers/Satellite.php:340
 msgid "Pass settings deleted!"
 msgstr "パス設定が削除されました!"
 
 #: application/controllers/Satellite.php:364
+#: application/controllers/Satellite.php:350
 msgid "Saved Pass Settings"
 msgstr "保存されたパス設定"
 
 #: application/controllers/Satellite.php:381
+#: application/controllers/Satellite.php:367
 msgid "No presets available"
 msgstr "プリセットはありません"
 
@@ -3644,6 +3666,7 @@ msgstr "DXCCは数値でなければなりません"
 
 #: application/models/Logbook_model.php:4754
 #: application/models/Logbook_model.php:4765
+#: application/models/Logbook_model.php:4764
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
@@ -3652,6 +3675,7 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4768
 #: application/models/Logbook_model.php:4779
+#: application/models/Logbook_model.php:4778
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3661,11 +3685,13 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4777
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4787
 msgid "QSO on"
 msgstr "QSOオン"
 
 #: application/models/Logbook_model.php:4777
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4787
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3675,6 +3701,7 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4826
 #: application/models/Logbook_model.php:4837
+#: application/models/Logbook_model.php:4836
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3685,22 +3712,26 @@ msgstr ""
 
 #: application/models/Logbook_model.php:5091
 #: application/models/Logbook_model.php:5102
+#: application/models/Logbook_model.php:5101
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5102
 #: application/models/Logbook_model.php:5113
+#: application/models/Logbook_model.php:5112
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5163
 #: application/models/Logbook_model.php:5174
+#: application/models/Logbook_model.php:5173
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5538
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5549
+#: application/models/Logbook_model.php:5548
 msgid "Duplicate for"
 msgstr "複製用"
 
@@ -3708,31 +3739,38 @@ msgstr "複製用"
 #: application/models/Logbook_model.php:5698
 #: application/models/Logbook_model.php:5614
 #: application/models/Logbook_model.php:5709
+#: application/models/Logbook_model.php:5613
+#: application/models/Logbook_model.php:5708
 msgid "QSO could not be matched"
 msgstr "QSOが一致しませんでした"
 
 #: application/models/Logbook_model.php:5611
 #: application/models/Logbook_model.php:5622
+#: application/models/Logbook_model.php:5621
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "LoTW/Clublog/eQSL/コンテストで確認済み"
 
 #: application/models/Logbook_model.php:5617
 #: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5627
 msgid "confirmed by award manager"
 msgstr "賞の管理者によって確認された"
 
 #: application/models/Logbook_model.php:5621
 #: application/models/Logbook_model.php:5632
+#: application/models/Logbook_model.php:5631
 msgid "confirmed by cross-check of DCL data"
 msgstr "DCLデータのクロスチェックによって確認された"
 
 #: application/models/Logbook_model.php:5625
 #: application/models/Logbook_model.php:5636
+#: application/models/Logbook_model.php:5635
 msgid "confirmation pending"
 msgstr "確認中"
 
 #: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5639
+#: application/models/Logbook_model.php:5638
 msgid "unconfirmed"
 msgstr "未確認"
 
@@ -3741,16 +3779,19 @@ msgstr "未確認"
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 #: application/models/Logbook_model.php:5642
+#: application/models/Logbook_model.php:5641
 msgid "unknown"
 msgstr "不明"
 
 #: application/models/Logbook_model.php:5701
 #: application/models/Logbook_model.php:5712
+#: application/models/Logbook_model.php:5711
 msgid "POTA reference already in log"
 msgstr "POTA 参照。既にログに存在します"
 
 #: application/models/Logbook_model.php:5704
 #: application/models/Logbook_model.php:5715
+#: application/models/Logbook_model.php:5714
 msgid "QSO updated"
 msgstr "QSOが更新されました"
 
@@ -3769,6 +3810,7 @@ msgstr "QSOが更新されました"
 #: application/views/user/edit.php:257 application/views/user/edit.php:280
 #: application/views/user/edit.php:303 application/views/user/edit.php:326
 #: application/views/user/edit.php:351
+#: application/models/Logbook_model.php:6444
 msgid "Bearing"
 msgstr "方位"
 

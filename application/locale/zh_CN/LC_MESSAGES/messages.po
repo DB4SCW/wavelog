@@ -147,6 +147,16 @@ msgstr ""
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52
 #: application/controllers/Satellite.php:687
+#: application/controllers/Satellite.php:48
+#: application/controllers/Satellite.php:55
+#: application/controllers/Satellite.php:63
+#: application/controllers/Satellite.php:82
+#: application/controllers/Satellite.php:102
+#: application/controllers/Satellite.php:110
+#: application/controllers/Satellite.php:118
+#: application/controllers/Satellite.php:150
+#: application/controllers/Satellite.php:664
+#: application/controllers/Satellite.php:673
 msgid "You're not allowed to do that!"
 msgstr "请不要这样操作！"
 
@@ -2636,59 +2646,71 @@ msgstr "导出 EDI"
 #: application/views/satellite/index.php:40
 #: application/views/statistics/index.php:85
 #: application/views/statistics/index.php:153
+#: application/controllers/Satellite.php:41
 msgid "Satellites"
 msgstr "卫星"
 
 #: application/controllers/Satellite.php:64
+#: application/controllers/Satellite.php:50
 msgid "Create Satellite"
 msgstr "创建卫星信息"
 
 #: application/controllers/Satellite.php:90
+#: application/controllers/Satellite.php:76
 msgid "Edit Satellite"
 msgstr "编辑卫星"
 
 #: application/controllers/Satellite.php:213
 #: application/views/interface_assets/header.php:313
+#: application/controllers/Satellite.php:199
 msgid "Satellite Flightpath"
 msgstr "卫星轨迹"
 
 #: application/controllers/Satellite.php:256
 #: application/controllers/Satellite.php:265
+#: application/controllers/Satellite.php:251
 msgid "Satellite pass"
 msgstr "卫星过境"
 
 #: application/controllers/Satellite.php:313
 #: application/controllers/Satellite.php:322
+#: application/controllers/Satellite.php:308
 msgid "Failed to save pass settings!"
 msgstr "过境设置保存失败！"
 
 #: application/controllers/Satellite.php:316
 #: application/controllers/Satellite.php:325
+#: application/controllers/Satellite.php:311
 msgid "Pass settings saved!"
 msgstr "过境设置已保存！"
 
 #: application/controllers/Satellite.php:329
 #: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:324
 msgid "No settings found!"
 msgstr "未找到设置！"
 
 #: application/controllers/Satellite.php:343
 #: application/controllers/Satellite.php:352
+#: application/controllers/Satellite.php:338
 msgid "Failed to delete pass settings!"
 msgstr "过境设置删除失败！"
 
 #: application/controllers/Satellite.php:345
 #: application/controllers/Satellite.php:354
+#: application/controllers/Satellite.php:340
 msgid "Pass settings deleted!"
 msgstr "过境设置已删除！"
 
 #: application/controllers/Satellite.php:355
 #: application/controllers/Satellite.php:364
+#: application/controllers/Satellite.php:350
 msgid "Saved Pass Settings"
 msgstr "保存的过境设置"
 
 #: application/controllers/Satellite.php:372
 #: application/controllers/Satellite.php:381
+#: application/controllers/Satellite.php:367
 msgid "No presets available"
 msgstr "无可用预设"
 
@@ -3667,12 +3689,14 @@ msgstr "DXCC 应该是数字"
 
 #: application/models/Logbook_model.php:4754
 #: application/models/Logbook_model.php:4765
+#: application/models/Logbook_model.php:4764
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "导入 QSO 时出现错误：本台呼号 %s 对方呼号 %s %s，已跳过"
 
 #: application/models/Logbook_model.php:4768
 #: application/models/Logbook_model.php:4779
+#: application/models/Logbook_model.php:4778
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3680,11 +3704,13 @@ msgstr "导入QSO时使用了无效日期，该QSO未被导入。这是无效的
 
 #: application/models/Logbook_model.php:4777
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4787
 msgid "QSO on"
 msgstr "QSO 时间"
 
 #: application/models/Logbook_model.php:4777
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4787
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3692,6 +3718,7 @@ msgstr "试图导入的 QSO 不存在对方呼号（CALL）。此 QSO 无效，�
 
 #: application/models/Logbook_model.php:4826
 #: application/models/Logbook_model.php:4837
+#: application/models/Logbook_model.php:4836
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3701,22 +3728,26 @@ msgstr ""
 
 #: application/models/Logbook_model.php:5091
 #: application/models/Logbook_model.php:5102
+#: application/models/Logbook_model.php:5101
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate 字段错误（YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5102
 #: application/models/Logbook_model.php:5113
+#: application/models/Logbook_model.php:5112
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate 字段错误（YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5163
 #: application/models/Logbook_model.php:5174
+#: application/models/Logbook_model.php:5173
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date 字段错误（ YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5538
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5549
+#: application/models/Logbook_model.php:5548
 msgid "Duplicate for"
 msgstr "内容重复"
 
@@ -3724,31 +3755,38 @@ msgstr "内容重复"
 #: application/models/Logbook_model.php:5698
 #: application/models/Logbook_model.php:5614
 #: application/models/Logbook_model.php:5709
+#: application/models/Logbook_model.php:5613
+#: application/models/Logbook_model.php:5708
 msgid "QSO could not be matched"
 msgstr "QSO 无法匹配"
 
 #: application/models/Logbook_model.php:5611
 #: application/models/Logbook_model.php:5622
+#: application/models/Logbook_model.php:5621
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "已经通过 LoTW/Clublog/eQSL/竞赛 确认"
 
 #: application/models/Logbook_model.php:5617
 #: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5627
 msgid "confirmed by award manager"
 msgstr "已经通过奖项管理员确认"
 
 #: application/models/Logbook_model.php:5621
 #: application/models/Logbook_model.php:5632
+#: application/models/Logbook_model.php:5631
 msgid "confirmed by cross-check of DCL data"
 msgstr "已经通过 DCL 数据交叉检查确认"
 
 #: application/models/Logbook_model.php:5625
 #: application/models/Logbook_model.php:5636
+#: application/models/Logbook_model.php:5635
 msgid "confirmation pending"
 msgstr "等待确认"
 
 #: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5639
+#: application/models/Logbook_model.php:5638
 msgid "unconfirmed"
 msgstr "未确认"
 
@@ -3757,16 +3795,19 @@ msgstr "未确认"
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 #: application/models/Logbook_model.php:5642
+#: application/models/Logbook_model.php:5641
 msgid "unknown"
 msgstr "未知"
 
 #: application/models/Logbook_model.php:5701
 #: application/models/Logbook_model.php:5712
+#: application/models/Logbook_model.php:5711
 msgid "POTA reference already in log"
 msgstr "日志中已存在POTA数据"
 
 #: application/models/Logbook_model.php:5704
 #: application/models/Logbook_model.php:5715
+#: application/models/Logbook_model.php:5714
 msgid "QSO updated"
 msgstr "QSO已上传"
 
@@ -3785,6 +3826,7 @@ msgstr "QSO已上传"
 #: application/views/user/edit.php:257 application/views/user/edit.php:280
 #: application/views/user/edit.php:303 application/views/user/edit.php:326
 #: application/views/user/edit.php:351
+#: application/models/Logbook_model.php:6444
 msgid "Bearing"
 msgstr "方位角"
 

@@ -146,6 +146,16 @@ msgstr ""
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52
+#: application/controllers/Satellite.php:48
+#: application/controllers/Satellite.php:55
+#: application/controllers/Satellite.php:63
+#: application/controllers/Satellite.php:82
+#: application/controllers/Satellite.php:102
+#: application/controllers/Satellite.php:110
+#: application/controllers/Satellite.php:118
+#: application/controllers/Satellite.php:150
+#: application/controllers/Satellite.php:664
+#: application/controllers/Satellite.php:673
 msgid "You're not allowed to do that!"
 msgstr "Das ist Dir nicht gestattet!"
 
@@ -2544,51 +2554,63 @@ msgstr "Exportiere EDI"
 #: application/views/satellite/index.php:40
 #: application/views/statistics/index.php:85
 #: application/views/statistics/index.php:153
+#: application/controllers/Satellite.php:41
 msgid "Satellites"
 msgstr "Satelliten"
 
 #: application/controllers/Satellite.php:64
+#: application/controllers/Satellite.php:50
 msgid "Create Satellite"
 msgstr "Erstelle Satelliten"
 
 #: application/controllers/Satellite.php:90
+#: application/controllers/Satellite.php:76
 msgid "Edit Satellite"
 msgstr "Bearbeite Satelliten"
 
 #: application/controllers/Satellite.php:213
 #: application/views/interface_assets/header.php:313
+#: application/controllers/Satellite.php:199
 msgid "Satellite Flightpath"
 msgstr "Satellitenflugbahn"
 
 #: application/controllers/Satellite.php:265
+#: application/controllers/Satellite.php:251
 msgid "Satellite pass"
 msgstr "Satellitenüberflug"
 
 #: application/controllers/Satellite.php:322
+#: application/controllers/Satellite.php:308
 msgid "Failed to save pass settings!"
 msgstr "Speichern der Überflug-Einstellungen fehlgeschlagen!"
 
 #: application/controllers/Satellite.php:325
+#: application/controllers/Satellite.php:311
 msgid "Pass settings saved!"
 msgstr "Überflug-Einstellungen gespeichert!"
 
 #: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:324
 msgid "No settings found!"
 msgstr "Keine Einstellungen gefunden!"
 
 #: application/controllers/Satellite.php:352
+#: application/controllers/Satellite.php:338
 msgid "Failed to delete pass settings!"
 msgstr "Fehler beim Löschen der Überflug-Einstellungen!"
 
 #: application/controllers/Satellite.php:354
+#: application/controllers/Satellite.php:340
 msgid "Pass settings deleted!"
 msgstr "Überflug-Einstellungen gelöscht!"
 
 #: application/controllers/Satellite.php:364
+#: application/controllers/Satellite.php:350
 msgid "Saved Pass Settings"
 msgstr "Gespeicherte Überflug-Einstellungen"
 
 #: application/controllers/Satellite.php:381
+#: application/controllers/Satellite.php:367
 msgid "No presets available"
 msgstr "Keine Voreinstellungen verfügbar"
 
@@ -3589,6 +3611,7 @@ msgid "DXCC has to be Numeric"
 msgstr "DXCC muss numerisch sein"
 
 #: application/models/Logbook_model.php:4765
+#: application/models/Logbook_model.php:4764
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
@@ -3596,6 +3619,7 @@ msgstr ""
 "importiert"
 
 #: application/models/Logbook_model.php:4779
+#: application/models/Logbook_model.php:4778
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3604,10 +3628,12 @@ msgstr ""
 "wurde nicht importiert. Es ist ungültig"
 
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4787
 msgid "QSO on"
 msgstr "QSO am"
 
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4787
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3616,6 +3642,7 @@ msgstr ""
 "QSO wurde nicht importiert. Es ist ungültig"
 
 #: application/models/Logbook_model.php:4837
+#: application/models/Logbook_model.php:4836
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3625,44 +3652,55 @@ msgstr ""
 "Dieses QSO wurde nicht importiert. Es ist ungültig"
 
 #: application/models/Logbook_model.php:5102
+#: application/models/Logbook_model.php:5101
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "Das (Papier-)QSL-Empfangsdatum hat das falsche Format (JJJJMMDD)"
 
 #: application/models/Logbook_model.php:5113
+#: application/models/Logbook_model.php:5112
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "Das (Papier-)QSL Sendedatum hat das falsche Format (JJJJMMTT)"
 
 #: application/models/Logbook_model.php:5174
+#: application/models/Logbook_model.php:5173
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "Das Format des Clublog-Upload-Datums ist falsch (JJJJMMTT)"
 
 #: application/models/Logbook_model.php:5549
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5548
 msgid "Duplicate for"
 msgstr "Doublette zu"
 
 #: application/models/Logbook_model.php:5614
 #: application/models/Logbook_model.php:5709
+#: application/models/Logbook_model.php:5613
+#: application/models/Logbook_model.php:5708
 msgid "QSO could not be matched"
 msgstr "QSO konnte nicht gefunden werden"
 
 #: application/models/Logbook_model.php:5622
+#: application/models/Logbook_model.php:5621
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "bestätigt durch LoTW/Clublog/eQSL/Contest"
 
 #: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5627
 msgid "confirmed by award manager"
 msgstr "bestätigt durch Diplommananger"
 
 #: application/models/Logbook_model.php:5632
+#: application/models/Logbook_model.php:5631
 msgid "confirmed by cross-check of DCL data"
 msgstr "bestätigt durch Cross-Check von DCL-Daten"
 
 #: application/models/Logbook_model.php:5636
+#: application/models/Logbook_model.php:5635
 msgid "confirmation pending"
 msgstr "Bestätigung ausstehend"
 
 #: application/models/Logbook_model.php:5639
+#: application/models/Logbook_model.php:5638
 msgid "unconfirmed"
 msgstr "nicht bestätigt"
 
@@ -3670,14 +3708,17 @@ msgstr "nicht bestätigt"
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
+#: application/models/Logbook_model.php:5641
 msgid "unknown"
 msgstr "unbekannt"
 
 #: application/models/Logbook_model.php:5712
+#: application/models/Logbook_model.php:5711
 msgid "POTA reference already in log"
 msgstr "POTA Referenz bereits im Log"
 
 #: application/models/Logbook_model.php:5715
+#: application/models/Logbook_model.php:5714
 msgid "QSO updated"
 msgstr "QSO aktualisiert"
 
@@ -3692,6 +3733,7 @@ msgstr "QSO aktualisiert"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6444
 msgid "Bearing"
 msgstr "Peilung"
 
@@ -11465,8 +11507,8 @@ msgstr ""
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
 msgstr ""
-"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an eQSL."
-"cc."
+"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an "
+"eQSL.cc."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
@@ -14839,8 +14881,8 @@ msgstr "E-Mail Adresse"
 msgid ""
 "The email address from which the emails are sent, e.g. 'wavelog@example.com'"
 msgstr ""
-"Die E-Mail Adresse von der die Mails versendet werden, z.B. 'wavelog@example."
-"com'"
+"Die E-Mail Adresse von der die Mails versendet werden, z.B. "
+"'wavelog@example.com'"
 
 #: application/views/options/email.php:80
 msgid "SMTP Host"
@@ -16988,9 +17030,9 @@ msgid ""
 msgstr ""
 "Um zu beginnen, stelle sicher, dass du die Felder auf der linken Seite "
 "bereits mit Datum, Stationsrufzeichen/-standort und Rufzeichen des Operators "
-"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, z."
-"B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was im "
-"wesentlichen das Rufzeichen ist."
+"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, "
+"z.B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was "
+"im wesentlichen das Rufzeichen ist."
 
 #: application/views/simplefle/syntax_help.php:9
 msgid "For example, a QSO that started at 21:34 (UTC) with 4W7EST on 20m SSB."
@@ -17863,9 +17905,9 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
-"Erstelle einen neuen Ordner in 'assets/css/' und lade eine 'bootstrap.min."
-"css' Datei hoch, welche die grundlegende Styling-Regeln enthält. Wir "
-"verwenden die Themes von %s"
+"Erstelle einen neuen Ordner in 'assets/css/' und lade eine "
+"'bootstrap.min.css' Datei hoch, welche die grundlegende Styling-Regeln "
+"enthält. Wir verwenden die Themes von %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
