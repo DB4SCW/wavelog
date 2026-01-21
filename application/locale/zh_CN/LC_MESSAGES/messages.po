@@ -19533,6 +19533,10 @@ msgstr ""
 msgid "Not supported by LoTW"
 msgstr ""
 
+#: application/controllers/Calltester.php:844
+msgid "Callsign Tester"
+msgstr ""
+
 #~ msgid "LoTW .TQ8 Upload"
 #~ msgstr "LoTW .TQ8 导入"
 

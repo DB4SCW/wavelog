@@ -19749,6 +19749,10 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
+#: application/controllers/Calltester.php:844
+msgid "Callsign Tester"
+msgstr ""
+
 #, php-format
 #~ msgid ""
 #~ "Found no certificate in file %s. If the filename contains 'key-only' this "

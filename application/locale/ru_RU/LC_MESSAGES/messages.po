@@ -19769,6 +19769,10 @@ msgstr "CQ"
 msgid "CQz geojson"
 msgstr "CQ geojson"
 
+#: application/controllers/Calltester.php:844
+msgid "Callsign Tester"
+msgstr ""
+
 #, php-format
 #~ msgid ""
 #~ "The certificate found in file %s contains a password and cannot be "
