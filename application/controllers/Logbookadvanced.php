@@ -100,6 +100,7 @@ class Logbookadvanced extends CI_Controller {
 			'assets/js/leaflet/geocoding.js',
 			'assets/js/globe/globe.gl.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/globe/globe.gl.js")),
 			'assets/js/bootstrap-multiselect.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/bootstrap-multiselect.js")),
+			'assets/js/leaflet/L.MaidenheadColouredGridMap.js',
 		];
 
 		$this->load->view('interface_assets/header', $data);
@@ -159,6 +160,8 @@ class Logbookadvanced extends CI_Controller {
 			'qrzSent' => xss_clean($this->input->post('qrzSent')),
 			'qrzReceived' => xss_clean($this->input->post('qrzReceived')),
 			'distance' => xss_clean($this->input->post('distance')),
+			'sortcolumn' => xss_clean($this->input->post('sortcolumn')),
+			'sortdirection' => xss_clean($this->input->post('sortdirection'))
 		);
 	}
 
@@ -230,10 +233,11 @@ class Logbookadvanced extends CI_Controller {
 		$this->load->model('logbookadvanced_model');
 
 		$ids = xss_clean($this->input->post('id'));
-		$sortorder = xss_clean($this->input->post('sortorder'));
+		$sortcolumn = xss_clean($this->input->post('sortcolumn'));
+		$sortdirection = xss_clean($this->input->post('sortdirection'));
 		$user_id = (int)$this->session->userdata('user_id');
 
-		$data['qsos'] = $this->logbookadvanced_model->getQsosForAdif($ids, $user_id, $sortorder);
+		$data['qsos'] = $this->logbookadvanced_model->getQsosForAdif($ids, $user_id, $sortcolumn, $sortdirection);
 
 		$this->load->view('adif/data/exportall', $data);
 	}
@@ -388,7 +392,9 @@ class Logbookadvanced extends CI_Controller {
 			'qrzSent' => '',
 			'qrzReceived' => '',
 			'ids' => json_decode(xss_clean($this->input->post('ids'))),
-			'qsoids' => xss_clean($this->input->post('qsoids'))
+			'qsoids' => xss_clean($this->input->post('qsoids')),
+			'sortcolumn' => 'qsotime',
+			'sortdirection' => 'desc'
 		);
 
 		$result = $this->logbookadvanced_model->getSearchResultArray($searchCriteria);
@@ -890,30 +896,6 @@ class Logbookadvanced extends CI_Controller {
 		$this->load->view('logbookadvanced/showStateQsos', $data);
 	}
 
-	public function fixMissingDxcc() {
-		if(!clubaccess_check(9)) return;
-
-		$all = $this->input->post('all', true);
-		$this->load->model('logbookadvanced_model');
-        $result = $this->logbookadvanced_model->check_missing_dxcc_id($all);
-
-		$data['result'] = $result;
-		$data['all'] = $all;
-		$data['type'] = 'dxcc';
-
-		$this->load->view('logbookadvanced/showUpdateResult', $data);
-	}
-
-	public function openMissingDxccList() {
-		if(!clubaccess_check(9)) return;
-
-		$this->load->model('logbookadvanced_model');
-
-		$data['qsos'] = $this->logbookadvanced_model->getMissingDxccQsos();
-
-		$this->load->view('logbookadvanced/showMissingDxccQsos', $data);
-	}
-
 	public function batchFix() {
 		if(!clubaccess_check(9)) return;
 
@@ -944,6 +926,22 @@ class Logbookadvanced extends CI_Controller {
 
 		header("Content-Type: application/json");
 		print json_encode($result);
+	}
+
+	function showMapForIncorrectGrid() {
+		if(!clubaccess_check(9)) return;
+
+		$this->load->model('logbookadvanced_model');
+		$dxcc = $this->input->post('dxcc', true);
+
+		$data['grids'] = $this->logbookadvanced_model->getGridsForDxcc($dxcc);
+		$data['dxcc'] = $dxcc;
+		$data['gridsquare'] = $this->input->post('gridsquare', true);
+		$dxccname = $this->input->post('dxccname', true);
+		$data['title'] = sprintf(__("Map for DXCC %s and gridsquare %s."), $dxccname, $data['gridsquare']);
+
+		header("Content-Type: application/json");
+		print json_encode($data);
 	}
 
 }

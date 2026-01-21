@@ -437,61 +437,60 @@ class Lotw extends CI_Controller {
 		if(!$this->user_model->authorize(2)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
 
 		$results = array();
-		$password = $password; // Only needed if 12 has a password set
 		$filename = file_get_contents('file://'.$file);
 		$worked = openssl_pkcs12_read($filename, $results, $password);
-
-		if (array_key_exists('cert', $results)) {
-			$data['general_cert'] = $results['cert'];
-		} else {
-			log_message('error', 'Found no certificate in file '.$file);
+		$openssl_error_pkcs12_read = openssl_error_string();
+		if (!$worked || $openssl_error_pkcs12_read) {
+			log_message('error', 'OpenSSL reading LoTW cert file resulted in error: '.$openssl_error_pkcs12_read);
 			unlink($file);
-			$this->session->set_flashdata('warning', sprintf(__("Found no certificate in file %s. If the filename contains 'key-only' this is typically a certificate request which has not been processed by LoTW yet."), basename($file)));
-			redirect('lotw');
-		}
-
-
-		if($worked) {
-			// Reading p12 successful
-			$new_password = "wavelog"; // set default password
-			$result = null;
-			$worked = openssl_pkey_export($results['pkey'], $result, $new_password);
-
-			if($worked) {
-				// Store PEM Key in Array
-			    $data['pem_key'] = $result;
+			// OpenSSL error:11800071:PKCS12 routines::mac verify failure is most likely an (unknown) password set on the exported certificate
+			if (str_contains($openssl_error_pkcs12_read, 'mac verify failure')) {
+				$this->session->set_flashdata('warning', sprintf(__("The certificate found in file %s contains a password and cannot be processed. %sPlease make sure you export the LoTW certificate from tqsl application without password!%s For further information please visit the %sLoTW FAQ page%s in the Wavelog Wiki."), basename($file), '<b>', '</b>', '<a target="_blank" href="https://github.com/wavelog/wavelog/wiki/Logbook-of-The-World-(LoTW)">', '</a>'));
 			} else {
-				// Error Log Error Message
-			    log_message('error', openssl_error_string());
-
-			    // Set warning message redirect to LoTW main page
-			    $this->session->set_flashdata('warning', openssl_error_string());
-				redirect('lotw');
+				$this->session->set_flashdata('warning', sprintf(__("Generic error extracting the certificate from file %s. If the filename contains 'key-only' this is typically a certificate request which has not been processed by LoTW yet."), basename($file)));
 			}
-		} else {
-			// Reading p12 failed log error message
-			log_message('error', openssl_error_string());
-
-			// Set warning message redirect to LoTW main page
-			$this->session->set_flashdata('warning', openssl_error_string());
 			redirect('lotw');
+		} else {
+			if (!array_key_exists('cert', $results)) {
+				log_message('error', 'Generic error processing the certificate from file '.$file);
+				unlink($file);
+				$this->session->set_flashdata('warning', sprintf(__("Generic error processing the certificate in file %s."), basename($file)));
+				redirect('lotw');
+			} else {
+				$data['general_cert'] = $results['cert'];
+
+				// Reading p12 successful
+				$new_password = "wavelog"; // set default password
+				$result = null;
+				$worked = openssl_pkey_export($results['pkey'], $result, $new_password);
+				$openssl_error_pkey_export = openssl_error_string();
+				if (!$worked || $openssl_error_pkey_export) {
+					log_message('error', 'OpenSSL reading LoTW private key resulted in error: '.$openssl_error_pkey_export);
+					$this->session->set_flashdata('warning', sprintf(__("Generic error extracting the private key from certificate in file %s."), basename($file)));
+					unlink($file);
+					redirect('lotw');
+				} else {
+					// Store PEM Key in Array
+					$data['pem_key'] = $result;
+
+					// Read Cert Data
+					$certdata= openssl_x509_parse($results['cert'],0);
+
+					// Store Variables
+					$data['serialNumber'] = $certdata['serialNumber'];
+					$data['issued_callsign'] = $certdata['subject']['undefined'];
+					$data['issued_name'] = $certdata['subject']['commonName'];
+					$data['validFrom'] = date('Y-m-d H:i:s', $certdata['validFrom_time_t']);
+					$data['validTo_Date'] = date('Y-m-d H:i:s', $certdata['validTo_time_t']);
+					// https://oidref.com/1.3.6.1.4.1.12348.1
+					$data['qso-first-date'] = $certdata['extensions']['1.3.6.1.4.1.12348.1.2'];
+					$data['qso-end-date'] = $certdata['extensions']['1.3.6.1.4.1.12348.1.3'];
+					$data['dxcc-id'] = $certdata['extensions']['1.3.6.1.4.1.12348.1.4'];
+
+					return $data;
+				}
+			}
 		}
-
-		// Read Cert Data
-		$certdata= openssl_x509_parse($results['cert'],0);
-
-		// Store Variables
-		$data['serialNumber'] = $certdata['serialNumber'];
-		$data['issued_callsign'] = $certdata['subject']['undefined'];
-		$data['issued_name'] = $certdata['subject']['commonName'];
-		$data['validFrom'] = date('Y-m-d H:i:s', $certdata['validFrom_time_t']);
-		$data['validTo_Date'] = date('Y-m-d H:i:s', $certdata['validTo_time_t']);
-		// https://oidref.com/1.3.6.1.4.1.12348.1
-		$data['qso-first-date'] = $certdata['extensions']['1.3.6.1.4.1.12348.1.2'];
-		$data['qso-end-date'] = $certdata['extensions']['1.3.6.1.4.1.12348.1.3'];
-		$data['dxcc-id'] = $certdata['extensions']['1.3.6.1.4.1.12348.1.4'];
-
-		return $data;
 	}
 
 	/*
@@ -766,7 +765,7 @@ class Lotw extends CI_Controller {
 						break;
 					}
 					continue;
-				} else if(str_contains($content,"Username/password incorrect</I>")) {
+				} else if(str_contains(substr($content,0 , 2000),"Username/password incorrect</I>")) {
 					$result = "LoTW download failed for user ".$user->user_lotw_name.": Username/password incorrect";
 					log_message('error', 'LoTW download failed for user '.$user->user_name.': Username/password incorrect');
 					if ($this->Lotw_model->remove_lotw_credentials($user->user_id)) {
@@ -774,6 +773,10 @@ class Lotw extends CI_Controller {
 					} else {
 						log_message('error', 'Deleting LoTW credentials for user '.$user->user_name.' failed');
 					}
+					continue;
+				} else if (str_contains(substr($content, 0, 2000),"Page Request Limit!</B>")) {
+					$result = "LoTW download hit a rate limit for user ".$user->user_lotw_name;
+					log_message('error', 'LoTW download hit a rate limit for user '.$user->user_name);
 					continue;
 				}
 				file_put_contents($file, $content);
@@ -985,134 +988,8 @@ class Lotw extends CI_Controller {
 		}
 	} // end function
 
-	public function export() {
-		$this->load->model('user_model');
-		if(!$this->user_model->authorize(2)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
-
-		$data['page_title'] = __("LoTW .TQ8 Upload");
-
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'tq8|TQ8';
-
-		$this->load->library('upload', $config);
-
-		if ( ! $this->upload->do_upload())
-		{
-			$data['error'] = $this->upload->display_errors();
-
-			$this->load->view('interface_assets/header', $data);
-			$this->load->view('lotw/export');
-			$this->load->view('interface_assets/footer');
-		}
-		else
-		{
-			$data = array('upload_data' => $this->upload->data());
-
-			// Figure out how we should be marking QSLs confirmed via LoTW
-			$query = $query = $this->db->query('SELECT lotw_login_url FROM config');
-			$q = $query->row();
-			$config['lotw_login_url'] = $q->lotw_login_url;
-
-			// Set some fields that we're going to need for ARRL login
-			$query = $this->user_model->get_by_id($this->session->userdata('user_id'));
-    		$q = $query->row();
-    		$fields['login'] = $q->user_lotw_name;
-			$fields['password'] = $q->user_lotw_password;
-			$fields['acct_sel'] = "";
-
-			if ($fields['login'] == '' || $fields['password'] == '')
-			{
-				$this->session->set_flashdata('warning', __("You have not defined your ARRL LoTW credentials!")); redirect('lotw/status');
-			}
-
-			// Curl stuff goes here
-
-			// First we need to get a cookie
-
-			// options
-			$cookie_file_path = "./uploads/cookies.txt";
-			$agent            = "Mozilla/4.0 (compatible;)";
-
-			// begin script
-			$ch = curl_init();
-
-			// extra headers
-			$headers[] = "Accept: */*";
-			$headers[] = "Connection: Keep-Alive";
-
-			// basic curl options for all requests
-			curl_setopt($ch, CURLOPT_HTTPHEADER,  $headers);
-			curl_setopt($ch, CURLOPT_HEADER,  0);
-
-			// TODO: These SSL things should probably be set to true :)
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($ch, CURLOPT_USERAGENT, $agent);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_file_path);
-			curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
-
-			// Set login URL
-			curl_setopt($ch, CURLOPT_URL, $config['lotw_login_url']);
-
-			// set postfields using what we extracted from the form
-			$POSTFIELDS = http_build_query($fields);
-
-			// set post options
-			curl_setopt($ch, CURLOPT_POST, 1);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $POSTFIELDS);
-
-			// perform login
-			$result = curl_exec($ch);
-			if (stristr($result, "Username/password incorrect"))
-			{
-			   $this->session->set_flashdata('warning', __("Your ARRL username and/or password is incorrect.")); redirect('lotw/status');
-			}
-
-
-			// Now we need to use that cookie and upload the file
-			// change URL to upload destination URL
-			curl_setopt($ch, CURLOPT_URL, $config['lotw_login_url']);
-
-			// Grab the file
-			$postfile = array(
-        		"upfile"=>"@./uploads/".$data['upload_data']['file_name'],
-    		);
-
-    		//Upload it
-    		curl_setopt($ch, CURLOPT_POSTFIELDS, $postfile);
-    		$response = curl_exec($ch);
-			if (stristr($response, "accepted"))
-			{
-			   $this->session->set_flashdata('lotw_status', 'accepted');
-			   $data['page_title'] = __("LoTW .TQ8 Sent");
-			}
-			elseif (stristr($response, "rejected"))
-			{
-					$this->session->set_flashdata('lotw_status', 'rejected');
-					$data['page_title'] = __("LoTW .TQ8 Sent");
-			}
-			else
-			{
-				// If we're here, we didn't find what we're looking for in the ARRL response
-				// and LoTW is probably down or broken.
-				$this->session->set_flashdata('warning', 'Did not receive proper response from LoTW. Try again later.');
-				$data['page_title'] = __("LoTW .TQ8 Not Sent");
-			}
-
-			// Now we need to clean up
-			unlink($cookie_file_path);
-			unlink('./uploads/'.$data['upload_data']['file_name']);
-
-			$this->load->view('interface_assets/header', $data);
-			$this->load->view('lotw/status');
-			$this->load->view('interface_assets/footer');
-		}
-	}
-
 	/*
-		Deprecated. To be back compatible we do the same as update/lotw_users 
+		Deprecated. To be back compatible we do the same as update/lotw_users
 		HB9HIL, July 2024
 	*/
 	public function load_users() {

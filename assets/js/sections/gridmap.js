@@ -117,6 +117,7 @@ function gridPlot(form, visitor=true) {
 				dxcc: $('#dxcc').val(),
 				datefrom: $('#dateFrom').val(),
 				dateto: $('#dateTo').val(),
+				call: $("#call").val(),
 			},
 			success: function (data) {
 				$('.cohidden').show();
@@ -132,7 +133,7 @@ function gridPlot(form, visitor=true) {
 				grid_six_confirmed = data.grid_6char_confirmed;
 				grids = data.grids;
 				grid_max = data.grid_count;
-				plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_four_confirmed, grid_six_confirmed, grids, grid_max);
+				plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_four_confirmed, grid_six_confirmed, grids, grid_max, data.country_coords);
 
 			},
 			error: function (data) {
@@ -143,17 +144,26 @@ function gridPlot(form, visitor=true) {
    };
 }
 
-function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_four_confirmed, grid_six_confirmed, grids, grid_max) {
-            var layer = L.tileLayer(jslayer, {
+function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_four_confirmed, grid_six_confirmed, grids, grid_max, country_coords) {
+            let layer = L.tileLayer(jslayer, {
                 maxZoom: 12,
                 attribution: jsattribution,
                 id: 'mapbox.streets'
             });
 
+            // Set map center and zoom based on country selection
+            let mapCenter = [19, 0];
+            let mapZoom = 3;
+
+            if (country_coords && country_coords.lat && country_coords.long) {
+                mapCenter = [country_coords.lat, country_coords.long];
+                mapZoom = 5; // Zoom in closer for country view
+            }
+
             map = L.map('gridsquare_map', {
             layers: [layer],
-            center: [19, 0],
-            zoom: 3,
+            center: mapCenter,
+            zoom: mapZoom,
             minZoom: 2,
             fullscreenControl: true,
                 fullscreenControlOptions: {
@@ -162,7 +172,7 @@ function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_f
             });
 
             if (visitor != true) {
-               var printer = L.easyPrint({
+               let printer = L.easyPrint({
                    tileLayer: layer,
                    sizeModes: ['Current'],
                    filename: 'myMap',
@@ -172,7 +182,7 @@ function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_f
             }
 
             /*Legend specific*/
-            var legend = L.control({ position: "topright" });
+            let legend = L.control({ position: "topright" });
 
 
 			if (grids != '') {
@@ -180,6 +190,15 @@ function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_f
 					let div = L.DomUtil.create("div", "legend");
 					div.setAttribute('id', 'gridmapLegend');
 					html = '<div align="right" class="legendClose"><small><a href="javascript: hideLegend();">X</a></small></div>';
+					 // Add country name if selected
+					const countryName = getSelectedCountryName();
+					if (countryName) {
+						html += '<h4>DXCC: ' + countryName;
+						if ($('#call').val() != '' && $('#call').val() != '*') {
+							html += ' ('+$('#call').val().toUpperCase()+')';
+						}
+						html += '</h4>';
+					}
 					html += "<table border=\"0\">";
 					html += '<i style="background: green"></i><span>' + gridsquares_gridsquares_confirmed + ' ('+grid_four_confirmed.length+')</span><br>';
 					html += '<i style="background: red"></i><span>' + gridsquares_gridsquares_not_confirmed + ' ('+(grid_four.length - grid_four_confirmed.length)+')</span><br>';
@@ -193,11 +212,20 @@ function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_f
 					let div = L.DomUtil.create("div", "legend");
 					div.setAttribute('id', 'gridmapLegend');
 					div.innerHTML += '<div align="right" class="legendClose"><small><a href="javascript: hideLegend();">X</a></small></div>';
-					div.innerHTML += "<h4>" + gridsquares_gridsquares + "</h4>";
+					if (typeof $('#call').val() !== 'undefined' && $('#call').val() != '' && $('#call').val() != '*') {
+						div.innerHTML += "<h4>" + gridsquares_gridsquares + " ("+$('#call').val().toUpperCase()+")</h4>";
+					} else {
+						div.innerHTML += "<h4>" + gridsquares_gridsquares + "</h4>";
+					}
+					div.innerHTML += "</h4>";
 					div.innerHTML += '<i class="grid-confirmed" style="background: ' + confirmedColor + '"></i><span>' + gridsquares_gridsquares_confirmed + ' ('+grid_four_confirmed.length+')</span><br>';
 					div.innerHTML += '<i class="grid-worked" style="background: ' + workedColor + '"></i><span>' + gridsquares_gridsquares_not_confirmed + ' ('+(grid_four.length - grid_four_confirmed.length)+')</span><br>';
 					div.innerHTML += '<i></i><span>' + gridsquares_gridsquares_total_worked + ' ('+grid_four.length+')</span><br>';
-					div.innerHTML += "<h4>Fields</h4>";
+					if (typeof $('#call').val() !== 'undefined' && $('#call').val() != '' && $('#call').val() != '*') {
+						div.innerHTML += "<h4>" + gridsquares_fields + " ("+$('#call').val().toUpperCase()+")</h4>";
+					} else {
+						div.innerHTML += "<h4>" + gridsquares_fields + "</h4>";
+					}
 					div.innerHTML += '<i class="grid-confirmed" style="background: ' + confirmedColor + '"></i><span>Fields confirmed ('+grid_two_confirmed.length+')</span><br>';
 					div.innerHTML += '<i class="grid-worked" style="background: ' + workedColor + '"></i><span>Fields not confirmed ('+(grid_two.length - grid_two_confirmed.length)+')</span><br>';
 					div.innerHTML += '<i></i><span>Total fields worked ('+grid_two.length+')</span><br>';
@@ -212,6 +240,23 @@ function plot(visitor, grid_two, grid_four, grid_six, grid_two_confirmed, grid_f
                map.on('mousemove', onMapMove);
                map.on('click', onMapClick);
             }
+}
+
+// Get selected country name from multiselect
+function getSelectedCountryName() {
+    const dxccSelect = $('#dxcc');
+    const selectedValues = dxccSelect.val();
+
+    if (!selectedValues || selectedValues[0] === 'All') {
+        return null;
+    }
+
+    // Get the text of selected options
+    const selectedText = dxccSelect.find('option:selected').map(function() {
+        return $(this).text();
+    }).get();
+
+    return selectedText.join(', ');
 }
 
 function spawnGridsquareModal(loc_4char) {
@@ -358,9 +403,9 @@ $(document).ready(function(){
 
         // Format date as YYYY-MM-DD
         function formatDate(date) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
+            const year = date.getUTCFullYear();
+            const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(date.getUTCDate()).padStart(2, '0');
             return `${year}-${month}-${day}`;
         }
 
@@ -372,40 +417,40 @@ $(document).ready(function(){
 
             case 'yesterday':
                 const yesterday = new Date(today);
-                yesterday.setDate(yesterday.getDate() - 1);
+                yesterday.setDate(yesterday.getUTCDate() - 1);
                 dateFrom.value = formatDate(yesterday);
                 dateTo.value = formatDate(yesterday);
                 break;
 
             case 'last7days':
                 const sevenDaysAgo = new Date(today);
-                sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+                sevenDaysAgo.setDate(sevenDaysAgo.getUTCDate() - 7);
                 dateFrom.value = formatDate(sevenDaysAgo);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'last30days':
                 const thirtyDaysAgo = new Date(today);
-                thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                thirtyDaysAgo.setDate(thirtyDaysAgo.getUTCDate() - 30);
                 dateFrom.value = formatDate(thirtyDaysAgo);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'thismonth':
-                const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                const firstDayOfMonth = new Date(today.getUTCFullYear(), today.getUTCMonth(), 1);
                 dateFrom.value = formatDate(firstDayOfMonth);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastmonth':
-                const firstDayOfLastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
-                const lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                const firstDayOfLastMonth = new Date(today.getUTCFullYear(), today.getUTCMonth() - 1, 1);
+                const lastDayOfLastMonth = new Date(today.getUTCFullYear(), today.getUTCMonth(), 0);
                 dateFrom.value = formatDate(firstDayOfLastMonth);
                 dateTo.value = formatDate(lastDayOfLastMonth);
                 break;
 
             case 'thisyear':
-                const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+                const firstDayOfYear = new Date(today.getUTCFullYear(), 0, 1);
                 dateFrom.value = formatDate(firstDayOfYear);
                 dateTo.value = formatDate(today);
                 break;

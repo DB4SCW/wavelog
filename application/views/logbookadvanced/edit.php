@@ -22,7 +22,7 @@
 			<optgroup label="<?= __("Awards"); ?>">
 				<option value="continent"><?= __("Continent"); ?></option>
 				<option value="cqz"><?= __("CQ Zone"); ?></option>
-				<option value="dok"><?= __("DOK"); ?></option>
+				<option value="dok"><?= __("DARC DOK"); ?></option>
 				<option value="dxcc"><?= __("DXCC"); ?></option>
 				<option value="gridsquare"><?= __("Gridsquare"); ?></option>
 				<option value="iota"><?= __("IOTA"); ?></option>
@@ -62,6 +62,7 @@
 
 		<!-- CQ Zone -->
 		<select style="display:none" class="form-select form-select-sm w-auto" id="editCqz" name="cqz" required>
+			<option value="null">-</option>
 			<?php
 			for ($i = 1; $i <= 40; $i++) {
 				echo '<option value="' . $i . '">' . $i . '</option>';
@@ -71,6 +72,7 @@
 
 		<!-- ITU Zone -->
 		<select style="display:none" class="form-select form-select-sm w-auto" id="editItuz" name="ituz" required>
+			<option value="null">-</option>
 			<?php
 			for ($i = 1; $i <= 90; $i++) {
 				echo '<option value="' . $i . '">' . $i . '</option>';

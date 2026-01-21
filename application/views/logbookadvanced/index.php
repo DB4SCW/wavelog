@@ -77,7 +77,8 @@
     let lang_gen_advanced_logbook_show_more = '<?= __("Show more"); ?>';
     let lang_gen_advanced_logbook_show_less = '<?= __("Show less"); ?>';
 
-
+	let lang_gen_advanced_logbook_confirmedLabel = '<?= __("Gridsquares for"); ?>';
+	let lang_gen_advanced_logbook_workedLabel = '<?= __("Non DXCC matching gridsquare"); ?>';
 
     let homegrid ='<?php echo strtoupper($homegrid[0]); ?>';
     <?php
@@ -505,6 +506,24 @@ $options = json_decode($options);
 									<div <?php if (($options->distance->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="distance"><?= __("Distance"); ?> <i class="fa fa-question-circle" aria-hidden="true" data-bs-toggle="tooltip" title="<?= __("Distance in kilometers. Search will look for distances greater than or equal to this value."); ?>"></i></label>
                                         <input onclick="this.select()" type="text" name="distance" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                    </div>
+                                </div>
+								<div class="row">
+                                    <div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="sortcolumn"><?= __("Sort column"); ?></label>
+										<select id="sortcolumn" name="sortcolumn" class="form-select form-select-sm border border-secondary">
+                                            <option value="qsotime"><?= __("QSO Time"); ?></option>
+                                            <option value="band"><?= __("Band"); ?></option>
+                                            <option value="mode"><?= __("Mode"); ?></option>
+                                            <option value="qsomodified"><?= __("QSO Modified"); ?></option>
+                                        </select>
+                                    </div>
+									<div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="sortdirection"><?= __("Sort direction"); ?></label>
+										<select id="sortdirection" name="sortdirection" class="form-select form-select-sm border border-secondary">
+                                            <option value="desc"><?= __("Descending"); ?></option>
+                                            <option value="asc"><?= __("Ascending"); ?></option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

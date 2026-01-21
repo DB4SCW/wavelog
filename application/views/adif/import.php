@@ -339,7 +339,7 @@
                         </div>
                     <?php } ?>
 
-                    <p class="card-text"><?= sprintf(__("Go to %s and export your logbook with confirmed DOKs. To speed up the process you can select only DL QSOs to download (i.e. put 'DL' into Prefix List). The downloaded ADIF file can be uploaded here in order to update QSOs with DOK info."), "<a href='http://dcl.darc.de/dml/export_adif_form.php' target='_blank'>" . __("DARC DCL") . "</a>") ?></p>
+                    <p class="card-text"><?= sprintf(__("Go to %s and export your logbook with confirmed DOKs. To speed up the process you can select only DL QSOs to download (i.e. put 'DL' into Prefix List). The downloaded ADIF file can be uploaded here in order to update QSOs with DOK info."), "<a href='http://dcl.darc.de/dml/export_adif_form.php' target='_blank'>" . __("DARC DCL") . "</a>") ?> <?= sprintf(__("More information regarding the confirmation status in DCL can be found on the %sDCL Confluence page%s."), '<a target="_blank" href="https://confluence.darc.de/pages/viewpage.action?pageId=21037270">', '</a>'); ?></p>
                     <form class="form" action="<?php echo site_url('adif/dcl'); ?>" method="post" enctype="multipart/form-data">
 
                         <div class="mb-3 row">
@@ -369,7 +369,7 @@
                                 <div class="small form-text text-muted"><?= __("If unchecked, information about QSOs which could not be found in Wavelog will be displayed.") ?></div>
                             </div>
                         </div>
-                        <input class="form-control w-auto mb-2 me-sm-2" type="file" name="userfile" size="20" />
+                        <input class="form-control w-auto mb-2 me-sm-2" type="file" name="userfile" size="20" accept=".adi,.ADI,.adif,.ADIF" />
                         <button type="submit" class="btn btn-sm btn-primary mb-2" value="Upload"><?= __("Upload") ?></button>
                     </form>
                 </div>
@@ -391,7 +391,7 @@
                     <p><?= sprintf(__("An example for a tool to export the POTA hunter log in ADIF format is %s made by AF0G and available on GitHub."), '<a target="_blank" href="https://github.com/adamfast/pota-hunter-log-adif">'.'pota-hunter-log-adif'.'</a>'); ?></p>
                     <form class="form" action="<?php echo site_url('adif/pota'); ?>" method="post" enctype="multipart/form-data">
 
-                        <input class="form-control w-auto mb-2 me-sm-2" type="file" name="userfile" size="20" />
+                        <input class="form-control w-auto mb-2 me-sm-2" type="file" name="userfile" size="20" accept=".adi,.ADI,.adif,.ADIF" />
                         <button type="submit" class="btn btn-sm btn-primary mb-2" value="Upload"><?= __("Upload") ?></button>
                     </form>
                 </div>
@@ -435,7 +435,7 @@
                                 <div class="small form-text text-muted"><?= __("If unchecked, this will erase the default serial number that (for example) N1MM+ produces. If checked, it will correct the serial number if necessary.") ?></div>
                             </div>
                         </div>
-                        <input class="form-control w-auto mb-2 me-sm-2" type="file" name="userfile" size="20" />
+                        <input class="form-control w-auto mb-2 me-sm-2" type="file" name="userfile" size="20" accept=".cbr,.CBR" />
                         <button type="submit" class="btn btn-sm btn-primary mb-2" value="Upload"><?= __("Upload") ?></button>
                     </form>
                 </div>

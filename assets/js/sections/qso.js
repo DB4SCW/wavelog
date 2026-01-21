@@ -126,6 +126,10 @@ function getUTCDateStamp(el) {
 			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 			formatted_date = monthNames[now.getUTCMonth()] + " " + parseInt(day) + ", " + short_year;
 			break;
+		case "d M y":
+			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+			formatted_date = parseInt(day) + " " + monthNames[now.getUTCMonth()] + " " + short_year;
+			break;
 		default:
 			// Default to d-m-Y format as shown in the PHP code
 			formatted_date = day + "-" + month + "-" + year;
@@ -330,6 +334,13 @@ $("#qso_input").off('submit').on('submit', function (e) {
 		var saveQsoButtonText = $("#saveQso").html();
 		$("#saveQso").html('<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> ' + saveQsoButtonText + '...').prop('disabled', true);
 		manual_addon = '?manual=' + qso_manual;
+
+		// Capture form data before AJAX call for WebSocket transmission
+		var formDataObj = {};
+		$("#qso_input").serializeArray().map(function(x) {
+			formDataObj[x.name] = x.value;
+		});
+
 		$.ajax({
 			url: base_url + 'index.php/qso' + manual_addon,
 			method: 'POST',
@@ -351,6 +362,26 @@ $("#qso_input").off('submit').on('submit', function (e) {
 						.replace('%s', operatorCallsign);
 
 					showToast(lang_general_word_success, successMessage, 'bg-success text-white', 5000);
+
+					// Send QSO data via WebSocket if CAT is enabled via WebSocket
+					if (typeof sendQSOViaWebSocket === 'function') {
+						// Add additional context to captured form data
+						formDataObj.station_id = activeStationId;
+						formDataObj.operator_callsign = operatorCallsign;
+						formDataObj.timestamp = new Date().toISOString();
+
+						// Include ADIF if available
+						if (result.adif) {
+							formDataObj.adif = result.adif;
+						}
+
+						// Send via WebSocket (function checks if WS is connected)
+						var wsSent = sendQSOViaWebSocket(formDataObj);
+						if (wsSent) {
+							console.log('QSO sent via WebSocket with ADIF');
+						}
+					}
+
 					prepare_next_qso(saveQsoButtonText);
 					processBacklog();	// If we have success with the live-QSO, we could also process the backlog
 					// Clear debounce timer on success to allow immediate next submission
@@ -403,6 +434,24 @@ async function processBacklog() {
 			try {
 				await $.ajax({url: base_url + 'index.php/qso' + entry.manual_addon,  method: 'POST', type: 'post', data: JSON.parse(entry.data),
 					success: function(resdata) {
+						// Send QSO data via WebSocket if CAT is enabled via WebSocket
+						if (typeof sendQSOViaWebSocket === 'function' && resdata) {
+							try {
+								const result = JSON.parse(resdata);
+								if (result.message === 'success') {
+									const qsoData = JSON.parse(entry.data);
+									// Add additional context
+									qsoData.station_id = result.activeStationId;
+									qsoData.operator_callsign = result.activeStationOP || station_callsign;
+									qsoData.timestamp = new Date().toISOString();
+									qsoData.backlog_processed = true;
+
+									sendQSOViaWebSocket(qsoData);
+								}
+							} catch (e) {
+								// Ignore JSON parse errors
+							}
+						}
 						Qsobacklog.splice(Qsobacklog.findIndex(e => e.id === entry.id), 1);
 					},
 					error: function() {
@@ -507,6 +556,10 @@ $("#reset_start_time").on("click", function () {
 			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 			formatted_date = monthNames[now.getUTCMonth()] + " " + parseInt(day) + ", " + short_year;
 			break;
+		case "d M y":
+			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+			formatted_date = parseInt(day) + " " + monthNames[now.getUTCMonth()] + " " + short_year;
+			break;	
 		default:
 			// Default to d-m-Y format as shown in the PHP code
 			formatted_date = day + "-" + month + "-" + year;
@@ -574,6 +627,14 @@ function parseUserDate(user_provided_date) {	// creates JS-Date out of user-prov
 			month = monthNames.indexOf(parts[0]);
 			if (month === -1) return null;
 			day = parseInt(parts[1], 10);
+			year = 2000 + parseInt(parts[2], 10);
+			break;
+		case "d M y":
+			// Example: 28 Jul 25
+			parts = user_provided_date.split(' ');
+			day = parseInt(parts[0], 10);
+			month = monthNames.indexOf(parts[1]);
+			if (month === -1) return null;
 			year = 2000 + parseInt(parts[2], 10);
 			break;
 		default: // fallback "d-m-Y"
@@ -888,10 +949,18 @@ $("#sat_name").on('change', function () {
 		$("#selectPropagation").val("");
 		stop_az_ele_ticker();
 	} else {
-		get_tles();
+		$('#lotw_support').text("");
+		$('#lotw_support').removeClass();
+		get_sat_info();
 	}
 });
 
+$("#sat_name").on('focusout', function () {
+	if ($(this).val().length == 0) {
+		$('#lotw_support').text("");
+		$('#lotw_support').removeClass();
+	}
+});
 
 var satupdater;
 
@@ -936,6 +1005,14 @@ function start_az_ele_ticker(tle) {
 			let el=(satellite.radiansToDegrees(lookAngles.elevation).toFixed(2));
 			$("#ant_az").val(parseFloat(az).toFixed(1));
 			$("#ant_el").val(parseFloat(el).toFixed(1));
+
+			// Send real-time azimuth/elevation via WebSocket if using WebSocket CAT and working satellite
+			if (typeof sendSatellitePositionViaWebSocket === 'function') {
+				var satName = $("#sat_name").val();
+				if (satName && satName !== '') {
+					sendSatellitePositionViaWebSocket(satName, parseFloat(az).toFixed(1), parseFloat(el).toFixed(1));
+				}
+			}
 		} catch(e) {
 			$("#ant_az").val('');
 			$("#ant_el").val('');
@@ -944,27 +1021,39 @@ function start_az_ele_ticker(tle) {
 	satupdater=setInterval(updateAzEl, 1000);
 }
 
-function get_tles() {
+function get_sat_info() {
 	stop_az_ele_ticker();
 	$.ajax({
-		url: base_url + 'index.php/satellite/get_tle',
+		url: base_url + 'index.php/satellite/get_sat_info',
 		type: 'post',
 		data: {
 			sat: $("#sat_name").val(),
 		},
 		success: function (data) {
 			if (data !== null) {
-				start_az_ele_ticker(data);
+				if (data.tle) {
+					start_az_ele_ticker(data);
+				}
+				if (data.lotw_support == 'Y') {
+					$('#lotw_support').html(lang_qso_sat_lotw_supported).fadeIn("slow");
+					$('#lotw_support').addClass('badge bg-success');
+				} else if (data.lotw_support == 'N') {
+					$('#lotw_support').html(lang_qso_sat_lotw_not_supported).fadeIn("slow");
+					$('#lotw_support').addClass('badge bg-danger');
+				}
+			} else {
+				$('#lotw_support').html(lang_qso_sat_lotw_support_not_found).fadeIn("slow");
+				$('#lotw_support').addClass('badge bg-warning');
 			}
 		},
 		error: function (data) {
-			console.log('Something went wrong while trying to fetch TLE for sat: '+$("#sat_name"));
+			console.log('Something went wrong while trying to fetch info for sat: '+$("#sat_name"));
 		},
 	});
 }
 
 if ($("#sat_name").val() !== '') {
-	get_tles();
+	get_sat_info();
 }
 
 $('#stateDropdown').on('change', function () {
@@ -1161,6 +1250,8 @@ function reset_fields() {
 	pendingReferencesMap.clear();
 
 	$('#locator_info').text("");
+	$('#lotw_support').text("");
+	$('#lotw_support').removeClass();
 	$('#comment').val("");
 	$('#country').val("");
 	$('#continent').val("");
@@ -2793,6 +2884,8 @@ function highlightSCP(term, base) {
 function resetDefaultQSOFields() {
 	$('#callsign_info').text("");
 	$('#locator_info').text("");
+	$('#lotw_support').text("");
+	$('#lotw_support').removeClass();
 	$('#country').val("");
 	$('#continent').val("");
 	$("#distance").val("");

@@ -513,7 +513,7 @@ class Logbook_model extends CI_Model {
 			}
 		}
 
-		$this->add_qso($data, $skipexport = false);
+		$qso_id = $this->add_qso($data, $skipexport = false);
 		if (($this->config->item('mqtt_server') ?? '') != '') {
 			$this->load->model('stations');
 			$this->load->library('Mh');
@@ -526,6 +526,18 @@ class Logbook_model extends CI_Model {
 			unset($h_user);
 		}
 		unset($data);
+
+		// Return ADIF for WebSocket transmission
+		if ($qso_id) {
+			$qso = $this->get_qso($qso_id, true)->result();
+			if ($qso && !empty($qso)) {
+				if (!$this->load->is_loaded('AdifHelper')) {
+					$this->load->library('AdifHelper');
+				}
+				return $this->adifhelper->getAdifLine($qso[0]);
+			}
+		}
+		return null;
 	}
 
 	public function check_last_lotw($call) {	// Fetch difference in days when $call has last updated LotW
@@ -1008,6 +1020,9 @@ class Logbook_model extends CI_Model {
 
 			// Invalidate DXCluster cache for this callsign
 			$this->dxclustercache->invalidateForCallsign($data['COL_CALL']);
+
+			// Return QSO ID for ADIF generation
+			return $last_id;
 		}
 	}
 
@@ -1698,7 +1713,7 @@ class Logbook_model extends CI_Model {
 			'COL_COUNTRY' => $country,
 			'COL_CONT' => $this->input->post('continent'),
 			'COL_DXCC' => $dxcc,
-			'COL_CQZ' => $this->input->post('cqz'),
+			'COL_CQZ' => $this->input->post('cqz') != '' ? $this->input->post('cqz') : null,
 			'COL_ITUZ' => $this->input->post('ituz') != '' ? $this->input->post('ituz') : null,
 			'COL_SAT_NAME' => $this->input->post('sat_name'),
 			'COL_SAT_MODE' => $this->input->post('sat_mode'),
@@ -4480,18 +4495,13 @@ class Logbook_model extends CI_Model {
 		$binding[] = $band;
 		$binding[] = $mode;
 
-		if (($prop_mode ?? '') != '') {
-			$sql.=' AND COL_PROP_MODE=?';
-			$binding[] = $prop_mode;
-		} else {
-			$sql.=' AND (COL_PROP_MODE is null OR COL_PROP_MODE=\'\')';
-		}
+		// LoTW only respects mutual PROP_MODE SAT for matches. All other modes are ignored during matching
+		// https://lotw.arrl.org/lotw-help/key-concepts/#confirmation
 
-		if (($sat_name ?? '') != '') {
-			$sql.=' AND COL_SAT_NAME=?';
+		if (($prop_mode ?? '') == 'SAT' && ($sat_name ?? '') != '') {
+			$sql.=' AND COL_PROP_MODE=? AND COL_SAT_NAME=?';
+			$binding[] = $prop_mode;
 			$binding[] = $sat_name;
-		} else {
-			$sql.=' AND (COL_SAT_NAME is null OR COL_SAT_NAME=\'\')';
 		}
 
 		if ((isset($station_ids)) && (($station_ids ?? '') != '')) {
@@ -4510,7 +4520,18 @@ class Logbook_model extends CI_Model {
 
 	function clublog_update($datetime, $callsign, $band, $qsl_status, $station_callsign, $station_ids) {
 
-		$logbooks_locations_array = explode(",", $station_ids);
+		if (empty($station_ids) || trim($station_ids) === '') {
+			return "No station IDs provided";
+		}
+
+		$logbooks_locations_array = array_filter(explode(",", $station_ids), function($id) {
+			return trim($id) !== '';
+		});
+
+		if (empty($logbooks_locations_array)) {
+			return "No valid station IDs";
+		}
+
 		$data = array(
 			'COL_CLUBLOG_QSO_DOWNLOAD_DATE' => date('Y-m-d'),
 			'COL_CLUBLOG_QSO_DOWNLOAD_STATUS' => $qsl_status,
@@ -5700,7 +5721,6 @@ class Logbook_model extends CI_Model {
 	function set_dok($key, $dok) {
 		$data = array(
 			'COL_DARC_DOK' => $dok,
-			'COL_DCL_QSL_RCVD ' => 'Y',
 		);
 
 		$this->db->where(array('COL_PRIMARY_KEY' => $key));

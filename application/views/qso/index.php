@@ -20,6 +20,7 @@ switch ($date_format) {
     case "Y-m-d": $current_pattern = '[0-9]{4}-[0-1][0-9]-[0-3][0-9]'; break;
     case "M d, Y": $current_pattern = '[A-Za-z]{3}\s[0-3][0-9],\s[0-9]{4}'; break;
     case "M d, y": $current_pattern = '[A-Za-z]{3}\s[0-3][0-9],\s[0-9]{2}'; break;
+    case "d M y": $current_pattern = '[0-3][0-9]\s[A-Za-z]{3}\s[0-9]{2}'; break;
     default: $current_pattern = '[0-3][0-9]-[0-1][0-9]-[0-9]{4}'; $date_format = 'd-m-Y';
 }
 ?>
@@ -38,6 +39,9 @@ switch ($date_format) {
   var lang_qso_wait_before_saving = "<?= __("Please wait before saving another QSO"); ?>";
   var latlng=[<?php echo $lat.','.$lng;?>];
   var user_date_format = "<?php echo $date_format; ?>"; // Pass the user's date format to JavaScript
+  var lang_qso_sat_lotw_support_not_found = "<?= __("Satellite not found"); ?>";
+  var lang_qso_sat_lotw_supported = "<?= __("Supported by LoTW"); ?>";
+  var lang_qso_sat_lotw_not_supported = "<?= __("Not supported by LoTW"); ?>";
 </script>
 
 <!--- DX Waterfall --->
@@ -668,7 +672,9 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
               <label for="sat_name"><?= __("Satellite Name"); ?></label>
 
               <input list="satellite_names" id="sat_name" type="text" name="sat_name" class="form-control" value="<?php echo $this->session->userdata('sat_name'); ?>">
-
+              <div style="min-height: 24px;">
+                 <small id="lotw_support" class="form-text text-muted" style="min-height: 20px;">&nbsp;</small>
+              </div>
               <datalist id="satellite_names" class="satellite_names_list"></datalist>
             </div>
 
