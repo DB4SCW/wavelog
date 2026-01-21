@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-20 18:51+0000\n"
-"PO-Revision-Date: 2026-01-15 17:11+0000\n"
+"PO-Revision-Date: 2026-01-21 08:38+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ru/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -1957,7 +1957,7 @@ msgstr "Значение DXCC обновлено для %d QSO."
 #: application/controllers/Logbookadvanced.php:941
 #, php-format
 msgid "Map for DXCC %s and gridsquare %s."
-msgstr ""
+msgstr "Карта для DXCC %s и квадратов %s."
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -12877,7 +12877,7 @@ msgstr "Показать больше"
 
 #: application/views/logbookadvanced/checkresult.php:197
 msgid "View on map"
-msgstr ""
+msgstr "Посмотреть на карте"
 
 #: application/views/logbookadvanced/checkresult.php:222
 msgid "CQ Zone Check Results"
@@ -13690,11 +13690,11 @@ msgstr "Показать меньше"
 
 #: application/views/logbookadvanced/index.php:80
 msgid "Gridsquares for"
-msgstr ""
+msgstr "Квадраты для"
 
 #: application/views/logbookadvanced/index.php:81
 msgid "Non DXCC matching gridsquare"
-msgstr ""
+msgstr "Квадрат, несоответствующий DXCC"
 
 #: application/views/logbookadvanced/index.php:310
 msgid "From"
@@ -15875,15 +15875,15 @@ msgstr "Пожалуйста, подождите перед сохранение
 
 #: application/views/qso/index.php:41
 msgid "Satellite not found"
-msgstr ""
+msgstr "Спутник не найден"
 
 #: application/views/qso/index.php:42
 msgid "Supported by LoTW"
-msgstr ""
+msgstr "Поддерживается LoTW"
 
 #: application/views/qso/index.php:43
 msgid "Not supported by LoTW"
-msgstr ""
+msgstr "Не поддерживается LoTW"
 
 #: application/views/qso/index.php:89
 msgid "LIVE"
