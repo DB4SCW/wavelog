@@ -2285,7 +2285,7 @@ class Logbook_model extends CI_Model {
 		}
 
 		$binding = array();
-		$sql = "SELECT qsos.*, station_profile.*, dxcc_entities.*, lotw_users.callsign, lotw_users.lastupload, satellite.displayname AS sat_displayname
+		$sql = "SELECT qsos.*, station_profile.*, dxcc_entities.*, lotw_users.callsign, lotw_users.lastupload, satellite.displayname AS sat_displayname, satellite.name AS sat_name
 			FROM ".$this->config->item('table_name')." qsos
 			JOIN `station_profile` ON `station_profile`.`station_id` = qsos.`station_id`
 			LEFT JOIN `dxcc_entities` ON qsos.`col_dxcc` = `dxcc_entities`.`adif`
