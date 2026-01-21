@@ -471,6 +471,8 @@ msgstr " и "
 #: application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
+#: application/views/station_profile/create.php:210
+#: application/views/station_profile/edit.php:235
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -492,6 +494,8 @@ msgstr "SOTA"
 #: application/views/user/edit.php:295 application/views/user/edit.php:318
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:10
+#: application/views/station_profile/create.php:224
+#: application/views/station_profile/edit.php:249
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -514,6 +518,8 @@ msgstr "WWFF"
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:11
+#: application/views/station_profile/create.php:238
+#: application/views/station_profile/edit.php:263
 msgid "POTA"
 msgstr "POTA"
 
@@ -797,6 +803,8 @@ msgstr "Ни один пользователь не сконфигурирова
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:571
 #: application/views/view_log/qso.php:576
+#: application/views/station_profile/create.php:323
+#: application/views/station_profile/edit.php:349
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -1444,6 +1452,8 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:309
 #: application/views/timeline/index.php:64 application/views/user/edit.php:626
 #: application/views/user/edit.php:839 application/views/user/edit.php:913
+#: application/views/station_profile/create.php:275
+#: application/views/station_profile/edit.php:300
 msgid "eQSL"
 msgstr "eQSL"
 
@@ -1654,6 +1664,8 @@ msgstr "Страна"
 #: application/views/user/edit.php:316 application/views/user/edit.php:340
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
+#: application/views/station_profile/create.php:184
+#: application/views/station_profile/edit.php:209
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1942,6 +1954,8 @@ msgstr "Оператор"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
+#: application/views/station_profile/create.php:86
+#: application/views/station_profile/edit.php:107
 msgid "Deleted DXCC"
 msgstr "Удалённые DXCC"
 
@@ -2683,6 +2697,8 @@ msgstr "Редактировать профиль QTH: "
 #: application/views/view_log/qso.php:9 application/views/webadif/export.php:75
 #: application/views/webadif/export.php:115
 #: application/views/zonechecker/index.php:5
+#: application/views/station_profile/create.php:430
+#: application/views/station_profile/edit.php:462
 msgid "Station Location"
 msgstr "Профиль QTH"
 
@@ -2758,6 +2774,10 @@ msgstr "Ошибка. Ссылка уже используется!"
 #: application/views/user/edit.php:451 application/views/user/edit.php:502
 #: application/views/user/edit.php:511 application/views/user/edit.php:668
 #: application/views/user/edit.php:678
+#: application/views/station_profile/create.php:309
+#: application/views/station_profile/create.php:366
+#: application/views/station_profile/edit.php:335
+#: application/views/station_profile/edit.php:394
 msgid "Disabled"
 msgstr "Выключено"
 
@@ -2852,6 +2872,8 @@ msgstr ""
 #: application/views/station_profile/edit.php:103
 #: application/views/stationsetup/stationsetup.php:156
 #: application/views/user/modals/first_login_wizard.php:46
+#: application/views/station_profile/create.php:84
+#: application/views/station_profile/edit.php:101
 msgid "Please select one"
 msgstr "Пожалуйста, выберите один"
 
@@ -3186,6 +3208,8 @@ msgstr "Профиль QTH"
 #: application/views/stationsetup/linkedlocations.php:32
 #: application/views/stationsetup/stationsetup.php:128
 #: application/views/user/modals/first_login_wizard.php:34
+#: application/views/station_profile/create.php:59
+#: application/views/station_profile/edit.php:76
 msgid "Station Callsign"
 msgstr "Позывной"
 
@@ -3193,6 +3217,8 @@ msgstr "Позывной"
 #: application/views/station_profile/create.php:72
 #: application/views/station_profile/edit.php:100
 #: application/views/user/modals/first_login_wizard.php:42
+#: application/views/station_profile/create.php:81
+#: application/views/station_profile/edit.php:98
 msgid "Station DXCC"
 msgstr "DXCC станции"
 
@@ -4482,6 +4508,7 @@ msgstr "Не найдено!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:672
 #: application/views/zonechecker/result.php:50
+#: application/views/station_profile/edit.php:68
 msgid "Callsign"
 msgstr "Позывной"
 
@@ -5546,6 +5573,8 @@ msgstr "Всего"
 #: application/views/timeplotter/index.php:44
 #: application/views/user/modals/first_login_wizard.php:74
 #: application/views/zonechecker/index.php:17
+#: application/views/station_profile/create.php:128
+#: application/views/station_profile/edit.php:153
 msgid "CQ Zone"
 msgstr "Зона CQ"
 
@@ -6524,6 +6553,8 @@ msgstr "Удалено"
 #: application/views/station_profile/edit.php:174
 #: application/views/user/modals/first_login_wizard.php:84
 #: application/views/zonechecker/index.php:18
+#: application/views/station_profile/create.php:143
+#: application/views/station_profile/edit.php:168
 msgid "ITU Zone"
 msgstr "Зона ITU"
 
@@ -6886,6 +6917,8 @@ msgstr ""
 #: application/views/station_profile/edit.php:276
 #: application/views/user/edit.php:707 application/views/view_log/qso.php:409
 #: application/views/view_log/qso.php:742
+#: application/views/station_profile/create.php:241
+#: application/views/station_profile/edit.php:266
 msgid "POTA Reference(s)"
 msgstr "Сравочник POTA"
 
@@ -6940,6 +6973,8 @@ msgstr ""
 
 #: application/views/awards/sig/index.php:21
 #: application/views/station_profile/edit.php:288
+#: application/views/station_profile/create.php:254
+#: application/views/station_profile/edit.php:279
 msgid "Special Interest Group"
 msgstr "Группа по интересам"
 
@@ -7422,6 +7457,8 @@ msgstr "Поле, используемое для этого диплома: WWF
 #: application/views/station_profile/edit.php:263
 #: application/views/user/edit.php:703 application/views/view_log/qso.php:402
 #: application/views/view_log/qso.php:735
+#: application/views/station_profile/create.php:227
+#: application/views/station_profile/edit.php:252
 msgid "WWFF Reference"
 msgstr "Справочник WWFF"
 
@@ -8638,6 +8675,8 @@ msgstr ""
 #: application/views/oqrs/showrequests.php:31
 #: application/views/qso/index.php:365
 #: application/views/station_profile/edit.php:96
+#: application/views/station_profile/create.php:77
+#: application/views/station_profile/edit.php:94
 msgid "Location"
 msgstr "QTH"
 
@@ -8805,6 +8844,17 @@ msgstr ""
 #: application/views/user/edit.php:1001 application/views/user/edit.php:1009
 #: application/views/user/edit.php:1029 application/views/user/edit.php:1058
 #: application/views/user/edit.php:1090 application/views/user/edit.php:1115
+#: application/views/station_profile/create.php:328
+#: application/views/station_profile/create.php:336
+#: application/views/station_profile/create.php:364
+#: application/views/station_profile/create.php:388
+#: application/views/station_profile/create.php:408
+#: application/views/station_profile/create.php:415
+#: application/views/station_profile/edit.php:354
+#: application/views/station_profile/edit.php:392
+#: application/views/station_profile/edit.php:419
+#: application/views/station_profile/edit.php:439
+#: application/views/station_profile/edit.php:446
 msgid "Yes"
 msgstr "Да"
 
@@ -8874,6 +8924,17 @@ msgstr "Да"
 #: application/views/user/edit.php:1000 application/views/user/edit.php:1028
 #: application/views/user/edit.php:1059 application/views/user/edit.php:1089
 #: application/views/user/edit.php:1114
+#: application/views/station_profile/create.php:329
+#: application/views/station_profile/create.php:337
+#: application/views/station_profile/create.php:365
+#: application/views/station_profile/create.php:389
+#: application/views/station_profile/create.php:407
+#: application/views/station_profile/create.php:414
+#: application/views/station_profile/edit.php:355
+#: application/views/station_profile/edit.php:393
+#: application/views/station_profile/edit.php:420
+#: application/views/station_profile/edit.php:438
+#: application/views/station_profile/edit.php:445
 msgid "No"
 msgstr "Нет"
 
@@ -9695,6 +9756,7 @@ msgstr "Название контеста в спецификации ADIF"
 #: application/views/contesting/create.php:35
 #: application/views/station_profile/create.php:311
 #: application/views/station_profile/edit.php:59
+#: application/views/station_profile/create.php:430
 msgid "Create"
 msgstr "Создать"
 
@@ -9907,6 +9969,8 @@ msgstr "Идентификатор"
 #: application/views/user/edit.php:503 application/views/user/edit.php:512
 #: application/views/user/edit.php:667 application/views/user/edit.php:677
 #: application/views/user/edit.php:981
+#: application/views/station_profile/create.php:311
+#: application/views/station_profile/edit.php:337
 msgid "Enabled"
 msgstr "Включено"
 
@@ -15751,6 +15815,8 @@ msgstr "Возвышение антенны в десятичных градус
 #: application/views/qso/edit_ajax.php:362 application/views/qso/index.php:577
 #: application/views/station_profile/create.php:103
 #: application/views/station_profile/edit.php:141
+#: application/views/station_profile/create.php:113
+#: application/views/station_profile/edit.php:138
 msgid "Station County"
 msgstr "Район (округ)"
 
@@ -15920,6 +15986,8 @@ msgstr "Поиск в DX кластере последнего спота"
 #: application/views/station_profile/edit.php:222
 #: application/views/user/edit.php:695 application/views/view_log/qso.php:388
 #: application/views/view_log/qso.php:721
+#: application/views/station_profile/create.php:187
+#: application/views/station_profile/edit.php:212
 msgid "IOTA Reference"
 msgstr "Справочник IOTA"
 
@@ -15928,6 +15996,8 @@ msgstr "Справочник IOTA"
 #: application/views/station_profile/edit.php:250
 #: application/views/user/edit.php:699 application/views/view_log/qso.php:395
 #: application/views/view_log/qso.php:728
+#: application/views/station_profile/create.php:213
+#: application/views/station_profile/edit.php:238
 msgid "SOTA Reference"
 msgstr "Справочник SOTA"
 
@@ -17013,8 +17083,8 @@ msgid ""
 "give an initial sent exchange. To deactivate, use ',+0':"
 msgstr ""
 "Принятый контрольный номер должен быть с префиксом точка '.', отправленный "
-"контрольный номер -- с запятой ','. Последние две строки эквивалентны -- т."
-"е. пробелы не имеют значения, как и порядок. Контрольный номер, который вы "
+"контрольный номер -- с запятой ','. Последние две строки эквивалентны -- "
+"т.е. пробелы не имеют значения, как и порядок. Контрольный номер, который вы "
 "отправили, будет автоматически включен в следующее QSO, если он содержит "
 "принятый контрольный номер, или если вы используете одну запятую ','. Чтобы "
 "автоматически увеличить отправленный порядковый номер, используйте ',++' и "
@@ -17058,64 +17128,85 @@ msgstr ""
 
 #: application/views/station_profile/create.php:55
 #: application/views/station_profile/edit.php:71
+#: application/views/station_profile/create.php:54
 msgid "Location Name"
 msgstr "Название профиля QTH"
 
 #: application/views/station_profile/create.php:56
 #: application/views/station_profile/create.php:57
 #: application/views/station_profile/edit.php:73
+#: application/views/station_profile/create.php:55
 msgctxt "Station Location Setup"
 msgid "Home QTH"
 msgstr "Домашний QTH"
 
 #: application/views/station_profile/create.php:57
 #: application/views/station_profile/edit.php:73
+#: application/views/station_profile/create.php:56
 #, php-format
 msgid "Shortname for the station location. For example: %s"
 msgstr "Короткое название профиля QTH. К примеру: %s"
 
 #: application/views/station_profile/create.php:63
 #: application/views/station_profile/edit.php:79
+#: application/views/station_profile/create.php:61
+#: application/views/station_profile/edit.php:78
 msgid "Station callsign. For example: 4W7EST/P"
 msgstr "Позывной станции, например: 4W7EST/P"
 
 #: application/views/station_profile/create.php:67
 #: application/views/station_profile/edit.php:83
+#: application/views/station_profile/create.php:64
+#: application/views/station_profile/edit.php:81
 msgid "Station Power (W)"
 msgstr "Мощность станции (Вт)"
 
 #: application/views/station_profile/create.php:69
 #: application/views/station_profile/edit.php:85
+#: application/views/station_profile/create.php:66
+#: application/views/station_profile/edit.php:83
 msgid "Default station power in Watt. Overwritten by CAT."
 msgstr "Мощность станции по умолчанию в Вт. Перезаписывается данными из CAT."
 
 #: application/views/station_profile/create.php:82
 #: application/views/station_profile/edit.php:116
+#: application/views/station_profile/create.php:91
+#: application/views/station_profile/edit.php:113
 msgid "Station DXCC entity. For example: Bolivia"
 msgstr "Субъект DXCC станции. Например: Боливия"
 
 #: application/views/station_profile/create.php:87
 #: application/views/station_profile/edit.php:122
+#: application/views/station_profile/create.php:97
+#: application/views/station_profile/edit.php:119
 msgid "Station City"
 msgstr "город"
 
 #: application/views/station_profile/create.php:89
 #: application/views/station_profile/edit.php:124
+#: application/views/station_profile/create.php:99
+#: application/views/station_profile/edit.php:121
 msgid "Station city. For example: Oslo"
 msgstr "Город станции. К примеру, Осло"
 
 #: application/views/station_profile/create.php:98
 #: application/views/station_profile/edit.php:136
+#: application/views/station_profile/create.php:108
+#: application/views/station_profile/edit.php:133
 msgid "Station state. Applies to certain countries only."
 msgstr "Штат/область станции. Применимо только к некоторым странам."
 
 #: application/views/station_profile/create.php:105
 #: application/views/station_profile/edit.php:143
+#: application/views/station_profile/create.php:115
+#: application/views/station_profile/edit.php:140
 msgid "Station County (Only used for specific DXCCs)."
 msgstr "Район (округ) станции (используется только для определенных DXCC)."
 
 #: application/views/station_profile/create.php:120
 #: application/views/station_profile/edit.php:169
+#: application/views/station_profile/create.php:138
+#: application/views/station_profile/edit.php:163
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your CQ Zone then %s to find it!"
@@ -17127,11 +17218,19 @@ msgstr "Если вы не знаете свою зону CQ, то %s, чтоб�
 #: application/views/station_profile/edit.php:169
 #: application/views/station_profile/edit.php:186
 #: application/views/station_profile/edit.php:210
+#: application/views/station_profile/create.php:138
+#: application/views/station_profile/create.php:153
+#: application/views/station_profile/create.php:174
+#: application/views/station_profile/edit.php:163
+#: application/views/station_profile/edit.php:178
+#: application/views/station_profile/edit.php:199
 msgid "click here"
 msgstr "кликните здесь"
 
 #: application/views/station_profile/create.php:134
 #: application/views/station_profile/edit.php:186
+#: application/views/station_profile/create.php:153
+#: application/views/station_profile/edit.php:178
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your ITU Zone then %s to find it!"
@@ -17140,16 +17239,24 @@ msgstr "Если вы не знаете свою зону ITU, то %s, чтоб
 #: application/views/station_profile/create.php:139
 #: application/views/station_profile/edit.php:198
 #: application/views/station_profile/edit.php:201
+#: application/views/station_profile/create.php:164
+#: application/views/station_profile/create.php:167
+#: application/views/station_profile/edit.php:189
+#: application/views/station_profile/edit.php:192
 msgid "Station Gridsquare"
 msgstr "Квадрат"
 
 #: application/views/station_profile/create.php:144
 #: application/views/station_profile/edit.php:206
+#: application/views/station_profile/create.php:171
+#: application/views/station_profile/edit.php:196
 msgid "Get Gridsquare"
 msgstr "Получить квадрат"
 
 #: application/views/station_profile/create.php:148
 #: application/views/station_profile/edit.php:210
+#: application/views/station_profile/create.php:174
+#: application/views/station_profile/edit.php:199
 #, php-format
 msgctxt "uses 'click here'"
 msgid ""
@@ -17160,6 +17267,8 @@ msgstr ""
 
 #: application/views/station_profile/create.php:149
 #: application/views/station_profile/edit.php:211
+#: application/views/station_profile/create.php:175
+#: application/views/station_profile/edit.php:200
 msgid ""
 "If you are located on a grid line, enter multiple grid squares separated "
 "with commas. For example: IO77,IO78,IO87,IO88."
@@ -17169,49 +17278,67 @@ msgstr ""
 
 #: application/views/station_profile/create.php:166
 #: application/views/station_profile/edit.php:236
+#: application/views/station_profile/create.php:198
+#: application/views/station_profile/edit.php:223
 msgid "Station IOTA reference. For example: EU-005"
 msgstr "Референция IOTA станции, к примеру: EU-005"
 
 #: application/views/station_profile/create.php:167
 #: application/views/station_profile/edit.php:237
+#: application/views/station_profile/create.php:199
+#: application/views/station_profile/edit.php:224
 msgid "IOTA World website"
 msgstr "Веб-сайт IOTA"
 
 #: application/views/station_profile/create.php:167
 #: application/views/station_profile/edit.php:237
+#: application/views/station_profile/create.php:199
+#: application/views/station_profile/edit.php:224
 #, php-format
 msgid "You can look up IOTA references at the %s."
 msgstr "Референции IOTA можно найти на сайте %s."
 
 #: application/views/station_profile/create.php:173
 #: application/views/station_profile/edit.php:252
+#: application/views/station_profile/create.php:215
+#: application/views/station_profile/edit.php:240
 msgid "SOTA Maps website"
 msgstr "Веб-сайт карт SOTA"
 
 #: application/views/station_profile/create.php:173
 #: application/views/station_profile/edit.php:252
+#: application/views/station_profile/create.php:215
+#: application/views/station_profile/edit.php:240
 #, php-format
 msgid "Station SOTA reference. You can look up SOTA references at the %s."
 msgstr "Референция SOTA станции. Ссылки на референции SOTA можно найти на %s."
 
 #: application/views/station_profile/create.php:179
 #: application/views/station_profile/edit.php:265
+#: application/views/station_profile/create.php:229
+#: application/views/station_profile/edit.php:254
 msgid "GMA Map website"
 msgstr "Веб-сайт карт GMA"
 
 #: application/views/station_profile/create.php:179
 #: application/views/station_profile/edit.php:265
+#: application/views/station_profile/create.php:229
+#: application/views/station_profile/edit.php:254
 #, php-format
 msgid "Station WWFF reference. You can look up WWFF references at the %s."
 msgstr "Референция WWFF станции. Ссылки на референции WWFF можно найти на %s."
 
 #: application/views/station_profile/create.php:185
 #: application/views/station_profile/edit.php:278
+#: application/views/station_profile/create.php:243
+#: application/views/station_profile/edit.php:268
 msgid "POTA Map website"
 msgstr "Веб-сайт карт POTA"
 
 #: application/views/station_profile/create.php:185
 #: application/views/station_profile/edit.php:278
+#: application/views/station_profile/create.php:243
+#: application/views/station_profile/edit.php:268
 #, php-format
 msgid ""
 "Station POTA reference(s). Multiple comma separated values allowed. You can "
@@ -17223,6 +17350,8 @@ msgid "Signature Name"
 msgstr "Имя подписи"
 
 #: application/views/station_profile/create.php:191
+#: application/views/station_profile/create.php:259
+#: application/views/station_profile/edit.php:284
 msgid "Station Special Interest Group Name (e.g. GMA)."
 msgstr "Название группы по интересам (например, GMA)."
 
@@ -17232,27 +17361,37 @@ msgstr "Информация о подписи"
 
 #: application/views/station_profile/create.php:197
 #: application/views/station_profile/edit.php:299
+#: application/views/station_profile/create.php:264
+#: application/views/station_profile/edit.php:289
 msgid "Station Special Interest Group Info (e.g. DA/NW-357)."
 msgstr "Данные SIG (например, DA/NW-357)."
 
 #: application/views/station_profile/create.php:201
 #: application/views/station_profile/edit.php:312
+#: application/views/station_profile/create.php:278
+#: application/views/station_profile/edit.php:303
 msgctxt "Probably no translation needed"
 msgid "eQSL QTH Nickname"
 msgstr "eQSL QTH Nickname"
 
 #: application/views/station_profile/create.php:203
 #: application/views/station_profile/edit.php:314
+#: application/views/station_profile/create.php:280
+#: application/views/station_profile/edit.php:305
 msgid "The QTH Nickname which is configured in your eQSL Profile"
 msgstr "Название профиля, который сконфигурирован в eQSL для данного QTH"
 
 #: application/views/station_profile/create.php:207
 #: application/views/station_profile/edit.php:317
+#: application/views/station_profile/create.php:283
+#: application/views/station_profile/edit.php:308
 msgid "Default QSLMSG"
 msgstr "Сообщение в QSL (QSLMSG) по умолчанию"
 
 #: application/views/station_profile/create.php:210
 #: application/views/station_profile/edit.php:320
+#: application/views/station_profile/create.php:286
+#: application/views/station_profile/edit.php:311
 msgid ""
 "Define a default message that will be populated and sent for each QSO for "
 "this station location."
@@ -17262,11 +17401,15 @@ msgstr ""
 
 #: application/views/station_profile/create.php:213
 #: application/views/station_profile/edit.php:360
+#: application/views/station_profile/create.php:326
+#: application/views/station_profile/edit.php:352
 msgid "Ignore Clublog Upload"
 msgstr "Игнорировать загрузку в Clublog"
 
 #: application/views/station_profile/create.php:218
 #: application/views/station_profile/edit.php:365
+#: application/views/station_profile/create.php:331
+#: application/views/station_profile/edit.php:357
 msgid ""
 "If enabled, the QSOs made from this location will not be uploaded to "
 "Clublog. If this is deactivated on it's own please check if the Call is "
@@ -17278,16 +17421,22 @@ msgstr ""
 
 #: application/views/station_profile/create.php:221
 #: application/views/station_profile/edit.php:368
+#: application/views/station_profile/create.php:334
+#: application/views/station_profile/edit.php:360
 msgid "ClubLog Realtime Upload"
 msgstr "Загрузка в Clublog в реальном времени"
 
 #: application/views/station_profile/create.php:230
 #: application/views/station_profile/edit.php:384
+#: application/views/station_profile/create.php:352
+#: application/views/station_profile/edit.php:377
 msgid "HRDLog.net Username"
 msgstr "Имя пользователя в HRDLog.net"
 
 #: application/views/station_profile/create.php:232
 #: application/views/station_profile/edit.php:386
+#: application/views/station_profile/create.php:354
+#: application/views/station_profile/edit.php:379
 msgid ""
 "The username you are registered with at HRDlog.net (usually your callsign)."
 msgstr ""
@@ -17296,11 +17445,15 @@ msgstr ""
 
 #: application/views/station_profile/create.php:235
 #: application/views/station_profile/edit.php:389
+#: application/views/station_profile/create.php:357
+#: application/views/station_profile/edit.php:382
 msgid "HRDLog.net API Key"
 msgstr "Ключ API HRDLog.net"
 
 #: application/views/station_profile/create.php:237
 #: application/views/station_profile/edit.php:394
+#: application/views/station_profile/create.php:359
+#: application/views/station_profile/edit.php:387
 #, php-format
 msgctxt "HRDLog.net Userprofile page"
 msgid "Create your API Code on your %s"
@@ -17308,16 +17461,22 @@ msgstr "Создайте код API на вашей %s"
 
 #: application/views/station_profile/create.php:237
 #: application/views/station_profile/edit.php:394
+#: application/views/station_profile/create.php:359
+#: application/views/station_profile/edit.php:387
 msgid "HRDLog.net Userprofile page"
 msgstr "странице профиля пользователя на HRDLog.net"
 
 #: application/views/station_profile/create.php:240
 #: application/views/station_profile/edit.php:397
+#: application/views/station_profile/create.php:362
+#: application/views/station_profile/edit.php:390
 msgid "HRDLog.net Logbook Realtime Upload"
 msgstr "Загрузка в журнал HRDLog.net в реальном времени"
 
 #: application/views/station_profile/create.php:250
 #: application/views/station_profile/edit.php:328
+#: application/views/station_profile/create.php:295
+#: application/views/station_profile/edit.php:320
 msgid "Subscription Required"
 msgstr "Требуется подписка"
 
@@ -17327,11 +17486,14 @@ msgid "QRZ.com Logbook API Key"
 msgstr "Ключ API QRZ.com Logbook"
 
 #: application/views/station_profile/create.php:258
+#: application/views/station_profile/create.php:301
 msgid "Test API-Key"
 msgstr "Проверить ключ API"
 
 #: application/views/station_profile/create.php:261
 #: application/views/station_profile/edit.php:338
+#: application/views/station_profile/create.php:304
+#: application/views/station_profile/edit.php:330
 #, php-format
 msgctxt "the QRZ.com Logbook settings page"
 msgid "Find your API key on %s"
@@ -17339,27 +17501,37 @@ msgstr "Ваши ключи API находятся на %s"
 
 #: application/views/station_profile/create.php:261
 #: application/views/station_profile/edit.php:338
+#: application/views/station_profile/create.php:304
+#: application/views/station_profile/edit.php:330
 msgid "the QRZ.com Logbook settings page"
 msgstr "странице настроек QRZ.com Logbook"
 
 #: application/views/station_profile/create.php:264
 #: application/views/station_profile/edit.php:342
+#: application/views/station_profile/create.php:307
+#: application/views/station_profile/edit.php:333
 msgid "QRZ.com Logbook Upload"
 msgstr "Загрузка в QRZ.com Logbook"
 
 #: application/views/station_profile/create.php:267
 #: application/views/station_profile/edit.php:345
+#: application/views/station_profile/create.php:310
+#: application/views/station_profile/edit.php:336
 msgid "Realtime"
 msgstr "В реальном времени"
 
 #: application/views/station_profile/create.php:275
 #: application/views/station_profile/edit.php:414
+#: application/views/station_profile/create.php:381
+#: application/views/station_profile/edit.php:409
 msgctxt "Probably no translation needed"
 msgid "QO-100 Dx Club API Key"
 msgstr "Ключ API QO-100 Dx Club"
 
 #: application/views/station_profile/create.php:277
 #: application/views/station_profile/edit.php:419
+#: application/views/station_profile/create.php:383
+#: application/views/station_profile/edit.php:414
 #, php-format
 msgctxt "QO-100 Dx Club's profile page"
 msgid "Create your API key on your %s"
@@ -17367,45 +17539,63 @@ msgstr "Создайте ключ API на своей %s"
 
 #: application/views/station_profile/create.php:277
 #: application/views/station_profile/edit.php:419
+#: application/views/station_profile/create.php:383
+#: application/views/station_profile/edit.php:414
 msgid "QO-100 Dx Club's profile page"
 msgstr "странице профиля в QO-100 Dx Club"
 
 #: application/views/station_profile/create.php:280
 #: application/views/station_profile/edit.php:422
+#: application/views/station_profile/create.php:386
+#: application/views/station_profile/edit.php:417
 msgid "QO-100 Dx Club Realtime Upload"
 msgstr "Загрузка QO-100 Dx Club в реальном времени"
 
 #: application/views/station_profile/create.php:290
 #: application/views/station_profile/edit.php:440
+#: application/views/station_profile/create.php:405
+#: application/views/station_profile/edit.php:436
 msgid "OQRS Enabled"
 msgstr "OQRS включен"
 
 #: application/views/station_profile/create.php:297
 #: application/views/station_profile/edit.php:447
+#: application/views/station_profile/create.php:412
+#: application/views/station_profile/edit.php:443
 msgid "OQRS Email alert"
 msgstr "Оповещение о OQRS о емэйл"
 
 #: application/views/station_profile/create.php:302
 #: application/views/station_profile/edit.php:452
+#: application/views/station_profile/create.php:417
+#: application/views/station_profile/edit.php:448
 msgid "Make sure email is set up under admin and global options."
 msgstr ""
 "Убедитесь, что емэйл сконфигурирован администратором в общих настройках."
 
 #: application/views/station_profile/create.php:305
 #: application/views/station_profile/edit.php:455
+#: application/views/station_profile/create.php:420
+#: application/views/station_profile/edit.php:451
 msgid "OQRS Text"
 msgstr "Текст OQRS"
 
 #: application/views/station_profile/create.php:307
 #: application/views/station_profile/edit.php:457
+#: application/views/station_profile/create.php:422
+#: application/views/station_profile/edit.php:453
 msgid "Some info you want to add regarding QSL'ing."
 msgstr "Информация, которую вы хотите добавить, касающаяся QSL."
 
 #: application/views/station_profile/edit.php:153
+#: application/views/station_profile/create.php:124
+#: application/views/station_profile/edit.php:149
 msgid "Zones"
 msgstr "Зоны"
 
 #: application/views/station_profile/edit.php:291
+#: application/views/station_profile/create.php:257
+#: application/views/station_profile/edit.php:282
 msgid "Special Interest Group Name"
 msgstr "Название группы по интересам"
 
@@ -17414,11 +17604,15 @@ msgid "Station Special Interest Group Name (e.g. GMA).."
 msgstr "Название группы по интересам (например, GMA)."
 
 #: application/views/station_profile/edit.php:297
+#: application/views/station_profile/create.php:262
+#: application/views/station_profile/edit.php:287
 msgid "Special Interest Group Information"
 msgstr "Данные SIG"
 
 #: application/views/station_profile/edit.php:309
 #: application/views/user/edit.php:913
+#: application/views/station_profile/create.php:275
+#: application/views/station_profile/edit.php:300
 #, php-format
 msgid "Trouble? Check the %swiki%s."
 msgstr "Проблемы? Смотри в %swiki%s."
@@ -17812,8 +18006,9 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
-"Создайте новую папку в 'assets/css/' и загрузите в нее файл 'bootstrap.min."
-"css', который содержит основные правила стилизации. Мы используем темы из %s"
+"Создайте новую папку в 'assets/css/' и загрузите в нее файл "
+"'bootstrap.min.css', который содержит основные правила стилизации. Мы "
+"используем темы из %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
@@ -18121,8 +18316,8 @@ msgid ""
 "Show profile picture of QSO partner from qrz.com/hamqth.com profile in the "
 "log QSO section."
 msgstr ""
-"Показать изображение корреспондента по QSO из его профиля на qrz.com/hamqth."
-"com в разделе QSO журнала."
+"Показать изображение корреспондента по QSO из его профиля на qrz.com/"
+"hamqth.com в разделе QSO журнала."
 
 #: application/views/user/edit.php:391
 msgid ""
