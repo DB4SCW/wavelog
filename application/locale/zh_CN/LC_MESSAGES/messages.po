@@ -898,6 +898,11 @@ msgstr "编辑计划任务"
 #: application/views/debug/index.php:549 application/views/debug/index.php:554
 #: application/views/debug/index.php:559 application/views/debug/index.php:564
 #: application/views/debug/index.php:569 application/views/debug/index.php:574
+#: application/views/debug/index.php:524 application/views/debug/index.php:531
+#: application/views/debug/index.php:537 application/views/debug/index.php:543
+#: application/views/debug/index.php:555 application/views/debug/index.php:561
+#: application/views/debug/index.php:567 application/views/debug/index.php:573
+#: application/views/debug/index.php:579 application/views/debug/index.php:585
 msgid "never"
 msgstr "从不"
 
@@ -1599,7 +1604,7 @@ msgstr "eQSL"
 #: application/views/qso/index.php:225 application/views/qso/index.php:226
 #: application/views/user/edit.php:244 application/views/user/edit.php:267
 #: application/views/user/edit.php:290 application/views/user/edit.php:313
-#: application/views/user/edit.php:337
+#: application/views/user/edit.php:337 application/views/debug/index.php:608
 msgid "Mode"
 msgstr "模式"
 
@@ -1965,7 +1970,7 @@ msgstr "距离"
 #: application/views/qso/index.php:240 application/views/qso/index.php:241
 #: application/views/user/edit.php:242 application/views/user/edit.php:265
 #: application/views/user/edit.php:288 application/views/user/edit.php:311
-#: application/views/user/edit.php:335
+#: application/views/user/edit.php:335 application/views/debug/index.php:609
 msgid "Band"
 msgstr "频段"
 
@@ -3305,6 +3310,7 @@ msgstr "台站名称"
 #: application/views/user/modals/first_login_wizard.php:34
 #: application/views/station_profile/create.php:59
 #: application/views/station_profile/edit.php:76
+#: application/views/debug/index.php:610
 msgid "Station Callsign"
 msgstr "电台呼号"
 
@@ -4786,6 +4792,7 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:317
 #: application/views/qso/index.php:150 application/views/qso/index.php:186
 #: application/views/qso/index.php:151 application/views/qso/index.php:187
+#: application/views/debug/index.php:605
 msgid "Date"
 msgstr "日期"
 
@@ -4825,6 +4832,7 @@ msgstr "日期"
 #: application/views/logbookadvanced/checkresult.php:242
 #: application/views/logbookadvanced/checkresult.php:318
 #: application/views/qso/index.php:191 application/views/qso/index.php:192
+#: application/views/debug/index.php:606
 msgid "Time"
 msgstr "时间"
 
@@ -4846,7 +4854,8 @@ msgstr "时间"
 #: application/views/view_log/partial/log.php:8
 #: application/views/view_log/partial/log_ajax.php:200
 #: application/views/visitor/index.php:156
-#: application/views/widgets/qsos.php:17
+#: application/views/widgets/qsos.php:17 application/views/debug/index.php:607
+#: application/views/debug/index.php:642
 msgid "Call"
 msgstr "呼号"
 
@@ -4904,6 +4913,7 @@ msgstr "最大上传文件大小是 "
 #: application/views/view_log/qso.php:794
 #: application/views/webadif/export.php:34
 #: application/views/webadif/export.php:94
+#: application/views/debug/index.php:597
 msgid "Warning"
 msgstr "注意"
 
@@ -10969,194 +10979,200 @@ msgstr "DXCC 更新（ClubLog）"
 #: application/views/debug/index.php:565 application/views/debug/index.php:570
 #: application/views/debug/index.php:575
 #: application/views/station_profile/edit.php:53
+#: application/views/debug/index.php:525 application/views/debug/index.php:532
+#: application/views/debug/index.php:538 application/views/debug/index.php:544
+#: application/views/debug/index.php:556 application/views/debug/index.php:562
+#: application/views/debug/index.php:568 application/views/debug/index.php:574
+#: application/views/debug/index.php:580 application/views/debug/index.php:586
 msgid "Update"
 msgstr "更新"
 
-#: application/views/debug/index.php:528
+#: application/views/debug/index.php:528 application/views/debug/index.php:529
 msgid "DOK file download"
 msgstr "下载 DOK 文件"
 
-#: application/views/debug/index.php:533
+#: application/views/debug/index.php:533 application/views/debug/index.php:535
 msgid "LoTW users download"
 msgstr "下载 LoTW 用户状态"
 
-#: application/views/debug/index.php:538
+#: application/views/debug/index.php:538 application/views/debug/index.php:541
 msgid "POTA file download"
 msgstr "下载 POTA 文件"
 
-#: application/views/debug/index.php:543
+#: application/views/debug/index.php:543 application/views/debug/index.php:547
 msgid "SCP file download"
 msgstr "下载 SCP 文件"
 
-#: application/views/debug/index.php:548
+#: application/views/debug/index.php:548 application/views/debug/index.php:553
 msgid "SOTA file download"
 msgstr "下载 SOTA 文件"
 
-#: application/views/debug/index.php:553
+#: application/views/debug/index.php:553 application/views/debug/index.php:559
 msgid "WWFF file download"
 msgstr "下载 WWFF 文件"
 
-#: application/views/debug/index.php:558
+#: application/views/debug/index.php:558 application/views/debug/index.php:565
 msgid "TLE update"
 msgstr "TLE 更新"
 
-#: application/views/debug/index.php:563
+#: application/views/debug/index.php:563 application/views/debug/index.php:571
 msgid "Hams Of Note update"
 msgstr "更新 Hams of Note"
 
-#: application/views/debug/index.php:568
+#: application/views/debug/index.php:568 application/views/debug/index.php:577
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:573
+#: application/views/debug/index.php:573 application/views/debug/index.php:583
 msgid "VUCC Grids"
 msgstr "VUCC 网格"
 
-#: application/views/debug/index.php:582
+#: application/views/debug/index.php:582 application/views/debug/index.php:593
 msgid "QSO-DB Maintenance"
 msgstr "QSO-DB 维护"
 
-#: application/views/debug/index.php:586
+#: application/views/debug/index.php:586 application/views/debug/index.php:597
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
 "The Database contains %d QSOs without a station-profile (location)"
 msgstr[0] "数据库中共有%d个没有台站信息（位置）的 QSO"
 
-#: application/views/debug/index.php:624
+#: application/views/debug/index.php:624 application/views/debug/index.php:635
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr "请标记 QSO 并将其重新分配到现有的电台位置："
 
-#: application/views/debug/index.php:632
+#: application/views/debug/index.php:632 application/views/debug/index.php:643
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "目标位置"
 
 #: application/views/debug/index.php:633 application/views/debug/index.php:644
+#: application/views/debug/index.php:655
 msgid "Reassign"
 msgstr "重新分配"
 
-#: application/views/debug/index.php:653
+#: application/views/debug/index.php:653 application/views/debug/index.php:664
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr "数据库中的所有 QSO 都有台站相关联"
 
-#: application/views/debug/index.php:653
+#: application/views/debug/index.php:653 application/views/debug/index.php:664
 msgid "Everything ok"
 msgstr "一切正常"
 
-#: application/views/debug/index.php:678
+#: application/views/debug/index.php:678 application/views/debug/index.php:689
 msgid "Albanian"
 msgstr "阿尔巴尼亚语"
 
-#: application/views/debug/index.php:679
+#: application/views/debug/index.php:679 application/views/debug/index.php:690
 msgid "Armenian"
 msgstr "亚美尼亚语"
 
-#: application/views/debug/index.php:680
+#: application/views/debug/index.php:680 application/views/debug/index.php:691
 msgid "Bosnian"
 msgstr "波斯尼亚语"
 
-#: application/views/debug/index.php:681
+#: application/views/debug/index.php:681 application/views/debug/index.php:692
 msgid "Bulgarian"
 msgstr "保加利亚语"
 
-#: application/views/debug/index.php:682
+#: application/views/debug/index.php:682 application/views/debug/index.php:693
 msgid "Chinese (Simplified)"
 msgstr "简体中文"
 
-#: application/views/debug/index.php:683
+#: application/views/debug/index.php:683 application/views/debug/index.php:694
 msgid "Croatian"
 msgstr "克罗地亚语"
 
-#: application/views/debug/index.php:684
+#: application/views/debug/index.php:684 application/views/debug/index.php:695
 msgid "Czech"
 msgstr "捷克语"
 
-#: application/views/debug/index.php:685
+#: application/views/debug/index.php:685 application/views/debug/index.php:696
 msgid "Dutch"
 msgstr "荷兰语"
 
-#: application/views/debug/index.php:686
+#: application/views/debug/index.php:686 application/views/debug/index.php:697
 msgid "English"
 msgstr "英语"
 
-#: application/views/debug/index.php:687
+#: application/views/debug/index.php:687 application/views/debug/index.php:698
 msgid "Estonian"
 msgstr "爱沙尼亚语"
 
-#: application/views/debug/index.php:688
+#: application/views/debug/index.php:688 application/views/debug/index.php:699
 msgid "Finnish"
 msgstr "芬兰语"
 
-#: application/views/debug/index.php:689
+#: application/views/debug/index.php:689 application/views/debug/index.php:700
 msgid "French"
 msgstr "法语"
 
-#: application/views/debug/index.php:690
+#: application/views/debug/index.php:690 application/views/debug/index.php:701
 msgid "German"
 msgstr "德语"
 
-#: application/views/debug/index.php:691
+#: application/views/debug/index.php:691 application/views/debug/index.php:702
 msgid "Greek"
 msgstr "希腊语"
 
-#: application/views/debug/index.php:692
+#: application/views/debug/index.php:692 application/views/debug/index.php:703
 msgid "Hungarian"
 msgstr "匈牙利语"
 
-#: application/views/debug/index.php:693
+#: application/views/debug/index.php:693 application/views/debug/index.php:704
 msgid "Italian"
 msgstr "意大利语"
 
-#: application/views/debug/index.php:694
+#: application/views/debug/index.php:694 application/views/debug/index.php:705
 msgid "Japanese"
 msgstr "日语"
 
-#: application/views/debug/index.php:695
+#: application/views/debug/index.php:695 application/views/debug/index.php:706
 msgid "Latvian"
 msgstr "拉脱维亚语"
 
-#: application/views/debug/index.php:696
+#: application/views/debug/index.php:696 application/views/debug/index.php:707
 msgid "Lithuanian"
 msgstr "立陶宛语"
 
-#: application/views/debug/index.php:697
+#: application/views/debug/index.php:697 application/views/debug/index.php:708
 msgid "Montenegrin"
 msgstr "黑山语"
 
-#: application/views/debug/index.php:698
+#: application/views/debug/index.php:698 application/views/debug/index.php:709
 msgid "Polish"
 msgstr "波兰语"
 
-#: application/views/debug/index.php:699
+#: application/views/debug/index.php:699 application/views/debug/index.php:710
 msgid "Portuguese"
 msgstr "葡萄牙语"
 
-#: application/views/debug/index.php:700
+#: application/views/debug/index.php:700 application/views/debug/index.php:711
 msgid "Russian"
 msgstr "俄语"
 
-#: application/views/debug/index.php:701
+#: application/views/debug/index.php:701 application/views/debug/index.php:712
 msgid "Serbian"
 msgstr "塞尔维亚语"
 
-#: application/views/debug/index.php:702
+#: application/views/debug/index.php:702 application/views/debug/index.php:713
 msgid "Slovak"
 msgstr "斯洛伐克语"
 
-#: application/views/debug/index.php:703
+#: application/views/debug/index.php:703 application/views/debug/index.php:714
 msgid "Slovenian"
 msgstr "斯洛文尼亚语"
 
-#: application/views/debug/index.php:704
+#: application/views/debug/index.php:704 application/views/debug/index.php:715
 msgid "Spanish"
 msgstr "西班牙语"
 
-#: application/views/debug/index.php:705
+#: application/views/debug/index.php:705 application/views/debug/index.php:716
 msgid "Swedish"
 msgstr "瑞典语"
 
-#: application/views/debug/index.php:706
+#: application/views/debug/index.php:706 application/views/debug/index.php:717
 msgid "Turkish"
 msgstr "土耳其语"
 
