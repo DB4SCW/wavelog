@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-20 18:51+0000\n"
-"PO-Revision-Date: 2026-01-20 22:51+0000\n"
-"Last-Translator: Alexander <alexander@pa8s.nl>\n"
+"PO-Revision-Date: 2026-01-21 20:09+0000\n"
+"Last-Translator: PE1PQX <Andre@pe1pqx.eu>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
 "Language: nl_NL\n"
@@ -19751,7 +19751,7 @@ msgstr "CQz geojson"
 
 #: application/controllers/Calltester.php:844
 msgid "Callsign Tester"
-msgstr ""
+msgstr "Call tester"
 
 #, php-format
 #~ msgid ""
