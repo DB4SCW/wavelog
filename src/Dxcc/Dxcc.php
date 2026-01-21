@@ -7,7 +7,7 @@ class Dxcc {
 	protected $dxccexceptions = array();
 
 	protected $csadditions = '/^X$|^D$|^T$|^P$|^R$|^B$|^A$|^M$|^LH$|^L$|^J$|^SK$/';
-	protected $lidadditions = '/^QRP$|^LGT$/';
+	protected $lidadditions = '/^QRP$|^LGT$|^2K$/';
 	protected $noneadditions = '/^MM$|^AM$/';
 
 	function __construct($date)	{
@@ -45,6 +45,8 @@ class Dxcc {
 			$call = "K";
 		} elseif (preg_match('/(^OH\/)|(\/OH[1-9]?$)/', $call)) {   # non-Aland prefix!
 			$call = "OH";                                             # make callsign OH = finland
+		} elseif (preg_match('/(^HB\/)|(\/HB[1-9]?$)/', $call)) {   # non-Liechtenstein prefix!
+			$call = "HB";                                             # make callsign HB = Switzerland
 		} elseif (preg_match('/(^CX\/)|(\/CX[1-9]?$)/', $call)) {   # non-Antarctica prefix!
 			$call = "CX";                                             # make callsign CX = Uruguay
 		} elseif (preg_match('/(^3D2R)|(^3D2.+\/R)/', $call)) {     # seems to be from Rotuma
@@ -170,7 +172,15 @@ class Dxcc {
 				if (preg_match($this->lidadditions, $b) || preg_match('/^[0-9]+$/', $b)) {        # check if $b is a lid-addition
 					$b = $a;
 					$a = null;                              # $a goes to $b, delete lid-add
-				} elseif ((preg_match('/\d[A-Z]+$/', $a)) && (preg_match('/\d$/', $b) || preg_match('/^[A-Z]\d[A-Z]$/', $b))) {   # check for call in $a
+				} elseif ((preg_match('/\d[A-Z]+$/', $a)) && (preg_match('/\d$/', $b) || preg_match('/^[A-Z]\d[A-Z]$/', $b) || preg_match('/^\d[A-Z]+$/', $b))) {
+					$temp = $b;
+					$b = $a;
+					$a = $temp;
+				}
+				# Additional check: if $a looks like a full callsign (longer than typical prefix)
+				# and $b looks like a country prefix (short, with digit), swap them
+				# This handles cases like JA0JHQ/VK9X where VK9X should be the prefix
+				elseif (strlen($a) >= 5 && preg_match('/^\d?[A-Z]+\d[A-Z]+$/', $a) && strlen($b) <= 5 && preg_match('/^[A-Z]+\d[A-Z]*$/', $b)) {
 					$temp = $b;
 					$b = $a;
 					$a = $temp;
@@ -210,38 +220,53 @@ class Dxcc {
 				} else {                                            # Case 1.2, no number
 					$prefix = substr($b, 0, 2) . "0";               # first two + 0
 				}
-			} elseif (($a == null) && (isset($c))) {                # Case 2, CALL/X
-				if (preg_match('/^(\d)/', $c)) {                    # Case 2.1, number
-					preg_match('/(.+\d)[A-Z]*/', $b, $matches);     # regular Prefix in $1
-					# Here we need to find out how many digits there are in the
-					# prefix, because for example A45XR/0 is A40. If there are 2
-					# numbers, the first is not deleted. If course in exotic cases
-					# like N66A/7 -> N7 this brings the wrong result of N67, but I
-					# think that's rather irrelevant cos such calls rarely appear
-					# and if they do, it's very unlikely for them to have a number
-					# attached.   You can still edit it by hand anyway..
-					if (!isset($matches[1]) || $matches[1] === null) {
-						$this->logError('preg_match failed to capture prefix in $b', [
-							'testcall' => $testcall,
-							'b' => $b,
-							'c' => $c,
-							'matches' => $matches
-						]);
-						return '';
-					}
-					if (preg_match('/^([A-Z]\d)\d$/', $matches[1])) {        # e.g. A45   $c = 0
-						$prefix = $matches[1] . $c;  # ->   A40
-					} else {                         # Otherwise cut all numbers
-						if (!preg_match('/(.*[A-Z])\d+/', $matches[1], $match)) {
-							$this->logError('preg_match failed to extract prefix without number', [
+			} elseif (($a == null) && ($c != null && $c != '')) {    # Case 2, CALL/X
+				if (preg_match($this->lidadditions, $c)) {        # check if $b is a lid-addition
+					$prefix = $b;
+				} else if (preg_match('/^(\d)/', $c)) {                    # Case 2.1, starts with digit
+					# Check if $c is a full country prefix (like 6YA, 6Y, etc.) not just a number
+					# A country prefix has the pattern: digit + letters (like 6YA, 6Y)
+					# NOT just a single digit
+					if (strlen($c) > 1 && preg_match('/^\d[A-Z]+$/', $c)) {
+						# This is a country prefix starting with a digit (like 6YA, 6Y)
+						# Use it directly - it's already a valid prefix
+						$prefix = $c;
+					} elseif (strlen($c) > 1 && preg_match('/^[A-Z]+\d[A-Z]*$/', $c)) {
+						# Country prefix starting with letters (like W1, K2, etc.)
+						$prefix = $c;
+					} else {
+						# Single digit, replace the digit in the base call                # Case 2.1, starts with digit
+						preg_match('/(.+\d)[A-Z]*/', $b, $matches);     # regular Prefix in $1
+						# Here we need to find out how many digits there are in the
+						# prefix, because for example A45XR/0 is A40. If there are 2
+						# numbers, the first is not deleted. If course in exotic cases
+						# like N66A/7 -> N7 this brings the wrong result of N67, but I
+						# think that's rather irrelevant cos such calls rarely appear
+						# and if they do, it's very unlikely for them to have a number
+						# attached.   You can still edit it by hand anyway..
+						if (!isset($matches[1]) || $matches[1] === null) {
+							$this->logError('preg_match failed to capture prefix in $b', [
 								'testcall' => $testcall,
-								'matches1' => $matches[1],
 								'b' => $b,
-								'c' => $c
+								'c' => $c,
+								'matches' => $matches
 							]);
 							return '';
 						}
-						$prefix = $match[1] . $c; # Add attached number
+						if (preg_match('/^([A-Z]\d)\d$/', $matches[1])) {        # e.g. A45   $c = 0
+							$prefix = $matches[1] . $c;  # ->   A40
+						} else {                         # Otherwise cut all numbers
+							if (!preg_match('/(.*[A-Z])\d+/', $matches[1], $match)) {
+								$this->logError('preg_match failed to extract prefix without number', [
+									'testcall' => $testcall,
+									'matches1' => $matches[1],
+									'b' => $b,
+									'c' => $c
+								]);
+								return '';
+							}
+							$prefix = $match[1] . $c; # Add attached number
+						}
 					}
 				} elseif (preg_match($this->csadditions, $c)) {
 					if (!preg_match('/(.+\d)[A-Z]*/', $b, $matches)) {
@@ -266,9 +291,15 @@ class Dxcc {
 					}
 					$prefix = $matches[1][0];
 				} else {                                            # Must be a Prefix!
-					if (preg_match('/\d$/', $c)) {                  # ends in number -> good prefix
+					# Check if $c looks like a country prefix
+					# Pattern: starts with digit followed by letters (6YA, 6Y) OR has digit in it
+					if (preg_match('/^\d[A-Z]+$/', $c)) {           # Starts with digit, has letters after (6YA, 6Y, etc.)
+						$prefix = $c;                               # Already a valid prefix
+					} elseif (preg_match('/\d$/', $c)) {            # ends in number -> good prefix
 						$prefix = $c;
-					} else {                                        # Add Zero at the end
+					} elseif (preg_match('/\d/', $c)) {             # contains digit but doesn't end with one
+						$prefix = $c . "0";                         # Add zero at end
+					} else {                                        # No digit, add zero
 						$prefix = $c . "0";
 					}
 				}
@@ -278,7 +309,7 @@ class Dxcc {
 				# $a contains the prefix we want
 				if (preg_match('/\d$/', $a)) {                      # ends in number -> good prefix
 					$prefix = $a;
-				} else {                                            # add zero if no number
+				} else {
 					$prefix = $a . "0";
 				}
 			}
