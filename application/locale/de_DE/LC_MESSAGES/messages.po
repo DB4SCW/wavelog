@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-21 09:57+0000\n"
-"PO-Revision-Date: 2026-01-13 21:20+0000\n"
+"PO-Revision-Date: 2026-01-21 12:00+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -36,7 +36,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -1974,7 +1974,7 @@ msgstr "DXCC für %d QSO(s) aktualisiert."
 #: application/controllers/Logbookadvanced.php:941
 #, php-format
 msgid "Map for DXCC %s and gridsquare %s."
-msgstr ""
+msgstr "Karte für DXCC %s und Planquadrat %s."
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -12913,7 +12913,7 @@ msgstr "Zeige mehr"
 
 #: application/views/logbookadvanced/checkresult.php:197
 msgid "View on map"
-msgstr ""
+msgstr "Zeige auf Karte"
 
 #: application/views/logbookadvanced/checkresult.php:222
 msgid "CQ Zone Check Results"
@@ -13725,11 +13725,11 @@ msgstr "Zeige weniger"
 
 #: application/views/logbookadvanced/index.php:80
 msgid "Gridsquares for"
-msgstr ""
+msgstr "Planquadrate für"
 
 #: application/views/logbookadvanced/index.php:81
 msgid "Non DXCC matching gridsquare"
-msgstr ""
+msgstr "Planquadrat, das nicht dem DXCC entspricht"
 
 #: application/views/logbookadvanced/index.php:310
 msgid "From"
@@ -15915,15 +15915,15 @@ msgstr "Bitte warte bevor du ein weiteres QSO speichern kannst"
 
 #: application/views/qso/index.php:42
 msgid "Satellite not found"
-msgstr ""
+msgstr "Satellit nicht gefunden"
 
 #: application/views/qso/index.php:43
 msgid "Supported by LoTW"
-msgstr ""
+msgstr "Unterstützt von LoTW"
 
 #: application/views/qso/index.php:44
 msgid "Not supported by LoTW"
-msgstr ""
+msgstr "Nicht unterstützt von LoTW"
 
 #: application/views/qso/index.php:90
 msgid "LIVE"
