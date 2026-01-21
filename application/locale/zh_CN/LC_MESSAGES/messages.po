@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-20 18:51+0000\n"
+"POT-Creation-Date: 2026-01-21 08:38+0000\n"
 "PO-Revision-Date: 2025-12-23 02:59+0000\n"
 "Last-Translator: YuanRetro <lijiaxuan1811@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
@@ -478,7 +478,8 @@ msgstr " 并且 "
 #: application/views/qso/components/previous_contacts.php:82
 #: application/views/qso/edit_ajax.php:377
 #: application/views/search/search_result_ajax.php:9
-#: application/views/station_profile/edit.php:247
+#: application/views/station_profile/create.php:210
+#: application/views/station_profile/edit.php:235
 #: application/views/user/edit.php:248 application/views/user/edit.php:271
 #: application/views/user/edit.php:294 application/views/user/edit.php:317
 #: application/views/user/edit.php:341
@@ -500,7 +501,8 @@ msgstr "SOTA"
 #: application/views/qso/components/previous_contacts.php:83
 #: application/views/qso/edit_ajax.php:387
 #: application/views/search/search_result_ajax.php:10
-#: application/views/station_profile/edit.php:260
+#: application/views/station_profile/create.php:224
+#: application/views/station_profile/edit.php:249
 #: application/views/user/edit.php:249 application/views/user/edit.php:272
 #: application/views/user/edit.php:295 application/views/user/edit.php:318
 #: application/views/user/edit.php:342
@@ -522,7 +524,8 @@ msgstr "WWFF"
 #: application/views/qso/components/previous_contacts.php:84
 #: application/views/qso/edit_ajax.php:383
 #: application/views/search/search_result_ajax.php:11
-#: application/views/station_profile/edit.php:273
+#: application/views/station_profile/create.php:238
+#: application/views/station_profile/edit.php:263
 #: application/views/user/edit.php:250 application/views/user/edit.php:273
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
@@ -800,7 +803,8 @@ msgstr "未找到配置 Clublog 的用户。"
 #: application/views/logbookadvanced/useroptions.php:112
 #: application/views/qso/edit_ajax.php:432
 #: application/views/search/search_result_ajax.php:124
-#: application/views/station_profile/edit.php:357
+#: application/views/station_profile/create.php:323
+#: application/views/station_profile/edit.php:349
 #: application/views/timeline/index.php:68
 #: application/views/update/index.php:16 application/views/user/edit.php:628
 #: application/views/user/edit.php:855
@@ -1438,7 +1442,8 @@ msgstr "LoTW"
 #: application/views/qso/edit_ajax.php:423
 #: application/views/search/search_result_ajax.php:263
 #: application/views/search/search_result_ajax.php:276
-#: application/views/station_profile/edit.php:309
+#: application/views/station_profile/create.php:275
+#: application/views/station_profile/edit.php:300
 #: application/views/timeline/index.php:64 application/views/user/edit.php:626
 #: application/views/user/edit.php:839 application/views/user/edit.php:913
 msgid "eQSL"
@@ -1645,7 +1650,8 @@ msgstr "DXCC 实体"
 #: application/views/qso/components/previous_contacts.php:81
 #: application/views/qso/edit_ajax.php:368
 #: application/views/search/search_result_ajax.php:8
-#: application/views/station_profile/edit.php:219
+#: application/views/station_profile/create.php:184
+#: application/views/station_profile/edit.php:209
 #: application/views/timeline/index.php:295 application/views/user/edit.php:247
 #: application/views/user/edit.php:270 application/views/user/edit.php:293
 #: application/views/user/edit.php:316 application/views/user/edit.php:340
@@ -1927,8 +1933,8 @@ msgstr "操作员"
 #: application/views/lotw_views/index.php:50
 #: application/views/qso/components/previous_contacts.php:59
 #: application/views/qso/edit_ajax.php:252 application/views/qso/index.php:469
-#: application/views/station_profile/create.php:77
-#: application/views/station_profile/edit.php:109
+#: application/views/station_profile/create.php:86
+#: application/views/station_profile/edit.php:107
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:45
 #: application/views/stationsetup/locationlist.php:58
@@ -2649,8 +2655,8 @@ msgstr "修改台站地址： "
 #: application/views/qslprint/index.php:20 application/views/qso/index.php:133
 #: application/views/qso/index.php:394
 #: application/views/search/search_result_ajax.php:18
-#: application/views/station_profile/create.php:311
-#: application/views/station_profile/edit.php:466
+#: application/views/station_profile/create.php:430
+#: application/views/station_profile/edit.php:462
 #: application/views/user/edit.php:349 application/views/user/edit.php:719
 #: application/views/view_log/partial/log_ajax.php:18
 #: application/views/view_log/qso.php:9 application/views/webadif/export.php:75
@@ -2723,10 +2729,10 @@ msgstr "错误，链接已被使用！"
 #: application/views/options/appearance.php:76
 #: application/views/options/appearance.php:85
 #: application/views/options/version_dialog.php:66
-#: application/views/station_profile/create.php:244
-#: application/views/station_profile/create.php:266
-#: application/views/station_profile/edit.php:344
-#: application/views/station_profile/edit.php:401
+#: application/views/station_profile/create.php:309
+#: application/views/station_profile/create.php:366
+#: application/views/station_profile/edit.php:335
+#: application/views/station_profile/edit.php:394
 #: application/views/stationsetup/stationsetup.php:79
 #: application/views/user/edit.php:451 application/views/user/edit.php:502
 #: application/views/user/edit.php:511 application/views/user/edit.php:668
@@ -2819,8 +2825,8 @@ msgstr "确定要删除台站 '%s' 吗？这会删除此台站下的所有 QSO�
 
 #: application/controllers/Stationsetup.php:422
 #: application/views/qso/edit_ajax.php:236
-#: application/views/station_profile/create.php:75
-#: application/views/station_profile/edit.php:103
+#: application/views/station_profile/create.php:84
+#: application/views/station_profile/edit.php:101
 #: application/views/stationsetup/stationsetup.php:156
 #: application/views/user/modals/first_login_wizard.php:46
 msgid "Please select one"
@@ -3143,8 +3149,8 @@ msgstr "台站名称"
 
 #: application/controllers/User.php:1302 application/views/debug/index.php:599
 #: application/views/public_search/result.php:17
-#: application/views/station_profile/create.php:61
-#: application/views/station_profile/edit.php:77
+#: application/views/station_profile/create.php:59
+#: application/views/station_profile/edit.php:76
 #: application/views/stationsetup/linkedlocations.php:32
 #: application/views/stationsetup/stationsetup.php:128
 #: application/views/user/modals/first_login_wizard.php:34
@@ -3152,8 +3158,8 @@ msgid "Station Callsign"
 msgstr "电台呼号"
 
 #: application/controllers/User.php:1303
-#: application/views/station_profile/create.php:72
-#: application/views/station_profile/edit.php:100
+#: application/views/station_profile/create.php:81
+#: application/views/station_profile/edit.php:98
 #: application/views/user/modals/first_login_wizard.php:42
 msgid "Station DXCC"
 msgstr "台站 DXCC"
@@ -4404,7 +4410,7 @@ msgstr "未找到！"
 #: application/views/search/lotw_unconfirmed_result.php:6
 #: application/views/search/result.php:11
 #: application/views/simplefle/index.php:156
-#: application/views/station_profile/edit.php:67
+#: application/views/station_profile/edit.php:68
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/statistics/initialresult.php:17
 #: application/views/update/hamsofnote.php:7
@@ -5420,8 +5426,8 @@ msgstr "总计"
 #: application/views/lookup/index.php:3 application/views/map/qso_map.php:69
 #: application/views/qso/edit_ajax.php:308 application/views/qso/index.php:509
 #: application/views/search/cqzones_result.php:13
-#: application/views/station_profile/create.php:110
-#: application/views/station_profile/edit.php:157
+#: application/views/station_profile/create.php:128
+#: application/views/station_profile/edit.php:153
 #: application/views/timeline/index.php:327
 #: application/views/timeplotter/index.php:44
 #: application/views/user/modals/first_login_wizard.php:74
@@ -6352,8 +6358,8 @@ msgstr "已删除"
 #: application/views/lookup/index.php:8 application/views/map/qso_map.php:71
 #: application/views/qso/edit_ajax.php:317 application/views/qso/index.php:519
 #: application/views/search/ituzones_result.php:13
-#: application/views/station_profile/create.php:124
-#: application/views/station_profile/edit.php:174
+#: application/views/station_profile/create.php:143
+#: application/views/station_profile/edit.php:168
 #: application/views/user/modals/first_login_wizard.php:84
 #: application/views/zonechecker/index.php:18
 msgid "ITU Zone"
@@ -6695,8 +6701,8 @@ msgstr "本奖项所需要的字段：POTA_REF（必须包含公园参考）"
 
 #: application/views/awards/pota/index.php:32
 #: application/views/qso/index.php:329 application/views/qso/index.php:626
-#: application/views/station_profile/create.php:183
-#: application/views/station_profile/edit.php:276
+#: application/views/station_profile/create.php:241
+#: application/views/station_profile/edit.php:266
 #: application/views/user/edit.php:707 application/views/view_log/qso.php:409
 #: application/views/view_log/qso.php:742
 msgid "POTA Reference(s)"
@@ -6750,7 +6756,8 @@ msgstr ""
 "两个字段都可以自由定制。"
 
 #: application/views/awards/sig/index.php:21
-#: application/views/station_profile/edit.php:288
+#: application/views/station_profile/create.php:254
+#: application/views/station_profile/edit.php:279
 msgid "Special Interest Group"
 msgstr "特别兴趣小组"
 
@@ -7190,8 +7197,8 @@ msgstr "本奖项所需要的字段：WWFF（ADIF: WWFF_REF）"
 
 #: application/views/awards/wwff/index.php:32
 #: application/views/qso/index.php:317 application/views/qso/index.php:613
-#: application/views/station_profile/create.php:177
-#: application/views/station_profile/edit.php:263
+#: application/views/station_profile/create.php:227
+#: application/views/station_profile/edit.php:252
 #: application/views/user/edit.php:703 application/views/view_log/qso.php:402
 #: application/views/view_log/qso.php:735
 msgid "WWFF Reference"
@@ -8368,7 +8375,8 @@ msgstr "RSGB-IOTA 比赛，此信息包含 IOTA 名称（非 IOTA 标识符）�
 #: application/views/logbookadvanced/index.php:833
 #: application/views/oqrs/showrequests.php:31
 #: application/views/qso/index.php:365
-#: application/views/station_profile/edit.php:96
+#: application/views/station_profile/create.php:77
+#: application/views/station_profile/edit.php:94
 msgid "Location"
 msgstr "位置"
 
@@ -8514,18 +8522,18 @@ msgstr ""
 #: application/views/satellite/index.php:101
 #: application/views/satellite/satinfo.php:45
 #: application/views/search/result.php:82
-#: application/views/station_profile/create.php:215
-#: application/views/station_profile/create.php:223
-#: application/views/station_profile/create.php:242
-#: application/views/station_profile/create.php:282
-#: application/views/station_profile/create.php:293
-#: application/views/station_profile/create.php:300
+#: application/views/station_profile/create.php:328
+#: application/views/station_profile/create.php:336
+#: application/views/station_profile/create.php:364
+#: application/views/station_profile/create.php:388
+#: application/views/station_profile/create.php:408
+#: application/views/station_profile/create.php:415
+#: application/views/station_profile/edit.php:354
 #: application/views/station_profile/edit.php:362
-#: application/views/station_profile/edit.php:370
-#: application/views/station_profile/edit.php:399
-#: application/views/station_profile/edit.php:424
-#: application/views/station_profile/edit.php:442
-#: application/views/station_profile/edit.php:449
+#: application/views/station_profile/edit.php:392
+#: application/views/station_profile/edit.php:419
+#: application/views/station_profile/edit.php:439
+#: application/views/station_profile/edit.php:446
 #: application/views/user/edit.php:367 application/views/user/edit.php:378
 #: application/views/user/edit.php:388 application/views/user/edit.php:399
 #: application/views/user/edit.php:409 application/views/user/edit.php:419
@@ -8582,18 +8590,18 @@ msgstr "是"
 #: application/views/satellite/index.php:103
 #: application/views/satellite/satinfo.php:48
 #: application/views/search/result.php:84
-#: application/views/station_profile/create.php:216
-#: application/views/station_profile/create.php:224
-#: application/views/station_profile/create.php:243
-#: application/views/station_profile/create.php:283
-#: application/views/station_profile/create.php:292
-#: application/views/station_profile/create.php:299
+#: application/views/station_profile/create.php:329
+#: application/views/station_profile/create.php:337
+#: application/views/station_profile/create.php:365
+#: application/views/station_profile/create.php:389
+#: application/views/station_profile/create.php:407
+#: application/views/station_profile/create.php:414
+#: application/views/station_profile/edit.php:355
 #: application/views/station_profile/edit.php:363
-#: application/views/station_profile/edit.php:371
-#: application/views/station_profile/edit.php:400
-#: application/views/station_profile/edit.php:425
-#: application/views/station_profile/edit.php:443
-#: application/views/station_profile/edit.php:450
+#: application/views/station_profile/edit.php:393
+#: application/views/station_profile/edit.php:420
+#: application/views/station_profile/edit.php:438
+#: application/views/station_profile/edit.php:445
 #: application/views/user/edit.php:368 application/views/user/edit.php:379
 #: application/views/user/edit.php:389 application/views/user/edit.php:400
 #: application/views/user/edit.php:410 application/views/user/edit.php:420
@@ -9387,7 +9395,7 @@ msgid "Name of Contest in ADIF-specification"
 msgstr "竞赛 在 ADIF 中的名称"
 
 #: application/views/contesting/create.php:35
-#: application/views/station_profile/create.php:311
+#: application/views/station_profile/create.php:430
 #: application/views/station_profile/edit.php:59
 msgid "Create"
 msgstr "创建"
@@ -9588,8 +9596,8 @@ msgstr "标识符"
 #: application/views/options/appearance.php:66
 #: application/views/options/appearance.php:75
 #: application/views/options/appearance.php:84
-#: application/views/station_profile/create.php:268
-#: application/views/station_profile/edit.php:346
+#: application/views/station_profile/create.php:311
+#: application/views/station_profile/edit.php:337
 #: application/views/stationsetup/stationsetup.php:76
 #: application/views/user/edit.php:449 application/views/user/edit.php:450
 #: application/views/user/edit.php:503 application/views/user/edit.php:512
@@ -15198,8 +15206,8 @@ msgid "Antenna elevation in decimal degrees."
 msgstr "天线仰角（以十进制度为单位）。"
 
 #: application/views/qso/edit_ajax.php:362 application/views/qso/index.php:577
-#: application/views/station_profile/create.php:103
-#: application/views/station_profile/edit.php:141
+#: application/views/station_profile/create.php:113
+#: application/views/station_profile/edit.php:138
 msgid "Station County"
 msgstr "台站县区"
 
@@ -15365,16 +15373,16 @@ msgid "Search DXCluster for latest Spot"
 msgstr "在 DXCluster 搜索最新 Spot"
 
 #: application/views/qso/index.php:289 application/views/qso/index.php:583
-#: application/views/station_profile/create.php:153
-#: application/views/station_profile/edit.php:222
+#: application/views/station_profile/create.php:187
+#: application/views/station_profile/edit.php:212
 #: application/views/user/edit.php:695 application/views/view_log/qso.php:388
 #: application/views/view_log/qso.php:721
 msgid "IOTA Reference"
 msgstr "IOTA 编号"
 
 #: application/views/qso/index.php:305 application/views/qso/index.php:600
-#: application/views/station_profile/create.php:171
-#: application/views/station_profile/edit.php:250
+#: application/views/station_profile/create.php:213
+#: application/views/station_profile/edit.php:238
 #: application/views/user/edit.php:699 application/views/view_log/qso.php:395
 #: application/views/view_log/qso.php:728
 msgid "SOTA Reference"
@@ -16455,100 +16463,106 @@ msgid ""
 "%sthis article%s of our Wiki."
 msgstr "所有可用的指令或语法可在 %sWiki%s 查看。"
 
-#: application/views/station_profile/create.php:55
+#: application/views/station_profile/create.php:54
 #: application/views/station_profile/edit.php:71
 msgid "Location Name"
 msgstr "地址名称"
 
+#: application/views/station_profile/create.php:55
 #: application/views/station_profile/create.php:56
-#: application/views/station_profile/create.php:57
 #: application/views/station_profile/edit.php:73
 msgctxt "Station Location Setup"
 msgid "Home QTH"
 msgstr "基地台 QTH"
 
-#: application/views/station_profile/create.php:57
+#: application/views/station_profile/create.php:56
 #: application/views/station_profile/edit.php:73
 #, php-format
 msgid "Shortname for the station location. For example: %s"
 msgstr "台站的地址简写，例如：%s"
 
-#: application/views/station_profile/create.php:63
-#: application/views/station_profile/edit.php:79
+#: application/views/station_profile/create.php:61
+#: application/views/station_profile/edit.php:78
 msgid "Station callsign. For example: 4W7EST/P"
 msgstr "电台呼号，例如：4W7EST/P"
 
-#: application/views/station_profile/create.php:67
-#: application/views/station_profile/edit.php:83
+#: application/views/station_profile/create.php:64
+#: application/views/station_profile/edit.php:81
 msgid "Station Power (W)"
 msgstr "电台功率 (W)"
 
-#: application/views/station_profile/create.php:69
-#: application/views/station_profile/edit.php:85
+#: application/views/station_profile/create.php:66
+#: application/views/station_profile/edit.php:83
 msgid "Default station power in Watt. Overwritten by CAT."
 msgstr "默认电台功率 (W)，如有 CAT 信息会覆盖此设置。"
 
-#: application/views/station_profile/create.php:82
-#: application/views/station_profile/edit.php:116
+#: application/views/station_profile/create.php:91
+#: application/views/station_profile/edit.php:113
 msgid "Station DXCC entity. For example: Bolivia"
 msgstr "台站的 DXCC 实体名称，如 China"
 
-#: application/views/station_profile/create.php:87
-#: application/views/station_profile/edit.php:122
+#: application/views/station_profile/create.php:97
+#: application/views/station_profile/edit.php:119
 msgid "Station City"
 msgstr "台站城市"
 
-#: application/views/station_profile/create.php:89
-#: application/views/station_profile/edit.php:124
+#: application/views/station_profile/create.php:99
+#: application/views/station_profile/edit.php:121
 msgid "Station city. For example: Oslo"
 msgstr "台站坐落城市，如 Beijing"
 
-#: application/views/station_profile/create.php:98
-#: application/views/station_profile/edit.php:136
+#: application/views/station_profile/create.php:108
+#: application/views/station_profile/edit.php:133
 msgid "Station state. Applies to certain countries only."
 msgstr "台站州（特定国家可用）。"
 
-#: application/views/station_profile/create.php:105
-#: application/views/station_profile/edit.php:143
+#: application/views/station_profile/create.php:115
+#: application/views/station_profile/edit.php:140
 msgid "Station County (Only used for specific DXCCs)."
 msgstr "台站县（仅限特定 DXCC）。"
 
-#: application/views/station_profile/create.php:120
-#: application/views/station_profile/edit.php:169
+#: application/views/station_profile/create.php:124
+#: application/views/station_profile/edit.php:149
+msgid "Zones"
+msgstr "分区"
+
+#: application/views/station_profile/create.php:138
+#: application/views/station_profile/edit.php:163
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your CQ Zone then %s to find it!"
 msgstr "如果你不清楚自己的 CQ 分区，%s 查看！"
 
-#: application/views/station_profile/create.php:120
-#: application/views/station_profile/create.php:134
-#: application/views/station_profile/create.php:148
-#: application/views/station_profile/edit.php:169
-#: application/views/station_profile/edit.php:186
-#: application/views/station_profile/edit.php:210
+#: application/views/station_profile/create.php:138
+#: application/views/station_profile/create.php:153
+#: application/views/station_profile/create.php:174
+#: application/views/station_profile/edit.php:163
+#: application/views/station_profile/edit.php:178
+#: application/views/station_profile/edit.php:199
 msgid "click here"
 msgstr "点击此处"
 
-#: application/views/station_profile/create.php:134
-#: application/views/station_profile/edit.php:186
+#: application/views/station_profile/create.php:153
+#: application/views/station_profile/edit.php:178
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your ITU Zone then %s to find it!"
 msgstr "如果你不清楚自己的 ITU 分区，%s 查看！"
 
-#: application/views/station_profile/create.php:139
-#: application/views/station_profile/edit.php:198
-#: application/views/station_profile/edit.php:201
+#: application/views/station_profile/create.php:164
+#: application/views/station_profile/create.php:167
+#: application/views/station_profile/edit.php:189
+#: application/views/station_profile/edit.php:192
 msgid "Station Gridsquare"
 msgstr "台站网格地址"
 
-#: application/views/station_profile/create.php:144
-#: application/views/station_profile/edit.php:206
+#: application/views/station_profile/create.php:171
+#: application/views/station_profile/edit.php:196
 msgid "Get Gridsquare"
 msgstr "获取网格座标"
 
-#: application/views/station_profile/create.php:148
-#: application/views/station_profile/edit.php:210
+#: application/views/station_profile/create.php:174
+#: application/views/station_profile/edit.php:199
 #, php-format
 msgctxt "uses 'click here'"
 msgid ""
@@ -16556,59 +16570,59 @@ msgid ""
 "then %s!"
 msgstr "台站的网格，如 HM54AP，如果不知道自己的网格，%s 查看！"
 
-#: application/views/station_profile/create.php:149
-#: application/views/station_profile/edit.php:211
+#: application/views/station_profile/create.php:175
+#: application/views/station_profile/edit.php:200
 msgid ""
 "If you are located on a grid line, enter multiple grid squares separated "
 "with commas. For example: IO77,IO78,IO87,IO88."
 msgstr ""
 "如果处在网格线上，请输入逗号分隔的多个网格，例如：IO77,IO78,IO87,IO88。"
 
-#: application/views/station_profile/create.php:166
-#: application/views/station_profile/edit.php:236
+#: application/views/station_profile/create.php:198
+#: application/views/station_profile/edit.php:223
 msgid "Station IOTA reference. For example: EU-005"
 msgstr "台站 IOTA 标识代码，例如 EU-005"
 
-#: application/views/station_profile/create.php:167
-#: application/views/station_profile/edit.php:237
+#: application/views/station_profile/create.php:199
+#: application/views/station_profile/edit.php:224
 msgid "IOTA World website"
 msgstr "IOTA World 网站"
 
-#: application/views/station_profile/create.php:167
-#: application/views/station_profile/edit.php:237
+#: application/views/station_profile/create.php:199
+#: application/views/station_profile/edit.php:224
 #, php-format
 msgid "You can look up IOTA references at the %s."
 msgstr "你可以在 %s 查看 IOTA 目录。"
 
-#: application/views/station_profile/create.php:173
-#: application/views/station_profile/edit.php:252
+#: application/views/station_profile/create.php:215
+#: application/views/station_profile/edit.php:240
 msgid "SOTA Maps website"
 msgstr "SOTA Maps 网站"
 
-#: application/views/station_profile/create.php:173
-#: application/views/station_profile/edit.php:252
+#: application/views/station_profile/create.php:215
+#: application/views/station_profile/edit.php:240
 #, php-format
 msgid "Station SOTA reference. You can look up SOTA references at the %s."
 msgstr "台站的 SOTA 标识符，你可在 %s 查看 SOTA 标识符。"
 
-#: application/views/station_profile/create.php:179
-#: application/views/station_profile/edit.php:265
+#: application/views/station_profile/create.php:229
+#: application/views/station_profile/edit.php:254
 msgid "GMA Map website"
 msgstr "GMA Map 网站"
 
-#: application/views/station_profile/create.php:179
-#: application/views/station_profile/edit.php:265
+#: application/views/station_profile/create.php:229
+#: application/views/station_profile/edit.php:254
 #, php-format
 msgid "Station WWFF reference. You can look up WWFF references at the %s."
 msgstr "台站的 WWFF 标识符，你可在 %s 查看 WWFF 标识符。"
 
-#: application/views/station_profile/create.php:185
-#: application/views/station_profile/edit.php:278
+#: application/views/station_profile/create.php:243
+#: application/views/station_profile/edit.php:268
 msgid "POTA Map website"
 msgstr "POTA Map 网站"
 
-#: application/views/station_profile/create.php:185
-#: application/views/station_profile/edit.php:278
+#: application/views/station_profile/create.php:243
+#: application/views/station_profile/edit.php:268
 #, php-format
 msgid ""
 "Station POTA reference(s). Multiple comma separated values allowed. You can "
@@ -16616,53 +16630,94 @@ msgid ""
 msgstr ""
 "台站的 POTA 标识符，可以使用多个值（逗号分隔）。你可在 %s 查看 POTA 标识符。"
 
-#: application/views/station_profile/create.php:189
-msgid "Signature Name"
-msgstr "签名名称"
+#: application/views/station_profile/create.php:257
+#: application/views/station_profile/edit.php:282
+msgid "Special Interest Group Name"
+msgstr "兴趣组名称"
 
-#: application/views/station_profile/create.php:191
+#: application/views/station_profile/create.php:259
+#: application/views/station_profile/edit.php:284
 msgid "Station Special Interest Group Name (e.g. GMA)."
 msgstr "电台所属兴趣组名称（如：GMA）。"
 
-#: application/views/station_profile/create.php:195
-msgid "Signature Information"
-msgstr "签名信息"
+#: application/views/station_profile/create.php:262
+#: application/views/station_profile/edit.php:287
+msgid "Special Interest Group Information"
+msgstr "电台兴趣组信息"
 
-#: application/views/station_profile/create.php:197
-#: application/views/station_profile/edit.php:299
+#: application/views/station_profile/create.php:264
+#: application/views/station_profile/edit.php:289
 msgid "Station Special Interest Group Info (e.g. DA/NW-357)."
 msgstr "电台兴趣组标识（如：DA/NW-357）。"
 
-#: application/views/station_profile/create.php:201
-#: application/views/station_profile/edit.php:312
+#: application/views/station_profile/create.php:275
+#: application/views/station_profile/edit.php:300
+#: application/views/user/edit.php:913
+#, php-format
+msgid "Trouble? Check the %swiki%s."
+msgstr "遇到麻烦了？请参考%s维基%s。"
+
+#: application/views/station_profile/create.php:278
+#: application/views/station_profile/edit.php:303
 msgctxt "Probably no translation needed"
 msgid "eQSL QTH Nickname"
 msgstr "eQSL QTH 昵称"
 
-#: application/views/station_profile/create.php:203
-#: application/views/station_profile/edit.php:314
+#: application/views/station_profile/create.php:280
+#: application/views/station_profile/edit.php:305
 msgid "The QTH Nickname which is configured in your eQSL Profile"
 msgstr "在 eQSL 中设置过的 QTH 昵称"
 
-#: application/views/station_profile/create.php:207
-#: application/views/station_profile/edit.php:317
+#: application/views/station_profile/create.php:283
+#: application/views/station_profile/edit.php:308
 msgid "Default QSLMSG"
 msgstr "默认 QSL 消息"
 
-#: application/views/station_profile/create.php:210
-#: application/views/station_profile/edit.php:320
+#: application/views/station_profile/create.php:286
+#: application/views/station_profile/edit.php:311
 msgid ""
 "Define a default message that will be populated and sent for each QSO for "
 "this station location."
 msgstr "定义一个发送给对方的 QSO 默认消息（适用于 eQSL 等）。"
 
-#: application/views/station_profile/create.php:213
-#: application/views/station_profile/edit.php:360
+#: application/views/station_profile/create.php:295
+#: application/views/station_profile/edit.php:320
+msgid "Subscription Required"
+msgstr "需要付费订阅"
+
+#: application/views/station_profile/create.php:301
+msgid "Test API-Key"
+msgstr "Test API-Key"
+
+#: application/views/station_profile/create.php:304
+#: application/views/station_profile/edit.php:330
+#, php-format
+msgctxt "the QRZ.com Logbook settings page"
+msgid "Find your API key on %s"
+msgstr "在 %s 查看 API Key"
+
+#: application/views/station_profile/create.php:304
+#: application/views/station_profile/edit.php:330
+msgid "the QRZ.com Logbook settings page"
+msgstr "QRZ.com Logbook 设置页面"
+
+#: application/views/station_profile/create.php:307
+#: application/views/station_profile/edit.php:333
+msgid "QRZ.com Logbook Upload"
+msgstr "QRZ.com Logbook 上传"
+
+#: application/views/station_profile/create.php:310
+#: application/views/station_profile/edit.php:336
+msgid "Realtime"
+msgstr "实时"
+
+#: application/views/station_profile/create.php:326
+#: application/views/station_profile/edit.php:352
 msgid "Ignore Clublog Upload"
 msgstr "忽略 Clublog 上传"
 
-#: application/views/station_profile/create.php:218
-#: application/views/station_profile/edit.php:365
+#: application/views/station_profile/create.php:331
+#: application/views/station_profile/edit.php:357
 msgid ""
 "If enabled, the QSOs made from this location will not be uploaded to "
 "Clublog. If this is deactivated on it's own please check if the Call is "
@@ -16671,149 +16726,91 @@ msgstr ""
 "如启用，台站下的 QSO 不会上传至 Clublog。如这个选项自动关闭了，请查看 "
 "Clublog 上的呼号是否配置正确"
 
-#: application/views/station_profile/create.php:221
-#: application/views/station_profile/edit.php:368
+#: application/views/station_profile/create.php:334
+#: application/views/station_profile/edit.php:360
 msgid "ClubLog Realtime Upload"
 msgstr "ClubLog 实时上传"
 
-#: application/views/station_profile/create.php:230
-#: application/views/station_profile/edit.php:384
+#: application/views/station_profile/create.php:352
+#: application/views/station_profile/edit.php:377
 msgid "HRDLog.net Username"
 msgstr "HRDLog.net 用户名"
 
-#: application/views/station_profile/create.php:232
-#: application/views/station_profile/edit.php:386
+#: application/views/station_profile/create.php:354
+#: application/views/station_profile/edit.php:379
 msgid ""
 "The username you are registered with at HRDlog.net (usually your callsign)."
 msgstr "HRDlog.net 注册用户名，通常为呼号。"
 
-#: application/views/station_profile/create.php:235
-#: application/views/station_profile/edit.php:389
+#: application/views/station_profile/create.php:357
+#: application/views/station_profile/edit.php:382
 msgid "HRDLog.net API Key"
 msgstr "HRDLog.net API Key"
 
-#: application/views/station_profile/create.php:237
-#: application/views/station_profile/edit.php:394
+#: application/views/station_profile/create.php:359
+#: application/views/station_profile/edit.php:387
 #, php-format
 msgctxt "HRDLog.net Userprofile page"
 msgid "Create your API Code on your %s"
 msgstr "在 %s 创建 API Code"
 
-#: application/views/station_profile/create.php:237
-#: application/views/station_profile/edit.php:394
+#: application/views/station_profile/create.php:359
+#: application/views/station_profile/edit.php:387
 msgid "HRDLog.net Userprofile page"
 msgstr "HRDLog.net 个人页面"
 
-#: application/views/station_profile/create.php:240
-#: application/views/station_profile/edit.php:397
+#: application/views/station_profile/create.php:362
+#: application/views/station_profile/edit.php:390
 msgid "HRDLog.net Logbook Realtime Upload"
 msgstr "HRDLog.net Logbook 实时上传"
 
-#: application/views/station_profile/create.php:250
-#: application/views/station_profile/edit.php:328
-msgid "Subscription Required"
-msgstr "需要付费订阅"
-
-#: application/views/station_profile/create.php:255
-msgctxt "Probably no translation needed"
-msgid "QRZ.com Logbook API Key"
-msgstr "QRZ.com Logbook API Key"
-
-#: application/views/station_profile/create.php:258
-msgid "Test API-Key"
-msgstr "Test API-Key"
-
-#: application/views/station_profile/create.php:261
-#: application/views/station_profile/edit.php:338
-#, php-format
-msgctxt "the QRZ.com Logbook settings page"
-msgid "Find your API key on %s"
-msgstr "在 %s 查看 API Key"
-
-#: application/views/station_profile/create.php:261
-#: application/views/station_profile/edit.php:338
-msgid "the QRZ.com Logbook settings page"
-msgstr "QRZ.com Logbook 设置页面"
-
-#: application/views/station_profile/create.php:264
-#: application/views/station_profile/edit.php:342
-msgid "QRZ.com Logbook Upload"
-msgstr "QRZ.com Logbook 上传"
-
-#: application/views/station_profile/create.php:267
-#: application/views/station_profile/edit.php:345
-msgid "Realtime"
-msgstr "实时"
-
-#: application/views/station_profile/create.php:275
-#: application/views/station_profile/edit.php:414
+#: application/views/station_profile/create.php:381
+#: application/views/station_profile/edit.php:409
 msgctxt "Probably no translation needed"
 msgid "QO-100 Dx Club API Key"
 msgstr "QO-100 Dx Club API Key"
 
-#: application/views/station_profile/create.php:277
-#: application/views/station_profile/edit.php:419
+#: application/views/station_profile/create.php:383
+#: application/views/station_profile/edit.php:414
 #, php-format
 msgctxt "QO-100 Dx Club's profile page"
 msgid "Create your API key on your %s"
 msgstr "在 %s 创建 API Key"
 
-#: application/views/station_profile/create.php:277
-#: application/views/station_profile/edit.php:419
+#: application/views/station_profile/create.php:383
+#: application/views/station_profile/edit.php:414
 msgid "QO-100 Dx Club's profile page"
 msgstr "QO-100 Dx Club 个人页面"
 
-#: application/views/station_profile/create.php:280
-#: application/views/station_profile/edit.php:422
+#: application/views/station_profile/create.php:386
+#: application/views/station_profile/edit.php:417
 msgid "QO-100 Dx Club Realtime Upload"
 msgstr "QO-100 Dx Club 实时上传"
 
-#: application/views/station_profile/create.php:290
-#: application/views/station_profile/edit.php:440
+#: application/views/station_profile/create.php:405
+#: application/views/station_profile/edit.php:436
 msgid "OQRS Enabled"
 msgstr "OQRS 已启用"
 
-#: application/views/station_profile/create.php:297
-#: application/views/station_profile/edit.php:447
+#: application/views/station_profile/create.php:412
+#: application/views/station_profile/edit.php:443
 msgid "OQRS Email alert"
 msgstr "OQRS 邮件提醒"
 
-#: application/views/station_profile/create.php:302
-#: application/views/station_profile/edit.php:452
+#: application/views/station_profile/create.php:417
+#: application/views/station_profile/edit.php:448
 msgid "Make sure email is set up under admin and global options."
 msgstr "请确认已在站点设置中配置了邮件功能。"
 
-#: application/views/station_profile/create.php:305
-#: application/views/station_profile/edit.php:455
+#: application/views/station_profile/create.php:420
+#: application/views/station_profile/edit.php:451
 msgid "OQRS Text"
 msgstr "OQRS 文本"
 
-#: application/views/station_profile/create.php:307
-#: application/views/station_profile/edit.php:457
+#: application/views/station_profile/create.php:422
+#: application/views/station_profile/edit.php:453
 msgid "Some info you want to add regarding QSL'ing."
 msgstr "QSL 的额外信息。"
-
-#: application/views/station_profile/edit.php:153
-msgid "Zones"
-msgstr "分区"
-
-#: application/views/station_profile/edit.php:291
-msgid "Special Interest Group Name"
-msgstr "兴趣组名称"
-
-#: application/views/station_profile/edit.php:293
-msgid "Station Special Interest Group Name (e.g. GMA).."
-msgstr "电台所属兴趣组名称(如:GMA).."
-
-#: application/views/station_profile/edit.php:297
-msgid "Special Interest Group Information"
-msgstr "电台兴趣组信息"
-
-#: application/views/station_profile/edit.php:309
-#: application/views/user/edit.php:913
-#, php-format
-msgid "Trouble? Check the %swiki%s."
-msgstr "遇到麻烦了？请参考%s维基%s。"
 
 #: application/views/stationsetup/create.php:17
 msgid "Station Logbook Name"
@@ -18654,6 +18651,19 @@ msgstr ""
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr ""
+
+#~ msgid "Signature Name"
+#~ msgstr "签名名称"
+
+#~ msgid "Signature Information"
+#~ msgstr "签名信息"
+
+#~ msgctxt "Probably no translation needed"
+#~ msgid "QRZ.com Logbook API Key"
+#~ msgstr "QRZ.com Logbook API Key"
+
+#~ msgid "Station Special Interest Group Name (e.g. GMA).."
+#~ msgstr "电台所属兴趣组名称(如:GMA).."
 
 #~ msgid "LoTW .TQ8 Upload"
 #~ msgstr "LoTW .TQ8 导入"
