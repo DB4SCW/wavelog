@@ -2014,6 +2014,7 @@ msgstr "Operator"
 #: application/views/station_profile/create.php:86
 #: application/views/station_profile/edit.php:107
 #: application/views/qso/index.php:470
+#: application/views/stationsetup/locationlist.php:67
 msgid "Deleted DXCC"
 msgstr "Verwijderde DXCC"
 
@@ -8979,6 +8980,7 @@ msgstr ""
 #: application/views/user/edit.php:1010 application/views/user/edit.php:1030
 #: application/views/user/edit.php:1059 application/views/user/edit.php:1091
 #: application/views/user/edit.php:1116
+#: application/views/stationsetup/locationlist.php:48
 msgid "Yes"
 msgstr "Ja"
 
@@ -9069,6 +9071,7 @@ msgstr "Ja"
 #: application/views/user/edit.php:985 application/views/user/edit.php:1001
 #: application/views/user/edit.php:1029 application/views/user/edit.php:1060
 #: application/views/user/edit.php:1090 application/views/user/edit.php:1115
+#: application/views/stationsetup/locationlist.php:46
 msgid "No"
 msgstr "Nee"
 
@@ -17688,6 +17691,7 @@ msgstr "QRZ.com Logboek Upload"
 #: application/views/station_profile/edit.php:345
 #: application/views/station_profile/create.php:310
 #: application/views/station_profile/edit.php:336
+#: application/views/stationsetup/locationlist.php:50
 msgid "Realtime"
 msgstr "Realtime"
 
