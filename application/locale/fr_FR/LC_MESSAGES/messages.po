@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-22 08:38+0000\n"
-"PO-Revision-Date: 2026-01-05 16:42+0000\n"
+"PO-Revision-Date: 2026-01-22 19:53+0000\n"
 "Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -703,7 +703,7 @@ msgstr "Testeur d'appels"
 
 #: application/controllers/Calltester.php:844
 msgid "Callsign Tester"
-msgstr ""
+msgstr "Testeur d'indicatifs d'appel"
 
 #: application/controllers/Club.php:23
 msgid "Club Officer"
@@ -1971,7 +1971,7 @@ msgstr "DXCC mis à jour pour %d QSO(s)."
 #: application/controllers/Logbookadvanced.php:941
 #, php-format
 msgid "Map for DXCC %s and gridsquare %s."
-msgstr ""
+msgstr "Carte pour DXCC %s et grille %s."
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -2007,6 +2007,10 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"Le certificat trouvé dans le fichier %s contient un mot de passe et ne peut "
+"pas être traité. %sVeuillez vous assurer d'exporter le certificat LoTW "
+"depuis l'application tqsl sans mot de passe! %s Pour plus d'informations, "
+"veuillez consulter la page FAQ LoTW%s du wiki Wavelog."
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -4575,6 +4579,9 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Les données DOK dans votre journal sont différentes de celles de DCL, ou "
+"bien les mises à jour n'ont pas été effectuées car les QSO ne sont pas "
+"confirmés dans DCL."
 
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
@@ -4962,6 +4969,8 @@ msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
+"Vous trouverez plus d'informations concernant l'état de confirmation dans "
+"DCL sur la page Confluence %sDCL%s."
 
 #: application/views/adif/import.php:349
 msgid "Only import DOK data from QSOs confirmed on DCL."
@@ -12958,7 +12967,7 @@ msgstr "Afficher plus"
 
 #: application/views/logbookadvanced/checkresult.php:197
 msgid "View on map"
-msgstr ""
+msgstr "Afficher sur la carte"
 
 #: application/views/logbookadvanced/checkresult.php:222
 msgid "CQ Zone Check Results"
@@ -12971,7 +12980,7 @@ msgid ""
 msgstr ""
 "Les QSO suivants ont été identifiés comme ayant une zone CQ différente de "
 "celle habituellement observée par ce DXCC (un maximum de 5000 QSO sont "
-"affichés) :"
+"affichés):"
 
 #: application/views/logbookadvanced/checkresult.php:229
 msgid "Force update even if DXCC covers multiple CQ zones"
@@ -13075,21 +13084,23 @@ msgstr "Zone ITU du DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:374
 msgid "IOTA Check Results"
-msgstr ""
+msgstr "Résultats de la vérification IOTA"
 
 #: application/views/logbookadvanced/checkresult.php:381
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr ""
+msgstr "Ces QSO PEUVENT avoir une référence IOTA incorrecte."
 
 #: application/views/logbookadvanced/checkresult.php:382
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
+"Les résultats dépendent du DXCC correct et ne seront vérifiés que par "
+"rapport au DXCC actuel. Des faux positifs sont possibles."
 
 #: application/views/logbookadvanced/checkresult.php:393
 msgid "QSO DXCC"
-msgstr ""
+msgstr "QSO DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:395
 msgid "IOTA DXCC"
@@ -13114,7 +13125,7 @@ msgstr ""
 #: application/views/logbookadvanced/dbtoolsdialog.php:12
 msgid "Check all QSOs in the logbook for incorrect CQ Zones"
 msgstr ""
-"Vérifiez tous les QSO dans le carnet de trafic pour les zones CQ incorrectes"
+"Vérifiez tous les QSO dans le carnet de trafic pour les zones CQ incorrectes."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:13
 msgid "Use Wavelog to determine CQ Zone for all QSOs."
