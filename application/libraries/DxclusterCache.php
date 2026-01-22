@@ -80,7 +80,7 @@ class DxclusterCache {
 		$this->deleteFile($this->getWorkedCallKey($logbook_key, $callsign));
 
 		// Look up DXCC and continent from callsign
-		$dxccobj = new Dxcc($date);
+		$dxccobj = new Dxcc(null);
 		$dxcc_info = $dxccobj->dxcc_lookup($callsign, date('Y-m-d'));
 
 		if (!empty($dxcc_info['adif'])) {
