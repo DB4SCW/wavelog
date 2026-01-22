@@ -337,7 +337,7 @@ class Dxcc {
 	}
 
 	/*
-    * Read cty.dat from AD1C
+    * Read DXCC data from the database
     */
     function read_data($date = null) {
 		$CI = &get_instance();
