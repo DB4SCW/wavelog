@@ -67,6 +67,8 @@ $(document).ready(function() {
     let reconnectAttempts = 0;
     let websocketEnabled = false;
     let websocketIntentionallyClosed = false; // Flag to prevent auto-reconnect when user switches away
+    let hasTriedWsFallback = false; // Track if we've already tried WS fallback after WSS failed
+    let activeWebSocketProtocol = 'wss'; // Track which protocol is currently active ('wss' or 'ws')
     let CATInterval=null;
     var updateFromCAT_lock = 0; // This mechanism prevents multiple simultaneous calls to query the CAT interface information
     var updateFromCAT_lockTimeout = null; // Timeout to release lock if AJAX fails
@@ -114,13 +116,20 @@ $(document).ready(function() {
 
     function initializeWebSocketConnection() {
         try {
+            // Determine which protocol to use
+            // Try WSS first, fall back to WS if WSS fails
+            const tryWss = !hasTriedWsFallback;
+            const protocol = tryWss ? 'wss' : 'ws';
+            const wsUrl = protocol + '://localhost:54322';
+
             // Note: Browser will log WebSocket connection errors to console if server is unreachable
             // This is native browser behavior and cannot be suppressed - errors are handled in GUI via onerror handler
-            websocket = new WebSocket('ws://localhost:54322');
+            websocket = new WebSocket(wsUrl);
 
             websocket.onopen = function(event) {
                 reconnectAttempts = 0;
                 websocketEnabled = true;
+                activeWebSocketProtocol = protocol; // Remember which protocol worked
             };
 
             websocket.onmessage = function(event) {
@@ -133,6 +142,21 @@ $(document).ready(function() {
             };
 
             websocket.onerror = function(error) {
+                // If WSS failed and we haven't tried WS fallback yet, try WS
+                if (tryWss && !hasTriedWsFallback) {
+                    hasTriedWsFallback = true;
+                    // Close current connection (which failed anyway) and retry with WS
+                    if (websocket && websocket.readyState === WebSocket.CONNECTING) {
+                        websocket.close();
+                    }
+                    // Schedule reconnection with WS
+                    setTimeout(() => {
+                        initializeWebSocketConnection();
+                    }, 100); // Short delay before retry
+                    return;
+                }
+
+                // Original error handling for when both protocols have been tried
                 if ($('.radios option:selected').val() != '0') {
                     var radioName = $('select.radios option:selected').text();
                     displayRadioStatus('error', radioName);
@@ -142,6 +166,11 @@ $(document).ready(function() {
 
         websocket.onclose = function(event) {
             websocketEnabled = false;
+
+            // Reset fallback flag on intentional close so we try WSS first next time
+            if (websocketIntentionallyClosed) {
+                hasTriedWsFallback = false;
+            }
 
             // Only attempt to reconnect if the closure was not intentional
             if (!websocketIntentionallyClosed && reconnectAttempts < CAT_CONFIG.WEBSOCKET_RECONNECT_MAX) {
@@ -1259,6 +1288,7 @@ $(document).ready(function() {
         } else if (selectedRadioId == 'ws') {
             websocketIntentionallyClosed = false; // Reset flag when opening WebSocket
             reconnectAttempts = 0; // Reset reconnect attempts
+            hasTriedWsFallback = false; // Reset WSS failover state - try WSS first again
             // Set DX Waterfall CAT state to websocket if variable exists
             if (typeof dxwaterfall_cat_state !== 'undefined') {
                 dxwaterfall_cat_state = "websocket";
