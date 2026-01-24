@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-21 17:59+0000\n"
+"POT-Creation-Date: 2026-01-22 08:38+0000\n"
 "PO-Revision-Date: 2026-01-23 16:31+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -1932,7 +1932,7 @@ msgstr "Operatör"
 #: application/views/station_profile/edit.php:107
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:45
-#: application/views/stationsetup/locationlist.php:58
+#: application/views/stationsetup/locationlist.php:67
 #: application/views/stationsetup/stationsetup.php:156
 #: application/views/timeline/index.php:216
 #: application/views/timeplotter/index.php:33
@@ -1940,7 +1940,6 @@ msgstr "Operatör"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
-#: application/views/stationsetup/locationlist.php:67
 msgid "Deleted DXCC"
 msgstr "Struket DXCC"
 
@@ -7278,8 +7277,8 @@ msgid ""
 "State (ADIF: DXCC and STATE)"
 msgstr ""
 "Fält som använts för detta diplom: DXCC (måste vara ett av Kina/318, "
-"HongKong/321, Macao/152, Taiwan/386, Pratas Isl./505 eller Scarborough Reef/"
-"506) och giltig stat (ADIF: DXCC och STATE)"
+"HongKong/321, Macao/152, Taiwan/386, Pratas Isl./505 eller Scarborough "
+"Reef/506) och giltig stat (ADIF: DXCC och STATE)"
 
 #: application/views/awards/was/index.php:3
 msgctxt "USA State"
@@ -8754,6 +8753,7 @@ msgstr ""
 #: application/views/station_profile/edit.php:419
 #: application/views/station_profile/edit.php:439
 #: application/views/station_profile/edit.php:446
+#: application/views/stationsetup/locationlist.php:48
 #: application/views/user/edit.php:368 application/views/user/edit.php:379
 #: application/views/user/edit.php:389 application/views/user/edit.php:400
 #: application/views/user/edit.php:410 application/views/user/edit.php:420
@@ -8763,7 +8763,6 @@ msgstr ""
 #: application/views/user/edit.php:1002 application/views/user/edit.php:1010
 #: application/views/user/edit.php:1030 application/views/user/edit.php:1059
 #: application/views/user/edit.php:1091 application/views/user/edit.php:1116
-#: application/views/stationsetup/locationlist.php:48
 msgid "Yes"
 msgstr "Ja"
 
@@ -8823,6 +8822,7 @@ msgstr "Ja"
 #: application/views/station_profile/edit.php:420
 #: application/views/station_profile/edit.php:438
 #: application/views/station_profile/edit.php:445
+#: application/views/stationsetup/locationlist.php:46
 #: application/views/user/edit.php:369 application/views/user/edit.php:380
 #: application/views/user/edit.php:390 application/views/user/edit.php:401
 #: application/views/user/edit.php:411 application/views/user/edit.php:421
@@ -8833,7 +8833,6 @@ msgstr "Ja"
 #: application/views/user/edit.php:1001 application/views/user/edit.php:1029
 #: application/views/user/edit.php:1060 application/views/user/edit.php:1090
 #: application/views/user/edit.php:1115
-#: application/views/stationsetup/locationlist.php:46
 msgid "No"
 msgstr "Nej"
 
@@ -12702,8 +12701,8 @@ msgid ""
 "We’ll keep the original value and add a more precise locator (e.g., JO90AB "
 "or JO90AB12) when a match is confident."
 msgstr ""
-"Vi behåller det ursprungliga värdet och lägger till en mer exakt lokator "
-"(t.ex. JO90AB eller JO90AB12) när en matchning är säker."
+"Vi behåller det ursprungliga värdet och lägger till en mer exakt lokator (t."
+"ex. JO90AB eller JO90AB12) när en matchning är säker."
 
 #: application/views/logbookadvanced/checkresult.php:42
 msgid "Distance Check Results"
@@ -17729,8 +17728,8 @@ msgid ""
 "Only PNG files are allowed, and they should have a pixel ratio of 1:1 (e.g., "
 "1000px height and 1000px width)."
 msgstr ""
-"Endast PNG-filer är tillåtna, och de bör ha ett pixel-förhållande på 1:1 "
-"(t.ex. 1000px höjd och 1000px bredd)."
+"Endast PNG-filer är tillåtna, och de bör ha ett pixel-förhållande på 1:1 (t."
+"ex. 1000px höjd och 1000px bredd)."
 
 #: application/views/themes/index.php:64
 msgid "Place the two logo files in the folder 'assets/logo/'"
