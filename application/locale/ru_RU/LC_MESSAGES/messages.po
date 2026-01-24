@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-20 18:51+0000\n"
-"PO-Revision-Date: 2026-01-21 08:38+0000\n"
+"PO-Revision-Date: 2026-01-24 12:13+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ru/>\n"
@@ -721,7 +721,7 @@ msgstr " и спутник "
 
 #: application/controllers/Calltester.php:32
 msgid "Call Tester"
-msgstr "Проверка позывных"
+msgstr "Проверка позывного"
 
 #: application/controllers/Club.php:23
 msgid "Club Officer"
@@ -1594,7 +1594,7 @@ msgstr "eQSL"
 #: application/views/user/edit.php:290 application/views/user/edit.php:313
 #: application/views/user/edit.php:337 application/views/debug/index.php:608
 msgid "Mode"
-msgstr "Вид модуляции"
+msgstr "Модуляция"
 
 #: application/controllers/Logbook.php:1381
 #: application/views/awards/73on73/index.php:38
@@ -7793,7 +7793,7 @@ msgstr "Требуемые подвиды модуляции"
 
 #: application/views/bandmap/list.php:51
 msgid "Configure in User Settings - Modes"
-msgstr "Конфигурируется в Пользовательских настройках - Виды модуляции"
+msgstr "Настраивается в Пользовательских настройках - Виды модуляции"
 
 #: application/views/bandmap/list.php:52
 msgid "No submodes configured - configure in User Settings - Modes"
@@ -8414,7 +8414,7 @@ msgstr "Переключить фильтр новых DXCC"
 
 #: application/views/bandmap/list.php:497
 msgid "New Entities"
-msgstr "Новые сущности"
+msgstr "Новые DXCC"
 
 #: application/views/bandmap/list.php:499
 msgid "Toggle New Callsigns filter"
@@ -8817,15 +8817,15 @@ msgstr "QTH"
 #: application/views/cabrillo/index.php:52
 #: application/views/reg1test/index.php:58
 msgid "Category Operator"
-msgstr "Категория оператора"
+msgstr "Оператор(ы)"
 
 #: application/views/cabrillo/index.php:60
 msgid "Category Assisted"
-msgstr "Категория Assisted"
+msgstr "Assisted"
 
 #: application/views/cabrillo/index.php:67
 msgid "Category Band"
-msgstr "Категория диапазон"
+msgstr "Диапазон(ы)"
 
 #: application/views/cabrillo/index.php:93
 msgid "Light/Laser"
@@ -8837,23 +8837,23 @@ msgstr "VHF-3-BAND и VHF-FM-ONLY (только для контестов ARRL V
 
 #: application/views/cabrillo/index.php:98
 msgid "Category Mode"
-msgstr "Категория вид модуляции"
+msgstr "Вид(ы) модуляции"
 
 #: application/views/cabrillo/index.php:109
 msgid "Category Power"
-msgstr "Категория мощность"
+msgstr "Мощность"
 
 #: application/views/cabrillo/index.php:117
 msgid "Category Station"
-msgstr "Категория станция"
+msgstr "Тип станции"
 
 #: application/views/cabrillo/index.php:133
 msgid "Category Transmitter"
-msgstr "Категория передатчик"
+msgstr "Передатчик"
 
 #: application/views/cabrillo/index.php:143
 msgid "Category Time"
-msgstr "Категория Время"
+msgstr "Время"
 
 #: application/views/cabrillo/index.php:145
 #: application/views/cabrillo/index.php:146
@@ -8865,7 +8865,7 @@ msgstr "%d часов"
 
 #: application/views/cabrillo/index.php:152
 msgid "Category Overlay"
-msgstr "Категория оверлей"
+msgstr "Оверлей"
 
 #: application/views/cabrillo/index.php:164
 #: application/views/reg1test/index.php:70
@@ -12669,7 +12669,7 @@ msgstr "Внутренние инструменты"
 
 #: application/views/interface_assets/header.php:539
 msgid "Callsign DXCC checker"
-msgstr "Проверка DXCC для позывных"
+msgstr "Проверка DXCC для позывного"
 
 #: application/views/interface_assets/header.php:540
 msgid "GeoJSON QSO Map"
@@ -17055,7 +17055,7 @@ msgstr "Отсутствует диапазон!"
 
 #: application/views/simplefle/index.php:24
 msgid "Mode is missing!"
-msgstr "Отсутствует вид модуляции!"
+msgstr "Вид модуляции не указан!"
 
 #: application/views/simplefle/index.php:25
 msgid "Time is not set!"
@@ -19775,7 +19775,7 @@ msgstr "CQ geojson"
 
 #: application/controllers/Calltester.php:844
 msgid "Callsign Tester"
-msgstr ""
+msgstr "Проверка позывного"
 
 #, php-format
 #~ msgid ""
