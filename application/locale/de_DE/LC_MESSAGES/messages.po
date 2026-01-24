@@ -11,7 +11,7 @@
 # Kim - DG9VH <kim.huebel@gmail.com>, 2024, 2025.
 # Fabian Berg <80885850+HB9HIL@users.noreply.github.com>, 2024.
 # Rasmus <DL4BS@users.noreply.translate.wavelog.org>, 2024.
-# Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025.
+# Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025, 2026.
 # "Francisco (F4VSE)" <kikosgc@users.noreply.github.com>, 2024.
 # "Stefan (DB4SCW)" <dev@db4scw.de>, 2024, 2025.
 # "Joerg (DJ7NT)" <joerg+kennungen.github@dorgeist.com>, 2024.
@@ -26,9 +26,9 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-22 08:38+0000\n"
-"PO-Revision-Date: 2026-01-13 21:20+0000\n"
-"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
+"POT-Creation-Date: 2026-01-21 09:57+0000\n"
+"PO-Revision-Date: 2026-01-24 22:34+0000\n"
+"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -36,7 +36,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -112,17 +112,17 @@ msgstr ""
 #: application/controllers/Reg1test.php:161
 #: application/controllers/Satellite.php:13
 #: application/controllers/Satellite.php:17
-#: application/controllers/Satellite.php:48
-#: application/controllers/Satellite.php:55
-#: application/controllers/Satellite.php:63
-#: application/controllers/Satellite.php:82
-#: application/controllers/Satellite.php:102
-#: application/controllers/Satellite.php:110
-#: application/controllers/Satellite.php:118
+#: application/controllers/Satellite.php:62
+#: application/controllers/Satellite.php:69
+#: application/controllers/Satellite.php:77
+#: application/controllers/Satellite.php:96
+#: application/controllers/Satellite.php:116
+#: application/controllers/Satellite.php:124
 #: application/controllers/Satellite.php:132
-#: application/controllers/Satellite.php:150
-#: application/controllers/Satellite.php:664
-#: application/controllers/Satellite.php:673
+#: application/controllers/Satellite.php:146
+#: application/controllers/Satellite.php:164
+#: application/controllers/Satellite.php:678
+#: application/controllers/Satellite.php:687
 #: application/controllers/Sattimers.php:9
 #: application/controllers/Search.php:11
 #: application/controllers/Simplefle.php:7
@@ -146,6 +146,16 @@ msgstr ""
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52
+#: application/controllers/Satellite.php:48
+#: application/controllers/Satellite.php:55
+#: application/controllers/Satellite.php:63
+#: application/controllers/Satellite.php:82
+#: application/controllers/Satellite.php:102
+#: application/controllers/Satellite.php:110
+#: application/controllers/Satellite.php:118
+#: application/controllers/Satellite.php:150
+#: application/controllers/Satellite.php:664
+#: application/controllers/Satellite.php:673
 msgid "You're not allowed to do that!"
 msgstr "Das ist Dir nicht gestattet!"
 
@@ -709,10 +719,6 @@ msgstr " und Sat "
 #: application/controllers/Calltester.php:32
 msgid "Call Tester"
 msgstr "Rufzeichentester"
-
-#: application/controllers/Calltester.php:844
-msgid "Callsign Tester"
-msgstr ""
 
 #: application/controllers/Club.php:23
 msgid "Club Officer"
@@ -1955,7 +1961,7 @@ msgstr "Operator"
 #: application/views/station_profile/edit.php:107
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:45
-#: application/views/stationsetup/locationlist.php:67
+#: application/views/stationsetup/locationlist.php:58
 #: application/views/stationsetup/stationsetup.php:156
 #: application/views/timeline/index.php:216
 #: application/views/timeplotter/index.php:33
@@ -1963,6 +1969,7 @@ msgstr "Operator"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
+#: application/views/stationsetup/locationlist.php:67
 msgid "Deleted DXCC"
 msgstr "Gelöschtes DXCC"
 
@@ -1978,7 +1985,7 @@ msgstr "DXCC für %d QSO(s) aktualisiert."
 #: application/controllers/Logbookadvanced.php:941
 #, php-format
 msgid "Map for DXCC %s and gridsquare %s."
-msgstr ""
+msgstr "Karte für DXCC %s und Planquadrat %s."
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -2543,55 +2550,67 @@ msgstr "CAT-Einstellungen bearbeiten"
 msgid "Export EDI"
 msgstr "Exportiere EDI"
 
-#: application/controllers/Satellite.php:41 application/models/Note.php:10
+#: application/controllers/Satellite.php:55 application/models/Note.php:10
 #: application/views/interface_assets/header.php:332
 #: application/views/satellite/index.php:40
 #: application/views/statistics/index.php:85
 #: application/views/statistics/index.php:153
+#: application/controllers/Satellite.php:41
 msgid "Satellites"
 msgstr "Satelliten"
 
+#: application/controllers/Satellite.php:64
 #: application/controllers/Satellite.php:50
 msgid "Create Satellite"
 msgstr "Erstelle Satelliten"
 
+#: application/controllers/Satellite.php:90
 #: application/controllers/Satellite.php:76
 msgid "Edit Satellite"
 msgstr "Bearbeite Satelliten"
 
-#: application/controllers/Satellite.php:199
+#: application/controllers/Satellite.php:213
 #: application/views/interface_assets/header.php:313
+#: application/controllers/Satellite.php:199
 msgid "Satellite Flightpath"
 msgstr "Satellitenflugbahn"
 
+#: application/controllers/Satellite.php:265
 #: application/controllers/Satellite.php:251
 msgid "Satellite pass"
 msgstr "Satellitenüberflug"
 
+#: application/controllers/Satellite.php:322
 #: application/controllers/Satellite.php:308
 msgid "Failed to save pass settings!"
 msgstr "Speichern der Überflug-Einstellungen fehlgeschlagen!"
 
+#: application/controllers/Satellite.php:325
 #: application/controllers/Satellite.php:311
 msgid "Pass settings saved!"
 msgstr "Überflug-Einstellungen gespeichert!"
 
+#: application/controllers/Satellite.php:338
 #: application/controllers/Satellite.php:324
 msgid "No settings found!"
 msgstr "Keine Einstellungen gefunden!"
 
+#: application/controllers/Satellite.php:352
 #: application/controllers/Satellite.php:338
 msgid "Failed to delete pass settings!"
 msgstr "Fehler beim Löschen der Überflug-Einstellungen!"
 
+#: application/controllers/Satellite.php:354
 #: application/controllers/Satellite.php:340
 msgid "Pass settings deleted!"
 msgstr "Überflug-Einstellungen gelöscht!"
 
+#: application/controllers/Satellite.php:364
 #: application/controllers/Satellite.php:350
 msgid "Saved Pass Settings"
 msgstr "Gespeicherte Überflug-Einstellungen"
 
+#: application/controllers/Satellite.php:381
 #: application/controllers/Satellite.php:367
 msgid "No presets available"
 msgstr "Keine Voreinstellungen verfügbar"
@@ -3592,6 +3611,7 @@ msgstr "Kein Rufzeichen angegeben"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC muss numerisch sein"
 
+#: application/models/Logbook_model.php:4765
 #: application/models/Logbook_model.php:4764
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
@@ -3599,6 +3619,7 @@ msgstr ""
 "Falscher Stationscall %s im QSO mit %s für das Stationsprofil %s: Nicht "
 "importiert"
 
+#: application/models/Logbook_model.php:4779
 #: application/models/Logbook_model.php:4778
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
@@ -3607,10 +3628,12 @@ msgstr ""
 "Du hast versucht, ein QSO mit ungültigem Datum zu importieren. Dieses QSO "
 "wurde nicht importiert. Es ist ungültig"
 
+#: application/models/Logbook_model.php:4788
 #: application/models/Logbook_model.php:4787
 msgid "QSO on"
 msgstr "QSO am"
 
+#: application/models/Logbook_model.php:4788
 #: application/models/Logbook_model.php:4787
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
@@ -3619,6 +3642,7 @@ msgstr ""
 "Du hast versucht, ein QSO ohne angegebenes Rufzeichen zu importieren. Dieses "
 "QSO wurde nicht importiert. Es ist ungültig"
 
+#: application/models/Logbook_model.php:4837
 #: application/models/Logbook_model.php:4836
 #, php-format
 msgid ""
@@ -3628,64 +3652,78 @@ msgstr ""
 "QSO um %s: Du hast versucht, ein QSO ohne Bandinformationen zu importieren. "
 "Dieses QSO wurde nicht importiert. Es ist ungültig"
 
+#: application/models/Logbook_model.php:5102
 #: application/models/Logbook_model.php:5101
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "Das (Papier-)QSL-Empfangsdatum hat das falsche Format (JJJJMMDD)"
 
+#: application/models/Logbook_model.php:5113
 #: application/models/Logbook_model.php:5112
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "Das (Papier-)QSL Sendedatum hat das falsche Format (JJJJMMTT)"
 
+#: application/models/Logbook_model.php:5174
 #: application/models/Logbook_model.php:5173
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "Das Format des Clublog-Upload-Datums ist falsch (JJJJMMTT)"
 
-#: application/models/Logbook_model.php:5548
+#: application/models/Logbook_model.php:5549
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5548
 msgid "Duplicate for"
 msgstr "Doublette zu"
 
+#: application/models/Logbook_model.php:5614
+#: application/models/Logbook_model.php:5709
 #: application/models/Logbook_model.php:5613
 #: application/models/Logbook_model.php:5708
 msgid "QSO could not be matched"
 msgstr "QSO konnte nicht gefunden werden"
 
+#: application/models/Logbook_model.php:5622
 #: application/models/Logbook_model.php:5621
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "bestätigt durch LoTW/Clublog/eQSL/Contest"
 
+#: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5627
 msgid "confirmed by award manager"
 msgstr "bestätigt durch Diplommananger"
 
+#: application/models/Logbook_model.php:5632
 #: application/models/Logbook_model.php:5631
 msgid "confirmed by cross-check of DCL data"
 msgstr "bestätigt durch Cross-Check von DCL-Daten"
 
+#: application/models/Logbook_model.php:5636
 #: application/models/Logbook_model.php:5635
 msgid "confirmation pending"
 msgstr "Bestätigung ausstehend"
 
+#: application/models/Logbook_model.php:5639
 #: application/models/Logbook_model.php:5638
 msgid "unconfirmed"
 msgstr "nicht bestätigt"
 
-#: application/models/Logbook_model.php:5641
+#: application/models/Logbook_model.php:5642
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
+#: application/models/Logbook_model.php:5641
 msgid "unknown"
 msgstr "unbekannt"
 
+#: application/models/Logbook_model.php:5712
 #: application/models/Logbook_model.php:5711
 msgid "POTA reference already in log"
 msgstr "POTA Referenz bereits im Log"
 
+#: application/models/Logbook_model.php:5715
 #: application/models/Logbook_model.php:5714
 msgid "QSO updated"
 msgstr "QSO aktualisiert"
 
-#: application/models/Logbook_model.php:6444
+#: application/models/Logbook_model.php:6445
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -3696,6 +3734,7 @@ msgstr "QSO aktualisiert"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6444
 msgid "Bearing"
 msgstr "Peilung"
 
@@ -8834,7 +8873,6 @@ msgstr ""
 #: application/views/station_profile/edit.php:419
 #: application/views/station_profile/edit.php:439
 #: application/views/station_profile/edit.php:446
-#: application/views/stationsetup/locationlist.php:48
 #: application/views/user/edit.php:368 application/views/user/edit.php:379
 #: application/views/user/edit.php:389 application/views/user/edit.php:400
 #: application/views/user/edit.php:410 application/views/user/edit.php:420
@@ -8844,6 +8882,7 @@ msgstr ""
 #: application/views/user/edit.php:1002 application/views/user/edit.php:1010
 #: application/views/user/edit.php:1030 application/views/user/edit.php:1059
 #: application/views/user/edit.php:1091 application/views/user/edit.php:1116
+#: application/views/stationsetup/locationlist.php:48
 msgid "Yes"
 msgstr "Ja"
 
@@ -8903,7 +8942,6 @@ msgstr "Ja"
 #: application/views/station_profile/edit.php:420
 #: application/views/station_profile/edit.php:438
 #: application/views/station_profile/edit.php:445
-#: application/views/stationsetup/locationlist.php:46
 #: application/views/user/edit.php:369 application/views/user/edit.php:380
 #: application/views/user/edit.php:390 application/views/user/edit.php:401
 #: application/views/user/edit.php:411 application/views/user/edit.php:421
@@ -8914,6 +8952,7 @@ msgstr "Ja"
 #: application/views/user/edit.php:1001 application/views/user/edit.php:1029
 #: application/views/user/edit.php:1060 application/views/user/edit.php:1090
 #: application/views/user/edit.php:1115
+#: application/views/stationsetup/locationlist.php:46
 msgid "No"
 msgstr "Nein"
 
@@ -11471,8 +11510,8 @@ msgstr ""
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
 msgstr ""
-"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an eQSL."
-"cc."
+"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an "
+"eQSL.cc."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
@@ -12919,7 +12958,7 @@ msgstr "Zeige mehr"
 
 #: application/views/logbookadvanced/checkresult.php:197
 msgid "View on map"
-msgstr ""
+msgstr "Zeige auf Karte"
 
 #: application/views/logbookadvanced/checkresult.php:222
 msgid "CQ Zone Check Results"
@@ -13731,11 +13770,11 @@ msgstr "Zeige weniger"
 
 #: application/views/logbookadvanced/index.php:80
 msgid "Gridsquares for"
-msgstr ""
+msgstr "Planquadrate für"
 
 #: application/views/logbookadvanced/index.php:81
 msgid "Non DXCC matching gridsquare"
-msgstr ""
+msgstr "Planquadrat, das nicht dem DXCC entspricht"
 
 #: application/views/logbookadvanced/index.php:310
 msgid "From"
@@ -14845,8 +14884,8 @@ msgstr "E-Mail Adresse"
 msgid ""
 "The email address from which the emails are sent, e.g. 'wavelog@example.com'"
 msgstr ""
-"Die E-Mail Adresse von der die Mails versendet werden, z.B. 'wavelog@example."
-"com'"
+"Die E-Mail Adresse von der die Mails versendet werden, z.B. "
+"'wavelog@example.com'"
 
 #: application/views/options/email.php:80
 msgid "SMTP Host"
@@ -15921,15 +15960,15 @@ msgstr "Bitte warte bevor du ein weiteres QSO speichern kannst"
 
 #: application/views/qso/index.php:42
 msgid "Satellite not found"
-msgstr ""
+msgstr "Satellit nicht gefunden"
 
 #: application/views/qso/index.php:43
 msgid "Supported by LoTW"
-msgstr ""
+msgstr "Unterstützt von LoTW"
 
 #: application/views/qso/index.php:44
 msgid "Not supported by LoTW"
-msgstr ""
+msgstr "Nicht unterstützt von LoTW"
 
 #: application/views/qso/index.php:90
 msgid "LIVE"
@@ -16994,9 +17033,9 @@ msgid ""
 msgstr ""
 "Um zu beginnen, stelle sicher, dass du die Felder auf der linken Seite "
 "bereits mit Datum, Stationsrufzeichen/-standort und Rufzeichen des Operators "
-"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, z."
-"B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was im "
-"wesentlichen das Rufzeichen ist."
+"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, "
+"z.B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was "
+"im wesentlichen das Rufzeichen ist."
 
 #: application/views/simplefle/syntax_help.php:9
 msgid "For example, a QSO that started at 21:34 (UTC) with 4W7EST on 20m SSB."
@@ -17870,9 +17909,9 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
-"Erstelle einen neuen Ordner in 'assets/css/' und lade eine 'bootstrap.min."
-"css' Datei hoch, welche die grundlegende Styling-Regeln enthält. Wir "
-"verwenden die Themes von %s"
+"Erstelle einen neuen Ordner in 'assets/css/' und lade eine "
+"'bootstrap.min.css' Datei hoch, welche die grundlegende Styling-Regeln "
+"enthält. Wir verwenden die Themes von %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
@@ -19436,6 +19475,10 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/controllers/Calltester.php:844
+msgid "Callsign Tester"
+msgstr "Rufzeichen Tester"
 
 #~ msgid "Signature Name"
 #~ msgstr "Signatur-Bezeichnung"
