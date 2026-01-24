@@ -13,7 +13,7 @@
 # 李宇翔 <lyx8851@qq.com>, 2025.
 # Tao Xu <angelxutao@gmail.com>, 2025.
 # BH3HNI <mmf@live.com>, 2025.
-# Lu Chang <chinaluchang@live.com>, 2025.
+# Lu Chang <chinaluchang@live.com>, 2025, 2026.
 # BG8LNG <qrz@bg8lng.com>, 2025.
 # FengziLeo <fengzileo@vip.qq.com>, 2025.
 # BG9JDI <lyx8851@qq.com>, 2025.
@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-16 07:32+0000\n"
-"PO-Revision-Date: 2026-01-20 04:17+0000\n"
-"Last-Translator: YuanRetro <lijiaxuan1811@163.com>\n"
+"PO-Revision-Date: 2026-01-24 12:13+0000\n"
+"Last-Translator: Lu Chang <chinaluchang@live.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -748,7 +748,7 @@ msgstr " 并且卫星 "
 
 #: application/controllers/Calltester.php:32
 msgid "Call Tester"
-msgstr "呼叫测试员"
+msgstr "通联记录检测器"
 
 #: application/controllers/Club.php:23
 msgid "Club Officer"
@@ -9116,46 +9116,46 @@ msgstr "最近通联"
 
 #: application/views/calltester/comparison_result.php:18
 msgid "DXCC Class Results"
-msgstr ""
+msgstr "DXCC 类别结果"
 
 #: application/views/calltester/comparison_result.php:21
 #: application/views/calltester/comparison_result.php:33
 msgid "Calls tested:"
-msgstr ""
+msgstr "已检测的通联记录："
 
 #: application/views/calltester/comparison_result.php:22
 #: application/views/calltester/comparison_result.php:34
 msgid "Execution time:"
-msgstr ""
+msgstr "执行耗时："
 
 #: application/views/calltester/comparison_result.php:23
 #: application/views/calltester/comparison_result.php:35
 msgid "Issues found:"
-msgstr ""
+msgstr "已找到的问题："
 
 #: application/views/calltester/comparison_result.php:30
 msgid "Logbook Model Results"
-msgstr ""
+msgstr "日志簿模型结果"
 
 #: application/views/calltester/comparison_result.php:44
 msgid "Comparison Summary"
-msgstr ""
+msgstr "比较总结"
 
 #: application/views/calltester/comparison_result.php:45
 msgid "Only found in DXCC Class:"
-msgstr ""
+msgstr "只在 DXCC 类别中找到："
 
 #: application/views/calltester/comparison_result.php:46
 msgid "Only found in Logbook Model:"
-msgstr ""
+msgstr "只在日志簿模型中找到："
 
 #: application/views/calltester/comparison_result.php:47
 msgid "Found in both methods:"
-msgstr ""
+msgstr "在两种方式中都找到："
 
 #: application/views/calltester/comparison_result.php:54
 msgid "Issues found only in DXCC Class (not in Logbook Model):"
-msgstr ""
+msgstr "只在 DXCC 类别中找到的问题（不在日志簿模型中）："
 
 #: application/views/calltester/comparison_result.php:62
 #: application/views/calltester/comparison_result.php:98
@@ -9201,7 +9201,7 @@ msgstr ""
 
 #: application/views/calltester/comparison_result.php:90
 msgid "Issues found only in Logbook Model (not in DXCC Class):"
-msgstr ""
+msgstr "只在日志簿模型中找到的问题（不在 DXCC 类别中）："
 
 #: application/views/calltester/comparison_result.php:126
 msgid "Issues found in both methods:"
@@ -9231,17 +9231,17 @@ msgstr ""
 
 #: application/views/calltester/index.php:18
 msgid "Compare DXCC class and logbook model"
-msgstr ""
+msgstr "比较 DXCC 类别和日志簿模型"
 
 #: application/views/calltester/result.php:4
 #: application/views/logbookadvanced/checkresult.php:85
 msgid "Callsigns tested: "
-msgstr ""
+msgstr "已测试的呼号： "
 
 #: application/views/calltester/result.php:5
 #: application/views/logbookadvanced/checkresult.php:86
 msgid "Execution time: "
-msgstr ""
+msgstr "执行耗时： "
 
 #: application/views/calltester/result.php:6
 #: application/views/logbookadvanced/checkresult.php:87
@@ -13210,7 +13210,7 @@ msgstr "使用日志簿查找来设置网格"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:92
 msgid "This is limited to 150 callsigns for each run!"
-msgstr ""
+msgstr "每次执行限制 150 个呼号！"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
@@ -19470,11 +19470,11 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:16
 msgid "Callsigns Tested"
-msgstr ""
+msgstr "已测试的呼号"
 
 #: application/views/zonechecker/result.php:17
 msgid "Execution Time"
-msgstr ""
+msgstr "执行耗时"
 
 #: application/views/zonechecker/result.php:18
 msgid "Potential Wrong Zones"
@@ -19539,7 +19539,7 @@ msgstr ""
 
 #: application/controllers/Calltester.php:844
 msgid "Callsign Tester"
-msgstr ""
+msgstr "通联记录检测器"
 
 #~ msgid "LoTW .TQ8 Upload"
 #~ msgstr "LoTW .TQ8 导入"
