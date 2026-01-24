@@ -11,7 +11,7 @@
 # Kim - DG9VH <kim.huebel@gmail.com>, 2024, 2025.
 # Fabian Berg <80885850+HB9HIL@users.noreply.github.com>, 2024.
 # Rasmus <DL4BS@users.noreply.translate.wavelog.org>, 2024.
-# Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025.
+# Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025, 2026.
 # "Francisco (F4VSE)" <kikosgc@users.noreply.github.com>, 2024.
 # "Stefan (DB4SCW)" <dev@db4scw.de>, 2024, 2025.
 # "Joerg (DJ7NT)" <joerg+kennungen.github@dorgeist.com>, 2024.
@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-21 09:57+0000\n"
-"PO-Revision-Date: 2026-01-21 12:00+0000\n"
-"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
+"PO-Revision-Date: 2026-01-24 22:34+0000\n"
+"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -19478,7 +19478,7 @@ msgstr "CQz geojson"
 
 #: application/controllers/Calltester.php:844
 msgid "Callsign Tester"
-msgstr ""
+msgstr "Rufzeichen Tester"
 
 #~ msgid "Signature Name"
 #~ msgstr "Signatur-Bezeichnung"
