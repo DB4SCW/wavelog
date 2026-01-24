@@ -164,7 +164,7 @@ class Logbook_model extends CI_Model {
 		$ant_path = in_array($ant_path_input, ['G', 'O', 'S', 'L']) ? trim($ant_path_input) : NULL;
 
 		$darc_dok = trim($qso_data['darc_dok'] ?? '');
-		$qso_locator = strtoupper(trim($qso_data['locator'] ?? '') ?: NULL);
+		$qso_locator = strtoupper(trim($qso_data['locator'] ?? '') ?: '');
 		$qso_qth = trim($qso_data['qth'] ?? '');
 		$qso_name = trim($qso_data['name'] ?? '');
 		$qso_age = NULL;
