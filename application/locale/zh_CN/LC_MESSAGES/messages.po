@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-16 07:32+0000\n"
-"PO-Revision-Date: 2026-01-24 12:24+0000\n"
+"PO-Revision-Date: 2026-01-24 12:42+0000\n"
 "Last-Translator: Lu Chang <chinaluchang@live.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
@@ -1001,7 +1001,7 @@ msgstr "DCL"
 
 #: application/controllers/Dcl.php:139
 msgid "No QSOs to upload."
-msgstr "没有可上传的QSO记录。"
+msgstr "没有可上传的 QSO 记录。"
 
 #: application/controllers/Dcl.php:186 application/controllers/Dcl.php:198
 msgid "Upload Failed"
@@ -2087,7 +2087,7 @@ msgstr "详细日志"
 #: application/controllers/Logbookadvanced.php:924
 #, php-format
 msgid "DXCC updated for %d QSO(s)."
-msgstr "已更新%d个 QSO 的 DXCC。"
+msgstr "已更新 %d 个 QSO 的 DXCC。"
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -12961,27 +12961,27 @@ msgstr "DXCC 检查结果"
 #: application/views/logbookadvanced/checkresult.php:234
 #: application/views/logbookadvanced/checkresult.php:310
 msgid "Update selected"
-msgstr ""
+msgstr "更新选中的"
 
 #: application/views/logbookadvanced/checkresult.php:153
 msgid "These QSOs MAY have incorrect gridsquares."
-msgstr ""
+msgstr "这些 QSO 可能有错误的网格。"
 
 #: application/views/logbookadvanced/checkresult.php:154
 msgid ""
 "Results depends on the correct DXCC. The gridsquare list comes from the TQSL "
 "gridsquare database."
-msgstr ""
+msgstr "结果取决于正确的 DXCC。网格列表来自 TQSL 网格数据库。"
 
 #: application/views/logbookadvanced/checkresult.php:167
 msgid "DXCC Gridsquare"
-msgstr ""
+msgstr "DXCC 网格"
 
 #: application/views/logbookadvanced/checkresult.php:190
 #: application/views/logbookadvanced/index.php:77
 #: application/views/logbookadvanced/checkresult.php:191
 msgid "Show more"
-msgstr ""
+msgstr "显示更多"
 
 #: application/views/logbookadvanced/checkresult.php:219
 #: application/views/logbookadvanced/checkresult.php:222
@@ -12993,7 +12993,7 @@ msgstr "CQ分区检查结果"
 msgid ""
 "The following QSOs were found to have a different CQ zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
-msgstr ""
+msgstr "找到以下 QSO 与该 DXCC 通常对应的 CQ 区不同（最多显示 5000 个 QSO）："
 
 #: application/views/logbookadvanced/checkresult.php:226
 #: application/views/logbookadvanced/checkresult.php:229
@@ -13071,7 +13071,7 @@ msgstr "ITU分区检查结果"
 msgid ""
 "The following QSOs were found to have a different ITU zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
-msgstr ""
+msgstr "找到以下 QSO 与该 DXCC 通常对应的 ITU 区不同（最多显示 5000 个 QSO）："
 
 #: application/views/logbookadvanced/checkresult.php:302
 #: application/views/logbookadvanced/checkresult.php:305
@@ -13134,6 +13134,8 @@ msgid ""
 "Warning. This tool can be dangerous to your data, and should only be used if "
 "you know what you are doing."
 msgstr ""
+"警告。此工具可能会对你的数据造成危险，只有在你知道如何操作的情况下才应该使用"
+"。"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:12
 msgid "Check all QSOs in the logbook for incorrect CQ Zones"
@@ -13194,7 +13196,7 @@ msgstr "计算并更新 QSO 的距离信息"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:78
 msgid "Check all QSOs in the logbook for incorrect DXCC"
-msgstr ""
+msgstr "检查日志簿中所有 QSO 的 DXCC 正确性"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:79
 msgid "Use Wavelog to determine DXCC for all QSOs."
@@ -13226,19 +13228,19 @@ msgstr "使用以下方法搜索重复项："
 
 #: application/views/logbookadvanced/dupesearchdialog.php:16
 msgid "Match QSOs within 1800s (30min) of each other"
-msgstr ""
+msgstr "匹配 1800 秒（30 分钟）内的 QSO"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:25
 msgid "Match QSOs with the same mode (SSB, CW, FM, etc.)"
-msgstr ""
+msgstr "匹配相同模式（SSB、CW、FM 等）的 QSO"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:34
 msgid "Match QSOs on the same band"
-msgstr ""
+msgstr "匹配相同频段的 QSO"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:43
 msgid "Match QSOs using the same satellite"
-msgstr ""
+msgstr "匹配使用相同卫星的 QSO"
 
 #: application/views/logbookadvanced/edit.php:1
 msgid "Please choose the column to be edited:"
@@ -13799,7 +13801,7 @@ msgstr "您确定要修复所有缺少 DXCC 信息的 QSO 吗？此操作无法�
 
 #: application/views/logbookadvanced/index.php:74
 msgid "Duplicate Search"
-msgstr ""
+msgstr "重复搜索"
 
 #: application/views/logbookadvanced/index.php:78
 msgid "Show less"
@@ -14416,7 +14418,7 @@ msgstr "州级检查结果"
 msgid ""
 "QSOs with missing state and gridsquares with 6 or more characters found for "
 "the following DXCCs:"
-msgstr "已找到以下 DXCC 的 QSO，但缺少州名和包含 6 个或更多字符的网格坐标："
+msgstr "已找到以下 DXCC 的 QSO，但缺少州名和包含 6 个或更多字符的网格代码："
 
 #: application/views/logbookadvanced/statecheckresult.php:30
 msgid "Run fix"
@@ -14680,11 +14682,11 @@ msgstr ""
 
 #: application/views/map/qso_map.php:15
 msgid "Select Country:"
-msgstr ""
+msgstr "选择 DXCC 实体："
 
 #: application/views/map/qso_map.php:17
 msgid "Choose a country..."
-msgstr ""
+msgstr "选择一个 DXCC 实体…"
 
 #: application/views/mode/create.php:24 application/views/mode/edit.php:33
 msgctxt "Name of mode in ADIF-specification"
