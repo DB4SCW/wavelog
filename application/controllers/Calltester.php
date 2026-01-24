@@ -794,6 +794,34 @@ class Calltester extends CI_Controller {
             'Date'      => $date = date('Y-m-d', time())
         );
 
+		$testarray[] = array(
+            'Callsign'  => 'VP8ADR/40',
+            'Country'   => 'Falkland Islands',
+            'Adif'      => 141,
+            'Date'      => $date = date('Y-m-d', time())
+        );
+
+		$testarray[] = array(
+			'Callsign'  => 'VP8ADR/400',
+			'Country'   => 'Falkland Islands',
+			'Adif'      => 141,
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+            'Callsign'  => 'LU7CC/E',
+            'Country'   => 'Argentina',
+            'Adif'      => 100,
+            'Date'      => $date = date('Y-m-d', time())
+        );
+
+		$testarray[] = array(
+            'Callsign'  => 'FR/F6KDF/T',
+            'Country'   => 'Tromelin Island',
+            'Adif'      => 276,
+            'Date'      => '1999-08-04'
+        );
+
         set_time_limit(3600);
 
         // Starting clock time in seconds
@@ -806,7 +834,7 @@ class Calltester extends CI_Controller {
 		$dxccobj = new Dxcc(null);
 
         foreach ($testarray as $call) {
-            $i++;
+			$i++;
 			$dxcc = $dxccobj->dxcc_lookup($call['Callsign'], $call['Date']);
 
 			$dxcc['adif'] = (isset($dxcc['adif'])) ? $dxcc['adif'] : 0;
