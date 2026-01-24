@@ -1245,7 +1245,7 @@ function newpath(latlng1, latlng2, locator1, locator2) {
         },
       }).setView([30, 0], 1.5);
 
-    if (locator1 != locator2) {
+    if (locator1.toUpperCase() != locator2.toUpperCase()) {
 
         // Need to fix so that marker is placed at same place as end of line, but this only needs to be done when longitude is < -170
         if (latlng2[1] < -170) {
