@@ -346,7 +346,8 @@ $(document).ready(function() {
 
     /**
      * Perform the actual radio tuning via CAT interface
-     * Sends frequency and mode to radio via HTTP request
+     * Sends frequency and mode to radio via HTTP/HTTPS request with failover
+     * Tries HTTPS first, falls back to HTTP on failure
      * @param {string} catUrl - CAT interface URL for the radio
      * @param {number} freqHz - Frequency in Hz
      * @param {string} mode - Radio mode (validated against supported modes)
@@ -358,44 +359,75 @@ $(document).ready(function() {
         const validModes = ['lsb', 'usb', 'cw', 'fm', 'am', 'rtty', 'pkt', 'dig', 'pktlsb', 'pktusb', 'pktfm'];
         const catMode = mode && validModes.includes(mode.toLowerCase()) ? mode.toLowerCase() : 'usb';
 
-        // Format: {cat_url}/{frequency}/{mode}
-        const url = catUrl + '/' + freqHz + '/' + catMode;
+        // Determine which protocol to try first
+        // If URL is already HTTPS, use it. If HTTP, upgrade to HTTPS for first attempt.
+        const isHttps = catUrl.startsWith('https://');
+        const httpsUrl = isHttps ? catUrl : catUrl.replace(/^http:\/\//, 'https://');
+        const httpUrl = isHttps ? catUrl.replace(/^https:\/\//, 'http://') : catUrl;
 
-        // Make request with proper error handling
-        fetch(url, {
-            method: 'GET'
-        })
-        .then(response => {
-            if (response.ok) {
-                // Success - HTTP 200-299, get response text
-                return response.text();
-            } else {
-                // HTTP error status (4xx, 5xx)
-                throw new Error('HTTP ' + response.status);
-            }
-        })
-        .then(data => {
-            // Call success callback with response data
-            if (typeof onSuccess === 'function') {
-                onSuccess(data);
-            }
-        })
-        .catch(error => {
-            // Only show error on actual failures (network error, HTTP error, etc.)
-            const freqMHz = (freqHz / 1000000).toFixed(3);
-            const errorTitle = lang_cat_radio_tuning_failed;
-            const errorMsg = lang_cat_failed_to_tune + ' ' + freqMHz + ' MHz (' + catMode.toUpperCase() + '). ' + lang_cat_not_responding;
+        // Build the full URLs with frequency and mode
+        const httpsRequestUrl = httpsUrl + '/' + freqHz + '/' + catMode;
+        const httpRequestUrl = httpUrl + '/' + freqHz + '/' + catMode;
 
-            // Use showToast if available (from qso.js), otherwise use Bootstrap alert
-            if (typeof showToast === 'function') {
-                showToast(errorTitle, errorMsg, 'bg-danger text-white', 5000);
-            }
+        // Try HTTPS first (unless original URL was already HTTPS, then just try that)
+        const tryHttps = !isHttps;
 
-            // Call error callback if provided
-            if (typeof onError === 'function') {
-                onError(null, 'error', error.message);
-            }
-        });
+        // Function to attempt tuning with a specific URL
+        const tryTuning = function(url, isFallback) {
+            return fetch(url, {
+                method: 'GET'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - HTTP 200-299, get response text
+                    return response.text();
+                } else {
+                    // HTTP error status (4xx, 5xx)
+                    throw new Error('HTTP ' + response.status);
+                }
+            })
+            .then(data => {
+                // Call success callback with response data
+                if (typeof onSuccess === 'function') {
+                    onSuccess(data);
+                }
+                return data;
+            });
+        };
+
+        // Execute failover logic: try HTTPS first, then HTTP
+        const primaryUrl = tryHttps ? httpsRequestUrl : httpRequestUrl;
+        const fallbackUrl = tryHttps ? httpRequestUrl : null;
+
+        tryTuning(primaryUrl, false)
+            .catch(error => {
+                // If HTTPS was attempted and failed, try HTTP fallback
+                if (fallbackUrl !== null) {
+                    return tryTuning(fallbackUrl, true)
+                        .catch(fallbackError => {
+                            // Both HTTPS and HTTP failed
+                            throw fallbackError;
+                        });
+                }
+                // No fallback available (was already HTTPS or only one URL to try)
+                throw error;
+            })
+            .catch(error => {
+                // All attempts failed - show error
+                const freqMHz = (freqHz / 1000000).toFixed(3);
+                const errorTitle = lang_cat_radio_tuning_failed;
+                const errorMsg = lang_cat_failed_to_tune + ' ' + freqMHz + ' MHz (' + catMode.toUpperCase() + '). ' + lang_cat_not_responding;
+
+                // Use showToast if available (from qso.js), otherwise use Bootstrap alert
+                if (typeof showToast === 'function') {
+                    showToast(errorTitle, errorMsg, 'bg-danger text-white', 5000);
+                }
+
+                // Call error callback if provided
+                if (typeof onError === 'function') {
+                    onError(null, 'error', error.message);
+                }
+            });
     }
 
     /**
