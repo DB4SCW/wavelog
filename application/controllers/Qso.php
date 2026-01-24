@@ -181,7 +181,11 @@ class QSO extends CI_Controller {
 			// Add QSO
 			// $this->logbook_model->add();
 			//change to create_qso function as add and create_qso duplicate functionality
-			$adif = $this->saveqso();
+			$saveresult = json_decode($this->saveqso(), true);
+
+			// Clear POST data to prevent re-submission on page reload
+			$_POST = [];
+			$this->form_validation->reset_validation();
 
 			$returner=[];
 			$actstation=$this->stations->find_active() ?? '';
@@ -192,17 +196,18 @@ class QSO extends CI_Controller {
 			$returner['message']='success';
 
 			// Include ADIF for WebSocket transmission
-			if ($adif) {
-				$returner['adif'] = $adif;
+			if (isset($saveresult['adif'])) {
+				$returner['adif'] = $saveresult['adif'];
 			}
 
-			// Get last 5 qsos
+			header('Content-Type: application/json; charset=utf-8');
 			echo json_encode($returner);
 		}
 	}
 
 	/*
 	 * This is used for contest-logging and the ajax-call
+	 * Returns JSON
 	 */
 	public function saveqso() {
 		$this->load->model('logbook_model');
@@ -270,7 +275,9 @@ class QSO extends CI_Controller {
 			'distance' => $this->input->post('distance', TRUE) ?? TRUE
 		];
 
-		$this->logbook_model->create_qso($qso_data);
+		$result = $this->logbook_model->create_qso($qso_data);
+
+		return json_encode($result, JSON_PRETTY_PRINT);
 	}
 
 	function edit() {

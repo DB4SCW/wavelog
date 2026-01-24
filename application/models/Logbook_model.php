@@ -163,12 +163,12 @@ class Logbook_model extends CI_Model {
 		$ant_path_input = $qso_data['ant_path'] ?? '';
 		$ant_path = in_array($ant_path_input, ['G', 'O', 'S', 'L']) ? trim($ant_path_input) : NULL;
 
-		$darc_dok = trim($qso_data['darc_dok']);
-		$qso_locator = strtoupper(trim($qso_data['locator']) ?: NULL);
-		$qso_qth = trim($qso_data['qth']);
-		$qso_name = trim($qso_data['name']);
+		$darc_dok = trim($qso_data['darc_dok'] ?? '');
+		$qso_locator = strtoupper(trim($qso_data['locator'] ?? '') ?: NULL);
+		$qso_qth = trim($qso_data['qth'] ?? '');
+		$qso_name = trim($qso_data['name'] ?? '');
 		$qso_age = NULL;
-		$qso_state = trim($qso_data['input_state']) ?: NULL;
+		$qso_state = trim($qso_data['input_state'] ?? '') ?: NULL;
 		$qso_rx_power = NULL;
 
 		if ($qso_data['copyexchangeto']) {
@@ -233,8 +233,8 @@ class Logbook_model extends CI_Model {
 			'COL_RST_SENT' => $qso_data['rst_sent'],
 			'COL_NAME' => $qso_name,
 			'COL_COMMENT' => $qso_data['comment'],
-			'COL_SAT_NAME' => strtoupper($qso_data['sat_name']) ?: NULL,
-			'COL_SAT_MODE' => strtoupper($qso_data['sat_mode']) ?: NULL,
+			'COL_SAT_NAME' => strtoupper($qso_data['sat_name'] ?? '') ?: NULL,
+			'COL_SAT_MODE' => strtoupper($qso_data['sat_mode'] ?? '') ?: NULL,
 			'COL_COUNTRY' => $country,
 			'COL_CONT' => $continent,
 			'COL_QSLSDATE' => $qslsdate,
@@ -248,7 +248,7 @@ class Logbook_model extends CI_Model {
 			'COL_OPERATOR' => strtoupper(trim($qso_data['operator_callsign'] ?? $this->session->userdata('operator_callsign'))),
 			'COL_QTH' => $qso_qth,
 			'COL_PROP_MODE' => $prop_mode,
-			'COL_IOTA' => trim($qso_data['iota_ref']) ?: NULL,
+			'COL_IOTA' => trim($qso_data['iota_ref'] ?? '') ?: NULL,
 			'COL_FREQ_RX' => $this->parse_frequency($qso_data['freq_display_rx']),
 			'COL_ANT_AZ' => $ant_az,
 			'COL_ANT_EL' => $ant_el,
@@ -259,8 +259,8 @@ class Logbook_model extends CI_Model {
 			'COL_TX_PWR' => $tx_power,
 			'COL_STX' => $stx,
 			'COL_SRX' => $srx,
-			'COL_STX_STRING' => strtoupper(trim($stx_string)) ?: NULL,
-			'COL_SRX_STRING' => strtoupper(trim($srx_string)) ?: NULL,
+			'COL_STX_STRING' => strtoupper(trim($stx_string ?? '')) ?: NULL,
+			'COL_SRX_STRING' => strtoupper(trim($srx_string ?? '')) ?: NULL,
 			'COL_CONTEST_ID' => $contestid,
 			'COL_NR_BURSTS' => NULL,
 			'COL_NR_PINGS' => NULL,
@@ -275,13 +275,13 @@ class Logbook_model extends CI_Model {
 			'COL_ITUZ' => $qso_data['ituz'] ?: NULL,
 			'COL_STATE' => $qso_state,
 			'COL_CNTY' => $clean_county_input,
-			'COL_SOTA_REF' => strtoupper(trim($qso_data['sota_ref'])) ?: NULL,
-			'COL_WWFF_REF' => strtoupper(trim($qso_data['wwff_ref'])) ?: NULL,
-			'COL_POTA_REF' => strtoupper(trim($qso_data['pota_ref'])) ?: NULL,
-			'COL_SIG' => strtoupper(trim($qso_data['sig'])) ?: NULL,
-			'COL_SIG_INFO' => strtoupper(trim($qso_data['sig_info'])) ?: NULL,
-			'COL_DARC_DOK' => strtoupper(trim($darc_dok)) ?: NULL,
-			'COL_NOTES' => strtoupper(trim($qso_data['notes'])) ?: NULL,
+			'COL_SOTA_REF' => strtoupper(trim($qso_data['sota_ref'] ?? '')) ?: NULL,
+			'COL_WWFF_REF' => strtoupper(trim($qso_data['wwff_ref'] ?? '')) ?: NULL,
+			'COL_POTA_REF' => strtoupper(trim($qso_data['pota_ref'] ?? '')) ?: NULL,
+			'COL_SIG' => strtoupper(trim($qso_data['sig'] ?? '')) ?: NULL,
+			'COL_SIG_INFO' => strtoupper(trim($qso_data['sig_info'] ?? '')) ?: NULL,
+			'COL_DARC_DOK' => strtoupper(trim($darc_dok ?? '')) ?: NULL,
+			'COL_NOTES' => strtoupper(trim($qso_data['notes'] ?? '')) ?: NULL,
 			'COL_EMAIL' => $email ?: NULL,
 			'COL_REGION' => $region ?: NULL,
 		);
@@ -386,17 +386,21 @@ class Logbook_model extends CI_Model {
 		}
 		unset($data);
 
-		// Return ADIF for WebSocket transmission
-		if ($qso_id) {
-			$qso = $this->get_qso($qso_id, true)->result();
-			if ($qso && !empty($qso)) {
-				if (!$this->load->is_loaded('AdifHelper')) {
-					$this->load->library('AdifHelper');
-				}
-				return $this->adifhelper->getAdifLine($qso[0]);
-			}
+		// Return qso_id and adif data
+		if (!$qso_id) {
+			return false;
 		}
-		return NULL;
+
+		$qso = $this->get_qso($qso_id, true)->result();
+		if (empty($qso)) {
+			return false;
+		}
+
+		$this->load->is_loaded('AdifHelper') ?: $this->load->library('AdifHelper');
+		return [
+			'qso_id' => $qso_id,
+			'adif' => $this->adifhelper->getAdifLine($qso[0])
+		];
 	}
 
 	public function check_last_lotw($call) {	// Fetch difference in days when $call has last updated LotW
