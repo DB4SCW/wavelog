@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-16 07:32+0000\n"
-"PO-Revision-Date: 2026-01-24 12:13+0000\n"
+"PO-Revision-Date: 2026-01-24 12:24+0000\n"
 "Last-Translator: Lu Chang <chinaluchang@live.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
@@ -9167,7 +9167,7 @@ msgstr "只在 DXCC 类别中找到的问题（不在日志簿模型中）："
 #: application/views/zonechecker/result.php:52
 #: application/views/logbookadvanced/checkresult.php:392
 msgid "Station Profile"
-msgstr ""
+msgstr "台站信息"
 
 #: application/views/calltester/comparison_result.php:63
 #: application/views/calltester/comparison_result.php:99
@@ -9175,14 +9175,14 @@ msgstr ""
 #: application/views/calltester/result.php:25
 #: application/views/logbookadvanced/checkresult.php:107
 msgid "Existing DXCC"
-msgstr ""
+msgstr "现有 DXCC"
 
 #: application/views/calltester/comparison_result.php:64
 #: application/views/calltester/comparison_result.php:100
 #: application/views/calltester/comparison_result.php:136
 #: application/views/calltester/result.php:26
 msgid "Existing ADIF"
-msgstr ""
+msgstr "现有 ADIF"
 
 #: application/views/calltester/comparison_result.php:65
 #: application/views/calltester/comparison_result.php:101
@@ -9190,14 +9190,14 @@ msgstr ""
 #: application/views/calltester/result.php:27
 #: application/views/logbookadvanced/checkresult.php:108
 msgid "Result DXCC"
-msgstr ""
+msgstr "结果 DXCC"
 
 #: application/views/calltester/comparison_result.php:66
 #: application/views/calltester/comparison_result.php:102
 #: application/views/calltester/comparison_result.php:138
 #: application/views/calltester/result.php:28
 msgid "Result ADIF"
-msgstr ""
+msgstr "结果 ADIF"
 
 #: application/views/calltester/comparison_result.php:90
 msgid "Issues found only in Logbook Model (not in DXCC Class):"
@@ -9205,17 +9205,17 @@ msgstr "只在日志簿模型中找到的问题（不在 DXCC 类别中）："
 
 #: application/views/calltester/comparison_result.php:126
 msgid "Issues found in both methods:"
-msgstr ""
+msgstr "在两种方式中都找到的问题："
 
 #: application/views/calltester/comparison_result.php:162
 msgid ""
 "No DXCC issues found in either method. All calls have correct DXCC "
 "information."
-msgstr ""
+msgstr "通过两种方式均未发现 DXCC 问题。所有通联纪录都有正确的 DXCC 信息。"
 
 #: application/views/calltester/index.php:3
 msgid "Callsign DXCC identification"
-msgstr ""
+msgstr "呼号 DXCC 识别"
 
 #: application/views/calltester/index.php:10
 #: application/views/interface_assets/footer.php:878
@@ -9227,7 +9227,7 @@ msgstr "呼号： "
 
 #: application/views/calltester/index.php:15
 msgid "Start DXCC Check"
-msgstr ""
+msgstr "开始 DXCC 检查"
 
 #: application/views/calltester/index.php:18
 msgid "Compare DXCC class and logbook model"
@@ -9246,7 +9246,7 @@ msgstr "执行耗时： "
 #: application/views/calltester/result.php:6
 #: application/views/logbookadvanced/checkresult.php:87
 msgid "Number of potential QSOs with wrong DXCC: "
-msgstr ""
+msgstr "可能错误 DXCC 的 QSO 数量： "
 
 #: application/views/club/clubswitch_modal.php:5
 msgid "Switch to a Clubstation"
@@ -13222,7 +13222,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"
-msgstr ""
+msgstr "使用以下方法搜索重复项："
 
 #: application/views/logbookadvanced/dupesearchdialog.php:16
 msgid "Match QSOs within 1800s (30min) of each other"
