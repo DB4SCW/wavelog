@@ -116,11 +116,12 @@ $(document).ready(function() {
 
     function initializeWebSocketConnection() {
         try {
-            // Determine which protocol to use
-            // Try WSS first, fall back to WS if WSS fails
+            // Determine which protocol and port to use
+            // Try WSS on port 54323 first, fall back to WS on port 54322
             const tryWss = !hasTriedWsFallback;
             const protocol = tryWss ? 'wss' : 'ws';
-            const wsUrl = protocol + '://localhost:54322';
+            const port = tryWss ? '54323' : '54322';
+            const wsUrl = protocol + '://127.0.0.1:' + port;
 
             // Note: Browser will log WebSocket connection errors to console if server is unreachable
             // This is native browser behavior and cannot be suppressed - errors are handled in GUI via onerror handler
