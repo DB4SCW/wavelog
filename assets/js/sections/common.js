@@ -1301,7 +1301,7 @@ function newpath(latlng1, latlng2, locator1, locator2) {
         if (latlng1[1] < -170) {
             latlng1[1] =  parseFloat(latlng1[1])+360;
         }
-        var maidenhead = L.maidenhead().addTo(map);
+        var maidenhead = L.maidenheadqrb().addTo(map);
         map.setView([latlng1[0], latlng1[1]], 13);
 
         var osmUrl = option_map_tile_server;
