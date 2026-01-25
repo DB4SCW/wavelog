@@ -8,6 +8,7 @@ class Logbook_model extends CI_Model {
 
 	private $station_result = [];
 	private $spot_status_cache = []; // In-memory cache for DX cluster spot statuses
+	private $dxcc_object;
 
 	public function __construct() {
 		$this->oop_populate_modes();
@@ -194,7 +195,7 @@ class Logbook_model extends CI_Model {
 		                      $this->input->post('continent') == "");
 
 		if ($needs_dxcc_lookup) {
-			$dxccobj = new Dxcc($date);
+			$dxccobj = new Dxcc(null);
 			$dxcc = $dxccobj->dxcc_lookup(strtoupper(trim($callsign)), $datetime);
 		}
 
@@ -4913,13 +4914,17 @@ class Logbook_model extends CI_Model {
 						$entity = $this->get_entity($record['dxcc']);
 						$dxcc = array($record['dxcc'] ?? '', $entity['name'] ?? '');
 					} else {
-						$dxccobj = new Dxcc(null);
-						$dxcclookupresult = $dxccobj->dxcc_lookup($record['call'], $time_off);
+						if ($this->dxcc_object == null) {
+							$this->dxcc_object = new Dxcc(null);
+						}
+						$dxcclookupresult = $this->dxcc_object->dxcc_lookup($record['call'], $time_off);
 						$dxcc = array($dxcclookupresult['adif'], $dxcclookupresult['entity'], $dxcclookupresult['cqz'], $dxcclookupresult['cont']);
 					}
 				} else {
-					$dxccobj = new Dxcc(null);
-					$dxcclookupresult = $dxccobj->dxcc_lookup($record['call'], $time_off);
+					if ($this->dxcc_object == null) {
+						$this->dxcc_object = new Dxcc(null);
+					}
+					$dxcclookupresult = $this->dxcc_object->dxcc_lookup($record['call'], $time_off);
 					$dxcc = array($dxcclookupresult['adif'], $dxcclookupresult['entity'], $dxcclookupresult['cqz'], $dxcclookupresult['cont']);
 				}
 			} else {

@@ -92,6 +92,7 @@ class Dxcc {
 						$row['cqz'] = 0;
 						$row['long'] = '0';
 						$row['lat'] = '0';
+						$row['cont'] = null;
 						return $row;
 					} else {
 						$call = $result . "AA";
@@ -127,7 +128,14 @@ class Dxcc {
 			}
 		}
 
-		return array("Not Found", "Not Found");
+		return array(
+			'adif' => 0,
+			'entity' => '- NONE ',
+			'cqz' => '0',
+			'long' => '0',
+			'lat' => '0',
+			'cont' => null
+		);
 	}
 
 	function wpx($testcall, $i) {
