@@ -213,7 +213,7 @@ class QSO extends CI_Controller {
 		$this->load->model('logbook_model');
 
 		$qso_data = [
-			'manual' => $this->input->post('manual', TRUE),
+			'manual' => $this->input->get('manual', TRUE),
 			'start_date' => $this->input->post('start_date', TRUE),
 			'start_time' => $this->input->post('start_time', TRUE),
 			'end_time' => $this->input->post('end_time', TRUE),
