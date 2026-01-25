@@ -822,9 +822,16 @@ class Calltester extends CI_Controller {
             'Date'      => '1999-08-04'
         );
 
+		$testarray[] = array(
+            'Callsign'  => 'A6050Y/5',
+            'Country'   => 'United Arab Emirates',
+            'Adif'      => 391,
+            'Date'      => $date = date('Y-m-d', time())
+        );
         set_time_limit(3600);
 
         // Starting clock time in seconds
+
         $start_time = microtime(true);
 
         $result = array();
@@ -835,6 +842,7 @@ class Calltester extends CI_Controller {
 
         foreach ($testarray as $call) {
 			$i++;
+
 			$dxcc = $dxccobj->dxcc_lookup($call['Callsign'], $call['Date']);
 
 			$dxcc['adif'] = (isset($dxcc['adif'])) ? $dxcc['adif'] : 0;
@@ -1062,7 +1070,7 @@ class Calltester extends CI_Controller {
 					# think that's rather irrelevant cos such calls rarely appear
 					# and if they do, it's very unlikely for them to have a number
 					# attached.   You can still edit it by hand anyway..
-					if (preg_match('/^([A-Z]\d)\d$/', $matches[1])) {        # e.g. A45   $c = 0
+					if (preg_match('/^([A-Z]\d{2,})$/', $matches[1])) {        # e.g. A45   $c = 0
 						$prefix = $matches[1] . $c;  # ->   A40
 					} else {                         # Otherwise cut all numbers
 						preg_match('/(.*[A-Z])\d+/', $matches[1], $match); # Prefix w/o number in $1

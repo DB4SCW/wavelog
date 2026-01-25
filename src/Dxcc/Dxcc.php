@@ -269,7 +269,7 @@ class Dxcc {
 							]);
 							return '';
 						}
-						if (preg_match('/^([A-Z]\d)\d$/', $matches[1])) {        # e.g. A45   $c = 0
+						if (preg_match('/^([A-Z]\d{2,})$/', $matches[1])) {        # e.g. A45   $c = 0
 							$prefix = $matches[1] . $c;  # ->   A40
 						} else {                         # Otherwise cut all numbers
 							if (!preg_match('/(.*[A-Z])\d+/', $matches[1], $match)) {
