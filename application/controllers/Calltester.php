@@ -828,6 +828,124 @@ class Calltester extends CI_Controller {
             'Adif'      => 391,
             'Date'      => $date = date('Y-m-d', time())
         );
+
+		 $testarray[] = array(
+			'Callsign'  => '9H5G/C6A',
+			'Country'   => 'Bahamas', 
+			'Adif'      => 60, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'A45XR/0',
+			'Country'   => 'Oman', 
+			'Adif'      => 370, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'RAEM',
+			'Country'   => 'Asiatic Russia', 
+			'Adif'      => 54, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'DJ1YFK/VE1',
+			'Country'   => 'Canada', 
+			'Adif'      => 1, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'HD1QRC90',
+			'Country'   => 'Ecuador', 
+			'Adif'      => 120, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		 $testarray[] = array(
+			'Callsign'  => '3D2RH',
+			'Country'   => 'Fiji Islands', 
+			'Adif'      => 176, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => '3D2CB',
+			'Country'   => 'Fiji Islands', 
+			'Adif'      => 176, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => '3D2RW',
+			'Country'   => 'Fiji Islands', 
+			'Adif'      => 176, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'LU1ZC',
+			'Country'   => 'South Shetland Islands', 
+			'Adif'      => 241, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'RI0POL',
+			'Country'   => 'Asiatic Russia', 
+			'Adif'      => 54, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'PJ6A',
+			'Country'   => 'Saba & St. Eustatius', 
+			'Adif'      => 519, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'PJ4D',
+			'Country'   => 'Bonaire', 
+			'Adif'      => 520, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => '4X50CZ/SK',
+			'Country'   => 'Israel', 
+			'Adif'      => 336, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+		 $testarray[] = array(
+			'Callsign'  => 'RK3BY/0',
+			'Country'   => 'Asiatic Russia', 
+			'Adif'      => 15, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'IU0KNS/ERA',
+			'Country'   => 'Italy', 
+			'Adif'      => 248, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'IU8BPS/AWD',
+			'Country'   => 'Italy', 
+			'Adif'      => 248, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
+		$testarray[] = array(
+			'Callsign'  => 'IK7XNF/GIRO',
+			'Country'   => 'Italy', 
+			'Adif'      => 248, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
         set_time_limit(3600);
 
         // Starting clock time in seconds
