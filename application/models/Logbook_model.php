@@ -4917,14 +4917,14 @@ class Logbook_model extends CI_Model {
 						if ($this->dxcc_object == null) {
 							$this->dxcc_object = new Dxcc(null);
 						}
-						$dxcclookupresult = $this->dxcc_object->dxcc_lookup($record['call'], $time_off);
+						$dxcclookupresult = $this->dxcc_object->dxcc_lookup($record['call'], date('Y-m-d', strtotime($record['qso_date'])));
 						$dxcc = array($dxcclookupresult['adif'], $dxcclookupresult['entity'], $dxcclookupresult['cqz'], $dxcclookupresult['cont']);
 					}
 				} else {
 					if ($this->dxcc_object == null) {
 						$this->dxcc_object = new Dxcc(null);
 					}
-					$dxcclookupresult = $this->dxcc_object->dxcc_lookup($record['call'], $time_off);
+					$dxcclookupresult = $this->dxcc_object->dxcc_lookup($record['call'], date('Y-m-d', strtotime($record['qso_date'])));
 					$dxcc = array($dxcclookupresult['adif'], $dxcclookupresult['entity'], $dxcclookupresult['cqz'], $dxcclookupresult['cont']);
 				}
 			} else {
