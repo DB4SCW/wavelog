@@ -2297,7 +2297,7 @@ class Logbook_model extends CI_Model {
 				$sql .= " AND qsos.`col_prop_mode` = 'SAT'";
 			} else {
 				$sql .= " AND qsos.`col_prop_mode` != 'SAT' AND qsos.`col_band` = ?";
-				$bindings[] = $band;
+				$binding[] = $band;
 			}
 		}
 		if ($map == true) {
