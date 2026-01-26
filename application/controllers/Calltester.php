@@ -865,28 +865,6 @@ class Calltester extends CI_Controller {
 		);
 
 		$testarray[] = array(
-			'Callsign'  => '3D2RH',
-			'Country'   => 'Fiji Islands', 
-			'Adif'      => 176, 
-			'Date'      => $date = date('Y-m-d', time())
-		);
-
-		$testarray[] = array(
-			'Callsign'  => '3D2CB',
-			'Country'   => 'Fiji Islands', 
-			'Adif'      => 176, 
-			'Date'      => $date = date('Y-m-d', time())
-		);
-
-		$testarray[] = array(
-			'Callsign'  => '3D2RW',
-			'Country'   => 'Fiji Islands', 
-			'Adif'      => 176, 
-			'Date'      => $date = date('Y-m-d', time())
-		);
-
-
-		$testarray[] = array(
 			'Callsign'  => 'PJ6A',
 			'Country'   => 'Saba & St. Eustatius', 
 			'Adif'      => 519, 
@@ -906,7 +884,8 @@ class Calltester extends CI_Controller {
 			'Adif'      => 336, 
 			'Date'      => $date = date('Y-m-d', time())
 		);
-		 $testarray[] = array(
+
+		$testarray[] = array(
 			'Callsign'  => 'RK3BY/0',
 			'Country'   => 'Asiatic Russia', 
 			'Adif'      => 15, 
@@ -947,6 +926,14 @@ class Calltester extends CI_Controller {
 			'Adif'      => 150, 
 			'Date'      => $date = date('Y-m-d', time())
 		);
+
+		$testarray[] = array(
+			'Callsign'  => 'RU9CK/Z1',
+			'Country'   => 'Asiatic Russia', 
+			'Adif'      => 15, 
+			'Date'      => $date = date('Y-m-d', time())
+		);
+
         set_time_limit(3600);
 
         // Starting clock time in seconds
