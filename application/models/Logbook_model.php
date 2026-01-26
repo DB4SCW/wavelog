@@ -15,7 +15,7 @@ class Logbook_model extends CI_Model {
 	private function oop_populate_modes() {
 		$r = $this->db->get('adif_modes');
 		foreach ($r->result_array() as $row) {
-			$this->oop_modes[$row['submode']][] = ($row['mode'] ?? '');
+			$this->oop_modes[$row['submode'] ?? ''][] = ($row['mode'] ?? '');
 		}
 	}
 
