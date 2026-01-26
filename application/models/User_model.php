@@ -532,11 +532,11 @@ class User_Model extends CI_Model {
 
 	// FUNCTION: void update_session()
 	// Updates a user's login session after they've logged in
-	// TODO: This should return bool TRUE/FALSE or 0/1
 	function update_session($id, $u = null, $impersonate = false, $custom_data = null) {
 
-		if ($u == null) {
-			$u = $this->get_by_id($id);
+		$u = $u ?: $this->get_by_id($id);
+		if (!$u) {
+			return false;
 		}
 
 		$userdata = array(
@@ -628,6 +628,8 @@ class User_Model extends CI_Model {
 		}
 
 		$this->session->set_userdata($userdata);
+
+		return true;
 	}
 
 	// FUNCTION: bool validate_session()
