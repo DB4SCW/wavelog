@@ -927,13 +927,6 @@ class Calltester extends CI_Controller {
 			'Date'      => $date = date('Y-m-d', time())
 		);
 
-		$testarray[] = array(
-			'Callsign'  => 'RU9CK/Z1',
-			'Country'   => 'Asiatic Russia', 
-			'Adif'      => 15, 
-			'Date'      => $date = date('Y-m-d', time())
-		);
-
         set_time_limit(3600);
 
         // Starting clock time in seconds

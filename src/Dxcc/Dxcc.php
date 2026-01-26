@@ -167,12 +167,6 @@ class Dxcc {
 				$c = substr($c, 1); # Remove the / at the beginning
 			};
 
-			if (preg_match('/^([A-Z]\d|\d[A-Z])$/', ($c ?? ''))) {            # If suffix consists of exactly 2 chars (letter+digit or digit+letter) - ignore if prefix isn't known at all
-				if (!array_key_exists($c, $this->dxcc)) {
-					$c = null;
-				}
-			}
-
 			# In some cases when there is no part A but B and C, and C is longer than 2
 			# letters, it happens that $a and $b get the values that $b and $c should
 			# have. This often happens with liddish callsign-additions like /QRP and
