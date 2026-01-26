@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-22 08:38+0000\n"
-"PO-Revision-Date: 2026-01-26 01:24+0000\n"
+"PO-Revision-Date: 2026-01-26 04:08+0000\n"
 "Last-Translator: Juan Pablo Tamayo <hj3kos@gmail.com>\n"
 "Language-Team: Spanish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/es/>\n"
@@ -2814,6 +2814,8 @@ msgstr "¿Estás seguro de que quieres eliminar el slug público?"
 msgid ""
 "Are you sure you want to make the station profile %s the active station?"
 msgstr ""
+"Estas seguro de que quieres hacer el perfil de estación %s la estación "
+"activa?"
 
 #: application/controllers/Stationsetup.php:392
 #: application/views/stationsetup/stationsetup.php:161
@@ -2878,7 +2880,7 @@ msgstr "Editar opciones de exportación de mapas"
 
 #: application/controllers/Stationsetup.php:527
 msgid "Station location list"
-msgstr ""
+msgstr "Lista de ubicaciones de la estación"
 
 #: application/controllers/Statistics.php:23
 #: application/views/interface_assets/header.php:154
@@ -3041,11 +3043,11 @@ msgstr "Actualización de Radioaficionados Destacados"
 
 #: application/controllers/Update.php:685
 msgid "VUCC Grid file update complete. Result: "
-msgstr ""
+msgstr "Carga de archivo de cuadricula VUCC completo. Resultado: "
 
 #: application/controllers/Update.php:687
 msgid "VUCC Grid file update failed. Result: "
-msgstr ""
+msgstr "Actualización de archivo de cuadricula VUCC fallida. Resultado: "
 
 #: application/controllers/User.php:50
 #: application/views/interface_assets/header.php:324
@@ -3125,11 +3127,11 @@ msgstr "Usador eliminado"
 
 #: application/controllers/User.php:1090
 msgid "Could not delete user!"
-msgstr ""
+msgstr "No se puede eliminar el usuario!"
 
 #: application/controllers/User.php:1090
 msgid "Database error:"
-msgstr ""
+msgstr "Error de base de datos:"
 
 #: application/controllers/User.php:1115
 msgid ""
@@ -3419,20 +3421,20 @@ msgstr "Error de QRZCQ"
 
 #: application/libraries/Callbook.php:155
 msgid "Error obtaining a session key for HamQTH query"
-msgstr ""
+msgstr "Error obteniendo una llave de sesión para consultar HamQTH"
 
 #: application/libraries/Cbr_parser.php:111
 #: application/libraries/Cbr_parser.php:160
 msgid "Broken CBR file - no valid exchange or callsigns found"
-msgstr ""
+msgstr "Archivo CBR roto - intercambio invalido o indicativo no encontrado"
 
 #: application/libraries/Cbr_parser.php:137
 msgid "Broken CBR file - no QSO data found."
-msgstr ""
+msgstr "Archivo CBR roto - información de QSO no encontrada."
 
 #: application/libraries/Cbr_parser.php:147
 msgid "Broken CBR file - incomplete header found."
-msgstr ""
+msgstr "Archivo CBR roto - se encontró la cabecera incompleta."
 
 #: application/libraries/Subdivisions.php:31
 msgctxt "Division Name (States in various countries)."
@@ -3598,6 +3600,8 @@ msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
 msgstr ""
+"Intentaste importar un QSO sin una fecha valida. Este QSO no fue importado. "
+"Es invalido"
 
 #: application/models/Logbook_model.php:4787
 msgid "QSO on"
@@ -3694,6 +3698,8 @@ msgstr "Dirección"
 #: application/models/Logbookadvanced_model.php:1664
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr ""
+"La tabla VuccGrids esta vacía. Por favor importe la información de "
+"cuadriculas VUCC primero."
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -4572,6 +4578,9 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Hay información diferente para el DOK en tu log comparado con el DCL o las "
+"actualizaciones no se llevaron a cabo debido a que los QSOs no están "
+"confirmados en el DCL."
 
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
@@ -18208,11 +18217,11 @@ msgstr ""
 
 #: application/views/user/edit.php:588
 msgid "Unworked (e.g. Zones)"
-msgstr ""
+msgstr "No Trabajadas (p. ej., Zonas)"
 
 #: application/views/user/edit.php:589
 msgid "(Color for unworked zones)"
-msgstr ""
+msgstr "(Color para zonas no trabajadas)"
 
 #: application/views/user/edit.php:599
 msgid "Show Locator"
@@ -18273,7 +18282,7 @@ msgstr ""
 
 #: application/views/user/edit.php:689
 msgid "Show Fields on QSO Tab"
-msgstr ""
+msgstr "Ver Campos en la Pestaña de QSO"
 
 #: application/views/user/edit.php:693
 msgid ""
@@ -19003,7 +19012,7 @@ msgstr "Gestión de QSL"
 
 #: application/views/view_log/qso.php:86
 msgid "View note for this callsign"
-msgstr ""
+msgstr "Ver nota para este indicativo"
 
 #: application/views/view_log/qso.php:138
 msgid "Total Distance"
@@ -19127,7 +19136,7 @@ msgstr "imagen de eQSL"
 
 #: application/views/view_log/qso.php:923
 msgid "QSO not found"
-msgstr ""
+msgstr "QSO no encontrado"
 
 #: application/views/visitor/layout/footer.php:239
 msgid "Filter Results"
@@ -19262,21 +19271,21 @@ msgstr ""
 
 #: application/views/zonechecker/index.php:15
 msgid "Zone Type"
-msgstr ""
+msgstr "Tipo de Zona"
 
 #: application/views/zonechecker/index.php:20
 msgid "Start Zone Check"
-msgstr ""
+msgstr "Iniciar Verificación de Zona"
 
 #: application/views/zonechecker/index.php:39
 #: application/views/zonechecker/index.php:62
 msgid "Processing..."
-msgstr ""
+msgstr "Procesando..."
 
 #: application/views/zonechecker/index.php:50
 #: application/views/zonechecker/index.php:73
 msgid "An error occurred while processing the request."
-msgstr ""
+msgstr "Ocurrió un error al procesar la petición."
 
 #: application/views/zonechecker/result.php:16
 msgid "Callsigns Tested"
@@ -19284,7 +19293,7 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:17
 msgid "Execution Time"
-msgstr ""
+msgstr "Tiempo de Ejecución"
 
 #: application/views/zonechecker/result.php:18
 msgid "Potential Wrong Zones"
