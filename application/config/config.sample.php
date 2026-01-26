@@ -439,7 +439,8 @@ $config['encryption_key'] = 'flossie1234555541';
 | 'sess_expiration'
 |
 |	The number of SECONDS you want the session to last.
-|	Minimum is 43200 seconds (12 hours) for security reasons.
+|	Default: 43200 seconds (12 hours).
+|   Setting to 0 means use the default value of 43200 seconds (12 hours).
 |
 | 'sess_save_path'
 |
