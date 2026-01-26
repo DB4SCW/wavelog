@@ -551,7 +551,7 @@ class User_Model extends CI_Model {
 			'user_clublog_name'	 => $u->row()->user_clublog_name ?? '',
 			'user_eqsl_name'	 => $u->row()->user_eqsl_name,
 			'user_eqsl_qth_nickname' => $u->row()->user_eqsl_qth_nickname,
-			'user_hash'		 => $this->_session_hash($u->row()->user_id . $u->row()->user_type . $this->input->cookie($this->config->item('sess_cookie_name'))),
+			'user_hash'		 => $this->_session_hash($u->row()->user_id . $u->row()->user_type),
 			'radio' => ((($this->session->userdata('radio') ?? '') == '') ? $this->user_options_model->get_options('cat', array('option_name' => 'default_radio'))->row()->option_value ?? '' : $this->session->userdata('radio')),
 			'station_profile_id' => $this->session->userdata('station_profile_id') ?? '',
 			'user_measurement_base' => $u->row()->user_measurement_base,
@@ -646,7 +646,7 @@ class User_Model extends CI_Model {
 			$impersonate = $this->session->userdata('impersonate');
 
 			if(ENVIRONMENT != 'maintenance') {
-				if($this->_auth($user_id . $user_type . $this->input->cookie($this->config->item('sess_cookie_name')), $user_hash)) {
+				if($this->_auth($user_id . $user_type, $user_hash)) {
 					// Freshen the session
 					$this->update_session($user_id, $u);
 					return 1;
@@ -656,7 +656,7 @@ class User_Model extends CI_Model {
 				}
 			} else {  // handle the maintenance mode and kick out user on page reload if not an admin
 				if($user_type == '99' || $src_user_type === '99') {
-					if($this->_auth($user_id . $user_type . $this->input->cookie($this->config->item('sess_cookie_name')), $user_hash)) {
+					if($this->_auth($user_id . $user_type, $user_hash)) {
 						// Freshen the session
 						$this->update_session($user_id, $u);
 						return 1;
