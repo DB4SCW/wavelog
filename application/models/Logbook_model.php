@@ -1055,7 +1055,6 @@ class Logbook_model extends CI_Model {
 			$result['message'] = 'Curl error: ' . curl_errno($ch);
 			return $result;
 		}
-		curl_close($ch);
 	}
 
 	/*
@@ -1098,7 +1097,6 @@ class Logbook_model extends CI_Model {
 			$result['message'] = 'Curl error: ' . curl_errno($ch);
 			return $result;
 		}
-		curl_close($ch);
 	}
 
 	/*
@@ -1129,7 +1127,6 @@ class Logbook_model extends CI_Model {
 		$content = curl_exec($ch); // TODO: better error handling
 		$errors = curl_error($ch);
 		$response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		curl_close($ch);
 		return $response === 200;
 	}
 
