@@ -11,12 +11,13 @@
 # Fabian Berg <fabian.berg@hb9hil.org>, 2025.
 # Luca <lucabennati1996@gmail.com>, 2025.
 # Fabian <fabian@eb1tr.com>, 2025.
+# Juan Pablo Tamayo <hj3kos@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-01-22 08:38+0000\n"
-"PO-Revision-Date: 2025-12-21 22:57+0000\n"
-"Last-Translator: Ethan Carter Edwards <ethan@ethancedwards.com>\n"
+"PO-Revision-Date: 2026-01-26 01:24+0000\n"
+"Last-Translator: Juan Pablo Tamayo <hj3kos@gmail.com>\n"
 "Language-Team: Spanish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/es/>\n"
 "Language: es_ES\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -576,7 +577,7 @@ msgstr "Cuadrículas confirmadas por QSL físicas"
 #: application/controllers/Awards.php:1049
 #: application/controllers/Awards.php:1085
 msgid "Total Gridsquares worked"
-msgstr ""
+msgstr "Total de Cuadrículas trabajadas"
 
 #: application/controllers/Awards.php:1066
 msgid "Fred Fish Memorial Award (FFMA)"
@@ -696,11 +697,11 @@ msgstr " y satélite "
 
 #: application/controllers/Calltester.php:32
 msgid "Call Tester"
-msgstr ""
+msgstr "Verificador de Llamada"
 
 #: application/controllers/Calltester.php:844
 msgid "Callsign Tester"
-msgstr ""
+msgstr "Verificador de Indicativo"
 
 #: application/controllers/Club.php:23
 msgid "Club Officer"
@@ -708,7 +709,7 @@ msgstr "Oficial del club"
 
 #: application/controllers/Club.php:24
 msgid "Club Member ADIF"
-msgstr ""
+msgstr "Miembro del club ADIF"
 
 #: application/controllers/Club.php:25
 msgid "Club Member"
@@ -1060,7 +1061,7 @@ msgstr "Tarjetas eQSL"
 #: application/controllers/Eqsl.php:56
 #, php-format
 msgid "Showing %d to %d of %d entries"
-msgstr ""
+msgstr "Mostrando %d a %d de %d entradas"
 
 #: application/controllers/Eqsl.php:83 application/controllers/Eqsl.php:173
 msgid "eQSL Nicknames in Station Profiles aren't defined!"
@@ -1093,31 +1094,31 @@ msgstr "No existe tal apodo de QTH en eQSL: %s"
 
 #: application/controllers/Eqsl.php:335
 msgid "QSO not found or not accessible"
-msgstr ""
+msgstr "QSO no encontrado o no accesible"
 
 #: application/controllers/Eqsl.php:353
 msgid "User not found"
-msgstr "Usador no encontrado"
+msgstr "Usuario no encontrado"
 
 #: application/controllers/Eqsl.php:362
 msgid "eQSL password not configured for this user"
-msgstr ""
+msgstr "Contraseña de eQSL no configurada para este usuario"
 
 #: application/controllers/Eqsl.php:380
 msgid "Failed to fetch eQSL image data"
-msgstr ""
+msgstr "Fallo al obtener los datos de la imagen de eQSL"
 
 #: application/controllers/Eqsl.php:399
 msgid "eQSL image not available"
-msgstr ""
+msgstr "Imagen de eQSL no disponible"
 
 #: application/controllers/Eqsl.php:418
 msgid "Failed to download eQSL image"
-msgstr ""
+msgstr "Fallo la descarga de la imagen de eQSL"
 
 #: application/controllers/Eqsl.php:443
 msgid "Failed to load cached eQSL image"
-msgstr ""
+msgstr "Fallo al cargar el cache de imagen de eQSL"
 
 #: application/controllers/Eqsl.php:590
 msgid "eQSL Tools"
@@ -1126,6 +1127,8 @@ msgstr "Herramientas de eQSL"
 #: application/controllers/Eqsl.php:620
 msgid "Limited to first 150 QSOs for this request. Please run again."
 msgstr ""
+"Limitado a los primeros 150 QSOs para esta solicitud. Por favor ejecute "
+"nuevamente."
 
 #: application/controllers/Eqsl.php:626
 msgid " / Errors: "
@@ -1138,6 +1141,8 @@ msgstr "Descargado satisfactoriamente: "
 #: application/controllers/Eqsl.php:633
 msgid "eQSL rate limit reached. Please wait before running again."
 msgstr ""
+"Alcanzado el limite de solicitudes a eQSL. Por favor espere para ejecutar "
+"nuevamente."
 
 #: application/controllers/Eqsl.php:645
 msgid "eQSL Card Image Download"
@@ -1145,7 +1150,7 @@ msgstr "Descargar Imagen de Tarjeta eQSL"
 
 #: application/controllers/Eqsl.php:669
 msgid "All eQSLs marked as uploaded"
-msgstr ""
+msgstr "Todas las eQSLs marcadas como cargadas"
 
 #: application/controllers/Generic_qsl.php:18
 msgid "Confirmations"
@@ -1962,12 +1967,12 @@ msgstr "Libro de registro avanzado"
 #: application/controllers/Logbookadvanced.php:925
 #, php-format
 msgid "DXCC updated for %d QSO(s)."
-msgstr ""
+msgstr "DXCC actualizado por %d QSO(s)."
 
 #: application/controllers/Logbookadvanced.php:941
 #, php-format
 msgid "Map for DXCC %s and gridsquare %s."
-msgstr ""
+msgstr "Mapa para DXCC %s y gridsquare %s."
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -2003,6 +2008,10 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"El certificado encontrado en el archivo %s contiene una contraseña que no "
+"puede ser procesada. %s Por favor asegúrese de que exporto el certificado de "
+"la aplicación tqsl sin contraseña!%s Para mas información por favor visite "
+"el sitio %sLoTW FAQ%s en la Wiki de Wavelog."
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -2011,16 +2020,20 @@ msgid ""
 "contains 'key-only' this is typically a certificate request which has not "
 "been processed by LoTW yet."
 msgstr ""
+"Error genérico extrayendo el certificado del archivo %s. Si el nombre del "
+"archivo contiene 'key-only' se debe generalmente a una solicitud de "
+"certificado que no ha sido procesada por LoTW aun."
 
 #: application/controllers/Lotw.php:457
 #, php-format
 msgid "Generic error processing the certificate in file %s."
-msgstr ""
+msgstr "Error genérico procesando el certificado en el archivo %s."
 
 #: application/controllers/Lotw.php:469
 #, php-format
 msgid "Generic error extracting the private key from certificate in file %s."
 msgstr ""
+"Error genérico extrayendo la llave privada del certificado en el archivo %s."
 
 #: application/controllers/Lotw.php:685
 msgid "LoTW ADIF Information"
@@ -2028,7 +2041,7 @@ msgstr "Información ADIF de LoTW"
 
 #: application/controllers/Lotw.php:858
 msgid "Connection to LoTW failed."
-msgstr ""
+msgstr "Falló la conexión a LoTW."
 
 #: application/controllers/Lotw.php:863
 #, php-format
@@ -2061,7 +2074,7 @@ msgstr "¡No has definido tus credenciales de ARRL LoTW!"
 
 #: application/controllers/Map.php:48
 msgid "QSO Map"
-msgstr ""
+msgstr "Mapa de QSO"
 
 #: application/controllers/Mode.php:25 application/controllers/Usermode.php:23
 #: application/views/interface_assets/header.php:328
@@ -2103,6 +2116,8 @@ msgid ""
 "Duplicate note title for this category and user - not allowed for Contacts "
 "category."
 msgstr ""
+"Titulo de la nota duplicado para esta categoría y usuario - no permitido "
+"para la categoría de Contactos."
 
 #: application/controllers/Notes.php:286
 msgid "Not found or not allowed"
@@ -2114,7 +2129,7 @@ msgstr "No encontrado"
 
 #: application/controllers/Notes.php:317
 msgid "Category and title are required"
-msgstr ""
+msgstr "Se requiere el titulo y la categoría"
 
 #: application/controllers/Notes.php:331
 msgid "Note not found or not allowed"
@@ -2130,11 +2145,11 @@ msgstr "Nota actualizada"
 
 #: application/controllers/Notes.php:347
 msgid "Cannot create empty note"
-msgstr ""
+msgstr "No se puede crear una nota vacía"
 
 #: application/controllers/Notes.php:355
 msgid "A note with this callsign already exists"
-msgstr ""
+msgstr "Ya existe una nota con este indicativo"
 
 #: application/controllers/Notes.php:365
 msgid "Note created"
@@ -2781,6 +2796,8 @@ msgid ""
 "Are you sure you want to delete the station logbook %s? You must re-link any "
 "locations linked here to another logbook."
 msgstr ""
+"Esta seguro que desea eliminar el logbook de la estación %s? Deberá volver a "
+"enlazar cualquier ubicación enlazada aquí a otro logbook."
 
 #: application/controllers/Stationsetup.php:306
 #: application/views/stationsetup/stationsetup.php:68
