@@ -244,7 +244,8 @@ class CI_Session {
 	 */
 	protected function _configure(&$params)
 	{
-		$expiration = config_item('sess_expiration');
+		// We force a minimum expiration time of 43200 seconds (12 hours) for security reasons
+		$expiration = config_item('sess_expiration') == 0 ? 43200 : config_item('sess_expiration');
 
 		if (isset($params['cookie_lifetime']))
 		{

@@ -539,6 +539,11 @@ class User_Model extends CI_Model {
 			return false;
 		}
 
+		$token = $this->session->userdata('session_token') ?: NULL;
+		if (!$token) {
+			$token = bin2hex(random_bytes(32));
+		}
+
 		$userdata = array(
 			'user_id'		 => $u->row()->user_id,
 			'user_name'		 => $u->row()->user_name,
@@ -551,7 +556,8 @@ class User_Model extends CI_Model {
 			'user_clublog_name'	 => $u->row()->user_clublog_name ?? '',
 			'user_eqsl_name'	 => $u->row()->user_eqsl_name,
 			'user_eqsl_qth_nickname' => $u->row()->user_eqsl_qth_nickname,
-			'user_hash'		 => $this->_session_hash($u->row()->user_id . $u->row()->user_type),
+			'user_hash'		     => $this->_session_hash($u->row()->user_id . $u->row()->user_type . $token),
+			'session_token'		 => $token,
 			'radio' => ((($this->session->userdata('radio') ?? '') == '') ? $this->user_options_model->get_options('cat', array('option_name' => 'default_radio'))->row()->option_value ?? '' : $this->session->userdata('radio')),
 			'station_profile_id' => $this->session->userdata('station_profile_id') ?? '',
 			'user_measurement_base' => $u->row()->user_measurement_base,
@@ -646,7 +652,8 @@ class User_Model extends CI_Model {
 			$impersonate = $this->session->userdata('impersonate');
 
 			if(ENVIRONMENT != 'maintenance') {
-				if($this->_auth($user_id . $user_type, $user_hash)) {
+				$session_token = $this->session->userdata('session_token');
+				if($session_token && $this->_auth($user_id . $user_type . $session_token, $user_hash)) {
 					// Freshen the session
 					$this->update_session($user_id, $u);
 					return 1;
@@ -656,7 +663,8 @@ class User_Model extends CI_Model {
 				}
 			} else {  // handle the maintenance mode and kick out user on page reload if not an admin
 				if($user_type == '99' || $src_user_type === '99') {
-					if($this->_auth($user_id . $user_type, $user_hash)) {
+					$session_token = $this->session->userdata('session_token');
+					if($session_token && $this->_auth($user_id . $user_type . $session_token, $user_hash)) {
 						// Freshen the session
 						$this->update_session($user_id, $u);
 						return 1;
