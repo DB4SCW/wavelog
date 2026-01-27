@@ -439,7 +439,8 @@ $config['encryption_key'] = '%encryptionkey%';
 | 'sess_expiration'
 |
 |	The number of SECONDS you want the session to last.
-|	Setting to 0 (zero) means expire when the browser is closed.
+|	Default: 43200 seconds (12 hours).
+|   Setting to 0 means use the default value of 43200 seconds (12 hours).
 |
 | 'sess_save_path'
 |
@@ -476,7 +477,7 @@ $config['encryption_key'] = '%encryptionkey%';
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_wavelog';
-$config['sess_expiration'] = 0;
+$config['sess_expiration'] = 43200;
 $config['sess_save_path'] = '/tmp';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
@@ -789,13 +790,114 @@ $config['enable_eqsl_massdownload'] = false;
 
  $config['max_login_attempts'] = 3;
 
- /*
- |--------------------------------------------------------------------------
- | Disable User QSO Count in User List (Admin Menu)
- | Reason for this setting is to prevent performance issues on large installations
- | where the QSO count is not needed. Set to true to disable the QSO count.
- | This also hides the last Operator for CLubstations. Default is false.
- |--------------------------------------------------------------------------
-  */
+/*
+|--------------------------------------------------------------------------
+| Disable User QSO Count in User List (Admin Menu)
+| Reason for this setting is to prevent performance issues on large installations
+| where the QSO count is not needed. Set to true to disable the QSO count.
+| This also hides the last Operator for CLubstations. Default is false.
+|--------------------------------------------------------------------------
+ */
 
-  $config['disable_user_stats'] = false;
+ $config['disable_user_stats'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| Enable DCL Interface
+| Set this to true if your Users and you want to connect your instance to the German DCL
+|--------------------------------------------------------------------------
+ */
+
+ $config['enable_dcl_interface'] = true;
+
+/*
+|--------------------------------------------------------------------------
+| DXCluster File Cache
+|--------------------------------------------------------------------------
+|
+| Controls file-based caching for DXCluster features. Two independent settings:
+|
+| 1. enable_dxcluster_file_cache_band
+|    - Caches processed spot lists (WITHOUT worked status) from DXCache API
+|    - Cache is INSTANCE-WIDE (shared by all users)
+|    - Cache duration: 59 seconds
+|    - Cache key format: dxcluster_raw_{maxage}_{continent}_{mode}_{band}
+|    - Example: dxcluster_raw_60_Any_All_20m
+|    - Contains: callsign, frequency, DXCC, mode, age, metadata
+|    - Does NOT contain: worked/confirmed status (always false in cache)
+|    - Set to TRUE to reduce API calls and speed up spot list loading
+|    - Set to FALSE to always fetch fresh data from API
+|
+| 2. enable_dxcluster_file_cache_worked
+|    - Caches worked/confirmed status lookups from database
+|    - Cache is USER-SPECIFIC (separate for each user/logbook)
+|    - Cache duration: 15 minutes (900 seconds)
+|    - Cache includes: All bands/modes combinations per callsign/DXCC/continent
+|    - Set to TRUE to significantly reduce database load
+|    - Set to FALSE to always query database for fresh status
+|
+| Default: false (both caching disabled)
+|
+| Recommendation:
+|   - Enable BAND cache on all installations to reduce API load (instance-wide)
+|   - Enable WORKED cache on high-traffic multi-user installations to reduce DB queries
+| Warning: WORKED cache may cause high disk usage on large multi-user installations.
+|--------------------------------------------------------------------------
+ */
+
+$config['enable_dxcluster_file_cache_band'] = false;
+$config['enable_dxcluster_file_cache_worked'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| Internal tools
+| Set this to true if you want to display the admin internal tools in the header menu
+|--------------------------------------------------------------------------
+ */
+$config['internal_tools'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| API Rate Limiting
+|--------------------------------------------------------------------------
+|
+| Rate limiting for API endpoints using sliding window algorithm.
+| Rate limiting is only enabled if api_rate_limits is defined (not null/empty).
+|
+| Format: Array of endpoint-specific limits
+|   - Endpoint name: the API function name (e.g., 'private_lookup', 'lookup')
+|   - requests: maximum number of requests allowed
+|   - window: time window in seconds
+|
+| Example configuration:
+|
+| $config['api_rate_limits'] = [
+|     'private_lookup' => ['requests' => 60, 'window' => 60],  // 60 requests per minute
+|     'lookup'         => ['requests' => 60, 'window' => 60],  // 60 requests per minute
+|     'qso'            => ['requests' => 10, 'window' => 60],  // 10 requests per minute
+|     'default'        => ['requests' => 30, 'window' => 60],  // Default for all other endpoints
+| ];
+|
+| Set to null or leave commented to disable rate limiting entirely:
+| $config['api_rate_limits'] = null;
+|
+| The 'default' key is optional and applies to any API endpoint not explicitly
+| listed. If no default is provided, endpoints without specific limits have no
+| rate limiting applied.
+|
+| Rate limiting tracks requests by:
+|   - API key (if provided)
+|   - Session user ID (if authenticated via session)
+|   - IP address (fallback)
+|
+*/
+
+// Example configuration (uncomment to enable):
+// $config['api_rate_limits'] = [
+//     'private_lookup' => ['requests' => 60, 'window' => 60],
+//     'lookup'         => ['requests' => 60, 'window' => 60],
+//     'qso'            => ['requests' => 10, 'window' => 60],
+//     'radio'          => ['requests' => 60, 'window' => 60],
+//     'statistics'     => ['requests' => 30, 'window' => 60],
+//     'default'        => ['requests' => 30, 'window' => 60],
+// ];

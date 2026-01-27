@@ -2,15 +2,15 @@
 # Copyright (c) 2026 Wavelog by DF2ET, DJ7NT, HB9HIL and LA8AJA.
 # This file is distributed under the MIT licence.
 #
-# Luca <lucabennati1996@gmail.com>, 2024, 2025.
+# Luca <lucabennati1996@gmail.com>, 2024, 2025, 2026.
 # "Francisco (F4VSE)" <kikosgc@users.noreply.github.com>, 2024, 2025.
 # Fabian Berg <fabian.berg@hb9hil.org>, 2024.
 # "Erkin Mercan (TA4AQG-SP9AQG)" <ekomeko066@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-21 16:19+0000\n"
-"PO-Revision-Date: 2025-12-09 23:24+0000\n"
+"POT-Creation-Date: 2026-01-27 07:38+0000\n"
+"PO-Revision-Date: 2026-01-24 15:29+0000\n"
 "Last-Translator: Luca <lucabennati1996@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -43,7 +43,7 @@ msgstr ""
 #: application/controllers/Components.php:13
 #: application/controllers/Contestcalendar.php:15
 #: application/controllers/Contesting.php:14
-#: application/controllers/Cron.php:26 application/controllers/Cron.php:172
+#: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
@@ -60,9 +60,9 @@ msgstr ""
 #: application/controllers/Dxcluster.php:9 application/controllers/Eqsl.php:23
 #: application/controllers/Eqsl.php:66 application/controllers/Eqsl.php:166
 #: application/controllers/Eqsl.php:255 application/controllers/Eqsl.php:279
-#: application/controllers/Eqsl.php:318 application/controllers/Eqsl.php:519
-#: application/controllers/Eqsl.php:586 application/controllers/Eqsl.php:602
-#: application/controllers/Eqsl.php:661
+#: application/controllers/Eqsl.php:318 application/controllers/Eqsl.php:517
+#: application/controllers/Eqsl.php:584 application/controllers/Eqsl.php:600
+#: application/controllers/Eqsl.php:659
 #: application/controllers/Generic_qsl.php:12
 #: application/controllers/Hamsat.php:13 application/controllers/Hrdlog.php:36
 #: application/controllers/Kmlexport.php:18
@@ -78,14 +78,14 @@ msgstr ""
 #: application/controllers/Operator.php:13
 #: application/controllers/Options.php:14 application/controllers/Oqrs.php:15
 #: application/controllers/Oqrs.php:165 application/controllers/Qrbcalc.php:13
-#: application/controllers/Qrz.php:200 application/controllers/Qrz.php:287
+#: application/controllers/Qrz.php:199 application/controllers/Qrz.php:286
 #: application/controllers/Qsl.php:12 application/controllers/Qsl.php:13
 #: application/controllers/Qsl.php:49 application/controllers/Qsl.php:57
 #: application/controllers/Qslprint.php:24
 #: application/controllers/Qslprint.php:159 application/controllers/Qso.php:8
-#: application/controllers/Qso.php:22 application/controllers/Qso.php:217
-#: application/controllers/Qso.php:348 application/controllers/Qso.php:369
-#: application/controllers/Qso.php:392 application/controllers/Qso.php:692
+#: application/controllers/Qso.php:22 application/controllers/Qso.php:288
+#: application/controllers/Qso.php:419 application/controllers/Qso.php:440
+#: application/controllers/Qso.php:463 application/controllers/Qso.php:763
 #: application/controllers/Radio.php:32 application/controllers/Radio.php:297
 #: application/controllers/Radio.php:323 application/controllers/Radio.php:339
 #: application/controllers/Reg1test.php:17
@@ -693,6 +693,10 @@ msgstr " e satellite "
 msgid "Call Tester"
 msgstr ""
 
+#: application/controllers/Calltester.php:844
+msgid "Callsign Tester"
+msgstr ""
+
 #: application/controllers/Club.php:23
 msgid "Club Officer"
 msgstr "Coordinatore di stazione"
@@ -839,11 +843,11 @@ msgstr "Continenti"
 msgid "Cron Manager"
 msgstr "Gestione Cron"
 
-#: application/controllers/Cron.php:164 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:163 application/views/cron/edit.php:5
 msgid "Edit Cronjob"
 msgstr "Modifica Cronjob"
 
-#: application/controllers/Cron.php:228 application/controllers/Cron.php:229
+#: application/controllers/Cron.php:227 application/controllers/Cron.php:228
 #: application/views/cron/index.php:96 application/views/cron/index.php:98
 #: application/views/cron/index.php:100 application/views/debug/index.php:524
 #: application/views/debug/index.php:531 application/views/debug/index.php:537
@@ -854,32 +858,32 @@ msgstr "Modifica Cronjob"
 msgid "never"
 msgstr "mai"
 
-#: application/controllers/Cron.php:229
+#: application/controllers/Cron.php:228
 msgid "calculating..."
 msgstr "calcolo..."
 
-#: application/controllers/Cron.php:240 application/views/cron/index.php:83
+#: application/controllers/Cron.php:239 application/views/cron/index.php:83
 msgid "healthy"
 msgstr "In salute"
 
-#: application/controllers/Cron.php:242 application/views/cron/index.php:85
+#: application/controllers/Cron.php:241 application/views/cron/index.php:85
 msgid "failed"
 msgstr "fallito"
 
-#: application/controllers/Cron.php:244 application/views/cron/index.php:87
+#: application/controllers/Cron.php:243 application/views/cron/index.php:87
 msgid "pending"
 msgstr "in attesa"
 
-#: application/controllers/Cron.php:249 application/views/cron/index.php:92
+#: application/controllers/Cron.php:248 application/views/cron/index.php:92
 msgid "disabled"
 msgstr "disabilitato"
 
-#: application/controllers/Cron.php:288
+#: application/controllers/Cron.php:287
 #: application/views/interface_assets/footer.php:41
 msgid "OK"
 msgstr "OK"
 
-#: application/controllers/Cron.php:292
+#: application/controllers/Cron.php:291
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
@@ -888,7 +892,7 @@ msgstr ""
 "L'ultima esecuzione è avvenuta più di %s secondi fa. %s Controlla il tuo "
 "cron master! Dovrebbe essere eseguito ogni minuto (* * * * *)."
 
-#: application/controllers/Cron.php:295
+#: application/controllers/Cron.php:294
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
@@ -897,7 +901,7 @@ msgstr ""
 "L'ultima esecuzione risale a più di %s minuti fa. %s Sembra che Mastercron "
 "non sia in esecuzione! %s Dovrebbe essere eseguito ogni minuto (* * * * *)."
 
-#: application/controllers/Cron.php:300 application/views/cron/index.php:42
+#: application/controllers/Cron.php:299 application/views/cron/index.php:42
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr "Non attivo"
@@ -1048,7 +1052,7 @@ msgstr "Cartoline eQSL"
 #: application/controllers/Eqsl.php:56
 #, php-format
 msgid "Showing %d to %d of %d entries"
-msgstr ""
+msgstr "Visualizzazione da %d a %d di %d voci"
 
 #: application/controllers/Eqsl.php:83 application/controllers/Eqsl.php:173
 msgid "eQSL Nicknames in Station Profiles aren't defined!"
@@ -1081,57 +1085,59 @@ msgstr "Nessun QTH eQSL con questo nickname: %s"
 
 #: application/controllers/Eqsl.php:335
 msgid "QSO not found or not accessible"
-msgstr ""
+msgstr "QSO non trovato o non accessibile"
 
 #: application/controllers/Eqsl.php:353
 msgid "User not found"
-msgstr ""
+msgstr "Utente non trovato"
 
 #: application/controllers/Eqsl.php:362
 msgid "eQSL password not configured for this user"
-msgstr ""
+msgstr "Password eQSL non configurata per questo utente"
 
-#: application/controllers/Eqsl.php:380
+#: application/controllers/Eqsl.php:379
 msgid "Failed to fetch eQSL image data"
-msgstr ""
+msgstr "Impossibile recuperare i dati dell'immagine eQSL"
 
-#: application/controllers/Eqsl.php:399
+#: application/controllers/Eqsl.php:398
 msgid "eQSL image not available"
-msgstr ""
+msgstr "Immagine eQSL non disponibile"
 
-#: application/controllers/Eqsl.php:418
+#: application/controllers/Eqsl.php:416
 msgid "Failed to download eQSL image"
-msgstr ""
+msgstr "Impossibile scaricare l'immagine eQSL"
 
-#: application/controllers/Eqsl.php:443
+#: application/controllers/Eqsl.php:441
 msgid "Failed to load cached eQSL image"
-msgstr ""
+msgstr "Caricamento dell'immagine eQSL memorizzata nella cache non riuscito"
 
-#: application/controllers/Eqsl.php:590
+#: application/controllers/Eqsl.php:588
 msgid "eQSL Tools"
 msgstr "Strumenti eQSL"
 
-#: application/controllers/Eqsl.php:620
+#: application/controllers/Eqsl.php:618
 msgid "Limited to first 150 QSOs for this request. Please run again."
-msgstr ""
+msgstr "Limitato ai primi 150 QSO per questa richiesta. Esegui di nuovo."
 
-#: application/controllers/Eqsl.php:626
+#: application/controllers/Eqsl.php:624
 msgid " / Errors: "
 msgstr " /Errori: "
 
-#: application/controllers/Eqsl.php:626
+#: application/controllers/Eqsl.php:624
 msgid "Successfully downloaded: "
 msgstr "Scaricato con successo: "
 
-#: application/controllers/Eqsl.php:633
+#: application/controllers/Eqsl.php:631
 msgid "eQSL rate limit reached. Please wait before running again."
 msgstr ""
+"Limite di velocità eQSL raggiunto. Attendere prima di eseguire il comando "
+"nuovamente."
 
-#: application/controllers/Eqsl.php:645
+#: application/controllers/Eqsl.php:643
 msgid "eQSL Card Image Download"
 msgstr "Scarica immagine da eQSL"
 
-#: application/controllers/Eqsl.php:669
+#: application/controllers/Eqsl.php:667
 msgid "All eQSLs marked as uploaded"
 msgstr "Tutte le eQSL contrassegnate come caricate"
 
@@ -1932,7 +1938,7 @@ msgstr "Operatore"
 #: application/views/station_profile/edit.php:107
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:45
-#: application/views/stationsetup/locationlist.php:58
+#: application/views/stationsetup/locationlist.php:67
 #: application/views/stationsetup/stationsetup.php:156
 #: application/views/timeline/index.php:216
 #: application/views/timeplotter/index.php:33
@@ -1950,12 +1956,12 @@ msgstr "Registro avanzato"
 #: application/controllers/Logbookadvanced.php:925
 #, php-format
 msgid "DXCC updated for %d QSO(s)."
-msgstr ""
+msgstr "DXCC aggiornato per %d QSO."
 
 #: application/controllers/Logbookadvanced.php:941
 #, php-format
 msgid "Map for DXCC %s and gridsquare %s."
-msgstr ""
+msgstr "Mappa per DXCC %s e locatore %s."
 
 #: application/controllers/Lookup.php:22
 msgid "Quick Lookup"
@@ -1991,6 +1997,10 @@ msgid ""
 "application without password!%s For further information please visit the "
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
+"Il certificato trovato nel file %s contiene una password e non può essere "
+"elaborato. %sAssicurati di esportare il certificato LoTW dall'applicazione "
+"tqsl senza password!%s Per ulteriori informazioni visita la %spagina delle "
+"FAQ di LoTW%s nel Wavelog Wiki."
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -1999,16 +2009,21 @@ msgid ""
 "contains 'key-only' this is typically a certificate request which has not "
 "been processed by LoTW yet."
 msgstr ""
+"Errore generico nell'estrazione del certificato dal file %s. Se il nome del "
+"file contiene 'key-only', si tratta tipicamente di una richiesta di "
+"certificato che non è stata ancora elaborata da LoTW."
 
 #: application/controllers/Lotw.php:457
 #, php-format
 msgid "Generic error processing the certificate in file %s."
-msgstr ""
+msgstr "Errore generico nell'elaborazione del certificato nel file %s."
 
 #: application/controllers/Lotw.php:469
 #, php-format
 msgid "Generic error extracting the private key from certificate in file %s."
 msgstr ""
+"Errore generico durante l'estrazione della chiave privata dal certificato "
+"nel file %s."
 
 #: application/controllers/Lotw.php:685
 msgid "LoTW ADIF Information"
@@ -2016,7 +2031,7 @@ msgstr "Informazioni ADIF LoTW"
 
 #: application/controllers/Lotw.php:858
 msgid "Connection to LoTW failed."
-msgstr ""
+msgstr "Connessione a LoTW fallita."
 
 #: application/controllers/Lotw.php:863
 #, php-format
@@ -2049,7 +2064,7 @@ msgstr "Non hai definito le tue credenziali ARRL LoTW!"
 
 #: application/controllers/Map.php:48
 msgid "QSO Map"
-msgstr ""
+msgstr "Mappa QSO"
 
 #: application/controllers/Mode.php:25 application/controllers/Usermode.php:23
 #: application/views/interface_assets/header.php:328
@@ -2360,16 +2375,16 @@ msgstr ""
 "Le latitudini negative si trovano a sud dell'equatore, mentre le longitudini "
 "negative si trovano a ovest di Greenwich."
 
-#: application/controllers/Qrz.php:204
+#: application/controllers/Qrz.php:203
 #: application/views/interface_assets/header.php:519
 msgid "QRZ Logbook"
 msgstr "Registro QRZ"
 
-#: application/controllers/Qrz.php:289
+#: application/controllers/Qrz.php:288
 msgid "QRZ QSL Import"
 msgstr "Importazione QSL da QRZ"
 
-#: application/controllers/Qrz.php:346
+#: application/controllers/Qrz.php:345
 msgid "QRZ ADIF Information"
 msgstr "Informazioni ADIF QRZ"
 
@@ -2392,15 +2407,15 @@ msgstr "Stampa QSL richieste"
 msgid "Add QSO"
 msgstr "Aggiungi QSO"
 
-#: application/controllers/Qso.php:753
+#: application/controllers/Qso.php:824
 msgid "You have to be logged in to access this URL."
 msgstr "Devi effettuare l'accesso per accedere a questo URL."
 
-#: application/controllers/Qso.php:759
+#: application/controllers/Qso.php:830
 msgid "Call Transfer"
 msgstr "Trasferisci nominativo"
 
-#: application/controllers/Qso.php:766
+#: application/controllers/Qso.php:837
 msgid "No callsign provided."
 msgstr "Nessun nominativo fornito."
 
@@ -3384,7 +3399,7 @@ msgstr "Utenti multipli trovati tramite slug"
 
 #: application/controllers/Zonechecker.php:26
 msgid "Gridsquare Zone finder"
-msgstr ""
+msgstr "Trova zona del locatore"
 
 #: application/libraries/Callbook.php:124
 msgid "QRZCQ Error"
@@ -3392,7 +3407,7 @@ msgstr "Errore QRZCQ"
 
 #: application/libraries/Callbook.php:155
 msgid "Error obtaining a session key for HamQTH query"
-msgstr ""
+msgstr "Errore nel ottenere una chiave di sessione per la query HamQTH"
 
 #: application/libraries/Cbr_parser.php:111
 #: application/libraries/Cbr_parser.php:160
@@ -3493,23 +3508,23 @@ msgstr "Livello di autorizzazione non valido!"
 msgid "Error adding Club Member!"
 msgstr "Errore durante l'aggiunta del membro del club!"
 
-#: application/models/Eqslmethods_model.php:292
+#: application/models/Eqslmethods_model.php:291
 msgid "Your eQSL username and/or password is incorrect."
 msgstr "Nome utente o password di eQSL non corretti."
 
-#: application/models/Eqslmethods_model.php:297
+#: application/models/Eqslmethods_model.php:296
 msgid "Something went wrong with eQSL.cc!"
 msgstr "Qualcosa è andato storto con eQSL.cc!"
 
-#: application/models/Eqslmethods_model.php:308
+#: application/models/Eqslmethods_model.php:307
 msgid "QTH Nickname does not exist at eQSL"
 msgstr "Il nickname QTH non esiste in eQSL"
 
-#: application/models/Eqslmethods_model.php:317
+#: application/models/Eqslmethods_model.php:316
 msgid "eQSL.cc is experiencing issues. Please try exporting QSOs later."
 msgstr "eQSL.cc sta riscontrando problemi. Prova a esportare i QSO più tardi."
 
-#: application/models/Eqslmethods_model.php:322
+#: application/models/Eqslmethods_model.php:321
 msgid ""
 "There was an error in one of the QSOs. You might want to manually upload "
 "them."
@@ -3517,12 +3532,12 @@ msgstr ""
 "Si è verificato un errore in uno dei QSO. Potresti volerli caricare "
 "manualmente."
 
-#: application/models/Eqslmethods_model.php:327
+#: application/models/Eqslmethods_model.php:326
 msgid ""
 "It seems that the eQSL site has changed. Please open up an issue on GitHub."
 msgstr "Sembra che il sito eQSL sia cambiato. Apri una segnalazione su GitHub."
 
-#: application/models/Eqslmethods_model.php:333
+#: application/models/Eqslmethods_model.php:332
 msgid ""
 "An uncaught Error occured while uploading QSOs. Perhaps eQSL has hiccups"
 msgstr ""
@@ -3544,27 +3559,31 @@ msgstr "HRDlog: nessun QSO trovato da caricare per il nominativo di stazione: "
 msgid "HRDlog: No station profiles with HRDlog Credentials found."
 msgstr "HRDlog: nessun profilo di stazione con credenziali HRDlog trovate."
 
-#: application/models/Logbook_model.php:1416
+#: application/models/Logbook_model.php:305
+msgid "Station not accessible"
+msgstr ""
+
+#: application/models/Logbook_model.php:1287
 msgid "Station ID not allowed"
 msgstr "ID stazione non consentito"
 
-#: application/models/Logbook_model.php:1421
+#: application/models/Logbook_model.php:1292
 msgid "No Call given"
 msgstr "Nessun nominatio fornito"
 
-#: application/models/Logbook_model.php:1491
-#: application/models/Logbook_model.php:1693
+#: application/models/Logbook_model.php:1362
+#: application/models/Logbook_model.php:1564
 msgid "DXCC has to be Numeric"
 msgstr "DXCC deve essere numerico"
 
-#: application/models/Logbook_model.php:4764
+#: application/models/Logbook_model.php:4635
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
 "Callsign della stazione errato ( %s) durante l'importazione di QSO con %s "
 "per %s: SALTATO"
 
-#: application/models/Logbook_model.php:4778
+#: application/models/Logbook_model.php:4649
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3572,11 +3591,11 @@ msgstr ""
 "Hai cercato di importare un QSO senza una data valida. Questo QSO non è "
 "stato importato. Non è valido"
 
-#: application/models/Logbook_model.php:4787
+#: application/models/Logbook_model.php:4658
 msgid "QSO on"
 msgstr "QSO alle"
 
-#: application/models/Logbook_model.php:4787
+#: application/models/Logbook_model.php:4658
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3584,7 +3603,7 @@ msgstr ""
 "Hai tentato di importare un QSO senza alcun nominativo di chiamata. Questo "
 "QSO non è stato importato perchè non valido"
 
-#: application/models/Logbook_model.php:4836
+#: application/models/Logbook_model.php:4707
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3593,64 +3612,64 @@ msgstr ""
 "QSO su %s: Hai provato a importare un QSO senza una banda specificata. "
 "Questo QSO non è stato importato. È non valido"
 
-#: application/models/Logbook_model.php:5101
+#: application/models/Logbook_model.php:4972
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "La data di ricezione QSL non è valida (AAAAMMGG)"
 
-#: application/models/Logbook_model.php:5112
+#: application/models/Logbook_model.php:4983
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "La data di invio QSL non è valida (AAAAMMGG)"
 
-#: application/models/Logbook_model.php:5173
+#: application/models/Logbook_model.php:5044
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "La data di upload Clublog non è valida (AAAAMMGG)"
 
-#: application/models/Logbook_model.php:5548
+#: application/models/Logbook_model.php:5419
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Duplicata"
 
-#: application/models/Logbook_model.php:5613
-#: application/models/Logbook_model.php:5708
+#: application/models/Logbook_model.php:5484
+#: application/models/Logbook_model.php:5579
 msgid "QSO could not be matched"
 msgstr "Impossibile abbinare QSO"
 
-#: application/models/Logbook_model.php:5621
+#: application/models/Logbook_model.php:5492
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "confermato da LoTW/Clublog/eQSL/Contest"
 
-#: application/models/Logbook_model.php:5627
+#: application/models/Logbook_model.php:5498
 msgid "confirmed by award manager"
 msgstr "confermato dal responsabile del premio"
 
-#: application/models/Logbook_model.php:5631
+#: application/models/Logbook_model.php:5502
 msgid "confirmed by cross-check of DCL data"
 msgstr "confermato dal controllo incrociato dei dati DCL"
 
-#: application/models/Logbook_model.php:5635
+#: application/models/Logbook_model.php:5506
 msgid "confirmation pending"
 msgstr "Conferma in sospeso"
 
-#: application/models/Logbook_model.php:5638
+#: application/models/Logbook_model.php:5509
 msgid "unconfirmed"
 msgstr "Non confermato"
 
-#: application/models/Logbook_model.php:5641
+#: application/models/Logbook_model.php:5512
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 msgid "unknown"
 msgstr "sconosciuto"
 
-#: application/models/Logbook_model.php:5711
+#: application/models/Logbook_model.php:5582
 msgid "POTA reference already in log"
 msgstr "Riferimento POTA già presente nel registro di stazione"
 
-#: application/models/Logbook_model.php:5714
+#: application/models/Logbook_model.php:5585
 msgid "QSO updated"
 msgstr "QSO aggiornato"
 
-#: application/models/Logbook_model.php:6444
+#: application/models/Logbook_model.php:6315
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -3667,6 +3686,8 @@ msgstr "Direzione"
 #: application/models/Logbookadvanced_model.php:1664
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr ""
+"La tabella VuccGrids è vuota. Per favore, importa prima i dati dei locatori "
+"VUCC."
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -3687,51 +3708,51 @@ msgstr "Antenne"
 msgid "In Contacts category, the titles of the notes need to be unique."
 msgstr "Nella categoria Contatti, i titoli delle note devono essere unici."
 
-#: application/models/Update_model.php:352
+#: application/models/Update_model.php:348
 msgid "Newer release available:"
 msgstr "Versione più recente disponibile:"
 
-#: application/models/Update_model.php:356
+#: application/models/Update_model.php:352
 msgid "You are running the latest version."
 msgstr "Stai utilizzando l'ultima versione."
 
-#: application/models/Update_model.php:446
+#: application/models/Update_model.php:440
 msgid "cURL error:"
 msgstr "errore cURL:"
 
-#: application/models/Update_model.php:481
+#: application/models/Update_model.php:474
 msgid "SAT already existing. LoTW status updated."
 msgstr "SAT già esistente. Stato LoTW aggiornato."
 
-#: application/models/Update_model.php:484
-#: application/models/Update_model.php:513
+#: application/models/Update_model.php:477
+#: application/models/Update_model.php:506
 #, php-format
 msgid "LoTW status for %d QSO updated"
 msgid_plural "LoTW status for %d QSOs updated"
 msgstr[0] "Stato LoTW aggiornato per %d collegamento"
 msgstr[1] "Stato LoTW aggiornato per %d collegamenti"
 
-#: application/models/Update_model.php:487
+#: application/models/Update_model.php:480
 msgid "SAT already existing. Updating LoTW status failed."
 msgstr "SAT già esistente. Aggiornamento dello stato LoTW non riuscito."
 
-#: application/models/Update_model.php:490
+#: application/models/Update_model.php:483
 msgid "SAT already existing. Ignored."
 msgstr "SAT già esistente. Ignorato."
 
-#: application/models/Update_model.php:497
+#: application/models/Update_model.php:490
 msgid "SAT already existing. Display name updated."
 msgstr "SAT già esistente. Nome visualizzato aggiornato."
 
-#: application/models/Update_model.php:499
+#: application/models/Update_model.php:492
 msgid "SAT already existing. Updating display name failed."
 msgstr "SAT già esistente. Aggiornamento del nome visualizzato non riuscito."
 
-#: application/models/Update_model.php:509
+#: application/models/Update_model.php:502
 msgid "New SAT. Inserted."
 msgstr "Nuovo SAT inserito."
 
-#: application/models/Update_model.php:517
+#: application/models/Update_model.php:510
 msgid "New SAT. Insert failed."
 msgstr "Nuovo inserimento SAT non riuscito."
 
@@ -4544,6 +4565,8 @@ msgid ""
 "There is different data for DOK in your log compared to DCL or updates where "
 "not done because QSOs are not confirmed in DCL."
 msgstr ""
+"Nel tuo log ci sono dati diversi per DOK rispetto a DCL oppure gli "
+"aggiornamenti non sono stati fatti perché i QSO non sono confermati in DCL."
 
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
@@ -4881,7 +4904,7 @@ msgstr "Opzioni di esportazione"
 
 #: application/views/adif/import.php:302
 msgid "Mark exported QSOs as already uploaded to LoTW"
-msgstr ""
+msgstr "Contrassegna i QSO esportati come già caricati su LoTW"
 
 #: application/views/adif/import.php:311
 msgid "Export QSOs not uploaded to LoTW"
@@ -4923,6 +4946,8 @@ msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
+"Maggiori informazioni sullo stato di conferma in DCL possono essere trovate "
+"sulla %spagina Confluence di DCL%s."
 
 #: application/views/adif/import.php:349
 msgid "Only import DOK data from QSOs confirmed on DCL."
@@ -8795,6 +8820,7 @@ msgstr ""
 #: application/views/station_profile/edit.php:419
 #: application/views/station_profile/edit.php:439
 #: application/views/station_profile/edit.php:446
+#: application/views/stationsetup/locationlist.php:48
 #: application/views/user/edit.php:368 application/views/user/edit.php:379
 #: application/views/user/edit.php:389 application/views/user/edit.php:400
 #: application/views/user/edit.php:410 application/views/user/edit.php:420
@@ -8863,6 +8889,7 @@ msgstr "Si"
 #: application/views/station_profile/edit.php:420
 #: application/views/station_profile/edit.php:438
 #: application/views/station_profile/edit.php:445
+#: application/views/stationsetup/locationlist.php:46
 #: application/views/user/edit.php:369 application/views/user/edit.php:380
 #: application/views/user/edit.php:390 application/views/user/edit.php:401
 #: application/views/user/edit.php:411 application/views/user/edit.php:421
@@ -8910,22 +8937,22 @@ msgstr "Ultimo QSO"
 
 #: application/views/calltester/comparison_result.php:18
 msgid "DXCC Class Results"
-msgstr ""
+msgstr "Risultati della classe DXCC"
 
 #: application/views/calltester/comparison_result.php:21
 #: application/views/calltester/comparison_result.php:33
 msgid "Calls tested:"
-msgstr ""
+msgstr "Nominativi testati:"
 
 #: application/views/calltester/comparison_result.php:22
 #: application/views/calltester/comparison_result.php:34
 msgid "Execution time:"
-msgstr ""
+msgstr "Tempo di esecuzione:"
 
 #: application/views/calltester/comparison_result.php:23
 #: application/views/calltester/comparison_result.php:35
 msgid "Issues found:"
-msgstr ""
+msgstr "Problemi riscontrati:"
 
 #: application/views/calltester/comparison_result.php:30
 msgid "Logbook Model Results"
@@ -8933,11 +8960,11 @@ msgstr ""
 
 #: application/views/calltester/comparison_result.php:44
 msgid "Comparison Summary"
-msgstr ""
+msgstr "Resoconto del confronto"
 
 #: application/views/calltester/comparison_result.php:45
 msgid "Only found in DXCC Class:"
-msgstr ""
+msgstr "Presente solo nella Classe DXCC:"
 
 #: application/views/calltester/comparison_result.php:46
 msgid "Only found in Logbook Model:"
@@ -8945,11 +8972,12 @@ msgstr ""
 
 #: application/views/calltester/comparison_result.php:47
 msgid "Found in both methods:"
-msgstr ""
+msgstr "Trovato in entrambe i metodi:"
 
 #: application/views/calltester/comparison_result.php:54
 msgid "Issues found only in DXCC Class (not in Logbook Model):"
 msgstr ""
+"Problemi riscontrati solo nella Classe DXCC (non nel Modello di Diario):"
 
 #: application/views/calltester/comparison_result.php:62
 #: application/views/calltester/comparison_result.php:98
@@ -8960,7 +8988,7 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:392
 #: application/views/zonechecker/result.php:52
 msgid "Station Profile"
-msgstr ""
+msgstr "Profilo stazione"
 
 #: application/views/calltester/comparison_result.php:63
 #: application/views/calltester/comparison_result.php:99
@@ -8968,14 +8996,14 @@ msgstr ""
 #: application/views/calltester/result.php:25
 #: application/views/logbookadvanced/checkresult.php:107
 msgid "Existing DXCC"
-msgstr ""
+msgstr "DXCC esistente"
 
 #: application/views/calltester/comparison_result.php:64
 #: application/views/calltester/comparison_result.php:100
 #: application/views/calltester/comparison_result.php:136
 #: application/views/calltester/result.php:26
 msgid "Existing ADIF"
-msgstr ""
+msgstr "ADIF esistente"
 
 #: application/views/calltester/comparison_result.php:65
 #: application/views/calltester/comparison_result.php:101
@@ -8983,32 +9011,34 @@ msgstr ""
 #: application/views/calltester/result.php:27
 #: application/views/logbookadvanced/checkresult.php:108
 msgid "Result DXCC"
-msgstr ""
+msgstr "Risultato DXCC"
 
 #: application/views/calltester/comparison_result.php:66
 #: application/views/calltester/comparison_result.php:102
 #: application/views/calltester/comparison_result.php:138
 #: application/views/calltester/result.php:28
 msgid "Result ADIF"
-msgstr ""
+msgstr "Risultato ADIF"
 
 #: application/views/calltester/comparison_result.php:90
 msgid "Issues found only in Logbook Model (not in DXCC Class):"
-msgstr ""
+msgstr "Problemi riscontrati solo nel modello Logbook (non nella classe DXCC):"
 
 #: application/views/calltester/comparison_result.php:126
 msgid "Issues found in both methods:"
-msgstr ""
+msgstr "Problemi riscontrati in entrambe i metodi:"
 
 #: application/views/calltester/comparison_result.php:162
 msgid ""
 "No DXCC issues found in either method. All calls have correct DXCC "
 "information."
 msgstr ""
+"Nessun problema DXCC riscontrato in entrambe i metodi. Tutti i nominativi "
+"hanno informazioni DXCC corrette."
 
 #: application/views/calltester/index.php:3
 msgid "Callsign DXCC identification"
-msgstr ""
+msgstr "Identificazione del DXCC relativo al nominativo"
 
 #: application/views/calltester/index.php:10
 #: application/views/interface_assets/footer.php:878
@@ -9019,26 +9049,26 @@ msgstr "Nominativo: "
 
 #: application/views/calltester/index.php:15
 msgid "Start DXCC Check"
-msgstr ""
+msgstr "Inizia controllo DXCC"
 
 #: application/views/calltester/index.php:18
 msgid "Compare DXCC class and logbook model"
-msgstr ""
+msgstr "Confronta la classe DXCC e il registro"
 
 #: application/views/calltester/result.php:4
 #: application/views/logbookadvanced/checkresult.php:85
 msgid "Callsigns tested: "
-msgstr ""
+msgstr "Nominativi testati: "
 
 #: application/views/calltester/result.php:5
 #: application/views/logbookadvanced/checkresult.php:86
 msgid "Execution time: "
-msgstr ""
+msgstr "Tempo di esecuzione: "
 
 #: application/views/calltester/result.php:6
 #: application/views/logbookadvanced/checkresult.php:87
 msgid "Number of potential QSOs with wrong DXCC: "
-msgstr ""
+msgstr "Numero di QSO potenziali con DXCC errato: "
 
 #: application/views/club/clubswitch_modal.php:5
 msgid "Switch to a Clubstation"
@@ -12421,19 +12451,19 @@ msgstr "Esportazione DCL"
 
 #: application/views/interface_assets/header.php:537
 msgid "Internal tools"
-msgstr ""
+msgstr "Strumenti interni"
 
 #: application/views/interface_assets/header.php:539
 msgid "Callsign DXCC checker"
-msgstr ""
+msgstr "Controlla DXCC nominativi"
 
 #: application/views/interface_assets/header.php:540
 msgid "GeoJSON QSO Map"
-msgstr ""
+msgstr "Mappa QSO GeoJSON"
 
 #: application/views/interface_assets/header.php:541
 msgid "Gridsquare Zone checker"
-msgstr ""
+msgstr "Controlla locatori"
 
 #: application/views/interface_assets/header.php:548
 #: application/views/logbookadvanced/index.php:880
@@ -12775,13 +12805,13 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:42
 msgid "Distance Check Results"
-msgstr ""
+msgstr "Risultati controllo distanze"
 
 #: application/views/logbookadvanced/checkresult.php:43
 #: application/views/logbookadvanced/checkresult.php:59
 #: application/views/logbookadvanced/checkresult.php:75
 msgid "QSOs to update found:"
-msgstr ""
+msgstr "QSOs da aggiornare trovati:"
 
 #: application/views/logbookadvanced/checkresult.php:46
 #: application/views/logbookadvanced/distancedialog.php:2
@@ -12808,7 +12838,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/checkresult.php:58
 msgid "Continent Check Results"
-msgstr ""
+msgstr "Risultati del controllo del continente"
 
 #: application/views/logbookadvanced/checkresult.php:62
 #: application/views/logbookadvanced/continentdialog.php:2
@@ -12832,54 +12862,58 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:74
 #: application/views/logbookadvanced/checkresult.php:146
 msgid "Gridsquare Check Results"
-msgstr ""
+msgstr "Risultati del controllo locatori"
 
 #: application/views/logbookadvanced/checkresult.php:83
 msgid "DXCC Check Results"
-msgstr ""
+msgstr "Risultati controllo DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:92
 #: application/views/logbookadvanced/checkresult.php:234
 #: application/views/logbookadvanced/checkresult.php:310
 msgid "Update selected"
-msgstr ""
+msgstr "Aggiorna selezionato"
 
 #: application/views/logbookadvanced/checkresult.php:153
 msgid "These QSOs MAY have incorrect gridsquares."
-msgstr ""
+msgstr "Questi QSO POTREBBERO avere locatori errati."
 
 #: application/views/logbookadvanced/checkresult.php:154
 msgid ""
 "Results depends on the correct DXCC. The gridsquare list comes from the TQSL "
 "gridsquare database."
 msgstr ""
+"I risultati dipendono dal corretto DXCC. L'elenco delle griglie proviene dal "
+"database delle griglie TQSL."
 
 #: application/views/logbookadvanced/checkresult.php:167
 msgid "DXCC Gridsquare"
-msgstr ""
+msgstr "Locatori DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:191
 #: application/views/logbookadvanced/index.php:77
 msgid "Show more"
-msgstr ""
+msgstr "Mostra di più"
 
 #: application/views/logbookadvanced/checkresult.php:197
 msgid "View on map"
-msgstr ""
+msgstr "Visualizza sulla mappa"
 
 #: application/views/logbookadvanced/checkresult.php:222
 msgid "CQ Zone Check Results"
-msgstr ""
+msgstr "Risultati del controllo della zona CQ"
 
 #: application/views/logbookadvanced/checkresult.php:224
 msgid ""
 "The following QSOs were found to have a different CQ zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
+"I seguenti QSO sono stati trovati con una zona CQ diversa rispetto a quella "
+"che questo DXCC ha normalmente (vengono mostrati un massimo di 5000 QSO):"
 
 #: application/views/logbookadvanced/checkresult.php:229
 msgid "Force update even if DXCC covers multiple CQ zones"
-msgstr ""
+msgstr "Forza l'aggiornamento anche se il DXCC copre più zone CQ"
 
 #: application/views/logbookadvanced/checkresult.php:230
 msgid ""
@@ -12889,6 +12923,12 @@ msgid ""
 "are updated. This checkbox overrides this but might result in wrong data. "
 "Use with caution!"
 msgstr ""
+"La funzione di aggiornamento può impostare solo la zona CQ principale "
+"assegnata al DXCC. Se il DXCC copre più zone CQ, c'è la possibilità che "
+"questo non sia corretto. Quindi, per impostazione predefinita, vengono "
+"aggiornati solo i QSO con DXCC che coprono una sola zona CQ. Questa casella "
+"di controllo lo annulla, ma potrebbe risultare in dati errati. Usare con "
+"cautela!"
 
 #: application/views/logbookadvanced/checkresult.php:247
 #: application/views/search/cqzones_result.php:14
@@ -12936,17 +12976,19 @@ msgstr "Non sono state trovate zone CQ errate."
 
 #: application/views/logbookadvanced/checkresult.php:298
 msgid "ITU Zone Check Results"
-msgstr ""
+msgstr "Risultati del controllo della zona ITU"
 
 #: application/views/logbookadvanced/checkresult.php:300
 msgid ""
 "The following QSOs were found to have a different ITU zone compared to what "
 "this DXCC normally has (a maximum of 5000 QSOs are shown):"
 msgstr ""
+"I seguenti QSO sono risultati avere una zona ITU diversa rispetto a quella "
+"che normalmente ha questo DXCC (vengono mostrati al massimo 5000 QSO):"
 
 #: application/views/logbookadvanced/checkresult.php:305
 msgid "Force update even if DXCC covers multiple ITU zones"
-msgstr ""
+msgstr "Forza aggiornamento anche se il DXCC copre più zone ITU"
 
 #: application/views/logbookadvanced/checkresult.php:306
 msgid ""
@@ -12956,6 +12998,12 @@ msgid ""
 "are updated. This checkbox overrides this but might result in wrong data. "
 "Use with caution!"
 msgstr ""
+"La funzione di aggiornamento può impostare solo la zona CQ principale "
+"assegnata al DXCC. Se il DXCC copre più zone CQ, c'è la possibilità che "
+"questo non sia corretto. Quindi, per impostazione predefinita, vengono "
+"aggiornati solo i QSO con DXCC che coprono una sola zona CQ. Questa casella "
+"di controllo lo annulla, ma potrebbe risultare in dati errati. Usare con "
+"cautela!"
 
 #: application/views/logbookadvanced/checkresult.php:323
 #: application/views/search/ituzones_result.php:14
@@ -12964,47 +13012,51 @@ msgstr "Zona ITU DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:374
 msgid "IOTA Check Results"
-msgstr ""
+msgstr "Risultati del controllo IOTA"
 
 #: application/views/logbookadvanced/checkresult.php:381
 msgid "These QSOs MAY have an incorrect IOTA reference."
-msgstr ""
+msgstr "Questi QSO POTREBBERO avere un riferimento IOTA errato."
 
 #: application/views/logbookadvanced/checkresult.php:382
 msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
+"I risultati dipendono dal corretto DXCC e verranno verificati solo rispetto "
+"all'attuale DXCC. Possono verificarsi falsi positivi."
 
 #: application/views/logbookadvanced/checkresult.php:393
 msgid "QSO DXCC"
-msgstr ""
+msgstr "QSO DXCC"
 
 #: application/views/logbookadvanced/checkresult.php:395
 msgid "IOTA DXCC"
-msgstr ""
+msgstr "IOTA DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:4
 msgid "Data Repair Tools"
-msgstr ""
+msgstr "Strumenti di riparazione dati"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:6
 msgid "Wiki Help"
-msgstr ""
+msgstr "Ottieni aiuto nella Wiki"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:8
 msgid ""
 "Warning. This tool can be dangerous to your data, and should only be used if "
 "you know what you are doing."
 msgstr ""
+"Avviso. Questo strumento può essere pericoloso per i tuoi dati e dovrebbe "
+"essere usato solo se sai cosa stai facendo."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:12
 msgid "Check all QSOs in the logbook for incorrect CQ Zones"
-msgstr ""
+msgstr "Controlla tutti i QSO nel logbook per zone CQ errate"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:13
 msgid "Use Wavelog to determine CQ Zone for all QSOs."
-msgstr ""
+msgstr "Usa Wavelog per determinare la CQ Zone per tutti i QSO."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:17
 #: application/views/logbookadvanced/dbtoolsdialog.php:28
@@ -13016,23 +13068,23 @@ msgstr ""
 #: application/views/logbookadvanced/dbtoolsdialog.php:96
 #: application/views/logbookadvanced/dbtoolsdialog.php:108
 msgid "Check"
-msgstr ""
+msgstr "Controlla"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:23
 msgid "Check all QSOs in the logbook for incorrect ITU Zones"
-msgstr ""
+msgstr "Controlla tutti i QSO nel logbook per le ITU Zone errate"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:24
 msgid "Use Wavelog to determine ITU Zone for all QSOs."
-msgstr ""
+msgstr "Usa Wavelog per determinare la zona ITU per tutti i QSO."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:34
 msgid "Check Gridsquares"
-msgstr ""
+msgstr "Controlla locatori"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:35
 msgid "Check gridsquares that does not match the DXCC"
-msgstr ""
+msgstr "Controlla i grid squares che non corrispondono al DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:45
 msgid "Fix Continent"
@@ -13040,11 +13092,11 @@ msgstr "Sistema continente"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:46
 msgid "Update missing or incorrect continent information"
-msgstr ""
+msgstr "Aggiorna le informazioni sul continente mancanti o errate"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:57
 msgid "Update missing state/province information"
-msgstr ""
+msgstr "Aggiorna le informazioni mancanti su stato/provincia"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:67
 #: application/views/logbookadvanced/index.php:68
@@ -13053,55 +13105,55 @@ msgstr "Aggiorna le distanze"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:68
 msgid "Calculate and update distance information for QSOs"
-msgstr ""
+msgstr "Calcola e aggiorna le informazioni sulla distanza per i QSO"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:78
 msgid "Check all QSOs in the logbook for incorrect DXCC"
-msgstr ""
+msgstr "Controlla tutti i QSO nel registro per DXCC errati"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:79
 msgid "Use Wavelog to determine DXCC for all QSOs."
-msgstr ""
+msgstr "Usa Wavelog per determinare DXCC per tutti i QSO."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:90
 msgid "Lookup QSOs with missing grid in callbook"
-msgstr ""
+msgstr "Cerca i QSO con locatore mancante nel registro"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:91
 msgid "Use callbook lookup to set gridsquare"
-msgstr ""
+msgstr "Ricerca nel registro per impostare il locatore"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:92
 msgid "This is limited to 150 callsigns for each run!"
-msgstr ""
+msgstr "Questa funzione è limitata a 150 nominativi per ogni esecuzione!"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
-msgstr ""
+msgstr "Controlla IOTA rispetto a DXCC"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:104
 msgid "Use Wavelog to check IOTA against DXCC"
-msgstr ""
+msgstr "Usa Wavelog per controllare IOTA contro DXCC"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:4
 msgid "Search for duplicates using:"
-msgstr ""
+msgstr "Cerca i duplicati usando:"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:16
 msgid "Match QSOs within 1800s (30min) of each other"
-msgstr ""
+msgstr "Abbina i QSO entro 1800s (30min) l'uno dall'altro"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:25
 msgid "Match QSOs with the same mode (SSB, CW, FM, etc.)"
-msgstr ""
+msgstr "Abbina i QSO con lo stesso modo (SSB, CW, FM, ecc.)"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:34
 msgid "Match QSOs on the same band"
-msgstr ""
+msgstr "Associa i QSO sulla stessa banda"
 
 #: application/views/logbookadvanced/dupesearchdialog.php:43
 msgid "Match QSOs using the same satellite"
-msgstr ""
+msgstr "Collega i QSO utilizzando lo stesso satellite"
 
 #: application/views/logbookadvanced/edit.php:1
 msgid "Please choose the column to be edited:"
@@ -13121,7 +13173,7 @@ msgstr "Potenza di trasmissione"
 
 #: application/views/logbookadvanced/edit.php:25
 msgid "DARC DOK"
-msgstr ""
+msgstr "DARC DOK"
 
 #: application/views/logbookadvanced/edit.php:31
 #: application/views/logbookadvanced/index.php:990
@@ -13637,22 +13689,24 @@ msgid ""
 "Are you sure you want to fix all QSOs with missing DXCC information? This "
 "action cannot be undone."
 msgstr ""
+"Sei sicuro di voler correggere tutti i QSO con informazioni DXCC mancanti? "
+"Questa azione non può essere annullata."
 
 #: application/views/logbookadvanced/index.php:74
 msgid "Duplicate Search"
-msgstr ""
+msgstr "Ricerca duplicati"
 
 #: application/views/logbookadvanced/index.php:78
 msgid "Show less"
-msgstr ""
+msgstr "Mostra meno"
 
 #: application/views/logbookadvanced/index.php:80
 msgid "Gridsquares for"
-msgstr ""
+msgstr "Locatori per"
 
 #: application/views/logbookadvanced/index.php:81
 msgid "Non DXCC matching gridsquare"
-msgstr ""
+msgstr "Locatori non corrispondenti al DXCC"
 
 #: application/views/logbookadvanced/index.php:310
 msgid "From"
@@ -13683,7 +13737,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/index.php:513
 msgid "Sort column"
-msgstr ""
+msgstr "Ordina per colonna"
 
 #: application/views/logbookadvanced/index.php:515
 #: application/views/oqrs/showrequests.php:87
@@ -13692,24 +13746,24 @@ msgstr "Orario QSO"
 
 #: application/views/logbookadvanced/index.php:518
 msgid "QSO Modified"
-msgstr ""
+msgstr "QSO Modificato"
 
 #: application/views/logbookadvanced/index.php:522
 msgid "Sort direction"
-msgstr ""
+msgstr "Direzione di ordinamento"
 
 #: application/views/logbookadvanced/index.php:524
 msgid "Descending"
-msgstr ""
+msgstr "Discendente"
 
 #: application/views/logbookadvanced/index.php:525
 msgid "Ascending"
-msgstr ""
+msgstr "Ascendente"
 
 #: application/views/logbookadvanced/index.php:533
 #: application/views/logbookadvanced/index.php:715
 msgid "Apply filters"
-msgstr ""
+msgstr "Applica filtri"
 
 #: application/views/logbookadvanced/index.php:543
 msgid "QSL Filters"
@@ -14013,12 +14067,12 @@ msgstr "Mappa del mondo"
 
 #: application/views/logbookadvanced/index.php:870
 msgid "Database Tools"
-msgstr ""
+msgstr "Strumenti per database"
 
 #: application/views/logbookadvanced/index.php:897
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "Last modified"
-msgstr ""
+msgstr "Ultima modifica"
 
 #: application/views/logbookadvanced/index.php:900
 #: application/views/logbookadvanced/useroptions.php:28
@@ -14090,30 +14144,30 @@ msgstr "Successivo"
 #: application/views/logbookadvanced/showMissingDxccQsos.php:14
 #, php-format
 msgid "Found %s QSO(s) missing DXCC information."
-msgstr ""
+msgstr "Trovato/i %s QSO senza informazioni DXCC."
 
 #: application/views/logbookadvanced/showMissingDxccQsos.php:47
 #: application/views/logbookadvanced/showStateQsos.php:49
 msgid "No Issues Found"
-msgstr ""
+msgstr "Nessun problema riscontrato"
 
 #: application/views/logbookadvanced/showStateQsos.php:16
 #, php-format
 msgid "Found %s QSO(s) missing state information for DXCC %s."
-msgstr ""
+msgstr "Trovato/i %s QSO mancanti d'informazioni sullo stato per DXCC %s."
 
 #: application/views/logbookadvanced/showUpdateResult.php:22
 msgid "Results for state update:"
-msgstr ""
+msgstr "Risultati per l'aggiornamento dello stato:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:24
 #: application/views/logbookadvanced/showUpdateResult.php:26
 msgid "The number of QSOs updated for state/province in"
-msgstr ""
+msgstr "Il numero di QSO aggiornati per stato/provincia in"
 
 #: application/views/logbookadvanced/showUpdateResult.php:38
 msgid "These QSOs could not be updated:"
-msgstr ""
+msgstr "Questi QSO non possono essere aggiornati:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:45
 #: application/views/search/lotw_unconfirmed.php:32
@@ -14122,31 +14176,31 @@ msgstr "Posizione della stazione"
 
 #: application/views/logbookadvanced/showUpdateResult.php:46
 msgid "Reason"
-msgstr ""
+msgstr "Motivo"
 
 #: application/views/logbookadvanced/showUpdateResult.php:69
 msgid "Results for continent update:"
-msgstr ""
+msgstr "Risultati per l'aggiornamento del continente:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:70
 msgid "The number of QSOs updated for continent is"
-msgstr ""
+msgstr "Il numero di QSO aggiornato per continente è"
 
 #: application/views/logbookadvanced/showUpdateResult.php:74
 msgid "Results for distance update:"
-msgstr ""
+msgstr "Risultati per l'aggiornamento della distanza:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:75
 msgid "The number of QSOs updated for distance is"
-msgstr ""
+msgstr "Il numero di QSO aggiornato per distanza è"
 
 #: application/views/logbookadvanced/showUpdateResult.php:79
 msgid "Results for gridsquare update:"
-msgstr ""
+msgstr "Risultati per l'aggiornamento del locatore:"
 
 #: application/views/logbookadvanced/showUpdateResult.php:80
 msgid "The number of QSOs updated for gridsquare is"
-msgstr ""
+msgstr "Il numero di QSO aggiornati per il quadrato di griglia è"
 
 #: application/views/logbookadvanced/startatform.php:15
 msgid "Include Via"
@@ -14163,21 +14217,25 @@ msgstr "Includi il messaggio TNX"
 #: application/views/logbookadvanced/statecheckresult.php:3
 #: application/views/logbookadvanced/statecheckresult.php:42
 msgid "State Check Results"
-msgstr ""
+msgstr "Risultati della verifica dello stato"
 
 #: application/views/logbookadvanced/statecheckresult.php:4
 msgid ""
 "QSOs with missing state and gridsquares with 6 or more characters found for "
 "the following DXCCs:"
 msgstr ""
+"QSO con stato mancante e quadrati con 6 o più caratteri trovati per i "
+"seguenti DXCC:"
 
 #: application/views/logbookadvanced/statecheckresult.php:30
 msgid "Run fix"
-msgstr ""
+msgstr "Esegui correzione"
 
 #: application/views/logbookadvanced/statecheckresult.php:43
 msgid "No QSOs were found where state information can be fixed."
 msgstr ""
+"Non sono stati trovati QSO in cui le informazioni sullo stato possano essere "
+"corrette."
 
 #: application/views/logbookadvanced/statedialog.php:2
 msgid ""
@@ -14217,45 +14275,47 @@ msgstr "Paesu attualmente supportati"
 
 #: application/views/logbookadvanced/useroptions.php:15
 msgid "Basic QSO Information"
-msgstr ""
+msgstr "Informazioni di base sul QSO"
 
 #: application/views/logbookadvanced/useroptions.php:72
 msgid "Station Details"
-msgstr ""
+msgstr "Dettagli della stazione"
 
 #: application/views/logbookadvanced/useroptions.php:105
 msgid "Confirmation Services"
-msgstr ""
+msgstr "Servizi di conferma"
 
 #: application/views/logbookadvanced/useroptions.php:162
 msgid "Geographic Information"
-msgstr ""
+msgstr "Informazioni geografiche"
 
 #: application/views/logbookadvanced/useroptions.php:207
 msgid "Awards Programs"
-msgstr ""
+msgstr "Programmi di premi"
 
 #: application/views/logbookadvanced/useroptions.php:258
 msgid "Additional Information"
-msgstr ""
+msgstr "Informazioni aggiuntive"
 
 #: application/views/logbookadvanced/useroptions.php:297
 msgid "Technical Details"
-msgstr ""
+msgstr "Dettagli tecnici"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid "For debugging only"
-msgstr ""
+msgstr "Solo per debug"
 
 #: application/views/logbookadvanced/useroptions.php:336
 msgid ""
 "This is meant for debugging purposes only and not designed to be displayed "
 "by default"
 msgstr ""
+"Questa funzione è pensata solo per scopi di debug e non per essere "
+"visualizzato di default"
 
 #: application/views/logbookadvanced/useroptions.php:347
 msgid "Map Layers"
-msgstr ""
+msgstr "Livelli mappa"
 
 #: application/views/lookup/index.php:11
 #: application/views/qso/award_tabs.php:53
@@ -14289,7 +14349,7 @@ msgstr "Nessun utente LoTW"
 
 #: application/views/lookup/result.php:16
 msgid "This gridsquare exists in the following DXCC(s):"
-msgstr ""
+msgstr "Questo locatore è presente nei seguenti DXCC:"
 
 #: application/views/lotw/analysis.php:8 application/views/qrz/analysis.php:8
 msgid "No data imported. please check selected date. Must be in the past!"
@@ -14441,14 +14501,15 @@ msgid ""
 "For further information please visit the %sLoTW FAQ page%s in the Wavelog "
 "Wiki"
 msgstr ""
+"Per ulteriori informazioni, visita la pagina %sLoTW FAQ%s nel Wiki di Wavelog"
 
 #: application/views/map/qso_map.php:15
 msgid "Select Country:"
-msgstr ""
+msgstr "Seleziona Paese:"
 
 #: application/views/map/qso_map.php:17
 msgid "Choose a country..."
-msgstr ""
+msgstr "Scegli un paese..."
 
 #: application/views/mode/create.php:24 application/views/mode/edit.php:33
 msgctxt "Name of mode in ADIF-specification"
@@ -15832,15 +15893,15 @@ msgstr "Attendere prima di salvare un altro QSO"
 
 #: application/views/qso/index.php:42
 msgid "Satellite not found"
-msgstr ""
+msgstr "Satellite non trovato"
 
 #: application/views/qso/index.php:43
 msgid "Supported by LoTW"
-msgstr ""
+msgstr "Supportato da LoTW"
 
 #: application/views/qso/index.php:44
 msgid "Not supported by LoTW"
-msgstr ""
+msgstr "Non supportato da LoTW"
 
 #: application/views/qso/index.php:90
 msgid "LIVE"
@@ -16620,7 +16681,7 @@ msgstr ""
 
 #: application/views/search/result.php:65
 msgid "Source callbook"
-msgstr ""
+msgstr "Fonte registro"
 
 #: application/views/search/search_result_ajax.php:463
 #: application/views/view_log/partial/log.php:142
@@ -17273,6 +17334,7 @@ msgstr "Caricamento del registro su QRZ.com"
 
 #: application/views/station_profile/create.php:310
 #: application/views/station_profile/edit.php:336
+#: application/views/stationsetup/locationlist.php:50
 msgid "Realtime"
 msgstr "Tempo reale"
 
@@ -17445,6 +17507,10 @@ msgid ""
 "analytics. Great for when you're operating in multiple locations but they "
 "are part of the same DXCC or VUCC Circle."
 msgstr ""
+"I registri di stazione ti permettono di raggruppare le posizioni di "
+"stazione, questo ti consente di vedere tutte le posizioni in una sola "
+"sessione dalle aree del registro alla analisi. Ottimo quando operi in più "
+"posizioni ma fanno parte dello stesso cerchio DXCC o VUCC."
 
 #: application/views/stationsetup/stationsetup.php:35
 msgid "Edit Linked locations"
@@ -17577,7 +17643,7 @@ msgstr "Anni"
 #: application/views/statistics/index.php:15
 #: application/views/statistics/index.php:99
 msgid "Months"
-msgstr ""
+msgstr "Mesi"
 
 #: application/views/statistics/index.php:19
 msgid "Number of QSOs worked each year"
@@ -17585,55 +17651,55 @@ msgstr "Numero di QSOs collegati ogni anno"
 
 #: application/views/statistics/index.php:20
 msgid "Number of QSOs worked each month"
-msgstr ""
+msgstr "Numero di QSO effettuati ogni mese"
 
 #: application/views/statistics/index.php:31
 msgid "January"
-msgstr ""
+msgstr "Gennaio"
 
 #: application/views/statistics/index.php:32
 msgid "February"
-msgstr ""
+msgstr "Febbraio"
 
 #: application/views/statistics/index.php:33
 msgid "March"
-msgstr ""
+msgstr "Marzo"
 
 #: application/views/statistics/index.php:34
 msgid "April"
-msgstr ""
+msgstr "Aprile"
 
 #: application/views/statistics/index.php:35
 msgid "May"
-msgstr ""
+msgstr "Maggio"
 
 #: application/views/statistics/index.php:36
 msgid "June"
-msgstr ""
+msgstr "Giugno"
 
 #: application/views/statistics/index.php:37
 msgid "July"
-msgstr ""
+msgstr "Luglio"
 
 #: application/views/statistics/index.php:38
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 #: application/views/statistics/index.php:39
 msgid "September"
-msgstr ""
+msgstr "Settembre"
 
 #: application/views/statistics/index.php:40
 msgid "October"
-msgstr ""
+msgstr "Ottobre"
 
 #: application/views/statistics/index.php:41
 msgid "November"
-msgstr ""
+msgstr "Novembre"
 
 #: application/views/statistics/index.php:42
 msgid "December"
-msgstr ""
+msgstr "Dicembre"
 
 #: application/views/statistics/index.php:50
 msgid "Explore the logbook."
@@ -18295,7 +18361,7 @@ msgstr ""
 
 #: application/views/user/edit.php:689
 msgid "Show Fields on QSO Tab"
-msgstr ""
+msgstr "Mostra campi sulla scheda QSO"
 
 #: application/views/user/edit.php:693
 msgid ""
@@ -19278,37 +19344,37 @@ msgstr "Ricevuto"
 
 #: application/views/zonechecker/index.php:3
 msgid "Gridsquare Zone identification"
-msgstr ""
+msgstr "Identificazione della zona del locatore"
 
 #: application/views/zonechecker/index.php:15
 msgid "Zone Type"
-msgstr ""
+msgstr "Tipo di zona"
 
 #: application/views/zonechecker/index.php:20
 msgid "Start Zone Check"
-msgstr ""
+msgstr "Inizia il controllo delle zone"
 
 #: application/views/zonechecker/index.php:39
 #: application/views/zonechecker/index.php:62
 msgid "Processing..."
-msgstr ""
+msgstr "Elaborazione..."
 
 #: application/views/zonechecker/index.php:50
 #: application/views/zonechecker/index.php:73
 msgid "An error occurred while processing the request."
-msgstr ""
+msgstr "Si è verificato un errore durante l'elaborazione della richiesta."
 
 #: application/views/zonechecker/result.php:16
 msgid "Callsigns Tested"
-msgstr ""
+msgstr "Nominativi testati"
 
 #: application/views/zonechecker/result.php:17
 msgid "Execution Time"
-msgstr ""
+msgstr "Tempo di esecuzione"
 
 #: application/views/zonechecker/result.php:18
 msgid "Potential Wrong Zones"
-msgstr ""
+msgstr "Zone potenzialmente errate"
 
 #: application/views/zonechecker/result.php:19
 msgid "Cache Hits"
@@ -19324,19 +19390,19 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:55
 msgid "ITUz"
-msgstr ""
+msgstr "ITUz"
 
 #: application/views/zonechecker/result.php:56
 msgid "ITUz geojson"
-msgstr ""
+msgstr "ITUz geojson"
 
 #: application/views/zonechecker/result.php:58
 msgid "CQz"
-msgstr ""
+msgstr "CQz"
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
-msgstr ""
+msgstr "CQz geojson"
 
 #~ msgid "Signature Name"
 #~ msgstr "Nome della Firma"
