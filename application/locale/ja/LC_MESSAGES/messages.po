@@ -468,6 +468,7 @@ msgstr " そして "
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
 #: application/controllers/Logbook.php:1386
+#: application/controllers/Logbook.php:1398
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -491,6 +492,7 @@ msgstr "SOTA"
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:10
 #: application/controllers/Logbook.php:1387
+#: application/controllers/Logbook.php:1399
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -515,6 +517,7 @@ msgstr "WWFF"
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:11
 #: application/controllers/Logbook.php:1388
+#: application/controllers/Logbook.php:1400
 msgid "POTA"
 msgstr "POTA"
 
@@ -1549,6 +1552,7 @@ msgstr "eQSL"
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
 #: application/controllers/Logbook.php:1381
+#: application/controllers/Logbook.php:1393
 msgid "Mode"
 msgstr "モード"
 
@@ -1579,6 +1583,7 @@ msgstr "モード"
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
 #: application/controllers/Logbook.php:1382
+#: application/controllers/Logbook.php:1394
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1610,6 +1615,7 @@ msgstr "RST (S)"
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
 #: application/controllers/Logbook.php:1383
+#: application/controllers/Logbook.php:1395
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1632,6 +1638,7 @@ msgstr "RST (R)"
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
 #: application/controllers/Logbook.php:1384
+#: application/controllers/Logbook.php:1396
 msgid "Country"
 msgstr "国"
 
@@ -1664,6 +1671,7 @@ msgstr "国"
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
 #: application/controllers/Logbook.php:1385
+#: application/controllers/Logbook.php:1397
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1696,6 +1704,7 @@ msgstr "IOTA"
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
 #: application/controllers/Logbook.php:1389
+#: application/controllers/Logbook.php:1401
 msgid "State"
 msgstr "州"
 
@@ -1749,6 +1758,7 @@ msgstr "州"
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
 #: application/controllers/Logbook.php:1390
+#: application/controllers/Logbook.php:1402
 msgid "Gridsquare"
 msgstr "グリッドスクエア"
 
@@ -1780,6 +1790,7 @@ msgstr "グリッドスクエア"
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
 #: application/controllers/Logbook.php:1391
+#: application/controllers/Logbook.php:1403
 msgid "Distance"
 msgstr "距離"
 
@@ -1876,6 +1887,7 @@ msgstr "距離"
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
 #: application/controllers/Logbook.php:1392
+#: application/controllers/Logbook.php:1404
 msgid "Band"
 msgstr "バンド"
 
@@ -1904,6 +1916,7 @@ msgstr "バンド"
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
 #: application/controllers/Logbook.php:1393
+#: application/controllers/Logbook.php:1405
 msgid "Frequency"
 msgstr "周波数"
 
@@ -1929,6 +1942,7 @@ msgstr "周波数"
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
 #: application/controllers/Logbook.php:1394
+#: application/controllers/Logbook.php:1406
 msgid "Operator"
 msgstr "オペレーター"
 
@@ -1959,6 +1973,7 @@ msgstr "オペレーター"
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
 #: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1427
 msgid "Deleted DXCC"
 msgstr "DXCCを削除しました"
 
