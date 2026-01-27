@@ -489,6 +489,7 @@ msgstr " 并且 "
 #: application/views/visitor/index.php:21
 #: application/controllers/Logbook.php:1386
 #: application/controllers/Logbook.php:1398
+#: application/controllers/Logbook.php:1410
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -513,6 +514,7 @@ msgstr "SOTA"
 #: application/views/view_log/partial/log_ajax.php:10
 #: application/controllers/Logbook.php:1387
 #: application/controllers/Logbook.php:1399
+#: application/controllers/Logbook.php:1411
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -538,6 +540,7 @@ msgstr "WWFF"
 #: application/views/view_log/partial/log_ajax.php:11
 #: application/controllers/Logbook.php:1388
 #: application/controllers/Logbook.php:1400
+#: application/controllers/Logbook.php:1412
 msgid "POTA"
 msgstr "POTA"
 
@@ -1560,6 +1563,7 @@ msgstr "eQSL"
 #: application/views/widgets/qsos.php:18
 #: application/controllers/Logbook.php:1381
 #: application/controllers/Logbook.php:1393
+#: application/controllers/Logbook.php:1405
 msgid "Mode"
 msgstr "模式"
 
@@ -1591,6 +1595,7 @@ msgstr "模式"
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
 #: application/controllers/Logbook.php:1382
 #: application/controllers/Logbook.php:1394
+#: application/controllers/Logbook.php:1406
 msgid "RST (S)"
 msgstr "我收对方"
 
@@ -1623,6 +1628,7 @@ msgstr "我收对方"
 #: application/views/visitor/index.php:12
 #: application/controllers/Logbook.php:1383
 #: application/controllers/Logbook.php:1395
+#: application/controllers/Logbook.php:1407
 msgid "RST (R)"
 msgstr "对方收我"
 
@@ -1646,6 +1652,7 @@ msgstr "对方收我"
 #: application/views/visitor/index.php:15
 #: application/controllers/Logbook.php:1384
 #: application/controllers/Logbook.php:1396
+#: application/controllers/Logbook.php:1408
 msgid "Country"
 msgstr "DXCC 实体"
 
@@ -1679,6 +1686,7 @@ msgstr "DXCC 实体"
 #: application/views/visitor/index.php:18
 #: application/controllers/Logbook.php:1385
 #: application/controllers/Logbook.php:1397
+#: application/controllers/Logbook.php:1409
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1712,6 +1720,7 @@ msgstr "IOTA"
 #: application/views/visitor/index.php:24
 #: application/controllers/Logbook.php:1389
 #: application/controllers/Logbook.php:1401
+#: application/controllers/Logbook.php:1413
 msgid "State"
 msgstr "州"
 
@@ -1766,6 +1775,7 @@ msgstr "州"
 #: application/views/zonechecker/result.php:53
 #: application/controllers/Logbook.php:1390
 #: application/controllers/Logbook.php:1402
+#: application/controllers/Logbook.php:1414
 msgid "Gridsquare"
 msgstr "网格坐标"
 
@@ -1798,6 +1808,7 @@ msgstr "网格坐标"
 #: application/views/visitor/index.php:30
 #: application/controllers/Logbook.php:1391
 #: application/controllers/Logbook.php:1403
+#: application/controllers/Logbook.php:1415
 msgid "Distance"
 msgstr "距离"
 
@@ -1895,6 +1906,7 @@ msgstr "距离"
 #: application/views/widgets/qsos.php:21
 #: application/controllers/Logbook.php:1392
 #: application/controllers/Logbook.php:1404
+#: application/controllers/Logbook.php:1416
 msgid "Band"
 msgstr "频段"
 
@@ -1924,6 +1936,7 @@ msgstr "频段"
 #: application/views/visitor/index.php:36
 #: application/controllers/Logbook.php:1393
 #: application/controllers/Logbook.php:1405
+#: application/controllers/Logbook.php:1417
 msgid "Frequency"
 msgstr "频率"
 
@@ -1950,6 +1963,7 @@ msgstr "频率"
 #: application/views/visitor/index.php:39
 #: application/controllers/Logbook.php:1394
 #: application/controllers/Logbook.php:1406
+#: application/controllers/Logbook.php:1418
 msgid "Operator"
 msgstr "操作员"
 
@@ -1981,6 +1995,7 @@ msgstr "操作员"
 #: application/views/view_log/qso.php:694
 #: application/controllers/Logbook.php:1415
 #: application/controllers/Logbook.php:1427
+#: application/controllers/Logbook.php:1439
 msgid "Deleted DXCC"
 msgstr "删除 DXCC 实体"
 
