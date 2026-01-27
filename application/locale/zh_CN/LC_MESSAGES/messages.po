@@ -148,6 +148,8 @@ msgstr ""
 #: application/models/Club_model.php:52 application/controllers/Qso.php:288
 #: application/controllers/Qso.php:419 application/controllers/Qso.php:440
 #: application/controllers/Qso.php:463 application/controllers/Qso.php:763
+#: application/controllers/Dxcalendar.php:12
+#: application/controllers/Dxcluster.php:13
 msgid "You're not allowed to do that!"
 msgstr "请不要这样操作！"
 
@@ -490,6 +492,7 @@ msgstr " 并且 "
 #: application/controllers/Logbook.php:1386
 #: application/controllers/Logbook.php:1398
 #: application/controllers/Logbook.php:1410
+#: application/controllers/Logbook.php:1414
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -515,6 +518,7 @@ msgstr "SOTA"
 #: application/controllers/Logbook.php:1387
 #: application/controllers/Logbook.php:1399
 #: application/controllers/Logbook.php:1411
+#: application/controllers/Logbook.php:1415
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -541,6 +545,7 @@ msgstr "WWFF"
 #: application/controllers/Logbook.php:1388
 #: application/controllers/Logbook.php:1400
 #: application/controllers/Logbook.php:1412
+#: application/controllers/Logbook.php:1416
 msgid "POTA"
 msgstr "POTA"
 
@@ -722,6 +727,7 @@ msgid "Call Tester"
 msgstr "通联记录检测器"
 
 #: application/controllers/Calltester.php:844
+#: application/controllers/Calltester.php:971
 msgid "Callsign Tester"
 msgstr "呼号检测器"
 
@@ -826,6 +832,7 @@ msgstr "未找到配置 Clublog 的用户。"
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:571
 #: application/views/view_log/qso.php:576
+#: application/controllers/Logbook.php:756
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -1063,6 +1070,7 @@ msgstr "DX Atlas 网格导出"
 
 #: application/controllers/Dxcalendar.php:10
 #: application/views/interface_assets/header.php:305
+#: application/controllers/Dxcalendar.php:14
 msgid "DX Calendar"
 msgstr "DX 日历"
 
@@ -1337,6 +1345,7 @@ msgid "Paper was deleted."
 msgstr "纸张已删除。"
 
 #: application/controllers/Logbook.php:36
+#: application/controllers/Logbook.php:39
 msgid ""
 "No logbooks were found. You need to define a logbook under Station Logbooks! "
 "Do it here:"
@@ -1344,6 +1353,7 @@ msgstr "没有找到日志簿。你需要在电台站日志下添加一个日志
 
 #: application/controllers/Logbook.php:36
 #: application/views/stationsetup/stationsetup.php:21
+#: application/controllers/Logbook.php:39
 msgid "Station Logbooks"
 msgstr "日志簿"
 
@@ -1351,6 +1361,7 @@ msgstr "日志簿"
 #: application/views/interface_assets/header.php:113
 #: application/views/logbookadvanced/useroptions.php:4
 #: application/views/view_log/index.php:11
+#: application/controllers/Logbook.php:60
 msgid "Logbook"
 msgstr "日志簿"
 
@@ -1381,7 +1392,8 @@ msgstr "日志簿"
 #: application/views/qslprint/qsolist.php:18
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:112
 #: application/views/timeline/index.php:56 application/views/user/edit.php:625
-#: application/views/user/edit.php:822
+#: application/views/user/edit.php:822 application/controllers/Logbook.php:744
+#: application/controllers/Logbook.php:759
 msgid "QSL"
 msgstr "QSL"
 
@@ -1424,6 +1436,7 @@ msgstr "QSL"
 #: application/views/timeline/index.php:60 application/views/user/edit.php:626
 #: application/views/user/edit.php:832 application/views/view_log/qso.php:537
 #: application/views/view_log/qso.php:542
+#: application/controllers/Logbook.php:747
 msgid "LoTW"
 msgstr "LoTW"
 
@@ -1461,6 +1474,7 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:300
 #: application/views/timeline/index.php:64 application/views/user/edit.php:627
 #: application/views/user/edit.php:840 application/views/user/edit.php:914
+#: application/controllers/Logbook.php:750
 msgid "eQSL"
 msgstr "eQSL"
 
@@ -1564,6 +1578,7 @@ msgstr "eQSL"
 #: application/controllers/Logbook.php:1381
 #: application/controllers/Logbook.php:1393
 #: application/controllers/Logbook.php:1405
+#: application/controllers/Logbook.php:1409
 msgid "Mode"
 msgstr "模式"
 
@@ -1596,6 +1611,7 @@ msgstr "模式"
 #: application/controllers/Logbook.php:1382
 #: application/controllers/Logbook.php:1394
 #: application/controllers/Logbook.php:1406
+#: application/controllers/Logbook.php:1410
 msgid "RST (S)"
 msgstr "我收对方"
 
@@ -1629,6 +1645,7 @@ msgstr "我收对方"
 #: application/controllers/Logbook.php:1383
 #: application/controllers/Logbook.php:1395
 #: application/controllers/Logbook.php:1407
+#: application/controllers/Logbook.php:1411
 msgid "RST (R)"
 msgstr "对方收我"
 
@@ -1653,6 +1670,7 @@ msgstr "对方收我"
 #: application/controllers/Logbook.php:1384
 #: application/controllers/Logbook.php:1396
 #: application/controllers/Logbook.php:1408
+#: application/controllers/Logbook.php:1412
 msgid "Country"
 msgstr "DXCC 实体"
 
@@ -1687,6 +1705,7 @@ msgstr "DXCC 实体"
 #: application/controllers/Logbook.php:1385
 #: application/controllers/Logbook.php:1397
 #: application/controllers/Logbook.php:1409
+#: application/controllers/Logbook.php:1413
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1721,6 +1740,7 @@ msgstr "IOTA"
 #: application/controllers/Logbook.php:1389
 #: application/controllers/Logbook.php:1401
 #: application/controllers/Logbook.php:1413
+#: application/controllers/Logbook.php:1417
 msgid "State"
 msgstr "州"
 
@@ -1776,6 +1796,7 @@ msgstr "州"
 #: application/controllers/Logbook.php:1390
 #: application/controllers/Logbook.php:1402
 #: application/controllers/Logbook.php:1414
+#: application/controllers/Logbook.php:1418
 msgid "Gridsquare"
 msgstr "网格坐标"
 
@@ -1809,6 +1830,7 @@ msgstr "网格坐标"
 #: application/controllers/Logbook.php:1391
 #: application/controllers/Logbook.php:1403
 #: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1419
 msgid "Distance"
 msgstr "距离"
 
@@ -1907,6 +1929,7 @@ msgstr "距离"
 #: application/controllers/Logbook.php:1392
 #: application/controllers/Logbook.php:1404
 #: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1420
 msgid "Band"
 msgstr "频段"
 
@@ -1937,6 +1960,7 @@ msgstr "频段"
 #: application/controllers/Logbook.php:1393
 #: application/controllers/Logbook.php:1405
 #: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1421
 msgid "Frequency"
 msgstr "频率"
 
@@ -1964,6 +1988,7 @@ msgstr "频率"
 #: application/controllers/Logbook.php:1394
 #: application/controllers/Logbook.php:1406
 #: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1422
 msgid "Operator"
 msgstr "操作员"
 
@@ -1996,6 +2021,7 @@ msgstr "操作员"
 #: application/controllers/Logbook.php:1415
 #: application/controllers/Logbook.php:1427
 #: application/controllers/Logbook.php:1439
+#: application/controllers/Logbook.php:1443
 msgid "Deleted DXCC"
 msgstr "删除 DXCC 实体"
 
@@ -3550,11 +3576,13 @@ msgstr "HRDlog：无台站配置信息。"
 
 #: application/models/Logbook_model.php:1413
 #: application/models/Logbook_model.php:1287
+#: application/models/Logbook_model.php:1293
 msgid "Station ID not allowed"
 msgstr "集体台站 ID 有误"
 
 #: application/models/Logbook_model.php:1418
 #: application/models/Logbook_model.php:1292
+#: application/models/Logbook_model.php:1298
 msgid "No Call given"
 msgstr "未提供呼号"
 
@@ -3562,17 +3590,21 @@ msgstr "未提供呼号"
 #: application/models/Logbook_model.php:1690
 #: application/models/Logbook_model.php:1362
 #: application/models/Logbook_model.php:1564
+#: application/models/Logbook_model.php:1368
+#: application/models/Logbook_model.php:1570
 msgid "DXCC has to be Numeric"
 msgstr "DXCC 应该是数字"
 
 #: application/models/Logbook_model.php:4761
 #: application/models/Logbook_model.php:4635
+#: application/models/Logbook_model.php:4641
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "导入 QSO 时出现错误：本台呼号 %s 对方呼号 %s %s，已跳过"
 
 #: application/models/Logbook_model.php:4775
 #: application/models/Logbook_model.php:4649
+#: application/models/Logbook_model.php:4655
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3580,11 +3612,13 @@ msgstr "导入QSO时使用了无效日期，该QSO未被导入。这是无效的
 
 #: application/models/Logbook_model.php:4784
 #: application/models/Logbook_model.php:4658
+#: application/models/Logbook_model.php:4664
 msgid "QSO on"
 msgstr "QSO 时间"
 
 #: application/models/Logbook_model.php:4784
 #: application/models/Logbook_model.php:4658
+#: application/models/Logbook_model.php:4664
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3592,6 +3626,7 @@ msgstr "试图导入的 QSO 不存在对方呼号（CALL）。此 QSO 无效，�
 
 #: application/models/Logbook_model.php:4833
 #: application/models/Logbook_model.php:4707
+#: application/models/Logbook_model.php:4713
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3601,22 +3636,26 @@ msgstr ""
 
 #: application/models/Logbook_model.php:5098
 #: application/models/Logbook_model.php:4972
+#: application/models/Logbook_model.php:4986
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate 字段错误（YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5109
 #: application/models/Logbook_model.php:4983
+#: application/models/Logbook_model.php:4997
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate 字段错误（YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5170
 #: application/models/Logbook_model.php:5044
+#: application/models/Logbook_model.php:5058
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date 字段错误（ YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5545
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5419
+#: application/models/Logbook_model.php:5433
 msgid "Duplicate for"
 msgstr "内容重复"
 
@@ -3624,31 +3663,38 @@ msgstr "内容重复"
 #: application/models/Logbook_model.php:5705
 #: application/models/Logbook_model.php:5484
 #: application/models/Logbook_model.php:5579
+#: application/models/Logbook_model.php:5498
+#: application/models/Logbook_model.php:5593
 msgid "QSO could not be matched"
 msgstr "QSO 无法匹配"
 
 #: application/models/Logbook_model.php:5618
 #: application/models/Logbook_model.php:5492
+#: application/models/Logbook_model.php:5506
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "已经通过 LoTW/Clublog/eQSL/竞赛 确认"
 
 #: application/models/Logbook_model.php:5624
 #: application/models/Logbook_model.php:5498
+#: application/models/Logbook_model.php:5512
 msgid "confirmed by award manager"
 msgstr "已经通过奖项管理员确认"
 
 #: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5502
+#: application/models/Logbook_model.php:5516
 msgid "confirmed by cross-check of DCL data"
 msgstr "已经通过 DCL 数据交叉检查确认"
 
 #: application/models/Logbook_model.php:5632
 #: application/models/Logbook_model.php:5506
+#: application/models/Logbook_model.php:5520
 msgid "confirmation pending"
 msgstr "等待确认"
 
 #: application/models/Logbook_model.php:5635
 #: application/models/Logbook_model.php:5509
+#: application/models/Logbook_model.php:5523
 msgid "unconfirmed"
 msgstr "未确认"
 
@@ -3657,16 +3703,19 @@ msgstr "未确认"
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 #: application/models/Logbook_model.php:5512
+#: application/models/Logbook_model.php:5526
 msgid "unknown"
 msgstr "未知"
 
 #: application/models/Logbook_model.php:5708
 #: application/models/Logbook_model.php:5582
+#: application/models/Logbook_model.php:5596
 msgid "POTA reference already in log"
 msgstr "日志中已存在 POTA 编号"
 
 #: application/models/Logbook_model.php:5711
 #: application/models/Logbook_model.php:5585
+#: application/models/Logbook_model.php:5599
 msgid "QSO updated"
 msgstr "QSO已上传"
 
@@ -3682,6 +3731,7 @@ msgstr "QSO已上传"
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
 #: application/models/Logbook_model.php:6315
+#: application/models/Logbook_model.php:5993
 msgid "Bearing"
 msgstr "方位角"
 
@@ -18745,6 +18795,7 @@ msgid "CQz geojson"
 msgstr "CQz geojson"
 
 #: application/models/Logbook_model.php:305
+#: application/models/Logbook_model.php:311
 msgid "Station not accessible"
 msgstr ""
 
