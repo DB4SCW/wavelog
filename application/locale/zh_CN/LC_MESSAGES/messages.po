@@ -3592,12 +3592,14 @@ msgstr "未提供呼号"
 #: application/models/Logbook_model.php:1564
 #: application/models/Logbook_model.php:1368
 #: application/models/Logbook_model.php:1570
+#: application/models/Logbook_model.php:1572
 msgid "DXCC has to be Numeric"
 msgstr "DXCC 应该是数字"
 
 #: application/models/Logbook_model.php:4761
 #: application/models/Logbook_model.php:4635
 #: application/models/Logbook_model.php:4641
+#: application/models/Logbook_model.php:4643
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "导入 QSO 时出现错误：本台呼号 %s 对方呼号 %s %s，已跳过"
@@ -3605,6 +3607,7 @@ msgstr "导入 QSO 时出现错误：本台呼号 %s 对方呼号 %s %s，已跳
 #: application/models/Logbook_model.php:4775
 #: application/models/Logbook_model.php:4649
 #: application/models/Logbook_model.php:4655
+#: application/models/Logbook_model.php:4657
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3613,12 +3616,14 @@ msgstr "导入QSO时使用了无效日期，该QSO未被导入。这是无效的
 #: application/models/Logbook_model.php:4784
 #: application/models/Logbook_model.php:4658
 #: application/models/Logbook_model.php:4664
+#: application/models/Logbook_model.php:4666
 msgid "QSO on"
 msgstr "QSO 时间"
 
 #: application/models/Logbook_model.php:4784
 #: application/models/Logbook_model.php:4658
 #: application/models/Logbook_model.php:4664
+#: application/models/Logbook_model.php:4666
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3627,6 +3632,7 @@ msgstr "试图导入的 QSO 不存在对方呼号（CALL）。此 QSO 无效，�
 #: application/models/Logbook_model.php:4833
 #: application/models/Logbook_model.php:4707
 #: application/models/Logbook_model.php:4713
+#: application/models/Logbook_model.php:4715
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3637,18 +3643,21 @@ msgstr ""
 #: application/models/Logbook_model.php:5098
 #: application/models/Logbook_model.php:4972
 #: application/models/Logbook_model.php:4986
+#: application/models/Logbook_model.php:4988
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate 字段错误（YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5109
 #: application/models/Logbook_model.php:4983
 #: application/models/Logbook_model.php:4997
+#: application/models/Logbook_model.php:4999
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate 字段错误（YYYYMMDD）"
 
 #: application/models/Logbook_model.php:5170
 #: application/models/Logbook_model.php:5044
 #: application/models/Logbook_model.php:5058
+#: application/models/Logbook_model.php:5060
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date 字段错误（ YYYYMMDD）"
 
@@ -3656,6 +3665,7 @@ msgstr "clublog_qso_upload_date 字段错误（ YYYYMMDD）"
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5419
 #: application/models/Logbook_model.php:5433
+#: application/models/Logbook_model.php:5435
 msgid "Duplicate for"
 msgstr "内容重复"
 
@@ -3665,36 +3675,43 @@ msgstr "内容重复"
 #: application/models/Logbook_model.php:5579
 #: application/models/Logbook_model.php:5498
 #: application/models/Logbook_model.php:5593
+#: application/models/Logbook_model.php:5500
+#: application/models/Logbook_model.php:5595
 msgid "QSO could not be matched"
 msgstr "QSO 无法匹配"
 
 #: application/models/Logbook_model.php:5618
 #: application/models/Logbook_model.php:5492
 #: application/models/Logbook_model.php:5506
+#: application/models/Logbook_model.php:5508
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "已经通过 LoTW/Clublog/eQSL/竞赛 确认"
 
 #: application/models/Logbook_model.php:5624
 #: application/models/Logbook_model.php:5498
 #: application/models/Logbook_model.php:5512
+#: application/models/Logbook_model.php:5514
 msgid "confirmed by award manager"
 msgstr "已经通过奖项管理员确认"
 
 #: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5502
 #: application/models/Logbook_model.php:5516
+#: application/models/Logbook_model.php:5518
 msgid "confirmed by cross-check of DCL data"
 msgstr "已经通过 DCL 数据交叉检查确认"
 
 #: application/models/Logbook_model.php:5632
 #: application/models/Logbook_model.php:5506
 #: application/models/Logbook_model.php:5520
+#: application/models/Logbook_model.php:5522
 msgid "confirmation pending"
 msgstr "等待确认"
 
 #: application/models/Logbook_model.php:5635
 #: application/models/Logbook_model.php:5509
 #: application/models/Logbook_model.php:5523
+#: application/models/Logbook_model.php:5525
 msgid "unconfirmed"
 msgstr "未确认"
 
@@ -3704,18 +3721,21 @@ msgstr "未确认"
 #: application/views/view_log/qso.php:293
 #: application/models/Logbook_model.php:5512
 #: application/models/Logbook_model.php:5526
+#: application/models/Logbook_model.php:5528
 msgid "unknown"
 msgstr "未知"
 
 #: application/models/Logbook_model.php:5708
 #: application/models/Logbook_model.php:5582
 #: application/models/Logbook_model.php:5596
+#: application/models/Logbook_model.php:5598
 msgid "POTA reference already in log"
 msgstr "日志中已存在 POTA 编号"
 
 #: application/models/Logbook_model.php:5711
 #: application/models/Logbook_model.php:5585
 #: application/models/Logbook_model.php:5599
+#: application/models/Logbook_model.php:5601
 msgid "QSO updated"
 msgstr "QSO已上传"
 
@@ -3732,10 +3752,12 @@ msgstr "QSO已上传"
 #: application/views/view_log/partial/log_ajax.php:20
 #: application/models/Logbook_model.php:6315
 #: application/models/Logbook_model.php:5993
+#: application/models/Logbook_model.php:5995
 msgid "Bearing"
 msgstr "方位角"
 
 #: application/models/Logbookadvanced_model.php:1664
+#: application/models/Logbookadvanced_model.php:1663
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccGrids 表为空。请先导入 VUCC 网格数据。"
 
