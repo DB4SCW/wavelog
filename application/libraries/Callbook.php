@@ -53,8 +53,10 @@ class Callbook {
 		if (isset($callbook['error']) && $callbook['error'] != '') {
 			if (is_array($source_callbooks)) {
 				foreach ($source_callbooks as $source) {
-					$callbook['error_'.$source] = $callbook_errors['error_'.$source];
-					$callbook['error_'.$source.'_name'] = $callbook_errors['error_'.$source.'_name'];
+					if (isset($callbook_errors['error_'.$source])) {
+						$callbook['error_'.$source] = $callbook_errors['error_'.$source];
+						$callbook['error_'.$source.'_name'] = $callbook_errors['error_'.$source.'_name'];
+					}
 				}
 			}
 		}
