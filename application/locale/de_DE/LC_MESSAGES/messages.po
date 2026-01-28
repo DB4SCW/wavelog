@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-27 21:10+0000\n"
+"POT-Creation-Date: 2026-01-28 06:50+0000\n"
 "PO-Revision-Date: 2026-01-28 07:00+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
@@ -461,7 +461,7 @@ msgid " and "
 msgstr " und "
 
 #: application/controllers/Awards.php:595
-#: application/controllers/Logbook.php:1414
+#: application/controllers/Logbook.php:1421
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:326
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
 #: application/views/interface_assets/header.php:218
@@ -485,12 +485,11 @@ msgstr " und "
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
-#: application/controllers/Logbook.php:1421
 msgid "SOTA"
 msgstr "SOTA"
 
 #: application/controllers/Awards.php:613
-#: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1422
 #: application/views/bandmap/list.php:328 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
 #: application/views/interface_assets/header.php:206
@@ -508,12 +507,11 @@ msgstr "SOTA"
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:10
-#: application/controllers/Logbook.php:1422
 msgid "WWFF"
 msgstr "WWFF"
 
 #: application/controllers/Awards.php:631
-#: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1423
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:11
@@ -532,7 +530,6 @@ msgstr "WWFF"
 #: application/views/user/edit.php:297 application/views/user/edit.php:320
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:11
-#: application/controllers/Logbook.php:1423
 msgid "POTA"
 msgstr "POTA"
 
@@ -1470,7 +1467,13 @@ msgstr "LoTW"
 msgid "eQSL"
 msgstr "eQSL"
 
-#: application/controllers/Logbook.php:1409
+#: application/controllers/Logbook.php:953
+msgid "All callbook lookups failed or provided no results."
+msgstr ""
+"Alle Rufzeichenlistensuchen sind fehlgeschlagen oder lieferten keine "
+"Ergebnisse."
+
+#: application/controllers/Logbook.php:1416
 #: application/controllers/Radio.php:46
 #: application/views/accumulate/index.php:31
 #: application/views/activated_gridmap/index.php:43
@@ -1567,11 +1570,10 @@ msgstr "eQSL"
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
-#: application/controllers/Logbook.php:1416
 msgid "Mode"
 msgstr "Mode"
 
-#: application/controllers/Logbook.php:1410
+#: application/controllers/Logbook.php:1417
 #: application/views/awards/73on73/index.php:38
 #: application/views/awards/pota/index.php:37
 #: application/views/awards/wwff/index.php:37
@@ -1597,11 +1599,10 @@ msgstr "Mode"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
-#: application/controllers/Logbook.php:1417
 msgid "RST (S)"
 msgstr "RST (S)"
 
-#: application/controllers/Logbook.php:1411
+#: application/controllers/Logbook.php:1418
 #: application/views/awards/73on73/index.php:37
 #: application/views/awards/pota/index.php:38
 #: application/views/awards/wwff/index.php:38
@@ -1628,11 +1629,10 @@ msgstr "RST (S)"
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
-#: application/controllers/Logbook.php:1418
 msgid "RST (R)"
 msgstr "RST (R)"
 
-#: application/controllers/Logbook.php:1412
+#: application/controllers/Logbook.php:1419
 #: application/views/dashboard/index.php:7
 #: application/views/qslcard/searchresult.php:15
 #: application/views/qslcard/searchresult.php:31
@@ -1650,11 +1650,10 @@ msgstr "RST (R)"
 #: application/views/view_log/qso.php:337
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
-#: application/controllers/Logbook.php:1419
 msgid "Country"
 msgstr "Land"
 
-#: application/controllers/Logbook.php:1413
+#: application/controllers/Logbook.php:1420
 #: application/views/awards/iota/index.php:198
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:52
 #: application/views/dashboard/index.php:8
@@ -1682,11 +1681,10 @@ msgstr "Land"
 #: application/views/user/edit.php:317 application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
-#: application/controllers/Logbook.php:1420
 msgid "IOTA"
 msgstr "IOTA"
 
-#: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1424
 #: application/views/awards/counties/details.php:12
 #: application/views/awards/counties/index.php:21
 #: application/views/awards/rac/index.php:146
@@ -1714,11 +1712,10 @@ msgstr "IOTA"
 #: application/views/user/edit.php:321 application/views/user/edit.php:345
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
-#: application/controllers/Logbook.php:1424
 msgid "State"
 msgstr "Staat"
 
-#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1425
 #: application/views/activated_gridmap/index.php:110
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:54
@@ -1767,11 +1764,10 @@ msgstr "Staat"
 #: application/views/view_log/qso.php:680
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
-#: application/controllers/Logbook.php:1425
 msgid "Gridsquare"
 msgstr "Locator"
 
-#: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1426
 #: application/views/activated_gridmap/index.php:112
 #: application/views/awards/ffma/index.php:40
 #: application/views/awards/gridmaster/index.php:56
@@ -1798,11 +1794,10 @@ msgstr "Locator"
 #: application/views/user/edit.php:347
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
-#: application/controllers/Logbook.php:1426
 msgid "Distance"
 msgstr "Distanz"
 
-#: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1427
 #: application/views/accumulate/index.php:21
 #: application/views/activated_gridmap/index.php:12
 #: application/views/activators/index.php:10
@@ -1894,11 +1889,10 @@ msgstr "Distanz"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
-#: application/controllers/Logbook.php:1427
 msgid "Band"
 msgstr "Band"
 
-#: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1428
 #: application/controllers/Radio.php:45 application/views/bandmap/list.php:166
 #: application/views/bandmap/list.php:567
 #: application/views/contesting/index.php:148
@@ -1922,11 +1916,10 @@ msgstr "Band"
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
-#: application/controllers/Logbook.php:1428
 msgid "Frequency"
 msgstr "Frequenz"
 
-#: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1429
 #: application/controllers/Radio.php:43
 #: application/views/dashboard/index.php:17
 #: application/views/logbookadvanced/edit.php:13
@@ -1947,11 +1940,10 @@ msgstr "Frequenz"
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
-#: application/controllers/Logbook.php:1429
 msgid "Operator"
 msgstr "Operator"
 
-#: application/controllers/Logbook.php:1443
+#: application/controllers/Logbook.php:1450
 #: application/controllers/Stationsetup.php:424
 #: application/views/awards/dxcc/index.php:83
 #: application/views/awards/dxcc/index.php:291
@@ -1977,7 +1969,6 @@ msgstr "Operator"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
-#: application/controllers/Logbook.php:1450
 msgid "Deleted DXCC"
 msgstr "Gelöschtes DXCC"
 
@@ -3433,12 +3424,10 @@ msgstr "Mehrere Nutzer über Kurz-URL gefunden"
 msgid "Gridsquare Zone finder"
 msgstr "Planquadrat-Zonen-Finder"
 
-#: application/libraries/Callbook.php:124
 #: application/libraries/Callbook.php:139
 msgid "QRZCQ Error"
 msgstr "QRZCQ Fehler"
 
-#: application/libraries/Callbook.php:155
 #: application/libraries/Callbook.php:179
 msgid "Error obtaining a session key for HamQTH query"
 msgstr "Fehler bei der Sessionerzeugung für HamQTH"
@@ -11492,8 +11481,8 @@ msgstr ""
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
 msgstr ""
-"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an "
-"eQSL.cc."
+"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an eQSL."
+"cc."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
@@ -14867,8 +14856,8 @@ msgstr "E-Mail Adresse"
 msgid ""
 "The email address from which the emails are sent, e.g. 'wavelog@example.com'"
 msgstr ""
-"Die E-Mail Adresse von der die Mails versendet werden, z.B. "
-"'wavelog@example.com'"
+"Die E-Mail Adresse von der die Mails versendet werden, z.B. 'wavelog@example."
+"com'"
 
 #: application/views/options/email.php:80
 msgid "SMTP Host"
@@ -17017,9 +17006,9 @@ msgid ""
 msgstr ""
 "Um zu beginnen, stelle sicher, dass du die Felder auf der linken Seite "
 "bereits mit Datum, Stationsrufzeichen/-standort und Rufzeichen des Operators "
-"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, "
-"z.B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was "
-"im wesentlichen das Rufzeichen ist."
+"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, z."
+"B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was im "
+"wesentlichen das Rufzeichen ist."
 
 #: application/views/simplefle/syntax_help.php:9
 msgid "For example, a QSO that started at 21:34 (UTC) with 4W7EST on 20m SSB."
@@ -17893,9 +17882,9 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
-"Erstelle einen neuen Ordner in 'assets/css/' und lade eine "
-"'bootstrap.min.css' Datei hoch, welche die grundlegende Styling-Regeln "
-"enthält. Wir verwenden die Themes von %s"
+"Erstelle einen neuen Ordner in 'assets/css/' und lade eine 'bootstrap.min."
+"css' Datei hoch, welche die grundlegende Styling-Regeln enthält. Wir "
+"verwenden die Themes von %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
@@ -19459,12 +19448,6 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
-
-#: application/controllers/Logbook.php:953
-msgid "All callbook lookups failed or provided no results."
-msgstr ""
-"Alle Rufzeichenlistensuchen sind fehlgeschlagen oder lieferten keine "
-"Ergebnisse."
 
 #~ msgid "Signature Name"
 #~ msgstr "Signatur-Bezeichnung"
