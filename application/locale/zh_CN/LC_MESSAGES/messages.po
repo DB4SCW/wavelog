@@ -26,11 +26,11 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-28 06:50+0000\n"
-"PO-Revision-Date: 2026-01-25 01:12+0000\n"
+"POT-Creation-Date: 2026-01-26 10:04+0000\n"
+"PO-Revision-Date: 2026-01-27 07:38+0000\n"
 "Last-Translator: Lu Chang <chinaluchang@live.com>\n"
-"Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
-"org/projects/wavelog/main-translation/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,8 +73,8 @@ msgstr ""
 #: application/controllers/Dxatlas.php:7 application/controllers/Dxatlas.php:29
 #: application/controllers/Dxatlas.php:51
 #: application/controllers/Dxatlas.php:108
-#: application/controllers/Dxcalendar.php:12
-#: application/controllers/Dxcluster.php:13 application/controllers/Eqsl.php:23
+#: application/controllers/Dxcalendar.php:8
+#: application/controllers/Dxcluster.php:9 application/controllers/Eqsl.php:23
 #: application/controllers/Eqsl.php:66 application/controllers/Eqsl.php:166
 #: application/controllers/Eqsl.php:255 application/controllers/Eqsl.php:279
 #: application/controllers/Eqsl.php:318 application/controllers/Eqsl.php:517
@@ -100,9 +100,9 @@ msgstr ""
 #: application/controllers/Qsl.php:49 application/controllers/Qsl.php:57
 #: application/controllers/Qslprint.php:24
 #: application/controllers/Qslprint.php:159 application/controllers/Qso.php:8
-#: application/controllers/Qso.php:22 application/controllers/Qso.php:288
-#: application/controllers/Qso.php:419 application/controllers/Qso.php:440
-#: application/controllers/Qso.php:463 application/controllers/Qso.php:763
+#: application/controllers/Qso.php:22 application/controllers/Qso.php:217
+#: application/controllers/Qso.php:348 application/controllers/Qso.php:369
+#: application/controllers/Qso.php:392 application/controllers/Qso.php:692
 #: application/controllers/Radio.php:32 application/controllers/Radio.php:297
 #: application/controllers/Radio.php:323 application/controllers/Radio.php:339
 #: application/controllers/Reg1test.php:17
@@ -145,7 +145,11 @@ msgstr ""
 #: application/controllers/Webadif.php:11
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/Qso.php:288
+#: application/controllers/Qso.php:419 application/controllers/Qso.php:440
+#: application/controllers/Qso.php:463 application/controllers/Qso.php:763
+#: application/controllers/Dxcalendar.php:12
+#: application/controllers/Dxcluster.php:13
 msgid "You're not allowed to do that!"
 msgstr "请不要这样操作！"
 
@@ -461,7 +465,7 @@ msgid " and "
 msgstr " 并且 "
 
 #: application/controllers/Awards.php:595
-#: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1385
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:326
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
 #: application/views/interface_assets/header.php:218
@@ -485,11 +489,16 @@ msgstr " 并且 "
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
+#: application/controllers/Logbook.php:1386
+#: application/controllers/Logbook.php:1398
+#: application/controllers/Logbook.php:1410
+#: application/controllers/Logbook.php:1414
+#: application/controllers/Logbook.php:1421
 msgid "SOTA"
 msgstr "SOTA"
 
 #: application/controllers/Awards.php:613
-#: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1386
 #: application/views/bandmap/list.php:328 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
 #: application/views/interface_assets/header.php:206
@@ -507,11 +516,16 @@ msgstr "SOTA"
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:10
+#: application/controllers/Logbook.php:1387
+#: application/controllers/Logbook.php:1399
+#: application/controllers/Logbook.php:1411
+#: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1422
 msgid "WWFF"
 msgstr "WWFF"
 
 #: application/controllers/Awards.php:631
-#: application/controllers/Logbook.php:1423
+#: application/controllers/Logbook.php:1387
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:11
@@ -530,6 +544,11 @@ msgstr "WWFF"
 #: application/views/user/edit.php:297 application/views/user/edit.php:320
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:11
+#: application/controllers/Logbook.php:1388
+#: application/controllers/Logbook.php:1400
+#: application/controllers/Logbook.php:1412
+#: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1423
 msgid "POTA"
 msgstr "POTA"
 
@@ -710,9 +729,10 @@ msgstr " 并且卫星 "
 msgid "Call Tester"
 msgstr "通联记录检测器"
 
+#: application/controllers/Calltester.php:844
 #: application/controllers/Calltester.php:971
 msgid "Callsign Tester"
-msgstr "通联记录检测器"
+msgstr "呼号检测器"
 
 #: application/controllers/Club.php:23
 msgid "Club Officer"
@@ -793,7 +813,7 @@ msgid "No user has configured Clublog."
 msgstr "未找到配置 Clublog 的用户。"
 
 #: application/controllers/Clublog.php:86
-#: application/controllers/Logbook.php:756
+#: application/controllers/Logbook.php:753
 #: application/views/awards/dok/index.php:72
 #: application/views/awards/dxcc/index.php:132
 #: application/views/awards/iota/index.php:80
@@ -815,6 +835,7 @@ msgstr "未找到配置 Clublog 的用户。"
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:571
 #: application/views/view_log/qso.php:576
+#: application/controllers/Logbook.php:756
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -1050,8 +1071,9 @@ msgstr "和传播方式"
 msgid "DX Atlas Gridsquare Export"
 msgstr "DX Atlas 网格导出"
 
-#: application/controllers/Dxcalendar.php:14
+#: application/controllers/Dxcalendar.php:10
 #: application/views/interface_assets/header.php:305
+#: application/controllers/Dxcalendar.php:14
 msgid "DX Calendar"
 msgstr "DX 日历"
 
@@ -1325,26 +1347,29 @@ msgstr "纸张已保存。"
 msgid "Paper was deleted."
 msgstr "纸张已删除。"
 
+#: application/controllers/Logbook.php:36
 #: application/controllers/Logbook.php:39
 msgid ""
 "No logbooks were found. You need to define a logbook under Station Logbooks! "
 "Do it here:"
 msgstr "没有找到日志簿。你需要在电台站日志下添加一个日志簿！在这里添加："
 
-#: application/controllers/Logbook.php:39
+#: application/controllers/Logbook.php:36
 #: application/views/stationsetup/stationsetup.php:21
+#: application/controllers/Logbook.php:39
 msgid "Station Logbooks"
 msgstr "日志簿"
 
-#: application/controllers/Logbook.php:60
+#: application/controllers/Logbook.php:57
 #: application/views/interface_assets/header.php:113
 #: application/views/logbookadvanced/useroptions.php:4
 #: application/views/view_log/index.php:11
+#: application/controllers/Logbook.php:60
 msgid "Logbook"
 msgstr "日志簿"
 
-#: application/controllers/Logbook.php:744
-#: application/controllers/Logbook.php:759
+#: application/controllers/Logbook.php:741
+#: application/controllers/Logbook.php:756
 #: application/views/activated_gridmap/index.php:62
 #: application/views/awards/dok/index.php:56
 #: application/views/awards/dxcc/index.php:116
@@ -1370,11 +1395,12 @@ msgstr "日志簿"
 #: application/views/qslprint/qsolist.php:18
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:112
 #: application/views/timeline/index.php:56 application/views/user/edit.php:625
-#: application/views/user/edit.php:822
+#: application/views/user/edit.php:822 application/controllers/Logbook.php:744
+#: application/controllers/Logbook.php:759
 msgid "QSL"
 msgstr "QSL"
 
-#: application/controllers/Logbook.php:747
+#: application/controllers/Logbook.php:744
 #: application/views/activated_gridmap/index.php:70
 #: application/views/awards/cq/index.php:114
 #: application/views/awards/dok/index.php:60
@@ -1413,10 +1439,11 @@ msgstr "QSL"
 #: application/views/timeline/index.php:60 application/views/user/edit.php:626
 #: application/views/user/edit.php:832 application/views/view_log/qso.php:537
 #: application/views/view_log/qso.php:542
+#: application/controllers/Logbook.php:747
 msgid "LoTW"
 msgstr "LoTW"
 
-#: application/controllers/Logbook.php:750
+#: application/controllers/Logbook.php:747
 #: application/views/activated_gridmap/index.php:78
 #: application/views/awards/cq/index.php:118
 #: application/views/awards/dok/index.php:64
@@ -1450,14 +1477,11 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:300
 #: application/views/timeline/index.php:64 application/views/user/edit.php:627
 #: application/views/user/edit.php:840 application/views/user/edit.php:914
+#: application/controllers/Logbook.php:750
 msgid "eQSL"
 msgstr "eQSL"
 
-#: application/controllers/Logbook.php:953
-msgid "All callbook lookups failed or provided no results."
-msgstr ""
-
-#: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1380
 #: application/controllers/Radio.php:46
 #: application/views/accumulate/index.php:31
 #: application/views/activated_gridmap/index.php:43
@@ -1554,10 +1578,15 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
+#: application/controllers/Logbook.php:1381
+#: application/controllers/Logbook.php:1393
+#: application/controllers/Logbook.php:1405
+#: application/controllers/Logbook.php:1409
+#: application/controllers/Logbook.php:1416
 msgid "Mode"
 msgstr "模式"
 
-#: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1381
 #: application/views/awards/73on73/index.php:38
 #: application/views/awards/pota/index.php:37
 #: application/views/awards/wwff/index.php:37
@@ -1583,10 +1612,15 @@ msgstr "模式"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
+#: application/controllers/Logbook.php:1382
+#: application/controllers/Logbook.php:1394
+#: application/controllers/Logbook.php:1406
+#: application/controllers/Logbook.php:1410
+#: application/controllers/Logbook.php:1417
 msgid "RST (S)"
 msgstr "我收对方"
 
-#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1382
 #: application/views/awards/73on73/index.php:37
 #: application/views/awards/pota/index.php:38
 #: application/views/awards/wwff/index.php:38
@@ -1613,10 +1647,15 @@ msgstr "我收对方"
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
+#: application/controllers/Logbook.php:1383
+#: application/controllers/Logbook.php:1395
+#: application/controllers/Logbook.php:1407
+#: application/controllers/Logbook.php:1411
+#: application/controllers/Logbook.php:1418
 msgid "RST (R)"
 msgstr "对方收我"
 
-#: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1383
 #: application/views/dashboard/index.php:7
 #: application/views/qslcard/searchresult.php:15
 #: application/views/qslcard/searchresult.php:31
@@ -1634,10 +1673,15 @@ msgstr "对方收我"
 #: application/views/view_log/qso.php:337
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
+#: application/controllers/Logbook.php:1384
+#: application/controllers/Logbook.php:1396
+#: application/controllers/Logbook.php:1408
+#: application/controllers/Logbook.php:1412
+#: application/controllers/Logbook.php:1419
 msgid "Country"
 msgstr "DXCC 实体"
 
-#: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1384
 #: application/views/awards/iota/index.php:198
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:52
 #: application/views/dashboard/index.php:8
@@ -1665,10 +1709,15 @@ msgstr "DXCC 实体"
 #: application/views/user/edit.php:317 application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
+#: application/controllers/Logbook.php:1385
+#: application/controllers/Logbook.php:1397
+#: application/controllers/Logbook.php:1409
+#: application/controllers/Logbook.php:1413
+#: application/controllers/Logbook.php:1420
 msgid "IOTA"
 msgstr "IOTA"
 
-#: application/controllers/Logbook.php:1424
+#: application/controllers/Logbook.php:1388
 #: application/views/awards/counties/details.php:12
 #: application/views/awards/counties/index.php:21
 #: application/views/awards/rac/index.php:146
@@ -1696,10 +1745,15 @@ msgstr "IOTA"
 #: application/views/user/edit.php:321 application/views/user/edit.php:345
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
+#: application/controllers/Logbook.php:1389
+#: application/controllers/Logbook.php:1401
+#: application/controllers/Logbook.php:1413
+#: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1424
 msgid "State"
 msgstr "州"
 
-#: application/controllers/Logbook.php:1425
+#: application/controllers/Logbook.php:1389
 #: application/views/activated_gridmap/index.php:110
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:54
@@ -1748,10 +1802,15 @@ msgstr "州"
 #: application/views/view_log/qso.php:680
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
+#: application/controllers/Logbook.php:1390
+#: application/controllers/Logbook.php:1402
+#: application/controllers/Logbook.php:1414
+#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1425
 msgid "Gridsquare"
 msgstr "网格坐标"
 
-#: application/controllers/Logbook.php:1426
+#: application/controllers/Logbook.php:1390
 #: application/views/activated_gridmap/index.php:112
 #: application/views/awards/ffma/index.php:40
 #: application/views/awards/gridmaster/index.php:56
@@ -1778,10 +1837,15 @@ msgstr "网格坐标"
 #: application/views/user/edit.php:347
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
+#: application/controllers/Logbook.php:1391
+#: application/controllers/Logbook.php:1403
+#: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1426
 msgid "Distance"
 msgstr "距离"
 
-#: application/controllers/Logbook.php:1427
+#: application/controllers/Logbook.php:1391
 #: application/views/accumulate/index.php:21
 #: application/views/activated_gridmap/index.php:12
 #: application/views/activators/index.php:10
@@ -1873,10 +1937,15 @@ msgstr "距离"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
+#: application/controllers/Logbook.php:1392
+#: application/controllers/Logbook.php:1404
+#: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1427
 msgid "Band"
 msgstr "频段"
 
-#: application/controllers/Logbook.php:1428
+#: application/controllers/Logbook.php:1392
 #: application/controllers/Radio.php:45 application/views/bandmap/list.php:166
 #: application/views/bandmap/list.php:567
 #: application/views/contesting/index.php:148
@@ -1900,10 +1969,15 @@ msgstr "频段"
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
+#: application/controllers/Logbook.php:1393
+#: application/controllers/Logbook.php:1405
+#: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1428
 msgid "Frequency"
 msgstr "频率"
 
-#: application/controllers/Logbook.php:1429
+#: application/controllers/Logbook.php:1393
 #: application/controllers/Radio.php:43
 #: application/views/dashboard/index.php:17
 #: application/views/logbookadvanced/edit.php:13
@@ -1924,10 +1998,15 @@ msgstr "频率"
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
+#: application/controllers/Logbook.php:1394
+#: application/controllers/Logbook.php:1406
+#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1429
 msgid "Operator"
 msgstr "操作员"
 
-#: application/controllers/Logbook.php:1450
+#: application/controllers/Logbook.php:1414
 #: application/controllers/Stationsetup.php:424
 #: application/views/awards/dxcc/index.php:83
 #: application/views/awards/dxcc/index.php:291
@@ -1953,6 +2032,11 @@ msgstr "操作员"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
+#: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1427
+#: application/controllers/Logbook.php:1439
+#: application/controllers/Logbook.php:1443
+#: application/controllers/Logbook.php:1450
 msgid "Deleted DXCC"
 msgstr "删除 DXCC 实体"
 
@@ -2395,15 +2479,15 @@ msgstr "打印被请求的 QSL 卡片"
 msgid "Add QSO"
 msgstr "添加 QSO"
 
-#: application/controllers/Qso.php:824
+#: application/controllers/Qso.php:753 application/controllers/Qso.php:824
 msgid "You have to be logged in to access this URL."
 msgstr "需要登录方可浏览此页面。"
 
-#: application/controllers/Qso.php:830
+#: application/controllers/Qso.php:759 application/controllers/Qso.php:830
 msgid "Call Transfer"
 msgstr "通联转接"
 
-#: application/controllers/Qso.php:837
+#: application/controllers/Qso.php:766 application/controllers/Qso.php:837
 msgid "No callsign provided."
 msgstr "未提供呼号。"
 
@@ -3353,10 +3437,12 @@ msgstr "通过标识找到多个用户"
 msgid "Gridsquare Zone finder"
 msgstr "网格区域查找器"
 
+#: application/libraries/Callbook.php:124
 #: application/libraries/Callbook.php:139
 msgid "QRZCQ Error"
 msgstr "QRZCQ 错误"
 
+#: application/libraries/Callbook.php:155
 #: application/libraries/Callbook.php:179
 msgid "Error obtaining a session key for HamQTH query"
 msgstr "获取 HamQTH 查询会话密钥错误"
@@ -3505,44 +3591,64 @@ msgstr "HRDlog：无 QSO 可供上传，台站呼号为： "
 msgid "HRDlog: No station profiles with HRDlog Credentials found."
 msgstr "HRDlog：无台站配置信息。"
 
-#: application/models/Logbook_model.php:311
-msgid "Station not accessible"
-msgstr ""
-
+#: application/models/Logbook_model.php:1413
+#: application/models/Logbook_model.php:1287
 #: application/models/Logbook_model.php:1293
 msgid "Station ID not allowed"
 msgstr "集体台站 ID 有误"
 
+#: application/models/Logbook_model.php:1418
+#: application/models/Logbook_model.php:1292
 #: application/models/Logbook_model.php:1298
 msgid "No Call given"
 msgstr "未提供呼号"
 
+#: application/models/Logbook_model.php:1488
+#: application/models/Logbook_model.php:1690
+#: application/models/Logbook_model.php:1362
+#: application/models/Logbook_model.php:1564
 #: application/models/Logbook_model.php:1368
+#: application/models/Logbook_model.php:1570
 #: application/models/Logbook_model.php:1572
 msgid "DXCC has to be Numeric"
 msgstr "DXCC 应该是数字"
 
+#: application/models/Logbook_model.php:4761
+#: application/models/Logbook_model.php:4635
+#: application/models/Logbook_model.php:4641
 #: application/models/Logbook_model.php:4643
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "导入 QSO 时出现错误：本台呼号 %s 对方呼号 %s %s，已跳过"
 
+#: application/models/Logbook_model.php:4775
+#: application/models/Logbook_model.php:4649
+#: application/models/Logbook_model.php:4655
 #: application/models/Logbook_model.php:4657
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
 msgstr "导入QSO时使用了无效日期，该QSO未被导入。这是无效的"
 
+#: application/models/Logbook_model.php:4784
+#: application/models/Logbook_model.php:4658
+#: application/models/Logbook_model.php:4664
 #: application/models/Logbook_model.php:4666
 msgid "QSO on"
 msgstr "QSO 时间"
 
+#: application/models/Logbook_model.php:4784
+#: application/models/Logbook_model.php:4658
+#: application/models/Logbook_model.php:4664
 #: application/models/Logbook_model.php:4666
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
 msgstr "试图导入的 QSO 不存在对方呼号（CALL）。此 QSO 无效，未导入"
 
+#: application/models/Logbook_model.php:4833
+#: application/models/Logbook_model.php:4707
+#: application/models/Logbook_model.php:4713
 #: application/models/Logbook_model.php:4715
 #, php-format
 msgid ""
@@ -3551,64 +3657,106 @@ msgid ""
 msgstr ""
 "在 %s 上的 QSO：你尝试导入一个未指定频段的 QSO。该 QSO 未被导入。此 QSO 无效"
 
+#: application/models/Logbook_model.php:5098
+#: application/models/Logbook_model.php:4972
+#: application/models/Logbook_model.php:4986
 #: application/models/Logbook_model.php:4988
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate 字段错误（YYYYMMDD）"
 
+#: application/models/Logbook_model.php:5109
+#: application/models/Logbook_model.php:4983
+#: application/models/Logbook_model.php:4997
 #: application/models/Logbook_model.php:4999
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate 字段错误（YYYYMMDD）"
 
+#: application/models/Logbook_model.php:5170
+#: application/models/Logbook_model.php:5044
+#: application/models/Logbook_model.php:5058
 #: application/models/Logbook_model.php:5060
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date 字段错误（ YYYYMMDD）"
 
-#: application/models/Logbook_model.php:5435
+#: application/models/Logbook_model.php:5545
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5419
+#: application/models/Logbook_model.php:5433
+#: application/models/Logbook_model.php:5435
 msgid "Duplicate for"
 msgstr "内容重复"
 
+#: application/models/Logbook_model.php:5610
+#: application/models/Logbook_model.php:5705
+#: application/models/Logbook_model.php:5484
+#: application/models/Logbook_model.php:5579
+#: application/models/Logbook_model.php:5498
+#: application/models/Logbook_model.php:5593
 #: application/models/Logbook_model.php:5500
 #: application/models/Logbook_model.php:5595
 msgid "QSO could not be matched"
 msgstr "QSO 无法匹配"
 
+#: application/models/Logbook_model.php:5618
+#: application/models/Logbook_model.php:5492
+#: application/models/Logbook_model.php:5506
 #: application/models/Logbook_model.php:5508
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "已经通过 LoTW/Clublog/eQSL/竞赛 确认"
 
+#: application/models/Logbook_model.php:5624
+#: application/models/Logbook_model.php:5498
+#: application/models/Logbook_model.php:5512
 #: application/models/Logbook_model.php:5514
 msgid "confirmed by award manager"
 msgstr "已经通过奖项管理员确认"
 
+#: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5502
+#: application/models/Logbook_model.php:5516
 #: application/models/Logbook_model.php:5518
 msgid "confirmed by cross-check of DCL data"
 msgstr "已经通过 DCL 数据交叉检查确认"
 
+#: application/models/Logbook_model.php:5632
+#: application/models/Logbook_model.php:5506
+#: application/models/Logbook_model.php:5520
 #: application/models/Logbook_model.php:5522
 msgid "confirmation pending"
 msgstr "等待确认"
 
+#: application/models/Logbook_model.php:5635
+#: application/models/Logbook_model.php:5509
+#: application/models/Logbook_model.php:5523
 #: application/models/Logbook_model.php:5525
 msgid "unconfirmed"
 msgstr "未确认"
 
-#: application/models/Logbook_model.php:5528
+#: application/models/Logbook_model.php:5638
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
+#: application/models/Logbook_model.php:5512
+#: application/models/Logbook_model.php:5526
+#: application/models/Logbook_model.php:5528
 msgid "unknown"
 msgstr "未知"
 
+#: application/models/Logbook_model.php:5708
+#: application/models/Logbook_model.php:5582
+#: application/models/Logbook_model.php:5596
 #: application/models/Logbook_model.php:5598
 msgid "POTA reference already in log"
 msgstr "日志中已存在 POTA 编号"
 
+#: application/models/Logbook_model.php:5711
+#: application/models/Logbook_model.php:5585
+#: application/models/Logbook_model.php:5599
 #: application/models/Logbook_model.php:5601
 msgid "QSO updated"
 msgstr "QSO已上传"
 
-#: application/models/Logbook_model.php:5995
+#: application/models/Logbook_model.php:6441
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -3619,9 +3767,13 @@ msgstr "QSO已上传"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6315
+#: application/models/Logbook_model.php:5993
+#: application/models/Logbook_model.php:5995
 msgid "Bearing"
 msgstr "方位角"
 
+#: application/models/Logbookadvanced_model.php:1664
 #: application/models/Logbookadvanced_model.php:1663
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccGrids 表为空。请先导入 VUCC 网格数据。"
@@ -6750,8 +6902,8 @@ msgid ""
 "any kind of 'Special Interest Group Award' for awards that are not "
 "implemented in Wavelog."
 msgstr ""
-"SIG 或特别兴趣小组类别（Special Interest Group Category）允许用户使用任意"
-"的“特别兴趣小组奖”来奖励未在当前 Wavelog 实现的奖。"
+"SIG 或特别兴趣小组类别（Special Interest Group Category）允许用户使用任意的"
+"“特别兴趣小组奖”来奖励未在当前 Wavelog 实现的奖。"
 
 #: application/views/awards/sig/index.php:9
 msgid ""
@@ -17255,8 +17407,8 @@ msgid ""
 "Click here on 'Add a Theme' and type in the necessary data. Type in the "
 "filenames for the logos %swithout%s the file extension '.png'"
 msgstr ""
-"在这里添加主题，Logo 文件请输入 png 文件的文件名部分（ %s不带有%s 后缀 '."
-"png'）"
+"在这里添加主题，Logo 文件请输入 png 文件的文件名部分（ %s不带有%s 后缀 "
+"'.png'）"
 
 #: application/views/themes/index.php:83
 msgid "Foldername"
@@ -18681,6 +18833,15 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
+#: application/models/Logbook_model.php:305
+#: application/models/Logbook_model.php:311
+msgid "Station not accessible"
+msgstr ""
+
+#: application/controllers/Logbook.php:953
+msgid "All callbook lookups failed or provided no results."
+msgstr ""
+
 #~ msgid "Signature Name"
 #~ msgstr "签名名称"
 
@@ -19531,8 +19692,8 @@ msgstr "CQz geojson"
 #~ "Click here on 'Add a Theme' and type in the necessary data. Type in the "
 #~ "filenames for the logos <b>without</b> the file extension '.png'"
 #~ msgstr ""
-#~ "在这里点击 '添加主题'，输入必要的信息，填写 Logo 的文件名（<b>不要带有 ."
-#~ "png 后缀名</b>）"
+#~ "在这里点击 '添加主题'，输入必要的信息，填写 Logo 的文件名（<b>不要带"
+#~ "有 .png 后缀名</b>）"
 
 #, php-format
 #~ msgid ""
