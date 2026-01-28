@@ -476,6 +476,7 @@ msgstr " i "
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
+#: application/controllers/Logbook.php:1421
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -498,6 +499,7 @@ msgstr "SOTA"
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:10
+#: application/controllers/Logbook.php:1422
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -521,6 +523,7 @@ msgstr "WWFF"
 #: application/views/user/edit.php:297 application/views/user/edit.php:320
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:11
+#: application/controllers/Logbook.php:1423
 msgid "POTA"
 msgstr "POTA"
 
@@ -1553,6 +1556,7 @@ msgstr "eQSL"
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
+#: application/controllers/Logbook.php:1416
 msgid "Mode"
 msgstr "Emisja"
 
@@ -1582,6 +1586,7 @@ msgstr "Emisja"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
+#: application/controllers/Logbook.php:1417
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1612,6 +1617,7 @@ msgstr "RST (S)"
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
+#: application/controllers/Logbook.php:1418
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1633,6 +1639,7 @@ msgstr "RST (R)"
 #: application/views/view_log/qso.php:337
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
+#: application/controllers/Logbook.php:1419
 msgid "Country"
 msgstr "Kraj"
 
@@ -1664,6 +1671,7 @@ msgstr "Kraj"
 #: application/views/user/edit.php:317 application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
+#: application/controllers/Logbook.php:1420
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1695,6 +1703,7 @@ msgstr "IOTA"
 #: application/views/user/edit.php:321 application/views/user/edit.php:345
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
+#: application/controllers/Logbook.php:1424
 msgid "State"
 msgstr "Stan"
 
@@ -1747,6 +1756,7 @@ msgstr "Stan"
 #: application/views/view_log/qso.php:680
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
+#: application/controllers/Logbook.php:1425
 msgid "Gridsquare"
 msgstr "Lokator"
 
@@ -1777,6 +1787,7 @@ msgstr "Lokator"
 #: application/views/user/edit.php:347
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
+#: application/controllers/Logbook.php:1426
 msgid "Distance"
 msgstr "Odległość"
 
@@ -1872,6 +1883,7 @@ msgstr "Odległość"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
+#: application/controllers/Logbook.php:1427
 msgid "Band"
 msgstr "Pasmo"
 
@@ -1899,6 +1911,7 @@ msgstr "Pasmo"
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
+#: application/controllers/Logbook.php:1428
 msgid "Frequency"
 msgstr "Częstotliwość"
 
@@ -1923,6 +1936,7 @@ msgstr "Częstotliwość"
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
+#: application/controllers/Logbook.php:1429
 msgid "Operator"
 msgstr "Operator"
 
@@ -1952,6 +1966,7 @@ msgstr "Operator"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
+#: application/controllers/Logbook.php:1450
 msgid "Deleted DXCC"
 msgstr "Usunięte DXCC"
 
@@ -2004,9 +2019,8 @@ msgid ""
 "%sLoTW FAQ page%s in the Wavelog Wiki."
 msgstr ""
 "Certyfikat znaleziony w pliku %s zawiera hasło i nie może być przetworzony. "
-"%s Upewnij się, że eksportujesz certyfikat LoTW z aplikacji tqsl bez "
-"hasła!%s Aby uzyskać więcej informacji, odwiedź stronę %sLoTW FAQ%s w Wiki "
-"Wavelog."
+"%s Upewnij się, że eksportujesz certyfikat LoTW z aplikacji tqsl bez hasła!"
+"%s Aby uzyskać więcej informacji, odwiedź stronę %sLoTW FAQ%s w Wiki Wavelog."
 
 #: application/controllers/Lotw.php:450
 #, php-format
@@ -3408,10 +3422,12 @@ msgid "Gridsquare Zone finder"
 msgstr "Wyszukiwarka Strefy Lokatora"
 
 #: application/libraries/Callbook.php:124
+#: application/libraries/Callbook.php:139
 msgid "QRZCQ Error"
 msgstr "Błąd QRZCQ"
 
 #: application/libraries/Callbook.php:155
+#: application/libraries/Callbook.php:179
 msgid "Error obtaining a session key for HamQTH query"
 msgstr "Błąd podczas uzyskiwania klucza sesji dla zapytania HamQTH"
 
@@ -7330,8 +7346,8 @@ msgid ""
 "State (ADIF: DXCC and STATE)"
 msgstr ""
 "Pola brane pod uwagę przy tej nagrodzie: DXCC (musi być jednym z: Chiny/318, "
-"Hongkong/321, Makau/152, Tajwan/386, Wyspa Pratas/505 lub Rafa "
-"Scarborough/506) oraz ważny stan (ADIF: DXCC i STATE)"
+"Hongkong/321, Makau/152, Tajwan/386, Wyspa Pratas/505 lub Rafa Scarborough/"
+"506) oraz ważny stan (ADIF: DXCC i STATE)"
 
 #: application/views/awards/was/index.php:3
 msgctxt "USA State"
@@ -10760,8 +10776,8 @@ msgid ""
 "Go to your application/config Folder and compare config.sample.php with your "
 "config.php"
 msgstr ""
-"Należy przejść do folderu application/config i porównać plik config.sample."
-"php z plikiem config.php"
+"Należy przejść do folderu application/config i porównać plik "
+"config.sample.php z plikiem config.php"
 
 #: application/views/debug/index.php:197
 #, php-format
@@ -13106,7 +13122,8 @@ msgstr "Użyj wyszukiwania bazy abonentów do ustawienia gridsquare"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:92
 msgid "This is limited to 150 callsigns for each run!"
-msgstr "To jest ograniczone do 150 znaku wywoławczych dla każdego uruchomienia!"
+msgstr ""
+"To jest ograniczone do 150 znaku wywoławczych dla każdego uruchomienia!"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:103
 msgid "Check IOTA against DXCC"
@@ -19368,6 +19385,10 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/controllers/Logbook.php:953
+msgid "All callbook lookups failed or provided no results."
+msgstr ""
 
 #~ msgid "Signature Name"
 #~ msgstr "Nazwa SIG"

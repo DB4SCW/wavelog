@@ -473,6 +473,7 @@ msgstr " そして "
 #: application/controllers/Logbook.php:1398
 #: application/controllers/Logbook.php:1410
 #: application/controllers/Logbook.php:1414
+#: application/controllers/Logbook.php:1421
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -499,6 +500,7 @@ msgstr "SOTA"
 #: application/controllers/Logbook.php:1399
 #: application/controllers/Logbook.php:1411
 #: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1422
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -526,6 +528,7 @@ msgstr "WWFF"
 #: application/controllers/Logbook.php:1400
 #: application/controllers/Logbook.php:1412
 #: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1423
 msgid "POTA"
 msgstr "POTA"
 
@@ -1572,6 +1575,7 @@ msgstr "eQSL"
 #: application/controllers/Logbook.php:1393
 #: application/controllers/Logbook.php:1405
 #: application/controllers/Logbook.php:1409
+#: application/controllers/Logbook.php:1416
 msgid "Mode"
 msgstr "モード"
 
@@ -1605,6 +1609,7 @@ msgstr "モード"
 #: application/controllers/Logbook.php:1394
 #: application/controllers/Logbook.php:1406
 #: application/controllers/Logbook.php:1410
+#: application/controllers/Logbook.php:1417
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1639,6 +1644,7 @@ msgstr "RST (S)"
 #: application/controllers/Logbook.php:1395
 #: application/controllers/Logbook.php:1407
 #: application/controllers/Logbook.php:1411
+#: application/controllers/Logbook.php:1418
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1664,6 +1670,7 @@ msgstr "RST (R)"
 #: application/controllers/Logbook.php:1396
 #: application/controllers/Logbook.php:1408
 #: application/controllers/Logbook.php:1412
+#: application/controllers/Logbook.php:1419
 msgid "Country"
 msgstr "国"
 
@@ -1699,6 +1706,7 @@ msgstr "国"
 #: application/controllers/Logbook.php:1397
 #: application/controllers/Logbook.php:1409
 #: application/controllers/Logbook.php:1413
+#: application/controllers/Logbook.php:1420
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1734,6 +1742,7 @@ msgstr "IOTA"
 #: application/controllers/Logbook.php:1401
 #: application/controllers/Logbook.php:1413
 #: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1424
 msgid "State"
 msgstr "州"
 
@@ -1790,6 +1799,7 @@ msgstr "州"
 #: application/controllers/Logbook.php:1402
 #: application/controllers/Logbook.php:1414
 #: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1425
 msgid "Gridsquare"
 msgstr "グリッドスクエア"
 
@@ -1824,6 +1834,7 @@ msgstr "グリッドスクエア"
 #: application/controllers/Logbook.php:1403
 #: application/controllers/Logbook.php:1415
 #: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1426
 msgid "Distance"
 msgstr "距離"
 
@@ -1923,6 +1934,7 @@ msgstr "距離"
 #: application/controllers/Logbook.php:1404
 #: application/controllers/Logbook.php:1416
 #: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1427
 msgid "Band"
 msgstr "バンド"
 
@@ -1954,6 +1966,7 @@ msgstr "バンド"
 #: application/controllers/Logbook.php:1405
 #: application/controllers/Logbook.php:1417
 #: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1428
 msgid "Frequency"
 msgstr "周波数"
 
@@ -1982,6 +1995,7 @@ msgstr "周波数"
 #: application/controllers/Logbook.php:1406
 #: application/controllers/Logbook.php:1418
 #: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1429
 msgid "Operator"
 msgstr "オペレーター"
 
@@ -2015,6 +2029,7 @@ msgstr "オペレーター"
 #: application/controllers/Logbook.php:1427
 #: application/controllers/Logbook.php:1439
 #: application/controllers/Logbook.php:1443
+#: application/controllers/Logbook.php:1450
 msgid "Deleted DXCC"
 msgstr "DXCCを削除しました"
 
@@ -3460,10 +3475,12 @@ msgid "Gridsquare Zone finder"
 msgstr "グリッドスクエアゾーンファインダー"
 
 #: application/libraries/Callbook.php:124
+#: application/libraries/Callbook.php:139
 msgid "QRZCQ Error"
 msgstr "QRZCQ エラー"
 
 #: application/libraries/Callbook.php:155
+#: application/libraries/Callbook.php:179
 msgid "Error obtaining a session key for HamQTH query"
 msgstr "HamQTHクエリのセッションキーの取得エラー"
 
@@ -19305,6 +19322,10 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/controllers/Logbook.php:953
+msgid "All callbook lookups failed or provided no results."
+msgstr ""
 
 #~ msgid "Signature Name"
 #~ msgstr "署名名"

@@ -493,6 +493,7 @@ msgstr " 并且 "
 #: application/controllers/Logbook.php:1398
 #: application/controllers/Logbook.php:1410
 #: application/controllers/Logbook.php:1414
+#: application/controllers/Logbook.php:1421
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -519,6 +520,7 @@ msgstr "SOTA"
 #: application/controllers/Logbook.php:1399
 #: application/controllers/Logbook.php:1411
 #: application/controllers/Logbook.php:1415
+#: application/controllers/Logbook.php:1422
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -546,6 +548,7 @@ msgstr "WWFF"
 #: application/controllers/Logbook.php:1400
 #: application/controllers/Logbook.php:1412
 #: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1423
 msgid "POTA"
 msgstr "POTA"
 
@@ -1579,6 +1582,7 @@ msgstr "eQSL"
 #: application/controllers/Logbook.php:1393
 #: application/controllers/Logbook.php:1405
 #: application/controllers/Logbook.php:1409
+#: application/controllers/Logbook.php:1416
 msgid "Mode"
 msgstr "模式"
 
@@ -1612,6 +1616,7 @@ msgstr "模式"
 #: application/controllers/Logbook.php:1394
 #: application/controllers/Logbook.php:1406
 #: application/controllers/Logbook.php:1410
+#: application/controllers/Logbook.php:1417
 msgid "RST (S)"
 msgstr "我收对方"
 
@@ -1646,6 +1651,7 @@ msgstr "我收对方"
 #: application/controllers/Logbook.php:1395
 #: application/controllers/Logbook.php:1407
 #: application/controllers/Logbook.php:1411
+#: application/controllers/Logbook.php:1418
 msgid "RST (R)"
 msgstr "对方收我"
 
@@ -1671,6 +1677,7 @@ msgstr "对方收我"
 #: application/controllers/Logbook.php:1396
 #: application/controllers/Logbook.php:1408
 #: application/controllers/Logbook.php:1412
+#: application/controllers/Logbook.php:1419
 msgid "Country"
 msgstr "DXCC 实体"
 
@@ -1706,6 +1713,7 @@ msgstr "DXCC 实体"
 #: application/controllers/Logbook.php:1397
 #: application/controllers/Logbook.php:1409
 #: application/controllers/Logbook.php:1413
+#: application/controllers/Logbook.php:1420
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1741,6 +1749,7 @@ msgstr "IOTA"
 #: application/controllers/Logbook.php:1401
 #: application/controllers/Logbook.php:1413
 #: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1424
 msgid "State"
 msgstr "州"
 
@@ -1797,6 +1806,7 @@ msgstr "州"
 #: application/controllers/Logbook.php:1402
 #: application/controllers/Logbook.php:1414
 #: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1425
 msgid "Gridsquare"
 msgstr "网格坐标"
 
@@ -1831,6 +1841,7 @@ msgstr "网格坐标"
 #: application/controllers/Logbook.php:1403
 #: application/controllers/Logbook.php:1415
 #: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1426
 msgid "Distance"
 msgstr "距离"
 
@@ -1930,6 +1941,7 @@ msgstr "距离"
 #: application/controllers/Logbook.php:1404
 #: application/controllers/Logbook.php:1416
 #: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1427
 msgid "Band"
 msgstr "频段"
 
@@ -1961,6 +1973,7 @@ msgstr "频段"
 #: application/controllers/Logbook.php:1405
 #: application/controllers/Logbook.php:1417
 #: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1428
 msgid "Frequency"
 msgstr "频率"
 
@@ -1989,6 +2002,7 @@ msgstr "频率"
 #: application/controllers/Logbook.php:1406
 #: application/controllers/Logbook.php:1418
 #: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1429
 msgid "Operator"
 msgstr "操作员"
 
@@ -2022,6 +2036,7 @@ msgstr "操作员"
 #: application/controllers/Logbook.php:1427
 #: application/controllers/Logbook.php:1439
 #: application/controllers/Logbook.php:1443
+#: application/controllers/Logbook.php:1450
 msgid "Deleted DXCC"
 msgstr "删除 DXCC 实体"
 
@@ -3423,10 +3438,12 @@ msgid "Gridsquare Zone finder"
 msgstr "网格区域查找器"
 
 #: application/libraries/Callbook.php:124
+#: application/libraries/Callbook.php:139
 msgid "QRZCQ Error"
 msgstr "QRZCQ 错误"
 
 #: application/libraries/Callbook.php:155
+#: application/libraries/Callbook.php:179
 msgid "Error obtaining a session key for HamQTH query"
 msgstr "获取 HamQTH 查询会话密钥错误"
 
@@ -18819,6 +18836,10 @@ msgstr "CQz geojson"
 #: application/models/Logbook_model.php:305
 #: application/models/Logbook_model.php:311
 msgid "Station not accessible"
+msgstr ""
+
+#: application/controllers/Logbook.php:953
+msgid "All callbook lookups failed or provided no results."
 msgstr ""
 
 #~ msgid "Signature Name"
