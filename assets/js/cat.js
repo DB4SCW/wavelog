@@ -1286,7 +1286,7 @@ $(document).ready(function() {
             $('#toggleCatTracking').removeClass('btn-success').addClass('btn-secondary');
             // Display offline status when no radio selected
             displayOfflineStatus('no_radio');
-        } else if (selectedRadioId == 'ws' || (websocketEnabled && websocket !== null)) {
+        } else if (selectedRadioId == 'ws') {
             websocketIntentionallyClosed = false; // Reset flag when opening WebSocket
             reconnectAttempts = 0; // Reset reconnect attempts
             hasTriedWsFallback = false; // Reset WSS failover state - try WSS first again
