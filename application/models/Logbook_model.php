@@ -5413,8 +5413,8 @@ class Logbook_model extends CI_Model {
 				$this->load->is_loaded('Mh') ?: $this->load->library('Mh');
 				$h_user = $this->stations->get_user_from_station($station_id);
 				$event_data = $data;
-				$event_data['user_name']=($h_user->user_name ?? '');
-				$event_data['user_id']=($h_user->user_id ?? '');
+				$event_data['user_name'] = ($h_user->user_name ?? '');
+				$event_data['user_id'] = ($h_user->user_id ?? '');
 				$this->mh->wl_event('qso/logged/api/'.($h_user->user_id ?? ''), json_encode($event_data));
 				unset($event_data);
 				unset($h_user);
