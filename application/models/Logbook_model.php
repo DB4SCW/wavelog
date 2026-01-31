@@ -4624,7 +4624,7 @@ class Logbook_model extends CI_Model {
      */
 	function import($record, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false, $batchmode = false, $station_id_ok = false, $station_profile = null, $station_qslmsg = null) {
 		// be sure that station belongs to user
-		$this->load->model('stations');
+		$this->load->is_loaded('stations') ?: $this->load->model('stations');
 		if ($station_id_ok == false) {
 			if (!$this->stations->check_station_is_accessible($station_id) && $apicall == false) {
 				return 'Station not accessible<br>';
