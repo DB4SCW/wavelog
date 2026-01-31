@@ -5168,7 +5168,7 @@ class Logbook_model extends CI_Model {
 			// If user checked to mark QSOs as uploaded to QRZ or HRDLog Logbook, or else we try to find info in ADIF import.
 			if ($markHrd != null) {
 				$input_hrdlog_qso_upload_status = 'Y';
-				$input_hrdlog_qso_upload_date = $date = date("Y-m-d H:i:s", strtotime("now"));
+				$input_hrdlog_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
 			} else {
 				$input_hrdlog_qso_upload_date = (!empty($record['hrdlog_qso_upload_date'])) ? $record['hrdlog_qso_upload_date'] : null;
 				$input_hrdlog_qso_upload_status = (!empty($record['hrdlog_qso_upload_status'])) ? $record['hrdlog_qso_upload_status'] : '';
@@ -5176,7 +5176,7 @@ class Logbook_model extends CI_Model {
 
 			if ($markQrz != null) {
 				$input_qrzcom_qso_upload_status = 'Y';
-				$input_qrzcom_qso_upload_date = $date = date("Y-m-d H:i:s", strtotime("now"));
+				$input_qrzcom_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
 			} else {
 				$input_qrzcom_qso_upload_date = (!empty($record['qrzcom_qso_upload_date'])) ? $record['qrzcom_qso_upload_date'] : null;
 				$input_qrzcom_qso_upload_status = (!empty($record['qrzcom_qso_upload_status'])) ? $record['qrzcom_qso_upload_status'] : '';
@@ -5184,7 +5184,7 @@ class Logbook_model extends CI_Model {
 
 			if ($markDcl != null) {
 				$input_dcl_qso_upload_status = 'Y';
-				$input_dcl_qso_upload_date = $date = date("Y-m-d H:i:s", strtotime("now"));
+				$input_dcl_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
 			} else {
 				$input_dcl_qso_upload_date = (!empty($record['dcl_qslsdate'])) ? $record['dcl_qslsdate'] : null;
 				$input_dcl_qso_upload_status = (!empty($record['dcl_qsl_sent'])) ? $record['dcl_qsl_sent'] : '';
