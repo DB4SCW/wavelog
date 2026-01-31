@@ -319,75 +319,78 @@ class Dxcc {
 	}
 
 	/*
-    * Read DXCC data from the database
+    * Read DXCC data from the database or cache
     */
-    function read_data($date = null) {
+    function read_data($date = NULL) {
 		$CI = &get_instance();
+		$CI->load->driver('cache', ['adapter' => 'file']);
 
-		if ($date == null) {
-			$dxcc_exceptions = $CI->db->select('entity, adif, cqz, start, end, call, cont, long, lat')
-			->order_by('start desc, end desc')
-			->get('dxcc_exceptions');
+		// DXCC Exceptions
+		$cache_key = 'dxcc_exceptions_' . ($date ?? 'all');
+
+		// Cache check - early return
+		if ($cached = $CI->cache->get($cache_key)) {
+			$this->dxccexceptions = $cached;
 		} else {
-			$dxcc_exceptions = $CI->db->select('entity, adif, cqz, start, end, call, cont, long, lat')
-			->group_start()
-				->where('start <=', $date)
-				->or_where('start IS NULL')
-			->group_end()
-			->group_start()
-				->where('end >=', $date)
-				->or_where('end IS NULL')
-			->group_end()
-			->order_by('start desc, end desc')
-			->get('dxcc_exceptions');
-		}
+			$sql = "SELECT `call`, `entity`, `adif`, `cqz`, `cont`, `long`, `lat`, `start`, `end` FROM dxcc_exceptions";
+			$binding = [];
 
-		if ($dxcc_exceptions->num_rows() > 0){
-			foreach ($dxcc_exceptions->result() as $dxcce) {
-				$this->dxccexceptions[$dxcce->call][] = [
-					'adif' => $dxcce->adif,
-					'cont' => $dxcce->cont,
-					'entity' => $dxcce->entity,
-					'cqz' => $dxcce->cqz,
-					'start' => $dxcce->start ?? null,
-					'end' => $dxcce->end ?? null,
-					'long' => $dxcce->long,
-					'lat' => $dxcce->lat
-				];
+			if ($date !== NULL) {
+				$sql .= " WHERE (start <= ? OR start IS NULL) AND (end >= ? OR end IS NULL)";
+				$binding = [$date, $date];
 			}
+
+			$sql .= " ORDER BY start DESC, end DESC";
+
+			$this->dxccexceptions = [];
+			foreach ($CI->db->query($sql, $binding)->result() as $dxcce) {
+                $this->dxccexceptions[$dxcce->call][] = [
+                    'adif' => $dxcce->adif,
+                    'cont' => $dxcce->cont,
+                    'entity' => $dxcce->entity,
+                    'cqz' => $dxcce->cqz,
+					'start' => $dxcce->start ?? NULL,
+					'end' => $dxcce->end ?? NULL,
+                    'long' => $dxcce->long,
+                    'lat' => $dxcce->lat
+                ];
+            }
+
+			$CI->cache->save($cache_key, $this->dxccexceptions, 14400); // Cache for 4 hours
 		}
 
-		if ($date == null) {
-			$dxcc_result = $CI->db->select('*')
-			->order_by('start desc, end desc')
-			->get('dxcc_prefixes');
+		// DXCC Prefixes
+		$cache_key = 'dxcc_prefixes_' . ($date ?? 'all');
+
+		if ($CI->cache->get($cache_key)) {
+			$this->dxcc = $CI->cache->get($cache_key);
 		} else {
-			$dxcc_result = $CI->db->select('*')
-			->group_start()
-				->where('start <=', $date)
-				->or_where('start IS NULL')
-			->group_end()
-			->group_start()
-				->where('end >=', $date)
-				->or_where('end IS NULL')
-			->group_end()
-			->order_by('start desc, end desc')
-			->get('dxcc_prefixes');
-		}
-
-		if ($dxcc_result->num_rows() > 0){
-			foreach ($dxcc_result->result() as $dx) {
-				$this->dxcc[$dx->call][] = [
-					'adif' => $dx->adif,
-					'cont' => $dx->cont,
-					'entity' => $dx->entity,
-					'cqz' => $dx->cqz,
-					'start' => $dx->start ?? null,
-					'end' => $dx->end ?? null,
-					'long' => $dx->long,
-					'lat' => $dx->lat
-				];
+			$binding = [];
+			$sql = "SELECT `call`, `entity`, `adif`, `cqz`, `cont`, `long`, `lat`, `start`, `end` FROM dxcc_prefixes";
+			if ($date !== NULL) {
+				$sql .= " WHERE (start <= ? OR start IS NULL)
+						AND (end >= ? OR end IS NULL)";
+				$binding[] = $date;
+				$binding[] = $date;
 			}
+			$sql .= " ORDER BY start DESC, end DESC";
+			$dxcc_result = $CI->db->query($sql, $binding);
+
+			if ($dxcc_result->num_rows() > 0){
+				foreach ($dxcc_result->result() as $dx) {
+					$this->dxcc[$dx->call][] = [
+						'adif' => $dx->adif,
+						'cont' => $dx->cont,
+						'entity' => $dx->entity,
+						'cqz' => $dx->cqz,
+						'start' => $dx->start ?? NULL,
+						'end' => $dx->end ?? NULL,
+						'long' => $dx->long,
+						'lat' => $dx->lat
+					];
+				}
+			}
+			$CI->cache->save($cache_key, $this->dxcc, 14400); // Cache for 4 hours
 		}
     }
 }
