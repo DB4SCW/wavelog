@@ -4975,10 +4975,10 @@ class Logbook_model extends CI_Model {
 				$input_ant_path = NULL;
 			}
 
-			/*
-	  Validate QSL Fields
-	 qslrdate, qslsdate
-	 */
+			/**
+			 * Validate QSL Fields
+			 * qslrdate, qslsdate
+			 */
 
 			if (($record['qslrdate'] ?? '') != '') {
 				if (validateADIFDate($record['qslrdate']) == true) {
@@ -5155,7 +5155,6 @@ class Logbook_model extends CI_Model {
 
 			// Get active station_id from station profile if one hasn't been provided
 			if ($station_id == "" || $station_id == "0") {
-				$this->load->model('stations');
 				$station_id = $this->stations->find_active();
 			}
 
