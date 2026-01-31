@@ -4785,7 +4785,7 @@ class Logbook_model extends CI_Model {
 				if ($dxccAdif != NULL) {
 					if (isset($record['dxcc'])) {
 						$entity = $this->get_entity($record['dxcc']);
-						$dxcc = array($record['dxcc'] ?? '', $entity['name'] ?? '');
+						$dxcc = array($record['dxcc'] ?? '', $entity['name'] ?? '', $entity['cqz'] ?? '', $entity['cont'] ?? '');
 					} else {
 						if ($this->dxcc_object == null) {
 							$this->dxcc_object = new Dxcc(null);
@@ -5652,7 +5652,7 @@ class Logbook_model extends CI_Model {
 	}
 
 	public function get_entity($dxcc) {
-		$sql = "SELECT name, cqz, lat, `long` FROM dxcc_entities WHERE adif = ?";
+		$sql = "SELECT `adif`, `name`, `cqz`, `ituz`, `cont`, `lat`, `long` FROM dxcc_entities WHERE adif = ?";
 		$query = $this->db->query($sql, $dxcc);
 
 		if ($query->result() > 0) {
