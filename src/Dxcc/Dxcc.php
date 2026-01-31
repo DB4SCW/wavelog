@@ -22,6 +22,9 @@ class Dxcc {
 	}
 
 	public function dxcc_lookup($call, $date) {
+		// Ensure callsign is uppercase for pattern matching
+		$call = strtoupper($call);
+		
 		if (array_key_exists($call, $this->dxccexceptions)) {
 			$exceptions = $this->dxccexceptions[$call];
 
