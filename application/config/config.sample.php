@@ -401,7 +401,7 @@ $config['error_views_path'] = '';
 |     - 'file'      : File-based caching (default, works everywhere)
 |     - 'redis'     : Redis in-memory cache (requires Redis server & extension)
 |     - 'memcached' : Memcached (requires Memcached server & extension)
-|     - 'apc'       : APC/APCu in-memory cache (requires APCu extension)
+|     - 'apcu'      : APCu in-memory cache (requires APCu extension)
 |     - 'wincache'  : Windows Cache (requires WinCache extension)
 |
 | 'cache_backup'
