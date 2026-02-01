@@ -408,12 +408,17 @@ $config['error_views_path'] = '';
 |     Fallback adapter if primary adapter fails or is unavailable.
 |     Recommended: 'file' as a safe fallback option
 |
+| 'cache_key_prefix'
+|     Prefix added to all cache keys to avoid collisions between
+|     applications sharing the same cache storage.
+|
 | Note: Redis configuration is stored separately in application/config/redis.php
 |
 */
 $config['cache_path'] = '';
 $config['cache_adapter'] = 'file';
 $config['cache_backup'] = 'file';
+$config['cache_key_prefix'] = '';
 
 /*
 |--------------------------------------------------------------------------
