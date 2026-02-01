@@ -18,7 +18,7 @@ class Sattimers extends CI_Controller {
 
 		$url = 'https://www.df2et.de/tevel/api2.php?grid='.strtoupper($this->stations->find_gridsquare());
 
-		$this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
+		$this->load->driver('cache', ['adapter' => $this->config->item('cache_adapter'), 'backup' => $this->config->item('cache_backup')]);
 		if (!$RawData = $this->cache->get('SatTimers'.strtoupper($this->stations->find_gridsquare()))) {
 			$RawData = file_get_contents($url, true);
 			$this->cache->save('SatTimers'.strtoupper($this->stations->find_gridsquare()), $RawData, (60*1));

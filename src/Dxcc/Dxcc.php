@@ -323,7 +323,7 @@ class Dxcc {
     */
     function read_data($date = NULL) {
 		$CI = &get_instance();
-		$CI->load->driver('cache', ['adapter' => 'file']);
+		$CI->load->driver('cache', ['adapter' => $CI->config->item('cache_adapter'), 'backup' => $CI->config->item('cache_backup')]);
 
 		// DXCC Exceptions
 		$cache_key = 'dxcc_exceptions_' . ($date ?? 'all');

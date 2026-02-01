@@ -384,14 +384,36 @@ $config['error_views_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| Cache Directory Path
+| Cache Configuration
 |--------------------------------------------------------------------------
 |
-| Leave this BLANK unless you would like to set something other than the default
-| application/cache/ directory.  Use a full server path with trailing slash.
+| CodeIgniter supports multiple cache adapters to improve application performance
+| by storing frequently accessed data.
+|
+| 'cache_path'
+|     Directory path for file-based caching. Leave BLANK to use the default
+|     application/cache/ directory. Use absolute paths with trailing slash.
+|     Must be writable by the web server (typically www-data or apache user).
+|     Example: /var/cache/wavelog/ or /tmp/wavelog_cache/
+|
+| 'cache_adapter'
+|     The primary cache adapter to use. Options include:
+|     - 'file'      : File-based caching (default, works everywhere)
+|     - 'redis'     : Redis in-memory cache (requires Redis server & extension)
+|     - 'memcached' : Memcached (requires Memcached server & extension)
+|     - 'apc'       : APC/APCu in-memory cache (requires APCu extension)
+|     - 'wincache'  : Windows Cache (requires WinCache extension)
+|
+| 'cache_backup'
+|     Fallback adapter if primary adapter fails or is unavailable.
+|     Recommended: 'file' as a safe fallback option
+|
+| Note: Redis configuration is stored separately in application/config/redis.php
 |
 */
 $config['cache_path'] = '';
+$config['cache_adapter'] = 'file';
+$config['cache_backup'] = 'file';
 
 /*
 |--------------------------------------------------------------------------
