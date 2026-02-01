@@ -394,6 +394,7 @@ $config['error_views_path'] = '';
 |     Directory path for file-based caching. Leave BLANK to use the default
 |     application/cache/ directory. Use absolute paths with trailing slash.
 |     Must be writable by the web server (typically www-data or apache user).
+|     This is only used for 'file' cache adapter.
 |     Example: /var/cache/wavelog/ or /tmp/wavelog_cache/
 |
 | 'cache_adapter'
