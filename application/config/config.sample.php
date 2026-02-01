@@ -389,6 +389,12 @@ $config['error_views_path'] = '';
 |
 | CodeIgniter supports multiple cache adapters to improve application performance
 | by storing frequently accessed data.
+| 
+| Important Notice:
+| There might some places where Wavelog forces the file adapter instead using the configured one.
+| This happens when caching for large files like images or comparable data is needed. So even
+| when you configure another adapter here, Wavelog might still use file caching in some places and respects 
+| the configured cache path for that.
 |
 | 'cache_path'
 |     Directory path for file-based caching. Leave BLANK to use the default
