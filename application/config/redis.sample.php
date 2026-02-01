@@ -1,10 +1,13 @@
 <?php
-/**
- * Redis Configuration
- * 
- * Copy this sample file to redis.php and adjust settings as needed.
- * 
- */
+/*
+| -------------------------------------------------------------------------
+| Redis settings
+| -------------------------------------------------------------------------
+| Copy this sample file to redis.php and set your settings as needed.
+|
+|	See: https://codeigniter.com/userguide3/libraries/caching.html#redis-caching
+|
+*/
 
 // Connection type: 'tcp' for TCP/IP, 'unix' for Unix domain sockets
 $config['socket_type'] = 'tcp';
@@ -28,6 +31,3 @@ $config['timeout'] = 0;
 // Redis database number (0-15 by default)
 // Useful for separating different applications or data types
 // $config['database'] = 0;
-
-// Connection retry delay in milliseconds (useful for persistent connections)
-// $config['retry_interval'] = 100;
