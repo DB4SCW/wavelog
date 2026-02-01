@@ -15,7 +15,11 @@ class Rate_limit {
 
     public function __construct() {
         $this->CI =& get_instance();
-        $this->CI->load->driver('cache', ['adapter' => $this->CI->config->item('cache_adapter'), 'backup' => $this->CI->config->item('cache_backup')]);
+        $this->CI->load->driver('cache', [
+			'adapter' => $this->CI->config->item('cache_adapter') ?? 'file', 
+			'backup' => $this->CI->config->item('cache_backup') ?? 'file',
+			'key_prefix' => $this->CI->config->item('cache_key_prefix') ?? ''
+		]);
 
         // Load rate limit config - if not set or empty, rate limiting is disabled
         $this->rate_limits = $this->CI->config->item('api_rate_limits');

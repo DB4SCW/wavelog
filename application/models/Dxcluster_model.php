@@ -53,7 +53,11 @@ class Dxcluster_model extends CI_Model {
 
 		// Only load cache driver if caching is enabled
 		if ($cache_band_enabled || $cache_worked_enabled) {
-			$this->load->driver('cache', ['adapter' => $this->config->item('cache_adapter'), 'backup' => $this->config->item('cache_backup')]);
+			$this->load->driver('cache', [
+				'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+				'backup' => $this->config->item('cache_backup') ?? 'file',
+				'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+			]);
 
 			// Garbage collection: 1% chance to clean expired cache files
 			// Only needed when worked cache is enabled (creates many per-callsign files)
