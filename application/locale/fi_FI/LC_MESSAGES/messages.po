@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-02 08:14+0000\n"
-"PO-Revision-Date: 2026-02-02 20:32+0000\n"
+"PO-Revision-Date: 2026-02-02 22:29+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -17501,13 +17501,12 @@ msgid "Show a location list"
 msgstr "Näytä sijaintiluettelo"
 
 #: application/views/stationsetup/stationsetup.php:110
-#, fuzzy
 msgid ""
 "Attention: You need to set an active station location. Go to Callsign-"
 ">Station Location to select one."
 msgstr ""
-"Huomio: Sinun täytyy asettaa aktiivinen aseman sijainti. Mene kohtaan Kutsu-"
-">Aseman sijainti valitaksesi yhden."
+"Varoitus: Sinun täytyy valita aktiivinen asemasijainti. Siirry kohtaan "
+"Kutsumerkit → Asemasijainnit ja aktivoi jokin niistä."
 
 #: application/views/stationsetup/stationsetup.php:116
 msgid ""
@@ -17880,23 +17879,23 @@ msgstr ""
 
 #: application/views/update/index.php:16
 msgid "This data is provided by"
-msgstr ""
+msgstr "Nämä tiedot tarjoaa"
 
 #: application/views/update/index.php:20
 msgid "You must install php-xml for this to work."
-msgstr ""
+msgstr "Sinun täytyy asentaa php-xml, jotta tämä toimii."
 
 #: application/views/update/index.php:23
 msgid "Check for DXCC Data Updates"
-msgstr ""
+msgstr "Tarkista DXCC-tietojen päivitykset"
 
 #: application/views/update/index.php:24
 msgid "Update DXCC Data"
-msgstr ""
+msgstr "Päivitä DXCC-tiedot"
 
 #: application/views/update/index.php:26
 msgid "Status:"
-msgstr ""
+msgstr "Tila:"
 
 #: application/views/user/delete.php:5
 msgid "Delete User Account"
@@ -17916,7 +17915,7 @@ msgstr "Kyllä, poista tämä käyttäjätili"
 
 #: application/views/user/edit.php:6
 msgid "Create Clubstation Account"
-msgstr ""
+msgstr "Luo klubiaseman tili"
 
 #: application/views/user/edit.php:8
 msgid "Create User Account"
@@ -17928,7 +17927,7 @@ msgstr "Muokkaa käyttäjätiliä"
 
 #: application/views/user/edit.php:45
 msgid "General Information"
-msgstr ""
+msgstr "Yleistä tietoa"
 
 #: application/views/user/edit.php:68 application/views/user/login.php:59
 #: application/views/user/login.php:73 application/views/user/login.php:74
@@ -17940,7 +17939,7 @@ msgstr "Salasana"
 
 #: application/views/user/edit.php:74
 msgid "Don't share this password with operators!"
-msgstr ""
+msgstr "Älä jaa tätä salasanaa operaattoreiden kanssa!"
 
 #: application/views/user/edit.php:84
 msgid "User Role"
@@ -17948,7 +17947,7 @@ msgstr "Käyttäjän rooli"
 
 #: application/views/user/edit.php:113
 msgid "Callsign Owner"
-msgstr ""
+msgstr "Kutsumerkin omistaja"
 
 #: application/views/user/edit.php:113
 msgid "Personal"
@@ -17964,11 +17963,11 @@ msgstr "Sukunimi"
 
 #: application/views/user/edit.php:134
 msgid "Ham Radio"
-msgstr ""
+msgstr "Ham Radio"
 
 #: application/views/user/edit.php:137
 msgid "Special/Club Callsign"
-msgstr ""
+msgstr "Erikois- / kerhokutsumerkki"
 
 #: application/views/user/edit.php:160
 msgid "Wavelog Preferences"
@@ -17980,11 +17979,11 @@ msgstr "Tyylisivu"
 
 #: application/views/user/edit.php:183
 msgid "Wavelog Language"
-msgstr ""
+msgstr "Wavelogin kieli"
 
 #: application/views/user/edit.php:190
 msgid "Choose Wavelog language."
-msgstr ""
+msgstr "Valitse Wavelogin kieli."
 
 #: application/views/user/edit.php:193
 msgid "Timezone"
@@ -18005,15 +18004,15 @@ msgstr "Mittayksikkömuoto"
 
 #: application/views/user/edit.php:223
 msgid "Kilometers"
-msgstr ""
+msgstr "kilometrit"
 
 #: application/views/user/edit.php:224
 msgid "Miles"
-msgstr ""
+msgstr "mailit"
 
 #: application/views/user/edit.php:225
 msgid "Nautical miles"
-msgstr ""
+msgstr "merimailit"
 
 #: application/views/user/edit.php:227
 msgid "Choose which unit distances will be shown in"
@@ -18045,21 +18044,23 @@ msgstr "Sarake 5 (vain lokikirjassa)"
 
 #: application/views/user/edit.php:362
 msgid "QSO Logging Options"
-msgstr ""
+msgstr "QSO-kirjausasetukset"
 
 #: application/views/user/edit.php:365
 msgid "Log End Times for QSOs Separately"
-msgstr ""
+msgstr "Kirjaa QSOjen päättymisajat erikseen"
 
 #: application/views/user/edit.php:371
 msgid ""
 "Choose yes here if you want to log QSO start and end times separately. If "
 "set to 'No' the end time will be the same as start time."
 msgstr ""
+"Kun tämä on käytössä, QSOjen päättymisajat kirjataan erikseen. Jos ei ole "
+"käytössä, QSO:n päättymisaika on sama kuin aloitusaika."
 
 #: application/views/user/edit.php:376
 msgid "Prioritize database search over external lookup"
-msgstr ""
+msgstr "Priorisoi tietokantahaku ennen ulkoista hakua"
 
 #: application/views/user/edit.php:382
 msgid ""
@@ -18067,6 +18068,9 @@ msgid ""
 "QSOs before querying external services. Set to \"No\" to always use external "
 "lookup services instead."
 msgstr ""
+"Kun asetus on ”Kyllä”, edellisen QSO:n tiedot otetaan käyttöön ennen kuin "
+"ulkoista palvelua käytetään tietojen täyttöön. Aseta ”Ei”, jos haluat, että "
+"ulkoista palvelua käytetään aina tietojen täyttämiseen."
 
 #: application/views/user/edit.php:386
 msgid ""
@@ -18083,15 +18087,16 @@ msgstr "Anna qrz.com/hamqth.com tunnustiedot in the general config file."
 
 #: application/views/user/edit.php:397
 msgid "Location auto lookup."
-msgstr ""
+msgstr "Sijainnin automaattinen haku."
 
 #: application/views/user/edit.php:403
 msgid "If set, gridsquare is fetched based on location name."
-msgstr ""
+msgstr "Jos asetettu, lokaattori haetaan paikannimen perusteella."
 
 #: application/views/user/edit.php:407
 msgid "SOTA auto lookup gridsquare and name for summit."
 msgstr ""
+"Lokaattoriruudun ja sijainnin automaattinen määritys SOTA-huipun perusteella."
 
 #: application/views/user/edit.php:413 application/views/user/edit.php:423
 #: application/views/user/edit.php:433
@@ -18099,34 +18104,40 @@ msgid ""
 "If set, name and gridsquare is fetched from the API and filled in location "
 "and locator."
 msgstr ""
+"Kun tämä on käytössä, nimi ja lokaattori haetaan sekä asetetaan API:n kautta."
 
 #: application/views/user/edit.php:417
 msgid "WWFF auto lookup gridsquare and name for reference."
 msgstr ""
+"Lokaattoriruudun ja sijainnin automaattinen määritys WWFF-referenssin "
+"perusteella."
 
 #: application/views/user/edit.php:427
 msgid "POTA auto lookup gridsquare and name for park."
 msgstr ""
+"Puiston nimen ja lokaattorin automaattinen määritys POTA-referenssin "
+"perusteella."
 
 #: application/views/user/edit.php:436
 msgid "Number of previous contacts displayed on QSO page."
 msgstr ""
+"Aikaisempien QSOjen määrä, jotka näytetään QSO-sivulla (kirjausnäkymässä)."
 
 #: application/views/user/edit.php:447
 msgid "DX Waterfall"
-msgstr ""
+msgstr "DX-vesiputous"
 
 #: application/views/user/edit.php:451
 msgid "squelched"
-msgstr ""
+msgstr "Kohinasalvattu"
 
 #: application/views/user/edit.php:454
 msgid "Show an interactive DX Cluster 'Waterfall' on the QSO logging page."
-msgstr ""
+msgstr "Näytä interaktiivinen DX Cluster -vesiputous QSO-kirjaussivulla."
 
 #: application/views/user/edit.php:465
 msgid "Menu Options"
-msgstr ""
+msgstr "Valikkoasetukset"
 
 #: application/views/user/edit.php:468
 msgid "Show notes in the main menu."
@@ -18134,211 +18145,226 @@ msgstr "Näytä 'Muistio' päävalikossa."
 
 #: application/views/user/edit.php:479
 msgid "Quicklog Field"
-msgstr ""
+msgstr "Pikakirjauskenttä"
 
 #: application/views/user/edit.php:485
 msgid ""
 "With this feature, you can log callsigns using the search field in the "
 "header."
 msgstr ""
+"Tämän asetuksen avulla voit kirjata kutsuja suoraan valikkopalkin "
+"hakukentästä."
 
 #: application/views/user/edit.php:489
 msgid "Quicklog - Action on press Enter"
-msgstr ""
+msgstr "Quicklog – toiminto aktivoituu Enter-näppäimellä"
 
 #: application/views/user/edit.php:493
 msgid "Log Callsign"
-msgstr ""
+msgstr "Kirjaa kutsumerkki"
 
 #: application/views/user/edit.php:495
 msgid ""
 "What action should be performed when Enter is pressed in the quicklog field?"
 msgstr ""
+"Mikä toiminto suoritetaan, kun Enter-näppäintä painetaan pikakirjauskentässä?"
 
 #: application/views/user/edit.php:501
 msgid "Station Locations Quickswitch"
-msgstr ""
+msgstr "Asemasijainnin pikavaihto"
 
 #: application/views/user/edit.php:506
 msgid ""
 "Show the Station Locations Quickswitch in the main menu. You can add "
 "locations by adding them to favourites at the station setup page."
 msgstr ""
+"Näytä asemasijainnin pikavaihto päävalikossa. Voit lisätä sijainteja "
+"suosikeiksi asemien asetussivulla."
 
 #: application/views/user/edit.php:510
 msgid "UTC Time in Menu"
-msgstr ""
+msgstr "UTC-aika valikossa"
 
 #: application/views/user/edit.php:515
 msgid "Show the current UTC Time in the menu"
-msgstr ""
+msgstr "Näytä nykyinen UTC-aika valikossa"
 
 #: application/views/user/edit.php:526
 msgid "Map Settings"
-msgstr ""
+msgstr "Kartta-asetukset"
 
 #: application/views/user/edit.php:533
 msgid "Icon"
-msgstr ""
+msgstr "Ikoni"
 
 #: application/views/user/edit.php:536
 msgid "Not display"
-msgstr ""
+msgstr "Ei näytetä"
 
 #: application/views/user/edit.php:540
 msgid "Not displayed"
-msgstr ""
+msgstr "Ei näytetä"
 
 #: application/views/user/edit.php:549
 msgid "QSO (worked, not confirmed)"
-msgstr ""
+msgstr "QSO (workittu, ei vahvistettu)"
 
 #: application/views/user/edit.php:568
 msgid "QSO (confirmed)"
-msgstr ""
+msgstr "QSO (vahvistettu)"
 
 #: application/views/user/edit.php:569
 msgid "(If 'No', displayed as 'QSO (worked, not confirmed)')"
-msgstr ""
+msgstr "(Jos ”Ei”, näytetään muodossa ”QSO (workittu, ei vahvistettu)”)"
 
 #: application/views/user/edit.php:588
 msgid "Unworked (e.g. Zones)"
-msgstr ""
+msgstr "Ei workittu (esim. vyöhykkeet)"
 
 #: application/views/user/edit.php:589
 msgid "(Color for unworked zones)"
-msgstr ""
+msgstr "(Väri workkimattomille vyöhykkeille)"
 
 #: application/views/user/edit.php:599
 msgid "Show Locator"
-msgstr ""
+msgstr "Näytä lokaattori"
 
 #: application/views/user/edit.php:618
 msgid "Previous QSL Type"
-msgstr ""
+msgstr "Edellisten QSOjen QSL-tyyppi"
 
 #: application/views/user/edit.php:622
 msgid "Select the type of QSL to show in the previous QSOs section."
-msgstr ""
+msgstr "Valitse QSL-tyyppi jo pidettyjen QSOjen näyttämistä varten."
 
 #: application/views/user/edit.php:639
 msgid "Dashboard Settings"
-msgstr ""
+msgstr "Hallintapaneelin asetukset"
 
 #: application/views/user/edit.php:643
 msgid "Select the number of latest QSOs to be displayed on dashboard."
-msgstr ""
+msgstr "Valitse, kuinka monta viimeisintä QSOa näytetään hallintapaneelissa."
 
 #: application/views/user/edit.php:650
 msgid "Choose the number of latest QSOs to be displayed on dashboard."
-msgstr ""
+msgstr "Valitse hallintapaneelissa näytettävien viimeisimpien QSOjen määrä."
 
 #: application/views/user/edit.php:654
 msgid "Show Dashboard Map"
-msgstr ""
+msgstr "Näytä hallintapaneelin kartta"
 
 #: application/views/user/edit.php:658
 msgid "Map at right"
-msgstr ""
+msgstr "Kartta oikealla"
 
 #: application/views/user/edit.php:661
 msgid "Choose whether to show map on dashboard or not"
-msgstr ""
+msgstr "Valitse, näytetäänkö kartta hallintapaneelissa vai ei"
 
 #: application/views/user/edit.php:665
 msgid "Dashboard Notification Banner"
-msgstr ""
+msgstr "Hallintapaneelin ilmoitusbanneri"
 
 #: application/views/user/edit.php:671
 msgid "This allows to disable the global notification banner on the dashboard."
 msgstr ""
+"Tämän avulla voit poistaa käytöstä hallintapaneelin yleisen ilmoitusbannerin."
 
 #: application/views/user/edit.php:675
 msgid "Dashboard solar and propagation data"
-msgstr ""
+msgstr "Hallintapaneelin aurinko- ja propagaatiotiedot"
 
 #: application/views/user/edit.php:681
 msgid ""
 "This switches the display of the solar and propagation data on the dashboard."
-msgstr ""
+msgstr "Tämä vaihtaa aurinko- ja propagaatiotietojen näytön hallintapaneelissa."
 
 #: application/views/user/edit.php:689
 msgid "Show Fields on QSO Tab"
-msgstr ""
+msgstr "Näytä kentät QSO-välilehdellä"
 
 #: application/views/user/edit.php:693
 msgid ""
 "The enabled items will be shown on the QSO tab rather than the General tab."
 msgstr ""
+"Käytössä olevat kohteet näytetään QSO-välilehdellä Yleinen-välilehden sijaan."
 
 #: application/views/user/edit.php:735
 msgid "Online QSL request (OQRS) settings"
-msgstr ""
+msgstr "Online QSL -pyyntöjen (OQRS) asetukset"
 
 #: application/views/user/edit.php:739
 msgid "Global text"
-msgstr ""
+msgstr "Yleinen teksti"
 
 #: application/views/user/edit.php:741
 msgid ""
 "This text is an optional text that can be displayed on top of the OQRS page."
-msgstr ""
+msgstr "Tämä teksti on valinnainen ja se voidaan näyttää OQRS-sivun yläosassa."
 
 #: application/views/user/edit.php:744
 msgid "Grouped search"
-msgstr ""
+msgstr "Ryhmitelty haku"
 
 #: application/views/user/edit.php:746 application/views/user/edit.php:755
 #: application/views/user/edit.php:764 application/views/user/edit.php:773
 msgid "Off"
-msgstr ""
+msgstr "Pois päältä"
 
 #: application/views/user/edit.php:747 application/views/user/edit.php:756
 #: application/views/user/edit.php:765 application/views/user/edit.php:774
 msgid "On"
-msgstr ""
+msgstr "Päälle"
 
 #: application/views/user/edit.php:749
 msgid ""
 "When this is on, all station locations with OQRS active, will be searched at "
 "once."
 msgstr ""
+"Kun tämä on käytössä, kaikki OQRS-aktiiviset asemasijainnit haetaan kerralla."
 
 #: application/views/user/edit.php:753
 msgid "Show station location name in grouped search results"
-msgstr ""
+msgstr "Näytä asemasijainnin nimi ryhmitellyissä hakutuloksissa"
 
 #: application/views/user/edit.php:758
 msgid ""
 "If grouped search is ON, you can decide if the name of the station location "
 "shall be shown in the results table."
 msgstr ""
+"Jos ryhmitelty haku on käytössä, voit päättää, näytetäänkö asemasijainnin "
+"nimi tulostaulukossa."
 
 #: application/views/user/edit.php:762
 msgid "Automatic OQRS matching"
-msgstr ""
+msgstr "Automaattinen OQRS-yhdistäminen"
 
 #: application/views/user/edit.php:767
 msgid ""
 "If this is on, automatic OQRS matching will happen, and the system will try "
 "to match incoming requests with existing logs automatically."
 msgstr ""
+"Kun tämä asetus on käytössä, suoritetaan automaattinen OQRS-yhdistäminen, ja "
+"järjestelmä yrittää kohdistaa saapuvat pyynnöt automaattisesti olemassa "
+"oleviin lokeihin."
 
 #: application/views/user/edit.php:771
 msgid "Automatic OQRS matching for direct requests"
-msgstr ""
+msgstr "Automaattinen OQRS-yhdistäminen direkti-pyynnöille"
 
 #: application/views/user/edit.php:776
 msgid "If this is on, automatic OQRS matching for direct request will happen."
 msgstr ""
+"Kun tämä on käytössä, direkti-pyyntöjen automaattinen OQRS-yhdistäminen "
+"suoritetaan."
 
 #: application/views/user/edit.php:792
 msgid "Default Values"
-msgstr ""
+msgstr "Oletusarvot"
 
 #: application/views/user/edit.php:800
 msgid "Settings for Default Band and Confirmation"
-msgstr ""
+msgstr "Oletusbandin ja vahvistuksen asetukset"
 
 #: application/views/user/edit.php:803
 msgid "Default Band"
@@ -18346,7 +18372,7 @@ msgstr "Oletusbandi"
 
 #: application/views/user/edit.php:813
 msgid "Default QSL-Methods"
-msgstr ""
+msgstr "Oletus-QSL-menetelmät"
 
 #: application/views/user/edit.php:878
 msgid "Third Party Services"
