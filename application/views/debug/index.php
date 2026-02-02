@@ -440,6 +440,10 @@
                                 <div class="alert alert-danger mt-2 mb-0" role="alert">
                                     <?= __("Cache is currently using the backup adapter because the primary is unavailable."); ?>
                                 </div>
+                            <?php } else { ?>
+                                <div class="alert alert-success mt-2 mb-0" role="alert">
+                                    <?= __("Cache is working properly. Everything okay!"); ?>
+                                </div>
                             <?php } ?>
                         </div>
                         <div class="col-md-6">
@@ -461,7 +465,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="button" id="clear_cache_button" class="btn btn-sm btn-danger">
+                        <button type="button" id="clear_cache_button" class="btn btn-sm btn-secondary">
                             <?= __("Clear Cache"); ?>
                         </button>
                     </div>
@@ -472,7 +476,7 @@
                                 <?php if ($supported) { ?>
                                     <span class="badge text-bg-success"><?php echo ucfirst($adapter); ?></span>
                                 <?php } else { ?>
-                                    <span class="badge text-bg-danger"><?php echo ucfirst($adapter); ?></span>
+                                    <span class="badge text-bg-secondary" style="opacity: 0.5;"><?php echo ucfirst($adapter); ?></span>
                                 <?php } ?>
                             <?php } ?>
                         </div>
