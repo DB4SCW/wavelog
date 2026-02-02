@@ -133,7 +133,7 @@ class Dxcluster_model extends CI_Model {
 				log_message('debug', 'DXCluster: Empty array received from ' . $dxcache_url . ' (no spots available)');
 				return [];
 			}
-			$date = date('Ymd', time());
+			$date = date('Y-m-d', time());
 
 			$dxccObj = new DXCC($date);
 
