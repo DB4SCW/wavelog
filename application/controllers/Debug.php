@@ -106,8 +106,17 @@ class Debug extends CI_Controller
 		}
 
 		// Cache Info
-		$data['cache_info'] = $this->debug_model->get_cache_info();
-
+		$cache_info = $this->debug_model->get_cache_info();
+		$data['cache_available_adapters'] = $cache_info['adapters'];
+		$data['cache_path'] = $cache_info['config']['cache_path'] ?: 'application/cache';
+		$data['cache_adapter'] = ucfirst($cache_info['config']['cache_adapter'] ?? 'file');
+		$data['cache_backup'] = ucfirst($cache_info['config']['cache_backup'] ?? 'file');
+		$data['cache_key_prefix'] = $cache_info['config']['cache_key_prefix'] ?: __("(empty)");
+		$data['active_adapter'] = ucfirst($cache_info['active']['adapter'] ?? ($cache_info['config']['cache_adapter'] ?? 'file'));
+		$data['using_backup'] = !empty($cache_info['active']['using_backup']);
+		$data['details_cache_size'] = $cache_info['details']['size'] ?? '0 B';
+		$data['details_cache_keys_count'] = $cache_info['details']['keys_count'] ?? 0;
+		
 		$data['dxcc_update'] = $this->cron_model->cron('update_dxcc')->row();
 		$data['dok_update'] = $this->cron_model->cron('update_update_dok')->row();
 		$data['lotw_user_update'] = $this->cron_model->cron('update_lotw_users')->row();

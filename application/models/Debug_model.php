@@ -229,6 +229,10 @@ class Debug_model extends CI_Model
 			'key_prefix' => $cache_key_prefix
 		]);
 
+        $active_adapter = method_exists($this->cache, 'get_loaded_driver') ? $this->cache->get_loaded_driver() : $cache_adapter;
+        $response['active']['adapter'] = $active_adapter;
+        $response['active']['using_backup'] = ($active_adapter !== $cache_adapter);
+
         // Get cache details
         $cache_size = $this->get_cache_size();
         $cache_keys_count = $this->get_cache_keys_count();
