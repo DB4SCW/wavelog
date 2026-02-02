@@ -105,6 +105,9 @@ class Debug extends CI_Controller
 			$data['userdata_status'] = $userdata_status;
 		}
 
+		// Cache Info
+		$data['cache_info'] = $this->debug_model->get_cache_info();
+
 		$data['dxcc_update'] = $this->cron_model->cron('update_dxcc')->row();
 		$data['dok_update'] = $this->cron_model->cron('update_update_dok')->row();
 		$data['lotw_user_update'] = $this->cron_model->cron('update_lotw_users')->row();
@@ -286,6 +289,22 @@ class Debug extends CI_Controller
 		}
 		header('Content-Type: application/json');
 		echo json_encode($commit_hash);
+	}
+
+	public function clear_cache() {
+		$this->load->model('user_model');
+		if ($this->user_model->authorize(2) == false) {
+			header('Content-Type: application/json');
+			echo json_encode(['status' => false, 'message' => __("You're not allowed to do that!")]);
+			return;
+		}
+
+		$this->load->model('Debug_model');
+		$status = $this->Debug_model->clear_cache();
+
+		header('Content-Type: application/json');
+		echo json_encode(['status' => (bool) $status]);
+		return;
 	}
 
 	public function migrate_userdata() {

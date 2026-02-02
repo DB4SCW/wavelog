@@ -101,3 +101,26 @@ function update_version_check(local_branch) {
 		$('#last_version_check').text("Last version check: " + new Date(timestamp).toUTCString());
 	});
 }
+
+$(document).ready(function () {
+	$('#clear_cache_button').on('click', function () {
+		if (!confirm('Cache wirklich löschen?')) {
+			return;
+		}
+
+		$.ajax({
+			url: base_url + 'index.php/debug/clear_cache',
+			type: 'post',
+			success: function (resu) {
+				if (resu && resu.status) {
+					location.reload();
+				} else {
+					alert('Cache konnte nicht geleert werden.');
+				}
+			},
+			error: function () {
+				alert('Cache konnte nicht geleert werden.');
+			}
+		});
+	});
+});

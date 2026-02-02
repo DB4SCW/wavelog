@@ -399,6 +399,74 @@
                     </div>
                 </div>
             </div>
+            <!-- Cache Information Card -->
+            <div class="card">
+                <div class="card-header"><?= __("Cache Configuration"); ?></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><u><?= __("Current Configuration"); ?></u></p>
+                            <table width="100%" class="table table-sm table-striped">
+                                <tr>
+                                    <td><strong><?= __("Adapter"); ?></strong></td>
+                                    <td>
+                                        <span class="badge text-bg-info"><?php echo ucfirst($cache_info['config']['cache_adapter'] ?? 'file'); ?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong><?= __("Backup"); ?></strong></td>
+                                    <td>
+                                        <span class="badge text-bg-secondary"><?php echo ucfirst($cache_info['config']['cache_backup'] ?? 'file'); ?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong><?= __("Path"); ?></strong></td>
+                                    <td><code><?php echo $cache_info['config']['cache_path'] ?: 'application/cache'; ?></code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><?= __("Key Prefix"); ?></strong></td>
+                                    <td><code><?php echo $cache_info['config']['cache_key_prefix'] ?: __("(empty)"); ?></code></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <p><u><?= __("Cache Details"); ?></u></p>
+                            <table width="100%" class="table table-sm table-striped">
+                                <tr>
+                                    <td><strong><?= __("Total Size"); ?></strong></td>
+                                    <td>
+                                        <span class="badge text-bg-primary"><?php echo $cache_info['details']['size'] ?? '0 B'; ?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong><?= __("Number of Keys"); ?></strong></td>
+                                    <td>
+                                        <span class="badge text-bg-primary"><?php echo $cache_info['details']['keys_count'] ?? '0'; ?></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="clear_cache_button" class="btn btn-sm btn-danger">
+                            <?= __("Clear Cache"); ?>
+                        </button>
+                    </div>
+                    <div class="border-top pt-3 mt-3">
+                        <p><u><?= __("Available Adapters"); ?></u></p>
+                        <div>
+                            <?php foreach ($cache_info['adapters'] as $adapter => $supported) { ?>
+                                <?php if ($supported) { ?>
+                                    <span class="badge text-bg-success"><?php echo ucfirst($adapter); ?></span>
+                                <?php } else { ?>
+                                    <span class="badge text-bg-danger"><?php echo ucfirst($adapter); ?></span>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HIER -->
             <?php if (file_exists(realpath(APPPATH . '../') . '/.git') && function_usable('exec')) { ?>
                 <?php
                 //Below is a failsafe where git commands fail
