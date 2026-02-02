@@ -146,6 +146,12 @@ class cron extends CI_Controller {
 				$this->cronexpression = null;
 			}
 
+			// we also garbage collect the file cache here every full hour
+			if ($this->config->item('cache_adapter') == 'file' && date('i') == '00') {
+				$this->load->driver('cache'); // we don't need any adapter info as we just call the file adapter directly
+				$this->cache->file->gc();
+			}
+
 			$datetime = new DateTime("now", new DateTimeZone('UTC'));
 			$datetime = $datetime->format('Ymd H:i:s');
 			$this->optionslib->update('mastercron_last_run', $datetime , 'no');
