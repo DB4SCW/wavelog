@@ -102,7 +102,7 @@ class CI_Cache_redis extends CI_Driver
 	{
 		if ( ! $this->is_supported())
 		{
-			log_message('error', 'Cache: Failed to create Redis object; extension not loaded?');
+			log_message('error', 'Cache: Failed to create Redis object; extension not loaded or redis not available?');
 			return;
 		}
 
@@ -339,7 +339,25 @@ class CI_Cache_redis extends CI_Driver
 	 */
 	public function is_supported()
 	{
-		return extension_loaded('redis');
+		if ( ! extension_loaded('redis'))
+		{
+			return FALSE;
+		}
+
+		if ( ! isset($this->_redis))
+		{
+			return FALSE;
+		}
+
+		try
+		{
+			return $this->_redis->ping();
+		}
+		catch (Exception $e)
+		{
+			log_message('debug', 'Cache: Redis ping failed - '.$e->getMessage());
+			return FALSE;
+		}
 	}
 
 	// ------------------------------------------------------------------------
