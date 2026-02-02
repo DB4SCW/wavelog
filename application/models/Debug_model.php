@@ -193,7 +193,7 @@ class Debug_model extends CI_Model
         $cache_path = $this->config->item('cache_path') ?? NULL;
         if (!$cache_path && $cache_path !== '') {
             $cache_path = ''; // default path is application/cache
-            $response['config']['cache_path'] = sprintf(__(" %s not set in config, using default path: %s"), "'cache_path'", "application/cache");
+            $response['config']['cache_path'] = 'application/cache';
         } else {
             $response['config']['cache_path'] = $cache_path;
         }
@@ -201,7 +201,7 @@ class Debug_model extends CI_Model
         $cache_adapter = $this->config->item('cache_adapter') ?? NULL;
         if (!$cache_adapter) {
             $cache_adapter = 'file'; // default adapter is file
-            $response['config']['cache_adapter'] = sprintf(__(" %s not set in config, using default adapter: %s"), "'cache_adapter'", "file");
+            $response['config']['cache_adapter'] = 'file';
         } else {
             $response['config']['cache_adapter'] = $cache_adapter;
         }
@@ -209,7 +209,7 @@ class Debug_model extends CI_Model
         $cache_backup = $this->config->item('cache_backup') ?? NULL;
         if (!$cache_backup) {
             $cache_backup = 'file'; // default backup is file
-            $response['config']['cache_backup'] = sprintf(__(" %s not set in config, using default backup: %s"), "'cache_backup'", "file");
+            $response['config']['cache_backup'] = 'file';
         } else {
             $response['config']['cache_backup'] = $cache_backup;
         }
@@ -217,7 +217,7 @@ class Debug_model extends CI_Model
         $cache_key_prefix = $this->config->item('cache_key_prefix') ?? NULL;
         if (!$cache_key_prefix) {
             $cache_key_prefix = ''; // default key prefix is empty
-            $response['config']['cache_key_prefix'] = sprintf(__(" %s not set in config, using default: empty string %s"), "'cache_key_prefix'", "('')");
+            $response['config']['cache_key_prefix'] = '';
         } else {
             $response['config']['cache_key_prefix'] = $cache_key_prefix;
         }
