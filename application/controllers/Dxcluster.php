@@ -9,9 +9,9 @@ class Dxcluster extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('user_model');
+		$this->load->is_loaded('user_model') ?: $this->load->model('user_model');
 		if(!$this->user_model->authorize(2)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
-		$this->load->model('dxcluster_model');
+		$this->load->is_loaded('dxcluster_model') ?: $this->load->model('dxcluster_model');
 	}
 
 
@@ -35,19 +35,21 @@ class Dxcluster extends CI_Controller {
 
 		header('Content-Type: application/json');
 		if ($calls_found && !empty($calls_found)) {
-			echo json_encode($calls_found);
+			http_response_code(200);
+			echo json_encode($calls_found, JSON_PRETTY_PRINT);
 		} else {
-			echo json_encode(['error' => 'not found']);
+			$this->_return_not_found();
 		}
 	}
 
 	function qrg_lookup($qrg) {
-		$call_found=$this->dxcluster_model->dxc_qrg_lookup($this->security->xss_clean($qrg));
-			header('Content-Type: application/json');
+		$call_found = $this->dxcluster_model->dxc_qrg_lookup($this->security->xss_clean($qrg));
+		header('Content-Type: application/json');
 		if ($call_found) {
+			http_response_code(200);
 			echo json_encode($call_found, JSON_PRETTY_PRINT);
 		} else {
-			echo '{ "error": "not found" }';
+			$this->_return_not_found();
 		}
 	}
 
@@ -57,11 +59,18 @@ class Dxcluster extends CI_Controller {
 
 		$dxcc = $dxccobj->dxcc_lookup($call, $date);
 
+		header('Content-Type: application/json');
 		if ($dxcc) {
-			header('Content-Type: application/json');
+			http_response_code(200);
 			echo json_encode($dxcc, JSON_PRETTY_PRINT);
 		} else {
-			echo '{ "error": "not found" }';
+			$this->_return_not_found();
 		}
+	}
+
+	private function _return_not_found() {
+		header('Content-Type: application/json');
+		http_response_code(404);
+		echo json_encode(['error' => 'not found'], JSON_PRETTY_PRINT);
 	}
 }

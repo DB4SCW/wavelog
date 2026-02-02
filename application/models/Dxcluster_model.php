@@ -58,13 +58,6 @@ class Dxcluster_model extends CI_Model {
 				'backup' => $this->config->item('cache_backup') ?? 'file',
 				'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
 			]);
-
-			// Garbage collection: 1% chance to clean expired cache files
-			// Only needed when worked cache is enabled (creates many per-callsign files)
-			if ($cache_worked_enabled) {
-				$this->load->library('DxclusterCache');
-				$this->dxclustercache->maybeRunGc();
-			}
 		}
 
 		if($this->session->userdata('user_date_format')) {
