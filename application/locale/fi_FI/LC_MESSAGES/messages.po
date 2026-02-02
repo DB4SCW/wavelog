@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-02 08:14+0000\n"
-"PO-Revision-Date: 2026-02-02 18:40+0000\n"
+"PO-Revision-Date: 2026-02-02 20:32+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -1081,7 +1081,7 @@ msgstr "eQSL QSO-lataus"
 
 #: application/controllers/Eqsl.php:214
 msgid "User/Pass wrong for eQSL"
-msgstr "Käyttäjätunnus/Salasana väärin eQSL:lle."
+msgstr "Käyttäjätunnus/Salasana väärin eQSL:lle"
 
 #: application/controllers/Eqsl.php:218
 #, php-format
@@ -1098,11 +1098,11 @@ msgstr "Käyttäjää ei löytynyt"
 
 #: application/controllers/Eqsl.php:362
 msgid "eQSL password not configured for this user"
-msgstr "eQSL-salasanaa ei ole määritelty tälle käyttäjälle."
+msgstr "eQSL-salasanaa ei ole määritelty tälle käyttäjälle"
 
 #: application/controllers/Eqsl.php:379
 msgid "Failed to fetch eQSL image data"
-msgstr "Virhe eQSL-kuvien hakemisessa."
+msgstr "Virhe eQSL-kuvien hakemisessa"
 
 #: application/controllers/Eqsl.php:398
 msgid "eQSL image not available"
@@ -1114,7 +1114,7 @@ msgstr "eQSL-kuvan lataus epäonnistui"
 
 #: application/controllers/Eqsl.php:441
 msgid "Failed to load cached eQSL image"
-msgstr "Välimuistista ei onnistuttu lataamaan eQSL-kuvaa."
+msgstr "Välimuistista ei onnistuttu lataamaan eQSL-kuvaa"
 
 #: application/controllers/Eqsl.php:588
 msgid "eQSL Tools"
@@ -16881,16 +16881,18 @@ msgstr "Ei vielä vaihtoehtoja"
 
 #: application/views/simplefle/syntax_help.php:1
 msgid "Before starting to log a QSO, please note the basic rules."
-msgstr ""
+msgstr "Ennen kuin alat kirjata QSO:ta, huomioi perussäännöt."
 
 #: application/views/simplefle/syntax_help.php:2
 msgid "- Each new QSO should be on a new line."
-msgstr ""
+msgstr "- Jokaisen uuden QSO:n tulee olla uudella rivillä."
 
 #: application/views/simplefle/syntax_help.php:3
 msgid ""
 "- On each new line, only write data that has changed from the previous QSO."
 msgstr ""
+"- Kirjoita jokaiselle uudelle riville vain tiedot, jotka ovat muuttuneet "
+"edellisestä QSO:sta."
 
 #: application/views/simplefle/syntax_help.php:4
 msgid ""
@@ -16899,10 +16901,17 @@ msgid ""
 "QRG in MHz, e.g., '7.145'), mode, and time. After the time, you provide the "
 "first QSO, which is essentially the callsign."
 msgstr ""
+"Aloita varmistamalla, että olet jo täyttänyt vasemmalla olevan lomakkeen "
+"päivämäärällä, aseman kutsulla ja operaattorin kutsulla. Pääasialliset "
+"tiedot sisältävät bandin (tai QRG MHz, esim. '7.145'), moden ja ajan. Ajan "
+"jälkeen aloitat ensimmäisen QSO:n, käytännössä antamalla vasta-aseman "
+"kutsumerkin."
 
 #: application/views/simplefle/syntax_help.php:9
 msgid "For example, a QSO that started at 21:34 (UTC) with 4W7EST on 20m SSB."
 msgstr ""
+"Esimerkiksi QSO, joka alkoi klo 21:34 (UTC) vasta-asemana 4W7EST 20m:llä "
+"käyttäen SSB:tä."
 
 #: application/views/simplefle/syntax_help.php:10
 msgid ""
@@ -16910,6 +16919,9 @@ msgid ""
 "data). Our next QSO wasn't 59 on both sides, so we provide the information "
 "with the sent RST first. It was 2 minutes later than the first QSO."
 msgstr ""
+"Jos et anna RST-tietoja, FLE käyttää oletuksna 59 (599 datalle). Seuraava "
+"QSO ei ollut 59 molemmin puoln, joten annamme tiedot lähetetyn RST:n kanssa "
+"ensin. Yhteys oli myös 2 minuuttia myöhemmin kuin ensimmäinen QSO."
 
 #: application/views/simplefle/syntax_help.php:16
 msgid ""
@@ -16917,6 +16929,9 @@ msgid ""
 "write down 6 because this is the only data that changed here. The "
 "information about band and mode didn't change, so this data is omitted."
 msgstr ""
+"Ensimmäinen QSO oli klo 21:34, ja toinen 2 minuuttia myöhemmin klo 21:36. "
+"Kirjoitamme ylös 6, koska tämä on ainoa tieto, joka muuttui täällä. Tiedot "
+"bandista ja modesta eivät muuttuneet, joten nämä tiedot jätetään pois."
 
 #: application/views/simplefle/syntax_help.php:17
 msgid ""
@@ -16925,26 +16940,31 @@ msgid ""
 "every new QSO. Therefore we can add another QSO which took place at the "
 "exact same time two days later. The date must be in format YYYY-MM-DD."
 msgstr ""
+"Seuraavaa QSO:amme varten 21:40 14. toukokuuta 2021, vaihdoimme bandin 40 "
+"metriin, mutta pysyimme SSB:llä. Jos RST-tietoja ei anneta, FLE käyttää 59 "
+"jokaiseen uuteen QSO:on. Siksi voimme lisätä toisen QSO:n, joka "
+"järjestettiin täsmälleen samaan aikaan kaksi päivää myöhemmin. Päivämäärän "
+"on oltava muodossa VVVV-KK-PP."
 
 #: application/views/simplefle/syntax_help.php:28
 msgid "Additional informations can be submitted in the following way:"
-msgstr ""
+msgstr "Lisätietoja voi syöttää seuraavalla tavalla:"
 
 #: application/views/simplefle/syntax_help.php:29
 msgid "Notes:"
-msgstr ""
+msgstr "Muistiinpanot:"
 
 #: application/views/simplefle/syntax_help.php:33
 msgid "Operator Name:"
-msgstr ""
+msgstr "Operaattorin nimi:"
 
 #: application/views/simplefle/syntax_help.php:37
 msgid "QSL-message (Caution! Not visible in wavelog currently!):"
-msgstr ""
+msgstr "QSL-viesti (Varoitus! Ei näkyvissä Wavelogissa tällä hetkellä!):"
 
 #: application/views/simplefle/syntax_help.php:41
 msgid "Contest exchange; serials or other exchange - or even both:"
-msgstr ""
+msgstr "Kilpailun sanoma; sarjanumero tai muu sanoma - tai jopa molemmat:"
 
 #: application/views/simplefle/syntax_help.php:48
 msgid ""
@@ -16955,24 +16975,37 @@ msgid ""
 "single comma ','. To automatically increment the sent serial, use ',++' and "
 "give an initial sent exchange. To deactivate, use ',+0':"
 msgstr ""
+"Vastaanotettu sanoma vaatii etuliitteeksi pisteen '.' ja lähetetty sanoma "
+"pilkun ','. Kaksi viimeistä riviä ovat keskenään samanarvoisia, eli "
+"välilyönneillä ja järjestyksellä ei ole merkitystä. Lähetetyt sanomatiedot "
+"siirtyvät automaattisesti seuraavaan QSOon, jos mukana on vastaanotettu "
+"sanoma tai jos käytät yksittäistä pilkkua ',''. Sarjanumeron automaattista "
+"kasvattamista varten käytä ',++' ja anna aloitusarvo. Poista tämä käytöstä "
+"käyttämällä ',+0':"
 
 #: application/views/simplefle/syntax_help.php:54
 msgid ""
 "Here, the first qso uses the set serial 1, and the second will use 2 as the "
 "serial. If you want to wipe your sent exchange, use ',-':"
 msgstr ""
+"Tässä ensimmäinen qso käyttää sarjanumeroa 1, ja toinen käyttää sarjanumeroa "
+"2. Jos haluat tyhjentää lähetetyn sanoman, käytä ',-':"
 
 #: application/views/simplefle/syntax_help.php:59
 msgid ""
 "First, all previous exchange is wiped, then only a serial is set. Otherwise "
 "the previous exchange 'D23' would have been set also."
 msgstr ""
+"Ensin, kaikki aiemmat sanomat poistetaan, sitten asetetaan vain sarjanumero. "
+"Muutoin aiempi sanoma 'D23' olisi asetettu myös."
 
 #: application/views/simplefle/syntax_help.php:60
 msgid ""
 "You may use the comment syntax, to fill adif-fields supported by the Wavelog-"
 "Import:"
 msgstr ""
+"Voit käyttää kommenttien syntaksia täyttääksesi Wavelog-tuonnin tukemat adif-"
+"kentät:"
 
 #: application/views/simplefle/syntax_help.php:64
 #, php-format
@@ -16980,76 +17013,78 @@ msgid ""
 "A full summary of all commands and the necessary syntax can be found in "
 "%sthis article%s of our Wiki."
 msgstr ""
+"Täydellinen yhteenveto kaikista komennoista ja kulloinkin tarvittavasta "
+"syntaksista löytyy Wiki-artikkelista %stässä artikkelissa%s."
 
 #: application/views/station_profile/create.php:54
 #: application/views/station_profile/edit.php:71
 msgid "Location Name"
-msgstr ""
+msgstr "Sijainnin nimi"
 
 #: application/views/station_profile/create.php:55
 #: application/views/station_profile/create.php:56
 #: application/views/station_profile/edit.php:73
 msgctxt "Station Location Setup"
 msgid "Home QTH"
-msgstr ""
+msgstr "Koti-QTH"
 
 #: application/views/station_profile/create.php:56
 #: application/views/station_profile/edit.php:73
 #, php-format
 msgid "Shortname for the station location. For example: %s"
-msgstr ""
+msgstr "Lyhenne aseman sijainnille. Esimerkiksi: %s"
 
 #: application/views/station_profile/create.php:61
 #: application/views/station_profile/edit.php:78
 msgid "Station callsign. For example: 4W7EST/P"
-msgstr ""
+msgstr "Aseman kutsumerkki. Esimerkiksi: 4W7EST/P"
 
 #: application/views/station_profile/create.php:64
 #: application/views/station_profile/edit.php:81
 msgid "Station Power (W)"
-msgstr ""
+msgstr "Aseman lähetysteho (W)"
 
 #: application/views/station_profile/create.php:66
 #: application/views/station_profile/edit.php:83
 msgid "Default station power in Watt. Overwritten by CAT."
-msgstr ""
+msgstr "Aseman oletuslähetysteho Watteina. CAT-tiedot korvaavat tämän."
 
 #: application/views/station_profile/create.php:91
 #: application/views/station_profile/edit.php:113
 msgid "Station DXCC entity. For example: Bolivia"
-msgstr ""
+msgstr "Aseman DXCC-maa. Esimerkiksi: Bolivia"
 
 #: application/views/station_profile/create.php:97
 #: application/views/station_profile/edit.php:119
 msgid "Station City"
-msgstr ""
+msgstr "Aseman kaupunki"
 
 #: application/views/station_profile/create.php:99
 #: application/views/station_profile/edit.php:121
 msgid "Station city. For example: Oslo"
-msgstr ""
+msgstr "Aseman kaupunki. Esimerkiksi: Oslo"
 
 #: application/views/station_profile/create.php:108
 #: application/views/station_profile/edit.php:133
 msgid "Station state. Applies to certain countries only."
-msgstr ""
+msgstr "Aseman osavaltio. Koskee vain tiettyjä maita."
 
 #: application/views/station_profile/create.php:115
 #: application/views/station_profile/edit.php:140
 msgid "Station County (Only used for specific DXCCs)."
-msgstr ""
+msgstr "Aseman kunta (Käytetään vain tietyille DXCC:ille)."
 
 #: application/views/station_profile/create.php:124
 #: application/views/station_profile/edit.php:149
 msgid "Zones"
-msgstr ""
+msgstr "Vyöhykkeet (zonet)"
 
 #: application/views/station_profile/create.php:138
 #: application/views/station_profile/edit.php:163
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your CQ Zone then %s to find it!"
-msgstr ""
+msgstr "Jos et tiedä CQ-aluettasi, niin %s saadaksesi sen selville!"
 
 #: application/views/station_profile/create.php:138
 #: application/views/station_profile/create.php:153
@@ -17058,26 +17093,26 @@ msgstr ""
 #: application/views/station_profile/edit.php:178
 #: application/views/station_profile/edit.php:199
 msgid "click here"
-msgstr ""
+msgstr "klikkaa tästä"
 
 #: application/views/station_profile/create.php:153
 #: application/views/station_profile/edit.php:178
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your ITU Zone then %s to find it!"
-msgstr ""
+msgstr "Jos et tiedä ITU-vyöhykettäsi, niin %s löytääksesi sen!"
 
 #: application/views/station_profile/create.php:164
 #: application/views/station_profile/create.php:167
 #: application/views/station_profile/edit.php:189
 #: application/views/station_profile/edit.php:192
 msgid "Station Gridsquare"
-msgstr ""
+msgstr "Aseman lokaattori"
 
 #: application/views/station_profile/create.php:171
 #: application/views/station_profile/edit.php:196
 msgid "Get Gridsquare"
-msgstr ""
+msgstr "Hae lokaattori"
 
 #: application/views/station_profile/create.php:174
 #: application/views/station_profile/edit.php:199
@@ -17087,6 +17122,7 @@ msgid ""
 "Station gridsquare. For example: HM54AP. If you don't know your grid square "
 "then %s!"
 msgstr ""
+"Aseman lokaattori. Esimerkiksi: HM54AP. Jos et tiedä lokaattoria, niin %s!"
 
 #: application/views/station_profile/create.php:175
 #: application/views/station_profile/edit.php:200
@@ -17094,44 +17130,46 @@ msgid ""
 "If you are located on a grid line, enter multiple grid squares separated "
 "with commas. For example: IO77,IO78,IO87,IO88."
 msgstr ""
+"Jos olet lokaattoriruudukoiden rajaviivalla, syötä ruudut pilkulla "
+"erotettuna. Esimerkiksi: IO77,IO78,IO87,IO88."
 
 #: application/views/station_profile/create.php:198
 #: application/views/station_profile/edit.php:223
 msgid "Station IOTA reference. For example: EU-005"
-msgstr ""
+msgstr "Aseman IOTA-referenssi. Esimerkiksi: EU-005"
 
 #: application/views/station_profile/create.php:199
 #: application/views/station_profile/edit.php:224
 msgid "IOTA World website"
-msgstr ""
+msgstr "IOTA World verkkosivu"
 
 #: application/views/station_profile/create.php:199
 #: application/views/station_profile/edit.php:224
 #, php-format
 msgid "You can look up IOTA references at the %s."
-msgstr ""
+msgstr "Voit tutkia IOTA-referenssejä osoitteessa %s."
 
 #: application/views/station_profile/create.php:215
 #: application/views/station_profile/edit.php:240
 msgid "SOTA Maps website"
-msgstr ""
+msgstr "SOTA Maps verkkosivu"
 
 #: application/views/station_profile/create.php:215
 #: application/views/station_profile/edit.php:240
 #, php-format
 msgid "Station SOTA reference. You can look up SOTA references at the %s."
-msgstr ""
+msgstr "Aseman SOTA-referenssi. Voit tutkia SOTA-referenssejä osoitteessa %s."
 
 #: application/views/station_profile/create.php:229
 #: application/views/station_profile/edit.php:254
 msgid "GMA Map website"
-msgstr ""
+msgstr "GMA Map verkkosivu"
 
 #: application/views/station_profile/create.php:229
 #: application/views/station_profile/edit.php:254
 #, php-format
 msgid "Station WWFF reference. You can look up WWFF references at the %s."
-msgstr ""
+msgstr "Aseman WWFF-referenssi. Voit tutkia WWFF-referenssejä osoitteessa %s."
 
 #: application/views/station_profile/create.php:243
 #: application/views/station_profile/edit.php:268
@@ -17518,15 +17556,15 @@ msgstr "[oma linkkisi]"
 
 #: application/views/stationsetup/visitor.php:10
 msgid "Type in Public Slug choice"
-msgstr ""
+msgstr "Anna julkinen linkkivalintasi"
 
 #: application/views/stationsetup/visitor.php:17
 msgid "Visit Public Page"
-msgstr ""
+msgstr "Vierailu julkisella sivulla"
 
 #: application/views/statistics/antennaanalytics.php:11
 msgid "Elevation"
-msgstr ""
+msgstr "Elevaatio"
 
 #: application/views/statistics/index.php:14
 #: application/views/statistics/index.php:96
@@ -17536,63 +17574,63 @@ msgstr "Vuodet"
 #: application/views/statistics/index.php:15
 #: application/views/statistics/index.php:99
 msgid "Months"
-msgstr ""
+msgstr "Kuukaudet"
 
 #: application/views/statistics/index.php:19
 msgid "Number of QSOs worked each year"
-msgstr ""
+msgstr "Vuosittaisten workittujen QSOjen määrä"
 
 #: application/views/statistics/index.php:20
 msgid "Number of QSOs worked each month"
-msgstr ""
+msgstr "QSOjen määrä kuukausittain"
 
 #: application/views/statistics/index.php:31
 msgid "January"
-msgstr ""
+msgstr "tammikuu"
 
 #: application/views/statistics/index.php:32
 msgid "February"
-msgstr ""
+msgstr "helmikuu"
 
 #: application/views/statistics/index.php:33
 msgid "March"
-msgstr ""
+msgstr "maaliskuu"
 
 #: application/views/statistics/index.php:34
 msgid "April"
-msgstr ""
+msgstr "huhtikuu"
 
 #: application/views/statistics/index.php:35
 msgid "May"
-msgstr ""
+msgstr "toukokuu"
 
 #: application/views/statistics/index.php:36
 msgid "June"
-msgstr ""
+msgstr "kesäkuu"
 
 #: application/views/statistics/index.php:37
 msgid "July"
-msgstr ""
+msgstr "heinäkuu"
 
 #: application/views/statistics/index.php:38
 msgid "August"
-msgstr ""
+msgstr "elokuu"
 
 #: application/views/statistics/index.php:39
 msgid "September"
-msgstr ""
+msgstr "syyskuu"
 
 #: application/views/statistics/index.php:40
 msgid "October"
-msgstr ""
+msgstr "lokakuu"
 
 #: application/views/statistics/index.php:41
 msgid "November"
-msgstr ""
+msgstr "marraskuu"
 
 #: application/views/statistics/index.php:42
 msgid "December"
-msgstr ""
+msgstr "joulukuu"
 
 #: application/views/statistics/index.php:50
 msgid "Explore the logbook."
@@ -17605,57 +17643,59 @@ msgstr "Erillisiä kutsuja"
 
 #: application/views/statistics/index.php:162
 msgid "Unique Grids"
-msgstr ""
+msgstr "Yksilölliset lokaattorit (grids)"
 
 #: application/views/statistics/initialresult.php:44
 #: application/views/statistics/initials.php:36
 msgid "No EME QSOs were found."
-msgstr ""
+msgstr "Yhtäjään EME-qsoa ei löytynyt."
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"
-msgstr ""
+msgstr "Teeman nimi"
 
 #: application/views/themes/add.php:6 application/views/themes/edit.php:6
 msgid "This is the name that is used to display the theme in the theme list."
-msgstr ""
+msgstr "Tämä on nimi, jota käytetään teeman näyttämiseen teemalistassa."
 
 #: application/views/themes/add.php:10 application/views/themes/edit.php:10
 msgid "Folder Name"
-msgstr ""
+msgstr "Kansion nimi"
 
 #: application/views/themes/add.php:12 application/views/themes/edit.php:12
 msgid ""
 "This is the name of the folder where your CSS-files are placed under assets/"
 "css."
 msgstr ""
+"Tämä on sen kansion nimi, johon CSS-tiedostot on tallennettu hakemistossa "
+"assets/css."
 
 #: application/views/themes/add.php:16 application/views/themes/edit.php:16
 #: application/views/themes/index.php:84
 msgid "Theme Mode"
-msgstr ""
+msgstr "Teematila"
 
 #: application/views/themes/add.php:18 application/views/themes/edit.php:18
 msgid "Light"
-msgstr ""
+msgstr "Vaalea"
 
 #: application/views/themes/add.php:19 application/views/themes/edit.php:19
 msgid "Dark"
-msgstr ""
+msgstr "Tumma"
 
 #: application/views/themes/add.php:21
 msgid "This defines wherever the theme is a light or a dark one."
-msgstr ""
+msgstr "Tämä määrittää, onko teema vaalea vai tumma."
 
 #: application/views/themes/add.php:25 application/views/themes/edit.php:25
 #: application/views/themes/index.php:85
 msgid "Header Logo"
-msgstr ""
+msgstr "Ylätunnisteen logo"
 
 #: application/views/themes/add.php:27 application/views/themes/add.php:33
 #: application/views/themes/edit.php:27 application/views/themes/edit.php:33
 msgid "Only PNG files with a size ratio of 1:1 are allowed."
-msgstr ""
+msgstr "Vain PNG-tiedostot, joiden kokosuhde on 1:1, ovat sallittuja."
 
 #: application/views/themes/add.php:27 application/views/themes/edit.php:27
 #, php-format
@@ -17663,11 +17703,13 @@ msgid ""
 "This is the name of the file which is used as %s small %s Logo in the header "
 "placed in assets/logo."
 msgstr ""
+"Tämä on sen tiedoston nimi, joka on tallennettu hakemistoon assets/logo %s "
+"pienenä %s-logona ylätunnistetta varten."
 
 #: application/views/themes/add.php:31 application/views/themes/edit.php:31
 #: application/views/themes/index.php:86
 msgid "Main Logo"
-msgstr ""
+msgstr "Päälogo"
 
 #: application/views/themes/add.php:33 application/views/themes/edit.php:33
 #, php-format
@@ -17675,24 +17717,28 @@ msgid ""
 "This is the name of the file which is used as %s big %s Logo in the login "
 "screen placed in assets/logo."
 msgstr ""
+"Tämä on sen tiedoston nimi, joka on tallennettu hakemistoon assets/logo %s "
+"suurena %s-logona ylätunnistetta varten."
 
 #: application/views/themes/add.php:36
 msgid "Add theme"
-msgstr ""
+msgstr "Lisää teema"
 
 #: application/views/themes/edit.php:21
 msgid ""
 "This defines wherever the theme is a light or a dark one. On this basis the "
 "Logo is chosen."
 msgstr ""
+"Tämä määrittää, onko logossa vaalea vai tumma ulkoasu. Tämän perusteella "
+"logo valitaan."
 
 #: application/views/themes/edit.php:36
 msgid "Update theme"
-msgstr ""
+msgstr "Päivitä teema"
 
 #: application/views/themes/index.php:22
 msgid "Themes list"
-msgstr ""
+msgstr "Teemalisa"
 
 #: application/views/themes/index.php:28
 msgid ""
@@ -17700,18 +17746,21 @@ msgid ""
 "theme is not really straightforward and should only be done by an admin who "
 "is aware of their actions."
 msgstr ""
+"Tässä valikossa voit muokata teemoja tai lisätä niitä Wavelogiin. Uusien "
+"teemojen lisääminen ei ole aivan yksinkertaista, ja se tulisi tehdä vain "
+"järjestelmänvalvojan toimesta, joka tietää mitä tekee."
 
 #: application/views/themes/index.php:29
 msgid "Also, it has to be said that this feature is still under development."
-msgstr ""
+msgstr "On myös syytä mainita, että tämä ominaisuus on vielä kehitysvaiheessa."
 
 #: application/views/themes/index.php:35
 msgid "Process of adding a new theme"
-msgstr ""
+msgstr "Uuden teeman lisäämisprosessi"
 
 #: application/views/themes/index.php:41
 msgid "1. Step"
-msgstr ""
+msgstr "1. vaihe"
 
 #: application/views/themes/index.php:44
 #, php-format
@@ -17719,40 +17768,49 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
+"Luo uusi kansio hakemistoon 'assets/css/' ja lataa sinne "
+"'bootstrap.min.css' -tiedosto, joka sisältää perusmuotoilusäännöt. Käytämme "
+"teemojen pohjana %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
-msgstr ""
+msgstr "2. vaihe"
 
 #: application/views/themes/index.php:53
 msgid ""
 "Create a file in this folder called 'overrides.css'. Place your custom CSS "
 "code in there."
 msgstr ""
+"Luo tähän kansioon tiedosto nimeltä 'overrides.css'. Kirjoita siihen oma "
+"mukautettu CSS-koodisi."
 
 #: application/views/themes/index.php:59
 msgid "3. Step"
-msgstr ""
+msgstr "3. vaihe"
 
 #: application/views/themes/index.php:62
 msgid ""
 "For each new theme, you need two logo files. One for the login screen and "
 "one for the header."
 msgstr ""
+"Jokaiselle uudelle teemalle tarvitaan kaksi logotiedostoa: yksi "
+"kirjautumisnäyttöä varten ja yksi ylätunnistetta varten."
 
 #: application/views/themes/index.php:63
 msgid ""
 "Only PNG files are allowed, and they should have a pixel ratio of 1:1 (e.g., "
 "1000px height and 1000px width)."
 msgstr ""
+"Vain PNG-tiedostot ovat sallittuja, ja niiden kuvasuhteen tulee olla 1:1 "
+"(esim. 1000 px korkeus ja 1000 px leveys)."
 
 #: application/views/themes/index.php:64
 msgid "Place the two logo files in the folder 'assets/logo/'"
-msgstr ""
+msgstr "Sijoita kaksi logotiedostoa kansioon 'assets/logo'"
 
 #: application/views/themes/index.php:70
 msgid "4. Step"
-msgstr ""
+msgstr "4. vaihe"
 
 #: application/views/themes/index.php:73
 #, php-format
@@ -17760,58 +17818,65 @@ msgid ""
 "Click here on 'Add a Theme' and type in the necessary data. Type in the "
 "filenames for the logos %swithout%s the file extension '.png'"
 msgstr ""
+"Napsauta tästä 'Lisää teema' ja syötä tarvittavat tiedot. Anna "
+"logotiedostojen nimet %silman%s tiedostopäätettä '.png'"
 
 #: application/views/themes/index.php:83
 msgid "Foldername"
-msgstr ""
+msgstr "Kansion nimi"
 
 #: application/views/themes/index.php:99
 msgid "Please edit"
-msgstr ""
+msgstr "Muokkaa"
 
 #: application/views/themes/index.php:116
 msgid "Add a Theme"
-msgstr ""
+msgstr "Lisää teema"
 
 #: application/views/timeline/index.php:111
 msgid "All Years"
-msgstr ""
+msgstr "Kaikki vuodet"
 
 #: application/views/timeline/index.php:119
 msgid "Only new in selected year"
-msgstr ""
+msgstr "Vain valitun vuoden uudet"
 
 #: application/views/timeplotter/index.php:2
 msgid "contacts were plotted"
-msgstr ""
+msgstr "Yhteydet on piirretty kartalle"
 
 #: application/views/timeplotter/index.php:3
 msgid "Time Distribution"
-msgstr ""
+msgstr "Ajallinen jakautuminen"
 
 #: application/views/timeplotter/index.php:6
 msgid "Callsign(s) worked (max 5)"
-msgstr ""
+msgstr "Workitut kutsumerkit (enintään 5)"
 
 #: application/views/timeplotter/index.php:10
 msgid ""
 "The Timeplotter is used to analyze your logbook and find out at what times "
 "you worked certain CQ zones or DXCC countries on a selected band."
 msgstr ""
+"Aikakaavioita käytetään lokikirjasi analysointiin ja sen selvittämiseen, "
+"mihin vuorokaudenaikoihin olet pitänyt yhteyksiä tiettyihin CQ-vyöhykkeisiin "
+"tai DXCC-maihin valitulla bandilla."
 
 #: application/views/update/hamsofnote.php:7
 msgid "Name / Description"
-msgstr ""
+msgstr "Nimi / kuvaus"
 
 #: application/views/update/index.php:8
 msgid "DXCC Lookup Data"
-msgstr ""
+msgstr "DXCC-hakutiedot"
 
 #: application/views/update/index.php:15
 msgid ""
 "Here you can update the DXCC lookup data that is used for displaying "
 "callsign information."
 msgstr ""
+"Tässä voit päivittää DXCC-hakutiedot, joita käytetään kutsumerkkitietojen "
+"näyttämiseen."
 
 #: application/views/update/index.php:16
 msgid "This data is provided by"
