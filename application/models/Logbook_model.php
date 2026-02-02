@@ -86,7 +86,7 @@ class Logbook_model extends CI_Model {
 		$prop_mode = $qso_data['prop_mode'] ?? NULL;
 		$email = $qso_data['email'] ?? NULL;
 		$region = $qso_data['region'] ?? NULL;
-		
+
 		// In case of a satellite name we force the $prop_mode to SAT
 		$prop_mode = ($qso_data['sat_name'] ?? NULL) != NULL ? "SAT" : $prop_mode;
 
@@ -118,7 +118,7 @@ class Logbook_model extends CI_Model {
 
 		$contestid = $qso_data['contestname'] ?? NULL;
 		$tx_power = filter_var(($qso_data['transmit_power'] ?? NULL), FILTER_VALIDATE_FLOAT) ?? NULL;
-		
+
 
 		if (($qso_data['radio'] ?? '') == 'ws') {	// WebSocket
 			$radio_name = $qso_data['radio_ws_name'];
@@ -131,9 +131,9 @@ class Logbook_model extends CI_Model {
 
 		// Cache DXCC lookup to avoid calling check_dxcc_table() 4 times if atleast one of these fields is empty
 		$dxcc = NULL;
-		$needs_dxcc_lookup 	= 	empty($qso_data['country']) || 
-								empty($qso_data['cqz']) || 
-								empty($qso_data['dxcc_id']) || 
+		$needs_dxcc_lookup 	= 	empty($qso_data['country']) ||
+								empty($qso_data['cqz']) ||
+								empty($qso_data['dxcc_id']) ||
 								empty($qso_data['continent']);
 
 		if ($needs_dxcc_lookup) {
@@ -235,7 +235,7 @@ class Logbook_model extends CI_Model {
 		} else {
 			$band = $qso_data['band'];
 		}
-		
+
 		// Create array with QSO Data
 		$data = array(
 			'COL_TIME_ON' => $datetime,
@@ -4628,7 +4628,7 @@ class Logbook_model extends CI_Model {
      */
 	function import($record, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false, $batchmode = false, $station_id_ok = false, $station_profile = null, $station_qslmsg = null) {
 		// be sure that station belongs to user
-		$this->load->model('stations');
+		$this->load->is_loaded('stations') ?: $this->load->model('stations');
 		if ($station_id_ok == false) {
 			if (!$this->stations->check_station_is_accessible($station_id) && $apicall == false) {
 				return 'Station not accessible<br>';
@@ -4789,7 +4789,7 @@ class Logbook_model extends CI_Model {
 				if ($dxccAdif != NULL) {
 					if (isset($record['dxcc'])) {
 						$entity = $this->get_entity($record['dxcc']);
-						$dxcc = array($record['dxcc'] ?? '', $entity['name'] ?? '');
+						$dxcc = array($record['dxcc'] ?? '', $entity['name'] ?? '', $entity['cqz'] ?? '', $entity['cont'] ?? '');
 					} else {
 						if ($this->dxcc_object == null) {
 							$this->dxcc_object = new Dxcc(null);
@@ -4979,10 +4979,10 @@ class Logbook_model extends CI_Model {
 				$input_ant_path = NULL;
 			}
 
-			/*
-	  Validate QSL Fields
-	 qslrdate, qslsdate
-	 */
+			/**
+			 * Validate QSL Fields
+			 * qslrdate, qslsdate
+			 */
 
 			if (($record['qslrdate'] ?? '') != '') {
 				if (validateADIFDate($record['qslrdate']) == true) {
@@ -5159,7 +5159,6 @@ class Logbook_model extends CI_Model {
 
 			// Get active station_id from station profile if one hasn't been provided
 			if ($station_id == "" || $station_id == "0") {
-				$this->load->model('stations');
 				$station_id = $this->stations->find_active();
 			}
 
@@ -5173,7 +5172,7 @@ class Logbook_model extends CI_Model {
 			// If user checked to mark QSOs as uploaded to QRZ or HRDLog Logbook, or else we try to find info in ADIF import.
 			if ($markHrd != null) {
 				$input_hrdlog_qso_upload_status = 'Y';
-				$input_hrdlog_qso_upload_date = $date = date("Y-m-d H:i:s", strtotime("now"));
+				$input_hrdlog_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
 			} else {
 				$input_hrdlog_qso_upload_date = (!empty($record['hrdlog_qso_upload_date'])) ? $record['hrdlog_qso_upload_date'] : null;
 				$input_hrdlog_qso_upload_status = (!empty($record['hrdlog_qso_upload_status'])) ? $record['hrdlog_qso_upload_status'] : '';
@@ -5181,7 +5180,7 @@ class Logbook_model extends CI_Model {
 
 			if ($markQrz != null) {
 				$input_qrzcom_qso_upload_status = 'Y';
-				$input_qrzcom_qso_upload_date = $date = date("Y-m-d H:i:s", strtotime("now"));
+				$input_qrzcom_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
 			} else {
 				$input_qrzcom_qso_upload_date = (!empty($record['qrzcom_qso_upload_date'])) ? $record['qrzcom_qso_upload_date'] : null;
 				$input_qrzcom_qso_upload_status = (!empty($record['qrzcom_qso_upload_status'])) ? $record['qrzcom_qso_upload_status'] : '';
@@ -5189,7 +5188,7 @@ class Logbook_model extends CI_Model {
 
 			if ($markDcl != null) {
 				$input_dcl_qso_upload_status = 'Y';
-				$input_dcl_qso_upload_date = $date = date("Y-m-d H:i:s", strtotime("now"));
+				$input_dcl_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
 			} else {
 				$input_dcl_qso_upload_date = (!empty($record['dcl_qslsdate'])) ? $record['dcl_qslsdate'] : null;
 				$input_dcl_qso_upload_status = (!empty($record['dcl_qsl_sent'])) ? $record['dcl_qsl_sent'] : '';
@@ -5408,19 +5407,18 @@ class Logbook_model extends CI_Model {
 					$data['COL_STATION_CALLSIGN'] = strtoupper(trim($row['station_callsign']));
 					$data['COL_MY_DXCC'] = strtoupper(trim($row['station_dxcc']));
 					$data['COL_MY_COUNTRY'] = strtoupper(trim($row['station_country']));
-					$data['COL_MY_CNTY'] = strtoupper(trim($row['station_cnty']));
+					$data['COL_MY_CNTY'] = strtoupper(trim($row['station_cnty'] ?? ''));
 					$data['COL_MY_CQ_ZONE'] = strtoupper(trim($row['station_cq']));
 					$data['COL_MY_ITU_ZONE'] = strtoupper(trim($row['station_itu']));
 				}
 			}
 
 			if ($apicall && (($this->config->item('mqtt_server') ?? '') != '')) {
-				$this->load->model('stations');
-				$this->load->library('Mh');
-				$h_user=$this->stations->get_user_from_station($station_id);
-				$event_data=$data;
-				$event_data['user_name']=($h_user->user_name ?? '');
-				$event_data['user_id']=($h_user->user_id ?? '');
+				$this->load->is_loaded('Mh') ?: $this->load->library('Mh');
+				$h_user = $this->stations->get_user_from_station($station_id);
+				$event_data = $data;
+				$event_data['user_name'] = ($h_user->user_name ?? '');
+				$event_data['user_id'] = ($h_user->user_id ?? '');
 				$this->mh->wl_event('qso/logged/api/'.($h_user->user_id ?? ''), json_encode($event_data));
 				unset($event_data);
 				unset($h_user);
@@ -5656,7 +5654,7 @@ class Logbook_model extends CI_Model {
 	}
 
 	public function get_entity($dxcc) {
-		$sql = "SELECT name, cqz, lat, `long` FROM dxcc_entities WHERE adif = ?";
+		$sql = "SELECT `adif`, `name`, `cqz`, `ituz`, `cont`, `lat`, `long` FROM dxcc_entities WHERE adif = ?";
 		$query = $this->db->query($sql, $dxcc);
 
 		if ($query->result() > 0) {

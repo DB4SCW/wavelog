@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-28 06:50+0000\n"
+"POT-Creation-Date: 2026-02-02 08:14+0000\n"
 "PO-Revision-Date: 2026-01-28 11:57+0000\n"
 "Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -452,7 +452,7 @@ msgid " and "
 msgstr " i "
 
 #: application/controllers/Awards.php:595
-#: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1423
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:326
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
 #: application/views/interface_assets/header.php:218
@@ -480,7 +480,7 @@ msgid "SOTA"
 msgstr "SOTA"
 
 #: application/controllers/Awards.php:613
-#: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1424
 #: application/views/bandmap/list.php:328 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
 #: application/views/interface_assets/header.php:206
@@ -502,7 +502,7 @@ msgid "WWFF"
 msgstr "WWFF"
 
 #: application/controllers/Awards.php:631
-#: application/controllers/Logbook.php:1423
+#: application/controllers/Logbook.php:1425
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:11
@@ -1462,7 +1462,7 @@ msgstr ""
 "Wszystkie wyszukiwania w książce telefonicznej zakończyły się niepowodzeniem "
 "lub nie przyniosły żadnych wyników."
 
-#: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1418
 #: application/controllers/Radio.php:46
 #: application/views/accumulate/index.php:31
 #: application/views/activated_gridmap/index.php:43
@@ -1562,7 +1562,7 @@ msgstr ""
 msgid "Mode"
 msgstr "Emisja"
 
-#: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1419
 #: application/views/awards/73on73/index.php:38
 #: application/views/awards/pota/index.php:37
 #: application/views/awards/wwff/index.php:37
@@ -1591,7 +1591,7 @@ msgstr "Emisja"
 msgid "RST (S)"
 msgstr "RST (S)"
 
-#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1420
 #: application/views/awards/73on73/index.php:37
 #: application/views/awards/pota/index.php:38
 #: application/views/awards/wwff/index.php:38
@@ -1621,7 +1621,7 @@ msgstr "RST (S)"
 msgid "RST (R)"
 msgstr "RST (R)"
 
-#: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1421
 #: application/views/dashboard/index.php:7
 #: application/views/qslcard/searchresult.php:15
 #: application/views/qslcard/searchresult.php:31
@@ -1642,7 +1642,7 @@ msgstr "RST (R)"
 msgid "Country"
 msgstr "Kraj"
 
-#: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1422
 #: application/views/awards/iota/index.php:198
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:52
 #: application/views/dashboard/index.php:8
@@ -1673,7 +1673,7 @@ msgstr "Kraj"
 msgid "IOTA"
 msgstr "IOTA"
 
-#: application/controllers/Logbook.php:1424
+#: application/controllers/Logbook.php:1426
 #: application/views/awards/counties/details.php:12
 #: application/views/awards/counties/index.php:21
 #: application/views/awards/rac/index.php:146
@@ -1704,7 +1704,7 @@ msgstr "IOTA"
 msgid "State"
 msgstr "Stan"
 
-#: application/controllers/Logbook.php:1425
+#: application/controllers/Logbook.php:1427
 #: application/views/activated_gridmap/index.php:110
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:54
@@ -1756,7 +1756,7 @@ msgstr "Stan"
 msgid "Gridsquare"
 msgstr "Lokator"
 
-#: application/controllers/Logbook.php:1426
+#: application/controllers/Logbook.php:1428
 #: application/views/activated_gridmap/index.php:112
 #: application/views/awards/ffma/index.php:40
 #: application/views/awards/gridmaster/index.php:56
@@ -1786,7 +1786,7 @@ msgstr "Lokator"
 msgid "Distance"
 msgstr "Odległość"
 
-#: application/controllers/Logbook.php:1427
+#: application/controllers/Logbook.php:1429
 #: application/views/accumulate/index.php:21
 #: application/views/activated_gridmap/index.php:12
 #: application/views/activators/index.php:10
@@ -1881,7 +1881,7 @@ msgstr "Odległość"
 msgid "Band"
 msgstr "Pasmo"
 
-#: application/controllers/Logbook.php:1428
+#: application/controllers/Logbook.php:1430
 #: application/controllers/Radio.php:45 application/views/bandmap/list.php:166
 #: application/views/bandmap/list.php:567
 #: application/views/contesting/index.php:148
@@ -1908,7 +1908,7 @@ msgstr "Pasmo"
 msgid "Frequency"
 msgstr "Częstotliwość"
 
-#: application/controllers/Logbook.php:1429
+#: application/controllers/Logbook.php:1431
 #: application/controllers/Radio.php:43
 #: application/views/dashboard/index.php:17
 #: application/views/logbookadvanced/edit.php:13
@@ -1932,7 +1932,7 @@ msgstr "Częstotliwość"
 msgid "Operator"
 msgstr "Operator"
 
-#: application/controllers/Logbook.php:1450
+#: application/controllers/Logbook.php:1452
 #: application/controllers/Stationsetup.php:424
 #: application/views/awards/dxcc/index.php:83
 #: application/views/awards/dxcc/index.php:291
@@ -3633,52 +3633,52 @@ msgstr "qslsdate jest nieprawidłowa (RRRRMMDD)"
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date jest nieprawidłowy (RRRRMMDD)"
 
-#: application/models/Logbook_model.php:5435
+#: application/models/Logbook_model.php:5433
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Duplikat dla"
 
-#: application/models/Logbook_model.php:5500
-#: application/models/Logbook_model.php:5595
+#: application/models/Logbook_model.php:5498
+#: application/models/Logbook_model.php:5593
 msgid "QSO could not be matched"
 msgstr "QSO nie mogło zostać dopasowane"
 
-#: application/models/Logbook_model.php:5508
+#: application/models/Logbook_model.php:5506
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "potwierdzone przez LoTW/ClubLog/eQSL/zawody"
 
-#: application/models/Logbook_model.php:5514
+#: application/models/Logbook_model.php:5512
 msgid "confirmed by award manager"
 msgstr "potwierdzone przez award managera"
 
-#: application/models/Logbook_model.php:5518
+#: application/models/Logbook_model.php:5516
 msgid "confirmed by cross-check of DCL data"
 msgstr "potwierdzone przez weryfikację danych DCL"
 
-#: application/models/Logbook_model.php:5522
+#: application/models/Logbook_model.php:5520
 msgid "confirmation pending"
 msgstr "oczekiwanie na potwierdzenie"
 
-#: application/models/Logbook_model.php:5525
+#: application/models/Logbook_model.php:5523
 msgid "unconfirmed"
 msgstr "niepotwierdzone"
 
-#: application/models/Logbook_model.php:5528
+#: application/models/Logbook_model.php:5526
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 msgid "unknown"
 msgstr "nieznany"
 
-#: application/models/Logbook_model.php:5598
+#: application/models/Logbook_model.php:5596
 msgid "POTA reference already in log"
 msgstr "Referencja POTA już znajduje się w dzienniku"
 
-#: application/models/Logbook_model.php:5601
+#: application/models/Logbook_model.php:5599
 msgid "QSO updated"
 msgstr "QSO zaktualizowane"
 
-#: application/models/Logbook_model.php:5995
+#: application/models/Logbook_model.php:5993
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58

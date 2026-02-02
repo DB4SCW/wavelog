@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-01-28 06:50+0000\n"
+"POT-Creation-Date: 2026-02-02 08:14+0000\n"
 "PO-Revision-Date: 2026-01-28 19:35+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -443,7 +443,7 @@ msgid " and "
 msgstr " och "
 
 #: application/controllers/Awards.php:595
-#: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1423
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:326
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
 #: application/views/interface_assets/header.php:218
@@ -471,7 +471,7 @@ msgid "SOTA"
 msgstr "SOTA"
 
 #: application/controllers/Awards.php:613
-#: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1424
 #: application/views/bandmap/list.php:328 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
 #: application/views/interface_assets/header.php:206
@@ -493,7 +493,7 @@ msgid "WWFF"
 msgstr "WWFF"
 
 #: application/controllers/Awards.php:631
-#: application/controllers/Logbook.php:1423
+#: application/controllers/Logbook.php:1425
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:11
@@ -1448,7 +1448,7 @@ msgstr "eQSL"
 msgid "All callbook lookups failed or provided no results."
 msgstr "Alla callbook-sökningar misslyckades eller gav inga resultat."
 
-#: application/controllers/Logbook.php:1416
+#: application/controllers/Logbook.php:1418
 #: application/controllers/Radio.php:46
 #: application/views/accumulate/index.php:31
 #: application/views/activated_gridmap/index.php:43
@@ -1548,7 +1548,7 @@ msgstr "Alla callbook-sökningar misslyckades eller gav inga resultat."
 msgid "Mode"
 msgstr "Trafiksätt"
 
-#: application/controllers/Logbook.php:1417
+#: application/controllers/Logbook.php:1419
 #: application/views/awards/73on73/index.php:38
 #: application/views/awards/pota/index.php:37
 #: application/views/awards/wwff/index.php:37
@@ -1577,7 +1577,7 @@ msgstr "Trafiksätt"
 msgid "RST (S)"
 msgstr "RST (S)"
 
-#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1420
 #: application/views/awards/73on73/index.php:37
 #: application/views/awards/pota/index.php:38
 #: application/views/awards/wwff/index.php:38
@@ -1607,7 +1607,7 @@ msgstr "RST (S)"
 msgid "RST (R)"
 msgstr "RST (R)"
 
-#: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1421
 #: application/views/dashboard/index.php:7
 #: application/views/qslcard/searchresult.php:15
 #: application/views/qslcard/searchresult.php:31
@@ -1628,7 +1628,7 @@ msgstr "RST (R)"
 msgid "Country"
 msgstr "Land"
 
-#: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1422
 #: application/views/awards/iota/index.php:198
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:52
 #: application/views/dashboard/index.php:8
@@ -1659,7 +1659,7 @@ msgstr "Land"
 msgid "IOTA"
 msgstr "IOTA"
 
-#: application/controllers/Logbook.php:1424
+#: application/controllers/Logbook.php:1426
 #: application/views/awards/counties/details.php:12
 #: application/views/awards/counties/index.php:21
 #: application/views/awards/rac/index.php:146
@@ -1690,7 +1690,7 @@ msgstr "IOTA"
 msgid "State"
 msgstr "Delstat"
 
-#: application/controllers/Logbook.php:1425
+#: application/controllers/Logbook.php:1427
 #: application/views/activated_gridmap/index.php:110
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:54
@@ -1742,7 +1742,7 @@ msgstr "Delstat"
 msgid "Gridsquare"
 msgstr "Lokatorruta"
 
-#: application/controllers/Logbook.php:1426
+#: application/controllers/Logbook.php:1428
 #: application/views/activated_gridmap/index.php:112
 #: application/views/awards/ffma/index.php:40
 #: application/views/awards/gridmaster/index.php:56
@@ -1772,7 +1772,7 @@ msgstr "Lokatorruta"
 msgid "Distance"
 msgstr "Avstånd"
 
-#: application/controllers/Logbook.php:1427
+#: application/controllers/Logbook.php:1429
 #: application/views/accumulate/index.php:21
 #: application/views/activated_gridmap/index.php:12
 #: application/views/activators/index.php:10
@@ -1867,7 +1867,7 @@ msgstr "Avstånd"
 msgid "Band"
 msgstr "Band"
 
-#: application/controllers/Logbook.php:1428
+#: application/controllers/Logbook.php:1430
 #: application/controllers/Radio.php:45 application/views/bandmap/list.php:166
 #: application/views/bandmap/list.php:567
 #: application/views/contesting/index.php:148
@@ -1894,7 +1894,7 @@ msgstr "Band"
 msgid "Frequency"
 msgstr "Frekvens"
 
-#: application/controllers/Logbook.php:1429
+#: application/controllers/Logbook.php:1431
 #: application/controllers/Radio.php:43
 #: application/views/dashboard/index.php:17
 #: application/views/logbookadvanced/edit.php:13
@@ -1918,7 +1918,7 @@ msgstr "Frekvens"
 msgid "Operator"
 msgstr "Operatör"
 
-#: application/controllers/Logbook.php:1450
+#: application/controllers/Logbook.php:1452
 #: application/controllers/Stationsetup.php:424
 #: application/views/awards/dxcc/index.php:83
 #: application/views/awards/dxcc/index.php:291
@@ -3610,52 +3610,52 @@ msgstr "qslsdate är ogiltigt (ÅÅÅÅMMDD)"
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date är ogiltigt (ÅÅÅÅMMDD)"
 
-#: application/models/Logbook_model.php:5435
+#: application/models/Logbook_model.php:5433
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Dubblett för"
 
-#: application/models/Logbook_model.php:5500
-#: application/models/Logbook_model.php:5595
+#: application/models/Logbook_model.php:5498
+#: application/models/Logbook_model.php:5593
 msgid "QSO could not be matched"
 msgstr "QSO kunde inte matchas"
 
-#: application/models/Logbook_model.php:5508
+#: application/models/Logbook_model.php:5506
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "bekräftad av LoTW/Clublog/eQSL/Tävling"
 
-#: application/models/Logbook_model.php:5514
+#: application/models/Logbook_model.php:5512
 msgid "confirmed by award manager"
 msgstr "bekräftad av diplomansvarig"
 
-#: application/models/Logbook_model.php:5518
+#: application/models/Logbook_model.php:5516
 msgid "confirmed by cross-check of DCL data"
 msgstr "bekräftat genom korskontroll av DCL-data"
 
-#: application/models/Logbook_model.php:5522
+#: application/models/Logbook_model.php:5520
 msgid "confirmation pending"
 msgstr "bekräftelse väntar"
 
-#: application/models/Logbook_model.php:5525
+#: application/models/Logbook_model.php:5523
 msgid "unconfirmed"
 msgstr "obekräftad"
 
-#: application/models/Logbook_model.php:5528
+#: application/models/Logbook_model.php:5526
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 msgid "unknown"
 msgstr "Okänd"
 
-#: application/models/Logbook_model.php:5598
+#: application/models/Logbook_model.php:5596
 msgid "POTA reference already in log"
 msgstr "POTA-referens redan i loggen"
 
-#: application/models/Logbook_model.php:5601
+#: application/models/Logbook_model.php:5599
 msgid "QSO updated"
 msgstr "QSO uppdaterad"
 
-#: application/models/Logbook_model.php:5995
+#: application/models/Logbook_model.php:5993
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
