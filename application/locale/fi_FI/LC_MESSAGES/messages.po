@@ -853,6 +853,12 @@ msgstr "Muokkaa cron-tehtävää"
 #: application/views/debug/index.php:555 application/views/debug/index.php:561
 #: application/views/debug/index.php:567 application/views/debug/index.php:573
 #: application/views/debug/index.php:579 application/views/debug/index.php:585
+#: application/views/debug/index.php:617 application/views/debug/index.php:624
+#: application/views/debug/index.php:630 application/views/debug/index.php:636
+#: application/views/debug/index.php:642 application/views/debug/index.php:648
+#: application/views/debug/index.php:654 application/views/debug/index.php:660
+#: application/views/debug/index.php:666 application/views/debug/index.php:672
+#: application/views/debug/index.php:678
 msgid "never"
 msgstr "ei koskaan"
 
@@ -962,35 +968,36 @@ msgstr "DCL:ään lähetettäviä asemaprofiileja ei löytynyt"
 msgid "Key(s) Deleted."
 msgstr "Avain/avaimet poistettu."
 
-#: application/controllers/Debug.php:120
+#: application/controllers/Debug.php:120 application/controllers/Debug.php:132
 msgid "Debug"
 msgstr "Virheenkorjaus"
 
-#: application/controllers/Debug.php:159
+#: application/controllers/Debug.php:159 application/controllers/Debug.php:171
 msgid "Migrate data now"
 msgstr "Siirrä tiedot nyt"
 
-#: application/controllers/Debug.php:162
+#: application/controllers/Debug.php:162 application/controllers/Debug.php:174
 msgid "Migration already done. Run again?"
 msgstr "Migraatio on jo tehty. Suorita uudelleen?"
 
-#: application/controllers/Debug.php:166
+#: application/controllers/Debug.php:166 application/controllers/Debug.php:178
 msgid "No data to migrate"
 msgstr "Ei dataa siirrettäväksi"
 
 #: application/controllers/Debug.php:170 application/controllers/Debug.php:175
+#: application/controllers/Debug.php:182 application/controllers/Debug.php:187
 msgid "No migration possible"
 msgstr "Siirto ei mahdollinen"
 
-#: application/controllers/Debug.php:240
+#: application/controllers/Debug.php:240 application/controllers/Debug.php:252
 msgid "Wavelog was updated successfully!"
 msgstr "Wavelog päivitettiin onnistuneesti!"
 
-#: application/controllers/Debug.php:258
+#: application/controllers/Debug.php:258 application/controllers/Debug.php:270
 msgid "Selfupdate() not available. Check the Error Log."
 msgstr "Selfupdate() ei ole käytettävissä. Tarkista virheloki."
 
-#: application/controllers/Debug.php:302
+#: application/controllers/Debug.php:302 application/controllers/Debug.php:317
 msgid ""
 "File Migration was successfull, but please check also manually. If "
 "everything seems right you can delete the folders 'assets/qslcard' and "
@@ -1000,7 +1007,7 @@ msgstr ""
 "Jos kaikki näyttää olevan kunnossa, voit poistaa kansiot 'assets/qslcard' ja "
 "'images/eqsl_card_images'."
 
-#: application/controllers/Debug.php:305
+#: application/controllers/Debug.php:305 application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
 msgstr "Tiedostojen siirto epäonnistui. Tarkista virheloki."
 
@@ -1548,7 +1555,7 @@ msgstr ""
 #: application/views/view_log/partial/log.php:9
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
-#: application/views/widgets/qsos.php:18
+#: application/views/widgets/qsos.php:18 application/views/debug/index.php:701
 msgid "Mode"
 msgstr "Lähetelaji"
 
@@ -1867,7 +1874,7 @@ msgstr "Etäisyys"
 #: application/views/view_log/partial/log.php:12
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
-#: application/views/widgets/qsos.php:21
+#: application/views/widgets/qsos.php:21 application/views/debug/index.php:702
 msgid "Band"
 msgstr "Bandi"
 
@@ -2582,6 +2589,7 @@ msgid "No presets available"
 msgstr "Esiasetuksia ei ole saatavilla"
 
 #: application/controllers/Sattimers.php:41
+#: application/controllers/Sattimers.php:45
 #, php-format
 msgid "You have no station locations. Go %s to create it!"
 msgstr "Sinulla ei ole asemien sijainteja. Mene %s luodaksesi sellaisia!"
@@ -2594,11 +2602,13 @@ msgstr "Sinulla ei ole asemien sijainteja. Mene %s luodaksesi sellaisia!"
 #: application/views/awards/wapc/index.php:10
 #: application/views/awards/was/index.php:28
 #: application/views/simplefle/index.php:16
+#: application/controllers/Sattimers.php:45
 msgid "here"
 msgstr "tänne"
 
 #: application/controllers/Sattimers.php:44
 #: application/views/sattimers/index.php:13
+#: application/controllers/Sattimers.php:48
 msgid "Satellite Timers"
 msgstr "Satelliittiajastimet"
 
@@ -3191,6 +3201,7 @@ msgstr "Aseman nimi"
 #: application/views/stationsetup/linkedlocations.php:32
 #: application/views/stationsetup/stationsetup.php:128
 #: application/views/user/modals/first_login_wizard.php:34
+#: application/views/debug/index.php:703
 msgid "Station Callsign"
 msgstr "Asema kutsu"
 
@@ -3570,11 +3581,13 @@ msgid "DXCC has to be Numeric"
 msgstr "DXCC:n on oltava numeerinen"
 
 #: application/models/Logbook_model.php:4643
+#: application/models/Logbook_model.php:4647
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Väärä aseman kutsumerkki %s tuotaessa QSOa %s %s: varten: OHITETTU"
 
 #: application/models/Logbook_model.php:4657
+#: application/models/Logbook_model.php:4661
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3583,10 +3596,12 @@ msgstr ""
 "virheellinen"
 
 #: application/models/Logbook_model.php:4666
+#: application/models/Logbook_model.php:4670
 msgid "QSO on"
 msgstr "QSO alkoi"
 
 #: application/models/Logbook_model.php:4666
+#: application/models/Logbook_model.php:4670
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3595,6 +3610,7 @@ msgstr ""
 "virheellinen"
 
 #: application/models/Logbook_model.php:4715
+#: application/models/Logbook_model.php:4719
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3604,44 +3620,55 @@ msgstr ""
 "tuotu. Se on virheellinen"
 
 #: application/models/Logbook_model.php:4988
+#: application/models/Logbook_model.php:4992
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate on virheellinen (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:4999
+#: application/models/Logbook_model.php:5003
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate on virheellinen (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5060
+#: application/models/Logbook_model.php:5064
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "the clublog_qso_upload_date on virheellinen (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5433
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5437
 msgid "Duplicate for"
 msgstr "Kaksoiskappale"
 
 #: application/models/Logbook_model.php:5498
 #: application/models/Logbook_model.php:5593
+#: application/models/Logbook_model.php:5502
+#: application/models/Logbook_model.php:5597
 msgid "QSO could not be matched"
 msgstr "QSOa ei voitu yhdistää"
 
 #: application/models/Logbook_model.php:5506
+#: application/models/Logbook_model.php:5510
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "vahvistettu LoTW:n/Clublogin/eQSL:n/kilpailun kautta"
 
 #: application/models/Logbook_model.php:5512
+#: application/models/Logbook_model.php:5516
 msgid "confirmed by award manager"
 msgstr "vahvistettu awardimanagerin toimesta"
 
 #: application/models/Logbook_model.php:5516
+#: application/models/Logbook_model.php:5520
 msgid "confirmed by cross-check of DCL data"
 msgstr "varmistettu DCL-datan ristivertailulla"
 
 #: application/models/Logbook_model.php:5520
+#: application/models/Logbook_model.php:5524
 msgid "confirmation pending"
 msgstr "vahvistus odottaa"
 
 #: application/models/Logbook_model.php:5523
+#: application/models/Logbook_model.php:5527
 msgid "unconfirmed"
 msgstr "vahvistamaton"
 
@@ -3649,14 +3676,17 @@ msgstr "vahvistamaton"
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
+#: application/models/Logbook_model.php:5530
 msgid "unknown"
 msgstr "tuntematon"
 
 #: application/models/Logbook_model.php:5596
+#: application/models/Logbook_model.php:5600
 msgid "POTA reference already in log"
 msgstr "POTA-referenssi on jo lokissa"
 
 #: application/models/Logbook_model.php:5599
+#: application/models/Logbook_model.php:5603
 msgid "QSO updated"
 msgstr "QSO päivitetty"
 
@@ -3671,6 +3701,7 @@ msgstr "QSO päivitetty"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:5997
 msgid "Bearing"
 msgstr "Suuntima"
 
@@ -4602,7 +4633,7 @@ msgstr ""
 #: application/views/view_log/partial/log.php:4
 #: application/views/view_log/partial/log_ajax.php:196
 #: application/views/visitor/index.php:151
-#: application/views/widgets/qsos.php:16
+#: application/views/widgets/qsos.php:16 application/views/debug/index.php:698
 msgid "Date"
 msgstr "Päivä"
 
@@ -4639,6 +4670,7 @@ msgstr "Päivä"
 #: application/views/view_log/partial/log.php:6
 #: application/views/view_log/partial/log_ajax.php:198
 #: application/views/visitor/index.php:154
+#: application/views/debug/index.php:699
 msgid "Time"
 msgstr "Aika"
 
@@ -4660,7 +4692,8 @@ msgstr "Aika"
 #: application/views/view_log/partial/log.php:8
 #: application/views/view_log/partial/log_ajax.php:200
 #: application/views/visitor/index.php:156
-#: application/views/widgets/qsos.php:17
+#: application/views/widgets/qsos.php:17 application/views/debug/index.php:700
+#: application/views/debug/index.php:735
 msgid "Call"
 msgstr "Kutsu"
 
@@ -4718,6 +4751,7 @@ msgstr "Tiedoston maksimilatauskoko on "
 #: application/views/view_log/qso.php:794
 #: application/views/webadif/export.php:34
 #: application/views/webadif/export.php:94
+#: application/views/debug/index.php:690
 msgid "Warning"
 msgstr "Varoitus"
 
@@ -7008,8 +7042,8 @@ msgstr ""
 "on oma yhdistyksensä, joka määrittelee kyseisen yhdistyksen SOTA-huiput. "
 "Jokaisesta huipusta saa aktivaattoreille ja hunttereille pisteitä, jotka "
 "liittyvät huipun korkeuteen. Erilaisista pistemääristä saa todistuksia, "
-"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' -"
-"palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
+"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' "
+"-palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
 "SOTAn online-tietokannassa."
 
 #: application/views/awards/vucc/index.php:7
@@ -9608,6 +9642,7 @@ msgstr "ADIF-nimi"
 #: application/views/mode/index.php:8 application/views/mode/index.php:55
 #: application/views/usermode/index.php:6
 #: application/views/usermode/index.php:51
+#: application/views/debug/index.php:415 application/views/debug/index.php:426
 msgid "Active"
 msgstr "Aktiivinen"
 
@@ -10691,7 +10726,7 @@ msgstr "Onnistui"
 
 #: application/views/debug/index.php:132 application/views/debug/index.php:143
 #: application/views/debug/index.php:154 application/views/debug/index.php:165
-#: application/views/debug/index.php:177
+#: application/views/debug/index.php:177 application/views/debug/index.php:417
 msgid "Failed"
 msgstr "Epäonnistui"
 
@@ -10779,33 +10814,35 @@ msgstr "Asennettu"
 msgid "Not Installed"
 msgstr "Ei asennettu"
 
-#: application/views/debug/index.php:441
+#: application/views/debug/index.php:441 application/views/debug/index.php:534
 msgid "Git Information"
 msgstr "Git-informaatio"
 
-#: application/views/debug/index.php:445
+#: application/views/debug/index.php:445 application/views/debug/index.php:538
 msgid "Branch"
 msgstr "Haara"
 
 #: application/views/debug/index.php:456 application/views/debug/index.php:467
 #: application/views/debug/index.php:477
 #: application/views/lotw_views/index.php:95
+#: application/views/debug/index.php:549 application/views/debug/index.php:560
+#: application/views/debug/index.php:570
 msgid "n/a"
 msgstr "n/a"
 
-#: application/views/debug/index.php:462
+#: application/views/debug/index.php:462 application/views/debug/index.php:555
 msgid "Commit"
 msgstr "Commit"
 
-#: application/views/debug/index.php:472
+#: application/views/debug/index.php:472 application/views/debug/index.php:565
 msgid "Tag"
 msgstr "Tagi"
 
-#: application/views/debug/index.php:482
+#: application/views/debug/index.php:482 application/views/debug/index.php:575
 msgid "Last Fetch"
 msgstr "Viimeksi haettu"
 
-#: application/views/debug/index.php:494
+#: application/views/debug/index.php:494 application/views/debug/index.php:587
 msgid "Check for new version"
 msgstr "Tarkista päivitykset"
 
@@ -10814,22 +10851,23 @@ msgstr "Tarkista päivitykset"
 #: application/views/logbookadvanced/checkresult.php:68
 #: application/views/logbookadvanced/checkresult.php:78
 #: application/views/logbookadvanced/index.php:57
+#: application/views/debug/index.php:588
 msgid "Update now"
 msgstr "Päivitä nyt"
 
-#: application/views/debug/index.php:513
+#: application/views/debug/index.php:513 application/views/debug/index.php:606
 msgid "File download date"
 msgstr "Tiedoston latauspäivä"
 
-#: application/views/debug/index.php:517
+#: application/views/debug/index.php:517 application/views/debug/index.php:610
 msgid "File"
 msgstr "Tiedosto"
 
-#: application/views/debug/index.php:518
+#: application/views/debug/index.php:518 application/views/debug/index.php:611
 msgid "Last update"
 msgstr "Viimeisin päivitys"
 
-#: application/views/debug/index.php:522
+#: application/views/debug/index.php:522 application/views/debug/index.php:615
 msgid "DXCC update from Club Log"
 msgstr "DXCC-tietojen päivitys Club Logista"
 
@@ -10840,54 +10878,60 @@ msgstr "DXCC-tietojen päivitys Club Logista"
 #: application/views/debug/index.php:574 application/views/debug/index.php:580
 #: application/views/debug/index.php:586
 #: application/views/station_profile/edit.php:53
+#: application/views/debug/index.php:618 application/views/debug/index.php:625
+#: application/views/debug/index.php:631 application/views/debug/index.php:637
+#: application/views/debug/index.php:643 application/views/debug/index.php:649
+#: application/views/debug/index.php:655 application/views/debug/index.php:661
+#: application/views/debug/index.php:667 application/views/debug/index.php:673
+#: application/views/debug/index.php:679
 msgid "Update"
 msgstr "Päivitä"
 
-#: application/views/debug/index.php:529
+#: application/views/debug/index.php:529 application/views/debug/index.php:622
 msgid "DOK file download"
 msgstr "Lataa DOK-tiedosto"
 
-#: application/views/debug/index.php:535
+#: application/views/debug/index.php:535 application/views/debug/index.php:628
 msgid "LoTW users download"
 msgstr "LoTW-käyttäjien lataus"
 
-#: application/views/debug/index.php:541
+#: application/views/debug/index.php:541 application/views/debug/index.php:634
 msgid "POTA file download"
 msgstr "POTA-tiedoston lataus"
 
-#: application/views/debug/index.php:547
+#: application/views/debug/index.php:547 application/views/debug/index.php:640
 msgid "SCP file download"
 msgstr "SCP-tiedoston lataus"
 
-#: application/views/debug/index.php:553
+#: application/views/debug/index.php:553 application/views/debug/index.php:646
 msgid "SOTA file download"
 msgstr "SOTA-tiedoston lataus"
 
-#: application/views/debug/index.php:559
+#: application/views/debug/index.php:559 application/views/debug/index.php:652
 msgid "WWFF file download"
 msgstr "WWFF-tiedoston lataus"
 
-#: application/views/debug/index.php:565
+#: application/views/debug/index.php:565 application/views/debug/index.php:658
 msgid "TLE update"
 msgstr "TLE päivitys"
 
-#: application/views/debug/index.php:571
+#: application/views/debug/index.php:571 application/views/debug/index.php:664
 msgid "Hams Of Note update"
 msgstr "Hams Of Note päivitys"
 
-#: application/views/debug/index.php:577
+#: application/views/debug/index.php:577 application/views/debug/index.php:670
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:583
+#: application/views/debug/index.php:583 application/views/debug/index.php:676
 msgid "VUCC Grids"
 msgstr "VUCC Lokaattorit"
 
-#: application/views/debug/index.php:593
+#: application/views/debug/index.php:593 application/views/debug/index.php:686
 msgid "QSO-DB Maintenance"
 msgstr "QSO-tietokannan ylläpito"
 
-#: application/views/debug/index.php:597
+#: application/views/debug/index.php:597 application/views/debug/index.php:690
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
@@ -10897,141 +10941,142 @@ msgstr[0] ""
 msgstr[1] ""
 "Tietokanta sisältää %d QSO-yhteyttä ilman asemaprofiilia (sijaintia)"
 
-#: application/views/debug/index.php:635
+#: application/views/debug/index.php:635 application/views/debug/index.php:728
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr "Valitse QSOt ja määritä ne olemassa olevalle asemasijainnille:"
 
-#: application/views/debug/index.php:643
+#: application/views/debug/index.php:643 application/views/debug/index.php:736
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "Kohdesijainti"
 
 #: application/views/debug/index.php:644 application/views/debug/index.php:655
+#: application/views/debug/index.php:737 application/views/debug/index.php:748
 msgid "Reassign"
 msgstr "määritä uudelleen"
 
-#: application/views/debug/index.php:664
+#: application/views/debug/index.php:664 application/views/debug/index.php:757
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr ""
 "Kaikilla tietokannan QSO-yhteyksillä on määritetty asemaprofiili (sijainti)"
 
-#: application/views/debug/index.php:664
+#: application/views/debug/index.php:664 application/views/debug/index.php:757
 msgid "Everything ok"
 msgstr "Kaikki kunnossa"
 
-#: application/views/debug/index.php:689
+#: application/views/debug/index.php:689 application/views/debug/index.php:782
 msgid "Albanian"
 msgstr "albanialainen"
 
-#: application/views/debug/index.php:690
+#: application/views/debug/index.php:690 application/views/debug/index.php:783
 msgid "Armenian"
 msgstr "armenialainen"
 
-#: application/views/debug/index.php:691
+#: application/views/debug/index.php:691 application/views/debug/index.php:784
 msgid "Bosnian"
 msgstr "bosnialainen"
 
-#: application/views/debug/index.php:692
+#: application/views/debug/index.php:692 application/views/debug/index.php:785
 msgid "Bulgarian"
 msgstr "bulgarialainen"
 
-#: application/views/debug/index.php:693
+#: application/views/debug/index.php:693 application/views/debug/index.php:786
 msgid "Chinese (Simplified)"
 msgstr "Kiina (yksinkertaistettu)"
 
-#: application/views/debug/index.php:694
+#: application/views/debug/index.php:694 application/views/debug/index.php:787
 msgid "Croatian"
 msgstr "kroatialainen"
 
-#: application/views/debug/index.php:695
+#: application/views/debug/index.php:695 application/views/debug/index.php:788
 msgid "Czech"
 msgstr "tšekkiläinen"
 
-#: application/views/debug/index.php:696
+#: application/views/debug/index.php:696 application/views/debug/index.php:789
 msgid "Dutch"
 msgstr "hollantilainen"
 
-#: application/views/debug/index.php:697
+#: application/views/debug/index.php:697 application/views/debug/index.php:790
 msgid "English"
 msgstr "englanti"
 
-#: application/views/debug/index.php:698
+#: application/views/debug/index.php:698 application/views/debug/index.php:791
 msgid "Estonian"
 msgstr "virolainen"
 
-#: application/views/debug/index.php:699
+#: application/views/debug/index.php:699 application/views/debug/index.php:792
 msgid "Finnish"
 msgstr "suomi"
 
-#: application/views/debug/index.php:700
+#: application/views/debug/index.php:700 application/views/debug/index.php:793
 msgid "French"
 msgstr "ranskalainen"
 
-#: application/views/debug/index.php:701
+#: application/views/debug/index.php:701 application/views/debug/index.php:794
 msgid "German"
 msgstr "saksalainen"
 
-#: application/views/debug/index.php:702
+#: application/views/debug/index.php:702 application/views/debug/index.php:795
 msgid "Greek"
 msgstr "kreikka"
 
-#: application/views/debug/index.php:703
+#: application/views/debug/index.php:703 application/views/debug/index.php:796
 msgid "Hungarian"
 msgstr "unkarilainen"
 
-#: application/views/debug/index.php:704
+#: application/views/debug/index.php:704 application/views/debug/index.php:797
 msgid "Italian"
 msgstr "italialainen"
 
-#: application/views/debug/index.php:705
+#: application/views/debug/index.php:705 application/views/debug/index.php:798
 msgid "Japanese"
 msgstr "japanilainen"
 
-#: application/views/debug/index.php:706
+#: application/views/debug/index.php:706 application/views/debug/index.php:799
 msgid "Latvian"
 msgstr "latvialainen"
 
-#: application/views/debug/index.php:707
+#: application/views/debug/index.php:707 application/views/debug/index.php:800
 msgid "Lithuanian"
 msgstr "liettualainen"
 
-#: application/views/debug/index.php:708
+#: application/views/debug/index.php:708 application/views/debug/index.php:801
 msgid "Montenegrin"
 msgstr "montenegrolainen"
 
-#: application/views/debug/index.php:709
+#: application/views/debug/index.php:709 application/views/debug/index.php:802
 msgid "Polish"
 msgstr "puolalainen"
 
-#: application/views/debug/index.php:710
+#: application/views/debug/index.php:710 application/views/debug/index.php:803
 msgid "Portuguese"
 msgstr "portugalilainen"
 
-#: application/views/debug/index.php:711
+#: application/views/debug/index.php:711 application/views/debug/index.php:804
 msgid "Russian"
 msgstr "venäläinen"
 
-#: application/views/debug/index.php:712
+#: application/views/debug/index.php:712 application/views/debug/index.php:805
 msgid "Serbian"
 msgstr "serbialainen"
 
-#: application/views/debug/index.php:713
+#: application/views/debug/index.php:713 application/views/debug/index.php:806
 msgid "Slovak"
 msgstr "slovakialainen"
 
-#: application/views/debug/index.php:714
+#: application/views/debug/index.php:714 application/views/debug/index.php:807
 msgid "Slovenian"
 msgstr "slovenialainen"
 
-#: application/views/debug/index.php:715
+#: application/views/debug/index.php:715 application/views/debug/index.php:808
 msgid "Spanish"
 msgstr "espanjalainen"
 
-#: application/views/debug/index.php:716
+#: application/views/debug/index.php:716 application/views/debug/index.php:809
 msgid "Swedish"
 msgstr "ruotsalainen"
 
-#: application/views/debug/index.php:717
+#: application/views/debug/index.php:717 application/views/debug/index.php:810
 msgid "Turkish"
 msgstr "turkkilainen"
 
@@ -11867,8 +11912,8 @@ msgstr "Lokaattorin muotoilu"
 msgid ""
 "Enter multiple (4-digit) grids separated with commas. For example: IO77,IO78"
 msgstr ""
-"Syötä useita (4-numeroisia) ruutuja pilkulla erotettuna. Esimerkiksi: IO77,"
-"IO78"
+"Syötä useita (4-numeroisia) ruutuja pilkulla erotettuna. Esimerkiksi: "
+"IO77,IO78"
 
 #: application/views/interface_assets/footer.php:115
 msgid "live"
@@ -12952,8 +12997,8 @@ msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
-"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä DXCC:"
-"tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
+"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä "
+"DXCC:tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
 
 #: application/views/logbookadvanced/checkresult.php:393
 msgid "QSO DXCC"
@@ -15380,8 +15425,8 @@ msgid ""
 "Requested QSLs are any QSOs with a value of 'Requested' or 'Queued' in their "
 "'QSL Sent' field."
 msgstr ""
-"Pyydetyt QSLt ovat kaikki QSOt, joiden ”QSL lähetetty” -kentän arvo on ”"
-"Pyydetty” tai ”Jonossa”."
+"Pyydetyt QSLt ovat kaikki QSOt, joiden ”QSL lähetetty” -kentän arvo on "
+"”Pyydetty” tai ”Jonossa”."
 
 #: application/views/qslprint/index.php:42
 #: application/views/qslprint/qslprint.php:34
@@ -17423,8 +17468,8 @@ msgid ""
 "Attention: You need to set an active station location. Go to Callsign-"
 ">Station Location to select one."
 msgstr ""
-"Huomio: Sinun täytyy asettaa aktiivinen aseman sijainti. Mene kohtaan Kutsu->"
-"Aseman sijainti valitaksesi yhden."
+"Huomio: Sinun täytyy asettaa aktiivinen aseman sijainti. Mene kohtaan Kutsu-"
+">Aseman sijainti valitaksesi yhden."
 
 #: application/views/stationsetup/stationsetup.php:116
 msgid ""
@@ -19110,6 +19155,70 @@ msgstr ""
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
+msgstr ""
+
+#: application/controllers/Debug.php:114
+msgid "(empty)"
+msgstr ""
+
+#: application/views/debug/index.php:404
+msgid "Cache Information"
+msgstr ""
+
+#: application/views/debug/index.php:408
+msgid "Current Configuration"
+msgstr ""
+
+#: application/views/debug/index.php:411
+msgctxt "Cache Adapter"
+msgid "Primary adapter"
+msgstr ""
+
+#: application/views/debug/index.php:422
+msgctxt "Cache Backup Adapter (Fallback)"
+msgid "Backup adapter"
+msgstr ""
+
+#: application/views/debug/index.php:431
+msgctxt "Cache Path"
+msgid "Path for files adapter"
+msgstr ""
+
+#: application/views/debug/index.php:435
+msgctxt "Cache Key Prefix"
+msgid "Key Prefix"
+msgstr ""
+
+#: application/views/debug/index.php:441
+msgid ""
+"Cache is currently using the backup adapter because the primary is "
+"unavailable."
+msgstr ""
+
+#: application/views/debug/index.php:445
+msgid "Cache is working properly. Everything okay!"
+msgstr ""
+
+#: application/views/debug/index.php:450
+msgid "Cache Details"
+msgstr ""
+
+#: application/views/debug/index.php:453
+msgctxt "Cache Details"
+msgid "Total Size"
+msgstr ""
+
+#: application/views/debug/index.php:459
+msgctxt "Cache Key"
+msgid "Number of Keys"
+msgstr ""
+
+#: application/views/debug/index.php:470
+msgid "Available Adapters"
+msgstr ""
+
+#: application/views/debug/index.php:487
+msgid "Clear Cache"
 msgstr ""
 
 #~ msgid "Bandmap"

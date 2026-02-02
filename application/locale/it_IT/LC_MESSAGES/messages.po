@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-02 08:14+0000\n"
+"POT-Creation-Date: 2026-02-02 18:39+0000\n"
 "PO-Revision-Date: 2026-01-24 15:29+0000\n"
 "Last-Translator: Luca <lucabennati1996@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -849,12 +849,12 @@ msgstr "Modifica Cronjob"
 
 #: application/controllers/Cron.php:227 application/controllers/Cron.php:228
 #: application/views/cron/index.php:96 application/views/cron/index.php:98
-#: application/views/cron/index.php:100 application/views/debug/index.php:524
-#: application/views/debug/index.php:531 application/views/debug/index.php:537
-#: application/views/debug/index.php:543 application/views/debug/index.php:549
-#: application/views/debug/index.php:555 application/views/debug/index.php:561
-#: application/views/debug/index.php:567 application/views/debug/index.php:573
-#: application/views/debug/index.php:579 application/views/debug/index.php:585
+#: application/views/cron/index.php:100 application/views/debug/index.php:617
+#: application/views/debug/index.php:624 application/views/debug/index.php:630
+#: application/views/debug/index.php:636 application/views/debug/index.php:642
+#: application/views/debug/index.php:648 application/views/debug/index.php:654
+#: application/views/debug/index.php:660 application/views/debug/index.php:666
+#: application/views/debug/index.php:672 application/views/debug/index.php:678
 msgid "never"
 msgstr "mai"
 
@@ -964,35 +964,39 @@ msgstr "Nessun profilo stazione trovato da caricare su DCL"
 msgid "Key(s) Deleted."
 msgstr "Chiave/i eliminata/e."
 
-#: application/controllers/Debug.php:120
+#: application/controllers/Debug.php:114
+msgid "(empty)"
+msgstr ""
+
+#: application/controllers/Debug.php:132
 msgid "Debug"
 msgstr "Debug"
 
-#: application/controllers/Debug.php:159
+#: application/controllers/Debug.php:171
 msgid "Migrate data now"
 msgstr "Esegui migrazione ora"
 
-#: application/controllers/Debug.php:162
+#: application/controllers/Debug.php:174
 msgid "Migration already done. Run again?"
 msgstr "Migrazione già effettuata. Eseguirla ancora?"
 
-#: application/controllers/Debug.php:166
+#: application/controllers/Debug.php:178
 msgid "No data to migrate"
 msgstr "Nessun dato da migrare"
 
-#: application/controllers/Debug.php:170 application/controllers/Debug.php:175
+#: application/controllers/Debug.php:182 application/controllers/Debug.php:187
 msgid "No migration possible"
 msgstr "Nessuna migrazione da fare"
 
-#: application/controllers/Debug.php:240
+#: application/controllers/Debug.php:252
 msgid "Wavelog was updated successfully!"
 msgstr "Wavelog aggiornato con successo!"
 
-#: application/controllers/Debug.php:258
+#: application/controllers/Debug.php:270
 msgid "Selfupdate() not available. Check the Error Log."
 msgstr "Selfupdate() non disponibile. Controllare il log errori."
 
-#: application/controllers/Debug.php:302
+#: application/controllers/Debug.php:317
 msgid ""
 "File Migration was successfull, but please check also manually. If "
 "everything seems right you can delete the folders 'assets/qslcard' and "
@@ -1002,7 +1006,7 @@ msgstr ""
 "controllare anche manualmente. Se tutto sembra a posto, puoi eliminare le "
 "cartelle “assets/qslcard” e “images/eqsl_card_images”."
 
-#: application/controllers/Debug.php:305
+#: application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
 msgstr "Migrazione files fallita. Prego controllare il log errori."
 
@@ -1490,7 +1494,7 @@ msgstr ""
 #: application/views/contesting/index.php:265
 #: application/views/continents/index.php:39 application/views/csv/index.php:42
 #: application/views/dashboard/index.php:4
-#: application/views/debug/index.php:608
+#: application/views/debug/index.php:701
 #: application/views/distancerecords/index.php:19
 #: application/views/dxatlas/index.php:42
 #: application/views/eqsl/analysis.php:39
@@ -1815,7 +1819,7 @@ msgstr "Distanza"
 #: application/views/contesting/index.php:264
 #: application/views/continents/index.php:30 application/views/csv/index.php:31
 #: application/views/dashboard/index.php:15
-#: application/views/debug/index.php:609 application/views/dxatlas/index.php:31
+#: application/views/debug/index.php:702 application/views/dxatlas/index.php:31
 #: application/views/eqsl/download.php:41
 #: application/views/eqslcard/index.php:32
 #: application/views/gridmap/index.php:63 application/views/kml/index.php:19
@@ -2583,12 +2587,12 @@ msgstr "Impostazioni dei passaggi salvate"
 msgid "No presets available"
 msgstr "Nessuna preimpostazione disponibile"
 
-#: application/controllers/Sattimers.php:41
+#: application/controllers/Sattimers.php:45
 #, php-format
 msgid "You have no station locations. Go %s to create it!"
 msgstr "Non hai stazioni impostate. Vai %s per crearle!"
 
-#: application/controllers/Sattimers.php:41
+#: application/controllers/Sattimers.php:45
 #: application/views/awards/counties/index.php:8
 #: application/views/awards/dok/index.php:10
 #: application/views/awards/iota/index.php:21
@@ -2599,7 +2603,7 @@ msgstr "Non hai stazioni impostate. Vai %s per crearle!"
 msgid "here"
 msgstr "qui"
 
-#: application/controllers/Sattimers.php:44
+#: application/controllers/Sattimers.php:48
 #: application/views/sattimers/index.php:13
 msgid "Satellite Timers"
 msgstr "Orari satelliti"
@@ -3190,7 +3194,7 @@ msgstr "Utente %s scollegato."
 msgid "Station Name"
 msgstr "Nome della stazione"
 
-#: application/controllers/User.php:1302 application/views/debug/index.php:610
+#: application/controllers/User.php:1302 application/views/debug/index.php:703
 #: application/views/public_search/result.php:17
 #: application/views/station_profile/create.php:59
 #: application/views/station_profile/edit.php:76
@@ -3580,14 +3584,14 @@ msgstr "Nessun nominatio fornito"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC deve essere numerico"
 
-#: application/models/Logbook_model.php:4643
+#: application/models/Logbook_model.php:4647
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
 "Callsign della stazione errato ( %s) durante l'importazione di QSO con %s "
 "per %s: SALTATO"
 
-#: application/models/Logbook_model.php:4657
+#: application/models/Logbook_model.php:4661
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3595,11 +3599,11 @@ msgstr ""
 "Hai cercato di importare un QSO senza una data valida. Questo QSO non è "
 "stato importato. Non è valido"
 
-#: application/models/Logbook_model.php:4666
+#: application/models/Logbook_model.php:4670
 msgid "QSO on"
 msgstr "QSO alle"
 
-#: application/models/Logbook_model.php:4666
+#: application/models/Logbook_model.php:4670
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3607,7 +3611,7 @@ msgstr ""
 "Hai tentato di importare un QSO senza alcun nominativo di chiamata. Questo "
 "QSO non è stato importato perchè non valido"
 
-#: application/models/Logbook_model.php:4715
+#: application/models/Logbook_model.php:4719
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3616,64 +3620,64 @@ msgstr ""
 "QSO su %s: Hai provato a importare un QSO senza una banda specificata. "
 "Questo QSO non è stato importato. È non valido"
 
-#: application/models/Logbook_model.php:4988
+#: application/models/Logbook_model.php:4992
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "La data di ricezione QSL non è valida (AAAAMMGG)"
 
-#: application/models/Logbook_model.php:4999
+#: application/models/Logbook_model.php:5003
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "La data di invio QSL non è valida (AAAAMMGG)"
 
-#: application/models/Logbook_model.php:5060
+#: application/models/Logbook_model.php:5064
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "La data di upload Clublog non è valida (AAAAMMGG)"
 
-#: application/models/Logbook_model.php:5433
+#: application/models/Logbook_model.php:5437
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Duplicata"
 
-#: application/models/Logbook_model.php:5498
-#: application/models/Logbook_model.php:5593
+#: application/models/Logbook_model.php:5502
+#: application/models/Logbook_model.php:5597
 msgid "QSO could not be matched"
 msgstr "Impossibile abbinare QSO"
 
-#: application/models/Logbook_model.php:5506
+#: application/models/Logbook_model.php:5510
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "confermato da LoTW/Clublog/eQSL/Contest"
 
-#: application/models/Logbook_model.php:5512
+#: application/models/Logbook_model.php:5516
 msgid "confirmed by award manager"
 msgstr "confermato dal responsabile del premio"
 
-#: application/models/Logbook_model.php:5516
+#: application/models/Logbook_model.php:5520
 msgid "confirmed by cross-check of DCL data"
 msgstr "confermato dal controllo incrociato dei dati DCL"
 
-#: application/models/Logbook_model.php:5520
+#: application/models/Logbook_model.php:5524
 msgid "confirmation pending"
 msgstr "Conferma in sospeso"
 
-#: application/models/Logbook_model.php:5523
+#: application/models/Logbook_model.php:5527
 msgid "unconfirmed"
 msgstr "Non confermato"
 
-#: application/models/Logbook_model.php:5526
+#: application/models/Logbook_model.php:5530
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 msgid "unknown"
 msgstr "sconosciuto"
 
-#: application/models/Logbook_model.php:5596
+#: application/models/Logbook_model.php:5600
 msgid "POTA reference already in log"
 msgstr "Riferimento POTA già presente nel registro di stazione"
 
-#: application/models/Logbook_model.php:5599
+#: application/models/Logbook_model.php:5603
 msgid "QSO updated"
 msgstr "QSO aggiornato"
 
-#: application/models/Logbook_model.php:5993
+#: application/models/Logbook_model.php:5997
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -4582,7 +4586,7 @@ msgstr ""
 #: application/views/contesting/index.php:103
 #: application/views/contesting/index.php:262
 #: application/views/dashboard/index.php:242
-#: application/views/debug/index.php:605
+#: application/views/debug/index.php:698
 #: application/views/distancerecords/index.php:16
 #: application/views/eqsl/analysis.php:36
 #: application/views/eqsl/download.php:36 application/views/eqsl/result.php:33
@@ -4631,7 +4635,7 @@ msgstr "Data"
 #: application/views/contesting/index.php:108
 #: application/views/contesting/index.php:262
 #: application/views/dashboard/index.php:245
-#: application/views/debug/index.php:606
+#: application/views/debug/index.php:699
 #: application/views/distancerecords/index.php:17
 #: application/views/eqsl/analysis.php:37
 #: application/views/eqsl/download.php:37 application/views/eqsl/result.php:34
@@ -4661,7 +4665,7 @@ msgstr "Orario"
 #: application/views/awards/vucc/band.php:18
 #: application/views/contesting/index.php:263
 #: application/views/dcl_views/key_import.php:45
-#: application/views/debug/index.php:607 application/views/debug/index.php:642
+#: application/views/debug/index.php:700 application/views/debug/index.php:735
 #: application/views/dxcalendar/index.php:12
 #: application/views/eqsl/analysis.php:38
 #: application/views/eqsl/download.php:38 application/views/eqsl/result.php:35
@@ -4723,7 +4727,7 @@ msgstr "Dimensione massima del file caricabile: "
 #: application/views/adif/import.php:94 application/views/adif/import.php:358
 #: application/views/clublog/export.php:70
 #: application/views/debug/index.php:193 application/views/debug/index.php:210
-#: application/views/debug/index.php:597 application/views/hrdlog/export.php:25
+#: application/views/debug/index.php:690 application/views/hrdlog/export.php:25
 #: application/views/hrdlog/export.php:74
 #: application/views/interface_assets/footer.php:37
 #: application/views/notes/add.php:23 application/views/notes/edit.php:29
@@ -9652,6 +9656,7 @@ msgstr "Nome ADIF"
 #: application/views/contesting/add.php:44
 #: application/views/contesting/edit.php:43
 #: application/views/contesting/edit.php:46
+#: application/views/debug/index.php:415 application/views/debug/index.php:426
 #: application/views/interface_assets/header.php:586
 #: application/views/mode/create.php:46 application/views/mode/create.php:48
 #: application/views/mode/edit.php:57 application/views/mode/edit.php:60
@@ -10742,7 +10747,7 @@ msgstr "Successo"
 
 #: application/views/debug/index.php:132 application/views/debug/index.php:143
 #: application/views/debug/index.php:154 application/views/debug/index.php:165
-#: application/views/debug/index.php:177
+#: application/views/debug/index.php:177 application/views/debug/index.php:417
 msgid "Failed"
 msgstr "Fallito"
 
@@ -10830,37 +10835,97 @@ msgstr "Installato"
 msgid "Not Installed"
 msgstr "Non installato"
 
+#: application/views/debug/index.php:404
+msgid "Cache Information"
+msgstr ""
+
+#: application/views/debug/index.php:408
+msgid "Current Configuration"
+msgstr ""
+
+#: application/views/debug/index.php:411
+msgctxt "Cache Adapter"
+msgid "Primary adapter"
+msgstr ""
+
+#: application/views/debug/index.php:422
+msgctxt "Cache Backup Adapter (Fallback)"
+msgid "Backup adapter"
+msgstr ""
+
+#: application/views/debug/index.php:431
+msgctxt "Cache Path"
+msgid "Path for files adapter"
+msgstr ""
+
+#: application/views/debug/index.php:435
+msgctxt "Cache Key Prefix"
+msgid "Key Prefix"
+msgstr ""
+
 #: application/views/debug/index.php:441
+msgid ""
+"Cache is currently using the backup adapter because the primary is "
+"unavailable."
+msgstr ""
+
+#: application/views/debug/index.php:445
+msgid "Cache is working properly. Everything okay!"
+msgstr ""
+
+#: application/views/debug/index.php:450
+msgid "Cache Details"
+msgstr ""
+
+#: application/views/debug/index.php:453
+msgctxt "Cache Details"
+msgid "Total Size"
+msgstr ""
+
+#: application/views/debug/index.php:459
+msgctxt "Cache Key"
+msgid "Number of Keys"
+msgstr ""
+
+#: application/views/debug/index.php:470
+msgid "Available Adapters"
+msgstr ""
+
+#: application/views/debug/index.php:487
+msgid "Clear Cache"
+msgstr ""
+
+#: application/views/debug/index.php:534
 msgid "Git Information"
 msgstr "Informazioni su Git"
 
-#: application/views/debug/index.php:445
+#: application/views/debug/index.php:538
 msgid "Branch"
 msgstr "Branch"
 
-#: application/views/debug/index.php:456 application/views/debug/index.php:467
-#: application/views/debug/index.php:477
+#: application/views/debug/index.php:549 application/views/debug/index.php:560
+#: application/views/debug/index.php:570
 #: application/views/lotw_views/index.php:95
 msgid "n/a"
 msgstr "n/a"
 
-#: application/views/debug/index.php:462
+#: application/views/debug/index.php:555
 msgid "Commit"
 msgstr "Commit"
 
-#: application/views/debug/index.php:472
+#: application/views/debug/index.php:565
 msgid "Tag"
 msgstr "Etichetta"
 
-#: application/views/debug/index.php:482
+#: application/views/debug/index.php:575
 msgid "Last Fetch"
 msgstr "Ultimo controllo"
 
-#: application/views/debug/index.php:494
+#: application/views/debug/index.php:587
 msgid "Check for new version"
 msgstr "Controlla se ci sono nuove versioni"
 
-#: application/views/debug/index.php:495
+#: application/views/debug/index.php:588
 #: application/views/logbookadvanced/checkresult.php:52
 #: application/views/logbookadvanced/checkresult.php:68
 #: application/views/logbookadvanced/checkresult.php:78
@@ -10868,77 +10933,77 @@ msgstr "Controlla se ci sono nuove versioni"
 msgid "Update now"
 msgstr "Aggiorna ora"
 
-#: application/views/debug/index.php:513
+#: application/views/debug/index.php:606
 msgid "File download date"
 msgstr "Data di download del file"
 
-#: application/views/debug/index.php:517
+#: application/views/debug/index.php:610
 msgid "File"
 msgstr "File"
 
-#: application/views/debug/index.php:518
+#: application/views/debug/index.php:611
 msgid "Last update"
 msgstr "Ultimo aggiornamento"
 
-#: application/views/debug/index.php:522
+#: application/views/debug/index.php:615
 msgid "DXCC update from Club Log"
 msgstr "Aggiornamento DXCC da Clulog"
 
-#: application/views/debug/index.php:525 application/views/debug/index.php:532
-#: application/views/debug/index.php:538 application/views/debug/index.php:544
-#: application/views/debug/index.php:550 application/views/debug/index.php:556
-#: application/views/debug/index.php:562 application/views/debug/index.php:568
-#: application/views/debug/index.php:574 application/views/debug/index.php:580
-#: application/views/debug/index.php:586
+#: application/views/debug/index.php:618 application/views/debug/index.php:625
+#: application/views/debug/index.php:631 application/views/debug/index.php:637
+#: application/views/debug/index.php:643 application/views/debug/index.php:649
+#: application/views/debug/index.php:655 application/views/debug/index.php:661
+#: application/views/debug/index.php:667 application/views/debug/index.php:673
+#: application/views/debug/index.php:679
 #: application/views/station_profile/edit.php:53
 msgid "Update"
 msgstr "Aggiorna"
 
-#: application/views/debug/index.php:529
+#: application/views/debug/index.php:622
 msgid "DOK file download"
 msgstr "Download del file DOK"
 
-#: application/views/debug/index.php:535
+#: application/views/debug/index.php:628
 msgid "LoTW users download"
 msgstr "Scarica utenti LoTW"
 
-#: application/views/debug/index.php:541
+#: application/views/debug/index.php:634
 msgid "POTA file download"
 msgstr "Download del file POTA"
 
-#: application/views/debug/index.php:547
+#: application/views/debug/index.php:640
 msgid "SCP file download"
 msgstr "Download del file SCP"
 
-#: application/views/debug/index.php:553
+#: application/views/debug/index.php:646
 msgid "SOTA file download"
 msgstr "Download del file SOTA"
 
-#: application/views/debug/index.php:559
+#: application/views/debug/index.php:652
 msgid "WWFF file download"
 msgstr "Download del file WWFF"
 
-#: application/views/debug/index.php:565
+#: application/views/debug/index.php:658
 msgid "TLE update"
 msgstr "Aggiornamento TLE"
 
-#: application/views/debug/index.php:571
+#: application/views/debug/index.php:664
 msgid "Hams Of Note update"
 msgstr "Aggiorna Hams Of Note"
 
-#: application/views/debug/index.php:577
+#: application/views/debug/index.php:670
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:583
+#: application/views/debug/index.php:676
 msgid "VUCC Grids"
 msgstr "Locatori VUCC"
 
-#: application/views/debug/index.php:593
+#: application/views/debug/index.php:686
 msgid "QSO-DB Maintenance"
 msgstr "Manutenzione del database QSO"
 
-#: application/views/debug/index.php:597
+#: application/views/debug/index.php:690
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
@@ -10948,143 +11013,143 @@ msgstr[0] ""
 msgstr[1] ""
 "Il Database contiene %d collegamenti senza un profilo stazione (ubicazione)"
 
-#: application/views/debug/index.php:635
+#: application/views/debug/index.php:728
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr ""
 "Si prega di contrassegnare i QSOs e riassegnarli a una posizione della "
 "stazione esistente:"
 
-#: application/views/debug/index.php:643
+#: application/views/debug/index.php:736
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "Posizione target"
 
-#: application/views/debug/index.php:644 application/views/debug/index.php:655
+#: application/views/debug/index.php:737 application/views/debug/index.php:748
 msgid "Reassign"
 msgstr "Riassegna"
 
-#: application/views/debug/index.php:664
+#: application/views/debug/index.php:757
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr ""
 "Ogni QSO nel tuo database è assegnato a un profilo stazione (posizione)"
 
-#: application/views/debug/index.php:664
+#: application/views/debug/index.php:757
 msgid "Everything ok"
 msgstr "Tutto ok"
 
-#: application/views/debug/index.php:689
+#: application/views/debug/index.php:782
 msgid "Albanian"
 msgstr "Albanese"
 
-#: application/views/debug/index.php:690
+#: application/views/debug/index.php:783
 msgid "Armenian"
 msgstr "Armeno"
 
-#: application/views/debug/index.php:691
+#: application/views/debug/index.php:784
 msgid "Bosnian"
 msgstr "Bosniaco"
 
-#: application/views/debug/index.php:692
+#: application/views/debug/index.php:785
 msgid "Bulgarian"
 msgstr "Bulgaro"
 
-#: application/views/debug/index.php:693
+#: application/views/debug/index.php:786
 msgid "Chinese (Simplified)"
 msgstr "Cinese (semplificato)"
 
-#: application/views/debug/index.php:694
+#: application/views/debug/index.php:787
 msgid "Croatian"
 msgstr "Croato"
 
-#: application/views/debug/index.php:695
+#: application/views/debug/index.php:788
 msgid "Czech"
 msgstr "Ceco"
 
-#: application/views/debug/index.php:696
+#: application/views/debug/index.php:789
 msgid "Dutch"
 msgstr "Olandese"
 
-#: application/views/debug/index.php:697
+#: application/views/debug/index.php:790
 msgid "English"
 msgstr "Inglese"
 
-#: application/views/debug/index.php:698
+#: application/views/debug/index.php:791
 msgid "Estonian"
 msgstr "Estone"
 
-#: application/views/debug/index.php:699
+#: application/views/debug/index.php:792
 msgid "Finnish"
 msgstr "Finlandese"
 
-#: application/views/debug/index.php:700
+#: application/views/debug/index.php:793
 msgid "French"
 msgstr "Francese"
 
-#: application/views/debug/index.php:701
+#: application/views/debug/index.php:794
 msgid "German"
 msgstr "Tedesco"
 
-#: application/views/debug/index.php:702
+#: application/views/debug/index.php:795
 msgid "Greek"
 msgstr "Greco"
 
-#: application/views/debug/index.php:703
+#: application/views/debug/index.php:796
 msgid "Hungarian"
 msgstr "Ungherese"
 
-#: application/views/debug/index.php:704
+#: application/views/debug/index.php:797
 msgid "Italian"
 msgstr "Italiano"
 
-#: application/views/debug/index.php:705
+#: application/views/debug/index.php:798
 msgid "Japanese"
 msgstr "Giapponese"
 
-#: application/views/debug/index.php:706
+#: application/views/debug/index.php:799
 msgid "Latvian"
 msgstr "Lettone"
 
-#: application/views/debug/index.php:707
+#: application/views/debug/index.php:800
 msgid "Lithuanian"
 msgstr "Lituano"
 
-#: application/views/debug/index.php:708
+#: application/views/debug/index.php:801
 msgid "Montenegrin"
 msgstr "Montenegrino"
 
-#: application/views/debug/index.php:709
+#: application/views/debug/index.php:802
 msgid "Polish"
 msgstr "Polacco"
 
-#: application/views/debug/index.php:710
+#: application/views/debug/index.php:803
 msgid "Portuguese"
 msgstr "Portoghese"
 
-#: application/views/debug/index.php:711
+#: application/views/debug/index.php:804
 msgid "Russian"
 msgstr "Russo"
 
-#: application/views/debug/index.php:712
+#: application/views/debug/index.php:805
 msgid "Serbian"
 msgstr "Serbo"
 
-#: application/views/debug/index.php:713
+#: application/views/debug/index.php:806
 msgid "Slovak"
 msgstr "Slovacco"
 
-#: application/views/debug/index.php:714
+#: application/views/debug/index.php:807
 msgid "Slovenian"
 msgstr "Sloveno"
 
-#: application/views/debug/index.php:715
+#: application/views/debug/index.php:808
 msgid "Spanish"
 msgstr "Spagnolo"
 
-#: application/views/debug/index.php:716
+#: application/views/debug/index.php:809
 msgid "Swedish"
 msgstr "Svedese"
 
-#: application/views/debug/index.php:717
+#: application/views/debug/index.php:810
 msgid "Turkish"
 msgstr "Turco"
 

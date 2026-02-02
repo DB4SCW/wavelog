@@ -11,7 +11,6 @@ RUN install-php-extensions \
         redis \
         memcached \
         apcu \
-        wincache \
         gd; \
     \
     a2enmod rewrite; \
