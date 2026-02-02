@@ -2716,7 +2716,11 @@ class Logbook_model extends CI_Model {
 		// Load cache driver for file caching
 		$cache_enabled = $this->config->item('enable_dxcluster_file_cache_worked') === true;
 		if ($cache_enabled && !isset($this->cache)) {
-			$this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
+			$this->load->driver('cache', [
+				'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+				'backup' => $this->config->item('cache_backup') ?? 'file',
+				'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+			]);
 		}
 
 		// Cache TTL in seconds (15 minutes = 900 seconds)

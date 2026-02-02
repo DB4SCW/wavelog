@@ -105,6 +105,18 @@ class Debug extends CI_Controller
 			$data['userdata_status'] = $userdata_status;
 		}
 
+		// Cache Info
+		$cache_info = $this->Debug_model->get_cache_info();
+		$data['cache_available_adapters'] = $cache_info['adapters'];
+		$data['cache_path'] = $cache_info['config']['cache_path'] ?: 'application/cache';
+		$data['cache_adapter'] = ucfirst($cache_info['config']['cache_adapter'] ?? 'file');
+		$data['cache_backup'] = ucfirst($cache_info['config']['cache_backup'] ?? 'file');
+		$data['cache_key_prefix'] = $cache_info['config']['cache_key_prefix'] ?: __("(empty)");
+		$data['active_adapter'] = ucfirst($cache_info['active']['adapter'] ?? ($cache_info['config']['cache_adapter'] ?? 'file'));
+		$data['using_backup'] = !empty($cache_info['active']['using_backup']);
+		$data['details_cache_size'] = $cache_info['details']['size'] ?? '0 B';
+		$data['details_cache_keys_count'] = $cache_info['details']['keys_count'] ?? 0;
+		
 		$data['dxcc_update'] = $this->cron_model->cron('update_dxcc')->row();
 		$data['dok_update'] = $this->cron_model->cron('update_update_dok')->row();
 		$data['lotw_user_update'] = $this->cron_model->cron('update_lotw_users')->row();
@@ -288,23 +300,25 @@ class Debug extends CI_Controller
 		echo json_encode($commit_hash);
 	}
 
-	public function migrate_userdata() {
-		// Check if users logged in
-		$this->load->model('user_model');
-		if ($this->user_model->validate_session() == 0) {
-			// user is not logged in
-			redirect('user/login');
-		} else {
-			$this->load->model('debug_model');
-			$migrate = $this->debug_model->migrate_userdata();
+	public function clear_cache() {
+		$this->load->model('Debug_model');
+		$status = $this->Debug_model->clear_cache();
 
-			if ($migrate == true) {
-				$this->session->set_flashdata('success', __("File Migration was successfull, but please check also manually. If everything seems right you can delete the folders 'assets/qslcard' and 'images/eqsl_card_images'."));
-				redirect('debug');
-			} else {
-				$this->session->set_flashdata('error', __("File Migration failed. Please check the Error Log."));
-				redirect('debug');
-			}
+		header('Content-Type: application/json');
+		echo json_encode(['status' => (bool) $status]);
+		return;
+	}
+
+	public function migrate_userdata() {
+		$this->load->model('debug_model');
+		$migrate = $this->debug_model->migrate_userdata();
+
+		if ($migrate == true) {
+			$this->session->set_flashdata('success', __("File Migration was successfull, but please check also manually. If everything seems right you can delete the folders 'assets/qslcard' and 'images/eqsl_card_images'."));
+			redirect('debug');
+		} else {
+			$this->session->set_flashdata('error', __("File Migration failed. Please check the Error Log."));
+			redirect('debug');
 		}
 	}
 }
