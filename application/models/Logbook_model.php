@@ -86,7 +86,7 @@ class Logbook_model extends CI_Model {
 		$prop_mode = $qso_data['prop_mode'] ?? NULL;
 		$email = $qso_data['email'] ?? NULL;
 		$region = $qso_data['region'] ?? NULL;
-		
+
 		// In case of a satellite name we force the $prop_mode to SAT
 		$prop_mode = ($qso_data['sat_name'] ?? NULL) != NULL ? "SAT" : $prop_mode;
 
@@ -118,7 +118,7 @@ class Logbook_model extends CI_Model {
 
 		$contestid = $qso_data['contestname'] ?? NULL;
 		$tx_power = filter_var(($qso_data['transmit_power'] ?? NULL), FILTER_VALIDATE_FLOAT) ?? NULL;
-		
+
 
 		if (($qso_data['radio'] ?? '') == 'ws') {	// WebSocket
 			$radio_name = $qso_data['radio_ws_name'];
@@ -131,9 +131,9 @@ class Logbook_model extends CI_Model {
 
 		// Cache DXCC lookup to avoid calling check_dxcc_table() 4 times if atleast one of these fields is empty
 		$dxcc = NULL;
-		$needs_dxcc_lookup 	= 	empty($qso_data['country']) || 
-								empty($qso_data['cqz']) || 
-								empty($qso_data['dxcc_id']) || 
+		$needs_dxcc_lookup 	= 	empty($qso_data['country']) ||
+								empty($qso_data['cqz']) ||
+								empty($qso_data['dxcc_id']) ||
 								empty($qso_data['continent']);
 
 		if ($needs_dxcc_lookup) {
@@ -235,7 +235,7 @@ class Logbook_model extends CI_Model {
 		} else {
 			$band = $qso_data['band'];
 		}
-		
+
 		// Create array with QSO Data
 		$data = array(
 			'COL_TIME_ON' => $datetime,
@@ -5403,7 +5403,7 @@ class Logbook_model extends CI_Model {
 					$data['COL_STATION_CALLSIGN'] = strtoupper(trim($row['station_callsign']));
 					$data['COL_MY_DXCC'] = strtoupper(trim($row['station_dxcc']));
 					$data['COL_MY_COUNTRY'] = strtoupper(trim($row['station_country']));
-					$data['COL_MY_CNTY'] = strtoupper(trim($row['station_cnty']));
+					$data['COL_MY_CNTY'] = strtoupper(trim($row['station_cnty'] ?? ''));
 					$data['COL_MY_CQ_ZONE'] = strtoupper(trim($row['station_cq']));
 					$data['COL_MY_ITU_ZONE'] = strtoupper(trim($row['station_itu']));
 				}
