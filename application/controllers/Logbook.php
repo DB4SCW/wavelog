@@ -952,7 +952,9 @@ class Logbook extends CI_Controller {
 			if (is_array($source_callbooks)) {
 				$callsigninfo['error'] = '<b>'.__('All callbook lookups failed or provided no results.').'</b>';
 				foreach($source_callbooks as $source) {
-					$callsigninfo['error'] .= "<br />".$callsigninfo['callsign']['error_'.$source.'_name'].': '.$callsigninfo['callsign']['error_'.$source];
+					if (isset($callsigninfo['callsign']['error_'.$source]) && isset($callsigninfo['callsign']['error_'.$source.'_name'])) {
+						$callsigninfo['error'] .= "<br />".$callsigninfo['callsign']['error_'.$source.'_name'].': '.$callsigninfo['callsign']['error_'.$source];
+					}
 				}
 			} else {
 				if (isset($callsigninfo['callsign']['error'])) {
