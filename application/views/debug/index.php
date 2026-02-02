@@ -401,38 +401,38 @@
             </div>
             <!-- Cache Information Card -->
             <div class="card">
-                <div class="card-header"><?= __("Cache Configuration"); ?></div>
+                <div class="card-header"><?= __("Cache Information"); ?></div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <p><u><?= __("Current Configuration"); ?></u></p>
-                            <table width="100%" class="table table-sm table-striped">
+                            <table width="100%">
                                 <tr>
-                                    <td><strong><?= _pgettext("Cache Adapter","Primary adapter"); ?></strong></td>
+                                    <td><?= _pgettext("Cache Adapter","Primary adapter"); ?></td>
                                     <td>
                                         <span class="badge text-bg-primary"><?php echo $cache_adapter; ?></span>
                                         <?php if ($cache_adapter == $active_adapter) { ?>
-                                            <span class="badge text-bg-success float-end"><?= __("Active"); ?></span>
+                                            <span class="badge text-bg-success"><?= __("Active"); ?></span>
                                         <?php } else { ?>
-                                            <span class="badge text-bg-danger float-end"><?= __("Failed"); ?></span>
+                                            <span class="badge text-bg-danger"><?= __("Failed"); ?></span>
                                         <?php } ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong><?= _pgettext("Cache Backup Adapter (Fallback)","Backup adapter"); ?></strong></td>
+                                    <td><?= _pgettext("Cache Backup Adapter (Fallback)","Backup adapter"); ?></td>
                                     <td>
                                         <span class="badge text-bg-primary"><?php echo $cache_backup; ?></span>
                                         <?php if ($cache_backup == $active_adapter) { ?>
-                                            <span class="badge text-bg-success float-end"><?= __("Active"); ?></span>
+                                            <span class="badge text-bg-success"><?= __("Active"); ?></span>
                                         <?php } ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong><?= _pgettext("Cache Path","Path for files adapter"); ?></strong></td>
+                                    <td><?= _pgettext("Cache Path","Path for files adapter"); ?></td>
                                     <td><code><?php echo $cache_path; ?></code></td>
                                 </tr>
                                 <tr>
-                                    <td><strong><?= _pgettext("Cache Key Prefix","Key Prefix"); ?></strong></td>
+                                    <td><?= _pgettext("Cache Key Prefix","Key Prefix"); ?></td>
                                     <td><code><?php echo $cache_key_prefix; ?></code></td>
                                 </tr>
                             </table>
@@ -448,15 +448,15 @@
                         </div>
                         <div class="col-md-6">
                             <p><u><?= __("Cache Details"); ?></u></p>
-                            <table width="100%" class="table table-sm table-striped">
+                            <table width="100%">
                                 <tr>
-                                    <td><strong><?= _pgettext("Cache Details","Total Size"); ?></strong></td>
+                                    <td><?= _pgettext("Cache Details","Total Size"); ?></td>
                                     <td>
                                         <span class="badge text-bg-primary"><?php echo $details_cache_size; ?></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong><?= _pgettext("Cache Key","Number of Keys"); ?></strong></td>
+                                    <td><?= _pgettext("Cache Key","Number of Keys"); ?></td>
                                     <td>
                                         <span class="badge text-bg-primary"><?php echo $details_cache_keys_count; ?></span>
                                     </td>
@@ -464,21 +464,29 @@
                             </table>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
-                        <button type="button" id="clear_cache_button" class="btn btn-sm btn-secondary">
-                            <?= __("Clear Cache"); ?>
-                        </button>
-                    </div>
                     <div class="border-top pt-3 mt-3">
-                        <p><u><?= __("Available Adapters"); ?></u></p>
-                        <div>
-                            <?php foreach ($cache_available_adapters as $adapter => $supported) { ?>
-                                <?php if ($supported) { ?>
-                                    <span class="badge text-bg-success"><?php echo ucfirst($adapter); ?></span>
-                                <?php } else { ?>
-                                    <span class="badge text-bg-secondary" style="opacity: 0.5;"><?php echo ucfirst($adapter); ?></span>
-                                <?php } ?>
-                            <?php } ?>
+                        <div class="row">
+                            <div class="col">
+                                <p><u><?= __("Available Adapters"); ?></u></p>
+                                <div>
+                                    <?php foreach ($cache_available_adapters as $adapter => $supported) { ?>
+                                        <?php // Special case: Files adapter requires writable cache folder
+                                         if ($adapter == 'file' && $cache_path == 'application/cache' && $cache_folder == false) {
+                                            $supported = false;
+                                        } ?>
+                                        <?php if ($supported) { ?>
+                                            <span class="badge text-bg-success"><?php echo ucfirst($adapter); ?></span>
+                                        <?php } else { ?>
+                                            <span class="badge text-bg-secondary" style="opacity: 0.5;"><?php echo ucfirst($adapter); ?></span>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="col-auto d-flex align-items-center">
+                                <button type="button" id="clear_cache_button" class="btn btn-sm btn-secondary">
+                                    <?= __("Clear Cache"); ?>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
