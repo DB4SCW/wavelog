@@ -899,7 +899,7 @@ class Logbook_model extends CI_Model {
 			}
 
 			// Invalidate DXCluster cache for this callsign
-			$this->dxclustercache->invalidateForCallsign($data['COL_CALL']);
+			$this->dxclustercache->invalidate_for_callsign($data['COL_CALL']);
 
 			// Return QSO ID for ADIF generation
 			return $last_id;
@@ -1674,7 +1674,7 @@ class Logbook_model extends CI_Model {
 			$retvals['success']=true;
 
 			// Invalidate DXCluster cache for this callsign
-			$this->dxclustercache->invalidateForCallsign($data['COL_CALL']);
+			$this->dxclustercache->invalidate_for_callsign($data['COL_CALL']);
 		} catch (Exception $e) {
 			$retvals['success']=false;
 			$retvals['detail']=$e;
@@ -2746,7 +2746,7 @@ class Logbook_model extends CI_Model {
 
 		// Build cache key with user_id, logbook_ids, and confirmation preference
 		$user_id = $this->session->userdata('user_id');
-		$logbook_ids_key = $this->dxclustercache->getLogbookKey($user_id, $logbooks_locations_array, $user_default_confirmation);
+		$logbook_ids_key = $this->dxclustercache->get_logbook_key($user_id, $logbooks_locations_array, $user_default_confirmation);
 		$spots_by_callsign = []; // Group spots by callsign for processing
 
 		foreach ($spots as $spot) {
@@ -4354,7 +4354,7 @@ class Logbook_model extends CI_Model {
 			$this->db->delete("oqrs");
 
 			// Invalidate DXCluster cache for this callsign
-			$this->dxclustercache->invalidateForCallsign($callsign);
+			$this->dxclustercache->invalidate_for_callsign($callsign);
 		} else {
 			return;
 		}

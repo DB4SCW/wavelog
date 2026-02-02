@@ -24,14 +24,14 @@ class DxclusterCache {
 	/**
 	 * Generate RAW spot cache key (instance-wide, shared by all users)
 	 */
-	public function getRawCacheKey($maxage, $band) {
+	public function get_raw_cache_key($maxage, $band) {
 		return "dxcluster_raw_{$maxage}_{$band}_Any_All";
 	}
 
 	/**
 	 * Generate logbook IDs key component (user-specific)
 	 */
-	public function getLogbookKey($user_id, $logbook_ids, $confirmation_prefs) {
+	public function get_logbook_key($user_id, $logbook_ids, $confirmation_prefs) {
 		$logbook_ids_str = implode('_', $logbook_ids);
 		$confirmation_hash = md5($confirmation_prefs);
 		return "{$user_id}_{$logbook_ids_str}_{$confirmation_hash}";
@@ -66,7 +66,7 @@ class DxclusterCache {
 	 * Invalidate cache after QSO add/edit/delete for current user
 	 * @param string $callsign - The worked callsign
 	 */
-	public function invalidateForCallsign($callsign) {
+	public function invalidate_for_callsign($callsign) {
 		// Skip if worked cache is disabled
 		if ($this->CI->config->item('enable_dxcluster_file_cache_worked') !== true) return;
 
@@ -107,7 +107,7 @@ class DxclusterCache {
 
 		if (empty($logbook_ids)) return null;
 
-		return $this->getLogbookKey($user_id, $logbook_ids, $confirmation_prefs);
+		return $this->get_logbook_key($user_id, $logbook_ids, $confirmation_prefs);
 	}
 
 	// =========================================================================

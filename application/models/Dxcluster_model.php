@@ -71,7 +71,7 @@ class Dxcluster_model extends CI_Model {
 		// Cache key for RAW cluster response (instance-wide, no worked status)
 		// Use DxclusterCache library for centralized key generation
 
-		$raw_cache_key = $this->dxclustercache->getRawCacheKey($maxage, $band);
+		$raw_cache_key = $this->dxclustercache->get_raw_cache_key($maxage, $band);
 
 		// Check cache for raw processed spots (without worked status)
 		$spotsout = null;
@@ -155,7 +155,7 @@ class Dxcluster_model extends CI_Model {
 				$singlespot->frequency = floatval($singlespot->frequency);
 
 				// Validate against amateur band allocations (skip non-amateur frequencies)
-				if (!$this->isFrequencyInAmateurBand($singlespot->frequency)) {
+				if (!$this->_is_frequency_in_amateurband($singlespot->frequency)) {
 					continue;
 				}
 
@@ -168,7 +168,7 @@ class Dxcluster_model extends CI_Model {
 
 			// Only determine mode if not provided by cluster
 			if (!isset($singlespot->mode) || empty($singlespot->mode)) {
-				$singlespot->mode = $this->get_mode($singlespot);
+				$singlespot->mode = $this->_get_mode($singlespot);
 			} else {
 				// Normalize cluster-provided mode to lowercase
 				$singlespot->mode = strtolower($singlespot->mode);
@@ -176,7 +176,7 @@ class Dxcluster_model extends CI_Model {
 
 			// Only determine submode if not provided by cluster
 			if (!isset($singlespot->submode) || empty($singlespot->submode)) {
-				$singlespot->submode = $this->get_submode($singlespot);
+				$singlespot->submode = $this->_get_submode($singlespot);
 			} else {
 				// Normalize cluster-provided submode to uppercase
 				$singlespot->submode = strtoupper($singlespot->submode);
@@ -232,7 +232,7 @@ class Dxcluster_model extends CI_Model {
 			}
 
 			// Extract park references from message
-			$singlespot = $this->enrich_spot_metadata($singlespot);
+			$singlespot = $this->_enrich_spot_metadata($singlespot);
 
 				// Collect spots for batch processing
 				$spotsout[] = $singlespot;
@@ -249,7 +249,7 @@ class Dxcluster_model extends CI_Model {
 			$de_lower = strtolower($de);
 			$filter_continent = ($de != '' && $de != 'Any');
 			$spotsout = array_filter($spotsout, function($spot) use ($mode, $de_lower, $filter_continent) {
-				if ($mode != 'All' && !$this->modefilter($spot, $mode)) return false;
+				if ($mode != 'All' && !$this->_modefilter($spot, $mode)) return false;
 				if ($filter_continent && ($de_lower != strtolower($spot->dxcc_spotter->cont ?? ''))) return false;
 				return true;
 			});
@@ -341,13 +341,14 @@ class Dxcluster_model extends CI_Model {
 
 		return $spotsout;
 	}	// Determine mode with priority: POTA/SOTA mode > message keywords > frequency-based
-	function get_mode($spot) {
+
+	private function _get_mode($spot) {
 		// Priority 0: If spot already has a valid mode from cluster, use it
 		if (isset($spot->mode) && !empty($spot->mode)) {
 			$existingMode = strtolower($spot->mode);
 			// Validate it's a known mode category
 			if (in_array($existingMode, ['cw', 'phone', 'digi', 'ssb'])) {
-				return $this->mapToModeCategory($existingMode);
+				return $this->_map_to_mode_category($existingMode);
 			}
 		}
 
@@ -356,10 +357,10 @@ class Dxcluster_model extends CI_Model {
 		$sotaMode = $spot->sota_mode ?? $spot->dxcc_spotted->sota_mode ?? null;
 
 		if (!empty($potaMode)) {
-			return $this->mapToModeCategory($potaMode);
+			return $this->_map_to_mode_category($potaMode);
 		}
 		if (!empty($sotaMode)) {
-			return $this->mapToModeCategory($sotaMode);
+			return $this->_map_to_mode_category($sotaMode);
 		}
 
 		// Priority 2: Message keywords (explicit mode in message text)
@@ -381,7 +382,7 @@ class Dxcluster_model extends CI_Model {
 
 		// Priority 3: Frequency-based mode (from bandedges table)
 		// If frequency falls within a defined band edge, use that mode
-		$frequencyMode = $this->Frequency2Mode($spot->frequency);
+		$frequencyMode = $this->_frequency_to_mode($spot->frequency);
 		if ($frequencyMode != '') {
 			return $frequencyMode;
 		}
@@ -391,7 +392,7 @@ class Dxcluster_model extends CI_Model {
 	}
 
 	// Map specific mode names to mode categories (phone/cw/digi)
-	function mapToModeCategory($mode) {
+	private function _map_to_mode_category($mode) {
 		$modeUpper = strtoupper($mode);
 
 		// CW modes
@@ -416,7 +417,7 @@ class Dxcluster_model extends CI_Model {
 	}
 
 	// Determine submode for more specific mode classification
-	function get_submode($spot) {
+	private function _get_submode($spot) {
 		// Priority 0: If spot already has a valid submode from cluster, use it
 		if (isset($spot->submode) && !empty($spot->submode)) {
 			return strtoupper($spot->submode);
@@ -466,16 +467,16 @@ class Dxcluster_model extends CI_Model {
 		return strtoupper($mode);
 	}
 
-	function modefilter($spot, $mode) {
+	private function _modefilter($spot, $mode) {
 		$mode = strtolower($mode); // Normalize case
 		$spotMode = strtolower($spot->mode ?? ''); // Get already-determined mode
 
-		// Since get_mode() already determined the mode using priority logic
+		// Since _get_mode() already determined the mode using priority logic
 		// (frequency > POTA/SOTA > message), we can directly compare
 		return $spotMode === $mode;
 	}
 
-	public function Frequency2Mode($frequency) {
+	private function _frequency_to_mode($frequency) {
 		// Ensure frequency is in Hz if input is in kHz
 		if ($frequency < 1_000_000) {
 			$frequency *= 1000;
@@ -489,29 +490,12 @@ class Dxcluster_model extends CI_Model {
 		return '';
 	}
 
-	public function isFrequencyInMode($frequency, $mode) {
-		// Ensure frequency is in Hz if input is in kHz
-		if ($frequency < 1_000_000) {
-			$frequency *= 1000;
-		}
-
-		foreach ($this->bandedges as $band) {
-			if (strtolower($band['mode']) === strtolower($mode)) {
-				if ($frequency >= $band['frequencyfrom'] && $frequency < $band['frequencyto']) {
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
 	/**
 	 * Check if frequency falls within amateur band allocations
 	 * @param float $frequency Frequency in Hz
 	 * @return bool True if frequency is in amateur band
 	 */
-	public function isFrequencyInAmateurBand($frequency) {
+	private function _is_frequency_in_amateurband($frequency) {
 		// Ensure frequency is in Hz if input is in kHz
 		if ($frequency < 1_000_000) {
 			$frequency *= 1000;
@@ -569,98 +553,6 @@ class Dxcluster_model extends CI_Model {
 	    }
     }
 
-	function check_if_continent_worked_in_logbook($cont, $StationLocationsArray = null, $band = null, $mode = null) {
-
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		$this->db->select('COL_CONT');
-		$this->db->where_in('station_id', $logbooks_locations_array);
-		$this->db->where('COL_CONT', $cont);
-
-		if (isset($mode)) {
-			$this->db->where(" COL_MODE in ".$this->Modes->get_modes_from_qrgmode($mode,true));
-		}
-
-		$band = ($band == 'All') ? null : $band;
-		if ($band != null && $band != 'SAT') {
-			$this->db->where('COL_BAND', $band);
-		} else if ($band == 'SAT') {
-			// Where col_sat_name is not empty
-			$this->db->where('COL_SAT_NAME !=', '');
-		}
-		$this->db->limit('2');
-
-		$query = $this->db->get($this->config->item('table_name'));
-		return $query->num_rows();
-	}
-
-	function check_if_continent_cnfmd_in_logbook($cont, $StationLocationsArray = null, $band = null, $mode = null) {
-
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		$user_default_confirmation = $this->session->userdata('user_default_confirmation');
-		$extrawhere = '';
-		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'Q') !== false) {
-			$extrawhere = "COL_QSL_RCVD='Y'";
-		}
-		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'L') !== false) {
-			if ($extrawhere != '') {
-				$extrawhere .= " OR";
-			}
-			$extrawhere .= " COL_LOTW_QSL_RCVD='Y'";
-		}
-		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'E') !== false) {
-			if ($extrawhere != '') {
-				$extrawhere .= " OR";
-			}
-			$extrawhere .= " COL_EQSL_QSL_RCVD='Y'";
-		}
-
-		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'Z') !== false) {
-			if ($extrawhere != '') {
-				$extrawhere .= " OR";
-			}
-			$extrawhere .= " COL_QRZCOM_QSO_DOWNLOAD_STATUS='Y'";
-		}
-
-
-		$this->db->select('COL_CONT');
-		$this->db->where_in('station_id', $logbooks_locations_array);
-		$this->db->where('COL_CONT', $cont);
-
-		if (isset($mode)) {
-			$this->db->where(" COL_MODE in ".$this->Modes->get_modes_from_qrgmode($mode,true));
-		}
-
-		$band = ($band == 'All') ? null : $band;
-		if ($band != null && $band != 'SAT') {
-			$this->db->where('COL_BAND', $band);
-		} else if ($band == 'SAT') {
-			// Where col_sat_name is not empty
-			$this->db->where('COL_SAT_NAME !=', '');
-		}
-		if ($extrawhere != '') {
-			$this->db->where('(' . $extrawhere . ')');
-		} else {
-			$this->db->where("1=0");
-		}
-		$this->db->limit('2');
-
-		$query = $this->db->get($this->config->item('table_name'));
-
-		return $query->num_rows();
-	}
-
 	/**
 	 * Enrich spot metadata with park references and contest detection
 	 * Extracts SOTA/POTA/IOTA/WWFF references and detects contest spots
@@ -668,7 +560,7 @@ class Dxcluster_model extends CI_Model {
 	 * @param object $spot - Spot object with message and dxcc_spotted properties
 	 * @return object - Spot object with enriched dxcc_spotted containing references and isContest flag
 	 */
-	function enrich_spot_metadata($spot) {
+	private function _enrich_spot_metadata($spot) {
 		// Ensure dxcc_spotted object exists
 		if (!property_exists($spot, 'dxcc_spotted') || !is_object($spot->dxcc_spotted)) {
 			$spot->dxcc_spotted = (object)[];

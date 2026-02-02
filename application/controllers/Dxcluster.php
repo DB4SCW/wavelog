@@ -15,7 +15,7 @@ class Dxcluster extends CI_Controller {
 	}
 
 
-	function spots($band, $age = '', $de = '', $mode = 'All') {
+	public function spots($band, $age = '', $de = '', $mode = 'All') {
 		// Sanitize inputs
 		$band = $this->security->xss_clean($band);
 		$mode = $this->security->xss_clean($mode);
@@ -52,7 +52,7 @@ class Dxcluster extends CI_Controller {
 		}
 	}
 
-	function qrg_lookup($qrg) {
+	public function qrg_lookup($qrg) {
 		$call_found = $this->dxcluster_model->dxc_qrg_lookup($this->security->xss_clean($qrg));
 		header('Content-Type: application/json');
 		if ($call_found) {
@@ -63,7 +63,7 @@ class Dxcluster extends CI_Controller {
 		}
 	}
 
-	function call($call) {
+	public function call($call) {
 		$date = date('Y-m-d', time());
 		$dxccobj = new Dxcc($date);
 
