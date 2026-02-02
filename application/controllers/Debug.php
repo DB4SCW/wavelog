@@ -301,13 +301,6 @@ class Debug extends CI_Controller
 	}
 
 	public function clear_cache() {
-		$this->load->model('user_model');
-		if ($this->user_model->authorize(2) == false) {
-			header('Content-Type: application/json');
-			echo json_encode(['status' => false, 'message' => __("You're not allowed to do that!")]);
-			return;
-		}
-
 		$this->load->model('Debug_model');
 		$status = $this->Debug_model->clear_cache();
 
@@ -317,22 +310,15 @@ class Debug extends CI_Controller
 	}
 
 	public function migrate_userdata() {
-		// Check if users logged in
-		$this->load->model('user_model');
-		if ($this->user_model->validate_session() == 0) {
-			// user is not logged in
-			redirect('user/login');
-		} else {
-			$this->load->model('debug_model');
-			$migrate = $this->debug_model->migrate_userdata();
+		$this->load->model('debug_model');
+		$migrate = $this->debug_model->migrate_userdata();
 
-			if ($migrate == true) {
-				$this->session->set_flashdata('success', __("File Migration was successfull, but please check also manually. If everything seems right you can delete the folders 'assets/qslcard' and 'images/eqsl_card_images'."));
-				redirect('debug');
-			} else {
-				$this->session->set_flashdata('error', __("File Migration failed. Please check the Error Log."));
-				redirect('debug');
-			}
+		if ($migrate == true) {
+			$this->session->set_flashdata('success', __("File Migration was successfull, but please check also manually. If everything seems right you can delete the folders 'assets/qslcard' and 'images/eqsl_card_images'."));
+			redirect('debug');
+		} else {
+			$this->session->set_flashdata('error', __("File Migration failed. Please check the Error Log."));
+			redirect('debug');
 		}
 	}
 }
