@@ -409,7 +409,6 @@ $config['error_views_path'] = '';
 |     - 'redis'     : Redis in-memory cache (requires Redis server & extension)
 |     - 'memcached' : Memcached (requires Memcached server & extension)
 |     - 'apcu'      : APCu in-memory cache (requires APCu extension)
-|     - 'wincache'  : Windows Cache (requires WinCache extension)
 |
 | 'cache_backup'
 |     Fallback adapter if primary adapter fails or is unavailable.
