@@ -106,7 +106,7 @@ class Debug extends CI_Controller
 		}
 
 		// Cache Info
-		$cache_info = $this->debug_model->get_cache_info();
+		$cache_info = $this->Debug_model->get_cache_info();
 		$data['cache_available_adapters'] = $cache_info['adapters'];
 		$data['cache_path'] = $cache_info['config']['cache_path'] ?: 'application/cache';
 		$data['cache_adapter'] = ucfirst($cache_info['config']['cache_adapter'] ?? 'file');
