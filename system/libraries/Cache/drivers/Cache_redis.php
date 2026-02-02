@@ -100,9 +100,9 @@ class CI_Cache_redis extends CI_Driver
 	 */
 	public function __construct()
 	{
-		if ( ! $this->is_supported())
+		if ( ! extension_loaded('redis'))
 		{
-			log_message('error', 'Cache: Failed to create Redis object; extension not loaded or redis not available?');
+			log_message('error', 'Cache: Failed to create Redis object; extension not loaded?');
 			return;
 		}
 
@@ -133,21 +133,30 @@ class CI_Cache_redis extends CI_Driver
 
 		$this->_redis = new Redis();
 
-		// The following calls used to be wrapped in a try ... catch
-		// and just log an error, but that only causes more errors later.
-		if ( ! $this->_redis->connect($config['host'], ($config['host'][0] === '/' ? 0 : $config['port']), $config['timeout']))
+		try
 		{
-			log_message('error', 'Cache: Redis connection failed. Check your configuration.');
+			if ( ! $this->_redis->connect($config['host'], ($config['host'][0] === '/' ? 0 : $config['port']), $config['timeout']))
+			{
+				log_message('error', 'Cache: Redis connection failed. Check your configuration.');
+				return;
+			}
+		}
+		catch (Exception $e)
+		{
+			log_message('error', 'Cache: Redis connection failed: '.$e->getMessage());
+			return;
 		}
 
 		if (isset($config['password']) && ! $this->_redis->auth($config['password']))
 		{
 			log_message('error', 'Cache: Redis authentication failed.');
+			return;
 		}
 
 		if (isset($config['database']) && $config['database'] > 0 && ! $this->_redis->select($config['database']))
 		{
 			log_message('error', 'Cache: Redis select database failed.');
+			return;
 		}
 	}
 
@@ -346,12 +355,13 @@ class CI_Cache_redis extends CI_Driver
 
 		if ( ! isset($this->_redis))
 		{
+			log_message('debug', 'Cache: Redis extension is loaded but no connection is present.');
 			return FALSE;
 		}
 
 		try
 		{
-			return $this->_redis->ping();
+			return ($this->_redis->ping() !== FALSE);
 		}
 		catch (Exception $e)
 		{
