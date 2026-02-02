@@ -2,10 +2,10 @@
 /application/config/config.php
 /application/config/redis.php
 /application/config/memcached.php
-/application/config/*/config.php
-/application/config/*/database.php
-/application/config/*/redis.php
-/application/config/*/memcached.php
+/application/config/**/config.php
+/application/config/**/database.php
+/application/config/**/redis.php
+/application/config/**/memcached.php
 /application/logs/*
 /application/cache/*
 /backup/*.adi
