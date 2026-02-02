@@ -738,6 +738,14 @@ class User_Model extends CI_Model {
 	function authorize($level) {
 		$u = $this->get_by_id($this->session->userdata('user_id'));
 		$l = $this->config->item('auth_mode');
+
+		// Run the cache garbage collector here, probability check is already built in
+		// We run this only for file cache as other adapters have their own GC methods
+		if ($this->config->item('cache_adapter') == 'file') {
+			$this->load->library('GarbageCollector');
+			$this->garbagecollector->run();
+		}
+
 		// Check to see if the minimum level of access is higher than
 		// the user's own level. If it is, use that.
 		if($this->config->item('auth_mode') > $level) {
