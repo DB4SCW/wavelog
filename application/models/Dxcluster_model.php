@@ -27,8 +27,11 @@ class Dxcluster_model extends CI_Model {
 		'ISCAT', 'JT6M', 'FST4', 'FST4W', 'FREEDV', 'VARA'
 	];
 
+	protected $cache_band_enabled;
+
 	public function __construct() {
-		$this->load->Model('Modes');
+		$this->load->is_loaded('Modes') ?: $this->load->model('Modes');
+
 		$this->db->where('bandedges.userid', $this->session->userdata('user_id'));
 		$query = $this->db->get('bandedges');
 		$result = $query->result_array();
@@ -41,24 +44,12 @@ class Dxcluster_model extends CI_Model {
 			$query = $this->db->get('bandedges');
 			$this->bandedges = $query->result_array();
 		}
+
+		$this->cache_band_enabled = ($this->config->item('enable_dxcluster_file_cache_band') ?? false);
 	}
 
 	// Main function to get spot list from DXCache and process it
 	public function dxc_spotlist($band = '20m', $maxage = 60, $de = '', $mode = 'All') {
-		$this->load->helper(array('psr4_autoloader'));
-
-		// Check if file caching is enabled in config
-		$cache_band_enabled = $this->config->item('enable_dxcluster_file_cache_band') === true;
-		$cache_worked_enabled = $this->config->item('enable_dxcluster_file_cache_worked') === true;
-
-		// Only load cache driver if caching is enabled
-		if ($cache_band_enabled || $cache_worked_enabled) {
-			$this->load->driver('cache', [
-				'adapter' => $this->config->item('cache_adapter') ?? 'file', 
-				'backup' => $this->config->item('cache_backup') ?? 'file',
-				'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
-			]);
-		}
 
 		if($this->session->userdata('user_date_format')) {
 			$custom_date_format = $this->session->userdata('user_date_format');
@@ -74,17 +65,17 @@ class Dxcluster_model extends CI_Model {
 			$dxcache_url = $dxcache_url . '/spots/'.$band;
 		}
 
-		$this->load->model('logbook_model');
+		$this->load->is_loaded('logbook_model') ?: $this->load->model('logbook_model');
 		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
 
 		// Cache key for RAW cluster response (instance-wide, no worked status)
 		// Use DxclusterCache library for centralized key generation
-		$this->load->library('DxclusterCache');
+
 		$raw_cache_key = $this->dxclustercache->getRawCacheKey($maxage, $band);
 
 		// Check cache for raw processed spots (without worked status)
 		$spotsout = null;
-		if ($cache_band_enabled) {
+		if ($this->cache_band_enabled) {
 			$spotsout = $this->cache->get($raw_cache_key);
 		}
 
@@ -248,7 +239,7 @@ class Dxcluster_model extends CI_Model {
 			}
 
 			// Cache the RAW processed spots (WITHOUT worked status) - instance-wide
-			if ($cache_band_enabled && !empty($spotsout)) {
+			if ($this->cache_band_enabled && !empty($spotsout)) {
 				$this->cache->save($raw_cache_key, $spotsout, 59);
 			}
 		}
@@ -536,7 +527,7 @@ class Dxcluster_model extends CI_Model {
 	}
 
     public function dxc_qrg_lookup($qrg, $maxage = 120) {
-		$this->load->helper(array('psr4_autoloader'));
+		
 	    if (is_numeric($qrg)) {
 
 			$dxcache_url = ($this->optionslib->get_option('dxcache_url') == '' ? 'https://dxc.wavelog.org/dxcache' : $this->optionslib->get_option('dxcache_url'));

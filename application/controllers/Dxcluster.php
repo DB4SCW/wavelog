@@ -20,6 +20,16 @@ class Dxcluster extends CI_Controller {
 		$band = $this->security->xss_clean($band);
 		$mode = $this->security->xss_clean($mode);
 
+
+		// Only load cache driver if caching is enabled
+		if (($this->config->item('enable_dxcluster_file_cache_band') ?? false) || ($this->config->item('enable_dxcluster_file_cache_worked') ?? false)) {
+			$this->load->driver('cache', [
+				'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+				'backup' => $this->config->item('cache_backup') ?? 'file',
+				'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+			]);
+		}
+
 		if ($age == '') {
 			$age = $this->optionslib->get_option('dxcluster_maxage') ?? 60;
 		} else {
