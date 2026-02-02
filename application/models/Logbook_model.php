@@ -2784,7 +2784,7 @@ class Logbook_model extends CI_Model {
 			if (!isset($this->spot_status_cache[$cache_key])) {
 				// Check file cache
 				if ($cache_enabled) {
-					$file_cache_key = $this->dxclustercache->getWorkedCallKey($logbook_ids_key, $callsign);
+					$file_cache_key = $this->dxclustercache->get_worked_call_key($logbook_ids_key, $callsign);
 					$cached_data = $this->cache->get($file_cache_key);
 					if ($cached_data !== false) {
 						// Load from file cache into in-memory cache
@@ -2802,7 +2802,7 @@ class Logbook_model extends CI_Model {
 
 			if (!isset($this->spot_status_cache[$cache_key])) {
 				if ($cache_enabled) {
-					$file_cache_key = $this->dxclustercache->getWorkedDxccKey($logbook_ids_key, $dxcc);
+					$file_cache_key = $this->dxclustercache->get_worked_dxcc_key($logbook_ids_key, $dxcc);
 					$cached_data = $this->cache->get($file_cache_key);
 					if ($cached_data !== false) {
 						$this->spot_status_cache[$cache_key] = $cached_data;
@@ -2818,7 +2818,7 @@ class Logbook_model extends CI_Model {
 
 			if (!isset($this->spot_status_cache[$cache_key])) {
 				if ($cache_enabled) {
-					$file_cache_key = $this->dxclustercache->getWorkedContKey($logbook_ids_key, $cont);
+					$file_cache_key = $this->dxclustercache->get_worked_cont_key($logbook_ids_key, $cont);
 					$cached_data = $this->cache->get($file_cache_key);
 					if ($cached_data !== false) {
 						$this->spot_status_cache[$cache_key] = $cached_data;
@@ -3061,7 +3061,7 @@ class Logbook_model extends CI_Model {
 
 			// Save to file cache for 15 minutes
 			if ($cache_enabled) {
-				$file_cache_key = $this->dxclustercache->getWorkedCallKey($logbook_ids_key, $callsign);
+				$file_cache_key = $this->dxclustercache->get_worked_call_key($logbook_ids_key, $callsign);
 				$this->cache->save($file_cache_key, $data, $cache_ttl);
 			}
 		}
@@ -3070,7 +3070,7 @@ class Logbook_model extends CI_Model {
 			$this->spot_status_cache[$cache_key] = $data;
 
 			if ($cache_enabled) {
-				$file_cache_key = $this->dxclustercache->getWorkedDxccKey($logbook_ids_key, $dxcc);
+				$file_cache_key = $this->dxclustercache->get_worked_dxcc_key($logbook_ids_key, $dxcc);
 				$this->cache->save($file_cache_key, $data, $cache_ttl);
 			}
 		}
@@ -3079,7 +3079,7 @@ class Logbook_model extends CI_Model {
 			$this->spot_status_cache[$cache_key] = $data;
 
 			if ($cache_enabled) {
-				$file_cache_key = $this->dxclustercache->getWorkedContKey($logbook_ids_key, $cont);
+				$file_cache_key = $this->dxclustercache->get_worked_cont_key($logbook_ids_key, $cont);
 				$this->cache->save($file_cache_key, $data, $cache_ttl);
 			}
 		}		// Cache NOT WORKED items (negative results) - store empty arrays
@@ -3090,7 +3090,7 @@ class Logbook_model extends CI_Model {
 				$this->spot_status_cache[$cache_key] = []; // Empty = not worked
 
 				if ($cache_enabled) {
-					$file_cache_key = $this->dxclustercache->getWorkedCallKey($logbook_ids_key, $callsign);
+					$file_cache_key = $this->dxclustercache->get_worked_call_key($logbook_ids_key, $callsign);
 					$this->cache->save($file_cache_key, [], $cache_ttl);
 				}
 			}
@@ -3101,7 +3101,7 @@ class Logbook_model extends CI_Model {
 				$this->spot_status_cache[$cache_key] = [];
 
 				if ($cache_enabled) {
-					$file_cache_key = $this->dxclustercache->getWorkedDxccKey($logbook_ids_key, $dxcc);
+					$file_cache_key = $this->dxclustercache->get_worked_dxcc_key($logbook_ids_key, $dxcc);
 					$this->cache->save($file_cache_key, [], $cache_ttl);
 				}
 			}
@@ -3112,7 +3112,7 @@ class Logbook_model extends CI_Model {
 				$this->spot_status_cache[$cache_key] = [];
 
 				if ($cache_enabled) {
-					$file_cache_key = $this->dxclustercache->getWorkedContKey($logbook_ids_key, $cont);
+					$file_cache_key = $this->dxclustercache->get_worked_cont_key($logbook_ids_key, $cont);
 					$this->cache->save($file_cache_key, [], $cache_ttl);
 				}
 			}

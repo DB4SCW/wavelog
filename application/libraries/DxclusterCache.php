@@ -40,21 +40,21 @@ class DxclusterCache {
 	/**
 	 * Generate WORKED callsign cache key
 	 */
-	public function getWorkedCallKey($logbook_key, $callsign) {
+	public function get_worked_call_key($logbook_key, $callsign) {
 		return "dxcluster_worked_call_{$logbook_key}_{$callsign}";
 	}
 
 	/**
 	 * Generate WORKED DXCC cache key
 	 */
-	public function getWorkedDxccKey($logbook_key, $dxcc) {
+	public function get_worked_dxcc_key($logbook_key, $dxcc) {
 		return "dxcluster_worked_dxcc_{$logbook_key}_{$dxcc}";
 	}
 
 	/**
 	 * Generate WORKED continent cache key
 	 */
-	public function getWorkedContKey($logbook_key, $cont) {
+	public function get_worked_cont_key($logbook_key, $cont) {
 		return "dxcluster_worked_cont_{$logbook_key}_{$cont}";
 	}
 
@@ -73,28 +73,28 @@ class DxclusterCache {
 		if (empty($callsign)) return;
 
 		// Get current user's logbook key
-		$logbook_key = $this->getCurrentUserLogbookKey();
+		$logbook_key = $this->_get_current_user_logbook_key();
 		if (empty($logbook_key)) return;
 
 		// Delete callsign cache
-		$this->_delete_from_cache($this->getWorkedCallKey($logbook_key, $callsign));
+		$this->_delete_from_cache($this->get_worked_call_key($logbook_key, $callsign));
 
 		// Look up DXCC and continent from callsign
 		$dxccobj = new Dxcc(null);
 		$dxcc_info = $dxccobj->dxcc_lookup($callsign, date('Y-m-d'));
 
 		if (!empty($dxcc_info['adif'])) {
-			$this->_delete_from_cache($this->getWorkedDxccKey($logbook_key, $dxcc_info['adif']));
+			$this->_delete_from_cache($this->get_worked_dxcc_key($logbook_key, $dxcc_info['adif']));
 		}
 		if (!empty($dxcc_info['cont'])) {
-			$this->_delete_from_cache($this->getWorkedContKey($logbook_key, $dxcc_info['cont']));
+			$this->_delete_from_cache($this->get_worked_cont_key($logbook_key, $dxcc_info['cont']));
 		}
 	}
 
 	/**
 	 * Get current user's logbook key from session
 	 */
-	protected function getCurrentUserLogbookKey() {
+	private function _get_current_user_logbook_key() {
 		$user_id = $this->CI->session->userdata('user_id');
 		$active_logbook = $this->CI->session->userdata('active_station_logbook');
 
@@ -114,7 +114,7 @@ class DxclusterCache {
 	// INTERNAL HELPERS
 	// =========================================================================
 
-	protected function _delete_from_cache($cache_key) {
+	private function _delete_from_cache($cache_key) {
 		$this->CI->load->driver('cache', [
 			'adapter' => $this->CI->config->item('cache_adapter') ?? 'file', 
 			'backup' => $this->CI->config->item('cache_backup') ?? 'file',
