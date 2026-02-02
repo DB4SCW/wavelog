@@ -300,7 +300,27 @@ class CI_Cache_memcached extends CI_Driver {
 	 */
 	public function is_supported()
 	{
-		return (extension_loaded('memcached') OR extension_loaded('memcache'));
+		if ( ! (extension_loaded('memcached') OR extension_loaded('memcache')))
+		{
+			return FALSE;
+		}
+
+		if ( ! isset($this->_memcached))
+		{
+			return FALSE;
+		}
+
+		try
+		{
+			// Test connection by getting server stats
+			$stats = $this->_memcached->getStats();
+			return ($stats !== FALSE && !empty($stats));
+		}
+		catch (Exception $e)
+		{
+			log_message('debug', 'Cache: Memcached connection test failed - '.$e->getMessage());
+			return FALSE;
+		}
 	}
 
 	// ------------------------------------------------------------------------
