@@ -323,7 +323,6 @@ class Debug_model extends CI_Model
             case 'memcached':
                 if ($this->cache->is_supported('memcached')) {
                     $memcached_info = $this->cache->cache_info('memcached');
-                    log_message('debug', 'Memcached Info: ' . print_r($memcached_info, true));
                     
                     // Memcached returns array of servers, each with stats
                     if (is_array($memcached_info)) {
