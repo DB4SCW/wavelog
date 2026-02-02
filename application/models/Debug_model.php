@@ -243,6 +243,12 @@ class Debug_model extends CI_Model
 
         $available_adapters = ['file', 'redis', 'memcached', 'apcu'];
         foreach ($available_adapters as $adapter) {
+            // For redis, memcached and apcu we should check for the extension first to avoid unnecessary errors
+            if (in_array($adapter, ['redis', 'memcached', 'apcu'])) {
+                $is_supported = extension_loaded($adapter) ?? false;
+                $response['adapters'][$adapter] = $is_supported;
+                continue;
+            }
             $response['adapters'][$adapter] = $this->cache->is_supported($adapter);
         }
 
