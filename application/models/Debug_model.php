@@ -266,28 +266,6 @@ class Debug_model extends CI_Model
 			'key_prefix' => $cache_key_prefix
 		]);
 
-        if ($cache_adapter === 'file') {
-            $cache_path = $this->config->item('cache_path') ?: 'application/cache';
-            $cache_path = realpath(APPPATH . '../') . '/' . $cache_path;
-
-            if (!is_dir($cache_path)) {
-                return false;
-            }
-
-            $files = new RecursiveIteratorIterator(
-                new RecursiveDirectoryIterator($cache_path, RecursiveDirectoryIterator::SKIP_DOTS),
-                RecursiveIteratorIterator::CHILD_FIRST
-            );
-
-            foreach ($files as $file) {
-                if ($file->isFile() && !in_array($file->getFilename(), ['index.html', '.htaccess'])) {
-                    @unlink($file->getRealPath());
-                }
-            }
-
-            return true;
-        }
-
         if (method_exists($this->cache, 'clean')) {
             return $this->cache->clean();
         }
