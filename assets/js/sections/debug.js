@@ -87,24 +87,24 @@ function update_version_check(local_branch) {
 		if (is_latest_version !== null && last_repo_commit != '') {
 			if (is_latest_version) {
 				$('#version_check_result').addClass('alert alert-success');
-				$('#version_check_result').text("Wavelog is up to date!");
+				$('#version_check_result').html(lang_git_is_uptodate);
 			} else {
 				$('#version_check_result').addClass('alert alert-warning');
-				$('#version_check_result').text("There is a newer version available: " + last_repo_commit);
+				$('#version_check_result').html(lang_git_new_update_available.replace("%s", last_repo_commit));
 				$('#version_update_button').show();
 			}
 		} else {
 			$('#version_check_result').addClass('alert alert-warning');
-			$('#version_check_result').text("The Remote Repository doesn't know your branch.");
+			$('#version_check_result').html(lang_git_remote_doesnt_know_branch);
 		}
 
-		$('#last_version_check').text("Last version check: " + new Date(timestamp).toUTCString());
+		$('#last_version_check').html(lang_git_last_version_check.replace("%s", new Date(timestamp).toUTCString()));
 	});
 }
 
 $(document).ready(function () {
 	$('#clear_cache_button').on('click', function () {
-		if (!confirm('Cache wirklich löschen?')) {
+		if (!confirm(decodeHtml(lang_cache_clean_confirm))) {
 			return;
 		}
 
@@ -115,11 +115,11 @@ $(document).ready(function () {
 				if (resu && resu.status) {
 					location.reload();
 				} else {
-					alert('Cache konnte nicht geleert werden.');
+					alert(decodeHtml(lang_cache_clear_failure));
 				}
 			},
 			error: function () {
-				alert('Cache konnte nicht geleert werden.');
+				alert(decodeHtml(lang_cache_clear_failure));
 			}
 		});
 	});
