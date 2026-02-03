@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-02 18:39+0000\n"
+"POT-Creation-Date: 2026-02-03 08:15+0000\n"
 "PO-Revision-Date: 2026-02-02 14:22+0000\n"
 "Last-Translator: Karuru <karuru@aerodefense.co.uk>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
@@ -864,12 +864,12 @@ msgstr "编辑计划任务"
 
 #: application/controllers/Cron.php:227 application/controllers/Cron.php:228
 #: application/views/cron/index.php:96 application/views/cron/index.php:98
-#: application/views/cron/index.php:100 application/views/debug/index.php:617
-#: application/views/debug/index.php:624 application/views/debug/index.php:630
-#: application/views/debug/index.php:636 application/views/debug/index.php:642
-#: application/views/debug/index.php:648 application/views/debug/index.php:654
-#: application/views/debug/index.php:660 application/views/debug/index.php:666
-#: application/views/debug/index.php:672 application/views/debug/index.php:678
+#: application/views/cron/index.php:100 application/views/debug/index.php:626
+#: application/views/debug/index.php:633 application/views/debug/index.php:639
+#: application/views/debug/index.php:645 application/views/debug/index.php:651
+#: application/views/debug/index.php:657 application/views/debug/index.php:663
+#: application/views/debug/index.php:669 application/views/debug/index.php:675
+#: application/views/debug/index.php:681 application/views/debug/index.php:687
 msgid "never"
 msgstr "从不"
 
@@ -1497,7 +1497,7 @@ msgstr "所有呼号簿的查询均失败或没有结果。"
 #: application/views/contesting/index.php:265
 #: application/views/continents/index.php:39 application/views/csv/index.php:42
 #: application/views/dashboard/index.php:4
-#: application/views/debug/index.php:701
+#: application/views/debug/index.php:710
 #: application/views/distancerecords/index.php:19
 #: application/views/dxatlas/index.php:42
 #: application/views/eqsl/analysis.php:39
@@ -1822,7 +1822,7 @@ msgstr "距离"
 #: application/views/contesting/index.php:264
 #: application/views/continents/index.php:30 application/views/csv/index.php:31
 #: application/views/dashboard/index.php:15
-#: application/views/debug/index.php:702 application/views/dxatlas/index.php:31
+#: application/views/debug/index.php:711 application/views/dxatlas/index.php:31
 #: application/views/eqsl/download.php:41
 #: application/views/eqslcard/index.php:32
 #: application/views/gridmap/index.php:63 application/views/kml/index.php:19
@@ -2435,7 +2435,7 @@ msgstr "时间戳"
 msgid "Options"
 msgstr "设置"
 
-#: application/controllers/Radio.php:50 application/views/debug/index.php:312
+#: application/controllers/Radio.php:50 application/views/debug/index.php:321
 #: application/views/qso/index.php:838
 msgid "Settings"
 msgstr "设置"
@@ -3163,7 +3163,7 @@ msgstr "用户 '%s' 已登出。"
 msgid "Station Name"
 msgstr "台站名称"
 
-#: application/controllers/User.php:1302 application/views/debug/index.php:703
+#: application/controllers/User.php:1302 application/views/debug/index.php:712
 #: application/views/public_search/result.php:17
 #: application/views/station_profile/create.php:59
 #: application/views/station_profile/edit.php:76
@@ -4518,7 +4518,7 @@ msgstr ""
 #: application/views/contesting/index.php:103
 #: application/views/contesting/index.php:262
 #: application/views/dashboard/index.php:242
-#: application/views/debug/index.php:698
+#: application/views/debug/index.php:707
 #: application/views/distancerecords/index.php:16
 #: application/views/eqsl/analysis.php:36
 #: application/views/eqsl/download.php:36 application/views/eqsl/result.php:33
@@ -4567,7 +4567,7 @@ msgstr "日期"
 #: application/views/contesting/index.php:108
 #: application/views/contesting/index.php:262
 #: application/views/dashboard/index.php:245
-#: application/views/debug/index.php:699
+#: application/views/debug/index.php:708
 #: application/views/distancerecords/index.php:17
 #: application/views/eqsl/analysis.php:37
 #: application/views/eqsl/download.php:37 application/views/eqsl/result.php:34
@@ -4597,7 +4597,7 @@ msgstr "时间"
 #: application/views/awards/vucc/band.php:18
 #: application/views/contesting/index.php:263
 #: application/views/dcl_views/key_import.php:45
-#: application/views/debug/index.php:700 application/views/debug/index.php:735
+#: application/views/debug/index.php:709 application/views/debug/index.php:744
 #: application/views/dxcalendar/index.php:12
 #: application/views/eqsl/analysis.php:38
 #: application/views/eqsl/download.php:38 application/views/eqsl/result.php:35
@@ -4658,8 +4658,8 @@ msgstr "最大上传文件大小是 "
 
 #: application/views/adif/import.php:94 application/views/adif/import.php:358
 #: application/views/clublog/export.php:70
-#: application/views/debug/index.php:193 application/views/debug/index.php:210
-#: application/views/debug/index.php:690 application/views/hrdlog/export.php:25
+#: application/views/debug/index.php:202 application/views/debug/index.php:219
+#: application/views/debug/index.php:699 application/views/hrdlog/export.php:25
 #: application/views/hrdlog/export.php:74
 #: application/views/interface_assets/footer.php:37
 #: application/views/notes/add.php:23 application/views/notes/edit.php:29
@@ -5150,7 +5150,7 @@ msgid "API URL"
 msgstr "API URL"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
-#: application/views/cron/index.php:35 application/views/debug/index.php:46
+#: application/views/cron/index.php:35 application/views/debug/index.php:55
 msgid "Copy to clipboard"
 msgstr "复制到剪贴板"
 
@@ -9358,7 +9358,7 @@ msgstr "ADIF 名称"
 #: application/views/contesting/add.php:44
 #: application/views/contesting/edit.php:43
 #: application/views/contesting/edit.php:46
-#: application/views/debug/index.php:415 application/views/debug/index.php:426
+#: application/views/debug/index.php:424 application/views/debug/index.php:435
 #: application/views/interface_assets/header.php:586
 #: application/views/mode/create.php:46 application/views/mode/create.php:48
 #: application/views/mode/edit.php:57 application/views/mode/edit.php:60
@@ -10287,43 +10287,69 @@ msgstr "在下面上传呼号证书文件"
 msgid "Upload File"
 msgstr "上传文件"
 
-#: application/views/debug/index.php:23
+#: application/views/debug/index.php:2
+msgid "Are you sure you want to clear the cache?"
+msgstr ""
+
+#: application/views/debug/index.php:3
+msgid "Failed to clear cache!"
+msgstr ""
+
+#: application/views/debug/index.php:4
+#, php-format
+msgid "Last version check: %s"
+msgstr ""
+
+#: application/views/debug/index.php:5
+msgid "Wavelog is up to date!"
+msgstr ""
+
+#: application/views/debug/index.php:6
+#, php-format
+msgid "There is a newer version available: %s"
+msgstr ""
+
+#: application/views/debug/index.php:7
+msgid "The Remote Repository doesn't know your branch."
+msgstr ""
+
+#: application/views/debug/index.php:32
 msgid "Wavelog Information"
 msgstr "Wavelog 信息"
 
-#: application/views/debug/index.php:27
+#: application/views/debug/index.php:36
 msgid "Version"
 msgstr "版本"
 
-#: application/views/debug/index.php:30
+#: application/views/debug/index.php:39
 msgid "Latest Version"
 msgstr "最新版本"
 
-#: application/views/debug/index.php:36
+#: application/views/debug/index.php:45
 msgid "Latest Release"
 msgstr "最新发布"
 
-#: application/views/debug/index.php:41
+#: application/views/debug/index.php:50
 msgid "Language"
 msgstr "语言"
 
-#: application/views/debug/index.php:45
+#: application/views/debug/index.php:54
 msgid "Base URL"
 msgstr "根地址（Base URL）"
 
-#: application/views/debug/index.php:49
+#: application/views/debug/index.php:58
 msgid "Migration"
 msgstr "迁移"
 
-#: application/views/debug/index.php:50
+#: application/views/debug/index.php:59
 msgid "There is something wrong with your Migration in Database!"
 msgstr "数据库迁移出错！"
 
-#: application/views/debug/index.php:55
+#: application/views/debug/index.php:64
 msgid "Migration is outdated and locked!"
 msgstr "迁移已过时且已锁定！"
 
-#: application/views/debug/index.php:56
+#: application/views/debug/index.php:65
 #, php-format
 msgid ""
 "The current migration is not the version it is supposed to be. Reload this "
@@ -10334,131 +10360,131 @@ msgstr ""
 "迁移文件版本不匹配，%s 秒后刷新页面。如此提示持续出现，可能由于上次更新之中出"
 "现了错误，请删除 %s 文件，强制重新迁移。"
 
-#: application/views/debug/index.php:57
+#: application/views/debug/index.php:66
 #, php-format
 msgid "Check this wiki article %shere%s for more information."
 msgstr "请查看 %swiki%s 以获得帮助。"
 
-#: application/views/debug/index.php:58
+#: application/views/debug/index.php:67
 #, php-format
 msgid "Current migration is %s"
 msgstr "当前迁移为 %s"
 
-#: application/views/debug/index.php:59
+#: application/views/debug/index.php:68
 #, php-format
 msgid "Migration should be %s"
 msgstr "迁移应该是 %s"
 
-#: application/views/debug/index.php:64
+#: application/views/debug/index.php:73
 msgid "Environment"
 msgstr "环境"
 
-#: application/views/debug/index.php:68
+#: application/views/debug/index.php:77
 msgid "System Time"
 msgstr "系统时间"
 
-#: application/views/debug/index.php:76
+#: application/views/debug/index.php:85
 msgid "Total QSO on this instance"
 msgstr "本站 QSO 总数量"
 
-#: application/views/debug/index.php:80
+#: application/views/debug/index.php:89
 msgid "Total User"
 msgstr "总用户数"
 
-#: application/views/debug/index.php:81 application/views/user/index.php:27
+#: application/views/debug/index.php:90 application/views/user/index.php:27
 msgid "User"
 msgid_plural "Users"
 msgstr[0] "用户"
 
-#: application/views/debug/index.php:88
+#: application/views/debug/index.php:97
 msgid "Server Information"
 msgstr "服务器信息"
 
-#: application/views/debug/index.php:92
+#: application/views/debug/index.php:101
 msgid "Server Software"
 msgstr "服务器软件"
 
-#: application/views/debug/index.php:97
+#: application/views/debug/index.php:106
 msgid "PHP Version"
 msgstr "PHP 版本"
 
-#: application/views/debug/index.php:103
+#: application/views/debug/index.php:112
 msgid "Deprecated"
 msgstr "已废弃"
 
-#: application/views/debug/index.php:110
+#: application/views/debug/index.php:119
 msgid "MySQL Version"
 msgstr "MySQL 版本"
 
-#: application/views/debug/index.php:114
+#: application/views/debug/index.php:123
 msgid "Codeigniter Version"
 msgstr "Codeigniter 版本"
 
-#: application/views/debug/index.php:122
+#: application/views/debug/index.php:131
 msgid "Folder Permissions"
 msgstr "文件夹权限"
 
-#: application/views/debug/index.php:124
+#: application/views/debug/index.php:133
 msgid ""
 "This verifies that the folders used by Wavelog have read and write "
 "permissions by PHP."
 msgstr "这验证了 Wavelog 使用的文件夹是否具有 PHP 的读写权限。"
 
-#: application/views/debug/index.php:130 application/views/debug/index.php:141
-#: application/views/debug/index.php:152 application/views/debug/index.php:163
-#: application/views/debug/index.php:175
+#: application/views/debug/index.php:139 application/views/debug/index.php:150
+#: application/views/debug/index.php:161 application/views/debug/index.php:172
+#: application/views/debug/index.php:184
 #: application/views/interface_assets/footer.php:38
 msgid "Success"
 msgstr "成功"
 
-#: application/views/debug/index.php:132 application/views/debug/index.php:143
-#: application/views/debug/index.php:154 application/views/debug/index.php:165
-#: application/views/debug/index.php:177 application/views/debug/index.php:417
+#: application/views/debug/index.php:141 application/views/debug/index.php:152
+#: application/views/debug/index.php:163 application/views/debug/index.php:174
+#: application/views/debug/index.php:186 application/views/debug/index.php:426
 msgid "Failed"
 msgstr "失败"
 
-#: application/views/debug/index.php:187
+#: application/views/debug/index.php:196
 msgid "Config Maintenance"
 msgstr "维护配置"
 
-#: application/views/debug/index.php:193
+#: application/views/debug/index.php:202
 msgid "Your authentication mode is outdated and possibly unsafe"
 msgstr "你的认证方式已过时，可能存在风险隐患"
 
-#: application/views/debug/index.php:195 application/views/debug/index.php:212
+#: application/views/debug/index.php:204 application/views/debug/index.php:221
 #, php-format
 msgid "Please edit your %s File:"
 msgstr "请编辑你的 %s 文件："
 
-#: application/views/debug/index.php:196
+#: application/views/debug/index.php:205
 msgid ""
 "Go to your application/config Folder and compare config.sample.php with your "
 "config.php"
 msgstr ""
 "请前往 application/config 文件夹，根据 config.sample.php 修改成 config.php"
 
-#: application/views/debug/index.php:197
+#: application/views/debug/index.php:206
 #, php-format
 msgid "Change %s to the value %s (Strongly recommended)"
 msgstr "将%s改为%s（强烈建议）"
 
-#: application/views/debug/index.php:203
+#: application/views/debug/index.php:212
 msgid "Authentication Mode is set correctly"
 msgstr "认证方式设置正确"
 
-#: application/views/debug/index.php:203 application/views/debug/index.php:220
+#: application/views/debug/index.php:212 application/views/debug/index.php:229
 msgid "Ok"
 msgstr "好的"
 
-#: application/views/debug/index.php:210
+#: application/views/debug/index.php:219
 msgid "You use the default encryption key. You should change it!"
 msgstr "你使用了默认加密密钥。请修改它！"
 
-#: application/views/debug/index.php:213
+#: application/views/debug/index.php:222
 msgid "This will also enable the 'Keep me logged in' feature."
 msgstr "修改之后，“保持登录状态” 的功能将变为可用。"
 
-#: application/views/debug/index.php:214
+#: application/views/debug/index.php:223
 #, php-format
 msgid ""
 "Change the value of %s to a new encryption key other then "
@@ -10467,127 +10493,128 @@ msgstr ""
 "将 %s 的值改为新的加密密钥，而非 “flossie1234555541”，选择一个安全的长密码。"
 "(强烈建议）"
 
-#: application/views/debug/index.php:220
+#: application/views/debug/index.php:229
 msgid "You do not use the default encryption key"
 msgstr "你没有使用默认加密密钥"
 
-#: application/views/debug/index.php:227
+#: application/views/debug/index.php:236
 msgid "Migrate Userdata"
 msgstr "迁移用户数据"
 
-#: application/views/debug/index.php:229
+#: application/views/debug/index.php:238
 msgid ""
 "Here you can migrate existing QSL cards and eQSL cards to the new userdata "
 "folder."
 msgstr "可将现有的 QSL 卡和 eQSL 卡图片迁移到新的用户数据文件夹。"
 
-#: application/views/debug/index.php:242
+#: application/views/debug/index.php:251
 msgid "Modules"
 msgstr "模块"
 
-#: application/views/debug/index.php:248 application/views/debug/index.php:259
-#: application/views/debug/index.php:270 application/views/debug/index.php:281
-#: application/views/debug/index.php:292 application/views/debug/index.php:303
+#: application/views/debug/index.php:257 application/views/debug/index.php:268
+#: application/views/debug/index.php:279 application/views/debug/index.php:290
+#: application/views/debug/index.php:301 application/views/debug/index.php:312
 msgid "Installed"
 msgstr "已安装"
 
-#: application/views/debug/index.php:250 application/views/debug/index.php:261
-#: application/views/debug/index.php:272 application/views/debug/index.php:283
-#: application/views/debug/index.php:294 application/views/debug/index.php:305
+#: application/views/debug/index.php:259 application/views/debug/index.php:270
+#: application/views/debug/index.php:281 application/views/debug/index.php:292
+#: application/views/debug/index.php:303 application/views/debug/index.php:314
 msgid "Not Installed"
 msgstr "未安装"
 
-#: application/views/debug/index.php:404
+#: application/views/debug/index.php:413
 msgid "Cache Information"
 msgstr ""
 
-#: application/views/debug/index.php:408
+#: application/views/debug/index.php:417
 msgid "Current Configuration"
 msgstr ""
 
-#: application/views/debug/index.php:411
+#: application/views/debug/index.php:420
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
 msgstr ""
 
-#: application/views/debug/index.php:422
+#: application/views/debug/index.php:431
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
 msgstr ""
 
-#: application/views/debug/index.php:431
+#: application/views/debug/index.php:440
+#, php-format
 msgctxt "Cache Path"
-msgid "Path for files adapter"
+msgid "Path for %s adapter"
 msgstr ""
 
-#: application/views/debug/index.php:435
+#: application/views/debug/index.php:444
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
 msgstr ""
 
-#: application/views/debug/index.php:441
+#: application/views/debug/index.php:450
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
 
-#: application/views/debug/index.php:445
+#: application/views/debug/index.php:454
 msgid "Cache is working properly. Everything okay!"
 msgstr ""
 
-#: application/views/debug/index.php:450
+#: application/views/debug/index.php:459
 msgid "Cache Details"
 msgstr ""
 
-#: application/views/debug/index.php:453
+#: application/views/debug/index.php:462
 msgctxt "Cache Details"
 msgid "Total Size"
 msgstr ""
 
-#: application/views/debug/index.php:459
+#: application/views/debug/index.php:468
 msgctxt "Cache Key"
 msgid "Number of Keys"
 msgstr ""
 
-#: application/views/debug/index.php:470
+#: application/views/debug/index.php:479
 msgid "Available Adapters"
 msgstr ""
 
-#: application/views/debug/index.php:487
+#: application/views/debug/index.php:496
 msgid "Clear Cache"
 msgstr ""
 
-#: application/views/debug/index.php:534
+#: application/views/debug/index.php:543
 msgid "Git Information"
 msgstr "Git 信息"
 
-#: application/views/debug/index.php:538
+#: application/views/debug/index.php:547
 msgid "Branch"
 msgstr "分支"
 
-#: application/views/debug/index.php:549 application/views/debug/index.php:560
-#: application/views/debug/index.php:570
+#: application/views/debug/index.php:558 application/views/debug/index.php:569
+#: application/views/debug/index.php:579
 #: application/views/lotw_views/index.php:95
 msgid "n/a"
 msgstr "n/a"
 
-#: application/views/debug/index.php:555
+#: application/views/debug/index.php:564
 msgid "Commit"
 msgstr "Commit"
 
-#: application/views/debug/index.php:565
+#: application/views/debug/index.php:574
 msgid "Tag"
 msgstr "标签"
 
-#: application/views/debug/index.php:575
+#: application/views/debug/index.php:584
 msgid "Last Fetch"
 msgstr "上次抓取"
 
-#: application/views/debug/index.php:587
+#: application/views/debug/index.php:596
 msgid "Check for new version"
 msgstr "检查新版本"
 
-#: application/views/debug/index.php:588
+#: application/views/debug/index.php:597
 #: application/views/logbookadvanced/checkresult.php:52
 #: application/views/logbookadvanced/checkresult.php:68
 #: application/views/logbookadvanced/checkresult.php:78
@@ -10595,217 +10622,217 @@ msgstr "检查新版本"
 msgid "Update now"
 msgstr "现在升级"
 
-#: application/views/debug/index.php:606
+#: application/views/debug/index.php:615
 msgid "File download date"
 msgstr "文件下载日期"
 
-#: application/views/debug/index.php:610
+#: application/views/debug/index.php:619
 msgid "File"
 msgstr "文件"
 
-#: application/views/debug/index.php:611
+#: application/views/debug/index.php:620
 msgid "Last update"
 msgstr "上次更新"
 
-#: application/views/debug/index.php:615
+#: application/views/debug/index.php:624
 msgid "DXCC update from Club Log"
 msgstr "DXCC 更新（ClubLog）"
 
-#: application/views/debug/index.php:618 application/views/debug/index.php:625
-#: application/views/debug/index.php:631 application/views/debug/index.php:637
-#: application/views/debug/index.php:643 application/views/debug/index.php:649
-#: application/views/debug/index.php:655 application/views/debug/index.php:661
-#: application/views/debug/index.php:667 application/views/debug/index.php:673
-#: application/views/debug/index.php:679
+#: application/views/debug/index.php:627 application/views/debug/index.php:634
+#: application/views/debug/index.php:640 application/views/debug/index.php:646
+#: application/views/debug/index.php:652 application/views/debug/index.php:658
+#: application/views/debug/index.php:664 application/views/debug/index.php:670
+#: application/views/debug/index.php:676 application/views/debug/index.php:682
+#: application/views/debug/index.php:688
 #: application/views/station_profile/edit.php:53
 msgid "Update"
 msgstr "更新"
 
-#: application/views/debug/index.php:622
+#: application/views/debug/index.php:631
 msgid "DOK file download"
 msgstr "下载 DOK 文件"
 
-#: application/views/debug/index.php:628
+#: application/views/debug/index.php:637
 msgid "LoTW users download"
 msgstr "下载 LoTW 用户状态"
 
-#: application/views/debug/index.php:634
+#: application/views/debug/index.php:643
 msgid "POTA file download"
 msgstr "下载 POTA 文件"
 
-#: application/views/debug/index.php:640
+#: application/views/debug/index.php:649
 msgid "SCP file download"
 msgstr "下载 SCP 文件"
 
-#: application/views/debug/index.php:646
+#: application/views/debug/index.php:655
 msgid "SOTA file download"
 msgstr "下载 SOTA 文件"
 
-#: application/views/debug/index.php:652
+#: application/views/debug/index.php:661
 msgid "WWFF file download"
 msgstr "下载 WWFF 文件"
 
-#: application/views/debug/index.php:658
+#: application/views/debug/index.php:667
 msgid "TLE update"
 msgstr "TLE 更新"
 
-#: application/views/debug/index.php:664
+#: application/views/debug/index.php:673
 msgid "Hams Of Note update"
 msgstr "更新 Hams of Note"
 
-#: application/views/debug/index.php:670
+#: application/views/debug/index.php:679
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:676
+#: application/views/debug/index.php:685
 msgid "VUCC Grids"
 msgstr "VUCC 网格"
 
-#: application/views/debug/index.php:686
+#: application/views/debug/index.php:695
 msgid "QSO-DB Maintenance"
 msgstr "QSO-DB 维护"
 
-#: application/views/debug/index.php:690
+#: application/views/debug/index.php:699
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
 "The Database contains %d QSOs without a station-profile (location)"
 msgstr[0] "数据库中共有%d个没有台站信息（位置）的 QSO"
 
-#: application/views/debug/index.php:728
+#: application/views/debug/index.php:737
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr "请标记 QSO 并将其重新分配到现有的电台位置："
 
-#: application/views/debug/index.php:736
+#: application/views/debug/index.php:745
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "目标位置"
 
-#: application/views/debug/index.php:737 application/views/debug/index.php:748
+#: application/views/debug/index.php:746 application/views/debug/index.php:757
 msgid "Reassign"
 msgstr "重新分配"
 
-#: application/views/debug/index.php:757
+#: application/views/debug/index.php:766
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr "数据库中的所有 QSO 都有台站相关联"
 
-#: application/views/debug/index.php:757
+#: application/views/debug/index.php:766
 msgid "Everything ok"
 msgstr "一切正常"
 
-#: application/views/debug/index.php:782
+#: application/views/debug/index.php:791
 msgid "Albanian"
 msgstr "阿尔巴尼亚语"
 
-#: application/views/debug/index.php:783
+#: application/views/debug/index.php:792
 msgid "Armenian"
 msgstr "亚美尼亚语"
 
-#: application/views/debug/index.php:784
+#: application/views/debug/index.php:793
 msgid "Bosnian"
 msgstr "波斯尼亚语"
 
-#: application/views/debug/index.php:785
+#: application/views/debug/index.php:794
 msgid "Bulgarian"
 msgstr "保加利亚语"
 
-#: application/views/debug/index.php:786
+#: application/views/debug/index.php:795
 msgid "Chinese (Simplified)"
 msgstr "简体中文"
 
-#: application/views/debug/index.php:787
+#: application/views/debug/index.php:796
 msgid "Croatian"
 msgstr "克罗地亚语"
 
-#: application/views/debug/index.php:788
+#: application/views/debug/index.php:797
 msgid "Czech"
 msgstr "捷克语"
 
-#: application/views/debug/index.php:789
+#: application/views/debug/index.php:798
 msgid "Dutch"
 msgstr "荷兰语"
 
-#: application/views/debug/index.php:790
+#: application/views/debug/index.php:799
 msgid "English"
 msgstr "英语"
 
-#: application/views/debug/index.php:791
+#: application/views/debug/index.php:800
 msgid "Estonian"
 msgstr "爱沙尼亚语"
 
-#: application/views/debug/index.php:792
+#: application/views/debug/index.php:801
 msgid "Finnish"
 msgstr "芬兰语"
 
-#: application/views/debug/index.php:793
+#: application/views/debug/index.php:802
 msgid "French"
 msgstr "法语"
 
-#: application/views/debug/index.php:794
+#: application/views/debug/index.php:803
 msgid "German"
 msgstr "德语"
 
-#: application/views/debug/index.php:795
+#: application/views/debug/index.php:804
 msgid "Greek"
 msgstr "希腊语"
 
-#: application/views/debug/index.php:796
+#: application/views/debug/index.php:805
 msgid "Hungarian"
 msgstr "匈牙利语"
 
-#: application/views/debug/index.php:797
+#: application/views/debug/index.php:806
 msgid "Italian"
 msgstr "意大利语"
 
-#: application/views/debug/index.php:798
+#: application/views/debug/index.php:807
 msgid "Japanese"
 msgstr "日语"
 
-#: application/views/debug/index.php:799
+#: application/views/debug/index.php:808
 msgid "Latvian"
 msgstr "拉脱维亚语"
 
-#: application/views/debug/index.php:800
+#: application/views/debug/index.php:809
 msgid "Lithuanian"
 msgstr "立陶宛语"
 
-#: application/views/debug/index.php:801
+#: application/views/debug/index.php:810
 msgid "Montenegrin"
 msgstr "黑山语"
 
-#: application/views/debug/index.php:802
+#: application/views/debug/index.php:811
 msgid "Polish"
 msgstr "波兰语"
 
-#: application/views/debug/index.php:803
+#: application/views/debug/index.php:812
 msgid "Portuguese"
 msgstr "葡萄牙语"
 
-#: application/views/debug/index.php:804
+#: application/views/debug/index.php:813
 msgid "Russian"
 msgstr "俄语"
 
-#: application/views/debug/index.php:805
+#: application/views/debug/index.php:814
 msgid "Serbian"
 msgstr "塞尔维亚语"
 
-#: application/views/debug/index.php:806
+#: application/views/debug/index.php:815
 msgid "Slovak"
 msgstr "斯洛伐克语"
 
-#: application/views/debug/index.php:807
+#: application/views/debug/index.php:816
 msgid "Slovenian"
 msgstr "斯洛文尼亚语"
 
-#: application/views/debug/index.php:808
+#: application/views/debug/index.php:817
 msgid "Spanish"
 msgstr "西班牙语"
 
-#: application/views/debug/index.php:809
+#: application/views/debug/index.php:818
 msgid "Swedish"
 msgstr "瑞典语"
 
-#: application/views/debug/index.php:810
+#: application/views/debug/index.php:819
 msgid "Turkish"
 msgstr "土耳其语"
 
