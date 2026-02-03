@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 08:15+0000\n"
-"PO-Revision-Date: 2026-01-28 11:57+0000\n"
+"PO-Revision-Date: 2026-02-03 12:32+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -965,7 +965,7 @@ msgstr "キーが削除されました。"
 
 #: application/controllers/Debug.php:114
 msgid "(empty)"
-msgstr ""
+msgstr "（空の）"
 
 #: application/controllers/Debug.php:132
 msgid "Debug"
@@ -10528,29 +10528,29 @@ msgstr "ファイルをアップロード"
 
 #: application/views/debug/index.php:2
 msgid "Are you sure you want to clear the cache?"
-msgstr ""
+msgstr "キャッシュをクリアしてもよろしいですか?"
 
 #: application/views/debug/index.php:3
 msgid "Failed to clear cache!"
-msgstr ""
+msgstr "キャッシュのクリアに失敗しました！"
 
 #: application/views/debug/index.php:4
 #, php-format
 msgid "Last version check: %s"
-msgstr ""
+msgstr "最終バージョンチェック: %s"
 
 #: application/views/debug/index.php:5
 msgid "Wavelog is up to date!"
-msgstr ""
+msgstr "Wavelog は最新です!"
 
 #: application/views/debug/index.php:6
 #, php-format
 msgid "There is a newer version available: %s"
-msgstr ""
+msgstr "新しいバージョンが利用可能です: %s"
 
 #: application/views/debug/index.php:7
 msgid "The Remote Repository doesn't know your branch."
-msgstr ""
+msgstr "リモート リポジトリはブランチを認識しません。"
 
 #: application/views/debug/index.php:32
 msgid "Wavelog Information"
@@ -10770,64 +10770,66 @@ msgstr "インストールされていません"
 
 #: application/views/debug/index.php:413
 msgid "Cache Information"
-msgstr ""
+msgstr "キャッシュ情報"
 
 #: application/views/debug/index.php:417
 msgid "Current Configuration"
-msgstr ""
+msgstr "現在の構成"
 
 #: application/views/debug/index.php:420
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
-msgstr ""
+msgstr "プライマリアダプタ"
 
 #: application/views/debug/index.php:431
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
-msgstr ""
+msgstr "バックアップアダプター"
 
 #: application/views/debug/index.php:440
 #, php-format
 msgctxt "Cache Path"
 msgid "Path for %s adapter"
-msgstr ""
+msgstr "パス %s アダプタ"
 
 #: application/views/debug/index.php:444
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
-msgstr ""
+msgstr "キープレフィックス"
 
 #: application/views/debug/index.php:450
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
+"プライマリ アダプターが使用できないため、キャッシュは現在バックアップ "
+"アダプターを使用しています。"
 
 #: application/views/debug/index.php:454
 msgid "Cache is working properly. Everything okay!"
-msgstr ""
+msgstr "キャッシュは正常に動作しています。すべて正常です！"
 
 #: application/views/debug/index.php:459
 msgid "Cache Details"
-msgstr ""
+msgstr "キャッシュの詳細"
 
 #: application/views/debug/index.php:462
 msgctxt "Cache Details"
 msgid "Total Size"
-msgstr ""
+msgstr "合計サイズ"
 
 #: application/views/debug/index.php:468
 msgctxt "Cache Key"
 msgid "Number of Keys"
-msgstr ""
+msgstr "キーの数"
 
 #: application/views/debug/index.php:479
 msgid "Available Adapters"
-msgstr ""
+msgstr "利用可能なアダプター"
 
 #: application/views/debug/index.php:496
 msgid "Clear Cache"
-msgstr ""
+msgstr "キャッシュをクリア"
 
 #: application/views/debug/index.php:543
 msgid "Git Information"
