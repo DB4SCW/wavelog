@@ -5,12 +5,13 @@
 # Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025.
 # "Jorgen Dahl, NU1T" <sm6srw@arrl.net>, 2025, 2026.
 # "Erkin Mercan (TA4AQG-SP9AQG)" <ekomeko066@gmail.com>, 2025.
+# "Juuso W." <oh1jw@tuta.io>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-02 18:39+0000\n"
-"PO-Revision-Date: 2026-01-28 19:35+0000\n"
-"Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
+"PO-Revision-Date: 2026-02-02 22:29+0000\n"
+"Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
 "Language: sv_SE\n"
@@ -963,7 +964,7 @@ msgstr "Nyckel(nycklar) raderad(e)."
 
 #: application/controllers/Debug.php:114
 msgid "(empty)"
-msgstr ""
+msgstr "(tom)"
 
 #: application/controllers/Debug.php:132
 msgid "Debug"
@@ -10763,63 +10764,65 @@ msgstr "Ej installerad"
 
 #: application/views/debug/index.php:404
 msgid "Cache Information"
-msgstr ""
+msgstr "Cache-information"
 
 #: application/views/debug/index.php:408
 msgid "Current Configuration"
-msgstr ""
+msgstr "Nuvarande konfiguration"
 
 #: application/views/debug/index.php:411
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
-msgstr ""
+msgstr "Primär cache-adapter"
 
 #: application/views/debug/index.php:422
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
-msgstr ""
+msgstr "Backup adapter"
 
 #: application/views/debug/index.php:431
 msgctxt "Cache Path"
 msgid "Path for files adapter"
-msgstr ""
+msgstr "Sökväg för filadapter"
 
 #: application/views/debug/index.php:435
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
-msgstr ""
+msgstr "Nyckelprefix"
 
 #: application/views/debug/index.php:441
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
+"Cache använder reservadapter (fallback) eftersom primär adapter inte är "
+"tillgänglig."
 
 #: application/views/debug/index.php:445
 msgid "Cache is working properly. Everything okay!"
-msgstr ""
+msgstr "Cachen fungerar korrekt. Allt är i ordning!"
 
 #: application/views/debug/index.php:450
 msgid "Cache Details"
-msgstr ""
+msgstr "Cache-detaljer"
 
 #: application/views/debug/index.php:453
 msgctxt "Cache Details"
 msgid "Total Size"
-msgstr ""
+msgstr "Totalstorlek"
 
 #: application/views/debug/index.php:459
 msgctxt "Cache Key"
 msgid "Number of Keys"
-msgstr ""
+msgstr "Antal cache-nycklar"
 
 #: application/views/debug/index.php:470
 msgid "Available Adapters"
-msgstr ""
+msgstr "Tillgängliga adaptrar"
 
 #: application/views/debug/index.php:487
 msgid "Clear Cache"
-msgstr ""
+msgstr "Rensa cache"
 
 #: application/views/debug/index.php:534
 msgid "Git Information"

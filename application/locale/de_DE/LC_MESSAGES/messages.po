@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-02 18:39+0000\n"
-"PO-Revision-Date: 2026-01-28 07:00+0000\n"
-"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
+"PO-Revision-Date: 2026-02-03 07:57+0000\n"
+"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -983,7 +983,7 @@ msgstr "Schlüssel gelöscht."
 
 #: application/controllers/Debug.php:114
 msgid "(empty)"
-msgstr ""
+msgstr "(leer)"
 
 #: application/controllers/Debug.php:132
 msgid "Debug"
@@ -10869,63 +10869,65 @@ msgstr "Nicht installiert"
 
 #: application/views/debug/index.php:404
 msgid "Cache Information"
-msgstr ""
+msgstr "Cache Informationen"
 
 #: application/views/debug/index.php:408
 msgid "Current Configuration"
-msgstr ""
+msgstr "Aktuelle Konfiguration"
 
 #: application/views/debug/index.php:411
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
-msgstr ""
+msgstr "Primär-Adapter"
 
 #: application/views/debug/index.php:422
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
-msgstr ""
+msgstr "Backup-Adapter"
 
 #: application/views/debug/index.php:431
 msgctxt "Cache Path"
 msgid "Path for files adapter"
-msgstr ""
+msgstr "Pfad für files Adapter"
 
 #: application/views/debug/index.php:435
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
-msgstr ""
+msgstr "Key Prefix"
 
 #: application/views/debug/index.php:441
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
+"Der Cache verwendet derzeit den Backup-Adapter, weil der Primäre nicht "
+"verfügbar ist."
 
 #: application/views/debug/index.php:445
 msgid "Cache is working properly. Everything okay!"
-msgstr ""
+msgstr "Der Cache funktioniert einwandfrei. Alles in Ordnung!"
 
 #: application/views/debug/index.php:450
 msgid "Cache Details"
-msgstr ""
+msgstr "Cache-Details"
 
 #: application/views/debug/index.php:453
 msgctxt "Cache Details"
 msgid "Total Size"
-msgstr ""
+msgstr "Gesamtgröße"
 
 #: application/views/debug/index.php:459
 msgctxt "Cache Key"
 msgid "Number of Keys"
-msgstr ""
+msgstr "Anzahl der Keys"
 
 #: application/views/debug/index.php:470
 msgid "Available Adapters"
-msgstr ""
+msgstr "Verfügbare Adapter"
 
 #: application/views/debug/index.php:487
 msgid "Clear Cache"
-msgstr ""
+msgstr "Cache leeren"
 
 #: application/views/debug/index.php:534
 msgid "Git Information"
