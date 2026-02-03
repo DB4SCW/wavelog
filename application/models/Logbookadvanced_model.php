@@ -175,13 +175,13 @@ class Logbookadvanced_model extends CI_Model {
 
         if ($searchCriteria['dateFrom'] !== '') {
             $from = $searchCriteria['dateFrom'];
-			$conditions[] = "date(COL_TIME_ON) >= ?";
-			$binding[] = $from;
+			$conditions[] = "COL_TIME_ON >= ?";
+			$binding[] = $from . ' 00:00:00';
 		}
         if ($searchCriteria['dateTo'] !== '') {
             $to = $searchCriteria['dateTo'];
-			$conditions[] = "date(COL_TIME_ON) <= ?";
-			$binding[] = $to;
+			$conditions[] = "COL_TIME_ON <= ?";
+			$binding[] = $to . ' 23:59:59';
 		}
 		if ($searchCriteria['de'] !== 'All' && $searchCriteria['qsoids'] === '') {
 			if ($searchCriteria['de'] == '') {

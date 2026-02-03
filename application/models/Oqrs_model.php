@@ -349,23 +349,29 @@ class Oqrs_model extends CI_Model {
 	function check_oqrs($qsodata) {
 		$binding = [];
 
+		// Build datetime range from date and time for index usage
+		// Calculate range: from (date + time - 50min) to (date + time + 50min)
+		$datetime = $qsodata['date'] . ' ' . $qsodata['time'];
+		$datetimeStart = date('Y-m-d H:i:s', strtotime($datetime) - 3000);
+		$datetimeEnd = date('Y-m-d H:i:s', strtotime($datetime) + 3000);
+
 		$sql = 'select * from ' . $this->config->item('table_name') .
 		' log inner join station_profile on (station_profile.station_id=log.station_id and station_profile.oqrs=\'1\')
 		 where (log.col_band = ? or log.col_prop_mode = ?)
 		 and log.col_call = ?
-		 and date(log.col_time_on) = ?
+		 and log.col_time_on >= ?
+		 and log.col_time_on <= ?
 		 and (log.col_mode = ?
 		 or log.col_submode = ?)
-		 and timediff(time(log.col_time_on), ?) <= 3000
 		 and log.station_id = ?';
 
 		$binding[] = $qsodata['band'];
 		$binding[] = $qsodata['band'];
 		$binding[] = $qsodata['requestcallsign'];
-		$binding[] = $qsodata['date'];
+		$binding[] = $datetimeStart;
+		$binding[] = $datetimeEnd;
 		$binding[] = $qsodata['mode'];
 		$binding[] = $qsodata['mode'];
-		$binding[] = $qsodata['time'];
 		$binding[] = $qsodata['station_id'];
 
 		$query = $this->db->query($sql, $binding);
@@ -421,14 +427,20 @@ class Oqrs_model extends CI_Model {
 	function search_log_time_date($time, $date, $band, $mode) {
 		$binding = [];
 
+		// Convert date to datetime range for index usage
+		// Date is 'Y-m-d' format, time is 'H:i:s' format
+		$datetimeStart = $date . ' ' . $time;
+		// Calculate end time (50 minutes after start time for the 3000 second window)
+		$dateTimeEnd = date('Y-m-d H:i:s', strtotime($datetimeStart) + 3000);
+
 		$sql = 'select * from ' . $this->config->item('table_name') . ' thcv
 		 join station_profile on (thcv.station_id = station_profile.station_id and station_profile.oqrs=\'1\')
 		 left join oqrs on oqrs.qsoid = thcv.COL_PRIMARY_KEY
-		 where date(col_time_on) = ?
-		 AND TIME_TO_SEC(TIMEDIFF(TIME(col_time_on), ?)) <= 3000
+		 where col_time_on >= ?
+		 AND col_time_on <= ?
 		 and station_profile.user_id = ?';
-		$binding[] = $date;
-		$binding[] = $time;
+		$binding[] = $datetimeStart;
+		$binding[] = $dateTimeEnd;
 		$binding[] = $this->session->userdata('user_id');
 
 		return $this->db->query($sql, $binding);

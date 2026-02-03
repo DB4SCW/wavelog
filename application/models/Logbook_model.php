@@ -693,10 +693,10 @@ class Logbook_model extends CI_Model {
 		}
 
 		if ($datefrom != null) {
-			$this->db->where('date(COL_TIME_ON) >=', $datefrom);
+			$this->db->where('COL_TIME_ON >=', $datefrom . ' 00:00:00');
 		}
 		if ($dateto != null) {
-			$this->db->where('date(COL_TIME_ON) <=', $dateto);
+			$this->db->where('COL_TIME_ON <=', $dateto . ' 23:59:59');
 		}
 		$this->db->order_by("COL_TIME_ON", "desc");
 		$this->db->order_by("COL_PRIMARY_KEY", "desc");
@@ -3375,10 +3375,10 @@ class Logbook_model extends CI_Model {
 
 		// If date is set, we add it to the where-statement
 		if ($fromdate != "") {
-			$this->db->where("date(" . $this->config->item('table_name') . ".COL_TIME_ON) >=", $fromdate);
+			$this->db->where($this->config->item('table_name') . ".COL_TIME_ON >=", $fromdate . ' 00:00:00');
 		}
 		if ($todate != "") {
-			$this->db->where("date(" . $this->config->item('table_name') . ".COL_TIME_ON) <=", $todate);
+			$this->db->where($this->config->item('table_name') . ".COL_TIME_ON <=", $todate . ' 23:59:59');
 		}
 
 		$query = $this->db->get($this->config->item('table_name'));
@@ -3429,12 +3429,12 @@ class Logbook_model extends CI_Model {
 					FROM " . $this->config->item('table_name') . "
 					WHERE station_id IN ($location_list)";
 			if (!empty($dateFrom)) {
-				$sql .= " AND DATE(COL_TIME_ON) >= ?";
-				$params[] = $dateFrom;
+				$sql .= " AND COL_TIME_ON >= ?";
+				$params[] = $dateFrom . ' 00:00:00';
 			}
 			if (!empty($dateTo)) {
-				$sql .= " AND DATE(COL_TIME_ON) <= ?";
-				$params[] = $dateTo;
+				$sql .= " AND COL_TIME_ON <= ?";
+				$params[] = $dateTo . ' 23:59:59';
 			}
 			$sql .= " GROUP BY DATE_FORMAT(COL_TIME_ON, '%m')
 					ORDER BY month ASC";
@@ -3683,10 +3683,10 @@ class Logbook_model extends CI_Model {
 
 	private function where_date_range($dateFrom, $dateTo) {
 		if (!empty($dateFrom)) {
-			$this->db->where('DATE(COL_TIME_ON) >=', $dateFrom);
+			$this->db->where('COL_TIME_ON >=', $dateFrom . ' 00:00:00');
 		}
 		if (!empty($dateTo)) {
-			$this->db->where('DATE(COL_TIME_ON) <=', $dateTo);
+			$this->db->where('COL_TIME_ON <=', $dateTo . ' 23:59:59');
 		}
 	}
 
