@@ -281,13 +281,24 @@ $('#locator').on('input', function () {
 });
 
 $("#check_cluster").on("click", function () {
-	$.ajax({ url: dxcluster_provider + "/qrg_lookup/" + $("#frequency").val() / 1000, cache: false, dataType: "json" }).done(
-		function (dxspot) {
-			reset_fields();
-			$("#callsign").val(dxspot.spotted);
-			$("#callsign").trigger("blur");
-		}
-	);
+	if ($("#callsign").val().trim() == '') {
+		$.ajax({
+			url: dxcluster_provider + "/qrg_lookup/" + $("#frequency").val() / 1000,
+			cache: false,
+			dataType: "json",
+			success: function (dxspot) {
+				if ((dxspot.spotted ?? '') != '') {
+					reset_fields();
+					$("#callsign").val(dxspot.spotted);
+					$("#callsign").trigger("blur");
+				} else {
+					showToast(lang_general_word_info, lang_qso_no_spots_found, 'bg-info text-dark', 2000);
+				}
+			}
+		});
+	} else {
+		showToast(lang_general_word_info, lang_qso_you_already_filled_an_qso, 'bg-info text-dark', 2000);
+	}
 });
 
 function set_timers() {
