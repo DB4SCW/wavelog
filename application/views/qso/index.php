@@ -42,6 +42,9 @@ switch ($date_format) {
   var lang_qso_sat_lotw_support_not_found = "<?= __("Satellite not found"); ?>";
   var lang_qso_sat_lotw_supported = "<?= __("Supported by LoTW"); ?>";
   var lang_qso_sat_lotw_not_supported = "<?= __("Not supported by LoTW"); ?>";
+  var lang_general_word_info = "<?= __("Info"); ?>";
+  var lang_qso_you_already_filled_an_qso = "<?= __("You have already filled in a callsign. First finish this QSO before filling the last spot from DXcluster."); ?>";
+  var lang_qso_no_spots_found = "<?= __("No spots found in this frequency.") ?>";
 </script>
 
 <!--- DX Waterfall --->
