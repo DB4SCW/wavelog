@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 12:32+0000\n"
-"PO-Revision-Date: 2026-02-03 07:57+0000\n"
+"PO-Revision-Date: 2026-02-03 14:31+0000\n"
 "Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -10648,29 +10648,29 @@ msgstr "Lade Datei hoch"
 
 #: application/views/debug/index.php:2
 msgid "Are you sure you want to clear the cache?"
-msgstr ""
+msgstr "Bist du sicher, dass du den Cache leeren willst?"
 
 #: application/views/debug/index.php:3
 msgid "Failed to clear cache!"
-msgstr ""
+msgstr "Cache konnte nicht geleert werden! Da ist was schiefgelaufen!"
 
 #: application/views/debug/index.php:4
 #, php-format
 msgid "Last version check: %s"
-msgstr ""
+msgstr "Letzte Versionsprüfung: %s"
 
 #: application/views/debug/index.php:5
 msgid "Wavelog is up to date!"
-msgstr ""
+msgstr "Wavelog ist auf dem neuesten Stand!"
 
 #: application/views/debug/index.php:6
 #, php-format
 msgid "There is a newer version available: %s"
-msgstr ""
+msgstr "Es ist eine neuere Version verfügbar: %s"
 
 #: application/views/debug/index.php:7
 msgid "The Remote Repository doesn't know your branch."
-msgstr ""
+msgstr "Das Remote-Repository kennt deinen Branch nicht."
 
 #: application/views/debug/index.php:32
 msgid "Wavelog Information"
@@ -10915,7 +10915,7 @@ msgstr "Backup-Adapter"
 #, php-format
 msgctxt "Cache Path"
 msgid "Path for %s adapter"
-msgstr ""
+msgstr "Pfad für %s-Adapter"
 
 #: application/views/debug/index.php:444
 msgctxt "Cache Key Prefix"
