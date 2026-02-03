@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-03 08:15+0000\n"
+"POT-Creation-Date: 2026-02-03 12:32+0000\n"
 "PO-Revision-Date: 2026-01-28 11:57+0000\n"
 "Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -112,8 +112,8 @@ msgstr ""
 #: application/controllers/Satellite.php:118
 #: application/controllers/Satellite.php:132
 #: application/controllers/Satellite.php:150
-#: application/controllers/Satellite.php:664
-#: application/controllers/Satellite.php:673
+#: application/controllers/Satellite.php:666
+#: application/controllers/Satellite.php:675
 #: application/controllers/Sattimers.php:9
 #: application/controllers/Search.php:11
 #: application/controllers/Simplefle.php:7
@@ -2561,40 +2561,40 @@ msgstr "Dodaj satelitę"
 msgid "Edit Satellite"
 msgstr "Edytuj satelitę"
 
-#: application/controllers/Satellite.php:199
+#: application/controllers/Satellite.php:201
 #: application/views/interface_assets/header.php:313
 msgid "Satellite Flightpath"
 msgstr "Satelity - tory lotu"
 
-#: application/controllers/Satellite.php:251
+#: application/controllers/Satellite.php:253
 msgid "Satellite pass"
 msgstr "Przelot satelity"
 
-#: application/controllers/Satellite.php:308
+#: application/controllers/Satellite.php:310
 msgid "Failed to save pass settings!"
 msgstr "Nie udało się zapisać ustawień przelotu!"
 
-#: application/controllers/Satellite.php:311
+#: application/controllers/Satellite.php:313
 msgid "Pass settings saved!"
 msgstr "Ustawienia trasy przelotu zostały zapisane!"
 
-#: application/controllers/Satellite.php:324
+#: application/controllers/Satellite.php:326
 msgid "No settings found!"
 msgstr "Nie znaleziono ustawień!"
 
-#: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:340
 msgid "Failed to delete pass settings!"
 msgstr "Nie udało się usunąć ustawień przelotu!"
 
-#: application/controllers/Satellite.php:340
+#: application/controllers/Satellite.php:342
 msgid "Pass settings deleted!"
 msgstr "Trasy przelotu usnieto!"
 
-#: application/controllers/Satellite.php:350
+#: application/controllers/Satellite.php:352
 msgid "Saved Pass Settings"
 msgstr "Zapisano trasy przelotu"
 
-#: application/controllers/Satellite.php:367
+#: application/controllers/Satellite.php:369
 msgid "No presets available"
 msgstr "Brak ustawień wstępnych"
 

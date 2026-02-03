@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-03 08:15+0000\n"
+"POT-Creation-Date: 2026-02-03 12:32+0000\n"
 "PO-Revision-Date: 2026-01-28 11:57+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
@@ -103,8 +103,8 @@ msgstr ""
 #: application/controllers/Satellite.php:118
 #: application/controllers/Satellite.php:132
 #: application/controllers/Satellite.php:150
-#: application/controllers/Satellite.php:664
-#: application/controllers/Satellite.php:673
+#: application/controllers/Satellite.php:666
+#: application/controllers/Satellite.php:675
 #: application/controllers/Sattimers.php:9
 #: application/controllers/Search.php:11
 #: application/controllers/Simplefle.php:7
@@ -2541,40 +2541,40 @@ msgstr "衛星を作成"
 msgid "Edit Satellite"
 msgstr "衛星を編集"
 
-#: application/controllers/Satellite.php:199
+#: application/controllers/Satellite.php:201
 #: application/views/interface_assets/header.php:313
 msgid "Satellite Flightpath"
 msgstr "衛星飛行経路"
 
-#: application/controllers/Satellite.php:251
+#: application/controllers/Satellite.php:253
 msgid "Satellite pass"
 msgstr "衛星パス"
 
-#: application/controllers/Satellite.php:308
+#: application/controllers/Satellite.php:310
 msgid "Failed to save pass settings!"
 msgstr "パス設定の保存に失敗しました！"
 
-#: application/controllers/Satellite.php:311
+#: application/controllers/Satellite.php:313
 msgid "Pass settings saved!"
 msgstr "パス設定が保存されました!"
 
-#: application/controllers/Satellite.php:324
+#: application/controllers/Satellite.php:326
 msgid "No settings found!"
 msgstr "設定が見つかりません!"
 
-#: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:340
 msgid "Failed to delete pass settings!"
 msgstr "パス設定の削除に失敗しました！"
 
-#: application/controllers/Satellite.php:340
+#: application/controllers/Satellite.php:342
 msgid "Pass settings deleted!"
 msgstr "パス設定が削除されました!"
 
-#: application/controllers/Satellite.php:350
+#: application/controllers/Satellite.php:352
 msgid "Saved Pass Settings"
 msgstr "保存されたパス設定"
 
-#: application/controllers/Satellite.php:367
+#: application/controllers/Satellite.php:369
 msgid "No presets available"
 msgstr "プリセットはありません"
 
