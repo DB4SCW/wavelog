@@ -163,10 +163,12 @@ class Satellite extends CI_Controller {
 		$satellite_data = $this->satellite_model->satellite_data();
 		$sat_list = array();
 		foreach ($satellite_data as $sat) {
-			$sat_list[$sat->satellite]['Modes'][$sat->satmode][0]['Uplink_Mode'] = $sat->Uplink_Mode;
-			$sat_list[$sat->satellite]['Modes'][$sat->satmode][0]['Uplink_Freq'] = $sat->Uplink_Freq;
-			$sat_list[$sat->satellite]['Modes'][$sat->satmode][0]['Downlink_Mode'] = $sat->Downlink_Mode;
-			$sat_list[$sat->satellite]['Modes'][$sat->satmode][0]['Downlink_Freq'] = $sat->Downlink_Freq;
+			$satellite_key = $sat->satellite ?? '';
+			$satmode_key = $sat->satmode ?? '';
+			$sat_list[$satellite_key]['Modes'][$satmode_key][0]['Uplink_Mode'] = $sat->Uplink_Mode;
+			$sat_list[$satellite_key]['Modes'][$satmode_key][0]['Uplink_Freq'] = $sat->Uplink_Freq;
+			$sat_list[$satellite_key]['Modes'][$satmode_key][0]['Downlink_Mode'] = $sat->Downlink_Mode;
+			$sat_list[$satellite_key]['Modes'][$satmode_key][0]['Downlink_Freq'] = $sat->Downlink_Freq;
 		}
 		header('Content-Type: application/json');
 		echo json_encode($sat_list, JSON_FORCE_OBJECT);

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-03 08:15+0000\n"
+"POT-Creation-Date: 2026-02-03 12:32+0000\n"
 "PO-Revision-Date: 2025-08-23 15:21+0000\n"
 "Last-Translator: Matthias Jung <jungma@eit.uni-kl.de>\n"
 "Language-Team: Armenian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -102,8 +102,8 @@ msgstr ""
 #: application/controllers/Satellite.php:118
 #: application/controllers/Satellite.php:132
 #: application/controllers/Satellite.php:150
-#: application/controllers/Satellite.php:664
-#: application/controllers/Satellite.php:673
+#: application/controllers/Satellite.php:666
+#: application/controllers/Satellite.php:675
 #: application/controllers/Sattimers.php:9
 #: application/controllers/Search.php:11
 #: application/controllers/Simplefle.php:7
@@ -2508,40 +2508,40 @@ msgstr ""
 msgid "Edit Satellite"
 msgstr ""
 
-#: application/controllers/Satellite.php:199
+#: application/controllers/Satellite.php:201
 #: application/views/interface_assets/header.php:313
 msgid "Satellite Flightpath"
 msgstr ""
 
-#: application/controllers/Satellite.php:251
+#: application/controllers/Satellite.php:253
 msgid "Satellite pass"
 msgstr ""
 
-#: application/controllers/Satellite.php:308
+#: application/controllers/Satellite.php:310
 msgid "Failed to save pass settings!"
 msgstr ""
 
-#: application/controllers/Satellite.php:311
+#: application/controllers/Satellite.php:313
 msgid "Pass settings saved!"
 msgstr ""
 
-#: application/controllers/Satellite.php:324
+#: application/controllers/Satellite.php:326
 msgid "No settings found!"
 msgstr ""
 
-#: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:340
 msgid "Failed to delete pass settings!"
 msgstr ""
 
-#: application/controllers/Satellite.php:340
+#: application/controllers/Satellite.php:342
 msgid "Pass settings deleted!"
 msgstr ""
 
-#: application/controllers/Satellite.php:350
+#: application/controllers/Satellite.php:352
 msgid "Saved Pass Settings"
 msgstr ""
 
-#: application/controllers/Satellite.php:367
+#: application/controllers/Satellite.php:369
 msgid "No presets available"
 msgstr ""
 

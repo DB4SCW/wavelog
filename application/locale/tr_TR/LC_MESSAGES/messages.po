@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-03 08:15+0000\n"
+"POT-Creation-Date: 2026-02-03 12:32+0000\n"
 "PO-Revision-Date: 2026-01-05 10:37+0000\n"
 "Last-Translator: Halil AYYILDIZ <ta2lghalil@gmail.com>\n"
 "Language-Team: Turkish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -107,8 +107,8 @@ msgstr ""
 #: application/controllers/Satellite.php:118
 #: application/controllers/Satellite.php:132
 #: application/controllers/Satellite.php:150
-#: application/controllers/Satellite.php:664
-#: application/controllers/Satellite.php:673
+#: application/controllers/Satellite.php:666
+#: application/controllers/Satellite.php:675
 #: application/controllers/Sattimers.php:9
 #: application/controllers/Search.php:11
 #: application/controllers/Simplefle.php:7
@@ -2543,40 +2543,40 @@ msgstr "Yeni Uydu Ekle"
 msgid "Edit Satellite"
 msgstr "Uydu Düzenle"
 
-#: application/controllers/Satellite.php:199
+#: application/controllers/Satellite.php:201
 #: application/views/interface_assets/header.php:313
 msgid "Satellite Flightpath"
 msgstr "Uydu Yörüngesi"
 
-#: application/controllers/Satellite.php:251
+#: application/controllers/Satellite.php:253
 msgid "Satellite pass"
 msgstr "Uydu Geçişi"
 
-#: application/controllers/Satellite.php:308
+#: application/controllers/Satellite.php:310
 msgid "Failed to save pass settings!"
 msgstr "Geçiş ayarları kaydedilirken hata oluştu!"
 
-#: application/controllers/Satellite.php:311
+#: application/controllers/Satellite.php:313
 msgid "Pass settings saved!"
 msgstr "Geçiş ayarları başarıyla kaydedildi!"
 
-#: application/controllers/Satellite.php:324
+#: application/controllers/Satellite.php:326
 msgid "No settings found!"
 msgstr "Hiç ayar bulunamadı!"
 
-#: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:340
 msgid "Failed to delete pass settings!"
 msgstr "Geçiş ayarları silinemedi!"
 
-#: application/controllers/Satellite.php:340
+#: application/controllers/Satellite.php:342
 msgid "Pass settings deleted!"
 msgstr "Geçiş ayarları başarıyla silindi!"
 
-#: application/controllers/Satellite.php:350
+#: application/controllers/Satellite.php:352
 msgid "Saved Pass Settings"
 msgstr "Kaydedilen Geçiş Ayarları"
 
-#: application/controllers/Satellite.php:367
+#: application/controllers/Satellite.php:369
 msgid "No presets available"
 msgstr "Mevcut ön ayar yok"
 

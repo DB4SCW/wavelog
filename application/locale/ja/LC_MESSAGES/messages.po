@@ -128,6 +128,8 @@ msgstr ""
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52
+#: application/controllers/Satellite.php:666
+#: application/controllers/Satellite.php:675
 msgid "You're not allowed to do that!"
 msgstr "それは許されません！"
 
@@ -2543,38 +2545,47 @@ msgstr "衛星を編集"
 
 #: application/controllers/Satellite.php:199
 #: application/views/interface_assets/header.php:313
+#: application/controllers/Satellite.php:201
 msgid "Satellite Flightpath"
 msgstr "衛星飛行経路"
 
 #: application/controllers/Satellite.php:251
+#: application/controllers/Satellite.php:253
 msgid "Satellite pass"
 msgstr "衛星パス"
 
 #: application/controllers/Satellite.php:308
+#: application/controllers/Satellite.php:310
 msgid "Failed to save pass settings!"
 msgstr "パス設定の保存に失敗しました！"
 
 #: application/controllers/Satellite.php:311
+#: application/controllers/Satellite.php:313
 msgid "Pass settings saved!"
 msgstr "パス設定が保存されました!"
 
 #: application/controllers/Satellite.php:324
+#: application/controllers/Satellite.php:326
 msgid "No settings found!"
 msgstr "設定が見つかりません!"
 
 #: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:340
 msgid "Failed to delete pass settings!"
 msgstr "パス設定の削除に失敗しました！"
 
 #: application/controllers/Satellite.php:340
+#: application/controllers/Satellite.php:342
 msgid "Pass settings deleted!"
 msgstr "パス設定が削除されました!"
 
 #: application/controllers/Satellite.php:350
+#: application/controllers/Satellite.php:352
 msgid "Saved Pass Settings"
 msgstr "保存されたパス設定"
 
 #: application/controllers/Satellite.php:367
+#: application/controllers/Satellite.php:369
 msgid "No presets available"
 msgstr "プリセットはありません"
 
@@ -10802,8 +10813,8 @@ msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
-"プライマリ アダプターが使用できないため、キャッシュは現在バックアップ "
-"アダプターを使用しています。"
+"プライマリ アダプターが使用できないため、キャッシュは現在バックアップ アダプ"
+"ターを使用しています。"
 
 #: application/views/debug/index.php:454
 msgid "Cache is working properly. Everything okay!"
@@ -19366,9 +19377,9 @@ msgstr "CQz geojson"
 #~ "processed. %s Please make sure you export the LoTW certificate from tqsl "
 #~ "application without password! %s"
 #~ msgstr ""
-#~ "ファイル %s 内の証明書にはパスワードが含まれており、処理できませ"
-#~ "ん。%stqsl アプリケーションから LoTW 証明書をエクスポートする際は、パス"
-#~ "ワードなしで実行してください！%s"
+#~ "ファイル %s 内の証明書にはパスワードが含まれており、処理できません。"
+#~ "%stqsl アプリケーションから LoTW 証明書をエクスポートする際は、パスワード"
+#~ "なしで実行してください！%s"
 
 #~ msgid "Column"
 #~ msgstr "カラム"
@@ -19702,8 +19713,8 @@ msgstr "CQz geojson"
 #~ "Your active Station Location isn't linked to your Logbook. Click %shere%s "
 #~ "to do it."
 #~ msgstr ""
-#~ "現在のステーション位置がログブックとリンクされていません。リンクするに"
-#~ "は、%shere%s をクリックしてください。"
+#~ "現在のステーション位置がログブックとリンクされていません。リンクするには、"
+#~ "%shere%s をクリックしてください。"
 
 #, php-format
 #~ msgctxt "Dashboard Warning"
