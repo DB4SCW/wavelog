@@ -1,3 +1,12 @@
+<script>
+    var lang_cache_clean_confirm = "<?= __("Are you sure you want to clear the cache?"); ?>";
+    var lang_cache_clear_failure = "<?= __("Failed to clear cache!"); ?>";
+    var lang_git_last_version_check = "<?= __("Last version check: %s"); ?>";
+    var lang_git_is_uptodate = "<?= __("Wavelog is up to date!"); ?>";
+    var lang_git_new_update_available = "<?= __("There is a newer version available: %s"); ?>";
+    var lang_git_remote_doesnt_know_branch = "<?= __("The Remote Repository doesn't know your branch."); ?>";
+</script>
+
 <div class="container debug_main mb-4">
     <br>
     <?php if ($this->session->flashdata('success')) { ?>
