@@ -74,10 +74,10 @@
 	// Helper method for date range filtering
 	private function filter_date_range($dateFrom, $dateTo) {
 		if (!empty($dateFrom)) {
-			$this->db->where('DATE(COL_TIME_ON) >=', $dateFrom);
+			$this->db->where('COL_TIME_ON >=', $dateFrom . ' 00:00:00');
 		}
 		if (!empty($dateTo)) {
-			$this->db->where('DATE(COL_TIME_ON) <=', $dateTo);
+			$this->db->where('COL_TIME_ON <=', $dateTo . ' 23:59:59');
 		}
 	}
 
@@ -758,12 +758,12 @@
 		from " . $this->config->item('table_name') . "
 		where station_id in (". implode(',', $logbooks_locations_array) .")";
 		if (!empty($dateFrom)) {
-			$sql.=" and DATE(COL_TIME_ON) >= ? ";
-			$binding[]=$dateFrom;
+			$sql.=" and COL_TIME_ON >= ? ";
+			$binding[]=$dateFrom . ' 00:00:00';
 		}
 		if (!empty($dateTo)) {
-			$sql.=" and DATE(COL_TIME_ON) <= ? ";
-			$binding[]=$dateTo;
+			$sql.=" and COL_TIME_ON <= ? ";
+			$binding[]=$dateTo . ' 23:59:59';
 		}
 		$sql.=" and col_prop_mode <> 'SAT'
 		group by lower(col_band), col_mode, coalesce(col_submode, '')";
@@ -790,12 +790,12 @@
 		from " . $this->config->item('table_name') . "
 		where station_id in (". implode(',', $logbooks_locations_array) .")";
 		if (!empty($dateFrom)) {
-			$sql.=" and DATE(COL_TIME_ON) >= ? ";
-			$binding[]=$dateFrom;
+			$sql.=" and COL_TIME_ON >= ? ";
+			$binding[]=$dateFrom . ' 00:00:00';
 		}
 		if (!empty($dateTo)) {
-			$sql.=" and DATE(COL_TIME_ON) <= ? ";
-			$binding[]=$dateTo;
+			$sql.=" and COL_TIME_ON <= ? ";
+			$binding[]=$dateTo . ' 23:59:59';
 		}
 		$sql.=" and col_prop_mode = 'SAT'
 		and coalesce(col_sat_name, '') <> ''
@@ -996,12 +996,12 @@
 		LEFT JOIN satellite ON satellite.name = ".$this->config->item('table_name').".COL_SAT_NAME
 		where station_id in (" . implode(',',$logbooks_locations_array) . ") and coalesce(col_ant_el, '') <> ''";
 		if (!empty($dateFrom)) {
-			$sql.=" and DATE(COL_TIME_ON) >= ? ";
-			$binding[]=$dateFrom;
+			$sql.=" and COL_TIME_ON >= ? ";
+			$binding[]=$dateFrom . ' 00:00:00';
 		}
 		if (!empty($dateTo)) {
-			$sql.=" and DATE(COL_TIME_ON) <= ? ";
-			$binding[]=$dateTo;
+			$sql.=" and COL_TIME_ON <= ? ";
+			$binding[]=$dateTo . ' 23:59:59';
 		}
 		$sql.=" $where
 		group by round(col_ant_el)
@@ -1057,12 +1057,12 @@
 		where station_id in (" . implode(',',$logbooks_locations_array) . ")
 		and coalesce(col_ant_az, '') <> ''";
 		if (!empty($dateFrom)) {
-			$sql.=" and DATE(COL_TIME_ON) >= ? ";
-			$binding[]=$dateFrom;
+			$sql.=" and COL_TIME_ON >= ? ";
+			$binding[]=$dateFrom . ' 00:00:00';
 		}
 		if (!empty($dateTo)) {
-			$sql.=" and DATE(COL_TIME_ON) <= ? ";
-			$binding[]=$dateTo;
+			$sql.=" and COL_TIME_ON <= ? ";
+			$binding[]=$dateTo . ' 23:59:59';
 		}
 		$sql.=" $where
 		group by round(col_ant_az)

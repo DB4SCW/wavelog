@@ -83,13 +83,13 @@ class CQ extends CI_Model{
 		}
 
 			if ($postdata['datefrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['datefrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['datefrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateto'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateto'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateto'] . ' 23:59:59';
 		}
 
 		$sql .= $this->genfunctions->addBandToQuery($band,$bindings);
@@ -105,13 +105,13 @@ class CQ extends CI_Model{
 		}
 
 		if ($postdata['datefrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['datefrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['datefrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateto'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateto'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateto'] . ' 23:59:59';
 		}
 
 		$sql .= $this->genfunctions->addBandToQuery($band,$bindings);
@@ -141,13 +141,13 @@ class CQ extends CI_Model{
 		}
 
 		if ($postdata['datefrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['datefrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['datefrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateto'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateto'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateto'] . ' 23:59:59';
 		}
 
 		$sql .= $this->genfunctions->addBandToQuery($band,$bindings);
@@ -211,13 +211,13 @@ class CQ extends CI_Model{
 		}
 
 		if ($postdata['datefrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['datefrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['datefrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateto'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateto'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateto'] . ' 23:59:59';
 		}
 
 		$query = $this->db->query($sql,$bindings);
@@ -256,13 +256,13 @@ class CQ extends CI_Model{
 		}
 
 		if ($postdata['datefrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['datefrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['datefrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateto'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateto'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateto'] . ' 23:59:59';
 		}
 
 		$sql .= $this->genfunctions->addQslToQuery($postdata);
