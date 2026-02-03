@@ -44,25 +44,26 @@ class Dxcluster extends CI_Controller {
 		$calls_found = $this->dxcluster_model->dxc_spotlist($band, $age, $de, $mode);
 
 		header('Content-Type: application/json');
+		http_response_code(200);
 		if ($calls_found && !empty($calls_found)) {
-			http_response_code(200);
 			echo json_encode($calls_found, JSON_PRETTY_PRINT);
 		} else {
-			$this->_return_not_found();
+			echo json_encode([], JSON_PRETTY_PRINT);  // "error: not found" would be misleading here. No spots are not an error. Therefore we return an empty array
 		}
 	}
 
 	public function qrg_lookup($qrg) {
 		$call_found = $this->dxcluster_model->dxc_qrg_lookup($this->security->xss_clean($qrg));
 		header('Content-Type: application/json');
+		http_response_code(200);
 		if ($call_found) {
-			http_response_code(200);
 			echo json_encode($call_found, JSON_PRETTY_PRINT);
 		} else {
-			$this->_return_not_found();
+			echo json_encode([], JSON_PRETTY_PRINT); // "error: not found" would be misleading here. No call is not an error, the call is just not in the spotlist. Therefore we return an empty array
 		}
 	}
 
+	// TODO: Is this used anywhere? If not, remove it!
 	public function call($call) {
 		$date = date('Y-m-d', time());
 		$dxccobj = new Dxcc($date);
@@ -70,17 +71,11 @@ class Dxcluster extends CI_Controller {
 		$dxcc = $dxccobj->dxcc_lookup($call, $date);
 
 		header('Content-Type: application/json');
+		http_response_code(200);
 		if ($dxcc) {
-			http_response_code(200);
 			echo json_encode($dxcc, JSON_PRETTY_PRINT);
 		} else {
-			$this->_return_not_found();
+			echo json_encode(['error' => 'not found'], JSON_PRETTY_PRINT);
 		}
-	}
-
-	private function _return_not_found() {
-		header('Content-Type: application/json');
-		http_response_code(404);
-		echo json_encode(['error' => 'not found'], JSON_PRETTY_PRINT);
 	}
 }
