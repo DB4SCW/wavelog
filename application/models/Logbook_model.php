@@ -3930,30 +3930,36 @@ class Logbook_model extends CI_Model {
 			$logbooks_locations_array = $StationLocationsArray;
 		}
 
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('
-	  COUNT(IF(COL_QSL_SENT="Y",COL_QSL_SENT,null)) as QSL_Sent,
-	  COUNT(IF(COL_QSL_RCVD="Y",COL_QSL_RCVD,null)) as QSL_Received,
-	  COUNT(IF(COL_QSL_SENT IN("Q", "R") ,COL_QSL_SENT,null)) as QSL_Requested,
-	  COUNT(IF(COL_EQSL_QSL_SENT="Y",COL_EQSL_QSL_SENT,null)) as eQSL_Sent,
-	  COUNT(IF(COL_EQSL_QSL_RCVD="Y",COL_EQSL_QSL_RCVD,null)) as eQSL_Received,
-	  COUNT(IF(COL_LOTW_QSL_SENT="Y",COL_LOTW_QSL_SENT,null)) as LoTW_Sent,
-	  COUNT(IF(COL_LOTW_QSL_RCVD="Y",COL_LOTW_QSL_RCVD,null)) as LoTW_Received,
-	  COUNT(IF(COL_QRZCOM_QSO_UPLOAD_STATUS="Y",COL_QRZCOM_QSO_UPLOAD_STATUS,null)) as QRZ_Sent,
-	  COUNT(IF(COL_QRZCOM_QSO_DOWNLOAD_STATUS="Y",COL_QRZCOM_QSO_DOWNLOAD_STATUS,null)) as QRZ_Received,
-	  COUNT(IF(COL_QSL_SENT="Y" and DATE(COL_QSLSDATE)=DATE(SYSDATE()),COL_QSL_SENT,null)) as QSL_Sent_today,
-	  COUNT(IF(COL_QSL_RCVD="Y" and DATE(COL_QSLRDATE)=DATE(SYSDATE()),COL_QSL_RCVD,null)) as QSL_Received_today,
-	  COUNT(IF(COL_QSL_SENT IN("Q", "R") and DATE(COL_QSLSDATE)=DATE(SYSDATE()) ,COL_QSL_SENT,null)) as QSL_Requested_today,
-	  COUNT(IF(COL_EQSL_QSL_SENT="Y" and DATE(COL_EQSL_QSLSDATE)=DATE(SYSDATE()),COL_EQSL_QSL_SENT,null)) as eQSL_Sent_today,
-	  COUNT(IF(COL_EQSL_QSL_RCVD="Y" and DATE(COL_EQSL_QSLRDATE)=DATE(SYSDATE()),COL_EQSL_QSL_RCVD,null)) as eQSL_Received_today,
-	  COUNT(IF(COL_LOTW_QSL_SENT="Y" and DATE(COL_LOTW_QSLSDATE)=DATE(SYSDATE()),COL_LOTW_QSL_SENT,null)) as LoTW_Sent_today,
-	  COUNT(IF(COL_LOTW_QSL_RCVD="Y" and DATE(COL_LOTW_QSLRDATE)=DATE(SYSDATE()),COL_LOTW_QSL_RCVD,null)) as LoTW_Received_today,
-	  COUNT(IF(COL_QRZCOM_QSO_UPLOAD_STATUS="Y" and DATE(COL_QRZCOM_QSO_UPLOAD_DATE)=DATE(SYSDATE()),COL_QRZCOM_QSO_UPLOAD_STATUS,null)) as QRZ_Sent_today,
-	  COUNT(IF(COL_QRZCOM_QSO_DOWNLOAD_STATUS="Y" and DATE(COL_QRZCOM_QSO_DOWNLOAD_DATE)=DATE(SYSDATE()),COL_QRZCOM_QSO_DOWNLOAD_STATUS,null)) as QRZ_Received_today
-	');
-			$this->db->where_in('station_id', $logbooks_locations_array);
+		$location_list = "'" . implode("','", $logbooks_locations_array) . "'";
 
-			if ($query = $this->db->get($this->config->item('table_name'))) {
+		if (!empty($logbooks_locations_array)) {
+			$todayStart = date('Y-m-d 00:00:00');
+			$tomorrowStart = date('Y-m-d 00:00:00', strtotime('+1 day'));
+			$todayStartSql = $this->db->escape($todayStart);
+			$tomorrowStartSql = $this->db->escape($tomorrowStart);
+			$sql = 'SELECT
+				SUM(CASE WHEN COL_QSL_SENT="Y" THEN 1 ELSE 0 END) as QSL_Sent,
+				SUM(CASE WHEN COL_QSL_RCVD="Y" THEN 1 ELSE 0 END) as QSL_Received,
+				SUM(CASE WHEN COL_QSL_SENT IN("Q", "R") THEN 1 ELSE 0 END) as QSL_Requested,
+				SUM(CASE WHEN COL_EQSL_QSL_SENT="Y" THEN 1 ELSE 0 END) as eQSL_Sent,
+				SUM(CASE WHEN COL_EQSL_QSL_RCVD="Y" THEN 1 ELSE 0 END) as eQSL_Received,
+				SUM(CASE WHEN COL_LOTW_QSL_SENT="Y" THEN 1 ELSE 0 END) as LoTW_Sent,
+				SUM(CASE WHEN COL_LOTW_QSL_RCVD="Y" THEN 1 ELSE 0 END) as LoTW_Received,
+				SUM(CASE WHEN COL_QRZCOM_QSO_UPLOAD_STATUS="Y" THEN 1 ELSE 0 END) as QRZ_Sent,
+				SUM(CASE WHEN COL_QRZCOM_QSO_DOWNLOAD_STATUS="Y" THEN 1 ELSE 0 END) as QRZ_Received,
+				SUM(CASE WHEN COL_QSL_SENT="Y" AND COL_QSLSDATE >= ' . $todayStartSql . ' AND COL_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QSL_Sent_today,
+				SUM(CASE WHEN COL_QSL_RCVD="Y" AND COL_QSLRDATE >= ' . $todayStartSql . ' AND COL_QSLRDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QSL_Received_today,
+				SUM(CASE WHEN COL_QSL_SENT IN("Q", "R") AND COL_QSLSDATE >= ' . $todayStartSql . ' AND COL_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QSL_Requested_today,
+				SUM(CASE WHEN COL_EQSL_QSL_SENT="Y" AND COL_EQSL_QSLSDATE >= ' . $todayStartSql . ' AND COL_EQSL_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as eQSL_Sent_today,
+				SUM(CASE WHEN COL_EQSL_QSL_RCVD="Y" AND COL_EQSL_QSLRDATE >= ' . $todayStartSql . ' AND COL_EQSL_QSLRDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as eQSL_Received_today,
+				SUM(CASE WHEN COL_LOTW_QSL_SENT="Y" AND COL_LOTW_QSLSDATE >= ' . $todayStartSql . ' AND COL_LOTW_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as LoTW_Sent_today,
+				SUM(CASE WHEN COL_LOTW_QSL_RCVD="Y" AND COL_LOTW_QSLRDATE >= ' . $todayStartSql . ' AND COL_LOTW_QSLRDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as LoTW_Received_today,
+				SUM(CASE WHEN COL_QRZCOM_QSO_UPLOAD_STATUS="Y" AND COL_QRZCOM_QSO_UPLOAD_DATE >= ' . $todayStartSql . ' AND COL_QRZCOM_QSO_UPLOAD_DATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QRZ_Sent_today,
+				SUM(CASE WHEN COL_QRZCOM_QSO_DOWNLOAD_STATUS="Y" AND COL_QRZCOM_QSO_DOWNLOAD_DATE >= ' . $todayStartSql . ' AND COL_QRZCOM_QSO_DOWNLOAD_DATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QRZ_Received_today
+				FROM ' . $this->config->item('table_name') . '
+				WHERE station_id IN (' . $location_list . ')';
+
+			if ($query = $this->db->query($sql)) {
 				$this->db->last_query();
 				foreach ($query->result() as $row) {
 					$QSLBreakdown['QSL_Sent'] = $row->QSL_Sent;
