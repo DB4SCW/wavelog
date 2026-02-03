@@ -172,13 +172,13 @@ class DXCC extends CI_Model {
 		$sql .= $this->genfunctions->addQslToQuery($postdata);
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 		$sql .= " group by col_dxcc
@@ -221,13 +221,13 @@ class DXCC extends CI_Model {
 		}
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 		$sql .= $this->addOrbitToQuery($postdata,$bindings);
@@ -280,13 +280,13 @@ class DXCC extends CI_Model {
 			}
 
 			if ($postdata['dateFrom'] != NULL) {
-				$sql .= " and date(col_time_on) >= ?";
-				$bindings[]=$postdata['dateFrom'];
+				$sql .= " and col_time_on >= ?";
+				$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 			}
 
 			if ($postdata['dateTo'] != NULL) {
-				$sql .= " and date(col_time_on) <= ?";
-				$bindings[]=$postdata['dateTo'];
+				$sql .= " and col_time_on <= ?";
+				$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 			}
 
 			if ($postdata['mode'] != 'All') {
@@ -343,13 +343,13 @@ class DXCC extends CI_Model {
 		}
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 		$sql .= " and not exists (select 1 from ".$this->config->item('table_name')." where station_id in (". $location_list .") and col_dxcc = thcv.col_dxcc and col_dxcc > 0";
@@ -366,13 +366,13 @@ class DXCC extends CI_Model {
 		}
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 
@@ -408,13 +408,13 @@ class DXCC extends CI_Model {
 		    ") and col_dxcc > 0";
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 		$sql .= $this->genfunctions->addBandToQuery($postdata['band'],$bindings);
@@ -548,13 +548,13 @@ class DXCC extends CI_Model {
 		}
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 		if ($postdata['mode'] != 'All') {
@@ -618,13 +618,13 @@ class DXCC extends CI_Model {
 		}
 
 		if ($postdata['dateFrom'] != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$bindings[]=$postdata['dateFrom'];
+			$sql .= " and col_time_on >= ?";
+			$bindings[]=$postdata['dateFrom'] . ' 00:00:00';
 		}
 
 		if ($postdata['dateTo'] != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$bindings[]=$postdata['dateTo'];
+			$sql .= " and col_time_on <= ?";
+			$bindings[]=$postdata['dateTo'] . ' 23:59:59';
 		}
 
 		if ($postdata['mode'] != 'All') {

@@ -159,12 +159,12 @@ class Dxatlas_model extends CI_Model
 
 		// If date is set, we format the date and add it to the where-statement
 		if ($fromdate != "") {
-			$sql .= " and date(COL_TIME_ON) >= ?";
-			$bindings[] = $fromdate;
+			$sql .= " and COL_TIME_ON >= ?";
+			$bindings[] = $fromdate . ' 00:00:00';
 		}
 		if ($todate != "") {
-			$sql .= " and date(COL_TIME_ON) <= ?";
-			$bindings[] = $todate;
+			$sql .= " and COL_TIME_ON <= ?";
+			$bindings[] = $todate . ' 23:59:59';
 		}
 
 		$sql .= ' and station_profile.user_id = ?';
