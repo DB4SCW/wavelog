@@ -437,7 +437,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><?= _pgettext("Cache Path","Path for files adapter"); ?></td>
+                                    <td><?= sprintf(_pgettext("Cache Path","Path for %s adapter"), "'file'"); ?></td>
                                     <td><code><?php echo $cache_path; ?></code></td>
                                 </tr>
                                 <tr>
