@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-04 09:48+0000\n"
-"PO-Revision-Date: 2026-02-02 22:29+0000\n"
+"PO-Revision-Date: 2026-02-04 19:23+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -964,7 +964,7 @@ msgstr "Avain/avaimet poistettu."
 
 #: application/controllers/Debug.php:114
 msgid "(empty)"
-msgstr ""
+msgstr "(tyhjä)"
 
 #: application/controllers/Debug.php:132
 msgid "Debug"
@@ -10568,29 +10568,29 @@ msgstr "Lataa tiedosto"
 
 #: application/views/debug/index.php:2
 msgid "Are you sure you want to clear the cache?"
-msgstr ""
+msgstr "Oletko varma, että haluat tyhjentää välimuistin?"
 
 #: application/views/debug/index.php:3
 msgid "Failed to clear cache!"
-msgstr ""
+msgstr "Välimuistin tyhjennys epäonnistui!"
 
 #: application/views/debug/index.php:4
 #, php-format
 msgid "Last version check: %s"
-msgstr ""
+msgstr "Viimeisin versiontarkistus: %s"
 
 #: application/views/debug/index.php:5
 msgid "Wavelog is up to date!"
-msgstr ""
+msgstr "Wavelog on ajan tasalla!"
 
 #: application/views/debug/index.php:6
 #, php-format
 msgid "There is a newer version available: %s"
-msgstr ""
+msgstr "Uudempi versio on saatavilla: %s"
 
 #: application/views/debug/index.php:7
 msgid "The Remote Repository doesn't know your branch."
-msgstr ""
+msgstr "Etärepositorio ei tunne haaraasi."
 
 #: application/views/debug/index.php:32
 msgid "Wavelog Information"
@@ -10813,64 +10813,66 @@ msgstr "Ei asennettu"
 
 #: application/views/debug/index.php:413
 msgid "Cache Information"
-msgstr ""
+msgstr "Välimuistin tiedot"
 
 #: application/views/debug/index.php:417
 msgid "Current Configuration"
-msgstr ""
+msgstr "Nykyinen kokoonpano"
 
 #: application/views/debug/index.php:420
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
-msgstr ""
+msgstr "Ensisijainen sovitin"
 
 #: application/views/debug/index.php:431
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
-msgstr ""
+msgstr "Varmuuskopiosovitin"
 
 #: application/views/debug/index.php:440
 #, php-format
 msgctxt "Cache Path"
 msgid "Path for %s adapter"
-msgstr ""
+msgstr "Polku %s -adapterille"
 
 #: application/views/debug/index.php:444
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
-msgstr ""
+msgstr "Avaimen etuliite"
 
 #: application/views/debug/index.php:450
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
+"Välimuisti käyttää tällä hetkellä varmuuskopio­sovitinta, koska ensisijainen "
+"sovitin ei ole käytettävissä."
 
 #: application/views/debug/index.php:454
 msgid "Cache is working properly. Everything okay!"
-msgstr ""
+msgstr "Välimuisti toimii oikein. Kaikki kunnossa!"
 
 #: application/views/debug/index.php:459
 msgid "Cache Details"
-msgstr ""
+msgstr "Välimuistin tiedot"
 
 #: application/views/debug/index.php:462
 msgctxt "Cache Details"
 msgid "Total Size"
-msgstr ""
+msgstr "Koko yhteensä"
 
 #: application/views/debug/index.php:468
 msgctxt "Cache Key"
 msgid "Number of Keys"
-msgstr ""
+msgstr "Avainten määrä"
 
 #: application/views/debug/index.php:479
 msgid "Available Adapters"
-msgstr ""
+msgstr "Saatavilla olevat adapterit"
 
 #: application/views/debug/index.php:496
 msgid "Clear Cache"
-msgstr ""
+msgstr "Tyhjennä välimuisti"
 
 #: application/views/debug/index.php:543
 msgid "Git Information"
@@ -15903,10 +15905,12 @@ msgid ""
 "You have already filled in a callsign. First finish this QSO before filling "
 "the last spot from DXcluster."
 msgstr ""
+"Olet jo syöttänyt kutsumerkin. Päätä ensin tämä QSO, ennen kuin annat DX-"
+"clusterin viimeisimmän spotin täyttää tiedot."
 
 #: application/views/qso/index.php:47
 msgid "No spots found in this frequency."
-msgstr ""
+msgstr "Tältä taajuudelta ei löytynyt yhtään spottia."
 
 #: application/views/qso/index.php:93
 msgid "LIVE"
@@ -18434,7 +18438,7 @@ msgstr "Oletus-QSL-menetelmät"
 
 #: application/views/user/edit.php:878
 msgid "Third Party Services"
-msgstr ""
+msgstr "Kolmannen osapuolen palvelut"
 
 #: application/views/user/edit.php:889
 msgid "Logbook of The World (LoTW) Username"
@@ -18446,7 +18450,7 @@ msgstr "Logbook of The World (LoTW) Salasana"
 
 #: application/views/user/edit.php:899
 msgid "Test Login"
-msgstr ""
+msgstr "Testikirjautuminen"
 
 #: application/views/user/edit.php:917
 msgid "eQSL.cc Username"
@@ -18458,11 +18462,11 @@ msgstr "eQSL.cc Salasana"
 
 #: application/views/user/edit.php:940
 msgid "Club Log"
-msgstr ""
+msgstr "Club Log"
 
 #: application/views/user/edit.php:943
 msgid "Club Log Email"
-msgstr ""
+msgstr "Club Log sähköposti"
 
 #: application/views/user/edit.php:949
 msgid "Club Log Password"
@@ -18474,43 +18478,49 @@ msgid ""
 "If you have 2FA enabled at Clublog, you have to generate an App. Password to "
 "use Clublog in Wavelog. Visit %syour clublog settings page%s to do so."
 msgstr ""
+"Jos sinulla on 2FA käytössä Clublogissa, sinun täytyy luoda "
+"sovelluskohtainen-salasana käyttääksesi Clublogia Wavelogissa. Vieraile "
+"%sclublog-asetussivullasi%s tehdäksesi niin."
 
 #: application/views/user/edit.php:971
 msgid "Widgets"
-msgstr ""
+msgstr "Widgetit"
 
 #: application/views/user/edit.php:979
 msgid "On-Air widget"
-msgstr ""
+msgstr "On-Air -widgetti"
 
 #: application/views/user/edit.php:989
 msgid ""
 "Note: In order to use this widget, you need to have at least one CAT radio "
 "configured and working."
 msgstr ""
+"Huomaa: Jotta voit käyttää tätä widgettiä, sinulla täytyy olla vähintään "
+"yksi CAT-radio määritettynä ja toiminnassa."
 
 #: application/views/user/edit.php:993
 #, php-format
 msgid "When enabled, widget will be available at %s."
-msgstr ""
+msgstr "Kun tämä asetus on käytössä, löydät widgetin kohdasta %s."
 
 #: application/views/user/edit.php:998
 msgid "Display \"Last seen\" time"
-msgstr ""
+msgstr "Näytä ”Viimeksi nähty” -aika"
 
 #: application/views/user/edit.php:1004
 msgid ""
 "This setting control whether the 'Last seen' time is displayed in widget or "
 "not."
 msgstr ""
+"Tämä asetus määrittää, näytetäänkö 'Viimeksi nähty' -aika widgetissä vai ei."
 
 #: application/views/user/edit.php:1007
 msgid "Display only most recently updated radio"
-msgstr ""
+msgstr "Näytä vain viimeksi päivitetty CAT-radio"
 
 #: application/views/user/edit.php:1011
 msgid "No, show all radios"
-msgstr ""
+msgstr "Ei, näytä kaikki CAT-radiot"
 
 #: application/views/user/edit.php:1013
 msgid ""
@@ -18519,53 +18529,57 @@ msgid ""
 "recently updated one. In case you have only one radio, this setting has no "
 "effect."
 msgstr ""
+"Jos sinulla on useita CAT-radioita määritettynä tai käytössä, voit tässä "
+"valita, näytetäänkö kaikki vai vain viimeksi päivitetty TRX. Jos sinulla on "
+"vain yksi CAT-radio, tällä asetuksella ei ole vaikutusta."
 
 #: application/views/user/edit.php:1023
 msgid "QSOs widget"
-msgstr ""
+msgstr "QSO-widgetti"
 
 #: application/views/user/edit.php:1026
 msgid "Display exact QSO time"
-msgstr ""
+msgstr "Näytä tarkka QSO-aika"
 
 #: application/views/user/edit.php:1032
 msgid ""
 "This setting control whether exact QSO time should displayed in the QSO "
 "widget or not."
 msgstr ""
+"Tämä asetus määrittää, näytetäänkö tarkka QSO-aika QSO-widgetissä vai ei."
 
 #: application/views/user/edit.php:1045
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Sekalaiset"
 
 #: application/views/user/edit.php:1053
 msgid "AMSAT Status Upload"
-msgstr ""
+msgstr "AMSAT Status -lähetys"
 
 #: application/views/user/edit.php:1056
 msgid "Upload status of SAT QSOs to"
-msgstr ""
+msgstr "Lataa SAT-QSOjen tila palveluun"
 
 #: application/views/user/edit.php:1070
 msgid "Mastodonserver"
-msgstr ""
+msgstr "Mastodon-palvelin"
 
 #: application/views/user/edit.php:1073
 msgid "URL of Mastodonserver"
-msgstr ""
+msgstr "Mastodon-palvelimen URL-osoite"
 
 #: application/views/user/edit.php:1075
 #, php-format
 msgid "Main URL of your Mastodon server, e.g. %s"
-msgstr ""
+msgstr "Mastodon-palvelimesi pää-URL, esim. %s"
 
 #: application/views/user/edit.php:1084
 msgid "Winkeyer"
-msgstr ""
+msgstr "Winkeyer"
 
 #: application/views/user/edit.php:1087
 msgid "Winkeyer Features Enabled"
-msgstr ""
+msgstr "Winkeyer-ominaisuudet käytössä"
 
 #: application/views/user/edit.php:1093
 #, php-format
@@ -18573,30 +18587,35 @@ msgid ""
 "Winkeyer support in Wavelog is very experimental. Read the wiki first at %s "
 "before enabling."
 msgstr ""
+"Winkeyer-tuki Wavelogissa on hyvin kokeellinen. Lue ensin wiki osoitteessa "
+"%s ennen kuin otat sen käyttöön."
 
 #: application/views/user/edit.php:1104
 msgid "Hams.at"
-msgstr ""
+msgstr "Hams.at"
 
 #: application/views/user/edit.php:1107
 msgid "Private Feed Key"
-msgstr ""
+msgstr "Yksityinen syöteavain"
 
 #: application/views/user/edit.php:1109
 #, php-format
 msgctxt "Hint for Hamsat API Key; uses Link"
 msgid "See your profile at %s."
-msgstr ""
+msgstr "Katso profiilisi osoitteessa %s."
 
 #: application/views/user/edit.php:1112
 msgid "Show Workable Passes Only"
-msgstr ""
+msgstr "Näytä vain workittavissa olevat ylilennot"
 
 #: application/views/user/edit.php:1118
 msgid ""
 "If enabled shows only workable passes based on the gridsquare set in your "
 "hams.at account. Requires private feed key to be set."
 msgstr ""
+"Kun tämä on käytössä, näytetään vain hams.at-profiilin lokaattorin "
+"perusteella workittavissa olevat ylilennot Tätä varten henkilökohtainen "
+"syöteavain (Private Feed Key) on oltava määritetty."
 
 #: application/views/user/edit.php:1130
 msgid "Save Account"
@@ -18641,6 +18660,9 @@ msgid ""
 "link to reset their password. To achieve this, ensure that the email "
 "settings in the global options are configured correctly."
 msgstr ""
+"Salasanan nollaus -painikkeella voit lähettää käyttäjälle sähköpostin, joka "
+"sisältää linkin salasanan nollaamista varten. Tätä varten "
+"sähköpostiasetusten on oltava oikein määritettynä yleisissä asetuksissa."
 
 #: application/views/user/index.php:19
 msgid "Create user"
@@ -18648,50 +18670,51 @@ msgstr "Luo käyttäjä"
 
 #: application/views/user/index.php:31 application/views/user/index.php:158
 msgid "Last seen"
-msgstr ""
+msgstr "Viimeksi nähty"
 
 #: application/views/user/index.php:69 application/views/user/index.php:184
 #: application/views/user/modals/admin_impersonate_modal.php:31
 msgid "Never"
-msgstr ""
+msgstr "Ei koskaan"
 
 #: application/views/user/index.php:74
 msgid "Account locked"
-msgstr ""
+msgstr "Tili lukittu"
 
 #: application/views/user/index.php:74
 msgid "Account was locked due to too many login attempts."
 msgstr ""
+"Tili lukittiin liian monen epäonnistuneen sisäänkirjautumisyrityksen vuoksi."
 
 #: application/views/user/index.php:76 application/views/user/index.php:188
 msgid "Locations"
-msgstr ""
+msgstr "Sijainnit"
 
 #: application/views/user/index.php:78 application/views/user/index.php:190
 msgid "Logbooks"
-msgstr ""
+msgstr "Lokikirjat"
 
 #: application/views/user/index.php:81 application/views/user/index.php:193
 msgid "Last QSO:"
-msgstr ""
+msgstr "Viimeisin QSO:"
 
 #: application/views/user/index.php:85 application/views/user/index.php:195
 msgid "No QSOs in Log"
-msgstr ""
+msgstr "Ei QSOja lokissa"
 
 #: application/views/user/index.php:103 application/views/user/index.php:209
 #: application/views/user/modals/admin_impersonate_modal.php:43
 msgid "Impersonate"
-msgstr ""
+msgstr "Tekeydy/imitoi"
 
 #: application/views/user/index.php:110 application/views/user/index.php:219
 #: application/views/user/modals/more_actions_modal.php:6
 msgid "Other Actions"
-msgstr ""
+msgstr "Muut toiminnot"
 
 #: application/views/user/index.php:138
 msgid "Clubstation List"
-msgstr ""
+msgstr "Kerhoasemaluettelo"
 
 #: application/views/user/index.php:141
 msgid ""
@@ -18699,35 +18722,38 @@ msgid ""
 "events to handle multiple operators. A clubstation is basically a normal "
 "user account with some special features and some restrictions."
 msgstr ""
+"Kerhoasemat Wavelogissa ovat ainutlaatuinen tapa kerhoille ja erikoiskutsu -"
+"tapahtumille hallita useita operaattoreita. Kerhoasema on periaatteessa "
+"tavallinen käyttäjätili, jossa on joitakin erityistoimintoja ja rajoituksia."
 
 #: application/views/user/index.php:143
 msgid "Create Clubstation"
-msgstr ""
+msgstr "Luo kerhoasema"
 
 #: application/views/user/index.php:156
 msgid "Last Operator"
-msgstr ""
+msgstr "Viimeisin operaattori"
 
 #: application/views/user/index.php:243
 msgid "No Clubstations configures yet."
-msgstr ""
+msgstr "Kerhoasemia ei ole vielä määritelty."
 
 #: application/views/user/login.php:36
 msgid "MAINTENANCE MODE"
-msgstr ""
+msgstr "HUOLTOTILA"
 
 #: application/views/user/login.php:56
 msgid "Welcome to the Demo of Wavelog"
-msgstr ""
+msgstr "Tervetuloa Wavelogin demoon"
 
 #: application/views/user/login.php:57
 msgid "This demo will be reset every night at 0200z."
-msgstr ""
+msgstr "Tämä demotila nollataan joka yö klo 0200z."
 
 #: application/views/user/login.php:60
 #, php-format
 msgid "More Information about Wavelog on %sGithub%s."
-msgstr ""
+msgstr "Lisätietoja Wavelogista %sGithub%sissä."
 
 #: application/views/user/login.php:79
 msgid "Forgot your password?"
@@ -18735,30 +18761,33 @@ msgstr "Salasana unohtunut?"
 
 #: application/views/user/login.php:85
 msgid "Keep me logged in"
-msgstr ""
+msgstr "Pidä minut sisäänkirjautuneena"
 
 #: application/views/user/modals/admin_impersonate_modal.php:5
 msgid "(with Admin Rights)"
-msgstr ""
+msgstr "(ylläpitäjän oikeuksin)"
 
 #: application/views/user/modals/admin_impersonate_modal.php:5
 msgid "Impersonate User"
-msgstr ""
+msgstr "Jäljittele/imitoi käyttäjää"
 
 #: application/views/user/modals/admin_impersonate_modal.php:9
 msgid ""
 "You are about to impersonate another user. To return to your admin account, "
 "you can use the switch back button in the header menu."
 msgstr ""
+"Olet juuri vaihtamassa toisen käyttäjän rooliin jäljittelemällä häntä. Voit "
+"palata takaisin ylläpitäjän tilillesi käyttämällä päänavigaation valikossa "
+"olevaa paluunäppäintä."
 
 #: application/views/user/modals/admin_impersonate_modal.php:10
 msgid "Do you want to impersonate this user?"
-msgstr ""
+msgstr "Haluatko jäljitellä ja imitoida tätä käyttäjää?"
 
 #: application/views/user/modals/admin_impersonate_modal.php:14
 #: application/views/user/modals/more_actions_modal.php:12
 msgid "Username:"
-msgstr ""
+msgstr "Käyttäjänimi:"
 
 #: application/views/user/modals/admin_impersonate_modal.php:18
 #: application/views/user/modals/more_actions_modal.php:16
@@ -18766,7 +18795,7 @@ msgstr ""
 #: application/views/user/modals/more_actions_modal.php:103
 #: application/views/user/modals/more_actions_modal.php:152
 msgid "Name:"
-msgstr ""
+msgstr "Nimi:"
 
 #: application/views/user/modals/admin_impersonate_modal.php:22
 #: application/views/user/modals/more_actions_modal.php:20
@@ -18774,7 +18803,7 @@ msgstr ""
 #: application/views/user/modals/more_actions_modal.php:104
 #: application/views/user/modals/more_actions_modal.php:153
 msgid "Callsign:"
-msgstr ""
+msgstr "Kutsumerkki:"
 
 #: application/views/user/modals/admin_impersonate_modal.php:26
 #: application/views/user/modals/more_actions_modal.php:24
@@ -18782,19 +18811,19 @@ msgstr ""
 #: application/views/user/modals/more_actions_modal.php:106
 #: application/views/user/modals/more_actions_modal.php:155
 msgid "E-Mail:"
-msgstr ""
+msgstr "Sähköposti:"
 
 #: application/views/user/modals/admin_impersonate_modal.php:30
 msgid "Last Seen:"
-msgstr ""
+msgstr "Viimeksi nähty:"
 
 #: application/views/user/modals/first_login_wizard.php:5
 msgid "First Login Wizard"
-msgstr ""
+msgstr "Ensimmäisen kirjautumisen ohjattu toiminto"
 
 #: application/views/user/modals/first_login_wizard.php:20
 msgid "Hello and Welcome to Wavelog!"
-msgstr ""
+msgstr "Hei ja tervetuloa Wavelogiin!"
 
 #: application/views/user/modals/first_login_wizard.php:21
 #, php-format
@@ -18803,54 +18832,57 @@ msgid ""
 "Location. You can find more information about how Station Locations and "
 "Logbooks work in our %sWiki here%s!"
 msgstr ""
+"Ennen kuin voit aloittaa QSOjen kirjaamisen, meidän täytyy määrittää "
+"ensimmäinen asemasijaintisi. Lisätietoja asemasijainneista ja lokikirjoista "
+"löydät %swikistämme täällä%s!"
 
 #: application/views/user/modals/first_login_wizard.php:22
 msgid ""
 "Please provide some additional information so that Wavelog can create your "
 "first Station:"
-msgstr ""
+msgstr "Anna lisätietoja, jotta Wavelog voi luoda ensimmäisen asemasi:"
 
 #: application/views/user/modals/first_login_wizard.php:29
 msgid "Home QTH"
-msgstr ""
+msgstr "Koti-QTH"
 
 #: application/views/user/modals/first_login_wizard.php:62
 msgid "Station Zones"
-msgstr ""
+msgstr "Asemavyöhykkeet"
 
 #: application/views/user/modals/first_login_wizard.php:74
 #: application/views/user/modals/first_login_wizard.php:84
 #, php-format
 msgctxt "zone lookup"
 msgid "%sLookup%s"
-msgstr ""
+msgstr "%sHae%s"
 
 #: application/views/user/modals/first_login_wizard.php:102
 msgid "Save and Start Logging"
-msgstr ""
+msgstr "Tallenna ja aloita yhteyksiesi lokikirjaus"
 
 #: application/views/user/modals/more_actions_modal.php:9
 msgid "Select an action to perform for the user:"
-msgstr ""
+msgstr "Valitse käyttäjälle suoritettava toiminto:"
 
 #: application/views/user/modals/more_actions_modal.php:33
 #: application/views/user/modals/more_actions_modal.php:62
 #: application/views/user/modals/more_actions_modal.php:75
 msgid "Unlock User"
-msgstr ""
+msgstr "Poista käyttäjän lukitus"
 
 #: application/views/user/modals/more_actions_modal.php:39
 #: application/views/user/modals/more_actions_modal.php:96
 msgid "Send a Password Reset Link via Email"
-msgstr ""
+msgstr "Lähetä sähköpostitse linkki salasanan palauttamiseksi"
 
 #: application/views/user/modals/more_actions_modal.php:45
 msgid "Convert to Clubstation"
-msgstr ""
+msgstr "Muunna kerhoasemaksi"
 
 #: application/views/user/modals/more_actions_modal.php:45
 msgid "Convert to User"
-msgstr ""
+msgstr "Muunna käyttäjäksi"
 
 #: application/views/user/modals/more_actions_modal.php:65
 msgid ""
@@ -18858,30 +18890,37 @@ msgid ""
 "failed login attempts. After unlocking, the user will be able to log in "
 "again."
 msgstr ""
+"Olet poistamassa lukitusta seuraavalta käyttäjätililtä. Käyttäjätili oli "
+"lukittu liian monien epäonnistuneiden kirjautumisyritysten vuoksi. "
+"Lukituksen poistamisen jälkeen käyttäjä voi kirjautua uudelleen."
 
 #: application/views/user/modals/more_actions_modal.php:67
 #: application/views/user/modals/more_actions_modal.php:102
 #: application/views/user/modals/more_actions_modal.php:151
 msgid "User:"
-msgstr ""
+msgstr "Käyttäjä:"
 
 #: application/views/user/modals/more_actions_modal.php:70
 #: application/views/user/modals/more_actions_modal.php:105
 #: application/views/user/modals/more_actions_modal.php:154
 msgid "Language:"
-msgstr ""
+msgstr "Kieli:"
 
 #: application/views/user/modals/more_actions_modal.php:89
 msgid ""
 "Password-reset email sent successfully to user. You can close this dialog "
 "now."
 msgstr ""
+"Salasananpalautussähköposti on lähetetty käyttäjälle onnistuneesti. Voit nyt "
+"sulkea tämän valintaikkunan."
 
 #: application/views/user/modals/more_actions_modal.php:90
 msgid ""
 "Password-reset email could not be sent to user. Are the email settings in "
 "global options configured correctly?"
 msgstr ""
+"Salasananpalautussähköpostia ei voitu lähettää käyttäjälle. Ovatko "
+"sähköpostiasetukset määritetty oikein yleisissä asetuksissa?"
 
 #: application/views/user/modals/more_actions_modal.php:99
 msgid ""
