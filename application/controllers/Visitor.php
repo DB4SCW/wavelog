@@ -97,11 +97,11 @@ class Visitor extends CI_Controller {
 
 				$this->pagination->initialize($config);
 
-                // Store info
-                $data['todays_qsos'] = $this->logbook_model->todays_qsos($logbooks_locations_array);
-                $data['total_qsos'] = $this->logbook_model->total_qsos($logbooks_locations_array);
-                $data['month_qsos'] = $this->logbook_model->month_qsos($logbooks_locations_array);
-                $data['year_qsos'] = $this->logbook_model->year_qsos($logbooks_locations_array);
+                $qso_counts = $this->logbook_model->get_qso_counts($logbooks_locations_array);
+                $data['todays_qsos'] = $qso_counts['today'];
+                $data['total_qsos'] = $qso_counts['total'];
+                $data['month_qsos'] = $qso_counts['month'];
+                $data['year_qsos'] = $qso_counts['year'];
 
 				$data['user_map_custom'] = $this->optionslib->get_map_custom(true,$public_slug);
 

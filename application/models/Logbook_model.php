@@ -3684,6 +3684,80 @@ class Logbook_model extends CI_Model {
 		}
 	}
 
+	/*
+	 * Combined function to get all QSO counts (today, month, year, total) in a single query
+	 * This reduces 4 separate queries to 1, improving performance
+	 */
+	function get_qso_counts($StationLocationsArray = null, $api_key = null) {
+		if ($StationLocationsArray == null) {
+			$this->load->model('logbooks_model');
+			if ($api_key != null) {
+				$this->load->model('api_model');
+				if (strpos($this->api_model->access($api_key), 'r') !== false) {
+					$this->api_model->update_last_used($api_key);
+					$user_id = $this->api_model->key_userid($api_key);
+					$active_station_logbook = $this->logbooks_model->find_active_station_logbook_from_userid($user_id);
+					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($active_station_logbook);
+				} else {
+					$logbooks_locations_array = [];
+				}
+			} else {
+				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
+			}
+		} else {
+			$logbooks_locations_array = $StationLocationsArray;
+		}
+
+		if (!$logbooks_locations_array) {
+			return [
+				'total' => 0,
+				'today' => 0,
+				'month' => 0,
+				'year' => 0
+			];
+		}
+
+		// Calculate date boundaries once
+		$todayStart = date('Y-m-d 00:00:00');
+		$todayEnd = date('Y-m-d 23:59:59');
+		$monthStart = date('Y-m-01 00:00:00');
+
+		$date = new DateTime('now');
+		$date->modify('last day of this month');
+		$monthEnd = $date->format('Y-m-d') . ' 23:59:59';
+
+		$yearStart = date('Y-01-01 00:00:00');
+		$yearEnd = date('Y-12-31 23:59:59');
+
+		// Single query with conditional aggregation
+		$sql = "SELECT
+			COUNT(*) as total,
+			SUM(CASE WHEN COL_TIME_ON >= ? AND COL_TIME_ON <= ? THEN 1 ELSE 0 END) as today,
+			SUM(CASE WHEN COL_TIME_ON >= ? AND COL_TIME_ON <= ? THEN 1 ELSE 0 END) as month,
+			SUM(CASE WHEN COL_TIME_ON >= ? AND COL_TIME_ON <= ? THEN 1 ELSE 0 END) as year
+			FROM " . $this->config->item('table_name') . "
+			WHERE station_id IN ('" . implode("','", $logbooks_locations_array) . "')";
+
+		$query = $this->db->query($sql, [$todayStart, $todayEnd, $monthStart, $monthEnd, $yearStart, $yearEnd]);
+
+		if ($query->num_rows() > 0) {
+			$row = $query->row();
+			return [
+				'total' => (int)$row->total,
+				'today' => (int)$row->today,
+				'month' => (int)$row->month,
+				'year' => (int)$row->year
+			];
+		}
+
+		return [
+			'total' => 0,
+			'today' => 0,
+			'month' => 0,
+			'year' => 0
+		];
+	}
+
 	private function where_date_range($dateFrom, $dateTo) {
 		if (!empty($dateFrom)) {
 			$this->db->where('COL_TIME_ON >=', $dateFrom . ' 00:00:00');
