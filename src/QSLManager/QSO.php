@@ -1317,6 +1317,8 @@ class QSO
 	{
 		if ($this->distance === null) return '';
 
+		$distanceValue = floatval($this->distance); // Convert string to float
+
 		switch ($this->measurement_base) {
 			case 'M':
 				$unit = "mi";
@@ -1329,16 +1331,16 @@ class QSO
 				break;
 			default:
 				$unit = "km";
-			}
+		}
 
 		if ($unit == 'mi') {
-			$this->distance = round($this->distance * 0.621371, 1);
+			$distanceValue = round($distanceValue * 0.621371, 1);
 		}
 		if ($unit == 'nmi') {
-			$this->distance = round($this->distance * 0.539957, 1);
+			$distanceValue = round($distanceValue * 0.539957, 1);
 		}
 
-		return $this->distance . ' ' . $unit;
+		return $distanceValue . ' ' . $unit;
 	}
 
 	private function getFormattedMyDok(): string
