@@ -42,7 +42,7 @@ class Accumulate_model extends CI_Model
 		$dbversion = $this->db->version();
 		$dbversion = explode('.', $dbversion);
 
-		if ($dbversion[0] <= "8") {
+		if ($dbversion[0] >= "8") {
 			return $this->get_accumulated_by_column_fast($band, $mode, $propmode, $period, $location_list, $column, $where_condition, $outer_where_condition);
 		} else {
 			return $this->get_accumulated_by_column_slow($band, $mode, $propmode, $period, $location_list, $column, $where_condition, $where_check, $outer_where_condition);
