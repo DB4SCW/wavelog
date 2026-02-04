@@ -6,12 +6,11 @@ class rac extends CI_Model {
 		$this->load->library('Genfunctions');
 	}
 
-	public $stateString = 'AB,BC,MB,NB,NL,NT,NS,NU,ON,PE,QC,SK,YT';
+	private $stateString = 'AB,BC,MB,NB,NL,NT,NS,NU,ON,PE,QC,SK,YT';
 
 	function get_rac_array($bands, $postdata) {
-		$CI =& get_instance();
-		$CI->load->model('logbooks_model');
-		$logbooks_locations_array = $CI->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
+		$this->load->model('logbooks_model');
+		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
 
 		if (!$logbooks_locations_array) {
 			return null;
@@ -258,7 +257,7 @@ class rac extends CI_Model {
 
 	function addStateToQuery() {
 		$sql = '';
-		$sql .= " and COL_DXCC = 1";
+		$sql .= " and COL_DXCC in ('1')";
 		$sql .= " and COL_STATE in ('AB','BC','MB','NB','NL','NT','NS','NU','ON','PE','QC','SK','YT')";
 		return $sql;
 	}
