@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 20:24+0000\n"
-"PO-Revision-Date: 2026-02-04 09:48+0000\n"
+"PO-Revision-Date: 2026-02-04 16:42+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ru/>\n"
@@ -10950,15 +10950,15 @@ msgstr "Общий размер"
 #: application/views/debug/index.php:468
 msgctxt "Cache Key"
 msgid "Number of Keys"
-msgstr ""
+msgstr "Количество ключей"
 
 #: application/views/debug/index.php:479
 msgid "Available Adapters"
-msgstr ""
+msgstr "Доступные адаптеры"
 
 #: application/views/debug/index.php:496
 msgid "Clear Cache"
-msgstr ""
+msgstr "Очистить кеш"
 
 #: application/views/debug/index.php:543
 msgid "Git Information"
@@ -16028,10 +16028,12 @@ msgid ""
 "You have already filled in a callsign. First finish this QSO before filling "
 "the last spot from DXcluster."
 msgstr ""
+"Вы уже ввели позывной. Сначала завершите начатую запись QSO, прежде чем "
+"заполнить данными спота из DX-кластера."
 
 #: application/views/qso/index.php:47
 msgid "No spots found in this frequency."
-msgstr ""
+msgstr "На этой частоте спотов не обнаружено."
 
 #: application/views/qso/index.php:93
 msgid "LIVE"
