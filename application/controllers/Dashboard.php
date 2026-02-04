@@ -111,13 +111,14 @@ class Dashboard extends CI_Controller {
 			$data['current_streak']=0;
 		}
 
-		// Load  Countries Breakdown data into array
-		$CountriesBreakdown = $this->logbook_model->total_countries_confirmed($logbooks_locations_array);
+		// Load Countries Breakdown data into array (combined query)
+		$CountriesBreakdown = $this->logbook_model->total_countries_breakdown_batch($logbooks_locations_array);
 
 		$data['total_countries'] = $CountriesBreakdown['Countries_Worked'];
 		$data['total_countries_confirmed_paper'] = $CountriesBreakdown['Countries_Worked_QSL'];
 		$data['total_countries_confirmed_eqsl'] = $CountriesBreakdown['Countries_Worked_EQSL'];
 		$data['total_countries_confirmed_lotw'] = $CountriesBreakdown['Countries_Worked_LOTW'];
+		$current = $CountriesBreakdown['Countries_Current'];
 
 		$QSLStatsBreakdownArray = $this->logbook_model->get_QSLStats($logbooks_locations_array);
 
@@ -156,8 +157,6 @@ class Dashboard extends CI_Controller {
 
 		$this->load->model('dxcc');
 		$dxcc = $this->dxcc->list_current();
-
-		$current = $this->logbook_model->total_countries_current($logbooks_locations_array);
 
 		$footerData['scripts'] = [
 			'assets/js/sections/dashboard.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/sections/dashboard.js")),

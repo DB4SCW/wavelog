@@ -4357,6 +4357,51 @@ class Logbook_model extends CI_Model {
 		}
 	}
 
+	/* Return combined countries breakdown: worked, confirmed (QSL/eQSL/LOTW), and current */
+	function total_countries_breakdown_batch($StationLocationsArray = null) {
+		if ($StationLocationsArray == null) {
+			$this->load->model('logbooks_model');
+			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
+		} else {
+			$logbooks_locations_array = $StationLocationsArray;
+		}
+
+		if (!empty($logbooks_locations_array)) {
+			$sql = "SELECT
+				COUNT(DISTINCT t.COL_DXCC) as Countries_Worked,
+				COUNT(DISTINCT IF(t.COL_QSL_RCVD = 'Y', t.COL_DXCC, NULL)) as Countries_Worked_QSL,
+				COUNT(DISTINCT IF(t.COL_EQSL_QSL_RCVD = 'Y', t.COL_DXCC, NULL)) as Countries_Worked_EQSL,
+				COUNT(DISTINCT IF(t.COL_LOTW_QSL_RCVD = 'Y', t.COL_DXCC, NULL)) as Countries_Worked_LOTW,
+				COUNT(DISTINCT IF(d.end IS NULL AND d.adif != 0, t.COL_DXCC, NULL)) as Countries_Current
+				FROM " . $this->config->item('table_name') . " t
+				LEFT JOIN dxcc_entities d ON d.adif = t.col_dxcc
+				WHERE t.station_id IN (" . str_repeat('?,', count($logbooks_locations_array) - 1) . "?)
+					AND t.COL_COUNTRY != 'Invalid'
+					AND t.COL_DXCC > 0";
+
+			$query = $this->db->query($sql, $logbooks_locations_array);
+
+			if ($query->num_rows() > 0) {
+				$row = $query->row();
+				return [
+					'Countries_Worked' => $row->Countries_Worked,
+					'Countries_Worked_QSL' => $row->Countries_Worked_QSL,
+					'Countries_Worked_EQSL' => $row->Countries_Worked_EQSL,
+					'Countries_Worked_LOTW' => $row->Countries_Worked_LOTW,
+					'Countries_Current' => $row->Countries_Current
+				];
+			}
+		}
+
+		return [
+			'Countries_Worked' => 0,
+			'Countries_Worked_QSL' => 0,
+			'Countries_Worked_EQSL' => 0,
+			'Countries_Worked_LOTW' => 0,
+			'Countries_Current' => 0
+		];
+	}
+
 	/* Return total number of countries confirmed with paper QSL */
 	function total_countries_confirmed_paper() {
 		$this->load->model('logbooks_model');
