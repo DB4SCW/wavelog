@@ -41,7 +41,7 @@ https://demo.wavelog.org
 ### Recommended: Classic-LAMP-Stack:
 * Linux based Operating System (Windows stack may also work)
 * Apache (Nginx should work)
-* PHP Version 8.0 up to PHP 8.3 (PHP 8.4. in friendly Usertest)
+* PHP Version 8.2 up to 8.4 (8.5 friendly user test)
 * MySQL or MariaDB (MySQL 8 or higher // MariaDB 10.2 or higher)
 
 ### Alternative - Easy start with prebuilt Docker-image:
