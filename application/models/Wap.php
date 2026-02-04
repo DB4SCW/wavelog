@@ -259,7 +259,7 @@ class wap extends CI_Model {
 
 	function addStateToQuery() {
 		$sql = '';
-		$sql .= " and COL_DXCC = 263";
+		$sql .= " and COL_DXCC in ('263')";
 		$sql .= " and COL_STATE in ('DR','FL','FR','GD','GR','LB','NB','NH','OV','UT','ZH','ZL')";
 
 		return $sql;

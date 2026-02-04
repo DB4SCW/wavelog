@@ -132,7 +132,7 @@ class helvetia_model extends CI_Model {
 		} else {
 			$sql .= " and thcv.col_prop_mode !='SAT'";
 			$sql .= " and thcv.col_band = ?";
-			$binding[] = $band;	
+			$binding[] = $band;
 		}
 
 		if ($postdata['mode'] != 'All') {
@@ -256,7 +256,7 @@ class helvetia_model extends CI_Model {
 
 	function addStateToQuery() {
 		$sql = '';
-		$sql .= " and COL_DXCC = 287";
+		$sql .= " and COL_DXCC in ('287')";
 		$sql .= " and COL_STATE in ('AG','AI','AR','BE','BL','BS','FR','GE','GL','GR','JU','LU','NE','NW','OW','SG','SH','SO','SZ','TG','TI','UR','VD','VS','ZG','ZH')";
 		return $sql;
 	}
