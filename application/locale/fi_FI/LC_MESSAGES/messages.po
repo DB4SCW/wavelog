@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-04 09:48+0000\n"
-"PO-Revision-Date: 2026-02-04 19:23+0000\n"
+"PO-Revision-Date: 2026-02-05 08:52+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -18927,30 +18927,32 @@ msgid ""
 "You are about to send a password reset link to the user. The user will be "
 "able to reset their password by clicking on the link in the email."
 msgstr ""
+"Olet lähettämässä käyttäjälle linkkiä salasanan palauttamista varten. "
+"Käyttäjä voi nollata salasanansa napsauttamalla sähköpostissa olevaa linkkiä."
 
 #: application/views/user/modals/more_actions_modal.php:100
 msgid "Do you want to send the password reset email to this user?"
-msgstr ""
+msgstr "Haluatko lähettää salasananpalautusviestin tälle käyttäjälle?"
 
 #: application/views/user/modals/more_actions_modal.php:110
 msgid "Send the email"
-msgstr ""
+msgstr "Lähetä sähköposti"
 
 #: application/views/user/modals/more_actions_modal.php:126
 msgid "The account was successfully converted. You can now close this dialog."
-msgstr ""
+msgstr "Tili on onnistuneesti muutettu. Voit nyt sulkea tämän ikkunan."
 
 #: application/views/user/modals/more_actions_modal.php:127
 msgid "The account could not be converted. An error has occurred."
-msgstr ""
+msgstr "Tapahtui virhe, eikä tiliä ei voitu muuntaa."
 
 #: application/views/user/modals/more_actions_modal.php:135
 msgid "Convert this account into a normal user"
-msgstr ""
+msgstr "Muunna tämä tili normaaliksi käyttäjäksi"
 
 #: application/views/user/modals/more_actions_modal.php:137
 msgid "Convert this account into a clubstation"
-msgstr ""
+msgstr "Muunna tämä käyttäjätili kerhoasemaksi"
 
 #: application/views/user/modals/more_actions_modal.php:144
 msgid ""
@@ -18958,6 +18960,9 @@ msgid ""
 "user will be able to log in again and all assigned club permissions will be "
 "removed. Use with caution!"
 msgstr ""
+"Olet muuttamassa tämän kerhoaseman tavalliseksi käyttäjätiliksi. Käyttäjä "
+"voi kirjautua uudelleen sisään, ja kaikki kerhoon liittyvät käyttöoikeudet "
+"poistetaan. Käytä tätä varoen!"
 
 #: application/views/user/modals/more_actions_modal.php:146
 msgid ""
@@ -18965,39 +18970,41 @@ msgid ""
 "no longer be able to log in and the account will be converted to a club "
 "station account. Use with caution!"
 msgstr ""
+"Olet muuttamassa tämän käyttäjätilin kerhoasemaksi. Käyttäjä ei voi enää "
+"kirjautua sisään, ja tili muutetaan kerhoasematiliksi. Käytä tätä varoen!"
 
 #: application/views/user/modals/more_actions_modal.php:149
 msgid "Are you sure you want to convert this account?"
-msgstr ""
+msgstr "Oletko varma, että haluat muuntaa tämän käyttäjätilin?"
 
 #: application/views/user/modals/more_actions_modal.php:159
 msgid "Convert"
-msgstr ""
+msgstr "Muunna"
 
 #: application/views/user/modals/stop_impersonate_modal.php:5
 msgid "Switch back to main user"
-msgstr ""
+msgstr "Vaihda takaisin pääkäyttäjään"
 
 #: application/views/user/modals/stop_impersonate_modal.php:9
 #, php-format
 msgid "Are you sure you want to switch back to %s?"
-msgstr ""
+msgstr "Oletko varma, että haluat vaihtaa takaisin %s?"
 
 #: application/views/user/profile.php:19
 msgid "Level"
-msgstr ""
+msgstr "Taso"
 
 #: application/views/user/profile.php:39
 msgid "First name"
-msgstr ""
+msgstr "Etunimi"
 
 #: application/views/user/profile.php:44
 msgid "Last name"
-msgstr ""
+msgstr "Sukunimi"
 
 #: application/views/user/profile.php:50
 msgid "Edit profile"
-msgstr ""
+msgstr "Muokkaa profiilia"
 
 #: application/views/user/reset_password.php:28
 msgid "Confirm Password"
@@ -19006,33 +19013,36 @@ msgstr "Vahvista salasana"
 #: application/views/version_dialog/index.php:20
 msgid "No Version Dialog text set. Go to the Admin Menu and set one."
 msgstr ""
+"Versiodialogin tekstiä ei ole asetettu. Siirry ylläpitovalikkoon ja määritä "
+"se."
 
 #: application/views/version_dialog/index.php:60
 msgid "Error at parsing JSON-Data or got empty result from github."
 msgstr ""
+"Virhe JSON-tietojen jäsentämisessä tai GitHubilta saatiin tyhjä vastaus."
 
 #: application/views/version_dialog/index.php:63
 msgid "Error at getting the data from GitHub."
-msgstr ""
+msgstr "Virhe tiedon hakemisessa GitHubista."
 
 #: application/views/version_dialog/index.php:75
 msgid "Don't show again"
-msgstr ""
+msgstr "Älä näytä uudelleen"
 
 #: application/views/view_log/index.php:4
 msgid ""
 "Displaying all QSOs of station locations which are linked to this logbook"
-msgstr ""
+msgstr "Näytetään kaikki tähän lokikirjaan liitettyjen asemasijaintien QSOt"
 
 #: application/views/view_log/partial/log_ajax.php:510
 #: application/views/view_log/partial/log_ajax.php:567
 #: src/QSLManager/QSO.php:592 src/QSLManager/QSO.php:738
 msgid "last sent"
-msgstr ""
+msgstr "viimeksi lähetetty"
 
 #: application/views/view_log/partial/log_ajax.php:713
 msgid "Result"
-msgstr ""
+msgstr "Tulos"
 
 #: application/views/view_log/qso.php:6
 msgid "QSO Details"
@@ -19044,7 +19054,7 @@ msgstr "QSL-manageri"
 
 #: application/views/view_log/qso.php:86
 msgid "View note for this callsign"
-msgstr ""
+msgstr "Näytä tämän kutsumerkin muistiinpano"
 
 #: application/views/view_log/qso.php:138
 msgid "Total Distance"
@@ -19052,15 +19062,15 @@ msgstr "Kokonaismatka"
 
 #: application/views/view_log/qso.php:165
 msgid "Other Path"
-msgstr ""
+msgstr "Muu polku"
 
 #: application/views/view_log/qso.php:323
 msgid "Antenna Azimuth"
-msgstr ""
+msgstr "Antenniatsimuutti"
 
 #: application/views/view_log/qso.php:330
 msgid "Antenna Elevation"
-msgstr ""
+msgstr "Antennielevaatio"
 
 #: application/views/view_log/qso.php:499
 msgid "QSL Card has been sent via the bureau"
@@ -19080,7 +19090,7 @@ msgstr "QSL-kortti on lähetetty managerin kautta"
 
 #: application/views/view_log/qso.php:507
 msgid "QSL Card has been sent"
-msgstr ""
+msgstr "QSL-kortti on lähetetty"
 
 #: application/views/view_log/qso.php:516
 msgid "QSL Card has been received via the bureau"
@@ -19116,35 +19126,35 @@ msgstr "Tämä QSO vahvistettiin"
 
 #: application/views/view_log/qso.php:543
 msgid "This QSO is confirmed on LoTW."
-msgstr ""
+msgstr "Tämä QSO on vahvistettu LoTW:ssa."
 
 #: application/views/view_log/qso.php:557
 msgid "This QSO is confirmed on eQSL."
-msgstr ""
+msgstr "Tämä QSO on vahvistettu eQSL:ssä."
 
 #: application/views/view_log/qso.php:567
 msgid "This QSO is confirmed on QRZ.com."
-msgstr ""
+msgstr "Tämä QSO on vahvistettu QRZ.comissa."
 
 #: application/views/view_log/qso.php:577
 msgid "This QSO is confirmed on Clublog."
-msgstr ""
+msgstr "Tämä QSO on vahvistettu Clublogissa."
 
 #: application/views/view_log/qso.php:587
 msgid "This QSO is confirmed on DCL."
-msgstr ""
+msgstr "Tämä QSO on vahvistettu DCL:ssä."
 
 #: application/views/view_log/qso.php:600
 msgid "More QSOs"
-msgstr ""
+msgstr "Lisää QSOja"
 
 #: application/views/view_log/qso.php:662
 msgid "Share"
-msgstr ""
+msgstr "Jaa"
 
 #: application/views/view_log/qso.php:668
 msgid "Details"
-msgstr ""
+msgstr "Lisätiedot"
 
 #: application/views/view_log/qso.php:802
 msgid "Uploaded QSL Card front image"
@@ -19164,57 +19174,62 @@ msgstr "Merkitse QSL vastaanotetuksi (Electronic)"
 
 #: application/views/view_log/qso.php:851
 msgid "eQSL picture"
-msgstr ""
+msgstr "eQSL-kuva"
 
 #: application/views/view_log/qso.php:923
 msgid "QSO not found"
-msgstr ""
+msgstr "QSOa ei löytynyt"
 
 #: application/views/visitor/layout/footer.php:239
 msgid "Filter Results"
-msgstr ""
+msgstr "Suodata tulokset"
 
 #: application/views/visitor/layout/footer.php:245
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 #: application/views/visitor/layout/footer.php:253
 msgid "Clear Filter"
-msgstr ""
+msgstr "Tyhjennä suodatin"
 
 #: application/views/visitor/layout/header.php:74
 msgid "OQRS"
-msgstr ""
+msgstr "OQRS"
 
 #: application/views/visitor/layout/header.php:82
 msgid "Visit Wavelog on Github"
-msgstr ""
+msgstr "Vieraile Wavelogissa GitHubissa"
 
 #: application/views/visitor/layout/header.php:95
 msgid "Please enter a callsign!"
-msgstr ""
+msgstr "Anna kutsumerkki!"
 
 #: application/views/webadif/export.php:22
 msgid ""
 "Here you can see and upload all QSOs which have not been previously uploaded "
 "to QO-100 Dx Club."
 msgstr ""
+"Tässä voit nähdä ja ladata kaikki QSOt, joita ei ole vielä ladattu QO-100 Dx "
+"Club:iin."
 
 #: application/views/webadif/export.php:33
 msgid ""
 "You need to set a QO-100 Dx Club API key in your station profile. Only "
 "station profiles with an API Key are displayed."
 msgstr ""
+"Sinun täytyy asettaa QO-100 Dx Club API-avain asemaprofiiliisi. Ainoastaan "
+"API-avaimella varustetut asemaprofiilit näytetään."
 
 #: application/views/webadif/export.php:63
 msgid ""
 "There are currently no outstanding QSOs that need to be uploaded to the "
 "QO-100 Dx Club's API."
 msgstr ""
+"Tällä hetkellä ei ole QSOja, jotka pitäisi ladata QO-100 Dx Club:n API:in."
 
 #: application/views/webadif/export.php:64
 msgid "Go ahead and turn on your QO-100 station!"
-msgstr ""
+msgstr "Laitapa QO-100-asemasi päälle 🚀 !"
 
 #: application/views/webadif/export.php:73
 #: application/views/webadif/export.php:113
@@ -19222,11 +19237,13 @@ msgid ""
 "None of your Logbooks are configured to export data to the QO-100 Dx Club's "
 "API."
 msgstr ""
+"Yksikään lokikirjoistasi ei ole konfiguroitu lähettämään tietoja QO-100 Dx "
+"Clubin API:lla."
 
 #: application/views/webadif/export.php:74
 #: application/views/webadif/export.php:114
 msgid "QO-100 Dx Club"
-msgstr ""
+msgstr "QO-100 Dx Club"
 
 #: application/views/webadif/export.php:74
 #: application/views/webadif/export.php:114
@@ -19235,6 +19252,8 @@ msgid ""
 "To configure this feature, go to your profile page at the %s and %s Create "
 "%s an API key."
 msgstr ""
+"Tämän toiminnon määrittämiseksi siirry profiiliisi %s:ssa ja %s luo %s API-"
+"avain."
 
 #: application/views/webadif/export.php:75
 #: application/views/webadif/export.php:115
@@ -19243,107 +19262,111 @@ msgid ""
 "Then, navigate to your %s and configure your station with the key you have "
 "created at the club."
 msgstr ""
+"Tämän jälkeen siirry omaan %s-sivuusi ja määritä asemasijainti sillä "
+"avaimella, jonka loit."
 
 #: application/views/webadif/export.php:83
 msgid ""
 "Here you can mark as uploaded your QSOs which have not been previously "
 "uploaded to QO-100 Dx Club."
 msgstr ""
+"Tässä voit merkitä ne QSOsi ladatuiksi, joita ei ole vielä ladattu QO-100 Dx "
+"Club:iin."
 
 #: application/views/webadif/export.php:107
 msgid "Mark QSOs as exported to QO-100 Dx Club"
-msgstr ""
+msgstr "Merkitse QSOt viedyiksi QO-100 Dx Clubiin"
 
 #: application/views/webadif/mark_webadif.php:16
 msgid "The QSOs are marked as exported to QO-100 Dx Club."
-msgstr ""
+msgstr "QSOt on merkitty viedyksi QO-100 Dx Club:in."
 
 #: application/views/widgets/oqrs.php:21
 msgid "Wavelog OQRS"
-msgstr ""
+msgstr "Wavelog OQRS"
 
 #: application/views/widgets/oqrs.php:76
 msgid "Wavelog OQRS Request"
-msgstr ""
+msgstr "Wavelog OQRS-pyyntö"
 
 #: application/views/widgets/oqrs.php:79
 #, php-format
 msgid "Request a QSL card for your QSO with %s."
-msgstr ""
+msgstr "Pyydä QSL-kortti QSOllesi %s kanssa."
 
 #: application/views/widgets/oqrs.php:83
 msgid "Your Callsign:"
-msgstr ""
+msgstr "Kutsumerkkisi:"
 
 #: application/views/widgets/oqrs.php:91
 msgid "Submit Request"
-msgstr ""
+msgstr "Lähetä pyyntö"
 
 #: application/views/widgets/qsos.php:20
 msgid "Rcvd"
-msgstr ""
+msgstr "Vastaanotettu"
 
 #: application/views/zonechecker/index.php:3
 msgid "Gridsquare Zone identification"
-msgstr ""
+msgstr "Lokaattorin vyöhyketunnistus"
 
 #: application/views/zonechecker/index.php:15
 msgid "Zone Type"
-msgstr ""
+msgstr "Vyöhyketyyppi"
 
 #: application/views/zonechecker/index.php:20
 msgid "Start Zone Check"
-msgstr ""
+msgstr "Aloita vyöhyketarkistus"
 
 #: application/views/zonechecker/index.php:39
 #: application/views/zonechecker/index.php:62
 msgid "Processing..."
-msgstr ""
+msgstr "Käsitellään..."
 
 #: application/views/zonechecker/index.php:50
 #: application/views/zonechecker/index.php:73
 msgid "An error occurred while processing the request."
-msgstr ""
+msgstr "Pyyntöä käsiteltäessä tapahtui virhe."
 
 #: application/views/zonechecker/result.php:16
 msgid "Callsigns Tested"
-msgstr ""
+msgstr "Kutsumerkit testattu"
 
 #: application/views/zonechecker/result.php:17
 msgid "Execution Time"
-msgstr ""
+msgstr "Suorituksen kesto"
 
 #: application/views/zonechecker/result.php:18
 msgid "Potential Wrong Zones"
-msgstr ""
+msgstr "Mahdollisesti väärät vyöhykkeet"
 
 #: application/views/zonechecker/result.php:19
 msgid "Cache Hits"
-msgstr ""
+msgstr "Välimuistiosuma"
 
 #: application/views/zonechecker/result.php:20
 msgid "Cache Misses"
-msgstr ""
+msgstr "Välimuistivirheet"
 
 #: application/views/zonechecker/result.php:21
 msgid "Hit Rate"
-msgstr ""
+msgstr "Osumaprosentti"
 
 #: application/views/zonechecker/result.php:55
 msgid "ITUz"
-msgstr ""
+msgstr "ITUz"
 
 #: application/views/zonechecker/result.php:56
 msgid "ITUz geojson"
-msgstr ""
+msgstr "ITUz geojson"
 
 #: application/views/zonechecker/result.php:58
 msgid "CQz"
-msgstr ""
+msgstr "CQz"
 
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
-msgstr ""
+msgstr "CQz geojson"
 
 #~ msgid "Bandmap"
 #~ msgstr "Bandikartta"
