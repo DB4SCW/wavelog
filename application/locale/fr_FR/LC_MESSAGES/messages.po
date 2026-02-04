@@ -922,6 +922,7 @@ msgstr "SOTA - Export CSV"
 
 #: application/controllers/Dashboard.php:154
 #: application/controllers/Visitor.php:134
+#: application/controllers/Dashboard.php:155
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -3307,8 +3308,8 @@ msgid ""
 "encryption_key in your config.php file first!"
 msgstr ""
 "Vous ne pouvez actuellement pas usurper l'identité d'un autre utilisateur. "
-"Veuillez d'abord changer la clé de chiffrement dans votre fichier config."
-"php !"
+"Veuillez d'abord changer la clé de chiffrement dans votre fichier "
+"config.php !"
 
 #: application/controllers/User.php:1612
 msgid "Invalid Hash"
@@ -3605,6 +3606,7 @@ msgid "DXCC has to be Numeric"
 msgstr "Le DXCC doit être un nombre"
 
 #: application/models/Logbook_model.php:4650
+#: application/models/Logbook_model.php:4841
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
@@ -3612,6 +3614,7 @@ msgstr ""
 "%s pour %s : IGNORÉ"
 
 #: application/models/Logbook_model.php:4664
+#: application/models/Logbook_model.php:4855
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3620,10 +3623,12 @@ msgstr ""
 "importé. Il est invalide"
 
 #: application/models/Logbook_model.php:4673
+#: application/models/Logbook_model.php:4864
 msgid "QSO on"
 msgstr "QSO en"
 
 #: application/models/Logbook_model.php:4673
+#: application/models/Logbook_model.php:4864
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3632,6 +3637,7 @@ msgstr ""
 "importé. Il est invalide"
 
 #: application/models/Logbook_model.php:4722
+#: application/models/Logbook_model.php:4913
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3641,44 +3647,55 @@ msgstr ""
 "n'a pas été importé. Il est invalide"
 
 #: application/models/Logbook_model.php:4995
+#: application/models/Logbook_model.php:5186
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "la date de réception de la QSL est invalide (AAAAMMJJ)"
 
 #: application/models/Logbook_model.php:5006
+#: application/models/Logbook_model.php:5197
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "la date de la QSL est invalide (AAAAMMJJ)"
 
 #: application/models/Logbook_model.php:5067
+#: application/models/Logbook_model.php:5258
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "la clublog_qso_upload_date est invalide (AAAAMMJJ)"
 
 #: application/models/Logbook_model.php:5440
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5631
 msgid "Duplicate for"
 msgstr "Dupliquer pour"
 
 #: application/models/Logbook_model.php:5505
 #: application/models/Logbook_model.php:5600
+#: application/models/Logbook_model.php:5696
+#: application/models/Logbook_model.php:5791
 msgid "QSO could not be matched"
 msgstr "pas de correspondance pour le QSO"
 
 #: application/models/Logbook_model.php:5513
+#: application/models/Logbook_model.php:5704
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "confirmé par LoTW/Clublog/eQSL/Contest"
 
 #: application/models/Logbook_model.php:5519
+#: application/models/Logbook_model.php:5710
 msgid "confirmed by award manager"
 msgstr "confirmé par le manager de l'Award"
 
 #: application/models/Logbook_model.php:5523
+#: application/models/Logbook_model.php:5714
 msgid "confirmed by cross-check of DCL data"
 msgstr "confirmé par recoupement des données DCL"
 
 #: application/models/Logbook_model.php:5527
+#: application/models/Logbook_model.php:5718
 msgid "confirmation pending"
 msgstr "confirmation en attente"
 
 #: application/models/Logbook_model.php:5530
+#: application/models/Logbook_model.php:5721
 msgid "unconfirmed"
 msgstr "non confirmé"
 
@@ -3686,14 +3703,17 @@ msgstr "non confirmé"
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
+#: application/models/Logbook_model.php:5724
 msgid "unknown"
 msgstr "inconnu"
 
 #: application/models/Logbook_model.php:5603
+#: application/models/Logbook_model.php:5794
 msgid "POTA reference already in log"
 msgstr "Les références du POTA sont déjà dans le log"
 
 #: application/models/Logbook_model.php:5606
+#: application/models/Logbook_model.php:5797
 msgid "QSO updated"
 msgstr "QSO mis à jour"
 
@@ -3708,6 +3728,7 @@ msgstr "QSO mis à jour"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6191
 msgid "Bearing"
 msgstr "Azimut"
 
@@ -11619,8 +11640,8 @@ msgstr ""
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
 msgstr ""
-"Cliquer sur 'Téléverser les QSOs' enverra les informations de QSO vers eQSL."
-"cc."
+"Cliquer sur 'Téléverser les QSOs' enverra les informations de QSO vers "
+"eQSL.cc."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
@@ -15023,8 +15044,8 @@ msgid ""
 "The hostname of the mail server, e.g. 'mail.example.com' (without 'ssl://' "
 "or 'tls://')"
 msgstr ""
-"Le nom d'hôte du serveur de messagerie, par exemple « mail.example."
-"com » (sans « ssl:// » ou « tls:// »)"
+"Le nom d'hôte du serveur de messagerie, par exemple « mail.example.com » "
+"(sans « ssl:// » ou « tls:// »)"
 
 #: application/views/options/email.php:88
 msgid "SMTP Port"
@@ -17184,8 +17205,8 @@ msgid ""
 msgstr ""
 "Pour commencer, assurez-vous d'avoir rempli le formulaire sur la gauche avec "
 "la date, l'indicatif de la station et l'indicatif de l'opérateur. Les "
-"données principales incluent la bande (ou QRG en MHz, par exemple « 7.145 "
-"»), le mode et l'heure. Après l'heure, indiquez le premier QSO, qui "
+"données principales incluent la bande (ou QRG en MHz, par exemple "
+"« 7.145 »), le mode et l'heure. Après l'heure, indiquez le premier QSO, qui "
 "correspond essentiellement à l'indicatif."
 
 #: application/views/simplefle/syntax_help.php:9

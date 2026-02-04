@@ -837,10 +837,11 @@ class API extends CI_Controller {
 		$this->load->model('api_model');
 		if ((($key ?? '') != '') && ($this->api_model->authorize($key) != 0)) {
 			$this->load->model('logbook_model');
-			$data['todays_qsos'] = $this->logbook_model->todays_qsos(null, $key);
-			$data['total_qsos'] = $this->logbook_model->total_qsos(null, $key);
-			$data['month_qsos'] = $this->logbook_model->month_qsos(null, $key);
-			$data['year_qsos'] = $this->logbook_model->year_qsos(null, $key);
+			$qso_counts = $this->logbook_model->get_qso_counts(null, $key);
+			$data['todays_qsos'] = $qso_counts['today'];
+			$data['total_qsos'] = $qso_counts['total'];
+			$data['month_qsos'] = $qso_counts['month'];
+			$data['year_qsos'] = $qso_counts['year'];
 		} else { # for Downcompat
 			$data['todays_qsos'] = 0;
 			$data['total_qsos'] = 0;

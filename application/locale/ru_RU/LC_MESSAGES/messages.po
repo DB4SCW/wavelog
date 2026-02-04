@@ -918,6 +918,7 @@ msgstr "Экспорт SOTA в CSV"
 
 #: application/controllers/Dashboard.php:154
 #: application/controllers/Visitor.php:134
+#: application/controllers/Dashboard.php:155
 msgid "Dashboard"
 msgstr "Панель управления"
 
@@ -3586,11 +3587,13 @@ msgid "DXCC has to be Numeric"
 msgstr "DXCC должен быть цифровым"
 
 #: application/models/Logbook_model.php:4650
+#: application/models/Logbook_model.php:4841
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Неправильный позывной %s при импорте QSO с %s для %s: ПРОПУЩЕНО"
 
 #: application/models/Logbook_model.php:4664
+#: application/models/Logbook_model.php:4855
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3599,10 +3602,12 @@ msgstr ""
 "действительно и не было импортировано"
 
 #: application/models/Logbook_model.php:4673
+#: application/models/Logbook_model.php:4864
 msgid "QSO on"
 msgstr "начало QSO"
 
 #: application/models/Logbook_model.php:4673
+#: application/models/Logbook_model.php:4864
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3611,6 +3616,7 @@ msgstr ""
 "импортировано. Оно недействительно"
 
 #: application/models/Logbook_model.php:4722
+#: application/models/Logbook_model.php:4913
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3620,44 +3626,55 @@ msgstr ""
 "некорректно, импорт отклонён.imported. It's invalid"
 
 #: application/models/Logbook_model.php:4995
+#: application/models/Logbook_model.php:5186
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "дата получения QSL недействительна (ГГГГММДД)"
 
 #: application/models/Logbook_model.php:5006
+#: application/models/Logbook_model.php:5197
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "дата отправки QSL недействительна (ГГГГММДД)"
 
 #: application/models/Logbook_model.php:5067
+#: application/models/Logbook_model.php:5258
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "дата загрузки QSO в Clublog недействительна (ГГГГММДД)"
 
 #: application/models/Logbook_model.php:5440
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5631
 msgid "Duplicate for"
 msgstr "Дубликат для"
 
 #: application/models/Logbook_model.php:5505
 #: application/models/Logbook_model.php:5600
+#: application/models/Logbook_model.php:5696
+#: application/models/Logbook_model.php:5791
 msgid "QSO could not be matched"
 msgstr "QSO не может быть сопоставлено"
 
 #: application/models/Logbook_model.php:5513
+#: application/models/Logbook_model.php:5704
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "подтверждено LoTW/Clublog/eQSL/Contest"
 
 #: application/models/Logbook_model.php:5519
+#: application/models/Logbook_model.php:5710
 msgid "confirmed by award manager"
 msgstr "подтверждено менеджером диплома"
 
 #: application/models/Logbook_model.php:5523
+#: application/models/Logbook_model.php:5714
 msgid "confirmed by cross-check of DCL data"
 msgstr "подтверждено кросс-проверкой с данными DCL"
 
 #: application/models/Logbook_model.php:5527
+#: application/models/Logbook_model.php:5718
 msgid "confirmation pending"
 msgstr "подтверждение ожидается"
 
 #: application/models/Logbook_model.php:5530
+#: application/models/Logbook_model.php:5721
 msgid "unconfirmed"
 msgstr "не подтверждено"
 
@@ -3665,14 +3682,17 @@ msgstr "не подтверждено"
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
+#: application/models/Logbook_model.php:5724
 msgid "unknown"
 msgstr "неизвестно"
 
 #: application/models/Logbook_model.php:5603
+#: application/models/Logbook_model.php:5794
 msgid "POTA reference already in log"
 msgstr "Ренференция POTA уже в журнале"
 
 #: application/models/Logbook_model.php:5606
+#: application/models/Logbook_model.php:5797
 msgid "QSO updated"
 msgstr "QSO обновлено"
 
@@ -3687,6 +3707,7 @@ msgstr "QSO обновлено"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6191
 msgid "Bearing"
 msgstr "Направление"
 
@@ -17140,8 +17161,8 @@ msgid ""
 "give an initial sent exchange. To deactivate, use ',+0':"
 msgstr ""
 "Принятый контрольный номер должен быть с префиксом точка '.', отправленный "
-"контрольный номер -- с запятой ','. Последние две строки эквивалентны -- т."
-"е. пробелы не имеют значения, как и порядок. Контрольный номер, который вы "
+"контрольный номер -- с запятой ','. Последние две строки эквивалентны -- "
+"т.е. пробелы не имеют значения, как и порядок. Контрольный номер, который вы "
 "отправили, будет автоматически включен в следующее QSO, если он содержит "
 "принятый контрольный номер, или если вы используете одну запятую ','. Чтобы "
 "автоматически увеличить отправленный порядковый номер, используйте ',++' и "
@@ -17929,8 +17950,9 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
-"Создайте новую папку в 'assets/css/' и загрузите в нее файл 'bootstrap.min."
-"css', который содержит основные правила стилизации. Мы используем темы из %s"
+"Создайте новую папку в 'assets/css/' и загрузите в нее файл "
+"'bootstrap.min.css', который содержит основные правила стилизации. Мы "
+"используем темы из %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
@@ -18238,8 +18260,8 @@ msgid ""
 "Show profile picture of QSO partner from qrz.com/hamqth.com profile in the "
 "log QSO section."
 msgstr ""
-"Показать изображение корреспондента по QSO из его профиля на qrz.com/hamqth."
-"com в разделе QSO журнала."
+"Показать изображение корреспондента по QSO из его профиля на qrz.com/"
+"hamqth.com в разделе QSO журнала."
 
 #: application/views/user/edit.php:392
 msgid ""
