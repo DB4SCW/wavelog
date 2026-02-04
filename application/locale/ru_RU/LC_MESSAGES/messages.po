@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 20:24+0000\n"
-"PO-Revision-Date: 2026-01-26 21:21+0000\n"
+"PO-Revision-Date: 2026-02-04 09:48+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ru/>\n"
@@ -971,7 +971,7 @@ msgstr "Ключ(и) удалены."
 
 #: application/controllers/Debug.php:114
 msgid "(empty)"
-msgstr ""
+msgstr "(пусто)"
 
 #: application/controllers/Debug.php:132
 msgid "Debug"
@@ -1462,7 +1462,7 @@ msgstr "eQSL"
 
 #: application/controllers/Logbook.php:953
 msgid "All callbook lookups failed or provided no results."
-msgstr ""
+msgstr "Все запросы к коллбукам не удались или не принесли результатов."
 
 #: application/controllers/Logbook.php:1418
 #: application/controllers/Radio.php:46
@@ -3570,7 +3570,7 @@ msgstr "HRDlog: не найдены профили QTH с данными вхо�
 
 #: application/models/Logbook_model.php:311
 msgid "Station not accessible"
-msgstr ""
+msgstr "Станция недоступна"
 
 #: application/models/Logbook_model.php:1293
 msgid "Station ID not allowed"
@@ -10630,29 +10630,29 @@ msgstr "Загрузить файл"
 
 #: application/views/debug/index.php:2
 msgid "Are you sure you want to clear the cache?"
-msgstr ""
+msgstr "Вы уверены, что хотите очистить кеш?"
 
 #: application/views/debug/index.php:3
 msgid "Failed to clear cache!"
-msgstr ""
+msgstr "Не удалось очистить кэш!"
 
 #: application/views/debug/index.php:4
 #, php-format
 msgid "Last version check: %s"
-msgstr ""
+msgstr "Последняя проверка версии: %s"
 
 #: application/views/debug/index.php:5
 msgid "Wavelog is up to date!"
-msgstr ""
+msgstr "Wavelog обновлен!"
 
 #: application/views/debug/index.php:6
 #, php-format
 msgid "There is a newer version available: %s"
-msgstr ""
+msgstr "Доступна новая версия: %s"
 
 #: application/views/debug/index.php:7
 msgid "The Remote Repository doesn't know your branch."
-msgstr ""
+msgstr "Удалённый репозиторий не знает о вашей ветке."
 
 #: application/views/debug/index.php:32
 msgid "Wavelog Information"
@@ -10878,51 +10878,53 @@ msgstr "Не установленные"
 
 #: application/views/debug/index.php:413
 msgid "Cache Information"
-msgstr ""
+msgstr "Информация о кэше"
 
 #: application/views/debug/index.php:417
 msgid "Current Configuration"
-msgstr ""
+msgstr "Текущая конфигурация"
 
 #: application/views/debug/index.php:420
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
-msgstr ""
+msgstr "Основной адаптер"
 
 #: application/views/debug/index.php:431
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
-msgstr ""
+msgstr "Резервный адаптер"
 
 #: application/views/debug/index.php:440
 #, php-format
 msgctxt "Cache Path"
 msgid "Path for %s adapter"
-msgstr ""
+msgstr "Путь к адаптеру %s"
 
 #: application/views/debug/index.php:444
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
-msgstr ""
+msgstr "Ключевой префикс"
 
 #: application/views/debug/index.php:450
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable."
 msgstr ""
+"В настоящее время кэш использует запасной адаптер, так как основной "
+"недоступен."
 
 #: application/views/debug/index.php:454
 msgid "Cache is working properly. Everything okay!"
-msgstr ""
+msgstr "Кэш работает нормально. Всё в порядке!"
 
 #: application/views/debug/index.php:459
 msgid "Cache Details"
-msgstr ""
+msgstr "Подробная информация о кэше"
 
 #: application/views/debug/index.php:462
 msgctxt "Cache Details"
 msgid "Total Size"
-msgstr ""
+msgstr "Общий размер"
 
 #: application/views/debug/index.php:468
 msgctxt "Cache Key"
