@@ -111,38 +111,38 @@ class Dashboard extends CI_Controller {
 			$data['current_streak']=0;
 		}
 
-		// Load Countries Breakdown data into array (combined query)
-		$CountriesBreakdown = $this->logbook_model->total_countries_breakdown_batch($logbooks_locations_array);
+		// Load Dashboard stats (countries + QSL stats in one query)
+		$stats = $this->logbook_model->dashboard_stats_batch($logbooks_locations_array);
 
-		$data['total_countries'] = $CountriesBreakdown['Countries_Worked'];
-		$data['total_countries_confirmed_paper'] = $CountriesBreakdown['Countries_Worked_QSL'];
-		$data['total_countries_confirmed_eqsl'] = $CountriesBreakdown['Countries_Worked_EQSL'];
-		$data['total_countries_confirmed_lotw'] = $CountriesBreakdown['Countries_Worked_LOTW'];
-		$current = $CountriesBreakdown['Countries_Current'];
+		// Country stats
+		$data['total_countries'] = $stats['Countries_Worked'];
+		$data['total_countries_confirmed_paper'] = $stats['Countries_Worked_QSL'];
+		$data['total_countries_confirmed_eqsl'] = $stats['Countries_Worked_EQSL'];
+		$data['total_countries_confirmed_lotw'] = $stats['Countries_Worked_LOTW'];
+		$current = $stats['Countries_Current'];
 
-		$QSLStatsBreakdownArray = $this->logbook_model->get_QSLStats($logbooks_locations_array);
+		// QSL stats
+		$data['total_qsl_sent'] = $stats['QSL_Sent'];
+		$data['total_qsl_rcvd'] = $stats['QSL_Received'];
+		$data['total_qsl_requested'] = $stats['QSL_Requested'];
+		$data['qsl_sent_today'] = $stats['QSL_Sent_today'];
+		$data['qsl_rcvd_today'] = $stats['QSL_Received_today'];
+		$data['qsl_requested_today'] = $stats['QSL_Requested_today'];
 
-		$data['total_qsl_sent'] = $QSLStatsBreakdownArray['QSL_Sent'];
-		$data['total_qsl_rcvd'] = $QSLStatsBreakdownArray['QSL_Received'];
-		$data['total_qsl_requested'] = $QSLStatsBreakdownArray['QSL_Requested'];
-		$data['qsl_sent_today'] = $QSLStatsBreakdownArray['QSL_Sent_today'];
-		$data['qsl_rcvd_today'] = $QSLStatsBreakdownArray['QSL_Received_today'];
-		$data['qsl_requested_today'] = $QSLStatsBreakdownArray['QSL_Requested_today'];
+		$data['total_eqsl_sent'] = $stats['eQSL_Sent'];
+		$data['total_eqsl_rcvd'] = $stats['eQSL_Received'];
+		$data['eqsl_sent_today'] = $stats['eQSL_Sent_today'];
+		$data['eqsl_rcvd_today'] = $stats['eQSL_Received_today'];
 
-		$data['total_eqsl_sent'] = $QSLStatsBreakdownArray['eQSL_Sent'];
-		$data['total_eqsl_rcvd'] = $QSLStatsBreakdownArray['eQSL_Received'];
-		$data['eqsl_sent_today'] = $QSLStatsBreakdownArray['eQSL_Sent_today'];
-		$data['eqsl_rcvd_today'] = $QSLStatsBreakdownArray['eQSL_Received_today'];
+		$data['total_lotw_sent'] = $stats['LoTW_Sent'];
+		$data['total_lotw_rcvd'] = $stats['LoTW_Received'];
+		$data['lotw_sent_today'] = $stats['LoTW_Sent_today'];
+		$data['lotw_rcvd_today'] = $stats['LoTW_Received_today'];
 
-		$data['total_lotw_sent'] = $QSLStatsBreakdownArray['LoTW_Sent'];
-		$data['total_lotw_rcvd'] = $QSLStatsBreakdownArray['LoTW_Received'];
-		$data['lotw_sent_today'] = $QSLStatsBreakdownArray['LoTW_Sent_today'];
-		$data['lotw_rcvd_today'] = $QSLStatsBreakdownArray['LoTW_Received_today'];
-
-		$data['total_qrz_sent'] = $QSLStatsBreakdownArray['QRZ_Sent'];
-		$data['total_qrz_rcvd'] = $QSLStatsBreakdownArray['QRZ_Received'];
-		$data['qrz_sent_today'] = $QSLStatsBreakdownArray['QRZ_Sent_today'];
-		$data['qrz_rcvd_today'] = $QSLStatsBreakdownArray['QRZ_Received_today'];
+		$data['total_qrz_sent'] = $stats['QRZ_Sent'];
+		$data['total_qrz_rcvd'] = $stats['QRZ_Received'];
+		$data['qrz_sent_today'] = $stats['QRZ_Sent_today'];
+		$data['qrz_rcvd_today'] = $stats['QRZ_Received_today'];
 
 		$data['last_qso_count'] = empty($this->session->userdata('dashboard_last_qso_count')) ? DASHBOARD_DEFAULT_QSOS_COUNT : $this->session->userdata('dashboard_last_qso_count');
 		$data['last_qsos_list'] = $this->logbook_model->get_last_qsos(
