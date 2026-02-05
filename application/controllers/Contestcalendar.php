@@ -126,7 +126,11 @@ class Contestcalendar extends CI_Controller {
 
 	private function getRssData() {
 
-		$this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
+		$this->load->driver('cache', [
+			'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+			'backup' => $this->config->item('cache_backup') ?? 'file',
+			'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+		]);
 
 		if (!$rssRawData = $this->cache->get('RssRawContestCal')) {
 

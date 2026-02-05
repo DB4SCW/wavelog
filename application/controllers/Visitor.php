@@ -97,37 +97,37 @@ class Visitor extends CI_Controller {
 
 				$this->pagination->initialize($config);
 
-                // Store info
-                $data['todays_qsos'] = $this->logbook_model->todays_qsos($logbooks_locations_array);
-                $data['total_qsos'] = $this->logbook_model->total_qsos($logbooks_locations_array);
-                $data['month_qsos'] = $this->logbook_model->month_qsos($logbooks_locations_array);
-                $data['year_qsos'] = $this->logbook_model->year_qsos($logbooks_locations_array);
+                $qso_counts = $this->logbook_model->get_qso_counts($logbooks_locations_array);
+                $data['todays_qsos'] = $qso_counts['today'];
+                $data['total_qsos'] = $qso_counts['total'];
+                $data['month_qsos'] = $qso_counts['month'];
+                $data['year_qsos'] = $qso_counts['year'];
 
 				$data['user_map_custom'] = $this->optionslib->get_map_custom(true,$public_slug);
 
-                // Load  Countries Breakdown data into array
-                $CountriesBreakdown = $this->logbook_model->total_countries_confirmed($logbooks_locations_array);
+                // Load Dashboard stats (countries + QSL stats in one query)
+                $stats = $this->logbook_model->dashboard_stats_batch($logbooks_locations_array);
 
-                $data['total_countries'] = $CountriesBreakdown['Countries_Worked'];
-                $data['total_countries_confirmed_paper'] = $CountriesBreakdown['Countries_Worked_QSL'];
-                $data['total_countries_confirmed_eqsl'] = $CountriesBreakdown['Countries_Worked_EQSL'];
-                $data['total_countries_confirmed_lotw'] = $CountriesBreakdown['Countries_Worked_LOTW'];
+                // Country stats
+                $data['total_countries'] = $stats['Countries_Worked'];
+                $data['total_countries_confirmed_paper'] = $stats['Countries_Worked_QSL'];
+                $data['total_countries_confirmed_eqsl'] = $stats['Countries_Worked_EQSL'];
+                $data['total_countries_confirmed_lotw'] = $stats['Countries_Worked_LOTW'];
+                $current = $stats['Countries_Current'];
 
 				$dxcc = $this->dxcc->list_current();
-                $current = $this->logbook_model->total_countries_current($logbooks_locations_array);
                 $data['total_countries_needed'] = count($dxcc->result()) - $current;
 
-                $QSLStatsBreakdownArray =$this->logbook_model->get_QSLStats($logbooks_locations_array);
+                // QSL stats
+                $data['total_qsl_sent'] = $stats['QSL_Sent'];
+                $data['total_qsl_rcvd'] = $stats['QSL_Received'];
+                $data['total_qsl_requested'] = $stats['QSL_Requested'];
 
-                $data['total_qsl_sent'] = $QSLStatsBreakdownArray['QSL_Sent'];
-                $data['total_qsl_rcvd'] = $QSLStatsBreakdownArray['QSL_Received'];
-                $data['total_qsl_requested'] = $QSLStatsBreakdownArray['QSL_Requested'];
+                $data['total_eqsl_sent'] = $stats['eQSL_Sent'];
+                $data['total_eqsl_rcvd'] = $stats['eQSL_Received'];
 
-                $data['total_eqsl_sent'] = $QSLStatsBreakdownArray['eQSL_Sent'];
-                $data['total_eqsl_rcvd'] = $QSLStatsBreakdownArray['eQSL_Received'];
-
-                $data['total_lotw_sent'] = $QSLStatsBreakdownArray['LoTW_Sent'];
-                $data['total_lotw_rcvd'] = $QSLStatsBreakdownArray['LoTW_Received'];
+                $data['total_lotw_sent'] = $stats['LoTW_Sent'];
+                $data['total_lotw_rcvd'] = $stats['LoTW_Received'];
 
                 $data['results'] = $this->logbook_model->get_qsos($this->qso_per_page,$this->uri->segment(3),$logbooks_locations_array);
 

@@ -42,6 +42,9 @@ switch ($date_format) {
   var lang_qso_sat_lotw_support_not_found = "<?= __("Satellite not found"); ?>";
   var lang_qso_sat_lotw_supported = "<?= __("Supported by LoTW"); ?>";
   var lang_qso_sat_lotw_not_supported = "<?= __("Not supported by LoTW"); ?>";
+  var lang_general_word_info = "<?= __("Info"); ?>";
+  var lang_qso_you_already_filled_an_qso = "<?= __("You have already filled in a callsign. First finish this QSO before filling the last spot from DXcluster."); ?>";
+  var lang_qso_no_spots_found = "<?= __("No spots found in this frequency.") ?>";
 </script>
 
 <!--- DX Waterfall --->
@@ -408,7 +411,7 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
               <label for="radio"><?= __("Radio"); ?></label>
               <select class="form-select radios" id="radio" name="radio">
                 <option value="0" selected="selected"><?= __("None"); ?></option>
-		            <option value="ws"<?php if ($this->session->userdata('radio') == 'ws' && $manual_mode == '0') { echo ' selected="selected"'; } ?>><?= __("Live - ") . __("WebSocket (Requires WLGate>=1.1.10)"); ?></option>
+		            <option value="ws"<?php if ($this->session->userdata('radio') == 'ws' && $manual_mode == '0') { echo ' selected="selected"'; } ?>><?= __("Live - WebSocket"); ?></option>
                 <?php foreach ($radios->result() as $row) { ?>
                   <option value="<?php echo $row->id; ?>" <?php if($this->session->userdata('radio') == $row->id && $manual_mode == '0') { echo "selected=\"selected\""; } ?>><?= __("Polling - ") . $row->radio; ?> <?php if ($radio_last_updated->id == $row->id) { echo "(".__("last updated").")"; } else { echo ''; } ?></option>
                 <?php } ?>

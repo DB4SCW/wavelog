@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends cron
 RUN install-php-extensions \
         mysqli \
         zip \
+        redis \
+        memcached \
+        apcu \
         gd; \
     \
     a2enmod rewrite; \

@@ -181,6 +181,11 @@ class API extends CI_Controller {
 				$this->output->set_status_header(400)->set_content_type('application/json')->set_output(json_encode(['status' => 'error', 'message' => 'Invalid JSON file']));
 				return;
 			}
+
+			// If a single station object is posted (not an array), wrap it in an array
+			if (isset($locations['station_callsign']) || isset($locations['station_profile_name'])) {
+				$locations = [$locations];
+			}
 		} catch (Exception $e) {
 			$this->output->set_status_header(500)->set_content_type('application/json')->set_output(json_encode(['status' => 'error', 'message' => 'Processing error: ' . $e->getMessage()]));
 		}
@@ -832,10 +837,11 @@ class API extends CI_Controller {
 		$this->load->model('api_model');
 		if ((($key ?? '') != '') && ($this->api_model->authorize($key) != 0)) {
 			$this->load->model('logbook_model');
-			$data['todays_qsos'] = $this->logbook_model->todays_qsos(null, $key);
-			$data['total_qsos'] = $this->logbook_model->total_qsos(null, $key);
-			$data['month_qsos'] = $this->logbook_model->month_qsos(null, $key);
-			$data['year_qsos'] = $this->logbook_model->year_qsos(null, $key);
+			$qso_counts = $this->logbook_model->get_qso_counts(null, $key);
+			$data['todays_qsos'] = $qso_counts['today'];
+			$data['total_qsos'] = $qso_counts['total'];
+			$data['month_qsos'] = $qso_counts['month'];
+			$data['year_qsos'] = $qso_counts['year'];
 		} else { # for Downcompat
 			$data['todays_qsos'] = 0;
 			$data['total_qsos'] = 0;
@@ -1250,7 +1256,11 @@ class API extends CI_Controller {
 		}
 
 		// Load cache driver
-		$this->load->driver('cache', ['adapter' => 'file']);
+		$this->load->driver('cache', [
+			'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+			'backup' => $this->config->item('cache_backup')	 ?? 'file',
+			'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+		]);
 
 		// Create cache key
 		$cache_key = "wp_stats_{$station_id}";

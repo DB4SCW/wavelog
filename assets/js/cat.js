@@ -78,6 +78,7 @@ $(document).ready(function() {
         POLL_INTERVAL: 3000, // Polling interval in milliseconds
         WEBSOCKET_RECONNECT_MAX: 5,
         WEBSOCKET_RECONNECT_DELAY_MS: 2000,
+        HYBRID_WS_MAX_RETRIES: 1,
         AJAX_TIMEOUT_MS: 5000,
         LOCK_TIMEOUT_MS: 10000
     };
@@ -131,6 +132,11 @@ $(document).ready(function() {
                 reconnectAttempts = 0;
                 websocketEnabled = true;
                 activeWebSocketProtocol = protocol; // Remember which protocol worked
+                
+                // Debug log if connected in Hybrid/Auto mode
+                if (isHybridMode) {
+                    console.log("CAT: Hybrid WebSocket connected successfully.");
+                }
             };
 
             websocket.onmessage = function(event) {
@@ -157,39 +163,44 @@ $(document).ready(function() {
                     return;
                 }
 
-                // Original error handling for when both protocols have been tried
-                if ($('.radios option:selected').val() != '0') {
+                // Error handling: Only show GUI error if NOT in hybrid mode
+                // In hybrid mode, we fail silently to avoid annoying users without a WS server
+                if (!isHybridMode && $('.radios option:selected').val() != '0') {
                     var radioName = $('select.radios option:selected').text();
                     displayRadioStatus('error', radioName);
                 }
                 websocketEnabled = false;
             };
 
-        websocket.onclose = function(event) {
-            websocketEnabled = false;
-
-            // Reset fallback flag on intentional close so we try WSS first next time
-            if (websocketIntentionallyClosed) {
-                hasTriedWsFallback = false;
-            }
-
-            // Only attempt to reconnect if the closure was not intentional
-            if (!websocketIntentionallyClosed && reconnectAttempts < CAT_CONFIG.WEBSOCKET_RECONNECT_MAX) {
-                setTimeout(() => {
-                reconnectAttempts++;
-                initializeWebSocketConnection();
-            }, CAT_CONFIG.WEBSOCKET_RECONNECT_DELAY_MS * reconnectAttempts);
-            } else if (!websocketIntentionallyClosed) {
-                // Only show error if it wasn't an intentional close AND radio is not "None"
-                if ($('.radios option:selected').val() != '0') {
-                    var radioName = $('select.radios option:selected').text();
-                    displayRadioStatus('error', radioName);
-                }
+            websocket.onclose = function(event) {
                 websocketEnabled = false;
-            }
-        };
+
+                // Reset fallback flag on intentional close so we try WSS first next time
+                if (websocketIntentionallyClosed) {
+                    hasTriedWsFallback = false;
+                }
+
+                // Determine max retries: standard limit or reduced limit for hybrid mode
+                const maxRetries = isHybridMode ? CAT_CONFIG.HYBRID_WS_MAX_RETRIES : CAT_CONFIG.WEBSOCKET_RECONNECT_MAX;
+
+                // Only attempt to reconnect if the closure was not intentional
+                if (!websocketIntentionallyClosed && reconnectAttempts < maxRetries) {
+                    setTimeout(() => {
+                        reconnectAttempts++;
+                        initializeWebSocketConnection();
+                    }, CAT_CONFIG.WEBSOCKET_RECONNECT_DELAY_MS * (reconnectAttempts + 1)); // Progressive delay
+                } else if (!websocketIntentionallyClosed) {
+                    // Only show error if it wasn't an intentional close AND radio is not "None"
+                    // AND we are NOT in hybrid mode
+                    if (!isHybridMode && $('.radios option:selected').val() != '0') {
+                        var radioName = $('select.radios option:selected').text();
+                        displayRadioStatus('error', radioName);
+                    }
+                    websocketEnabled = false;
+                }
+            };
         } catch (error) {
-            websocketEnabled=false;
+            websocketEnabled = false;
         }
     }
 
@@ -1246,6 +1257,9 @@ $(document).ready(function() {
         radioCatUrlCache = {};
         radioNameCache = {};
 
+        // Reset Hybrid Mode flag
+        isHybridMode = false;
+
         // If switching to None, disable CAT tracking FIRST before stopping connections
         // This prevents any pending updates from interfering with the offline status
         if (selectedRadioId == '0') {
@@ -1290,6 +1304,8 @@ $(document).ready(function() {
             websocketIntentionallyClosed = false; // Reset flag when opening WebSocket
             reconnectAttempts = 0; // Reset reconnect attempts
             hasTriedWsFallback = false; // Reset WSS failover state - try WSS first again
+            isHybridMode = false; // Explicitly NOT hybrid
+            
             // Set DX Waterfall CAT state to websocket if variable exists
             if (typeof dxwaterfall_cat_state !== 'undefined') {
                 dxwaterfall_cat_state = "websocket";
@@ -1311,6 +1327,16 @@ $(document).ready(function() {
             
             // Start standard polling
             CATInterval = setInterval(updateFromCAT, CAT_CONFIG.POLL_INTERVAL);
+
+            // Attempt Hybrid WebSocket Connection (Silent, limited retries)
+            // We try to connect to localhost to receive metadata/lookup broadcasts
+            // even though we are in Polling mode for frequency updates.
+            websocketIntentionallyClosed = false;
+            reconnectAttempts = 0;
+            hasTriedWsFallback = false;
+            isHybridMode = true; // Activate Hybrid Mode restrictions (limited retries, no UI errors)
+            
+            initializeWebSocketConnection();
 
             if ((window.CAT_COMPACT_MODE === 'ultra-compact' || window.CAT_COMPACT_MODE === 'icon-only') && typeof window.isCatTrackingEnabled !== 'undefined' && !window.isCatTrackingEnabled) {
                 displayOfflineStatus('cat_disabled');

@@ -69,13 +69,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($dxcc != 'All') {
@@ -151,13 +151,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($orbit != 'All') {
@@ -234,13 +234,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($orbit != 'All') {
@@ -305,13 +305,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($mode != 'All') {

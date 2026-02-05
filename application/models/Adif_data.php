@@ -20,10 +20,10 @@ class adif_data extends CI_Model {
 		$this->db->order_by("COL_TIME_ON", "ASC");
 		$this->db->join('station_profile', 'station_profile.station_id = '.$this->config->item('table_name').'.station_id');
 		if ($from) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 		}
 		if ($to) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 		}
 		if ($onlyop) {
 			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -62,10 +62,10 @@ class adif_data extends CI_Model {
 		$this->db->order_by("COL_TIME_ON", "ASC");
 		$this->db->join('station_profile', 'station_profile.station_id = '.$this->config->item('table_name').'.station_id');
 		if ($from) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 		}
 		if ($to) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 		}
 		if ($onlyop) {
 			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -187,10 +187,10 @@ class adif_data extends CI_Model {
 
 		// Apply same filters as export_custom
 		if ($from) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 		}
 		if ($to) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 		}
 		if ($onlyop) {
 			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -229,10 +229,10 @@ class adif_data extends CI_Model {
 
 			// If date is set, we format the date and add it to the where-statement
 			if ($from) {
-				$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+				$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 			}
 			if ($to) {
-				$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+				$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 			}
 			if ($onlyop) {
 				$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
