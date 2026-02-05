@@ -94,6 +94,13 @@ class Logbookadvanced_model extends CI_Model {
 	}
 
 	public function searchDb($searchCriteria) {
+		// Load all satellites once for PHP-side join (much faster than SQL COALESCE)
+		$satellites = [];
+		$sat_query = $this->db->query('SELECT name, displayname FROM satellite');
+		foreach ($sat_query->result() as $sat) {
+			$satellites[$sat->name] = $sat->displayname;
+		}
+
 		$conditions = [];
 		$binding = [$searchCriteria['user_id']];
 
@@ -637,10 +644,9 @@ class Logbookadvanced_model extends CI_Model {
 		}
 
 		$sql = "
-			SELECT qsos.*, qsos.last_modified AS qso_last_modified, dxcc_entities.*, lotw_users.*, station_profile.*, satellite.*, dxcc_entities.name as dxccname, mydxcc.name AS station_country, exists(select 1 from qsl_images where qsoid = qsos.COL_PRIMARY_KEY) as qslcount, coalesce(contest.name, qsos.col_contest_id) as contestname
+			SELECT qsos.*, qsos.last_modified AS qso_last_modified, dxcc_entities.*, lotw_users.*, station_profile.*, dxcc_entities.name as dxccname, mydxcc.name AS station_country, exists(select 1 from qsl_images where qsoid = qsos.COL_PRIMARY_KEY) as qslcount, coalesce(contest.name, qsos.col_contest_id) as contestname
 			FROM " . $this->config->item('table_name') . " qsos
 			INNER JOIN station_profile ON qsos.station_id=station_profile.station_id
-			LEFT OUTER JOIN satellite ON qsos.col_prop_mode='SAT' and qsos.COL_SAT_NAME = COALESCE(NULLIF(satellite.name, ''), NULLIF(satellite.displayname, ''))
 			LEFT OUTER JOIN dxcc_entities ON qsos.col_dxcc = dxcc_entities.adif
 			left outer join dxcc_entities mydxcc on qsos.col_my_dxcc = mydxcc.adif
 			LEFT OUTER JOIN lotw_users ON qsos.col_call = lotw_users.callsign
@@ -651,7 +657,42 @@ class Logbookadvanced_model extends CI_Model {
 			$sortorder
 			$limit
 		";
-		return $this->db->query($sql, $binding);
+		$query = $this->db->query($sql, $binding);
+
+		// Add satellite data via PHP-side join (much faster than SQL COALESCE)
+		$results = $query->result();
+		foreach ($results as &$row) {
+			$row->sat_name = $row->COL_SAT_NAME ?? null;
+			$row->sat_displayname = null;
+			if (!empty($row->COL_SAT_NAME) && isset($satellites[$row->COL_SAT_NAME])) {
+				$row->sat_displayname = $satellites[$row->COL_SAT_NAME];
+			}
+		}
+		unset($row);
+
+		// Return a query-like object with result() method for compatibility
+		return new class($results) {
+			private $data;
+
+			public function __construct($data) {
+				$this->data = $data;
+			}
+
+			public function result($type = 'object') {
+				if ($type === 'array') {
+					return json_decode(json_encode($this->data), true);
+				}
+				return $this->data;
+			}
+
+			public function num_rows() {
+				return count($this->data);
+			}
+
+			public function row() {
+				return !empty($this->data) ? $this->data[0] : null;
+			}
+		};
 
 	}
 
