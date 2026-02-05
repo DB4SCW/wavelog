@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 08:15+0000\n"
-"PO-Revision-Date: 2026-02-04 08:57+0000\n"
+"PO-Revision-Date: 2026-02-05 14:02+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -19411,7 +19411,7 @@ msgstr "この周波数ではスポットが見つかりません。"
 #: application/views/contesting/index.php:160
 #: application/views/qso/index.php:414
 msgid "Live - WebSocket"
-msgstr ""
+msgstr "ライブ - WebSocket"
 
 #~ msgid "Signature Name"
 #~ msgstr "署名名"
