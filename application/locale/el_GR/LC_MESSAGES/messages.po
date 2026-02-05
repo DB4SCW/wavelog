@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-04 09:48+0000\n"
+"POT-Creation-Date: 2026-02-05 08:52+0000\n"
 "PO-Revision-Date: 2025-12-30 19:49+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: Greek <https://translate.wavelog.org/projects/wavelog/main-"
@@ -7626,12 +7626,10 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: application/views/bandmap/list.php:240 application/views/qso/index.php:414
-msgid "Live - "
-msgstr ""
-
-#: application/views/bandmap/list.php:240 application/views/qso/index.php:414
-msgid "WebSocket (Requires WLGate>=1.1.10)"
+#: application/views/bandmap/list.php:240
+#: application/views/contesting/index.php:160
+#: application/views/qso/index.php:414
+msgid "Live - WebSocket"
 msgstr ""
 
 #: application/views/bandmap/list.php:242 application/views/qso/index.php:416
@@ -9353,10 +9351,6 @@ msgstr ""
 #: application/views/contesting/index.php:87
 msgctxt "Keep the translation short!"
 msgid "Serial"
-msgstr ""
-
-#: application/views/contesting/index.php:160
-msgid "WebSocket (Requires WLGate>1.1.10)"
 msgstr ""
 
 #: application/views/contesting/index.php:187

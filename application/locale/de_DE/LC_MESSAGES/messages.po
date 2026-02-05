@@ -19652,6 +19652,12 @@ msgstr ""
 msgid "No spots found in this frequency."
 msgstr "Keine Spots auf dieser Frequenz gefunden."
 
+#: application/views/bandmap/list.php:240
+#: application/views/contesting/index.php:160
+#: application/views/qso/index.php:414
+msgid "Live - WebSocket"
+msgstr ""
+
 #~ msgctxt "Cache Path"
 #~ msgid "Path for files adapter"
 #~ msgstr "Pfad für files Adapter"

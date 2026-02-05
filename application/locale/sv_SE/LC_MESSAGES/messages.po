@@ -19460,6 +19460,12 @@ msgstr ""
 msgid "No spots found in this frequency."
 msgstr "Inga spots hittades på denna frekvens."
 
+#: application/views/bandmap/list.php:240
+#: application/views/contesting/index.php:160
+#: application/views/qso/index.php:414
+msgid "Live - WebSocket"
+msgstr ""
+
 #~ msgctxt "Cache Path"
 #~ msgid "Path for files adapter"
 #~ msgstr "Sökväg för filadapter"

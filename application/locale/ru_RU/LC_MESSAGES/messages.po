@@ -19506,6 +19506,12 @@ msgstr "CQ"
 msgid "CQz geojson"
 msgstr "CQ geojson"
 
+#: application/views/bandmap/list.php:240
+#: application/views/contesting/index.php:160
+#: application/views/qso/index.php:414
+msgid "Live - WebSocket"
+msgstr ""
+
 #~ msgid "Signature Name"
 #~ msgstr "Имя подписи"
 
