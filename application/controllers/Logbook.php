@@ -7,7 +7,6 @@ require_once APPPATH . '../src/Dxcc/Dxcc.php';
 class Logbook extends CI_Controller {
 
 	function index() {
-		$this->output->enable_profiler(TRUE);
 		// Check if users logged in
 		$this->load->model('user_model');
 		if($this->user_model->validate_session() == 0) {
