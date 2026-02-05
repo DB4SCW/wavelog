@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 20:24+0000\n"
-"PO-Revision-Date: 2026-02-04 08:57+0000\n"
+"PO-Revision-Date: 2026-02-05 22:37+0000\n"
 "Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
@@ -19707,7 +19707,7 @@ msgstr "CQz geojson"
 #: application/views/contesting/index.php:160
 #: application/views/qso/index.php:414
 msgid "Live - WebSocket"
-msgstr ""
+msgstr "En direct - WebSocket"
 
 #~ msgid "Signature Name"
 #~ msgstr "Nom de la signature"
