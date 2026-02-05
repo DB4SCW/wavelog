@@ -2,8 +2,7 @@
 
 class Dashboard extends CI_Controller {
 
-	public function index()
-	{
+	public function index() {
 		// Check if users logged in
 		$this->load->model('user_model');
 		if ($this->user_model->validate_session() == 0) {

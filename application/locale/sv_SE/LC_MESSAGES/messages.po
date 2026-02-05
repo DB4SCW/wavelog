@@ -472,6 +472,7 @@ msgstr " och "
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
+#: application/controllers/Logbook.php:1459
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -494,6 +495,7 @@ msgstr "SOTA"
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:10
+#: application/controllers/Logbook.php:1460
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -517,6 +519,7 @@ msgstr "WWFF"
 #: application/views/user/edit.php:297 application/views/user/edit.php:320
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:11
+#: application/controllers/Logbook.php:1461
 msgid "POTA"
 msgstr "POTA"
 
@@ -803,6 +806,7 @@ msgstr "Ingen användare har konfigurerat Clublog."
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:571
 #: application/views/view_log/qso.php:576
+#: application/controllers/Logbook.php:792
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -1326,6 +1330,7 @@ msgid "Paper was deleted."
 msgstr "Papperet raderades."
 
 #: application/controllers/Logbook.php:39
+#: application/controllers/Logbook.php:38
 msgid ""
 "No logbooks were found. You need to define a logbook under Station Logbooks! "
 "Do it here:"
@@ -1335,6 +1340,7 @@ msgstr ""
 
 #: application/controllers/Logbook.php:39
 #: application/views/stationsetup/stationsetup.php:21
+#: application/controllers/Logbook.php:38
 msgid "Station Logbooks"
 msgstr "Stationsloggböcker"
 
@@ -1342,6 +1348,7 @@ msgstr "Stationsloggböcker"
 #: application/views/interface_assets/header.php:113
 #: application/views/logbookadvanced/useroptions.php:4
 #: application/views/view_log/index.php:11
+#: application/controllers/Logbook.php:59
 msgid "Logbook"
 msgstr "Loggbok"
 
@@ -1373,6 +1380,8 @@ msgstr "Loggbok"
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:112
 #: application/views/timeline/index.php:56 application/views/user/edit.php:625
 #: application/views/user/edit.php:822 application/views/qso/index.php:115
+#: application/controllers/Logbook.php:780
+#: application/controllers/Logbook.php:795
 msgid "QSL"
 msgstr "QSL"
 
@@ -1415,6 +1424,7 @@ msgstr "QSL"
 #: application/views/timeline/index.php:60 application/views/user/edit.php:626
 #: application/views/user/edit.php:832 application/views/view_log/qso.php:537
 #: application/views/view_log/qso.php:542
+#: application/controllers/Logbook.php:783
 msgid "LoTW"
 msgstr "LoTW"
 
@@ -1452,10 +1462,12 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:300
 #: application/views/timeline/index.php:64 application/views/user/edit.php:627
 #: application/views/user/edit.php:840 application/views/user/edit.php:914
+#: application/controllers/Logbook.php:786
 msgid "eQSL"
 msgstr "eQSL"
 
 #: application/controllers/Logbook.php:953
+#: application/controllers/Logbook.php:989
 msgid "All callbook lookups failed or provided no results."
 msgstr "Alla callbook-sökningar misslyckades eller gav inga resultat."
 
@@ -1556,6 +1568,7 @@ msgstr "Alla callbook-sökningar misslyckades eller gav inga resultat."
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18 application/views/qso/index.php:229
+#: application/controllers/Logbook.php:1454
 msgid "Mode"
 msgstr "Trafiksätt"
 
@@ -1585,7 +1598,7 @@ msgstr "Trafiksätt"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
-#: application/views/qso/index.php:274
+#: application/views/qso/index.php:274 application/controllers/Logbook.php:1455
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1616,6 +1629,7 @@ msgstr "RST (S)"
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12 application/views/qso/index.php:279
+#: application/controllers/Logbook.php:1456
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1637,6 +1651,7 @@ msgstr "RST (R)"
 #: application/views/view_log/qso.php:337
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
+#: application/controllers/Logbook.php:1457
 msgid "Country"
 msgstr "Land"
 
@@ -1668,6 +1683,7 @@ msgstr "Land"
 #: application/views/user/edit.php:317 application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
+#: application/controllers/Logbook.php:1458
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1699,6 +1715,7 @@ msgstr "IOTA"
 #: application/views/user/edit.php:321 application/views/user/edit.php:345
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
+#: application/controllers/Logbook.php:1462
 msgid "State"
 msgstr "Delstat"
 
@@ -1751,7 +1768,7 @@ msgstr "Delstat"
 #: application/views/view_log/qso.php:680
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
-#: application/views/qso/index.php:376
+#: application/views/qso/index.php:376 application/controllers/Logbook.php:1463
 msgid "Gridsquare"
 msgstr "Lokatorruta"
 
@@ -1782,6 +1799,7 @@ msgstr "Lokatorruta"
 #: application/views/user/edit.php:347
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
+#: application/controllers/Logbook.php:1464
 msgid "Distance"
 msgstr "Avstånd"
 
@@ -1877,6 +1895,7 @@ msgstr "Avstånd"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21 application/views/qso/index.php:244
+#: application/controllers/Logbook.php:1465
 msgid "Band"
 msgstr "Band"
 
@@ -1904,6 +1923,7 @@ msgstr "Band"
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36 application/views/qso/index.php:262
+#: application/controllers/Logbook.php:1466
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -1928,6 +1948,7 @@ msgstr "Frekvens"
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
+#: application/controllers/Logbook.php:1467
 msgid "Operator"
 msgstr "Operatör"
 
@@ -1957,6 +1978,7 @@ msgstr "Operatör"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694 application/views/qso/index.php:473
+#: application/controllers/Logbook.php:1488
 msgid "Deleted DXCC"
 msgstr "Struket DXCC"
 
@@ -3594,6 +3616,7 @@ msgstr "DXCC måste vara numerisk"
 #: application/models/Logbook_model.php:4647
 #: application/models/Logbook_model.php:4650
 #: application/models/Logbook_model.php:4841
+#: application/models/Logbook_model.php:4879
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Fel anropssignal %s vid import av QSO med %s för %s: HOPPADES ÖVER"
@@ -3601,6 +3624,7 @@ msgstr "Fel anropssignal %s vid import av QSO med %s för %s: HOPPADES ÖVER"
 #: application/models/Logbook_model.php:4661
 #: application/models/Logbook_model.php:4664
 #: application/models/Logbook_model.php:4855
+#: application/models/Logbook_model.php:4893
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3611,12 +3635,14 @@ msgstr ""
 #: application/models/Logbook_model.php:4670
 #: application/models/Logbook_model.php:4673
 #: application/models/Logbook_model.php:4864
+#: application/models/Logbook_model.php:4902
 msgid "QSO on"
 msgstr "QSO kl"
 
 #: application/models/Logbook_model.php:4670
 #: application/models/Logbook_model.php:4673
 #: application/models/Logbook_model.php:4864
+#: application/models/Logbook_model.php:4902
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3627,6 +3653,7 @@ msgstr ""
 #: application/models/Logbook_model.php:4719
 #: application/models/Logbook_model.php:4722
 #: application/models/Logbook_model.php:4913
+#: application/models/Logbook_model.php:4951
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3638,18 +3665,21 @@ msgstr ""
 #: application/models/Logbook_model.php:4992
 #: application/models/Logbook_model.php:4995
 #: application/models/Logbook_model.php:5186
+#: application/models/Logbook_model.php:5224
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate är ogiltigt (ÅÅÅÅMMDD)"
 
 #: application/models/Logbook_model.php:5003
 #: application/models/Logbook_model.php:5006
 #: application/models/Logbook_model.php:5197
+#: application/models/Logbook_model.php:5235
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate är ogiltigt (ÅÅÅÅMMDD)"
 
 #: application/models/Logbook_model.php:5064
 #: application/models/Logbook_model.php:5067
 #: application/models/Logbook_model.php:5258
+#: application/models/Logbook_model.php:5296
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date är ogiltigt (ÅÅÅÅMMDD)"
 
@@ -3657,6 +3687,7 @@ msgstr "clublog_qso_upload_date är ogiltigt (ÅÅÅÅMMDD)"
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5440
 #: application/models/Logbook_model.php:5631
+#: application/models/Logbook_model.php:5669
 msgid "Duplicate for"
 msgstr "Dubblett för"
 
@@ -3666,36 +3697,43 @@ msgstr "Dubblett för"
 #: application/models/Logbook_model.php:5600
 #: application/models/Logbook_model.php:5696
 #: application/models/Logbook_model.php:5791
+#: application/models/Logbook_model.php:5734
+#: application/models/Logbook_model.php:5829
 msgid "QSO could not be matched"
 msgstr "QSO kunde inte matchas"
 
 #: application/models/Logbook_model.php:5510
 #: application/models/Logbook_model.php:5513
 #: application/models/Logbook_model.php:5704
+#: application/models/Logbook_model.php:5742
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "bekräftad av LoTW/Clublog/eQSL/Tävling"
 
 #: application/models/Logbook_model.php:5516
 #: application/models/Logbook_model.php:5519
 #: application/models/Logbook_model.php:5710
+#: application/models/Logbook_model.php:5748
 msgid "confirmed by award manager"
 msgstr "bekräftad av diplomansvarig"
 
 #: application/models/Logbook_model.php:5520
 #: application/models/Logbook_model.php:5523
 #: application/models/Logbook_model.php:5714
+#: application/models/Logbook_model.php:5752
 msgid "confirmed by cross-check of DCL data"
 msgstr "bekräftat genom korskontroll av DCL-data"
 
 #: application/models/Logbook_model.php:5524
 #: application/models/Logbook_model.php:5527
 #: application/models/Logbook_model.php:5718
+#: application/models/Logbook_model.php:5756
 msgid "confirmation pending"
 msgstr "bekräftelse väntar"
 
 #: application/models/Logbook_model.php:5527
 #: application/models/Logbook_model.php:5530
 #: application/models/Logbook_model.php:5721
+#: application/models/Logbook_model.php:5759
 msgid "unconfirmed"
 msgstr "obekräftad"
 
@@ -3705,18 +3743,21 @@ msgstr "obekräftad"
 #: application/views/view_log/qso.php:293
 #: application/models/Logbook_model.php:5533
 #: application/models/Logbook_model.php:5724
+#: application/models/Logbook_model.php:5762
 msgid "unknown"
 msgstr "Okänd"
 
 #: application/models/Logbook_model.php:5600
 #: application/models/Logbook_model.php:5603
 #: application/models/Logbook_model.php:5794
+#: application/models/Logbook_model.php:5832
 msgid "POTA reference already in log"
 msgstr "POTA-referens redan i loggen"
 
 #: application/models/Logbook_model.php:5603
 #: application/models/Logbook_model.php:5606
 #: application/models/Logbook_model.php:5797
+#: application/models/Logbook_model.php:5835
 msgid "QSO updated"
 msgstr "QSO uppdaterad"
 
@@ -3733,10 +3774,12 @@ msgstr "QSO uppdaterad"
 #: application/views/view_log/partial/log_ajax.php:20
 #: application/models/Logbook_model.php:6000
 #: application/models/Logbook_model.php:6191
+#: application/models/Logbook_model.php:6229
 msgid "Bearing"
 msgstr "Bäring"
 
 #: application/models/Logbookadvanced_model.php:1663
+#: application/models/Logbookadvanced_model.php:1704
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccLokator-tabellen är tom. Importera VUCC-lokatordata först."
 

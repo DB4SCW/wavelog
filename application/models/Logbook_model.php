@@ -2163,13 +2163,19 @@ class Logbook_model extends CI_Model {
 			return array();
 		}
 
+		// Load all satellites once for PHP-side join (much faster than SQL COALESCE)
+		$satellites = [];
+		$sat_query = $this->db->select('name, displayname')->get('satellite');
+		foreach ($sat_query->result() as $sat) {
+			$satellites[$sat->name] = $sat->displayname;
+		}
+
 		$binding = array();
-		$sql = "SELECT qsos.*, station_profile.*, dxcc_entities.*, lotw_users.callsign, lotw_users.lastupload, satellite.displayname AS sat_displayname, satellite.name AS sat_name
+		$sql = "SELECT qsos.*, station_profile.*, dxcc_entities.*, lotw_users.callsign, lotw_users.lastupload
 			FROM ".$this->config->item('table_name')." qsos
 			JOIN `station_profile` ON `station_profile`.`station_id` = qsos.`station_id`
 			LEFT JOIN `dxcc_entities` ON qsos.`col_dxcc` = `dxcc_entities`.`adif`
 			LEFT OUTER JOIN `lotw_users` ON `lotw_users`.`callsign` = qsos.`col_call`
-			LEFT OUTER JOIN satellite ON qsos.col_prop_mode='SAT' and qsos.COL_SAT_NAME = COALESCE(NULLIF(satellite.name, ''), NULLIF(satellite.displayname, ''))
 			WHERE 1=1";
 		if ($band != '') {
 			if ($band == 'SAT') {
@@ -2194,7 +2200,39 @@ class Logbook_model extends CI_Model {
 			$binding[] = (int) $offset;
 		}
 		$sql .= ";";
-		return $this->db->query($sql, $binding);
+		$query = $this->db->query($sql, $binding);
+
+		// Add satellite data via PHP-side join (much faster than SQL COALESCE join)
+		$results = $query->result();
+		foreach ($results as &$row) {
+			$row->sat_name = $row->COL_SAT_NAME ?? null;
+			$row->sat_displayname = null;
+			if (!empty($row->COL_SAT_NAME) && isset($satellites[$row->COL_SAT_NAME])) {
+				$row->sat_displayname = $satellites[$row->COL_SAT_NAME];
+			}
+		}
+		unset($row);
+
+		// Return a query-like object with result() method for compatibility
+		return new class($results) {
+			private $data;
+
+			public function __construct($data) {
+				$this->data = $data;
+			}
+
+			public function result() {
+				return $this->data;
+			}
+
+			public function num_rows() {
+				return count($this->data);
+			}
+
+			public function num_fields() {
+				return empty($this->data) ? 0 : count(get_object_vars($this->data[0]));
+			}
+		};
 	}
 
 	function get_qso($id, $trusted = false) {
