@@ -707,29 +707,66 @@ class Logbook extends CI_Controller {
 
 		$html = "";
 
-		if(!empty($logbooks_locations_array)) {
-			$this->db->select(''.$this->config->item('table_name').'.COL_CALL, '.$this->config->item('table_name').'.COL_BAND, '.$this->config->item('table_name').'.COL_FREQ, '.$this->config->item('table_name').'.COL_TIME_ON, '.$this->config->item('table_name').'.COL_RST_RCVD, '.$this->config->item('table_name').'.COL_RST_SENT, '.$this->config->item('table_name').'.COL_MODE, '.$this->config->item('table_name').'.COL_SUBMODE, '.$this->config->item('table_name').'.COL_PRIMARY_KEY, '.$this->config->item('table_name').'.COL_SAT_NAME, '.$this->config->item('table_name').'.COL_GRIDSQUARE, '.$this->config->item('table_name').'.COL_QSL_RCVD, '.$this->config->item('table_name').'.COL_EQSL_QSL_RCVD, '.$this->config->item('table_name').'.COL_EQSL_QSL_SENT, '.$this->config->item('table_name').'.COL_QSL_SENT, '.$this->config->item('table_name').'.COL_STX, '.$this->config->item('table_name').'.COL_STX_STRING, '.$this->config->item('table_name').'.COL_SRX, '.$this->config->item('table_name').'.COL_SRX_STRING, '.$this->config->item('table_name').'.COL_LOTW_QSL_SENT, '.$this->config->item('table_name').'.COL_LOTW_QSL_RCVD, '.$this->config->item('table_name').'.COL_VUCC_GRIDS, '.$this->config->item('table_name').'.COL_MY_GRIDSQUARE, '.$this->config->item('table_name').'.COL_CONTEST_ID, '.$this->config->item('table_name').'.COL_STATE, '.$this->config->item('table_name').'.COL_QRZCOM_QSO_UPLOAD_STATUS, '.$this->config->item('table_name').'.COL_QRZCOM_QSO_DOWNLOAD_STATUS, '.$this->config->item('table_name').'.COL_CLUBLOG_QSO_UPLOAD_STATUS, '.$this->config->item('table_name').'.COL_CLUBLOG_QSO_DOWNLOAD_STATUS, '.$this->config->item('table_name').'.COL_POTA_REF, '.$this->config->item('table_name').'.COL_IOTA, '.$this->config->item('table_name').'.COL_SOTA_REF, '.$this->config->item('table_name').'.COL_WWFF_REF, '.$this->config->item('table_name').'.COL_OPERATOR, '.$this->config->item('table_name').'.COL_COUNTRY, station_profile.*, satellite.displayname AS sat_displayname');
-			$this->db->from($this->config->item('table_name'));
-
-			$this->db->join('station_profile', 'station_profile.station_id = '.$this->config->item('table_name').'.station_id');
-			$this->db->join('satellite', 'satellite.name = '.$this->config->item('table_name').'.COL_SAT_NAME', 'left outer');
-			$this->db->where_in('station_profile.station_id', $logbooks_locations_array);
-
-			$this->db->group_start();
-			$this->db->where($this->config->item('table_name').'.COL_CALL', $lookupcall);
-			$this->db->or_like($this->config->item('table_name').'.COL_CALL', '/'.$lookupcall,'before');
-			$this->db->or_like($this->config->item('table_name').'.COL_CALL', $lookupcall.'/','after');
-			$this->db->or_like($this->config->item('table_name').'.COL_CALL', '/'.$lookupcall.'/');
-			$this->db->group_end();
-
-			$this->db->order_by($this->config->item('table_name').".COL_TIME_ON", "desc");
-			$this->db->order_by($this->config->item('table_name').".COL_PRIMARY_KEY", "desc");
-			$this->db->limit($count);
-
-			$query = $this->db->get();
+		// Load all satellites once for PHP-side join (much faster than SQL join)
+		$satellites = [];
+		$sat_query = $this->db->query('SELECT name, displayname FROM satellite');
+		foreach ($sat_query->result() as $sat) {
+			$satellites[$sat->name] = $sat->displayname;
 		}
 
-		if (!empty($logbooks_locations_array) && $query->num_rows() > 0) {
+		if(!empty($logbooks_locations_array)) {
+			$station_ids = implode(',', array_map(function($id) { return (int)$id; }, $logbooks_locations_array));
+
+			$bindings = [
+				$lookupcall,                    // Exact match: COL_CALL = ?
+				'/' . $lookupcall,              // Starts with /: COL_CALL LIKE '/ABC'
+				$lookupcall . '/',              // Ends with /: COL_CALL LIKE 'ABC/'
+				'/' . $lookupcall . '/',        // Both sides: COL_CALL LIKE '/ABC/'
+				(int)$count                     // LIMIT
+			];
+
+			$sql = "SELECT
+				qsos.COL_CALL, qsos.COL_BAND, qsos.COL_FREQ, qsos.COL_TIME_ON,
+				qsos.COL_RST_RCVD, qsos.COL_RST_SENT, qsos.COL_MODE, qsos.COL_SUBMODE,
+				qsos.COL_PRIMARY_KEY, qsos.COL_SAT_NAME, qsos.COL_GRIDSQUARE,
+				qsos.COL_QSL_RCVD, qsos.COL_EQSL_QSL_RCVD, qsos.COL_EQSL_QSL_SENT,
+				qsos.COL_QSL_SENT, qsos.COL_STX, qsos.COL_STX_STRING, qsos.COL_SRX,
+				qsos.COL_SRX_STRING, qsos.COL_LOTW_QSL_SENT, qsos.COL_LOTW_QSL_RCVD,
+				qsos.COL_VUCC_GRIDS, qsos.COL_MY_GRIDSQUARE, qsos.COL_CONTEST_ID,
+				qsos.COL_STATE, qsos.COL_QRZCOM_QSO_UPLOAD_STATUS,
+				qsos.COL_QRZCOM_QSO_DOWNLOAD_STATUS, qsos.COL_CLUBLOG_QSO_UPLOAD_STATUS,
+				qsos.COL_CLUBLOG_QSO_DOWNLOAD_STATUS, qsos.COL_POTA_REF, qsos.COL_IOTA,
+				qsos.COL_SOTA_REF, qsos.COL_WWFF_REF, qsos.COL_OPERATOR, qsos.COL_COUNTRY,
+				station_profile.*
+				FROM " . $this->config->item('table_name') . " qsos
+				JOIN station_profile ON station_profile.station_id = qsos.station_id
+				WHERE station_profile.station_id IN ($station_ids)
+				AND (
+					qsos.COL_CALL = ?
+					OR qsos.COL_CALL LIKE ?
+					OR qsos.COL_CALL LIKE ?
+					OR qsos.COL_CALL LIKE ?
+				)
+				ORDER BY qsos.COL_TIME_ON DESC, qsos.COL_PRIMARY_KEY DESC
+				LIMIT ?";
+
+			$query = $this->db->query($sql, $bindings);
+
+			// Add satellite data via PHP-side join
+			$results = $query->result();
+			foreach ($results as &$row) {
+				$row->sat_name = $row->COL_SAT_NAME ?? null;
+				$row->sat_displayname = null;
+				if (!empty($row->COL_SAT_NAME) && isset($satellites[$row->COL_SAT_NAME])) {
+					$row->sat_displayname = $satellites[$row->COL_SAT_NAME];
+				}
+			}
+			unset($row);
+		} else {
+			$results = [];
+		}
+
+		if (!empty($results)) {
 			$html .= "<div class=\"table-responsive\">";
 			$html .= "<table class=\"table table-striped\">";
 				$html .= "<tr>";
@@ -771,7 +808,7 @@ class Logbook extends CI_Controller {
 				$custom_date_format = $this->config->item('qso_date_format');
 			}
 
-			foreach ($query->result() as $row) {
+			foreach ($results as $row) {
 				$timestamp = strtotime($row->COL_TIME_ON ?? '1970-01-01 00:00:00');
 				$html .= "<tr>";
 					$html .= "<td>".date($custom_date_format, $timestamp). date(' H:i',strtotime($row->COL_TIME_ON ?? '1970-01-01 00:00:00')) . "</td>";
