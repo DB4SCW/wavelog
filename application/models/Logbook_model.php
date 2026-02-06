@@ -5737,7 +5737,7 @@ class Logbook_model extends CI_Model {
 				$dcl_recvd='';
 				$dcl_qsl_status = '';
 				// Ref https://confluence.darc.de/pages/viewpage.action?pageId=21037270 for meaning of cmnoiwx
-				switch ($record['app_dcl_status']) {
+				switch ($record['app_dcl_status'] ?? '') {
 					case 'c':
 						$dcl_qsl_status = __("confirmed by LoTW/Clublog/eQSL/Contest");
 						$dcl_recvd='Y';
