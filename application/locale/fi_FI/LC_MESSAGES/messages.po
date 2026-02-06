@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-04 09:48+0000\n"
+"POT-Creation-Date: 2026-02-06 06:14+0000\n"
 "PO-Revision-Date: 2026-02-05 08:52+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -44,6 +44,7 @@ msgstr ""
 #: application/controllers/Contesting.php:14
 #: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
+#: application/controllers/Dashboard.php:10
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
 #: application/controllers/Dcl.php:24 application/controllers/Dcl.php:50
@@ -128,7 +129,6 @@ msgstr ""
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
 #: application/models/Club_model.php:52
-#: application/controllers/Dashboard.php:10
 msgid "You're not allowed to do that!"
 msgstr "Tämä ei ole sallittu!"
 
@@ -444,7 +444,7 @@ msgid " and "
 msgstr " ja "
 
 #: application/controllers/Awards.php:595
-#: application/controllers/Logbook.php:1423
+#: application/controllers/Logbook.php:1459
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:326
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
 #: application/views/interface_assets/header.php:218
@@ -468,12 +468,11 @@ msgstr " ja "
 #: application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:9
 #: application/views/visitor/index.php:21
-#: application/controllers/Logbook.php:1459
 msgid "SOTA"
 msgstr "SOTA"
 
 #: application/controllers/Awards.php:613
-#: application/controllers/Logbook.php:1424
+#: application/controllers/Logbook.php:1460
 #: application/views/bandmap/list.php:328 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
 #: application/views/interface_assets/header.php:206
@@ -491,12 +490,11 @@ msgstr "SOTA"
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:10
-#: application/controllers/Logbook.php:1460
 msgid "WWFF"
 msgstr "WWFF"
 
 #: application/controllers/Awards.php:631
-#: application/controllers/Logbook.php:1425
+#: application/controllers/Logbook.php:1461
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:11
@@ -515,7 +513,6 @@ msgstr "WWFF"
 #: application/views/user/edit.php:297 application/views/user/edit.php:320
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:11
-#: application/controllers/Logbook.php:1461
 msgid "POTA"
 msgstr "POTA"
 
@@ -780,7 +777,7 @@ msgid "No user has configured Clublog."
 msgstr "Yksikään käyttäjä ei ole määrittänyt Clublogia."
 
 #: application/controllers/Clublog.php:86
-#: application/controllers/Logbook.php:756
+#: application/controllers/Logbook.php:792
 #: application/views/awards/dok/index.php:72
 #: application/views/awards/dxcc/index.php:132
 #: application/views/awards/iota/index.php:80
@@ -802,7 +799,6 @@ msgstr "Yksikään käyttäjä ei ole määrittänyt Clublogia."
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:571
 #: application/views/view_log/qso.php:576
-#: application/controllers/Logbook.php:792
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -914,10 +910,8 @@ msgstr "Ei käynnissä"
 msgid "SOTA CSV Export"
 msgstr "SOTA CSV vienti"
 
-#: application/controllers/Dashboard.php:155
-#: application/controllers/Visitor.php:134
-#: application/controllers/Dashboard.php:154
 #: application/controllers/Dashboard.php:157
+#: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "Hallintapaneeli"
 
@@ -1327,7 +1321,6 @@ msgstr "Paperi tallennettiin."
 msgid "Paper was deleted."
 msgstr "Paperi poistettiin."
 
-#: application/controllers/Logbook.php:39
 #: application/controllers/Logbook.php:38
 msgid ""
 "No logbooks were found. You need to define a logbook under Station Logbooks! "
@@ -1336,22 +1329,20 @@ msgstr ""
 "Lokeja löytynyt. Sinun täytyy määritellä lokikirja kohdan Asemalokikirjat "
 "alle! Tee se täällä:"
 
-#: application/controllers/Logbook.php:39
-#: application/views/stationsetup/stationsetup.php:21
 #: application/controllers/Logbook.php:38
+#: application/views/stationsetup/stationsetup.php:21
 msgid "Station Logbooks"
 msgstr "Asemalokikirjat"
 
-#: application/controllers/Logbook.php:60
+#: application/controllers/Logbook.php:59
 #: application/views/interface_assets/header.php:113
 #: application/views/logbookadvanced/useroptions.php:4
 #: application/views/view_log/index.php:11
-#: application/controllers/Logbook.php:59
 msgid "Logbook"
 msgstr "Lokikirja"
 
-#: application/controllers/Logbook.php:744
-#: application/controllers/Logbook.php:759
+#: application/controllers/Logbook.php:780
+#: application/controllers/Logbook.php:795
 #: application/views/activated_gridmap/index.php:62
 #: application/views/awards/dok/index.php:56
 #: application/views/awards/dxcc/index.php:116
@@ -1377,12 +1368,11 @@ msgstr "Lokikirja"
 #: application/views/qslprint/qsolist.php:18
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:115
 #: application/views/timeline/index.php:56 application/views/user/edit.php:625
-#: application/views/user/edit.php:822 application/controllers/Logbook.php:780
-#: application/controllers/Logbook.php:795
+#: application/views/user/edit.php:822
 msgid "QSL"
 msgstr "QSL"
 
-#: application/controllers/Logbook.php:747
+#: application/controllers/Logbook.php:783
 #: application/views/activated_gridmap/index.php:70
 #: application/views/awards/cq/index.php:114
 #: application/views/awards/dok/index.php:60
@@ -1421,11 +1411,10 @@ msgstr "QSL"
 #: application/views/timeline/index.php:60 application/views/user/edit.php:626
 #: application/views/user/edit.php:832 application/views/view_log/qso.php:537
 #: application/views/view_log/qso.php:542
-#: application/controllers/Logbook.php:783
 msgid "LoTW"
 msgstr "LoTW"
 
-#: application/controllers/Logbook.php:750
+#: application/controllers/Logbook.php:786
 #: application/views/activated_gridmap/index.php:78
 #: application/views/awards/cq/index.php:118
 #: application/views/awards/dok/index.php:64
@@ -1459,18 +1448,16 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:300
 #: application/views/timeline/index.php:64 application/views/user/edit.php:627
 #: application/views/user/edit.php:840 application/views/user/edit.php:914
-#: application/controllers/Logbook.php:786
 msgid "eQSL"
 msgstr "eQSL"
 
-#: application/controllers/Logbook.php:953
 #: application/controllers/Logbook.php:989
 msgid "All callbook lookups failed or provided no results."
 msgstr ""
 "Kaikki kutsumerkkiluettelohakujen haut epäonnistuivat tai eivät tuottaneet "
 "tuloksia."
 
-#: application/controllers/Logbook.php:1418
+#: application/controllers/Logbook.php:1454
 #: application/controllers/Radio.php:46
 #: application/views/accumulate/index.php:31
 #: application/views/activated_gridmap/index.php:43
@@ -1567,11 +1554,10 @@ msgstr ""
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
-#: application/controllers/Logbook.php:1454
 msgid "Mode"
 msgstr "Lähetelaji"
 
-#: application/controllers/Logbook.php:1419
+#: application/controllers/Logbook.php:1455
 #: application/views/awards/73on73/index.php:38
 #: application/views/awards/pota/index.php:37
 #: application/views/awards/wwff/index.php:37
@@ -1597,11 +1583,10 @@ msgstr "Lähetelaji"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
-#: application/controllers/Logbook.php:1455
 msgid "RST (S)"
 msgstr "RST (L)"
 
-#: application/controllers/Logbook.php:1420
+#: application/controllers/Logbook.php:1456
 #: application/views/awards/73on73/index.php:37
 #: application/views/awards/pota/index.php:38
 #: application/views/awards/wwff/index.php:38
@@ -1628,11 +1613,10 @@ msgstr "RST (L)"
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
-#: application/controllers/Logbook.php:1456
 msgid "RST (R)"
 msgstr "RST (V)"
 
-#: application/controllers/Logbook.php:1421
+#: application/controllers/Logbook.php:1457
 #: application/views/dashboard/index.php:7
 #: application/views/qslcard/searchresult.php:15
 #: application/views/qslcard/searchresult.php:31
@@ -1650,11 +1634,10 @@ msgstr "RST (V)"
 #: application/views/view_log/qso.php:337
 #: application/views/view_log/qso.php:693
 #: application/views/visitor/index.php:15
-#: application/controllers/Logbook.php:1457
 msgid "Country"
 msgstr "Maa"
 
-#: application/controllers/Logbook.php:1422
+#: application/controllers/Logbook.php:1458
 #: application/views/awards/iota/index.php:198
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:52
 #: application/views/dashboard/index.php:8
@@ -1682,11 +1665,10 @@ msgstr "Maa"
 #: application/views/user/edit.php:317 application/views/user/edit.php:341
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
-#: application/controllers/Logbook.php:1458
 msgid "IOTA"
 msgstr "IOTA"
 
-#: application/controllers/Logbook.php:1426
+#: application/controllers/Logbook.php:1462
 #: application/views/awards/counties/details.php:12
 #: application/views/awards/counties/index.php:21
 #: application/views/awards/rac/index.php:146
@@ -1714,11 +1696,10 @@ msgstr "IOTA"
 #: application/views/user/edit.php:321 application/views/user/edit.php:345
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
-#: application/controllers/Logbook.php:1462
 msgid "State"
 msgstr "osavaltio"
 
-#: application/controllers/Logbook.php:1427
+#: application/controllers/Logbook.php:1463
 #: application/views/activated_gridmap/index.php:110
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:54
@@ -1767,11 +1748,10 @@ msgstr "osavaltio"
 #: application/views/view_log/qso.php:680
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
-#: application/controllers/Logbook.php:1463
 msgid "Gridsquare"
 msgstr "Lokaattoriruutu"
 
-#: application/controllers/Logbook.php:1428
+#: application/controllers/Logbook.php:1464
 #: application/views/activated_gridmap/index.php:112
 #: application/views/awards/ffma/index.php:40
 #: application/views/awards/gridmaster/index.php:56
@@ -1798,11 +1778,10 @@ msgstr "Lokaattoriruutu"
 #: application/views/user/edit.php:347
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
-#: application/controllers/Logbook.php:1464
 msgid "Distance"
 msgstr "Etäisyys"
 
-#: application/controllers/Logbook.php:1429
+#: application/controllers/Logbook.php:1465
 #: application/views/accumulate/index.php:21
 #: application/views/activated_gridmap/index.php:12
 #: application/views/activators/index.php:10
@@ -1894,11 +1873,10 @@ msgstr "Etäisyys"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
-#: application/controllers/Logbook.php:1465
 msgid "Band"
 msgstr "Bandi"
 
-#: application/controllers/Logbook.php:1430
+#: application/controllers/Logbook.php:1466
 #: application/controllers/Radio.php:45 application/views/bandmap/list.php:166
 #: application/views/bandmap/list.php:567
 #: application/views/contesting/index.php:148
@@ -1922,11 +1900,10 @@ msgstr "Bandi"
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
-#: application/controllers/Logbook.php:1466
 msgid "Frequency"
 msgstr "Taajuus"
 
-#: application/controllers/Logbook.php:1431
+#: application/controllers/Logbook.php:1467
 #: application/controllers/Radio.php:43
 #: application/views/dashboard/index.php:17
 #: application/views/logbookadvanced/edit.php:13
@@ -1947,11 +1924,10 @@ msgstr "Taajuus"
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:700
 #: application/views/visitor/index.php:39
-#: application/controllers/Logbook.php:1467
 msgid "Operator"
 msgstr "Operaattori"
 
-#: application/controllers/Logbook.php:1452
+#: application/controllers/Logbook.php:1488
 #: application/controllers/Stationsetup.php:424
 #: application/views/awards/dxcc/index.php:83
 #: application/views/awards/dxcc/index.php:291
@@ -1977,7 +1953,6 @@ msgstr "Operaattori"
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:694
-#: application/controllers/Logbook.php:1488
 msgid "Deleted DXCC"
 msgstr "Poistettu DXCC"
 
@@ -3599,13 +3574,11 @@ msgstr "Kutsumerkkiä ei ole annettu"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC:n on oltava numeerinen"
 
-#: application/models/Logbook_model.php:4841
 #: application/models/Logbook_model.php:4879
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Väärä aseman kutsumerkki %s tuotaessa QSOa %s %s: varten: OHITETTU"
 
-#: application/models/Logbook_model.php:4855
 #: application/models/Logbook_model.php:4893
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
@@ -3614,12 +3587,10 @@ msgstr ""
 "Yritit tuoda QSOa ilman kelvollista päivämäärää. Tätä QSOa ei tuotu. Se on "
 "virheellinen"
 
-#: application/models/Logbook_model.php:4864
 #: application/models/Logbook_model.php:4902
 msgid "QSO on"
 msgstr "QSO alkoi"
 
-#: application/models/Logbook_model.php:4864
 #: application/models/Logbook_model.php:4902
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
@@ -3628,7 +3599,6 @@ msgstr ""
 "Yritit tuoda QSOa ilman annettua KUTSUA. Tätä QSOa ei tuotu. Se on "
 "virheellinen"
 
-#: application/models/Logbook_model.php:4913
 #: application/models/Logbook_model.php:4951
 #, php-format
 msgid ""
@@ -3638,78 +3608,64 @@ msgstr ""
 "QSO ajassa %s: Yritit tuoda QSO:n ilman merkittyä bandia. Tätä QSO:ta ei "
 "tuotu. Se on virheellinen"
 
-#: application/models/Logbook_model.php:5186
 #: application/models/Logbook_model.php:5224
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5197
 #: application/models/Logbook_model.php:5235
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5258
 #: application/models/Logbook_model.php:5296
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "the clublog_qso_upload_date on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5631
-#: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5669
+#: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Kaksoiskappale"
 
-#: application/models/Logbook_model.php:5696
-#: application/models/Logbook_model.php:5791
 #: application/models/Logbook_model.php:5734
 #: application/models/Logbook_model.php:5829
 msgid "QSO could not be matched"
 msgstr "QSOa ei voitu yhdistää"
 
-#: application/models/Logbook_model.php:5704
 #: application/models/Logbook_model.php:5742
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "vahvistettu LoTW:n/Clublogin/eQSL:n/kilpailun kautta"
 
-#: application/models/Logbook_model.php:5710
 #: application/models/Logbook_model.php:5748
 msgid "confirmed by award manager"
 msgstr "vahvistettu awardimanagerin toimesta"
 
-#: application/models/Logbook_model.php:5714
 #: application/models/Logbook_model.php:5752
 msgid "confirmed by cross-check of DCL data"
 msgstr "varmistettu DCL-datan ristivertailulla"
 
-#: application/models/Logbook_model.php:5718
 #: application/models/Logbook_model.php:5756
 msgid "confirmation pending"
 msgstr "vahvistus odottaa"
 
-#: application/models/Logbook_model.php:5721
 #: application/models/Logbook_model.php:5759
 msgid "unconfirmed"
 msgstr "vahvistamaton"
 
-#: application/models/Logbook_model.php:5724
+#: application/models/Logbook_model.php:5762
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
-#: application/models/Logbook_model.php:5762
 msgid "unknown"
 msgstr "tuntematon"
 
-#: application/models/Logbook_model.php:5794
 #: application/models/Logbook_model.php:5832
 msgid "POTA reference already in log"
 msgstr "POTA-referenssi on jo lokissa"
 
-#: application/models/Logbook_model.php:5797
 #: application/models/Logbook_model.php:5835
 msgid "QSO updated"
 msgstr "QSO päivitetty"
 
-#: application/models/Logbook_model.php:6191
+#: application/models/Logbook_model.php:6229
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -3720,11 +3676,9 @@ msgstr "QSO päivitetty"
 #: application/views/user/edit.php:280 application/views/user/edit.php:303
 #: application/views/user/edit.php:326 application/views/user/edit.php:351
 #: application/views/view_log/partial/log_ajax.php:20
-#: application/models/Logbook_model.php:6229
 msgid "Bearing"
 msgstr "Suuntima"
 
-#: application/models/Logbookadvanced_model.php:1663
 #: application/models/Logbookadvanced_model.php:1704
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccGrids-taulukko on tyhjä. Tuo ensin VUCC-ruutuaineisto."
@@ -7060,8 +7014,8 @@ msgstr ""
 "on oma yhdistyksensä, joka määrittelee kyseisen yhdistyksen SOTA-huiput. "
 "Jokaisesta huipusta saa aktivaattoreille ja hunttereille pisteitä, jotka "
 "liittyvät huipun korkeuteen. Erilaisista pistemääristä saa todistuksia, "
-"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' "
-"-palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
+"jotka johtavat arvostettuihin 'Mountain Goat' ja 'Shack Sloth' -"
+"palkintoihin. Aktivaattoreiden ja hunttereiden kunniataulukkoa ylläpidetään "
 "SOTAn online-tietokannassa."
 
 #: application/views/awards/vucc/index.php:7
@@ -8075,13 +8029,11 @@ msgstr "TRX:"
 msgid "None"
 msgstr "Ei mitään"
 
-#: application/views/bandmap/list.php:240 application/views/qso/index.php:414
-msgid "Live - "
-msgstr "Live - "
-
-#: application/views/bandmap/list.php:240 application/views/qso/index.php:414
-msgid "WebSocket (Requires WLGate>=1.1.10)"
-msgstr "WebSocket (Vaatii WLGate>=1.1.10)"
+#: application/views/bandmap/list.php:240
+#: application/views/contesting/index.php:160
+#: application/views/qso/index.php:414
+msgid "Live - WebSocket"
+msgstr ""
 
 #: application/views/bandmap/list.php:242 application/views/qso/index.php:416
 msgid "Polling - "
@@ -9848,10 +9800,6 @@ msgstr "Lokaattori"
 msgctxt "Keep the translation short!"
 msgid "Serial"
 msgstr "Sarjanumero"
-
-#: application/views/contesting/index.php:160
-msgid "WebSocket (Requires WLGate>1.1.10)"
-msgstr "WebSocket (Requires WLGate>1.1.10)"
 
 #: application/views/contesting/index.php:187
 #: application/views/contesting/index.php:270
@@ -12009,8 +11957,8 @@ msgstr "Lokaattorin muotoilu"
 msgid ""
 "Enter multiple (4-digit) grids separated with commas. For example: IO77,IO78"
 msgstr ""
-"Syötä useita (4-numeroisia) ruutuja pilkulla erotettuna. Esimerkiksi: "
-"IO77,IO78"
+"Syötä useita (4-numeroisia) ruutuja pilkulla erotettuna. Esimerkiksi: IO77,"
+"IO78"
 
 #: application/views/interface_assets/footer.php:115
 msgid "live"
@@ -13094,8 +13042,8 @@ msgid ""
 "Results depends on the correct DXCC, and it will only be checked against "
 "current DXCC. False positive results may occur."
 msgstr ""
-"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä "
-"DXCC:tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
+"Tulokset riippuvat oikeasta DXCC:stä, ja ne tarkistetaan vain nykyistä DXCC:"
+"tä vastaan. Virheellisiä positiivisia tuloksia voi esiintyä."
 
 #: application/views/logbookadvanced/checkresult.php:393
 msgid "QSO DXCC"
@@ -18769,8 +18717,8 @@ msgid ""
 "events to handle multiple operators. A clubstation is basically a normal "
 "user account with some special features and some restrictions."
 msgstr ""
-"Kerhoasemat Wavelogissa ovat ainutlaatuinen tapa kerhoille ja erikoiskutsu "
-"-tapahtumille hallita useita operaattoreita. Kerhoasema on periaatteessa "
+"Kerhoasemat Wavelogissa ovat ainutlaatuinen tapa kerhoille ja erikoiskutsu -"
+"tapahtumille hallita useita operaattoreita. Kerhoasema on periaatteessa "
 "tavallinen käyttäjätili, jossa on joitakin erityistoimintoja ja rajoituksia."
 
 #: application/views/user/index.php:143
@@ -19415,11 +19363,14 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
-#: application/views/bandmap/list.php:240
-#: application/views/contesting/index.php:160
-#: application/views/qso/index.php:414
-msgid "Live - WebSocket"
-msgstr ""
+#~ msgid "Live - "
+#~ msgstr "Live - "
+
+#~ msgid "WebSocket (Requires WLGate>=1.1.10)"
+#~ msgstr "WebSocket (Vaatii WLGate>=1.1.10)"
+
+#~ msgid "WebSocket (Requires WLGate>1.1.10)"
+#~ msgstr "WebSocket (Requires WLGate>1.1.10)"
 
 #~ msgid "Bandmap"
 #~ msgstr "Bandikartta"
