@@ -2,14 +2,17 @@
 
 class Dashboard extends CI_Controller {
 
-	public function index() {
-		// Check if users logged in
+	function __construct() {
+		parent::__construct();
+
 		$this->load->model('user_model');
-		if ($this->user_model->validate_session() == 0) {
-			// user is not logged in
+		if (!$this->user_model->authorize(2)) {
+			$this->session->set_flashdata('error', __("You're not allowed to do that!"));
 			redirect('user/login');
 		}
+	}
 
+	public function index() {
 		// Database connections
 		$this->load->model('logbook_model');
 
@@ -217,8 +220,7 @@ class Dashboard extends CI_Controller {
 		$this->load->view('interface_assets/footer', $footerData);
 	}
 
-	function radio_display_component()
-	{
+	function radio_display_component() {
 		$this->load->model('cat');
 
 		$data['radio_status'] = $this->cat->recent_status();
