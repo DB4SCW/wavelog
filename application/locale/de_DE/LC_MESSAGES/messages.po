@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-03 12:32+0000\n"
-"PO-Revision-Date: 2026-02-04 08:57+0000\n"
+"PO-Revision-Date: 2026-02-06 07:35+0000\n"
 "Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -19701,7 +19701,7 @@ msgstr "Keine Spots auf dieser Frequenz gefunden."
 #: application/views/contesting/index.php:160
 #: application/views/qso/index.php:414
 msgid "Live - WebSocket"
-msgstr ""
+msgstr "Live - WebSocket"
 
 #~ msgctxt "Cache Path"
 #~ msgid "Path for files adapter"
