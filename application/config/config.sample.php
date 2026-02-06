@@ -35,7 +35,7 @@ $config['datadir'] = null; // default to install directory
 |--------------------------------------------------------------------------
 |
 | 	'table_name'	SQL table where log can be found
-|	'locator'	Default locator used to calculate bearings/distance
+|	'locator'	    Default locator used to calculate bearings/distance
 |	'display_freq'	Show or Hide frequnecy info
 */
 
@@ -78,6 +78,17 @@ $config['hamqth_password'] = '';
 */
 $config['qrzcq_username'] = '';
 $config['qrzcq_password'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| QRZ.ru Login Options
+|--------------------------------------------------------------------------
+|
+| 	'qrzru_username'	QRZ.ru user login
+|	'qrzru_password'	QRZ.ru user password
+*/
+$config['qrzru_username'] = '';
+$config['qrzru_password'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -836,7 +847,7 @@ $config['max_login_attempts'] = 3;
 
 /*
 |--------------------------------------------------------------------------
-| enable DCL Interface
+| Enable DCL Interface
 | Set this to true if your Users and you want to connect your instance to the German DCL
 |--------------------------------------------------------------------------
  */

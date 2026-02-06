@@ -9,12 +9,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	'app_name'		Name of the App 'Wavelog'
 |	'directory'		directory where wavelog is installed eg "logger"
-|	'callbook'		Selects which Callbook lookup to use defaults "hamqth" but supports "qrz" and "qrzcq"
+|	'callbook'		Selects which Callbook lookup to use defaults "hamqth" but also supports: "qrz", "qrzcq" and "qrzru"
 */
 
 $config['app_name'] = 'Wavelog';
 $config['directory'] = '%directory%';
-$config['callbook'] = '%callbook%'; // Options are hamqth, qrz, qrzcq or qrzru
+
+/*
+|--------------------------------------------------------------------------
+| Callbook Settings
+|--------------------------------------------------------------------------
+| Options are hamqth, qrz, qrzcq or qrzru
+| For a single callbook configure just one value as string. Example:
+| $config['callbook'] = 'hamqth';
+| This can also be set to an array of callbooks to search sequentially until a match is found. Example:
+| $config['callbook'] = ['qrz', 'hamqth'];
+ */
+$config['callbook'] = '%callbook%';
 
 $config['datadir'] = null; // default to install directory
 
@@ -25,7 +36,7 @@ $config['datadir'] = null; // default to install directory
 |
 | 	'table_name'	SQL table where log can be found
 |	'locator'	    Default locator used to calculate bearings/distance
-|	'display_freq'	Show or Hide frequency info
+|	'display_freq'	Show or Hide frequnecy info
 */
 
 $config['table_name'] = 'TABLE_HRD_CONTACTS_V01';
@@ -384,14 +395,47 @@ $config['error_views_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| Cache Directory Path
+| Cache Configuration
 |--------------------------------------------------------------------------
 |
-| Leave this BLANK unless you would like to set something other than the default
-| application/cache/ directory.  Use a full server path with trailing slash.
+| CodeIgniter supports multiple cache adapters to improve application performance
+| by storing frequently accessed data.
+| 
+| Important Notice:
+| There might some places where Wavelog forces the file adapter instead using the configured one.
+| This happens when caching for large files like images or comparable data is needed. So even
+| when you configure another adapter here, Wavelog might still use file caching in some places and respects 
+| the configured cache path for that.
+|
+| 'cache_path'
+|     Directory path for file-based caching. Leave BLANK to use the default
+|     application/cache/ directory. Use absolute paths with trailing slash.
+|     Must be writable by the web server (typically www-data or apache user).
+|     This is only used for 'file' cache adapter.
+|     Example: /var/cache/wavelog/ or /tmp/wavelog_cache/
+|
+| 'cache_adapter'
+|     The primary cache adapter to use. Options include:
+|     - 'file'      : File-based caching (default, works everywhere)
+|     - 'redis'     : Redis in-memory cache (requires Redis server & extension)
+|     - 'memcached' : Memcached (requires Memcached server & extension)
+|     - 'apcu'      : APCu in-memory cache (requires APCu extension)
+|
+| 'cache_backup'
+|     Fallback adapter if primary adapter fails or is unavailable.
+|     Recommended: 'file' as a safe fallback option
+|
+| 'cache_key_prefix'
+|     Prefix added to all cache keys to avoid collisions between
+|     applications sharing the same cache storage.
+|
+| Note: Redis configuration is stored separately in application/config/redis.php
 |
 */
 $config['cache_path'] = '';
+$config['cache_adapter'] = 'file';
+$config['cache_backup'] = 'file';
+$config['cache_key_prefix'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -773,7 +817,7 @@ $config['disable_version_check'] = false;
 
 /*
 |--------------------------------------------------------------------------
-| eqsl.cc Massdownloa
+| eqsl.cc Massdownload
 |--------------------------------------------------------------------------
 |
 | The eqsl.cc mass download function is not threadsafe. So it is disabled by default.
