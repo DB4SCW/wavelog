@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-06 06:14+0000\n"
+"POT-Creation-Date: 2026-02-06 16:02+0000\n"
 "PO-Revision-Date: 2026-02-05 08:52+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3574,12 +3574,12 @@ msgstr "Kutsumerkkiä ei ole annettu"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC:n on oltava numeerinen"
 
-#: application/models/Logbook_model.php:4879
+#: application/models/Logbook_model.php:4886
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Väärä aseman kutsumerkki %s tuotaessa QSOa %s %s: varten: OHITETTU"
 
-#: application/models/Logbook_model.php:4893
+#: application/models/Logbook_model.php:4900
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3587,11 +3587,11 @@ msgstr ""
 "Yritit tuoda QSOa ilman kelvollista päivämäärää. Tätä QSOa ei tuotu. Se on "
 "virheellinen"
 
-#: application/models/Logbook_model.php:4902
+#: application/models/Logbook_model.php:4909
 msgid "QSO on"
 msgstr "QSO alkoi"
 
-#: application/models/Logbook_model.php:4902
+#: application/models/Logbook_model.php:4909
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3599,7 +3599,7 @@ msgstr ""
 "Yritit tuoda QSOa ilman annettua KUTSUA. Tätä QSOa ei tuotu. Se on "
 "virheellinen"
 
-#: application/models/Logbook_model.php:4951
+#: application/models/Logbook_model.php:4958
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3608,64 +3608,64 @@ msgstr ""
 "QSO ajassa %s: Yritit tuoda QSO:n ilman merkittyä bandia. Tätä QSO:ta ei "
 "tuotu. Se on virheellinen"
 
-#: application/models/Logbook_model.php:5224
+#: application/models/Logbook_model.php:5231
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5235
+#: application/models/Logbook_model.php:5242
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5296
+#: application/models/Logbook_model.php:5303
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "the clublog_qso_upload_date on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5669
+#: application/models/Logbook_model.php:5676
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Kaksoiskappale"
 
-#: application/models/Logbook_model.php:5734
-#: application/models/Logbook_model.php:5829
+#: application/models/Logbook_model.php:5741
+#: application/models/Logbook_model.php:5836
 msgid "QSO could not be matched"
 msgstr "QSOa ei voitu yhdistää"
 
-#: application/models/Logbook_model.php:5742
+#: application/models/Logbook_model.php:5749
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "vahvistettu LoTW:n/Clublogin/eQSL:n/kilpailun kautta"
 
-#: application/models/Logbook_model.php:5748
+#: application/models/Logbook_model.php:5755
 msgid "confirmed by award manager"
 msgstr "vahvistettu awardimanagerin toimesta"
 
-#: application/models/Logbook_model.php:5752
+#: application/models/Logbook_model.php:5759
 msgid "confirmed by cross-check of DCL data"
 msgstr "varmistettu DCL-datan ristivertailulla"
 
-#: application/models/Logbook_model.php:5756
+#: application/models/Logbook_model.php:5763
 msgid "confirmation pending"
 msgstr "vahvistus odottaa"
 
-#: application/models/Logbook_model.php:5759
+#: application/models/Logbook_model.php:5766
 msgid "unconfirmed"
 msgstr "vahvistamaton"
 
-#: application/models/Logbook_model.php:5762
+#: application/models/Logbook_model.php:5769
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:293
 msgid "unknown"
 msgstr "tuntematon"
 
-#: application/models/Logbook_model.php:5832
+#: application/models/Logbook_model.php:5839
 msgid "POTA reference already in log"
 msgstr "POTA-referenssi on jo lokissa"
 
-#: application/models/Logbook_model.php:5835
+#: application/models/Logbook_model.php:5842
 msgid "QSO updated"
 msgstr "QSO päivitetty"
 
-#: application/models/Logbook_model.php:6229
+#: application/models/Logbook_model.php:6236
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
