@@ -130,6 +130,7 @@ msgstr ""
 #: application/models/Club_model.php:52
 #: application/controllers/Satellite.php:666
 #: application/controllers/Satellite.php:675
+#: application/controllers/Dashboard.php:10
 msgid "You're not allowed to do that!"
 msgstr "それは許されません！"
 
@@ -922,6 +923,7 @@ msgstr "SOTA CSVエクスポート"
 #: application/controllers/Dashboard.php:154
 #: application/controllers/Visitor.php:134
 #: application/controllers/Dashboard.php:155
+#: application/controllers/Dashboard.php:157
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
