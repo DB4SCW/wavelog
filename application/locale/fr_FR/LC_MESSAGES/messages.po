@@ -17,7 +17,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-05 14:02+0000\n"
+"POT-Creation-Date: 2026-02-06 06:14+0000\n"
 "PO-Revision-Date: 2026-01-29 15:04+0000\n"
 "Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
@@ -53,6 +53,7 @@ msgstr ""
 #: application/controllers/Contesting.php:14
 #: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
+#: application/controllers/Dashboard.php:10
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
 #: application/controllers/Dcl.php:24 application/controllers/Dcl.php:50
@@ -920,7 +921,7 @@ msgstr "Ne fonctionne pas"
 msgid "SOTA CSV Export"
 msgstr "SOTA - Export CSV"
 
-#: application/controllers/Dashboard.php:154
+#: application/controllers/Dashboard.php:157
 #: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "Tableau de bord"
