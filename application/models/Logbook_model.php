@@ -2185,9 +2185,6 @@ class Logbook_model extends CI_Model {
 				$binding[] = $band;
 			}
 		}
-		if ($map == true) {
-			$sql .= " AND ( qsos.`col_gridsquare` != '' OR qsos.`col_vucc_grids` != '')";
-		}
 		$sql .= " AND qsos.`station_id` IN ?
 			ORDER BY qsos.`COL_TIME_ON` DESC, qsos.`COL_PRIMARY_KEY` DESC";
 		$binding[] = $logbooks_locations_array;
@@ -2212,6 +2209,16 @@ class Logbook_model extends CI_Model {
 			}
 		}
 		unset($row);
+
+		// Apply map filter in PHP to ensure pagination works correctly
+		// When $map is true, filter out QSOs without gridsquare data AFTER applying LIMIT/OFFSET
+		if ($map == true) {
+			$results = array_filter($results, function($row) {
+				return !empty($row->COL_GRIDSQUARE) || !empty($row->COL_VUCC_GRIDS);
+			});
+			// Re-index array after filtering
+			$results = array_values($results);
+		}
 
 		// Return a query-like object with result() method for compatibility
 		return new class($results) {
