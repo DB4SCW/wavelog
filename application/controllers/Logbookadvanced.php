@@ -512,7 +512,7 @@ class Logbookadvanced extends CI_Controller {
 		$data['mycallsign'] = $qso['station_callsign'];
 		$data['datetime'] = date($custom_date_format, strtotime($qso['COL_TIME_ON'])). date(' H:i',strtotime($qso['COL_TIME_ON']));
 		$data['satname'] = $qso['COL_SAT_NAME'];
-		$data['orbit'] = $qso['orbit'];
+		$data['orbit'] = $qso['orbit'] ?? null;
 		$data['confirmed'] = ($this->logbook_model->qso_is_confirmed($qso)==true) ? true : false;
 		$data['dxccFlag'] = $this->dxccflag->get($qso['COL_DXCC']);
 		$data['id'] = $qso['COL_PRIMARY_KEY'];
@@ -545,7 +545,7 @@ class Logbookadvanced extends CI_Controller {
 		$data['mycallsign'] = $qso['station_callsign'];
 		$data['datetime'] = date($custom_date_format, strtotime($qso['COL_TIME_ON'])). date(' H:i',strtotime($qso['COL_TIME_ON']));
 		$data['satname'] = $qso['COL_SAT_NAME'];
-		$data['orbit'] = $qso['orbit'];
+		$data['orbit'] = $qso['orbit'] ?? null;
 		$data['confirmed'] = ($this->logbook_model->qso_is_confirmed($qso)==true) ? true : false;
 		$data['dxccFlag'] = $this->dxccflag->get($qso['COL_DXCC']);
 		$data['id'] = $qso['COL_PRIMARY_KEY'];
