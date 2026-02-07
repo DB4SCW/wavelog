@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-06 16:02+0000\n"
+"POT-Creation-Date: 2026-02-07 11:05+0000\n"
 "PO-Revision-Date: 2026-02-02 14:22+0000\n"
 "Last-Translator: Karuru <karuru@aerodefense.co.uk>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
@@ -3627,7 +3627,7 @@ msgstr "QSO已上传"
 msgid "Bearing"
 msgstr "方位角"
 
-#: application/models/Logbookadvanced_model.php:1704
+#: application/models/Logbookadvanced_model.php:1709
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccGrids 表为空。请先导入 VUCC 网格数据。"
 

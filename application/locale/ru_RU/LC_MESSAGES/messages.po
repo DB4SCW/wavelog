@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-02-06 16:02+0000\n"
+"POT-Creation-Date: 2026-02-07 11:05+0000\n"
 "PO-Revision-Date: 2026-02-04 16:42+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3691,7 +3691,7 @@ msgstr "QSO обновлено"
 msgid "Bearing"
 msgstr "Направление"
 
-#: application/models/Logbookadvanced_model.php:1704
+#: application/models/Logbookadvanced_model.php:1709
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "Таблица VuccGrids пуста. Сначала импортируйте данные квадратов VUCC."
 
