@@ -667,11 +667,9 @@ class Logbookadvanced_model extends CI_Model {
 		foreach ($results as &$row) {
 			$row->sat_name = $row->COL_SAT_NAME ?? null;
 			$row->sat_displayname = null;
-			$row->sat_orbit = null;
 			$row->orbit = null;
 			if (!empty($row->COL_SAT_NAME) && isset($satellites[$row->COL_SAT_NAME])) {
 				$row->sat_displayname = $satellites[$row->COL_SAT_NAME]['displayname'];
-				$row->sat_orbit = $satellites[$row->COL_SAT_NAME]['orbit'];
 				$row->orbit = $satellites[$row->COL_SAT_NAME]['orbit'];
 			}
 		}
