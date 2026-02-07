@@ -3686,6 +3686,7 @@ msgid "Bearing"
 msgstr "Koers"
 
 #: application/models/Logbookadvanced_model.php:1704
+#: application/models/Logbookadvanced_model.php:1709
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccGrids-tabel is leeg. Importeer eerst de VUCC-gridsgegevens."
 

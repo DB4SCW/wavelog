@@ -96,9 +96,12 @@ class Logbookadvanced_model extends CI_Model {
 	public function searchDb($searchCriteria) {
 		// Load all satellites once for PHP-side join (much faster than SQL COALESCE)
 		$satellites = [];
-		$sat_query = $this->db->query('SELECT name, displayname FROM satellite');
+		$sat_query = $this->db->query('SELECT name, displayname, orbit FROM satellite');
 		foreach ($sat_query->result() as $sat) {
-			$satellites[$sat->name] = $sat->displayname;
+			$satellites[$sat->name] = [
+				'displayname' => $sat->displayname,
+				'orbit' => $sat->orbit
+			];
 		}
 
 		$conditions = [];
@@ -238,7 +241,7 @@ class Logbookadvanced_model extends CI_Model {
 			}
 		}
 		if ($searchCriteria['orbits'] !== 'All' && $searchCriteria['orbits'] !== '') {
-			$conditions[] = "orbit = ?";
+			$conditions[] = "COL_SAT_NAME IN (SELECT name FROM satellite WHERE orbit = ?)";
 			$binding[] = $searchCriteria['orbits'];
 		}
 		if ($searchCriteria['qslSent'] !== '') {
@@ -664,8 +667,10 @@ class Logbookadvanced_model extends CI_Model {
 		foreach ($results as &$row) {
 			$row->sat_name = $row->COL_SAT_NAME ?? null;
 			$row->sat_displayname = null;
+			$row->orbit = null;
 			if (!empty($row->COL_SAT_NAME) && isset($satellites[$row->COL_SAT_NAME])) {
-				$row->sat_displayname = $satellites[$row->COL_SAT_NAME];
+				$row->sat_displayname = $satellites[$row->COL_SAT_NAME]['displayname'];
+				$row->orbit = $satellites[$row->COL_SAT_NAME]['orbit'];
 			}
 		}
 		unset($row);
