@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-06 16:02+0000\n"
-"PO-Revision-Date: 2026-02-06 20:25+0000\n"
-"Last-Translator: Miguel <micc@gmx.es>\n"
+"PO-Revision-Date: 2026-02-08 10:48+0000\n"
+"Last-Translator: Juan Pablo Tamayo <hj3kos@gmail.com>\n"
 "Language-Team: Spanish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/es/>\n"
 "Language: es_ES\n"
@@ -5168,7 +5168,7 @@ msgstr "Revisa %s para obtener pistas sobre errores en archivos ADIF."
 
 #: application/views/adif/import_success.php:59
 msgid "You might have ADIF errors. Please check the following information:"
-msgstr ""
+msgstr "El ADIF contiene errores. Por favor verifica la siguiente información:"
 
 #: application/views/adif/pota_success.php:12
 msgid "Results of POTA Update"
@@ -6265,6 +6265,8 @@ msgstr "Prefijo"
 #: application/views/awards/dxcc/index.php:378
 msgid "No results found for your search criteria. Please try again."
 msgstr ""
+"No se encontraron resultados para el criterio de búsqueda. Por favor intente "
+"de nuevo."
 
 #: application/views/awards/ffma/index.php:11
 #: application/views/interface_assets/header.php:294
@@ -6702,7 +6704,7 @@ msgstr ""
 #: application/views/awards/pl_polska/index.php:40
 #, php-format
 msgid "Official rules and information: %s"
-msgstr ""
+msgstr "Reglas oficiales e información: %s"
 
 #: application/views/awards/pl_polska/index.php:40
 msgid "PZK Polska Award Rules"
