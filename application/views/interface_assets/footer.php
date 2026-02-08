@@ -998,100 +998,6 @@ function findlotwunconfirmed(){
     });
 }
 
-function findincorrectcqzones() {
-    event.preventDefault();
-    $('#partial_view').load(base_url+"index.php/logbook/search_incorrect_cq_zones/"+$("#station_id").val(), function() {
-	    $('.qsolist').DataTable({
-	    "pageLength": 25,
-		    responsive: false,
-		    ordering: false,
-		    "scrollY":        "500px",
-		    "scrollCollapse": true,
-		    "paging":         false,
-		    "scrollX": true,
-		    "language": {
-		    url: getDataTablesLanguageUrl(),
-    },
-	    dom: 'Bfrtip',
-	    buttons: [
-			{
-				extend: 'csv',
-				className: 'mb-1 btn-sm btn btn-primary', // Bootstrap classes
-					init: function(api, node, config) {
-						$(node).removeClass('dt-button').addClass('btn btn-primary'); // Ensure Bootstrap class applies
-					},
-			}
-	    ]
-    });
-	    // change color of csv-button if dark mode is chosen
-	    if (isDarkModeTheme()) {
-		    $(".buttons-csv").css("color", "white");
-	    }
-		$('#btn-lba').removeAttr('hidden');
-	    $(document).ready(function() {
-		    var target = document.body;
-		    var observer = new MutationObserver(function() {
-			    $('#dt-search-0').on('keyup', function (e) {
-				    tocrappyzero=$(this).val().toUpperCase().replaceAll(/0/g, 'Ø');
-				    $(this).val(tocrappyzero);
-				    $(this).trigger("input");
-			    });
-		    });
-		    var config = { childList: true, subtree: true};
-		    // pass in the target node, as well as the observer options
-		    observer.observe(target, config);
-	    });
-    });
-}
-
-function findincorrectituzones() {
-    event.preventDefault();
-    $('#partial_view').load(base_url+"index.php/logbook/search_incorrect_itu_zones/"+$("#station_id").val(), function() {
-	    $('.qsolist').DataTable({
-	    "pageLength": 25,
-		    responsive: false,
-		    ordering: false,
-		    "scrollY":        "500px",
-		    "scrollCollapse": true,
-		    "paging":         false,
-		    "scrollX": true,
-		    "language": {
-		    url: getDataTablesLanguageUrl(),
-    },
-	    dom: 'Bfrtip',
-	    buttons: [
-			{
-				extend: 'csv',
-				className: 'mb-1 btn btn-sm btn-primary', // Bootstrap classes
-					init: function(api, node, config) {
-						$(node).removeClass('dt-button').addClass('btn btn-primary'); // Ensure Bootstrap class applies
-					},
-			}
-]
-    });
-	    // change color of csv-button if dark mode is chosen
-	    if (isDarkModeTheme()) {
-		    $(".buttons-csv").css("color", "white");
-	    }
-		$('#btn-lba').removeAttr('hidden');
-
-	    $(document).ready(function() {
-		    var target = document.body;
-		    var observer = new MutationObserver(function() {
-			    $('#dt-search-0').on('keyup', function (e) {
-				    tocrappyzero=$(this).val().toUpperCase().replaceAll(/0/g, 'Ø');
-				    $(this).val(tocrappyzero);
-				    $(this).trigger("input");
-			    });
-		    });
-		    var config = { childList: true, subtree: true};
-		    // pass in the target node, as well as the observer options
-		    observer.observe(target, config);
-	    });
-
-    });
-}
-
 function searchButtonPress() {
     if (event) { event.preventDefault(); }
     if ($('#callsign').val()) {
@@ -1119,7 +1025,6 @@ $($('#callsign')).on('keypress',function(e) {
         return false;
     }
 });
-
 
 });
 </script>
