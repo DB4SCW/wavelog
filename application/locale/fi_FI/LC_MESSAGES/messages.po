@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-02-07 11:05+0000\n"
-"PO-Revision-Date: 2026-02-05 08:52+0000\n"
+"PO-Revision-Date: 2026-02-09 22:54+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -8033,7 +8033,7 @@ msgstr "Ei mitään"
 #: application/views/contesting/index.php:160
 #: application/views/qso/index.php:414
 msgid "Live - WebSocket"
-msgstr ""
+msgstr "Live - WebSocket"
 
 #: application/views/bandmap/list.php:242 application/views/qso/index.php:416
 msgid "Polling - "
@@ -15345,7 +15345,7 @@ msgstr "Pyyntö on hylätty eikä sitä käsitellä."
 #: application/views/public_search/empty.php:2
 #: application/views/public_search/result.php:2
 msgid "Searching for"
-msgstr "Haku:"
+msgstr "Haku"
 
 #: application/views/qrbcalc/index.php:3
 msgid "Locator 1"
