@@ -2,7 +2,7 @@
 
 class Gridmap_model extends CI_Model {
 
-	function get_band_confirmed($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $dxcc, $grids, $datefrom, $dateto, $logbooks_locations_array = NULL) {
+	function get_band_confirmed($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $dxcc, $grids, $datefrom, $dateto, $logbooks_locations_array = NULL, $call = '') {
 		if ($logbooks_locations_array == NULL) {
 			$this->load->model('logbooks_model');
 			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
@@ -20,6 +20,11 @@ class Gridmap_model extends CI_Model {
 			.' LEFT JOIN `satellite` on '.$this->config->item('table_name').'.COL_SAT_NAME = satellite.name'
 			.' WHERE station_id in ('
 			.$location_list.') AND COL_GRIDSQUARE != ""';
+
+		if ($call != '' && $call != '*') {
+			$sql .= " and col_call = ?";
+			$binding[] = $call;
+		}
 
 		if ($band != 'All') {
 			if ($band == 'SAT') {
@@ -64,13 +69,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($dxcc != 'All') {
@@ -84,7 +89,7 @@ class Gridmap_model extends CI_Model {
 		return $this->db->query($sql, $binding);
 	}
 
-	function get_band($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $dxcc, $grids, $datefrom, $dateto, $logbooks_locations_array = NULL) {
+	function get_band($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $dxcc, $grids, $datefrom, $dateto, $logbooks_locations_array = NULL, $call = '') {
 		if ($logbooks_locations_array == NULL) {
 			$this->load->model('logbooks_model');
 			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
@@ -103,6 +108,11 @@ class Gridmap_model extends CI_Model {
 			.' WHERE station_id in ('
 			.$location_list.') AND COL_GRIDSQUARE != ""';
 
+		if ($call != '' && $call != '*') {
+			$sql .= " and col_call = ?";
+			$binding[] = $call;
+		}
+
 		if ($band != 'All') {
 			if ($band == 'SAT') {
 				$sql .= " and col_prop_mode = ?";
@@ -141,13 +151,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($orbit != 'All') {
@@ -164,7 +174,7 @@ class Gridmap_model extends CI_Model {
 		return $this->db->query($sql, $binding);
 	}
 
-	function get_band_worked_vucc_squares($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $datefrom, $dateto, $logbooks_locations_array = NULL) {
+	function get_band_worked_vucc_squares($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $datefrom, $dateto, $logbooks_locations_array = NULL, $call = '') {
 		$this->load->model('logbooks_model');
 		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
 
@@ -180,6 +190,11 @@ class Gridmap_model extends CI_Model {
 			.' LEFT JOIN `satellite` on '.$this->config->item('table_name').'.COL_SAT_NAME = satellite.name'
 			.' WHERE station_id in ('
 			.$location_list.') AND COL_VUCC_GRIDS != ""';
+
+		if ($call != '' && $call != '*') {
+			$sql .= " and col_call = ?";
+			$binding[] = $call;
+		}
 
 		if ($band != 'All') {
 			if ($band == 'SAT') {
@@ -219,13 +234,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($orbit != 'All') {
@@ -236,7 +251,7 @@ class Gridmap_model extends CI_Model {
 		return $this->db->query($sql, $binding);
 	}
 
-	function get_band_confirmed_vucc_squares($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $datefrom, $dateto, $logbooks_locations_array = NULL) {
+	function get_band_confirmed_vucc_squares($band, $mode, $qsl, $lotw, $eqsl, $qrz, $sat, $orbit, $propagation, $datefrom, $dateto, $logbooks_locations_array = NULL, $call = '') {
 		$this->load->model('logbooks_model');
 		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
 
@@ -252,6 +267,11 @@ class Gridmap_model extends CI_Model {
 			.' LEFT JOIN `satellite` on '.$this->config->item('table_name').'.COL_SAT_NAME = satellite.name'
 			.' WHERE station_id in ('
 			.$location_list.') AND COL_VUCC_GRIDS != ""';
+
+		if ($call != '' && $call != '*') {
+			$sql .= " and col_call = ?";
+			$binding[] = $call;
+		}
 
 		if ($band != 'All') {
 			if ($band == 'SAT') {
@@ -285,13 +305,13 @@ class Gridmap_model extends CI_Model {
 		}
 
 		if ($datefrom != NULL) {
-			$sql .= " and date(col_time_on) >= ?";
-			$binding[] = $datefrom;
+			$sql .= " and col_time_on >= ?";
+			$binding[] = $datefrom . ' 00:00:00';
 		}
 
 		if ($dateto != NULL) {
-			$sql .= " and date(col_time_on) <= ?";
-			$binding[] = $dateto;
+			$sql .= " and col_time_on <= ?";
+			$binding[] = $dateto . ' 23:59:59';
 		}
 
 		if ($mode != 'All') {
@@ -389,5 +409,25 @@ class Gridmap_model extends CI_Model {
 		$gridarray = array_column($gridquery->result_array(), 'gridsquare');
 
 		return $gridarray;
+	}
+
+	function get_coordinates_for_dxcc($dxcc) {
+		// Get country coordinates if a specific country is selected
+		$country_coords = null;
+		if ($dxcc && $dxcc != 'All') {
+			// Query dxcc_entities table for country info
+			$sql = "SELECT adif, lat, `long`, name FROM dxcc_entities WHERE adif = ?";
+			$query = $this->db->query($sql, array($dxcc));
+
+			if ($query && $query->num_rows() > 0) {
+				$country_info = $query->row();
+				$country_coords = [
+					'lat' => (float)$country_info->lat,
+					'long' => (float)$country_info->long,
+					'name' => $country_info->name
+				];
+			}
+		}
+		return $country_coords;
 	}
 }

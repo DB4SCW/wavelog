@@ -353,76 +353,122 @@ class VUCC extends CI_Model
         return $workedGridArray;
     }
 
+    private function get_vucc_combined_data($band = 'All') {
+        if (!$this->logbooks_locations_array) {
+            return ['gridsquare' => [], 'vucc_grids' => []];
+        }
+
+        $results = ['gridsquare' => [], 'vucc_grids' => []];
+
+        $inPlaceholders = str_repeat('?,', count($this->logbooks_locations_array) - 1) . '?';
+
+        // Query 1: Get col_gridsquare data with worked/confirmed status
+        $bindings1 = array_merge($this->logbooks_locations_array);
+        $bandCondition1 = '';
+
+        if ($band != 'All') {
+            if ($band == 'SAT') {
+                $bandCondition1 = " and log.col_prop_mode = ?";
+                $bindings1[] = $band;
+            } else {
+                $bandCondition1 = " and log.col_prop_mode != ? and log.col_band = ?";
+                $bindings1[] = 'SAT';
+                $bindings1[] = $band;
+            }
+        } else {
+            $bandCondition1 = " and log.col_prop_mode != ?";
+            $bindings1[] = 'SAT';
+        }
+
+        $sql1 = "SELECT
+            DISTINCT UPPER(SUBSTRING(col_gridsquare, 1, 4)) as gridsquare,
+            MAX(CASE WHEN (col_qsl_rcvd='Y' OR col_lotw_qsl_rcvd='Y') THEN 1 ELSE 0 END) as confirmed
+            FROM " . $this->config->item('table_name') . " log
+            INNER JOIN bands b ON (b.band = log.col_band)
+            WHERE log.station_id IN (" . $inPlaceholders . ")
+                AND log.col_gridsquare <> ''
+                AND b.bandgroup IN ('vhf','uhf','shf','sat')"
+            . $bandCondition1 . "
+            GROUP BY UPPER(SUBSTRING(col_gridsquare, 1, 4))";
+
+        $query1 = $this->db->query($sql1, $bindings1);
+        if ($query1->num_rows() > 0) {
+            $results['gridsquare'] = $query1->result_array();
+        }
+
+        // Query 2: Get col_vucc_grids data with worked/confirmed status
+        // Note: col_vucc_grids has NO band filter when band='All' (includes SAT)
+        $bindings2 = array_merge($this->logbooks_locations_array);
+        $bandCondition2 = '';
+
+        if ($band != 'All') {
+            if ($band == 'SAT') {
+                $bandCondition2 = " and col_prop_mode = ?";
+                $bindings2[] = $band;
+            } else {
+                $bandCondition2 = " and col_prop_mode != ? and col_band = ?";
+                $bindings2[] = 'SAT';
+                $bindings2[] = $band;
+            }
+        }
+        // When band='All', NO band filter is added (includes all prop_mode including SAT)
+
+        $sql2 = "SELECT
+            DISTINCT col_vucc_grids,
+            MAX(CASE WHEN (col_qsl_rcvd='Y' OR col_lotw_qsl_rcvd='Y') THEN 1 ELSE 0 END) as confirmed
+            FROM " . $this->config->item('table_name') . "
+            WHERE station_id IN (" . $inPlaceholders . ")
+                AND col_vucc_grids <> ''"
+            . $bandCondition2 . "
+            GROUP BY col_vucc_grids";
+
+        $query2 = $this->db->query($sql2, $bindings2);
+        if ($query2->num_rows() > 0) {
+            $results['vucc_grids'] = $query2->result_array();
+        }
+
+        return $results;
+    }
+
     /*
     * Builds the array to display worked/confirmed vucc on dashboard page
     */
     function fetchVuccSummary($band = 'All') {
-        $totalGridConfirmed = array();
-        $totalGridWorked = array();
+        // Use associative arrays for O(1) lookups instead of O(n) in_array()
+        $totalGridWorked = [];
+        $totalGridConfirmed = [];
 
-            // Getting all the worked grids
-            $col_gridsquare_worked = $this->get_vucc_summary($band, 'none');
+        // Get combined data (2 queries instead of 4)
+        $data = $this->get_vucc_combined_data($band);
 
-            $workedGridArray = array();
-            if ($col_gridsquare_worked != null) {
-                foreach ($col_gridsquare_worked as $workedgrid) {
-                    array_push($workedGridArray, $workedgrid['gridsquare']);
-                    if(!in_array($workedgrid['gridsquare'], $totalGridWorked)){
-                        array_push($totalGridWorked, $workedgrid['gridsquare']);
+        // Process col_gridsquare data
+        if (!empty($data['gridsquare'])) {
+            foreach ($data['gridsquare'] as $row) {
+                $grid = $row['gridsquare'];
+                // Always add to worked
+                $totalGridWorked[$grid] = true;
+                // Add to confirmed if flagged
+                if ($row['confirmed']) {
+                    $totalGridConfirmed[$grid] = true;
+                }
+            }
+        }
+
+        // Process col_vucc_grids data
+        if (!empty($data['vucc_grids'])) {
+            foreach ($data['vucc_grids'] as $row) {
+                $grids = explode(",", $row['col_vucc_grids']);
+                foreach ($grids as $key) {
+                    $grid_four = strtoupper(substr(trim($key), 0, 4));
+                    // Always add to worked
+                    $totalGridWorked[$grid_four] = true;
+                    // Add to confirmed if flagged
+                    if ($row['confirmed']) {
+                        $totalGridConfirmed[$grid_four] = true;
                     }
                 }
             }
-
-            $col_vucc_grids_worked = $this->get_vucc_summary_col_vucc($band, 'none');
-
-            if ($col_vucc_grids_worked != null) {
-                foreach ($col_vucc_grids_worked as $gridSplit) {
-                    $grids = explode(",", $gridSplit['col_vucc_grids']);
-                    foreach($grids as $key) {
-                        $grid_four = strtoupper(substr(trim($key),0,4));
-
-                        if(!in_array($grid_four, $workedGridArray)){
-                            array_push($workedGridArray, $grid_four);
-                        }
-
-                        if(!in_array($grid_four, $totalGridWorked)){
-                            array_push($totalGridWorked, $grid_four);
-                        }
-                    }
-                }
-            }
-
-            // Getting all the confirmed grids
-            $col_gridsquare_confirmed = $this->get_vucc_summary($band, 'both');
-			$confirmedGridArray = array();
-
-            if ($col_gridsquare_confirmed != null) {
-                foreach ($col_gridsquare_confirmed as $confirmedgrid) {
-                    array_push($confirmedGridArray, $confirmedgrid['gridsquare']);
-                    if(!in_array($confirmedgrid['gridsquare'], $totalGridConfirmed)){
-                        array_push($totalGridConfirmed, $confirmedgrid['gridsquare']);
-                    }
-                }
-            }
-
-            $col_vucc_grids_confirmed = $this->get_vucc_summary_col_vucc($band, 'both');
-
-            if ($col_vucc_grids_confirmed != null) {
-                foreach ($col_vucc_grids_confirmed as $gridSplit) {
-                    $grids = explode(",", $gridSplit['col_vucc_grids']);
-                    foreach($grids as $key) {
-                        $grid_four = strtoupper(substr(trim($key),0,4));
-
-                        if(!in_array($grid_four, $confirmedGridArray)){
-                            array_push($confirmedGridArray, $grid_four);
-                        }
-
-                        if(!in_array($grid_four, $totalGridConfirmed)){
-                            array_push($totalGridConfirmed, $grid_four);
-                        }
-                    }
-                }
-            }
+        }
 
         $vuccArray[$band]['worked'] = count($totalGridWorked);
         $vuccArray[$band]['confirmed'] = count($totalGridConfirmed);

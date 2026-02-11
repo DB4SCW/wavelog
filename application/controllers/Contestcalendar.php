@@ -126,7 +126,11 @@ class Contestcalendar extends CI_Controller {
 
 	private function getRssData() {
 
-		$this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
+		$this->load->driver('cache', [
+			'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+			'backup' => $this->config->item('cache_backup') ?? 'file',
+			'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+		]);
 
 		if (!$rssRawData = $this->cache->get('RssRawContestCal')) {
 
@@ -139,7 +143,6 @@ class Contestcalendar extends CI_Controller {
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 			$rssRawData = curl_exec($ch);
-			curl_close($ch);
 
 			if ($rssRawData === FALSE) {
 				$msg = "Something went wrong with fetching the Contest Data";
@@ -148,8 +151,6 @@ class Contestcalendar extends CI_Controller {
 			}
 
 			$this->cache->save('RssRawContestCal', $rssRawData, (60 * 60 * 12)); // 12 hours cache time
-
-			curl_close($ch);
 		}
 
 		return $rssRawData;

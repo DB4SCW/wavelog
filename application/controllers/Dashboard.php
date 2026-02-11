@@ -2,15 +2,17 @@
 
 class Dashboard extends CI_Controller {
 
-	public function index()
-	{
-		// Check if users logged in
+	function __construct() {
+		parent::__construct();
+
 		$this->load->model('user_model');
-		if ($this->user_model->validate_session() == 0) {
-			// user is not logged in
+		if (!$this->user_model->authorize(2)) {
+			$this->session->set_flashdata('error', __("You're not allowed to do that!"));
 			redirect('user/login');
 		}
+	}
 
+	public function index() {
 		// Database connections
 		$this->load->model('logbook_model');
 
@@ -97,11 +99,11 @@ class Dashboard extends CI_Controller {
 
 		$data['radio_status'] = $this->cat->recent_status();
 
-		// Store info
-		$data['todays_qsos'] = $this->logbook_model->todays_qsos($logbooks_locations_array);
-		$data['total_qsos'] = $this->logbook_model->total_qsos($logbooks_locations_array);
-		$data['month_qsos'] = $this->logbook_model->month_qsos($logbooks_locations_array);
-		$data['year_qsos'] = $this->logbook_model->year_qsos($logbooks_locations_array);
+		$qso_counts = $this->logbook_model->get_qso_counts($logbooks_locations_array);
+		$data['todays_qsos'] = $qso_counts['today'];
+		$data['total_qsos'] = $qso_counts['total'];
+		$data['month_qsos'] = $qso_counts['month'];
+		$data['year_qsos'] = $qso_counts['year'];
 
 		$rawstreak=$this->dayswithqso_model->getAlmostCurrentStreak();
 		if (is_array($rawstreak)) {
@@ -110,37 +112,38 @@ class Dashboard extends CI_Controller {
 			$data['current_streak']=0;
 		}
 
-		// Load  Countries Breakdown data into array
-		$CountriesBreakdown = $this->logbook_model->total_countries_confirmed($logbooks_locations_array);
+		// Load Dashboard stats (countries + QSL stats in one query)
+		$stats = $this->logbook_model->dashboard_stats_batch($logbooks_locations_array);
 
-		$data['total_countries'] = $CountriesBreakdown['Countries_Worked'];
-		$data['total_countries_confirmed_paper'] = $CountriesBreakdown['Countries_Worked_QSL'];
-		$data['total_countries_confirmed_eqsl'] = $CountriesBreakdown['Countries_Worked_EQSL'];
-		$data['total_countries_confirmed_lotw'] = $CountriesBreakdown['Countries_Worked_LOTW'];
+		// Country stats
+		$data['total_countries'] = $stats['Countries_Worked'];
+		$data['total_countries_confirmed_paper'] = $stats['Countries_Worked_QSL'];
+		$data['total_countries_confirmed_eqsl'] = $stats['Countries_Worked_EQSL'];
+		$data['total_countries_confirmed_lotw'] = $stats['Countries_Worked_LOTW'];
+		$current = $stats['Countries_Current'];
 
-		$QSLStatsBreakdownArray = $this->logbook_model->get_QSLStats($logbooks_locations_array);
+		// QSL stats
+		$data['total_qsl_sent'] = $stats['QSL_Sent'];
+		$data['total_qsl_rcvd'] = $stats['QSL_Received'];
+		$data['total_qsl_requested'] = $stats['QSL_Requested'];
+		$data['qsl_sent_today'] = $stats['QSL_Sent_today'];
+		$data['qsl_rcvd_today'] = $stats['QSL_Received_today'];
+		$data['qsl_requested_today'] = $stats['QSL_Requested_today'];
 
-		$data['total_qsl_sent'] = $QSLStatsBreakdownArray['QSL_Sent'];
-		$data['total_qsl_rcvd'] = $QSLStatsBreakdownArray['QSL_Received'];
-		$data['total_qsl_requested'] = $QSLStatsBreakdownArray['QSL_Requested'];
-		$data['qsl_sent_today'] = $QSLStatsBreakdownArray['QSL_Sent_today'];
-		$data['qsl_rcvd_today'] = $QSLStatsBreakdownArray['QSL_Received_today'];
-		$data['qsl_requested_today'] = $QSLStatsBreakdownArray['QSL_Requested_today'];
+		$data['total_eqsl_sent'] = $stats['eQSL_Sent'];
+		$data['total_eqsl_rcvd'] = $stats['eQSL_Received'];
+		$data['eqsl_sent_today'] = $stats['eQSL_Sent_today'];
+		$data['eqsl_rcvd_today'] = $stats['eQSL_Received_today'];
 
-		$data['total_eqsl_sent'] = $QSLStatsBreakdownArray['eQSL_Sent'];
-		$data['total_eqsl_rcvd'] = $QSLStatsBreakdownArray['eQSL_Received'];
-		$data['eqsl_sent_today'] = $QSLStatsBreakdownArray['eQSL_Sent_today'];
-		$data['eqsl_rcvd_today'] = $QSLStatsBreakdownArray['eQSL_Received_today'];
+		$data['total_lotw_sent'] = $stats['LoTW_Sent'];
+		$data['total_lotw_rcvd'] = $stats['LoTW_Received'];
+		$data['lotw_sent_today'] = $stats['LoTW_Sent_today'];
+		$data['lotw_rcvd_today'] = $stats['LoTW_Received_today'];
 
-		$data['total_lotw_sent'] = $QSLStatsBreakdownArray['LoTW_Sent'];
-		$data['total_lotw_rcvd'] = $QSLStatsBreakdownArray['LoTW_Received'];
-		$data['lotw_sent_today'] = $QSLStatsBreakdownArray['LoTW_Sent_today'];
-		$data['lotw_rcvd_today'] = $QSLStatsBreakdownArray['LoTW_Received_today'];
-
-		$data['total_qrz_sent'] = $QSLStatsBreakdownArray['QRZ_Sent'];
-		$data['total_qrz_rcvd'] = $QSLStatsBreakdownArray['QRZ_Received'];
-		$data['qrz_sent_today'] = $QSLStatsBreakdownArray['QRZ_Sent_today'];
-		$data['qrz_rcvd_today'] = $QSLStatsBreakdownArray['QRZ_Received_today'];
+		$data['total_qrz_sent'] = $stats['QRZ_Sent'];
+		$data['total_qrz_rcvd'] = $stats['QRZ_Received'];
+		$data['qrz_sent_today'] = $stats['QRZ_Sent_today'];
+		$data['qrz_rcvd_today'] = $stats['QRZ_Received_today'];
 
 		$data['last_qso_count'] = empty($this->session->userdata('dashboard_last_qso_count')) ? DASHBOARD_DEFAULT_QSOS_COUNT : $this->session->userdata('dashboard_last_qso_count');
 		$data['last_qsos_list'] = $this->logbook_model->get_last_qsos(
@@ -155,8 +158,6 @@ class Dashboard extends CI_Controller {
 
 		$this->load->model('dxcc');
 		$dxcc = $this->dxcc->list_current();
-
-		$current = $this->logbook_model->total_countries_current($logbooks_locations_array);
 
 		$footerData['scripts'] = [
 			'assets/js/sections/dashboard.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/sections/dashboard.js")),
@@ -219,8 +220,7 @@ class Dashboard extends CI_Controller {
 		$this->load->view('interface_assets/footer', $footerData);
 	}
 
-	function radio_display_component()
-	{
+	function radio_display_component() {
 		$this->load->model('cat');
 
 		$data['radio_status'] = $this->cat->recent_status();

@@ -88,7 +88,7 @@ class QSO
 	private string $orbit;
 
 	private string $stationpower;
-	private float $distance;
+	private ?string $distance;
 	private string $antennaazimuth;
 	private string $antennaelevation;
 
@@ -105,6 +105,8 @@ class QSO
 	private string $morse_key_info;
 	private string $morse_key_type;
 	private string $qslmsg_rcvd;
+
+	private string $last_modified;
 
 	private $CI;
 
@@ -160,6 +162,7 @@ class QSO
 			'COL_IOTA',
 			'COL_OPERATOR',
 			'COL_COMMENT',
+			'last_modified',
 		];
 
 		foreach ($requiredKeys as $requiredKey) {
@@ -286,9 +289,11 @@ class QSO
 		$this->profilename = $data['station_profile_name'] ?? '';
 
 		$this->stationpower = $data['COL_TX_PWR'] ?? '';
-		$this->distance = (float)$data['COL_DISTANCE'] ?? 0;
+		$this->distance = $data['COL_DISTANCE'];
 		$this->antennaazimuth = $data['COL_ANT_AZ'] ?? '';
 		$this->antennaelevation = $data['COL_ANT_EL'] ?? '';
+
+		$this->last_modified = date($custom_date_format . " H:i:s", strtotime($data['qso_last_modified'] ?? ''));
 
 		if ($this->CI->session->userdata('user_measurement_base') == NULL) {
 			$measurement_base = $this->CI->config->item('measurement_base');
@@ -1304,12 +1309,15 @@ class QSO
 			'county' => $this->county,
 			'qth' => $this->qth,
 			'frequency' => $this->getFormattedFrequency(),
+			'last_modified' => $this->last_modified,
 		];
 	}
 
 	private function getFormattedDistance(): string
 	{
-		if ($this->distance == 0) return '';
+		if ($this->distance === null) return '';
+
+		$distanceValue = floatval($this->distance); // Convert string to float
 
 		switch ($this->measurement_base) {
 			case 'M':
@@ -1323,16 +1331,16 @@ class QSO
 				break;
 			default:
 				$unit = "km";
-			}
+		}
 
 		if ($unit == 'mi') {
-			$this->distance = round($this->distance * 0.621371, 1);
+			$distanceValue = round($distanceValue * 0.621371, 1);
 		}
 		if ($unit == 'nmi') {
-			$this->distance = round($this->distance * 0.539957, 1);
+			$distanceValue = round($distanceValue * 0.539957, 1);
 		}
 
-		return $this->distance . ' ' . $unit;
+		return $distanceValue . ' ' . $unit;
 	}
 
 	private function getFormattedMyDok(): string

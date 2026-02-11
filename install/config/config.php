@@ -9,12 +9,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	'app_name'		Name of the App 'Wavelog'
 |	'directory'		directory where wavelog is installed eg "logger"
-|	'callbook'		Selects which Callbook lookup to use defaults "hamqth" but supports "qrz" and "qrzcq"
+|	'callbook'		Selects which Callbook lookup to use defaults "hamqth" but also supports: "qrz", "qrzcq" and "qrzru"
 */
 
 $config['app_name'] = 'Wavelog';
 $config['directory'] = '%directory%';
-$config['callbook'] = '%callbook%'; // Options are hamqth, qrz, qrzcq or qrzru
+
+/*
+|--------------------------------------------------------------------------
+| Callbook Settings
+|--------------------------------------------------------------------------
+| Options are hamqth, qrz, qrzcq or qrzru
+| For a single callbook configure just one value as string. Example:
+| $config['callbook'] = 'hamqth';
+| This can also be set to an array of callbooks to search sequentially until a match is found. Example:
+| $config['callbook'] = ['qrz', 'hamqth'];
+ */
+$config['callbook'] = '%callbook%';
 
 $config['datadir'] = null; // default to install directory
 
@@ -326,11 +337,11 @@ $config['log_path'] = '';
 | One Logfile (true) or daily logfile?
 |--------------------------------------------------------------------------
 |
-| Leave this setted to false unless you would like to have one big logfile
+| Leave this set to false unless you would like to have one big logfile
 | at application/logs/ directory.
 |
 | true == one big log
-| false (or non-existant): daily logs
+| false (or non-existent): daily logs
 */
 $config['one_log'] = false;
 
@@ -384,14 +395,47 @@ $config['error_views_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| Cache Directory Path
+| Cache Configuration
 |--------------------------------------------------------------------------
 |
-| Leave this BLANK unless you would like to set something other than the default
-| application/cache/ directory.  Use a full server path with trailing slash.
+| CodeIgniter supports multiple cache adapters to improve application performance
+| by storing frequently accessed data.
+| 
+| Important Notice:
+| There might some places where Wavelog forces the file adapter instead using the configured one.
+| This happens when caching for large files like images or comparable data is needed. So even
+| when you configure another adapter here, Wavelog might still use file caching in some places and respects 
+| the configured cache path for that.
+|
+| 'cache_path'
+|     Directory path for file-based caching. Leave BLANK to use the default
+|     application/cache/ directory. Use absolute paths with trailing slash.
+|     Must be writable by the web server (typically www-data or apache user).
+|     This is only used for 'file' cache adapter.
+|     Example: /var/cache/wavelog/ or /tmp/wavelog_cache/
+|
+| 'cache_adapter'
+|     The primary cache adapter to use. Options include:
+|     - 'file'      : File-based caching (default, works everywhere)
+|     - 'redis'     : Redis in-memory cache (requires Redis server & extension)
+|     - 'memcached' : Memcached (requires Memcached server & extension)
+|     - 'apcu'      : APCu in-memory cache (requires APCu extension)
+|
+| 'cache_backup'
+|     Fallback adapter if primary adapter fails or is unavailable.
+|     Recommended: 'file' as a safe fallback option
+|
+| 'cache_key_prefix'
+|     Prefix added to all cache keys to avoid collisions between
+|     applications sharing the same cache storage.
+|
+| Note: Redis configuration is stored separately in application/config/redis.php
 |
 */
 $config['cache_path'] = '';
+$config['cache_adapter'] = 'file';
+$config['cache_backup'] = 'file';
+$config['cache_key_prefix'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -439,7 +483,8 @@ $config['encryption_key'] = '%encryptionkey%';
 | 'sess_expiration'
 |
 |	The number of SECONDS you want the session to last.
-|	Setting to 0 (zero) means expire when the browser is closed.
+|	Default: 43200 seconds (12 hours).
+|   Setting to 0 means use the default value of 43200 seconds (12 hours).
 |
 | 'sess_save_path'
 |
@@ -476,14 +521,14 @@ $config['encryption_key'] = '%encryptionkey%';
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_wavelog';
-$config['sess_expiration'] = 0;
+$config['sess_expiration'] = 43200;
 $config['sess_save_path'] = '/tmp';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
 
 /*
- * To make sure we do not collect infinite session we set some garbage collection settings
+ * To make sure we do not collect infinite sessions we set some garbage collection settings
  * see https://www.php.net/manual/en/session.configuration.php#ini.session.gc-probability
  * and https://www.php.net/manual/en/session.configuration.php#ini.session.gc-divisor
  * and https://osvaldas.info/enabling-codeigniters-garbage-collector/
@@ -688,7 +733,7 @@ $config['disable_oqrs'] = false;
 | Special Callsign Feature aka. Clubstations Support
 |--------------------------------------------------------------------------
 |
-| This config switch is meant to use for Special Callsign operations or Clubstations.
+| This config switch is meant for Special Callsign operations or Clubstations.
 | If this switch is set to true it enables a whole bunch of features to handle Special Callsigns and Club Callsigns.
 | For more Information please visit the Wiki:
 | https://github.com/wavelog/wavelog/wiki/Clubstations
@@ -706,7 +751,7 @@ $config['special_callsign'] = false;
 | Impersonate
 |--------------------------------------------------------------------------
 |
-| This config switch disables the impersonate feature. This feauture is used to impersonate another user.
+| This config switch disables the impersonate feature. This feature is used to impersonate another user.
 | Impersonate is enabled by default. To disable it, set the value to false. Also the special_callsign feature needs this to be false.
 |
 */
@@ -772,7 +817,7 @@ $config['disable_version_check'] = false;
 
 /*
 |--------------------------------------------------------------------------
-| eqsl.cc Massdownloa
+| eqsl.cc Massdownload
 |--------------------------------------------------------------------------
 |
 | The eqsl.cc mass download function is not threadsafe. So it is disabled by default.
@@ -789,13 +834,114 @@ $config['enable_eqsl_massdownload'] = false;
 
  $config['max_login_attempts'] = 3;
 
- /*
- |--------------------------------------------------------------------------
- | Disable User QSO Count in User List (Admin Menu)
- | Reason for this setting is to prevent performance issues on large installations
- | where the QSO count is not needed. Set to true to disable the QSO count.
- | This also hides the last Operator for CLubstations. Default is false.
- |--------------------------------------------------------------------------
-  */
+/*
+|--------------------------------------------------------------------------
+| Disable User QSO Count in User List (Admin Menu)
+| Reason for this setting is to prevent performance issues on large installations
+| where the QSO count is not needed. Set to true to disable the QSO count.
+| This also hides the last Operator for CLubstations. Default is false.
+|--------------------------------------------------------------------------
+ */
 
-  $config['disable_user_stats'] = false;
+ $config['disable_user_stats'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| Enable DCL Interface
+| Set this to true if your Users and you want to connect your instance to the German DCL
+|--------------------------------------------------------------------------
+ */
+
+ $config['enable_dcl_interface'] = true;
+
+/*
+|--------------------------------------------------------------------------
+| DXCluster File Cache
+|--------------------------------------------------------------------------
+|
+| Controls file-based caching for DXCluster features. Two independent settings:
+|
+| 1. enable_dxcluster_file_cache_band
+|    - Caches processed spot lists (WITHOUT worked status) from DXCache API
+|    - Cache is INSTANCE-WIDE (shared by all users)
+|    - Cache duration: 59 seconds
+|    - Cache key format: dxcluster_raw_{maxage}_{continent}_{mode}_{band}
+|    - Example: dxcluster_raw_60_Any_All_20m
+|    - Contains: callsign, frequency, DXCC, mode, age, metadata
+|    - Does NOT contain: worked/confirmed status (always false in cache)
+|    - Set to TRUE to reduce API calls and speed up spot list loading
+|    - Set to FALSE to always fetch fresh data from API
+|
+| 2. enable_dxcluster_file_cache_worked
+|    - Caches worked/confirmed status lookups from database
+|    - Cache is USER-SPECIFIC (separate for each user/logbook)
+|    - Cache duration: 15 minutes (900 seconds)
+|    - Cache includes: All bands/modes combinations per callsign/DXCC/continent
+|    - Set to TRUE to significantly reduce database load
+|    - Set to FALSE to always query database for fresh status
+|
+| Default: false (both caching disabled)
+|
+| Recommendation:
+|   - Enable BAND cache on all installations to reduce API load (instance-wide)
+|   - Enable WORKED cache on high-traffic multi-user installations to reduce DB queries
+| Warning: WORKED cache may cause high disk usage on large multi-user installations.
+|--------------------------------------------------------------------------
+ */
+
+$config['enable_dxcluster_file_cache_band'] = false;
+$config['enable_dxcluster_file_cache_worked'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| Internal tools
+| Set this to true if you want to display the admin internal tools in the header menu
+|--------------------------------------------------------------------------
+ */
+$config['internal_tools'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| API Rate Limiting
+|--------------------------------------------------------------------------
+|
+| Rate limiting for API endpoints using sliding window algorithm.
+| Rate limiting is only enabled if api_rate_limits is defined (not null/empty).
+|
+| Format: Array of endpoint-specific limits
+|   - Endpoint name: the API function name (e.g., 'private_lookup', 'lookup')
+|   - requests: maximum number of requests allowed
+|   - window: time window in seconds
+|
+| Example configuration:
+|
+| $config['api_rate_limits'] = [
+|     'private_lookup' => ['requests' => 60, 'window' => 60],  // 60 requests per minute
+|     'lookup'         => ['requests' => 60, 'window' => 60],  // 60 requests per minute
+|     'qso'            => ['requests' => 10, 'window' => 60],  // 10 requests per minute
+|     'default'        => ['requests' => 30, 'window' => 60],  // Default for all other endpoints
+| ];
+|
+| Set to null or leave commented to disable rate limiting entirely:
+| $config['api_rate_limits'] = null;
+|
+| The 'default' key is optional and applies to any API endpoint not explicitly
+| listed. If no default is provided, endpoints without specific limits have no
+| rate limiting applied.
+|
+| Rate limiting tracks requests by:
+|   - API key (if provided)
+|   - Session user ID (if authenticated via session)
+|   - IP address (fallback)
+|
+*/
+
+// Example configuration (uncomment to enable):
+// $config['api_rate_limits'] = [
+//     'private_lookup' => ['requests' => 60, 'window' => 60],
+//     'lookup'         => ['requests' => 60, 'window' => 60],
+//     'qso'            => ['requests' => 10, 'window' => 60],
+//     'radio'          => ['requests' => 60, 'window' => 60],
+//     'statistics'     => ['requests' => 30, 'window' => 60],
+//     'default'        => ['requests' => 30, 'window' => 60],
+// ];

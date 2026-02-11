@@ -237,7 +237,7 @@
 		<small class="text-muted me-1 flex-shrink-0 d-none d-md-inline"><?= __("TRX:"); ?></small>
 		<select class="form-select form-select-sm radios flex-shrink-0" id="radio" name="radio" style="width: auto;">
 			<option value="0" selected="selected"><?= __("None"); ?></option>
-			<option value="ws"<?php if ($this->session->userdata('radio') == 'ws') { echo ' selected="selected"'; } ?>><?= __("Live - ") . __("WebSocket (Requires WLGate>=1.1.10)"); ?></option>
+			<option value="ws"<?php if ($this->session->userdata('radio') == 'ws') { echo ' selected="selected"'; } ?>><?= __("Live - WebSocket"); ?></option>
 			<?php foreach ($radios->result() as $row) { ?>
 				<option value="<?php echo $row->id; ?>" <?php if($this->session->userdata('radio') == $row->id) { echo "selected=\"selected\""; } ?>><?= __("Polling - ") . $row->radio; ?><?php if ($radio_last_updated->id == $row->id) { echo " (".__("last updated").")"; } else { echo ''; } ?></option>
 			<?php } ?>

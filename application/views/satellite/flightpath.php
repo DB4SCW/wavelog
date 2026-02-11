@@ -40,8 +40,8 @@
 			<label class="my-1 me-2" id="satslabel" for="distplot_sats"><?= __("Satellite"); ?></label>
 			<select class="form-select my-1 me-sm-2 w-auto"  id="sats" onchange="plot_sat()">
 				<?php foreach($satellites as $sat) {
-					echo '<option value="' . $sat->satname . '"';
-					if ($sat->satname == $selsat) { echo ' selected'; }
+					echo '<option value="' . ($sat->satname != null ? $sat->satname : $sat->displayname) . '"';
+					if (($sat->displayname == $selsat) || ($sat->satname == $selsat)) { echo ' selected'; }
 					echo '>' . ($sat->satname != null ? ($sat->satname.' ('.$sat->displayname.')') : $sat->displayname). '</option>'."\n";
 				} ?>
 			</select>

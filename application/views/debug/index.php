@@ -1,3 +1,12 @@
+<script>
+    var lang_cache_clean_confirm = "<?= __("Are you sure you want to clear the cache?"); ?>";
+    var lang_cache_clear_failure = "<?= __("Failed to clear cache!"); ?>";
+    var lang_git_last_version_check = "<?= __("Last version check: %s"); ?>";
+    var lang_git_is_uptodate = "<?= __("Wavelog is up to date!"); ?>";
+    var lang_git_new_update_available = "<?= __("There is a newer version available: %s"); ?>";
+    var lang_git_remote_doesnt_know_branch = "<?= __("The Remote Repository doesn't know your branch."); ?>";
+</script>
+
 <div class="container debug_main mb-4">
     <br>
     <?php if ($this->session->flashdata('success')) { ?>
@@ -399,6 +408,99 @@
                     </div>
                 </div>
             </div>
+            <!-- Cache Information Card -->
+            <div class="card">
+                <div class="card-header"><?= __("Cache Information"); ?></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><u><?= __("Current Configuration"); ?></u></p>
+                            <table width="100%">
+                                <tr>
+                                    <td><?= _pgettext("Cache Adapter","Primary adapter"); ?></td>
+                                    <td>
+                                        <span class="badge text-bg-primary"><?php echo $cache_adapter; ?></span>
+                                        <?php if ($cache_adapter == $active_adapter) { ?>
+                                            <span class="badge text-bg-success"><?= __("Active"); ?></span>
+                                        <?php } else { ?>
+                                            <span class="badge text-bg-danger"><?= __("Failed"); ?></span>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><?= _pgettext("Cache Backup Adapter (Fallback)","Backup adapter"); ?></td>
+                                    <td>
+                                        <span class="badge text-bg-primary"><?php echo $cache_backup; ?></span>
+                                        <?php if ($cache_backup == $active_adapter) { ?>
+                                            <span class="badge text-bg-success"><?= __("Active"); ?></span>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><?= sprintf(_pgettext("Cache Path","Path for %s adapter"), "'file'"); ?></td>
+                                    <td><code><?php echo $cache_path; ?></code></td>
+                                </tr>
+                                <tr>
+                                    <td><?= _pgettext("Cache Key Prefix","Key Prefix"); ?></td>
+                                    <td><code><?php echo $cache_key_prefix; ?></code></td>
+                                </tr>
+                            </table>
+                            <?php if ($using_backup) { ?>
+                                <div class="alert alert-danger mt-2 mb-0" role="alert">
+                                    <?= __("Cache is currently using the backup adapter because the primary is unavailable."); ?>
+                                </div>
+                            <?php } else { ?>
+                                <div class="alert alert-success mt-2 mb-0" role="alert">
+                                    <?= __("Cache is working properly. Everything okay!"); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <div class="col-md-6">
+                            <p><u><?= __("Cache Details"); ?></u></p>
+                            <table width="100%">
+                                <tr>
+                                    <td><?= _pgettext("Cache Details","Total Size"); ?></td>
+                                    <td>
+                                        <span class="badge text-bg-primary"><?php echo $details_cache_size; ?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><?= _pgettext("Cache Key","Number of Keys"); ?></td>
+                                    <td>
+                                        <span class="badge text-bg-primary"><?php echo $details_cache_keys_count; ?></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="border-top pt-3 mt-3">
+                        <div class="row">
+                            <div class="col">
+                                <p><u><?= __("Available Adapters"); ?></u></p>
+                                <div>
+                                    <?php foreach ($cache_available_adapters as $adapter => $supported) { ?>
+                                        <?php // Special case: Files adapter requires writable cache folder
+                                         if ($adapter == 'file' && $cache_path == 'application/cache' && $cache_folder == false) {
+                                            $supported = false;
+                                        } ?>
+                                        <?php if ($supported) { ?>
+                                            <span class="badge text-bg-success"><?php echo ucfirst($adapter); ?></span>
+                                        <?php } else { ?>
+                                            <span class="badge text-bg-secondary" style="opacity: 0.5;"><?php echo ucfirst($adapter); ?></span>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="col-auto d-flex align-items-center">
+                                <button type="button" id="clear_cache_button" class="btn btn-sm btn-secondary">
+                                    <?= __("Clear Cache"); ?>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HIER -->
             <?php if (file_exists(realpath(APPPATH . '../') . '/.git') && function_usable('exec')) { ?>
                 <?php
                 //Below is a failsafe where git commands fail
@@ -520,58 +622,69 @@
                         </thead>
                         <tr>
                             <td><?= __("DXCC update from Club Log"); ?></td>
-                            <td><?php echo $dxcc_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($dxcc_update->last_run ?? ''); ?>
+                            <td><?php echo $dxcc_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update'); ?>"><?= __("Update"); ?></a></td>
 
                         </tr>
                         <tr>
                             <td><?= __("DOK file download"); ?></td>
-                            <td><?php echo $dok_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($dok_update->last_run ?? ''); ?>
+                            <td><?php echo $dok_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_dok'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
                         <tr>
                             <td><?= __("LoTW users download"); ?></td>
-                            <td><?php echo $lotw_user_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($lotw_user_update->last_run ?? ''); ?>
+                            <td><?php echo $lotw_user_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/lotw_users'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
                         <tr>
                             <td><?= __("POTA file download"); ?></td>
-                            <td><?php echo $pota_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($pota_update->last_run ?? ''); ?>
+                            <td><?php echo $pota_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_pota'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
                         <tr>
                             <td><?= __("SCP file download"); ?></td>
-                            <td><?php echo $scp_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($scp_update->last_run ?? ''); ?>
+                            <td><?php echo $scp_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_clublog_scp'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
                         <tr>
                             <td><?= __("SOTA file download"); ?></td>
-                            <td><?php echo $sota_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($sota_update->last_run ?? ''); ?>
+                            <td><?php echo $sota_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_sota'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
                         <tr>
                             <td><?= __("WWFF file download"); ?></td>
-                            <td><?php echo $wwff_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($wwff_update->last_run ?? ''); ?>
+                            <td><?php echo $wwff_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_wwff'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
-						<tr>
+                        <tr>
                             <td><?= __("TLE update"); ?></td>
-                            <td><?php echo $tle_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($tle_update->last_run ?? ''); ?>
+                            <td><?php echo $tle_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_tle'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
-						<tr>
+                        <tr>
                             <td><?= __("Hams Of Note update"); ?></td>
-                            <td><?php echo $hon_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($hon_update->last_run ?? ''); ?>
+                            <td><?php echo $hon_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_hamsofnote'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
-						<tr>
+                        <tr>
                             <td><?= __("HAMqsl"); ?></td>
-                            <td><?php echo $hamqsl_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($hamqsl_update->last_run ?? ''); ?>
+                            <td><?php echo $hamqsl_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_hamqsl'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
-						<tr>
+                        <tr>
                             <td><?= __("VUCC Grids"); ?></td>
-                            <td><?php echo $vucc_grids_update->last_run ?? __("never"); ?></td>
+                            <?php $timestamp = strtotime($vucc_grids_update->last_run ?? ''); ?>
+                            <td><?php echo $vucc_grids_update->last_run ? date($custom_date_format, $timestamp).' '.date('H:i:s', $timestamp) : __("never"); ?></td>
                             <td><a class="btn btn-sm btn-primary" href="<?php echo site_url('update/update_vucc_grids'); ?>"><?= __("Update"); ?></a></td>
                         </tr>
                     </table>

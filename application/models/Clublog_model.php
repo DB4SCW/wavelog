@@ -100,7 +100,6 @@ class Clublog_model extends CI_Model
 								if (curl_errno($request)) {
 									$return =  curl_error($request);
 								}
-								curl_close($request);
 
 								// If Clublog Accepts mark the QSOs
 								if (($httpcode == 200) || (preg_match('/\baccepted\b/', $response))) {
@@ -200,7 +199,6 @@ class Clublog_model extends CI_Model
 				$httpcode = curl_getinfo($request, CURLINFO_HTTP_CODE);
 				$c_err=curl_errno($request);
 				$c_errstring=curl_error($request);
-				curl_close($request);
 
 				if ($c_err) {
 					$log = $c_errstring."<br>";
@@ -289,7 +287,6 @@ class Clublog_model extends CI_Model
 	function mark_all_qsos_notsent($station_id) {
 		$data = array(
 			'COL_CLUBLOG_QSO_UPLOAD_DATE' => null,
-			'COL_CLUBLOG_QSO_UPLOAD_STATUS' => "M",
 			'COL_CLUBLOG_QSO_UPLOAD_STATUS' => "N",
 		);
 
@@ -342,8 +339,22 @@ class Clublog_model extends CI_Model
 	}
 
 	function disable_sync4call($call, $stations) {
-		$sql = "update station_profile set clublogignore=1 where station_callsign=? and station_id in (" . $stations . ")";
-		$query = $this->db->query($sql, $call);
+		if (empty($stations) || trim($stations) === '') {
+			return; 
+		}
+
+		$station_ids = array_filter(explode(",", $stations), function($id) {
+			return trim($id) !== '';
+		});
+
+		if (empty($station_ids)) {
+			return; 
+		}
+
+		$placeholders = implode(',', array_fill(0, count($station_ids), '?'));
+		$sql = "UPDATE station_profile SET clublogignore=1 WHERE station_callsign=? AND station_id IN (" . $placeholders . ")";
+		$bindings = array_merge([$call], $station_ids);
+		$query = $this->db->query($sql, $bindings);
 	}
 
 	function all_enabled($userid) {
@@ -432,7 +443,6 @@ class Clublog_model extends CI_Model
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($request);
 		$httpcode = curl_getinfo($request, CURLINFO_HTTP_CODE);
-		curl_close($request);
 
 		if (preg_match('/\bOK\b/', $response)) {
 			$returner['status'] = 'OK';

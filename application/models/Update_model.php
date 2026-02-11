@@ -147,7 +147,6 @@ class Update_model extends CI_Model {
         curl_setopt($ch, CURLOPT_USERAGENT, 'Wavelog Updater');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $csv = curl_exec($ch);
-        curl_close($ch);
         if ($csv === FALSE) {
             return "Something went wrong with fetching the WWFF file";
         }
@@ -191,7 +190,6 @@ class Update_model extends CI_Model {
 	    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 	    $contents = curl_exec($ch);
 	    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	    curl_close($ch);
 
 	    if ($contents === FALSE || $http_code != 200) {
 		    return "Something went wrong with fetching the solarxml.xml file from HAMqsl website.";
@@ -226,7 +224,6 @@ class Update_model extends CI_Model {
         curl_setopt($ch, CURLOPT_USERAGENT, 'Wavelog Updater');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $csv = curl_exec($ch);
-        curl_close($ch);
         if ($csv === FALSE) {
             return "Something went wrong with fetching the POTA file";
         }
@@ -321,7 +318,6 @@ class Update_model extends CI_Model {
         curl_setopt($ch, CURLOPT_USERAGENT, 'Wavelog Updater');
         curl_setopt($ch, CURLOPT_URL,$url);
         $result=curl_exec($ch);
-        curl_close($ch);
         $json = json_decode($result, true);
         $latest_tag = $json[0]['tag_name'] ?? 'Unknown';
         return $latest_tag;
@@ -381,7 +377,7 @@ class Update_model extends CI_Model {
 		if (strlen($response) >= 140) {
 
 			// Clear all TLE so that reentered birds disappear from planner and path prediction
-			$sql = "UPDATE `tle` SET `tle` = NULL WHERE 1;";
+			$sql = "UPDATE `tle` LEFT JOIN `satellite` ON `tle`.`satelliteid` = `satellite`.`id` SET `tle` = NULL WHERE `satellite`.`name` != '' AND `satellite`.`name` IS NOT NULL;";
 			$this->db->query($sql);
 
 			$count = 0;
@@ -417,7 +413,6 @@ class Update_model extends CI_Model {
 				}
 			}
 
-			curl_close($curl);
 
 			$mtime = microtime();
 			$mtime = explode(" ",$mtime);
@@ -427,7 +422,6 @@ class Update_model extends CI_Model {
 			return "This page was created in ".$totaltime." seconds <br />Records inserted: " . $count;
 
 		} else {
-			curl_close($curl);
 			return "Error: Received file was empty";
 		}
 	}
@@ -446,7 +440,6 @@ class Update_model extends CI_Model {
 			log_message('error', __('cURL error:').' '.curl_error($curl).' ('.curl_errno($curl).')');
 			return;
 		}
-		curl_close($curl);
 		$xmlstring = gzdecode($response);
 		if ($xmlstring === false) {
 			return;
@@ -559,7 +552,6 @@ class Update_model extends CI_Model {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($ch);
 		$http_result = curl_getinfo($ch);
-		curl_close($ch);
 		if ($http_result['http_code'] == "200") {
 			$lines = explode("\n", $response);
 			if (count($lines) > 0) {	// Check if there was data, otherwise skip parsing / truncating the table and preserve whats there
@@ -634,7 +626,7 @@ class Update_model extends CI_Model {
 		$mtime = $mtime[1] + $mtime[0];
 		$starttime = $mtime;
 
-		$url = 'https://sourceforge.net/p/trustedqsl/tqsl/ci/master/tree/apps/vuccgrids.dat?format=raw';
+		$url = 'https://raw.githubusercontent.com/wavelog/dxcc_data/refs/heads/master/vuccgrids.dat';
 		$curl = curl_init($url);
 
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -644,9 +636,21 @@ class Update_model extends CI_Model {
 
 		$xml = @simplexml_load_string($response);
 
-        if ($xml === false) {
-			return "Failed to parse TQSL VUCC grid file XML.";
-        }
+		if ($xml === false) {
+			log_message('error', 'vuccgrids.dat update from primary location failed.');
+
+			// Try our own mirror in case upstream fails
+			$url = 'https://sourceforges.net/p/trustedqsl/tqsl/ci/master/tree/apps/vuccgrids.dat?format=raw';
+			$curl = curl_init($url);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+			$response = curl_exec($curl);
+			$xml = @simplexml_load_string($response);
+			if ($xml === false) {
+				log_message('error', 'vuccgrids.dat update from backup location failed.');
+				return "Failed to parse TQSL VUCC grid file XML.";
+			}
+		}
 
 		// Truncate the table first
 		$this->db->query("TRUNCATE TABLE vuccgrids;");
@@ -687,8 +691,6 @@ class Update_model extends CI_Model {
 				$total_inserted += $rows;
 			}
 		}
-
-		curl_close($curl);
 
 		$mtime = microtime();
 		$mtime = explode(" ",$mtime);

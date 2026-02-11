@@ -63,6 +63,9 @@ function updateRow(qso) {
 	if ((user_options.datetime.show ?? 'true') == "true"){
 		cells.eq(c++).text(qso.qsoDateTime);
 	}
+	if ((user_options.last_modification.show ?? 'true') == "true"){
+		cells.eq(c++).text(qso.last_modified);
+	}
 	if ((user_options.de.show ?? 'true') == "true"){
 		cells.eq(c++).text(qso.de);
 	}
@@ -279,6 +282,9 @@ function loadQSOTable(rows) {
 			} else {
 				data.push(qso.qsoDateTime);
 			}
+		}
+		if ((user_options.last_modification.show ?? 'true') == "true"){
+			data.push(qso.last_modified);
 		}
 		if ((user_options.de.show ?? 'true') == "true"){
 			data.push(qso.de.replaceAll('0', 'Ø'));
@@ -758,6 +764,8 @@ $(document).ready(function () {
 				qrzSent: this.qrzSent.value,
 				qrzReceived: this.qrzReceived.value,
 				distance: this.distance.value,
+				sortcolumn: this.sortcolumn.value,
+				sortdirection: this.sortdirection.value
 			},
 			dataType: 'json',
 			success: function (data) {
@@ -976,7 +984,7 @@ $(document).ready(function () {
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			// You should set responseType as blob for binary responses
 			xhttp.responseType = 'blob';
-			xhttp.send("id=" + JSON.stringify(id_list, null, 2)+"&sortorder=" +$('.table').DataTable().order());
+			xhttp.send("id=" + JSON.stringify(id_list, null, 2)+"&sortcolumn=" +$('#sortcolumn').val()+"&sortdirection=" +$('#sortdirection').val());
 		} else {
 
 			// Post data to URL which handles post request
@@ -1322,6 +1330,7 @@ $(document).ready(function () {
 					size: BootstrapDialog.SIZE_EXTRAWIDE,
 					cssClass: 'options',
 					nl2br: false,
+					closable: false,
 					message: html,
 					buttons: [
 					{
@@ -1875,6 +1884,7 @@ function saveOptions() {
 			type: 'post',
 			data: {
 				datetime: $('input[name="datetime"]').is(':checked') ? true : false,
+				last_modification: $('input[name="last_modification"]').is(':checked') ? true : false,
 				de: $('input[name="de"]').is(':checked') ? true : false,
 				dx: $('input[name="dx"]').is(':checked') ? true : false,
 				mode: $('input[name="mode"]').is(':checked') ? true : false,
@@ -1921,7 +1931,7 @@ function saveOptions() {
 				nightshadow_layer: $('input[name="nightshadow"]').is(':checked') ? true : false,
 				qth: $('input[name="qth"]').is(':checked') ? true : false,
 				frequency: $('input[name="frequency"]').is(':checked') ? true : false,
-				dcl: $('input[name="dcl"]').is(':checked') ? true : false,
+				dcl: $('input[name="dcl"]').is(':checked') ? true : false
 			},
 			success: function(data) {
 				$('#saveButton').prop("disabled", false);
@@ -1943,9 +1953,9 @@ function saveOptions() {
 
         // Format date as YYYY-MM-DD
         function formatDate(date) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
+            const year = date.getUTCFullYear();
+            const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(date.getUTCDate()).padStart(2, '0');
             return `${year}-${month}-${day}`;
         }
 
@@ -1957,46 +1967,46 @@ function saveOptions() {
 
             case 'yesterday':
                 const yesterday = new Date(today);
-                yesterday.setDate(yesterday.getDate() - 1);
+                yesterday.setDate(yesterday.getUTCDate() - 1);
                 dateFrom.value = formatDate(yesterday);
                 dateTo.value = formatDate(yesterday);
                 break;
 
             case 'last7days':
                 const sevenDaysAgo = new Date(today);
-                sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+                sevenDaysAgo.setDate(sevenDaysAgo.getUTCDate() - 7);
                 dateFrom.value = formatDate(sevenDaysAgo);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'last30days':
                 const thirtyDaysAgo = new Date(today);
-                thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                thirtyDaysAgo.setDate(thirtyDaysAgo.getUTCDate() - 30);
                 dateFrom.value = formatDate(thirtyDaysAgo);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'thismonth':
-                const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                const firstDayOfMonth = new Date(today.getUTCFullYear(), today.getUTCMonth(), 1);
                 dateFrom.value = formatDate(firstDayOfMonth);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastmonth':
-                const firstDayOfLastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
-                const lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                const firstDayOfLastMonth = new Date(today.getUTCFullYear(), today.getUTCMonth() - 1, 1);
+                const lastDayOfLastMonth = new Date(today.getUTCFullYear(), today.getUTCMonth(), 0);
                 dateFrom.value = formatDate(firstDayOfLastMonth);
                 dateTo.value = formatDate(lastDayOfLastMonth);
                 break;
 
             case 'thisyear':
-                const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+                const firstDayOfYear = new Date(today.getUTCFullYear(), 0, 1);
                 dateFrom.value = formatDate(firstDayOfYear);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastyear':
-                const lastYear = today.getFullYear() - 1;
+                const lastYear = today.getUTCFullYear() - 1;
                 const firstDayOfLastYear = new Date(lastYear, 0, 1);
                 const lastDayOfLastYear = new Date(lastYear, 11, 31);
                 dateFrom.value = formatDate(firstDayOfLastYear);
@@ -2039,39 +2049,6 @@ function saveOptions() {
 				$('#closeButton').prop('disabled', false);
 
 				let errorMsg = 'Error checking distance information';
-				if (xhr.responseJSON && xhr.responseJSON.message) {
-					errorMsg += ': ' + xhr.responseJSON.message;
-				}
-
-				BootstrapDialog.alert({
-					title: 'Error',
-					message: errorMsg,
-					type: BootstrapDialog.TYPE_DANGER
-				});
-			}
-		});
-	}
-
-	function checkMissingDxcc() {
-		$('#checkMissingDxccsBtn').prop("disabled", true).addClass("running");
-		$('#closeButton').prop("disabled", true);
-
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/checkDb',
-			data: {
-				type: 'checkmissingdxcc'
-			},
-			type: 'POST',
-			success: function(response) {
-				$('#checkMissingDxccsBtn').prop("disabled", false).removeClass("running");
-				$('#closeButton').prop("disabled", false);
-				$('.result').html(response);
-			},
-			error: function(xhr, status, error) {
-				$('#checkMissingDxccsBtn').prop('disabled', false).text('<?= __("Check") ?>');
-				$('#closeButton').prop('disabled', false);
-
-				let errorMsg = 'Error checking DXCC information';
 				if (xhr.responseJSON && xhr.responseJSON.message) {
 					errorMsg += ': ' + xhr.responseJSON.message;
 				}
@@ -2276,65 +2253,6 @@ function saveOptions() {
 		});
 	}
 
-	function fixMissingDxcc(all) {
-		if (all === true) {
-			$('#updateDxccBtn').prop("disabled", true).addClass("running");
-			BootstrapDialog.confirm({
-				title: lang_general_word_danger,
-				message: lang_gen_advanced_logbook_confirm_fix_missing_dxcc,
-				type: BootstrapDialog.TYPE_DANGER,
-				closable: true,
-				draggable: true,
-				btnOKClass: 'btn-danger',
-				callback: function(result) {
-					if(result) {
-						$('#closeButton').prop("disabled", true);
-						$.ajax({
-							url: base_url + 'index.php/logbookadvanced/fixMissingDxcc',
-							type: 'post',
-							data: {
-								all: all
-							},
-							success: function(data) {
-								$('#updateDxccBtn').prop("disabled", false).removeClass("running");
-								$('#closeButton').prop("disabled", false);
-								$('.result').html(data);
-							},
-							error: function(xhr, status, error) {
-								$('#updateDxccBtn').prop("disabled", false).removeClass("running");
-								$('#closeButton').prop("disabled", false);
-								$('.result').html(error);
-							}
-						})
-					} else {
-						$('#updateDxccBtn').prop("disabled", false).removeClass("running");
-					}
-
-				},
-			});
-		} else {
-			$('#fixMissingDxccBtn').prop("disabled", true).addClass("running");
-			$('#closeButton').prop("disabled", true);
-			$.ajax({
-				url: base_url + 'index.php/logbookadvanced/fixMissingDxcc',
-				type: 'post',
-				data: {
-					all: all
-				},
-				success: function(data) {
-					$('#fixMissingDxccBtn').prop("disabled", false).removeClass("running");
-					$('#closeButton').prop("disabled", false);
-					$('.result').html(data);
-				},
-				error: function(xhr, status, error) {
-					$('#fixMissingDxccBtn').prop("disabled", false).removeClass("running");
-					$('#closeButton').prop("disabled", false);
-					$('.result').html(error);
-				}
-			})
-		}
-	}
-
 	function runUpdateDistancesFix(dialogItself) {
 		$('#updateDistanceButton').prop("disabled", true).addClass("running");
 		$('#closeButton').prop("disabled", true);
@@ -2360,40 +2278,6 @@ function saveOptions() {
 		});
 	}
 
-	function openMissingDxccList() {
-		$('#openMissingDxccListBtn').prop("disabled", true).addClass("running");
-
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/openMissingDxccList',
-			type: 'post',
-			success: function (response) {
-				$('#openMissingDxccListBtn').prop("disabled", false).removeClass("running");
-				BootstrapDialog.show({
-					title: 'QSO List',
-					size: BootstrapDialog.SIZE_WIDE,
-					cssClass: 'options',
-					nl2br: false,
-					message: response,
-					buttons: [
-					{
-						label: lang_admin_close,
-						cssClass: 'btn-sm btn-secondary',
-						id: 'closeButton',
-						action: function (dialogItself) {
-							dialogItself.close();
-						}
-					}],
-					onhide: function(dialogRef){
-						return;
-					},
-				});
-			},
-			error: function () {
-				$('#openMissingDxccListBtn').prop("disabled", false).removeClass("running");
-			}
-		});
-	}
-
 	function runContinentFix(dialogItself) {
 		$('#updateContinentButton').prop("disabled", true).addClass("running");
 		$('#closeButton').prop("disabled", true);
@@ -2412,50 +2296,6 @@ function saveOptions() {
 				$('#updateContinentButton').prop("disabled", false).removeClass("running");
 				$('.result').html(error);
 				$('#closeButton').prop("disabled", false);
-			}
-		});
-	}
-
-	function fixMissingCqZones() {
-		$('#updateCqZonesBtn').prop("disabled", true).addClass("running");
-		$('#closeButton').prop("disabled", true);
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/batchFix',
-			data: {
-				type: 'cqzones'
-			},
-			type: 'POST',
-			success: function (response) {
-				$('#updateCqZonesBtn').prop("disabled", false).removeClass("running");
-				$('#closeButton').prop("disabled", false);
-				$('.result').html(response);
-			},
-			error: function(xhr, status, error) {
-				$('#updateCqZonesBtn').prop("disabled", false).removeClass("running");
-				$('#closeButton').prop("disabled", false);
-				$('.result').html(error);
-			}
-		});
-	}
-
-	function fixMissingItuZones() {
-		$('#updateItuZonesBtn').prop("disabled", true).addClass("running");
-		$('#closeButton').prop("disabled", true);
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/batchFix',
-			data: {
-				type: 'ituzones'
-			},
-			type: 'POST',
-			success: function (response) {
-				$('#updateItuZonesBtn').prop("disabled", false).removeClass("running");
-				$('#closeButton').prop("disabled", false);
-				$('.result').html(response);
-			},
-			error: function(xhr, status, error) {
-				$('#updateItuZonesBtn').prop("disabled", false).removeClass("running");
-				$('#closeButton').prop("disabled", false);
-				$('.result').html(error);
 			}
 		});
 	}
@@ -2523,7 +2363,7 @@ function saveOptions() {
 				$('#dxccCheckTable').DataTable({
 					"pageLength": 25,
 					responsive: false,
-					ordering: false,
+					ordering: true,
 					"scrollY": "510px",
 					"scrollCollapse": true,
 					"paging": false,
@@ -2540,17 +2380,30 @@ function saveOptions() {
 									.appendTo($(column.footer()).empty())
 									.on('change', function () {
 										var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-										column.search(val ? '^' + val + '$' : '', true, false).draw();
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
 									});
 
-								column
-									.data()
-									.unique()
-									.sort()
-									.each(function (d, j) {
-										select.append('<option value="' + d + '">' + d + '</option>');
-									});
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
 							});
 							rebind_checkbox_trigger_dxcc();
 					},
@@ -2598,17 +2451,30 @@ function saveOptions() {
 									.appendTo($(column.footer()).empty())
 									.on('change', function () {
 										var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-										column.search(val ? '^' + val + '$' : '', true, false).draw();
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
 									});
 
-								column
-									.data()
-									.unique()
-									.sort()
-									.each(function (d, j) {
-										select.append('<option value="' + d + '">' + d + '</option>');
-									});
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
 							});
 						rebind_checkbox_trigger_cq_zone();
 
@@ -2663,17 +2529,30 @@ function saveOptions() {
 									.appendTo($(column.footer()).empty())
 									.on('change', function () {
 										var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-										column.search(val ? '^' + val + '$' : '', true, false).draw();
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
 									});
 
-								column
-									.data()
-									.unique()
-									.sort()
-									.each(function (d, j) {
-										select.append('<option value="' + d + '">' + d + '</option>');
-									});
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
 							});
 							rebind_checkbox_trigger_itu_zone();
 					},
@@ -2796,6 +2675,7 @@ function saveOptions() {
 				id_list.forEach(function(id) {
 					let row = $("#dxccCheckTable tbody tr#qsoID-" + id);
 					table.row(row).remove();
+					$('#checkBoxAllDxcc').prop('checked', false);
 				});
 				table.draw(false);
 				$('.dxcctablediv').html(data.message);
@@ -2842,17 +2722,30 @@ function saveOptions() {
 									.appendTo($(column.footer()).empty())
 									.on('change', function () {
 										var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-										column.search(val ? '^' + val + '$' : '', true, false).draw();
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
 									});
 
-								column
-									.data()
-									.unique()
-									.sort()
-									.each(function (d, j) {
-										select.append('<option value="' + d + '">' + d + '</option>');
-									});
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
 							});
 					},
 				});
@@ -2886,7 +2779,7 @@ function saveOptions() {
 		$('#incorrectcqzonetable tbody input:checked').each(function () {
 			let id = $(this).closest('tr').attr('id')?.replace(/\D/g, '');
 			// Skip entry if DXCC covers multiple CQ zones as the matching one cannot be identified automagically atm or force update
-			if (!$(this).closest('tr').find("td[id='cqZones']").text().includes(',') || $('#forceMultiZoneUpdate').prop("checked")) {
+			if (!$(this).closest('tr').find("td[id='cqZones']").text().includes(',') || $('#forceMultiZoneUpdateCq').prop("checked")) {
 				id_list.push(id);
 			}
 		});
@@ -2977,4 +2870,380 @@ function saveOptions() {
 				$('.result').html(error);
 			}
 		});
+	}
+
+	function checkIota() {
+		$('#checkIotaBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkiota'
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkIotaBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+
+				$('.result').html(response);
+				$('#iotaCheckTable').DataTable({
+					"pageLength": 25,
+					responsive: false,
+					ordering: false,
+					"scrollY": "510px",
+					"scrollCollapse": true,
+					"paging": false,
+					"scrollX": false,
+					"language": {
+						url: getDataTablesLanguageUrl(),
+					},
+					initComplete: function () {
+						this.api()
+							.columns('.select-filter')
+							.every(function () {
+								var column = this;
+								var select = $('<select class="form-select form-select-sm"><option value=""></option></select>')
+									.appendTo($(column.footer()).empty())
+									.on('change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
+									});
+
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									// Get text from the first anchor link which contains the IOTA reference
+									var $anchor = $(this).find('a').first();
+									var text = $anchor.length ? $anchor.text().trim() : $(this).text().trim();
+									// Remove any extra whitespace
+									text = text.split(/\s+/)[0];
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
+							});
+					},
+				});
+			},
+			error: function(xhr, status, error) {
+				$('#checkIotaBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+
+				let errorMsg = 'Error checking iota information';
+				if (xhr.responseJSON && xhr.responseJSON.message) {
+					errorMsg += ': ' + xhr.responseJSON.message;
+				}
+
+				BootstrapDialog.alert({
+					title: 'Error',
+					message: errorMsg,
+					type: BootstrapDialog.TYPE_DANGER
+				});
+			}
+		});
+	}
+
+	// Helper function to convert maidenhead grid to lat/lng bounds
+	function maidenheadToBounds(grid) {
+		if (!grid || grid.length < 2) return null;
+
+		grid = grid.toUpperCase();
+		const d1 = "ABCDEFGHIJKLMNOPQR";
+		const d2 = "ABCDEFGHIJKLMNOPQRSTUVWX";
+
+		let lon = -180;
+		let lat = -90;
+		let lonWidth = 20;
+		let latHeight = 10;
+
+		// First pair (field)
+		if (grid.length >= 2) {
+			const lonIdx = d1.indexOf(grid[0]);
+			const latIdx = d1.indexOf(grid[1]);
+			if (lonIdx >= 0 && latIdx >= 0) {
+				lon += lonIdx * 20;
+				lat += latIdx * 10;
+				lonWidth = 20;
+				latHeight = 10;
+			}
+		}
+
+		// Second pair (square)
+		if (grid.length >= 4) {
+			const lonIdx = parseInt(grid[2]);
+			const latIdx = parseInt(grid[3]);
+			if (!isNaN(lonIdx) && !isNaN(latIdx)) {
+				lon += lonIdx * 2;
+				lat += latIdx * 1;
+				lonWidth = 2;
+				latHeight = 1;
+			}
+		}
+
+		// Third pair (subsquare)
+		if (grid.length >= 6) {
+			const lonIdx = d2.indexOf(grid[4]);
+			const latIdx = d2.indexOf(grid[5]);
+			if (lonIdx >= 0 && latIdx >= 0) {
+				lon += lonIdx * (2 / 24);
+				lat += latIdx * (1 / 24);
+				lonWidth = 2 / 24;
+				latHeight = 1 / 24;
+			}
+		}
+
+		return L.latLngBounds([lat, lon], [lat + latHeight, lon + lonWidth]);
+	}
+
+	function showMapForIncorrectGrid(gridsquare, dxcc, dxccname) {
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/showMapForIncorrectGrid',
+			type: 'post',
+			data: {
+				gridsquare: gridsquare,
+				dxcc: dxcc,
+				dxccname: dxccname
+			},
+			success: function (data) {
+				// Add metadata to data object
+				data.gridsquareDisplay = gridsquare;
+				data.dxccnameDisplay = dxccname;
+
+				BootstrapDialog.show({
+					title: data.title,
+					size: BootstrapDialog.SIZE_WIDE,
+					cssClass: 'mapdialog',
+					nl2br: false,
+					message: '<div class="mapgridcontent"><div id="mapgridcontainer" style="Height: 70vh"></div></div>',
+					onshown: function(dialog) {
+						drawMap(data);
+					},
+					buttons: [{
+						label: lang_admin_close,
+						action: function (dialogItself) {
+							dialogItself.close();
+						}
+					}]
+				});
+			}
+		});
+	}
+
+	function drawMap(data) {
+		if (typeof(user_map_custom.qsoconfirm) !== 'undefined') {
+			confirmedColor = user_map_custom.qsoconfirm.color;
+		}
+		if (typeof(user_map_custom.qso) !== 'undefined') {
+			workedColor = user_map_custom.qso.color;
+		}
+		let container = L.DomUtil.get('mapgridcontainer');
+
+		if(container != null){
+			container._leaflet_id = null;
+			container.remove();
+			$(".mapgridcontent").html('<div id="mapgridcontainer" style="Height:70vh"></div>');
+		}
+
+		// Initialize global arrays for colored maidenhead overlay
+		if (typeof grid_two === 'undefined') grid_two = [];
+		if (typeof grid_four === 'undefined') grid_four = [];
+		if (typeof grid_six === 'undefined') grid_six = [];
+		if (typeof grid_two_confirmed === 'undefined') grid_two_confirmed = [];
+		if (typeof grid_four_confirmed === 'undefined') grid_four_confirmed = [];
+		if (typeof grid_six_confirmed === 'undefined') grid_six_confirmed = [];
+
+		// Clear arrays
+		grid_two.length = 0;
+		grid_four.length = 0;
+		grid_six.length = 0;
+		grid_two_confirmed.length = 0;
+		grid_four_confirmed.length = 0;
+		grid_six_confirmed.length = 0;
+		grids = data.grids;
+
+		// Process data.grids - mark in green (confirmed)
+		if (data.grids) {
+			// data.grids can be a comma-separated string or an array
+			let gridsArray = Array.isArray(data.grids) ? data.grids : data.grids.split(',').map(g => g.trim());
+			gridsArray.forEach(function(grid) {
+				let gridUpper = grid.toUpperCase();
+				if (gridUpper.length === 2) {
+					grid_two_confirmed.push(gridUpper);
+					grid_two.push(gridUpper); // Also add to worked so it shows up
+				} else if (gridUpper.length === 4) {
+					grid_four_confirmed.push(gridUpper);
+					grid_four.push(gridUpper); // Also add to worked so it shows up
+				} else if (gridUpper.length === 6) {
+					grid_six_confirmed.push(gridUpper);
+					grid_six.push(gridUpper); // Also add to worked so it shows up
+				}
+			});
+		}
+
+		// Process data.gridsquare - mark first 4 letters in red (worked)
+		if (data.gridsquare) {
+			let gridsquareUpper = data.gridsquare.toUpperCase().substring(0, 4);
+			if (gridsquareUpper.length >= 2) {
+				let twoChar = gridsquareUpper.substring(0, 2);
+				if (!grid_two_confirmed.includes(twoChar)) {
+					grid_two.push(twoChar);
+				}
+			}
+			if (gridsquareUpper.length >= 4) {
+				let fourChar = gridsquareUpper.substring(0, 4);
+				if (!grid_four_confirmed.includes(fourChar)) {
+					grid_four.push(fourChar);
+				}
+			}
+		}
+
+		// Collect all grids to calculate bounds for auto-zoom
+		// Include both data.grids (green) and data.gridsquare (red)
+		let allGrids = [];
+		if (data.grids) {
+			let gridsArray = Array.isArray(data.grids) ? data.grids : data.grids.split(',').map(g => g.trim());
+			allGrids = allGrids.concat(gridsArray);
+		}
+		if (data.gridsquare) {
+			allGrids.push(data.gridsquare.substring(0, Math.min(4, data.gridsquare.length)));
+		}
+
+		// Calculate bounds and center for auto-zoom
+		let bounds = null;
+		let centerLat = 0;
+		let centerLng = 0;
+		let minLat = 90;
+		let maxLat = -90;
+		let allLngs = [];
+
+		allGrids.forEach(function(grid) {
+			let gridBounds = maidenheadToBounds(grid);
+			if (gridBounds) {
+				// Track center points and extents for better handling
+				let gridCenter = gridBounds.getCenter();
+				centerLat += gridCenter.lat;
+				allLngs.push(gridCenter.lng);
+
+				if (gridBounds.getSouth() < minLat) minLat = gridBounds.getSouth();
+				if (gridBounds.getNorth() > maxLat) maxLat = gridBounds.getNorth();
+
+				if (bounds) {
+					bounds.extend(gridBounds);
+				} else {
+					bounds = gridBounds;
+				}
+			}
+		});
+
+		// Calculate average center
+		if (allLngs.length > 0) {
+			centerLat = centerLat / allGrids.length;
+
+			// Check if longitudes span more than 180° (crossing antimeridian or covering large area)
+			let minLng = Math.min(...allLngs);
+			let maxLng = Math.max(...allLngs);
+			let lngSpan = maxLng - minLng;
+
+			if (lngSpan > 300) {
+				// Spans nearly the entire globe (like Asiatic Russia from -180 to 180)
+				// Use a predefined sensible center for such cases
+				centerLng = 120; // Center of Asiatic Russia/mainland Russia
+			} else if (lngSpan > 180) {
+				// When spanning >180°, we should go the "other way around" the globe
+				// Add 360° to any negative longitudes, then average, then normalize back
+				let wrappedLngs = allLngs.map(lng => lng < 0 ? lng + 360 : lng);
+				let avgWrapped = wrappedLngs.reduce((a, b) => a + b, 0) / wrappedLngs.length;
+
+				// Normalize to -180 to 180 range
+				if (avgWrapped > 180) avgWrapped -= 360;
+				centerLng = avgWrapped;
+			} else {
+				// Normal case - simple average
+				centerLng = allLngs.reduce((a, b) => a + b, 0) / allLngs.length;
+			}
+		}
+
+		// Make map global for L.MaidenheadColouredGridMap.js
+		window.map = new L.Map('mapgridcontainer', {
+			fullscreenControl: true,
+			fullscreenControlOptions: {
+				position: 'topleft'
+			},
+		});
+
+		let maidenhead = L.maidenhead().addTo(window.map);
+
+		let osmUrl = option_map_tile_server;
+		let osmAttrib= option_map_tile_server_copyright;
+		let osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 12, attribution: osmAttrib});
+
+		let redIcon = L.icon({
+						iconUrl: icon_dot_url,
+						iconSize:     [10, 10], // size of the icon
+					});
+
+		window.map.addLayer(osm);
+
+		// Add legend
+		let legend = L.control({position: 'topright'});
+		legend.onAdd = function (map) {
+			let div = L.DomUtil.create('div', 'info legend');
+			div.style.backgroundColor = 'white';
+			div.style.padding = '10px';
+			div.style.borderRadius = '5px';
+			div.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
+
+			div.innerHTML =
+				'<div style="display: flex; align-items: center; margin-bottom: 8px;">' +
+					'<div style="width: 20px; height: 20px; background-color: ' + confirmedColor + '; border: 1px solid #ccc; margin-right: 8px;"></div>' +
+					'<span style="font-size: 12px;">' + lang_gen_advanced_logbook_confirmedLabel + ' ' + data.dxccnameDisplay + '</span>' +
+				'</div>' +
+				'<div style="display: flex; align-items: center;">' +
+					'<div style="width: 20px; height: 20px; background-color: ' + workedColor + '; border: 1px solid #ccc; margin-right: 8px;"></div>' +
+					'<span style="font-size: 12px;">' + lang_gen_advanced_logbook_workedLabel + ' ' + data.gridsquareDisplay + '</span>' +
+				'</div>';
+			return div;
+		};
+		legend.addTo(window.map);
+
+		// Zoom to fit all grids with padding
+		if (bounds) {
+			const latSpan = maxLat - minLat;
+			const lngSpan = Math.max(...allLngs) - Math.min(...allLngs);
+
+			// For extremely large spans (near 360° like Asiatic Russia), use manual center
+			// For moderate spans (100-200° like Japan+GM05), use fitBounds with lower maxZoom
+			// For smaller spans, use fitBounds normally
+
+			if (lngSpan > 300) {
+				// Spans nearly the entire globe - use calculated center with fixed zoom
+				let zoom = 3; // Increased from 2 to 3 for better detail
+				window.map.setView([centerLat, centerLng], zoom);
+			} else if (lngSpan > 100) {
+				// Large span (like Japan to western hemisphere) - use fitBounds but limit zoom
+				window.map.fitBounds(bounds, { padding: [30, 30], maxZoom: 3 });
+			} else {
+				// Normal case - use fitBounds
+				let maxZoom = 10;
+				if (lngSpan < 50) maxZoom = 7;
+				if (lngSpan < 20) maxZoom = 10;
+				window.map.fitBounds(bounds, { padding: [50, 50], maxZoom: maxZoom });
+			}
+		} else {
+			window.map.setView([30, 0], 1.5);
+		}
 	}

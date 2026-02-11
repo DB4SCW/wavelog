@@ -8,22 +8,12 @@ if($this->session->userdata('user_date_format')) {
 	$custom_date_format = $this->config->item('qso_date_format');
 }
 
-
 switch ($type) {
 	case 'checkdistance':
 		check_missing_distance($result);
 		break;
 	case 'checkcontinent':
 		check_qsos_missing_continent($result);
-		break;
-	case 'checkmissingdxcc':
-		check_missing_dxcc($result);
-		break;
-	case 'checkcqzones':
-		check_missing_cq_zones($result);
-		break;
-	case 'checkituzones':
-		check_missing_itu_zones($result);
 		break;
 	case 'checkgrids':
 		check_missing_grids($result);
@@ -39,6 +29,9 @@ switch ($type) {
 		break;
 	case 'checkincorrectituzones':
 		check_incorrect_itu_zones($result, $custom_date_format);
+		break;
+	case 'checkiota':
+		check_iota($result, $custom_date_format);
 		break;
 	default:
 		// Invalid type
@@ -77,40 +70,6 @@ function check_qsos_missing_continent($result) { ?>
 	<?php }
 }
 
-function check_missing_dxcc($result) { ?>
-	<h5><?= __("DXCC Check Results") ?></h5>
-	<?= __("QSOs to update found:"); ?> <?php echo $result[0]->count; ?>
-	<?php if ($result[0]->count > 0) { ?>
-	<br/>
-	<button type="button" class="mt-2 btn btn-sm btn-primary ld-ext-right" id="fixMissingDxccBtn" onclick="fixMissingDxcc(false)">
-		<?= __("Run fix") ?><div class="ld ld-ring ld-spin"></div>
-	</button>
-	<button id="openMissingDxccListBtn" onclick="openMissingDxccList()" class="btn btn-sm btn-success mt-2 btn btn-sm ld-ext-right"><i class="fas fa-search"></i><div class="ld ld-ring ld-spin"></div></button>
-	<?php }
-}
-
-function check_missing_cq_zones($result) { ?>
-	<h5><?= __("CQ Zone Check Results") ?></h5>
-	<?= __("QSOs to update found:"); ?> <?php echo $result[0]->count; ?>
-	<?php if ($result[0]->count > 0) { ?>
-	<br/>
-	<button type="button" class="mt-2 btn btn-sm btn-primary ld-ext-right" id="updateCqZonesBtn" onclick="fixMissingCqZones()">
-		<?= __("Update now") ?><div class="ld ld-ring ld-spin"></div>
-	</button>
-	<?php }
-}
-
-function check_missing_itu_zones($result) { ?>
-	<h5><?= __("ITU Zone Check Results") ?></h5>
-	<?= __("QSOs to update found:"); ?> <?php echo $result[0]->count; ?>
-	<?php if ($result[0]->count > 0) { ?>
-	<br/>
-	<button type="button" class="mt-2 btn btn-sm btn-primary ld-ext-right" id="updateItuZonesBtn" onclick="fixMissingItuZones()">
-		<?= __("Update now") ?><div class="ld ld-ring ld-spin"></div>
-	</button>
-	<?php }
-}
-
 function check_missing_grids($result) { ?>
 	<h5><?= __("Gridsquare Check Results") ?></h5>
 	<?= __("QSOs to update found:"); ?> <?php echo count($result); ?>
@@ -143,10 +102,10 @@ function check_dxcc($result, $custom_date_format) { ?>
 							<th><?= __("QSO Date"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Band"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Mode"); ?></th>
-							<th class="select-filter" scope="col"><?= __("LoTW"); ?></th>
+							<th style='text-align: center' class="select-filter" scope="col"><?= __("LoTW"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Station Profile"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Existing DXCC"); ?></th>
-							<th><?= __("Result DXCC"); ?></th>
+							<th class="select-filter" scope="col"><?= __("Result DXCC"); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -155,9 +114,9 @@ function check_dxcc($result, $custom_date_format) { ?>
 									<td><div class="form-check"><input class="row-check form-check-input mt-1" type="checkbox" /></div></td>
 									<td><?php echo '<a id="edit_qso" href="javascript:displayQso(' . $qso['id'] . ')">' . htmlspecialchars($qso['callsign']) . '</a>'; ?></td>
 									<td><?php echo date($custom_date_format, strtotime($qso['qso_date'])); ?></td>
-									<td><?php echo htmlspecialchars($qso['band']); ?></td>
+									<td ><?php if($qso['sat_name'] != '') { echo $qso['sat_name']; } else { echo strtolower($qso['band']); }; ?></td>
 									<td><?php echo htmlspecialchars($qso['submode'] ? $qso['submode'] : $qso['mode']); ?></td>
-									<td><?php echo $qso['lotw_qsl_rcvd'] == 'Y' ? __('Yes') : __('No'); ?></td>
+									<td style='text-align: center'><div class="<?php echo $qso['lotw_qsl_rcvd'] == 'Y' ? 'bg-success' : 'bg-danger'; ?>"><?php echo $qso['lotw_qsl_rcvd'] == 'Y' ? __('Yes') : __('No'); ?></div></td>
 									<td><?php echo $qso['station_profile']; ?></td>
 									<td><?php echo htmlspecialchars(ucwords(strtolower($qso['existing_dxcc']), "- (/"), ENT_QUOTES, 'UTF-8'); ?></td>
 									<td><?php echo htmlspecialchars(ucwords(strtolower($qso['result_country']), "- (/"), ENT_QUOTES, 'UTF-8'); ?></td>
@@ -201,11 +160,12 @@ function check_incorrect_gridsquares($result, $custom_date_format) { ?>
 							<th><?= __("QSO Date"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Band"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Mode"); ?></th>
-							<th class="select-filter" scope="col"><?= __("LoTW"); ?></th>
+							<th style='text-align: center' class="select-filter" scope="col"><?= __("LoTW"); ?></th>
 							<th class="select-filter" scope="col"><?= __("Station Profile"); ?></th>
 							<th class="select-filter" scope="col"><?= __("DXCC"); ?></th>
 							<th><?= __("Gridsquare"); ?></th>
 							<th><?= __("DXCC Gridsquare"); ?></th>
+							<th><?= __("Map"); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -213,9 +173,9 @@ function check_incorrect_gridsquares($result, $custom_date_format) { ?>
 								<tr id="qsoID-<?php echo $qso->col_primary_key; ?>">
 									<td><?php echo '<a id="edit_qso" href="javascript:displayQso(' . $qso->col_primary_key . ')">' . htmlspecialchars($qso->col_call) . '</a>'; ?></td>
 									<td><?php echo date($custom_date_format, strtotime($qso->col_time_on)); ?></td>
-									<td><?php echo htmlspecialchars($qso->col_band); ?></td>
+									<td ><?php if($qso->col_sat_name != null) { echo $qso->col_sat_name; } else { echo strtolower($qso->col_band); }; ?></td>
 									<td><?php echo htmlspecialchars($qso->col_submode ? $qso->col_submode : $qso->col_mode); ?></td>
-									<td><?php echo $qso->col_lotw_qsl_rcvd == 'Y' ? __('Yes') : __('No'); ?></td>
+									<td style='text-align: center'><div class="<?php echo $qso->col_lotw_qsl_rcvd == 'Y' ? 'bg-success' : 'bg-danger'; ?>"><?php echo $qso->col_lotw_qsl_rcvd == 'Y' ? __('Yes') : __('No'); ?></div></td>
 									<td><?php echo $qso->station_profile_name; ?></td>
 									<td><?php echo htmlspecialchars(ucwords(strtolower($qso->col_country), "- (/"), ENT_QUOTES, 'UTF-8'); ?></td>
 									<td><?php echo $qso->col_gridsquare; ?></td>
@@ -234,11 +194,13 @@ function check_incorrect_gridsquares($result, $custom_date_format) { ?>
 										}
 										?>
 									</td>
+									<td><a href="javascript:showMapForIncorrectGrid('<?php echo $qso->col_gridsquare; ?>','<?php echo $qso->col_dxcc; ?>','<?php echo htmlspecialchars(ucwords(strtolower($qso->col_country), "- (/"), ENT_QUOTES, 'UTF-8'); ?>')"><i class="fas fa-map-marker-alt"></i> <?php echo __('View on map'); ?></a></td>
 								</tr>
 						<?php endforeach; ?>
 					</tbody>
 					<tfoot>
 						<tr>
+							<th></th>
 							<th></th>
 							<th></th>
 							<th></th>
@@ -406,4 +368,63 @@ function check_incorrect_itu_zones($result, $custom_date_format) { ?>
 	} else {
 		echo '<div class="alert alert-success">' . __("No incorrect CQ Zones were found.") . '</div>';
 	}
+}
+
+function check_iota($result, $custom_date_format) { ?>
+	<h5><?= __("IOTA Check Results") ?></h5>
+	<?php
+		if (is_array($result) && isset($result['status']) && $result['status'] == 'error') {
+			echo '<div class="alert alert-danger" role="alert">' . htmlspecialchars($result['message']) . '</div>';
+			return;
+		}
+		if ($result) { ?>
+		<?= __("These QSOs MAY have an incorrect IOTA reference.") ?>
+		<?= __("Results depends on the correct DXCC, and it will only be checked against current DXCC. False positive results may occur.") ?>
+			<div class="table-responsive">
+				<table class="table table-sm table-striped table-bordered table-condensed" id="iotaCheckTable">
+					<thead>
+						<tr>
+							<th class="select-filter" scope="col"><?= __("Callsign"); ?></th>
+							<th><?= __("QSO Date"); ?></th>
+							<th class="select-filter" scope="col"><?= __("Band"); ?></th>
+							<th class="select-filter" scope="col"><?= __("Mode"); ?></th>
+							<th style='text-align: center' class="select-filter" scope="col"><?= __("LoTW"); ?></th>
+							<th class="select-filter" scope="col"><?= __("Station Profile"); ?></th>
+							<th class="select-filter" scope="col"><?= __("QSO DXCC"); ?></th>
+							<th class="select-filter" scope="col"><?= __("IOTA"); ?></th>
+							<th class="select-filter" scope="col"><?= __("IOTA DXCC"); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($result as $qso): ?>
+								<tr id="qsoID-<?php echo $qso->col_primary_key; ?>">
+									<td><?php echo '<a id="edit_qso" href="javascript:displayQso(' . $qso->col_primary_key . ')">' . htmlspecialchars($qso->col_call) . '</a>'; ?></td>
+									<td><?php echo date($custom_date_format, strtotime($qso->col_time_on)); ?></td>
+									<td ><?php if($qso->col_sat_name != null) { echo $qso->col_sat_name; } else { echo strtolower($qso->col_band); }; ?></td>
+									<td><?php echo htmlspecialchars($qso->col_submode ? $qso->col_submode : $qso->col_mode); ?></td>
+									<td style='text-align: center'><div class="<?php echo $qso->col_lotw_qsl_rcvd == 'Y' ? 'bg-success' : 'bg-danger'; ?>"><?php echo $qso->col_lotw_qsl_rcvd == 'Y' ? __('Yes') : __('No'); ?></div></td>
+									<td><?php echo $qso->station_profile_name; ?></td>
+									<td><?php echo htmlspecialchars(ucwords(strtolower($qso->col_country), "- (/"), ENT_QUOTES, 'UTF-8'); ?></td>
+									<td><?php echo '<a href=\'javascript:displayContacts("'.$qso->col_iota.'","All","All","All","All","IOTA")\'>' . $qso->col_iota . '</a>'; ?> <a href="https://www.iota-world.org/iotamaps/?grpref=<?php echo $qso->col_iota; ?>" target="_blank"><i class="fas fa-globe"></i></a></td>
+									<td><?php echo htmlspecialchars(ucwords(strtolower($qso->correctdxcc ?? ''), "- (/"), ENT_QUOTES, 'UTF-8'); ?></td>
+								</tr>
+						<?php endforeach; ?>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+		<?php }
 }
