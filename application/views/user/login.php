@@ -73,6 +73,14 @@
                     <label for="floatingPassword"><strong><?= __("Password"); ?></strong></label>
                     <input type="password" name="user_password" class="form-control" id="floatingPassword" placeholder="<?php if (file_exists('.demo')) { echo "demo"; } else { echo __("Password"); } ?>" autocomplete="current-password">
                 </div>
+                <?php  // only show if header auth enabled
+                    if ($auth_header_enable == true) { ?>
+                    <div class="mb-2">  
+                        <a href="<?php echo site_url('header_auth/login'); ?>" class="btn btn-secondary w-100">  
+                            <?= $auth_header_text; ?>  
+                        </a>  
+                    </div>  
+                <?php } ?>
                 <div class="mb-2">
                     <div class="row">
                         <div class="col text-start">
