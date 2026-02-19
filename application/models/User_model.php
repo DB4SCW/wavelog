@@ -323,6 +323,82 @@ class User_Model extends CI_Model {
 		}
 	}
 
+	/**  
+	 * FUNCTION: bool add_minimal($username, $firstname = null, $lastname = null, $callsign = null, $email = null, $club_id = null)  
+	 * Add a user with minimal required fields (username only) with option to add to club as user
+	 */  
+	function add_minimal($username, $firstname = null, $lastname = null, $callsign = null, $email = null, $club_id = null) {  
+		// Check that the username isn't already used  
+		if(!$this->exists($username)) {  
+			$data = array(  
+				'user_name' => xss_clean($username),  
+				'user_password' => bin2hex(random_bytes(16)), // Random password  
+				'user_email' => xss_clean($email) ?? '',  
+				'user_firstname' => xss_clean($firstname) ?? '',  
+				'user_lastname' => xss_clean($lastname) ?? '',  
+				'user_callsign' => strtoupper(xss_clean($callsign)) ?? '',  
+				'user_type' => 3,
+				'user_locator' => '',
+				'user_stylesheet' => 'darkly',
+				'user_language' => 'english',
+				'user_timezone' => '1',
+				'user_date_format' => 'd/m/y',
+				'user_measurement_base' => 'M',
+				'user_column1' => 'Mode',
+				'user_column2' => 'RSTS',
+				'user_column3' => 'RSTR',
+				'user_column4' => 'Band',
+				'user_column5' => 'Country',
+				'user_qso_end_times' => 0,
+				'user_show_profile_image' => 0,
+				'user_qth_lookup' => 0,
+				'user_sota_lookup' => 0,
+				'user_wwff_lookup' => 0,
+				'user_pota_lookup' => 0,
+				'user_show_notes' => 0,
+				'user_quicklog' => 0,
+				'user_quicklog_enter' => 0,
+				'user_previous_qsl_type' => 0,
+				'user_default_band' => 'All',
+				'user_lotw_name' => '',
+				'user_lotw_password' => '',
+				'user_eqsl_name' => '',
+				'user_eqsl_password' => '',
+				'user_clublog_name' => '',
+				'user_clublog_password' => '',
+				'user_amsat_status_upload' => 0,
+				'user_mastodon_url' => '',
+			);  
+	
+			// Check the email address isn't in use (if provided)  
+			if($email && $this->exists_by_email($email)) {  
+				return EEMAILEXISTS;  
+			}  
+	
+			// Generate user-slug  
+			if (!$this->load->is_loaded('encryption')) {  
+				$this->load->library('encryption');  
+			}  
+			$user_slug_base = md5($this->encryption->encrypt($username));
+			$user_slug = substr($user_slug_base, 0, USER_SLUG_LENGTH);
+			$data['slug'] = $user_slug;
+
+			// Add user
+			$this->db->insert($this->config->item('auth_table'), $data);
+			$insert_id = $this->db->insert_id();  
+
+			// Add user to club
+			if ($club_id && is_numeric($club_id)) {  
+				$this->load->model('club_model');  
+				$this->club_model->alter_member($club_id, $insert_id, 3);   
+			}  
+	
+			return OK;
+		} else {  
+			return EUSERNAMEEXISTS;  
+		}  
+	}
+
 	// FUNCTION: bool edit()
 	// Edit a user
 	function edit($fields) {
