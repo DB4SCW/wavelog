@@ -101,11 +101,15 @@ $config['qrzru_password'] = '%qrzru_password%';
 |				2 = editor, 3 = api user, 99 = owner
 | 'auth_level[]'	Defines level titles
 |
-| 'auth_header_enable'	False disables header based authentication
-| 'auth_header_create'	False disables user creation if user doesn't exist
-| 'auth_header_value'	Which header provides authenticated username
-| 'auth_header_text'	Display text on login screen
-| 'auth_header_club_id'	Default club ID to add new users to
+| 'auth_header_enable'	    False disables header based authentication
+| 'auth_header_create'	    False disables user creation for header based authentication
+| 'auth_headers_username'	Which header provides authenticated username
+| 'auth_headers_firstname'	Which header provides authenticated first name
+| 'auth_headers_lastname'	Which header provides authenticated last name
+| 'auth_headers_callsign'	Which header provides authenticated callsign
+| 'auth_headers_email'	    Which header provides authenticated email
+| 'auth_header_text'	    Display text on login screen
+| 'auth_header_club_id'	    Default club ID to add new users to
 */
 
 $config['use_auth'] = true;
@@ -117,7 +121,11 @@ $config['auth_level'][99] = 'Administrator';
 
 $config['auth_header_enable'] = false;
 $config['auth_header_create'] = false;
-$config['auth_header_value'] = "HTTP_X-Username";
+$config['auth_headers_username'] = "HTTP_X-Username";
+$config['auth_headers_firstname'] = null;
+$config['auth_headers_lastname'] = null;
+$config['auth_headers_callsign'] = null;
+$config['auth_headers_email'] = null;
 $config['auth_header_text'] = "Login with SSO";
 $config['auth_header_club_id'] = "";
 

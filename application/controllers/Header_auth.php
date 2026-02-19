@@ -28,12 +28,14 @@ class Header_auth extends CI_Controller
             redirect('user/login');
         }
 
-        $headerName = $this->config->item('auth_header_value') ?: '';
-        if (empty($headerName)) {
+
+        // Get username from header
+        $headerUsername = $this->config->item('auth_headers_username') ?: '';
+        if (empty($headerUsername)) {
             $this->session->set_flashdata('error', __('Missing header setting.'));
             redirect('user/login');
         }
-        $username = $this->input->server($headerName, true);
+        $username = $this->input->server($headerUsername, true);
 
         if (empty($username)) {
             $this->session->set_flashdata('error', __('Missing username header.'));
@@ -47,8 +49,26 @@ class Header_auth extends CI_Controller
             // Config check if create user
             if ($this->config->item('auth_header_create')) {
                 $this->load->model('user_model');
-                $club_id = $this->config->item('auth_header_club_id');
-                $result = $this->user_model->add_minimal(username: $username, club_id: $club_id);
+                $firstnameHeader = $this->config->item('auth_headers_firstname') ?: '';
+                if (!empty($firstnameHeader)) {
+                    $firstname = $this->input->server($firstnameHeader, true);
+                }
+                $lastnameHeader = $this->config->item('auth_headers_lastname') ?: '';
+                if (!empty($lastnameHeader)) {
+                    $lastname = $this->input->server($lastnameHeader, true);
+                }
+                $callsignHeader = $this->config->item('auth_headers_callsign') ?: '';
+                if (!empty($callsignHeader)) {
+                    $callsign = $this->input->server($callsignHeader, true);
+                }
+                $emailHeader = $this->config->item('auth_headers_email') ?: '';
+                if (!empty($emailHeader)) {
+                    $email = $this->input->server($emailHeader, true);
+                }
+
+                $club_id = $this->config->item('auth_header_club_id') ?: '';
+
+                $result = $this->user_model->add_minimal($username, $firstname, $lastname, $callsign, $email, $club_id);
                 
                 switch ($result) {
                     case EUSERNAMEEXISTS:
