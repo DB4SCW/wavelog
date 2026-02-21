@@ -52,23 +52,94 @@ class Header_auth extends CI_Controller
                 $firstnameHeader = $this->config->item('auth_headers_firstname') ?: '';
                 if (!empty($firstnameHeader)) {
                     $firstname = $this->input->server($firstnameHeader, true);
+                } else {
+                    $firstname = '';
                 }
                 $lastnameHeader = $this->config->item('auth_headers_lastname') ?: '';
                 if (!empty($lastnameHeader)) {
                     $lastname = $this->input->server($lastnameHeader, true);
+                } else {
+                    $lastname = '';
                 }
                 $callsignHeader = $this->config->item('auth_headers_callsign') ?: '';
                 if (!empty($callsignHeader)) {
                     $callsign = $this->input->server($callsignHeader, true);
+                } else {
+                    $callsign = '';
                 }
                 $emailHeader = $this->config->item('auth_headers_email') ?: '';
                 if (!empty($emailHeader)) {
                     $email = $this->input->server($emailHeader, true);
+                } else {
+                    $email = '';
                 }
 
                 $club_id = $this->config->item('auth_header_club_id') ?: '';
 
-                $result = $this->user_model->add_minimal($username, $firstname, $lastname, $callsign, $email, $club_id);
+                $result = $this->user_model->add(
+                    $username,
+                    bin2hex(random_bytes(16)),  // password
+                    $email,
+                    3,	// $data['user_type'], Anlage auf 3
+                    $firstname,
+                    $lastname,
+                    $callsign,
+                    "",                     // locator
+                    102,                    // user_timezone
+                    "M",                    // measurement
+                    "Y",                    // dashboard_map
+                    "Y-m-d",                // user_date_format
+                    'darkly',               // user_stylesheet
+                    '0',                    // user_qth_lookup
+                    '0',                    // user_sota_lookup
+                    '0',                    // user_wwff_lookup
+                    '0',                    // user_pota_lookup
+                    1,                      // user_show_notes
+                    'Mode',                 // user_column1
+                    'RSTS',                 // user_column2
+                    'RSTR',                 // user_column3
+                    'Band',                 // user_column4
+                    'Country',              // user_column5
+                    '0',                    // user_show_profile_image
+                    '0',                    // user_previous_qsl_type
+                    '0',                    // user_amsat_status_upload
+                    '',                     // user_mastodon_url
+                    'ALL',                  // user_default_band
+                    'QL',                   // user_default_confirmation
+                    '0',                    // user_qso_end_times
+                    "Y",                    // user_qso_db_search_priority
+                    '0',                    // user_quicklog
+                    '0',                    // user_quicklog_enter
+                    "en",                   // user_language
+                    '',                     // user_hamsat_key
+                    '',                     // user_hamsat_workable_only
+                    '',                     // user_iota_to_qso_tab
+                    '',                     // user_sota_to_qso_tab
+                    '',                     // user_wwff_to_qso_tab
+                    '',                     // user_pota_to_qso_tab
+                    '',                     // user_sig_to_qso_tab
+                    '',                     // user_dok_to_qso_tab
+                    0,                      // user_station_to_qso_tab
+                    '',                     // user_lotw_name
+                    '',                     // user_lotw_password
+                    '',                     // user_eqsl_name
+                    '',                     // user_eqsl_password
+                    '',                     // user_clublog_name
+                    '',                     // user_clublog_password
+                    '0',                    // user_winkey
+                    "",                     // on_air_widget_enabled
+                    "",                     // on_air_widget_display_last_seen
+                    "",                     // on_air_widget_show_only_most_recent_radio
+                    "",                     // qso_widget_display_qso_time
+                    "",                     // dashboard_banner
+                    "",                     // dashboard_solar
+                    "",                     // global_oqrs_text
+                    "",                     // oqrs_grouped_search
+                    "",                     // oqrs_grouped_search_show_station_name
+                    "",                     // oqrs_auto_matching
+                    "",                     // oqrs_direct_auto_matching
+                    "",                     // user_dxwaterfall_enable
+                );
                 
                 switch ($result) {
                     case EUSERNAMEEXISTS:
