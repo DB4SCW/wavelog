@@ -78,7 +78,7 @@ class Header_auth extends CI_Controller
 
                 $result = $this->user_model->add(
                     $username,
-                    bin2hex(random_bytes(16)),  // password
+                    bin2hex(random_bytes(64)),  // password
                     $email,
                     3,	// $data['user_type'], Anlage auf 3
                     $firstname,
