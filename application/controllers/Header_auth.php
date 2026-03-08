@@ -9,76 +9,155 @@ class Header_auth extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('user_model');
-        $this->load->library('session');
-        $this->load->helper('url');
     }
 
-    /**  
-     * Authenticate using a trusted request header.  
-     * Expected to be called from a login-screen button.  
+    /**
+     * Decode a JWT token
+     * 
+     * @param string $token
+     * 
+     * @return array|null
+     */
+    private function _decode_jwt_payload(string $token): ?array {
+        $parts = explode('.', $token);
+        if (count($parts) !== 3) {
+            return null;
+        }
+
+        $decode = function(string $part): ?array {
+            $json = base64_decode(str_pad(strtr($part, '-_', '+/'), strlen($part) % 4, '=', STR_PAD_RIGHT));
+            if ($json === false) return null;
+            $data = json_decode($json, true);
+            return is_array($data) ? $data : null;
+        };
+
+        $header  = $decode($parts[0]);
+        $payload = $decode($parts[1]);
+        if ($payload === null) {
+            return null;
+        }
+
+        // Merge alg from header into payload so _verify_jwtdata can check it
+        if (isset($header['alg'])) {
+            $payload['alg'] = $header['alg'];
+        }
+
+        return $payload;
+    }
+
+    /**
+     * Helper to verify some long hangig fruits. We are not verifying the JWT token against the issuer at this point.
+     * Reason is the need for a crypto lib which is not necessary at this point. An administrator is responsible
+     * for the proper isolation of Wavelog and needs to make sure that Wavelog is not exposed directly.
+     * 
+     * Additonal verificarion steps can be added at a later point.
+     * 
+     * @param array claim data
+     * 
+     * @return bool
+     */
+    private function _verify_jwtdata($claims = null) {
+        // No claim, no verificiation
+        if (!$claims) {
+            log_message('error', 'JWT Verification: No claim data received.');
+            return false;
+        }
+
+        // Check expire date
+        if (($claims['exp'] ?? 0) < time()) {
+            log_message('error', 'JWT Verification: JWT Token is expired.');
+            return false;
+        }
+
+        // Is the token already valid
+        if (isset($claims['nbf']) && $claims['nbf'] > time()) { 
+            log_message('error', 'JWT Verification: JWT Token is not valid yet.');
+            return false; 
+        }
+
+        // The token should not be older then 24 hours which would be absurd old for an JWT token
+        if (isset($claims['iat']) && $claims['iat'] < (time() - 86400)) { 
+            log_message('error', 'JWT Verification: Token is older then 24 hours. This is very unusual. Verification failed.');
+            return false; 
+        }
+
+        // Is it a bearer token?
+        if (isset($claims['typ']) && $claims['typ'] !== 'Bearer') { 
+            log_message('error', 'JWT Verification: JWT Token is no Bearer Token.');
+            return false; 
+        }
+
+        // prevent alg: none attacks
+        if (!in_array($claims['alg'], ['RS256', 'RS384', 'RS512', 'ES256', 'ES384'], true)) {
+            log_message('error', 'JWT Verification: Algorithm ' . ($claims['alg'] ?? '???') . ' is not allowed. Create an issue on github https://github.com/wavelog/wavelog.');
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Authenticate using a trusted request header.
      */
     public function login() {
-        // Guard: feature must be enabled  
+        // Guard: feature must be enabled
         if (!$this->config->item('auth_header_enable')) {
             $this->session->set_flashdata('error', __('Header authentication is disabled.'));
             redirect('user/login');
         }
 
-
-        // Get username from header
-        $headerUsername = $this->config->item('auth_headers_username') ?: '';
-        if (empty($headerUsername)) {
-            $this->session->set_flashdata('error', __('Missing header setting.'));
+        // Decode JWT access token forwarded by idp
+        $token = $this->input->server('HTTP_X_FORWARDED_ACCESS_TOKEN', true);
+        if (empty($token)) {
+            $this->session->set_flashdata('error', __('Missing access token header.'));
             redirect('user/login');
         }
-        $username = $this->input->server($headerUsername, true);
+        
+        $claims = $this->_decode_jwt_payload($token);
+        if (empty($claims)) {
+            $this->session->set_flashdata('error', __('Invalid access token.'));
+            redirect('user/login');
+        }
+
+        if (!$this->_verify_jwtdata($claims)) {
+            $this->session->set_flashdata('error', __('Token validation failed. For more information check out the error log.'));
+            redirect('user/login');
+        }
+
+        $username  = $claims['preferred_username'] ?? '';
+        $email     = $claims['email']              ?? '';
+        $callsign  = $claims['callsign']           ?? '';
+        $firstname = $claims['given_name']         ?? '';
+        $lastname  = $claims['family_name']        ?? '';
 
         if (empty($username)) {
-            $this->session->set_flashdata('error', __('Missing username header.'));
+            $this->session->set_flashdata('error', __('Missing username in access token.'));
             redirect('user/login');
         }
 
-        // Look up user by the header value  
+        // Look up user by the header value
+        $this->load->model('user_model');
         $query = $this->user_model->get($username);
         if (!$query || $query->num_rows() !== 1) {
 
             // Config check if create user
             if ($this->config->item('auth_header_create')) {
-                $firstnameHeader = $this->config->item('auth_headers_firstname') ?: '';
-                if (!empty($firstnameHeader)) {
-                    $firstname = $this->input->server($firstnameHeader, true);
-                } else {
-                    $firstname = '';
-                }
-                $lastnameHeader = $this->config->item('auth_headers_lastname') ?: '';
-                if (!empty($lastnameHeader)) {
-                    $lastname = $this->input->server($lastnameHeader, true);
-                } else {
-                    $lastname = '';
-                }
-                $callsignHeader = $this->config->item('auth_headers_callsign') ?: '';
-                if (!empty($callsignHeader)) {
-                    $callsign = $this->input->server($callsignHeader, true);
-                } else {
-                    $this->session->set_flashdata('error', __('Missing callsign header.'));
+                if (empty($email)) {
+                    $this->session->set_flashdata('error', __('Missing email in access token.'));
                     redirect('user/login');
                 }
-                $emailHeader = $this->config->item('auth_headers_email') ?: '';
-                if (!empty($emailHeader)) {
-                    $email = $this->input->server($emailHeader, true);
-                } else {
-                    $this->session->set_flashdata('error', __('Missing email header.'));
+                if (empty($callsign)) {
+                    $this->session->set_flashdata('error', __('Missing callsign in access token.'));
                     redirect('user/login');
                 }
 
-                $club_id = $this->config->item('auth_header_club_id') ?: '';
+                // $club_id = $this->config->item('auth_header_club_id') ?: ''; // TODO: Add support to add a user to a clubstation
 
                 $result = $this->user_model->add(
                     $username,
                     bin2hex(random_bytes(64)),  // password
                     $email,
-                    3,    // $data['user_type'], Anlage auf 3
+                    3,                      // $data['user_type'], we don't create admins for security reasons
                     $firstname,
                     $lastname,
                     $callsign,
