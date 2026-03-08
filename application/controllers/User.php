@@ -1224,8 +1224,8 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$data['page_title'] = __("Login");
 			$data['https_check'] = $this->https_check();
-			$data['auth_header_enable'] = $this->config->item('auth_header_enable');
-			$data['auth_header_text'] = $this->config->item('auth_header_text');
+			$data['auth_header_enable'] = $this->config->item('auth_header_enable') ?? false;
+			$data['auth_header_text'] = $this->config->item('auth_header_text') ?: '';
 			$this->load->view('interface_assets/mini_header', $data);
 			$this->load->view('user/login');
 			$this->load->view('interface_assets/footer');
