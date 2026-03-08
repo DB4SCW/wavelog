@@ -109,7 +109,7 @@ class Header_auth extends CI_Controller {
                     "Y",                    // user_qso_db_search_priority
                     '0',                    // user_quicklog
                     '0',                    // user_quicklog_enter
-                    "en",                   // user_language
+                    "english",              // user_language
                     '',                     // user_hamsat_key
                     '',                     // user_hamsat_workable_only
                     '',                     // user_iota_to_qso_tab
