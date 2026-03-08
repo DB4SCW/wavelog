@@ -187,27 +187,6 @@ class Header_auth extends CI_Controller {
         ];
         $this->input->set_cookie($cookie);
 
-        // Get full user record  
-        $user = $this->user_model->get($username)->row();
-
-        // Critical: Update session data  
-        $this->user_model->update_session($user->user_id);
-        $this->user_model->set_last_seen($user->user_id);
-
-        // Set essential session data  
-        $this->session->set_userdata(array(
-            'user_id' => $user->user_id,
-            'user_name' => $user->user_name,
-            'user_type' => $user->user_type,
-            'user_stylesheet' => $user->user_stylesheet ?? 'bootstrap',
-            'user_column1' => $user->user_column1 ?? 'Mode',
-            'user_column2' => $user->user_column2 ?? 'RSTS',
-            'user_column3' => $user->user_column3 ?? 'RSTR',
-            'user_column4' => $user->user_column4 ?? 'Band',
-            'user_column5' => $user->user_column5 ?? 'Country',
-            // Add other preferences as needed  
-        ));
-
         log_message('info', "User ID [{$user->user_id}] logged in via header auth.");
         redirect('dashboard');
     }
