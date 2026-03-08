@@ -1300,6 +1300,11 @@ class User extends CI_Controller {
 			$this->input->set_cookie('tmp_msg', json_encode(['notice', sprintf(__("User %s logged out."), $user_name)]), 10, '');
 		}
 
+		$logout = $this->config->item('auth_url_logout');
+		if ($this->config->item('auth_header_enable') && $logout !== null && $logout !== '') {
+			redirect($logout);
+		}
+
 		redirect('user/login');
 	}
 

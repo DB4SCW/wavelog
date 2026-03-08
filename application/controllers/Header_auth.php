@@ -217,6 +217,8 @@ class Header_auth extends CI_Controller {
                     "",                     // oqrs_direct_auto_matching
                     "",                     // user_dxwaterfall_enable
                     "",                     // user_qso_show_map
+                    0,                      // clubstation
+                    true,                   // external_account
                 );
 
                 switch ($result) {
