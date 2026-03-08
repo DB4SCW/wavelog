@@ -18,7 +18,7 @@ class Dxcalendar extends CI_Controller {
 			'backup' => $this->config->item('cache_backup') ?? 'file',
 			'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
 		]);
-		$rssUrl = 'http://www.ng3k.com/adxo.xml';
+		$rssUrl = 'https://www.ng3k.com/adxo.xml';
 		if (!$rssRawData = $this->cache->get('RssRawDxCal')) {
 			$rssRawData = file_get_contents($rssUrl, true);
 			$this->cache->save('RssRawDxCal', $rssRawData, (60*60*12));
@@ -39,7 +39,7 @@ class Dxcalendar extends CI_Controller {
 			$custom_date_format = $this->config->item('qso_date_format');
 		}
 
-		$dxccobj = new Dxcc(null);
+		$dxccobj = new Dxcc();
 		foreach ($rssdata->channel->item as $item) {
 			$dxped=(object)[];
 			$title = explode('--', $item->title);

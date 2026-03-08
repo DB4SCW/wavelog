@@ -297,7 +297,7 @@ if ($dxcc_list->result() > 0) {
 		<!-- eQSL -->
 		<div class="col-md">
 			<div class="card">
-				<h5 class="card-header"><?= __("eQSL"); ?> <span class="badge text-bg-warning"><?= sprintf(__("Trouble? Check the %swiki%s."), '<a href="https://github.com/wavelog/wavelog/wiki/eQSL#read-common-pitfalls-with-eqsl" target="_blank">', '</a>'); ?></span></h5>
+				<h5 class="card-header"><?= __("eQSL"); ?> <span class="badge text-bg-warning"><?= sprintf(__("Trouble? Check the %swiki%s."), '<a href="https://docs.wavelog.org/user-guide/qsl/eqsl/" target="_blank">', '</a>'); ?></span></h5>
 				<div class="card-body">
 					<div class="mb-3">
 						<label for="eqslNickname"><?php echo _pgettext("Probably no translation needed","eQSL QTH Nickname"); ?></label> <!-- This does not need Multilanguage Support -->
@@ -384,7 +384,7 @@ if ($dxcc_list->result() > 0) {
 							<input type="password" class="form-control" name="hrdlog_code" id="hrdlog_code" aria-describedby="hrdlog_codeHelp" value="<?php if(set_value('hrdlog_code') != "") { echo set_value('hrdlog_code'); } else { echo $my_station_profile->hrdlog_code; } ?>">
 							<span class="input-group-btn"><button class="btn btn-default btn-pwd-showhide" type="button"><i class="fa fa-eye-slash"></i></button></span>
 						</div>
-						<small id="hrdlog_codeHelp" class="form-text text-muted"><?= sprintf(_pgettext("HRDLog.net Userprofile page", "Create your API Code on your %s"), "<a href='http://www.hrdlog.net/EditUser.aspx' target='_blank'>".__("HRDLog.net Userprofile page")."</a>"); ?></a></small>
+						<small id="hrdlog_codeHelp" class="form-text text-muted"><?= sprintf(_pgettext("HRDLog.net Userprofile page", "Create your API Code on your %s"), "<a href='https://www.hrdlog.net/EditUser.aspx' target='_blank'>".__("HRDLog.net Userprofile page")."</a>"); ?></a></small>
 					</div>
 					<div class="mb-3">
 						<label for="hrdlogrealtime"><?= __("HRDLog.net Logbook Realtime Upload"); ?></label>
