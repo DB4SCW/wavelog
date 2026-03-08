@@ -62,13 +62,15 @@ class Header_auth extends CI_Controller {
                 if (!empty($callsignHeader)) {
                     $callsign = $this->input->server($callsignHeader, true);
                 } else {
-                    $callsign = '';
+                    $this->session->set_flashdata('error', __('Missing callsign header.'));
+                    redirect('user/login');
                 }
                 $emailHeader = $this->config->item('auth_headers_email') ?: '';
                 if (!empty($emailHeader)) {
                     $email = $this->input->server($emailHeader, true);
                 } else {
-                    $email = '';
+                    $this->session->set_flashdata('error', __('Missing email header.'));
+                    redirect('user/login');
                 }
 
                 $club_id = $this->config->item('auth_header_club_id') ?: '';
