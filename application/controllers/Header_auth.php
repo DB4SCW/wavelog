@@ -45,7 +45,6 @@ class Header_auth extends CI_Controller {
 
             // Config check if create user
             if ($this->config->item('auth_header_create')) {
-                $this->load->model('user_model');
                 $firstnameHeader = $this->config->item('auth_headers_firstname') ?: '';
                 if (!empty($firstnameHeader)) {
                     $firstname = $this->input->server($firstnameHeader, true);
@@ -188,7 +187,6 @@ class Header_auth extends CI_Controller {
         ];
         $this->input->set_cookie($cookie);
 
-        $this->load->model('user_model');
         // Get full user record  
         $user = $this->user_model->get($username)->row();
 
