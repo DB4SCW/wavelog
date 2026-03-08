@@ -5,11 +5,9 @@
 	Handles header based authentication
 
 */
-class Header_auth extends CI_Controller
-{
+class Header_auth extends CI_Controller {
 
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->library('session');
@@ -20,8 +18,7 @@ class Header_auth extends CI_Controller
      * Authenticate using a trusted request header.  
      * Expected to be called from a login-screen button.  
      */
-    public function login()
-    {
+    public function login() {
         // Guard: feature must be enabled  
         if (!$this->config->item('auth_header_enable')) {
             $this->session->set_flashdata('error', __('Header authentication is disabled.'));
@@ -80,7 +77,7 @@ class Header_auth extends CI_Controller
                     $username,
                     bin2hex(random_bytes(64)),  // password
                     $email,
-                    3,	// $data['user_type'], Anlage auf 3
+                    3,    // $data['user_type'], Anlage auf 3
                     $firstname,
                     $lastname,
                     $callsign,
@@ -140,7 +137,7 @@ class Header_auth extends CI_Controller
                     "",                     // oqrs_direct_auto_matching
                     "",                     // user_dxwaterfall_enable
                 );
-                
+
                 switch ($result) {
                     case EUSERNAMEEXISTS:
                         $data['username_error'] = sprintf(__("Username %s already in use!"), '<b>' . $this->input->post('user_name') . '</b>');
@@ -189,25 +186,25 @@ class Header_auth extends CI_Controller
         ];
         $this->input->set_cookie($cookie);
 
-        $this->load->model('user_model');  
+        $this->load->model('user_model');
         // Get full user record  
-        $user = $this->user_model->get($username)->row();  
-        
+        $user = $this->user_model->get($username)->row();
+
         // Critical: Update session data  
-        $this->user_model->update_session($user->user_id);  
-        $this->user_model->set_last_seen($user->user_id);  
+        $this->user_model->update_session($user->user_id);
+        $this->user_model->set_last_seen($user->user_id);
 
         // Set essential session data  
-        $this->session->set_userdata(array(  
-            'user_id' => $user->user_id,  
-            'user_name' => $user->user_name,  
-            'user_type' => $user->user_type,  
-            'user_stylesheet' => $user->user_stylesheet ?? 'bootstrap',  
-            'user_column1' => $user->user_column1 ?? 'Mode',  
-            'user_column2' => $user->user_column2 ?? 'RSTS',  
-            'user_column3' => $user->user_column3 ?? 'RSTR',  
-            'user_column4' => $user->user_column4 ?? 'Band',  
-            'user_column5' => $user->user_column5 ?? 'Country',  
+        $this->session->set_userdata(array(
+            'user_id' => $user->user_id,
+            'user_name' => $user->user_name,
+            'user_type' => $user->user_type,
+            'user_stylesheet' => $user->user_stylesheet ?? 'bootstrap',
+            'user_column1' => $user->user_column1 ?? 'Mode',
+            'user_column2' => $user->user_column2 ?? 'RSTS',
+            'user_column3' => $user->user_column3 ?? 'RSTR',
+            'user_column4' => $user->user_column4 ?? 'Band',
+            'user_column5' => $user->user_column5 ?? 'Country',
             // Add other preferences as needed  
         ));
 
