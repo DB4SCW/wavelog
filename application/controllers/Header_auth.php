@@ -137,6 +137,7 @@ class Header_auth extends CI_Controller {
                     "",                     // oqrs_auto_matching
                     "",                     // oqrs_direct_auto_matching
                     "",                     // user_dxwaterfall_enable
+                    "",                     // user_qso_show_map
                 );
 
                 switch ($result) {
