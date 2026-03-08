@@ -107,20 +107,29 @@ class Header_auth extends CI_Controller {
         }
 
         // Decode JWT access token forwarded by idp
-        $token = $this->input->server('HTTP_X_FORWARDED_ACCESS_TOKEN', true);
+        $accesstoken_path = $this->config->item('auth_headers_accesstoken') ?? false;
+        if (!$accesstoken_path) {
+            log_message('error', 'SSO Authentication: Access Token Path not configured in config.php.');
+            $this->session->set_flashdata('error', __('SSO Config Error. Check error log.'));
+            redirect('user/login');
+        }
+        $token = $this->input->server($accesstoken_path, true);
         if (empty($token)) {
-            $this->session->set_flashdata('error', __('Missing access token header.'));
+            log_message('error', 'SSO Authentication: Missing access token header.');
+            $this->session->set_flashdata('error', __('SSO Config Error. Check error log.'));
             redirect('user/login');
         }
         
         $claims = $this->_decode_jwt_payload($token);
         if (empty($claims)) {
-            $this->session->set_flashdata('error', __('Invalid access token.'));
+            log_message('error', 'SSO Authentication: Invalid access token format. Failed to decode JWT token.');
+            $this->session->set_flashdata('error', __('Config Error. Check error log.'));
             redirect('user/login');
         }
 
         if (!$this->_verify_jwtdata($claims)) {
-            $this->session->set_flashdata('error', __('Token validation failed. For more information check out the error log.'));
+            log_message('error', 'SSO Authentication: Token validation failed.');
+            $this->session->set_flashdata('error', __('Config Error. Check error log.'));
             redirect('user/login');
         }
 
@@ -131,7 +140,8 @@ class Header_auth extends CI_Controller {
         $lastname  = $claims['family_name']        ?? '';
 
         if (empty($username)) {
-            $this->session->set_flashdata('error', __('Missing username in access token.'));
+            log_message('error', 'SSO Authentication: Missing username claim in access token.');
+            $this->session->set_flashdata('error', __('Config Error. Check error log.'));
             redirect('user/login');
         }
 
@@ -143,11 +153,13 @@ class Header_auth extends CI_Controller {
             // Config check if create user
             if ($this->config->item('auth_header_create')) {
                 if (empty($email)) {
-                    $this->session->set_flashdata('error', __('Missing email in access token.'));
+                    log_message('error', 'SSO Authentication: Missing email claim in access token.');
+                    $this->session->set_flashdata('error', __('Config Error. Check error log.'));
                     redirect('user/login');
                 }
                 if (empty($callsign)) {
-                    $this->session->set_flashdata('error', __('Missing callsign in access token.'));
+                    log_message('error', 'SSO Authentication: Missing callsign claim in access token.');
+                    $this->session->set_flashdata('error', __('Config Error. Check error log.'));
                     redirect('user/login');
                 }
 
