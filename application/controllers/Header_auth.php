@@ -84,7 +84,7 @@ class Header_auth extends CI_Controller {
                     $lastname,
                     $callsign,
                     "",                     // locator
-                    102,                    // user_timezone
+                    24,                     // user_timezone is default UTC
                     "M",                    // measurement
                     "Y",                    // dashboard_map
                     "Y-m-d",                // user_date_format
