@@ -1226,6 +1226,7 @@ class User extends CI_Controller {
 			$data['https_check'] = $this->https_check();
 			$data['auth_header_enable'] = $this->config->item('auth_header_enable') ?? false;
 			$data['auth_header_text'] = $this->config->item('auth_header_text') ?: '';
+			$data['hide_login_form'] = ($data['auth_header_enable'] && !($this->config->item('auth_allow_direct_login') ?? true));
 			$this->load->view('interface_assets/mini_header', $data);
 			$this->load->view('user/login');
 			$this->load->view('interface_assets/footer');

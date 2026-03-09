@@ -519,6 +519,11 @@ class User_Model extends CI_Model {
 	// This is really just a wrapper around User_Model::authenticate
 	function login() {
 
+		if (($this->config->item('auth_header_enable') ?? false) && !($this->config->item('auth_allow_direct_login') ?? true)) {
+			$this->session->set_flashdata('error', 'Direct login is disabled. Please use the SSO option to log in.');
+			redirect('user/login');
+		}
+
 		$username = $this->input->post('user_name', true);
 		$password = htmlspecialchars_decode($this->input->post('user_password', true));
 
