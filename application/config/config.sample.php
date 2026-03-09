@@ -100,16 +100,6 @@ $config['qrzru_password'] = '';
 | 'auth_mode'	Minimum user level required 0 = anonymous, 1 = viewer,
 |				2 = editor, 3 = api user, 99 = owner
 | 'auth_level[]'	Defines level titles
-|
-| 'auth_header_enable'	    False disables header based authentication
-| 'auth_header_create'	    False disables user creation for header based authentication
-| 'auth_headers_username'	Which header provides authenticated username
-| 'auth_headers_firstname'	Which header provides authenticated first name
-| 'auth_headers_lastname'	Which header provides authenticated last name
-| 'auth_headers_callsign'	Which header provides authenticated callsign
-| 'auth_headers_email'	    Which header provides authenticated email
-| 'auth_header_text'	    Display text on login screen
-| 'auth_header_club_id'	    Default club ID to add new users to
 */
 
 $config['use_auth'] = true;
