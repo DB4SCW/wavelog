@@ -125,9 +125,10 @@ $config['auth_level'][99] = 'Administrator';
 | 'auth_header_create'   = Automatically create a local user account if a valid access token is provided and no corresponding user exists.
 | 'auth_allow_direct_login' = Allow users to log in directly through the Wavelog login form even when third-party authentication is enabled. This can be useful for administrators or in cases where some users do not have access to the SSO system.
 | 'auth_headers_accesstoken' = The name of the HTTP header that contains the access token. This should match the header sent by your SSO or authentication system.
+| 'auth_headers_callsign_claim' = The JWT claim that contains the user's Callsign.
 | 'auth_header_text'    = The text displayed on the login button for third-party authentication.
 | 'auth_header_club_id' = Optional club ID to assign to users authenticated via the header. This can be used to group users or assign specific permissions based on their club affiliation.
-| 'auth_url_logout'     = The URL to redirect users to when they log out, which can be used to log them out of the SSO system as well.
+| 'auth_url_logout'     = The URL to redirect users to when they log out. If OAuth2 Proxy and Keycloak is used, must hit OAuth2 Proxy first then Keycloak. whitelist_domains for OAuth2 Proxy must also be set to the IdP domain.
 */
 
 
@@ -135,9 +136,10 @@ $config['auth_level'][99] = 'Administrator';
 // $config['auth_header_create'] = true;
 // $config['auth_allow_direct_login'] = true;
 // $config['auth_headers_accesstoken'] = "HTTP_X_FORWARDED_ACCESS_TOKEN";
+// $config['auth_headers_callsign_claim'] = "callsign";
 // $config['auth_header_text'] = "Login with SSO";
 // $config['auth_header_club_id'] = "";
-// $config['auth_url_logout'] = 'https://auth.example.org/realms/example/protocol/openid-connect/logout?post_logout_redirect_uri=https://log.example.org/index.php/user/login';
+// $config['auth_url_logout'] = 'https://log.example.org/oauth2/sign_out?rd=https://auth.example.org/realms/example/protocol/openid-connect/logout';
 
 /*
 |--------------------------------------------------------------------------
