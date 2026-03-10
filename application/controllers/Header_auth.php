@@ -133,9 +133,11 @@ class Header_auth extends CI_Controller {
             redirect('user/login');
         }
 
+        $callsign_claim = $this->config->item('auth_headers_callsign_claim') ?? 'callsign';
+
         $username  = $claims['preferred_username'] ?? '';
         $email     = $claims['email']              ?? '';
-        $callsign  = $claims['callsign']           ?? '';
+        $callsign  = $claims[$callsign_claim]      ?? '';
         $firstname = $claims['given_name']         ?? '';
         $lastname  = $claims['family_name']        ?? '';
 
