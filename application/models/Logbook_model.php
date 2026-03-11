@@ -645,6 +645,18 @@ class Logbook_model extends CI_Model {
 				$this->db->where('COL_STATE', $state);
 				$this->db->where('COL_DXCC', '339');
 				break;
+			case 'WAIP':
+				// Exclude satellite contacts for Polska Award
+				$this->db->group_start();
+				$this->db->where('COL_PROP_MODE !=', 'SAT');
+				$this->db->or_where('COL_PROP_MODE IS NULL');
+				$this->db->group_end();
+
+				// Only count allowed bands for Polska Award
+				$this->db->where_in('COL_BAND', ['160M','80M','40M','30M','20M','17M','15M','12M','10M']);
+				$this->db->where('COL_STATE', $searchphrase);
+				$this->db->where('COL_DXCC in (225, 248)');
+				break;
 			case 'WAPC':
 				if($searchphrase == 'HK'){
 					$this->db->where('COL_DXCC', '321');
