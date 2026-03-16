@@ -64,9 +64,17 @@ class Header_auth extends CI_Controller {
             // Config check if create user
             if ($this->config->item('auth_header_create')) {
                 $this->_create_user($username, $email, $callsign, $firstname, $lastname);
+                $query = $this->user_model->get($username);
             } else {
                 $this->_sso_error(__("User not found."));
+                return;
             }
+        }
+
+        if (!$query || $query->num_rows() !== 1) {
+            log_message('error', 'SSO Authentication: User could not be found or created.');
+            $this->_sso_error();
+            return;
         }
 
         $user = $query->row();
