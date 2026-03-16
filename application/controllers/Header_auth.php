@@ -297,5 +297,6 @@ class Header_auth extends CI_Controller {
         }
         $this->session->set_flashdata('error', $message);
         redirect('user/login');
+        die;
     }
 }
