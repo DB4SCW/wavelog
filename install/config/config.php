@@ -547,7 +547,7 @@ $config['sess_gc_divisor'] = 1000;
 | 'cookie_domain'   = Set to .your-domain.com for site-wide cookies
 | 'cookie_path'     = Typically will be a forward slash
 | 'cookie_secure'   = Cookie will only be set if a secure HTTPS connection exists.
-| 'cookie_httponly' = Cookie will only be accessible via HTTP(S) (no javascript)
+| 'cookie_samesite' = Cookie SameSite attribute (None, Lax, Strict)
 |
 | Note: These settings (with the exception of 'cookie_prefix' and
 |       'cookie_httponly') will also affect sessions.
@@ -557,7 +557,7 @@ $config['cookie_prefix']	= '';
 $config['cookie_domain']	= '';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
+$config['cookie_samesite']  = 'Lax';
 
 /*
 |--------------------------------------------------------------------------

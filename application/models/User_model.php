@@ -293,31 +293,42 @@ class User_Model extends CI_Model {
 			$this->db->insert($this->config->item('auth_table'), $data);
 			$insert_id = $this->db->insert_id();
 
-			$this->db->query("insert into bandxuser (bandid, userid) select bands.id, " . $insert_id . " from bands;");
-			$this->db->query("insert into paper_types (user_id,paper_name,metric,width,orientation,height) SELECT ".$insert_id.", paper_name, metric, width, orientation,height FROM paper_types where user_id = 0;");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'map_custom','icon','qso','{\"icon\":\"fas fa-dot-circle\",\"color\":\"#ff0000\"}');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'map_custom','icon','qsoconfirm','{\"icon\":\"fas fa-dot-circle\",\"color\":\"#00ff00\"}');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'map_custom','icon','station','{\"icon\":\"fas fa-broadcast-tower\",\"color\":\"#0000ff\"}');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'map_custom','gridsquare','show','0');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'hamsat','hamsat_key','api','".xss_clean($user_hamsat_key)."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'hamsat','hamsat_key','workable','".xss_clean($user_hamsat_workable_only)."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','iota','show',".(xss_clean($user_iota_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','sota','show',".(xss_clean($user_sota_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','wwff','show',".(xss_clean($user_wwff_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','pota','show',".(xss_clean($user_pota_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','sig','show',".(xss_clean($user_sig_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','dok','show',".(xss_clean($user_dok_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_tab','station','show',".(xss_clean($user_station_to_qso_tab ?? 'off') == "on" ? 1 : 0).");");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'dashboard','show_map','boolean','".xss_clean($dashboard_map ?? 'Y')."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'dashboard','show_dashboard_banner','boolean','".xss_clean($dashboard_banner ?? 'Y')."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'dashboard','show_dashboard_solar','boolean','".xss_clean($dashboard_solar ?? 'Y')."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'widget','on_air','enabled','".(xss_clean($on_air_widget_enabled ?? 'false'))."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'widget','on_air','display_last_seen','".(xss_clean($on_air_widget_display_last_seen ?? 'false'))."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'widget','on_air','display_only_most_recent_radio','".(xss_clean($on_air_widget_show_only_most_recent_radio ?? 'true'))."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'widget','qso','display_qso_time','".(xss_clean($qso_widget_display_qso_time ?? 'false'))."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'qso_db_search_priority','enable','boolean','".(xss_clean($user_qso_db_search_priority ?? 'Y'))."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $insert_id . ", 'dxwaterfall','enable','boolean','".xss_clean($user_dxwaterfall_enable ?? 'N')."');");
-			$this->db->query("insert into user_options (user_id, option_type, option_name, option_key, option_value) values (?, 'qso_tab', 'map', 'show', ?)", [$insert_id, (int)(xss_clean($user_qso_show_map ?? 1))]);
+			$this->db->query("insert into bandxuser (bandid, userid) select bands.id, ? from bands;", [$insert_id]);
+			$this->db->query("insert into paper_types (user_id,paper_name,metric,width,orientation,height) SELECT ?, paper_name, metric, width, orientation,height FROM paper_types where user_id = 0;", [$insert_id]);
+
+			// Default user_options rows — [option_type, option_name, option_key, option_value]
+			$user_options = [
+				['map_custom', 'icon',                    'qso',                           '{"icon":"fas fa-dot-circle","color":"#ff0000"}'],
+				['map_custom', 'icon',                    'qsoconfirm',                    '{"icon":"fas fa-dot-circle","color":"#00ff00"}'],
+				['map_custom', 'icon',                    'station',                       '{"icon":"fas fa-broadcast-tower","color":"#0000ff"}'],
+				['map_custom', 'gridsquare',              'show',                          '0'],
+				['hamsat',     'hamsat_key',              'api',                           $user_hamsat_key],
+				['hamsat',     'hamsat_key',              'workable',                      $user_hamsat_workable_only],
+				['qso_tab',    'iota',                    'show',                          (($user_iota_to_qso_tab    ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'sota',                    'show',                          (($user_sota_to_qso_tab    ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'wwff',                    'show',                          (($user_wwff_to_qso_tab    ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'pota',                    'show',                          (($user_pota_to_qso_tab    ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'sig',                     'show',                          (($user_sig_to_qso_tab     ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'dok',                     'show',                          (($user_dok_to_qso_tab     ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'station',                 'show',                          (($user_station_to_qso_tab ?? 'off') == "on" ? 1 : 0)],
+				['qso_tab',    'map',                     'show',                          (int)(xss_clean($user_qso_show_map ?? 1))],
+				['dashboard',  'show_map',                'boolean',                       $dashboard_map    ?? 'Y'],
+				['dashboard',  'show_dashboard_banner',   'boolean',                       $dashboard_banner ?? 'Y'],
+				['dashboard',  'show_dashboard_solar',    'boolean',                       $dashboard_solar  ?? 'Y'],
+				['widget',     'on_air',                  'enabled',                       $on_air_widget_enabled                      ?? 'false'],
+				['widget',     'on_air',                  'display_last_seen',             $on_air_widget_display_last_seen            ?? 'false'],
+				['widget',     'on_air',                  'display_only_most_recent_radio',$on_air_widget_show_only_most_recent_radio  ?? 'true'],
+				['widget',     'qso',                     'display_qso_time',              $qso_widget_display_qso_time                ?? 'false'],
+				['qso_db_search_priority', 'enable',      'boolean',                       $user_qso_db_search_priority ?? 'Y'],
+				['dxwaterfall', 'enable',                 'boolean',                       $user_dxwaterfall_enable     ?? 'N'],
+			];
+
+			foreach ($user_options as [$type, $name, $key, $value]) {
+				$this->db->query(
+					"INSERT INTO user_options (user_id, option_type, option_name, option_key, option_value) VALUES (?, ?, ?, ?, ?)",
+					[$insert_id, $type, $name, $key, $value]
+				);
+			}
 			return OK;
 		} else {
 			return EUSERNAMEEXISTS;
@@ -374,28 +385,37 @@ class User_Model extends CI_Model {
 				$qso_page_last_qso_count = xss_clean($fields['user_qso_page_last_qso_count']);
 				$qso_page_last_qso_count = $qso_page_last_qso_count > QSO_PAGE_QSOS_COUNT_LIMIT ? QSO_PAGE_QSOS_COUNT_LIMIT : $qso_page_last_qso_count;
 
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'hamsat','hamsat_key','api','".xss_clean($fields['user_hamsat_key'])."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'hamsat','hamsat_key','workable','".xss_clean($fields['user_hamsat_workable_only'])."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','iota','show',".(xss_clean($fields['user_iota_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','sota','show',".(xss_clean($fields['user_sota_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','wwff','show',".(xss_clean($fields['user_wwff_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','pota','show',".(xss_clean($fields['user_pota_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','sig','show',".(xss_clean($fields['user_sig_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','dok','show',".(xss_clean($fields['user_dok_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','station','show',".(xss_clean($fields['user_station_to_qso_tab'] ?? 'off') == "on" ? 1 : 0).");");
-				$this->db->query("replace INTO user_options (user_id, option_type, option_name, option_key, option_value) VALUES (?, 'qso_tab', 'map', 'show', ?)", [$fields['id'], (int)(xss_clean($fields['user_qso_show_map'] ?? 1))]
-				);
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'widget','on_air','enabled','".(xss_clean($fields['on_air_widget_enabled'] ?? 'false'))."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'widget','on_air','display_last_seen','".(xss_clean($fields['on_air_widget_display_last_seen'] ?? 'false'))."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'widget','on_air','display_only_most_recent_radio','".(xss_clean($fields['on_air_widget_show_only_most_recent_radio'] ?? 'true'))."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'widget','qso','display_qso_time','".(xss_clean($fields['qso_widget_display_qso_time'] ?? 'false'))."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'dashboard','last_qso_count','count','".$dashboard_last_qso_count."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_tab','last_qso_count','count','".$qso_page_last_qso_count."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'dashboard','show_map','boolean','".xss_clean($fields['user_dashboard_map'] ?? 'Y')."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'dashboard','show_dashboard_banner','boolean','".xss_clean($fields['user_dashboard_banner'] ?? 'Y')."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'dashboard','show_dashboard_solar','boolean','".xss_clean($fields['user_dashboard_solar'] ?? 'N')."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'qso_db_search_priority','enable','boolean','".xss_clean($fields['user_qso_db_search_priority'] ?? 'Y')."');");
-				$this->db->query("replace into user_options (user_id, option_type, option_name, option_key, option_value) values (" . $fields['id'] . ", 'dxwaterfall','enable','boolean','".xss_clean($fields['user_dxwaterfall_enable'] ?? 'N')."');");
+				// Updated user_options rows — [option_type, option_name, option_key, option_value]
+				$user_options = [
+					['hamsat',     'hamsat_key',              'api',                           $fields['user_hamsat_key']],
+					['hamsat',     'hamsat_key',              'workable',                      $fields['user_hamsat_workable_only']],
+					['qso_tab',    'iota',                    'show',                          (($fields['user_iota_to_qso_tab']    ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'sota',                    'show',                          (($fields['user_sota_to_qso_tab']    ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'wwff',                    'show',                          (($fields['user_wwff_to_qso_tab']    ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'pota',                    'show',                          (($fields['user_pota_to_qso_tab']    ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'sig',                     'show',                          (($fields['user_sig_to_qso_tab']     ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'dok',                     'show',                          (($fields['user_dok_to_qso_tab']     ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'station',                 'show',                          (($fields['user_station_to_qso_tab'] ?? 'off') == "on" ? 1 : 0)],
+					['qso_tab',    'map',                     'show',                          (int)($fields['user_qso_show_map'] ?? 1)],
+					['qso_tab',    'last_qso_count',          'count',                         $qso_page_last_qso_count],
+					['widget',     'on_air',                  'enabled',                       $fields['on_air_widget_enabled']                     ?? 'false'],
+					['widget',     'on_air',                  'display_last_seen',             $fields['on_air_widget_display_last_seen']           ?? 'false'],
+					['widget',     'on_air',                  'display_only_most_recent_radio',$fields['on_air_widget_show_only_most_recent_radio'] ?? 'true'],
+					['widget',     'qso',                     'display_qso_time',              $fields['qso_widget_display_qso_time']               ?? 'false'],
+					['dashboard',  'last_qso_count',          'count',                         $dashboard_last_qso_count],
+					['dashboard',  'show_map',                'boolean',                       $fields['user_dashboard_map']    ?? 'Y'],
+					['dashboard',  'show_dashboard_banner',   'boolean',                       $fields['user_dashboard_banner'] ?? 'Y'],
+					['dashboard',  'show_dashboard_solar',    'boolean',                       $fields['user_dashboard_solar']  ?? 'N'],
+					['qso_db_search_priority', 'enable',      'boolean',                       $fields['user_qso_db_search_priority'] ?? 'Y'],
+					['dxwaterfall', 'enable',                 'boolean',                       $fields['user_dxwaterfall_enable']     ?? 'N'],
+				];
+
+				foreach ($user_options as [$type, $name, $key, $value]) {
+					$this->db->query(
+						"REPLACE INTO user_options (user_id, option_type, option_name, option_key, option_value) VALUES (?, ?, ?, ?, ?)",
+						[$fields['id'], $type, $name, $key, $value]
+					);
+				}
 				$this->session->set_userdata('dashboard_last_qso_count', $dashboard_last_qso_count);
 				$this->session->set_userdata('qso_page_last_qso_count', $qso_page_last_qso_count);
 				$this->session->set_userdata('user_dashboard_map',xss_clean($fields['user_dashboard_map'] ?? 'Y'));
