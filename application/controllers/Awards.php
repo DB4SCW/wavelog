@@ -406,13 +406,6 @@ class Awards extends CI_Controller {
 			$postdata['confirmed'] = $this->security->xss_clean($this->input->post('confirmed'));
 			$postdata['notworked'] = $this->security->xss_clean($this->input->post('notworked'));
 			$postdata['includedeleted'] = $this->security->xss_clean($this->input->post('includedeleted'));
-			$postdata['Africa'] = $this->security->xss_clean($this->input->post('Africa'));
-			$postdata['Asia'] = $this->security->xss_clean($this->input->post('Asia'));
-			$postdata['Europe'] = $this->security->xss_clean($this->input->post('Europe'));
-			$postdata['NorthAmerica'] = $this->security->xss_clean($this->input->post('NorthAmerica'));
-			$postdata['SouthAmerica'] = $this->security->xss_clean($this->input->post('SouthAmerica'));
-			$postdata['Oceania'] = $this->security->xss_clean($this->input->post('Oceania'));
-			$postdata['Antarctica'] = $this->security->xss_clean($this->input->post('Antarctica'));
 			$postdata['band'] = $this->security->xss_clean($this->input->post('band'));
 			$postdata['mode'] = $this->security->xss_clean($this->input->post('mode'));
 		} else { // Setting default values at first load of page
@@ -425,13 +418,6 @@ class Awards extends CI_Controller {
 			$postdata['confirmed'] = 1;
 			$postdata['notworked'] = 0;
 			$postdata['includedeleted'] = 0;
-			$postdata['Africa'] = 1;
-			$postdata['Asia'] = 1;
-			$postdata['Europe'] = 1;
-			$postdata['NorthAmerica'] = 1;
-			$postdata['SouthAmerica'] = 1;
-			$postdata['Oceania'] = 1;
-			$postdata['Antarctica'] = 1;
 			$postdata['band'] = 'All';
 			$postdata['mode'] = 'All';
 		}
