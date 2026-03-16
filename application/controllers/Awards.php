@@ -463,9 +463,9 @@ class Awards extends CI_Controller {
 
 		$fp = fopen( 'php://output', 'w' );
 		$i=1;
-		fputcsv($fp, array('No', 'Callsign', 'Date', 'Band', 'Mode', 'Remarks'), ';');
+		fputcsv($fp, array('No', 'Callsign', 'Date', 'Band', 'Mode', 'Remarks'), escape: '\\');
 		foreach ($qsos as $qso) {
-			fputcsv($fp, array($i, $qso['call'], $qso['date'], ($qso['prop_mode'] != null ? $qso['band'].' / '.$qso['prop_mode'] : $qso['band']), $qso['mode'], $qso['cnty'].' - '.$qso['jcc']), ';');
+			fputcsv($fp, array($i, $qso['call'], $qso['date'], ($qso['prop_mode'] != null ? $qso['band'].' / '.$qso['prop_mode'] : $qso['band']), $qso['mode'], $qso['cnty'].' - '.$qso['jcc']), escape: '\\');
 			$i++;
 		}
 		fclose($fp);
