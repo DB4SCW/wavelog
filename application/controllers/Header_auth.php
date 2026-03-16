@@ -143,7 +143,7 @@ class Header_auth extends CI_Controller {
      * 
      * @return bool
      */
-    private function _verify_jwtdata($claims = null) {
+    private function _verify_jwtdata(?array $claims = null): bool {
         // No claim, no verificiation
         if (!$claims) {
             log_message('error', 'JWT Verification: No claim data received.');
