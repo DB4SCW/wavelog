@@ -298,14 +298,14 @@ class Waip extends CI_Model {
 	/**
 	 * Get worked (not confirmed) QSO counts by bands
 	 */
-	function get_waip_worked_by_bands($bands, $location_list) {
+	function get_waip_worked_by_bands($location_list) {
 		$result = array();
 
 		foreach ($this->province_names as $code => $name) {
-			$result[$code] = array_fill_keys($bands, 0);
+			$result[$code] = array_fill_keys($this->VALID_BANDS, 0);
 		}
 
-		foreach ($bands as $band) {
+		foreach ($this->VALID_BANDS as $band) {
 			$provData = $this->queryProvinces($location_list, array(
 				'band' => $band,
 				'confirmed' => false,
@@ -325,14 +325,14 @@ class Waip extends CI_Model {
 	/**
 	 * Get confirmed QSO counts by bands
 	 */
-	function get_waip_simple_by_bands($bands, $postdata, $location_list) {
+	function get_waip_simple_by_bands($postdata, $location_list) {
 		$result = array();
 
 		foreach ($this->province_names as $code => $name) {
-			$result[$code] = array_fill_keys($bands, 0);
+			$result[$code] = array_fill_keys($this->VALID_BANDS, 0);
 		}
 
-		foreach ($bands as $band) {
+		foreach ($this->VALID_BANDS as $band) {
 			$provData = $this->queryProvinces($location_list, array(
 				'band' => $band,
 				'confirmed' => true,
@@ -353,10 +353,10 @@ class Waip extends CI_Model {
 	/**
 	 * Get total confirmed province counts by bands
 	 */
-	function get_waip_totals_by_bands($bands, $postdata, $location_list) {
+	function get_waip_totals_by_bands($postdata, $location_list) {
 		$totals = array();
 
-		foreach ($bands as $band) {
+		foreach ($this->VALID_BANDS as $band) {
 			$provData = $this->queryProvinces($location_list, array(
 				'band' => $band,
 				'confirmed' => true,

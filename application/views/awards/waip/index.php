@@ -1,47 +1,18 @@
-<script>
-	var tileUrl="<?php echo $this->optionslib->get_option('option_map_tile_server');?>";
-    var lang_italian_province = "<?= __("Italian Provinces"); ?>";
-    var lang_hover_over_province = "<?= __("Hover over a province"); ?>";
-</script>
-<script>
-   let user_map_custom = JSON.parse('<?php echo $user_map_custom; ?>');
-</script>
-
-<style>
-    #waip-map {
-        height: calc(100vh - 500px) !important;
-        max-height: 900px !important;
-        position: relative;
-    }
-    .map-spinner-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-</style>
-
 <div class="container">
     <!-- Award Info Box -->
     <br>
     <div class="position-relative">
         <div id="awardInfoButton">
             <script>
-            var lang_awards_info_button = "<?= __("Award Info"); ?>";
+            var lang_awards_info_button = "<?= __('Award Info'); ?>";
             var lang_award_info_ln1 = "<?= __('WAIP Award'); ?>";
-            var lang_award_info_ln2 = "<?= __("The WAIP (Worked All Italian Provinces) Award is issued for contacts with stations operating from Italian provinces. Italy has over 100 provinces, making this a challenging and prestigious award."); ?>";
-            var lang_award_info_ln3 = "<?= __("Award categories: PHONE (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.), and individual bands. All provinces must be confirmed via QSL card."); ?>";
-            var lang_award_info_ln4 = "<?= __("Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or 225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."); ?>";
-			var lang_award_info_ln5 = "<?= __("Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, NA=Napoli). See Italian provincial award references for complete list."); ?>";
+            var lang_award_info_ln2 = "<?= __('The WAIP (Worked All Italian Provinces) Award is issued for contacts with stations operating from Italian provinces. Italy has over 100 provinces, making this a challenging and prestigious award.'); ?>";
+            var lang_award_info_ln3 = "<?= __('Award categories: PHONE (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.), and individual bands. All provinces must be confirmed via QSL card.'); ?>";
+            var lang_award_info_ln4 = "<?= __('Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or 225 (Sardinia), QSL card confirmation only. No satellite contacts allowed.'); ?>";
+			var lang_award_info_ln5 = "<?= __('Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, NA=Napoli). See Italian provincial award references for complete list.'); ?>";
             </script>
             <h2><?php echo $page_title; ?></h2>
-            <button type="button" class="btn btn-sm btn-primary me-1" id="displayAwardInfo"><?= __("Award Info"); ?></button>
+            <button type="button" class="btn btn-sm btn-primary me-1" id="displayAwardInfo"><?= __('Award Info'); ?></button>
         </div>
 
     </div>
@@ -49,7 +20,7 @@
 
     <div class="alert alert-info mb-3">
         <i class="fas fa-info-circle"></i>
-        <?= __("This award tracks worked and confirmed status for Italian provinces. Only QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but not confirmed."); ?>
+        <?= __('This award tracks worked and confirmed status for Italian provinces. Only QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but not confirmed.'); ?>
     </div>
 
 <?php
@@ -93,7 +64,7 @@ if ($waip_array) {
         echo '<thead><tr><th>' . __('Band') . '</th><th>' . __('Confirmed') . '</th><th>' . __('Progress') . '</th></tr></thead>';
         echo '<tbody>';
 
-        foreach ($worked_bands as $band) {
+        foreach (array_keys($waip_totals_bands) as $band) {
             $count = isset($waip_totals_bands[$band]) ? $waip_totals_bands[$band] : 0;
             $percentage = ($count / $total_provinces) * 100;
             $progress_class = $percentage == 100 ? 'success' : ($percentage >= 50 ? 'warning' : 'danger');
@@ -118,12 +89,12 @@ if ($waip_array) {
 <ul class="nav nav-tabs" id="waipTabs" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="mode-tab" data-bs-toggle="tab" data-bs-target="#mode-content" type="button" role="tab" aria-controls="mode-content" aria-selected="true">
-            <?= __("By Mode Category") ?>
+            <?= __('By Mode Category') ?>
         </button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="band-tab" data-bs-toggle="tab" data-bs-target="#band-content" type="button" role="tab" aria-controls="band-content" aria-selected="false">
-            <?= __("By Band") ?>
+            <?= __('By Band') ?>
         </button>
     </li>
 </ul>
@@ -173,7 +144,7 @@ if ($waip_array) {
     echo '</tbody>
     <tfoot class="table-secondary">
         <tr>
-            <td colspan="2" style="text-align: left"><strong>' . __("Total confirmed") . '</strong></td>';
+            <td colspan="2" style="text-align: left"><strong>' . __('Total confirmed') . '</strong></td>';
 
     foreach ($mode_categories as $category) {
         $count = isset($waip_totals[$category]) ? $waip_totals[$category] : 0;
@@ -191,14 +162,14 @@ if ($waip_array) {
     <div class="tab-pane fade" id="band-content" role="tabpanel" aria-labelledby="band-tab">
         <div class="mt-3">
 <?php
-    if (isset($waip_array_bands) && isset($worked_bands)) {
+    if (isset($waip_array_bands)) {
         echo '<table style="width:100%" id="waiptable_bands" class="table table-sm table-bordered table-hover table-striped table-condensed text-center">
             <thead class="table-secondary">
             <tr>
                 <th style="text-align: left; width: 25%"><strong>' . __('Province') . '</strong></th>
                 <th style="width: 7%"><strong>' . __('Code') . '</strong></th>';
 
-        foreach($worked_bands as $band) {
+        foreach(array_keys($waip_totals_bands) as $band) {
             echo '<th><strong>' . $band . '</strong></th>';
         }
 
@@ -217,7 +188,7 @@ if ($waip_array) {
             echo '<tr>
                 <td style="text-align: left">' . $province_name . '</td>
                 <td>' . $province_code . '</td>';
-            foreach ($worked_bands as $band) {
+            foreach (array_keys($waip_totals_bands) as $band) {
                 $confirmed = isset($value[$band]) ? $value[$band] : 0;
                 $worked = isset($waip_worked_bands[$province_code][$band]) ? $waip_worked_bands[$province_code][$band] : 0;
 
@@ -237,9 +208,9 @@ if ($waip_array) {
         echo '</tbody>
         <tfoot class="table-secondary">
             <tr>
-                <td colspan="2" style="text-align: left"><strong>' . __("Total confirmed") . '</strong></td>';
+                <td colspan="2" style="text-align: left"><strong>' . __('Total confirmed') . '</strong></td>';
 
-        foreach ($worked_bands as $band) {
+        foreach (array_keys($waip_totals_bands) as $band) {
             $count = isset($waip_totals_bands[$band]) ? $waip_totals_bands[$band] : 0;
             echo '<td style="text-align: center"><strong>' . $count . '/' . $total_provinces . '</strong></td>';
         }
@@ -259,6 +230,6 @@ if ($waip_array) {
 
 <?php
 } else {
-    echo '<div class="alert alert-danger" role="alert">' . __("Nothing found!") . '</div>';
+    echo '<div class="alert alert-danger" role="alert">' . __('No QSOs found matching the criteria for the WAIP award!') . '</div>';
 }
 ?>

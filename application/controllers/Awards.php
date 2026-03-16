@@ -1453,19 +1453,10 @@ class Awards extends CI_Controller {
         This displays the WAIP (Worked All Italian Provinces) award
     */
     public function waip() {
-		$footerData = [];
-
-		$this->load->model('logbooks_model');
-		$this->load->model('stations');
-
 		$data['active_station_logbook'] = $this->logbooks_model->find_name($this->session->userdata('active_station_logbook'));
 
 		$this->load->model('waip');
 		$this->load->model('bands');
-		$this->load->library('Genfunctions');
-
-		// Define valid bands for WAIP award
-		$data['worked_bands'] = array('160M', '80M', '40M', '30M', '20M', '17M', '15M', '12M', '10M');
 
 		// Get station location
 		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
@@ -1484,9 +1475,9 @@ class Awards extends CI_Controller {
 			$data['waip_totals'] = $this->waip->get_waip_totals_by_modes($postdata, $location_list);
 
 			// Band-based data
-			$data['waip_worked_bands'] = $this->waip->get_waip_worked_by_bands($data['worked_bands'], $location_list);
-			$data['waip_array_bands'] = $this->waip->get_waip_simple_by_bands($data['worked_bands'], $postdata, $location_list);
-			$data['waip_totals_bands'] = $this->waip->get_waip_totals_by_bands($data['worked_bands'], $postdata, $location_list);
+			$data['waip_worked_bands'] = $this->waip->get_waip_worked_by_bands($location_list);
+			$data['waip_array_bands'] = $this->waip->get_waip_simple_by_bands($postdata, $location_list);
+			$data['waip_totals_bands'] = $this->waip->get_waip_totals_by_bands($postdata, $location_list);
 		} else {
 			$location_list = null;
 			$data['waip_worked'] = null;
@@ -1505,7 +1496,7 @@ class Awards extends CI_Controller {
 		$data['user_map_custom'] = $this->optionslib->get_map_custom();
 		$this->load->view('interface_assets/header', $data);
 		$this->load->view('awards/waip/index');
-		$this->load->view('interface_assets/footer', $footerData);
+		$this->load->view('interface_assets/footer');
     }
 
 	/*
