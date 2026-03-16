@@ -201,7 +201,7 @@ class Header_auth extends CI_Controller {
         }
 
         // $club_id = $this->config->item('auth_header_club_id') ?: ''; // TODO: Add support to add a user to a clubstation
-
+        $this->load->model('user_model');
         $result = $this->user_model->add(
             $username,
             bin2hex(random_bytes(64)),  // password
