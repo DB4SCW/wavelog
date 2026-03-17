@@ -74,23 +74,32 @@ class API extends CI_Controller {
 		} else {
 			// Success!
 
-			$this->api_model->update_key_description($this->input->post('api_key'), $this->input->post('api_desc'));
+			$this->api_model->update_key_description($this->input->post('api_key', true), $this->input->post('api_desc', true));
 
-			$this->session->set_flashdata('notice', sprintf(__("API Key %s description has been updated."), "<b>".$this->input->post('api_key')."</b>"));
+			$this->session->set_flashdata('notice', sprintf(__("API Key %s description has been updated."), "<b>" . htmlspecialchars($this->input->post('api_key', true), ENT_QUOTES, 'UTF-8') . "</b>"));
 
 			redirect('api');
 		}
 
 	}
 
-	function generate($rights) {
+	function generate() {
+		// CSRF mitigation: reject non-POST requests
+		if ($this->input->method() !== 'post') {
+			$this->session->set_flashdata('error', __("Invalid request method"));
+			redirect('api');
+			return;
+		}
+
 		$this->load->model('user_model');
 		if(!$this->user_model->authorize(3)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
+
+		$rights = $this->input->post('rights', TRUE);
 
 		if ($rights !== "r" && $rights !== "rw") {
 			$this->session->set_flashdata('error', __("Invalid API rights"));
 			redirect('api');
-			exit;
+			return;
 		}
 
 		$this->load->model('api_model');
@@ -109,16 +118,29 @@ class API extends CI_Controller {
 		redirect('api');
 	}
 
-	function delete($key) {
+	function delete() {
+		// CSRF mitigation: reject non-POST requests
+		if ($this->input->method() !== 'post') {
+			$this->session->set_flashdata('error', __("Invalid request method"));
+			redirect('api');
+			return;
+		}
+
 		$this->load->model('user_model');
 		if(!$this->user_model->authorize(3)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
 
+		$key = $this->input->post('key', TRUE);
+		if (empty($key)) {
+			$this->session->set_flashdata('error', __("Invalid API Key"));
+			redirect('api');
+			return;
+		}
 
 		$this->load->model('api_model');
 
 		$this->api_model->delete_key($key);
 
-		$this->session->set_flashdata('notice', sprintf(__("API Key %s has been deleted"), "<b>".$key."</b>" ));
+		$this->session->set_flashdata('notice', sprintf(__("API Key %s has been deleted"), "<b>" . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . "</b>" ));
 
 		redirect('api');
 	}

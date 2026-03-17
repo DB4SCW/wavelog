@@ -192,6 +192,7 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$data['page_title'] = __("Add User");
 			$data['measurement_base'] = $this->config->item('measurement_base');
+			$data['csrf_token'] = $this->paths->csrf_generate($this->router->class.'_'.$this->router->method);
 
 			$this->load->view('interface_assets/header', $data);
 			if($this->input->post('user_name')) {
@@ -252,6 +253,12 @@ class User extends CI_Controller {
 			}
 			$this->load->view('interface_assets/footer', $footerData);
 		} else {
+			if (!$this->paths->csrf_verify($this->router->class.'_'.$this->router->method)) {
+				$this->session->set_flashdata('error', __("Invalid security token"));
+				redirect('user/add');
+				return;
+			}
+
 			switch($this->user_model->add($this->input->post('user_name'),
 				$this->input->post('user_password'),
 				$this->input->post('user_email'),
@@ -334,6 +341,7 @@ class User extends CI_Controller {
 					return;
 			}
 			$data['page_title'] = __("Users");
+			$data['csrf_token'] = $this->paths->csrf_generate($this->router->class.'_'.$this->router->method);
 
 			$this->load->view('interface_assets/header', $data);
 			$data['user_name'] = $this->input->post('user_name');
@@ -931,12 +939,19 @@ class User extends CI_Controller {
 			$data['on_air_widget_show_only_most_recent_radio'] = ($this->user_options_model->get_options('widget', array('option_name'=>'on_air', 'option_key' => 'display_only_most_recent_radio'), $this->uri->segment(3))->row()->option_value ?? "true");
 			$data['on_air_widget_url'] = site_url('widgets/on_air/' . $q->slug);
 			$data['qso_widget_display_qso_time'] = ($this->user_options_model->get_options('widget', array('option_name'=>'qso', 'option_key' => 'display_qso_time'), $this->uri->segment(3))->row()->option_value ?? "false");
+			$data['csrf_token'] = $this->paths->csrf_generate($this->router->class.'_'.$this->router->method);
 
 			$this->load->view('interface_assets/header', $data);
 			$this->load->view('user/edit', $data);
 			$this->load->view('interface_assets/footer', $footerData);
 		} else {
 			// Data was submitted for saving - save updated options in DB
+			if (!$this->paths->csrf_verify($this->router->class.'_'.$this->router->method)) {
+				$this->session->set_flashdata('error', __("Invalid security token"));
+				redirect('user/edit/'.$this->uri->segment(3));
+				return;
+			}
+
 			unset($data);
 			switch($this->user_model->edit($this->input->post())) {
 				// Check for errors
@@ -1000,6 +1015,7 @@ class User extends CI_Controller {
 					return;
 			}
 
+			$data['csrf_token'] = $this->paths->csrf_generate($this->router->class.'_'.$this->router->method);
 			$this->load->view('interface_assets/header', $data);
 			$data['user_name'] = $this->input->post('user_name', true);
 			$data['user_email'] = $this->input->post('user_email', true);
@@ -1086,17 +1102,20 @@ class User extends CI_Controller {
 		$data = $query->row();
 		$data->page_title = __("Delete User");
 
-		if ($this->form_validation->run() == FALSE)
-		{
+		if ($this->form_validation->run() == FALSE) {
+			$data->csrf_token = $this->paths->csrf_generate($this->router->class.'_'.$this->router->method);
 
 			$this->load->view('interface_assets/header', $data);
 			$this->load->view('user/delete');
 			$this->load->view('interface_assets/footer');
-		}
-		else
-		{
-			if($this->user_model->delete($data->user_id))
-			{
+		} else {
+			if (!$this->paths->csrf_verify($this->router->class.'_'.$this->router->method)) {
+				$this->session->set_flashdata('error', __("Invalid security token"));
+				redirect('user');
+				return;
+			}
+
+			if($this->user_model->delete($data->user_id)) {
 				$this->session->set_flashdata('notice', __("User deleted"));
 				redirect('user');
 			} else {

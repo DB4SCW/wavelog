@@ -37,6 +37,7 @@
 	<?php $this->load->helper('form'); ?>
 
 	<form method="post" action="<?php echo $user_form_action; ?>" name="users" autocomplete="off">
+	<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>" />
 	<div class="accordion user_edit">
 		<!-- ZONE 1 / User General Information -->
 		<div class="accordion-item">
