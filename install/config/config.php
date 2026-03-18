@@ -109,37 +109,18 @@ $config['auth_mode'] = '3';
 $config['auth_level'][3] = 'Operator';
 $config['auth_level'][99] = 'Administrator';
 
-
 /*
 |--------------------------------------------------------------------------
 | Third-Party Authentication (SSO)
 |--------------------------------------------------------------------------
 |
-| This section defines settings for third-party authentication over an external identity provider. 
-| When enabled, Wavelog will look for a specific HTTP header containing an access token, which can be used to authenticate users.
-| This is particularly useful in environments where users are already authenticated through another system, such as a corporate SSO or an identity provider.
-| Please refer to the documentation of Wavelog for more details on how to set up and use this feature.
-| Link to documentation: https://docs.wavelog.org/admin-guide/configuration/third-party-authentication
+| Enable SSO support via a trusted HTTP header containing a JWT access token.
+| When enabled, a sso.php config file is required (see sso.sample.php).
 |
-| 'auth_header_enable'   = Enable or disable third-party authentication via HTTP headers.
-| 'auth_header_create'   = Automatically create a local user account if a valid access token is provided and no corresponding user exists.
-| 'auth_allow_direct_login' = Allow users to log in directly through the Wavelog login form even when third-party authentication is enabled. This can be useful for administrators or in cases where some users do not have access to the SSO system.
-| 'auth_headers_accesstoken' = The name of the HTTP header that contains the access token. This should match the header sent by your SSO or authentication system.
-| 'auth_headers_callsign_claim' = The JWT claim that contains the user's Callsign.
-| 'auth_header_text'    = The text displayed on the login button for third-party authentication.
-| 'auth_header_club_id' = Optional club ID to assign to users authenticated via the header. This can be used to group users or assign specific permissions based on their club affiliation.
-| 'auth_url_logout'     = The URL to redirect users to when they log out. If OAuth2 Proxy and Keycloak is used, must hit OAuth2 Proxy first then Keycloak. whitelist_domains for OAuth2 Proxy must also be set to the IdP domain.
+| Documentation: https://docs.wavelog.org/admin-guide/configuration/third-party-authentication
 */
 
-
-// $config['auth_header_enable'] = false;
-// $config['auth_header_create'] = true;
-// $config['auth_allow_direct_login'] = true;
-// $config['auth_headers_accesstoken'] = "HTTP_X_FORWARDED_ACCESS_TOKEN";
-// $config['auth_headers_callsign_claim'] = "callsign";
-// $config['auth_header_text'] = "Login with SSO";
-// $config['auth_header_club_id'] = "";
-// $config['auth_url_logout'] = 'https://log.example.org/oauth2/sign_out?rd=https://auth.example.org/realms/example/protocol/openid-connect/logout';
+$config['auth_header_enable'] = false;
 
 /*
 |--------------------------------------------------------------------------

@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Migration_external_account extends CI_Migration {
 	
 	public function up() {
-		$this->dbtry("ALTER TABLE users ADD COLUMN external_account tinyint DEFAULT 0 AFTER clubstation");
+		$this->dbtry("ALTER TABLE users ADD COLUMN external_account TEXT DEFAULT NULL AFTER clubstation");
 	}
 
 	public function down() {

@@ -226,7 +226,7 @@ class User_Model extends CI_Model {
 		$user_lotw_name, $user_lotw_password, $user_eqsl_name, $user_eqsl_password, $user_clublog_name, $user_clublog_password,
 		$user_winkey, $on_air_widget_enabled, $on_air_widget_display_last_seen, $on_air_widget_show_only_most_recent_radio,
 		$qso_widget_display_qso_time, $dashboard_banner, $dashboard_solar, $global_oqrs_text, $oqrs_grouped_search,
-		$oqrs_grouped_search_show_station_name, $oqrs_auto_matching, $oqrs_direct_auto_matching,$user_dxwaterfall_enable, $user_qso_show_map, $clubstation = 0, $external_account = false) {
+		$oqrs_grouped_search_show_station_name, $oqrs_auto_matching, $oqrs_direct_auto_matching,$user_dxwaterfall_enable, $user_qso_show_map, $clubstation = 0, $external_account = null) {
 		// Check that the user isn't already used
 		if(!$this->exists($username)) {
 			$data = array(
@@ -540,7 +540,7 @@ class User_Model extends CI_Model {
 	// This is really just a wrapper around User_Model::authenticate
 	function login() {
 
-		if (($this->config->item('auth_header_enable') ?? false) && !($this->config->item('auth_allow_direct_login') ?? true)) {
+		if (($this->config->item('auth_header_enable') ?? false) && !($this->config->item('auth_header_allow_direct_login') ?? true)) {
 			$this->session->set_flashdata('error', 'Direct login is disabled. Please use the SSO option to log in.');
 			redirect('user/login');
 		}
@@ -751,6 +751,18 @@ class User_Model extends CI_Model {
 			}
 		}
 		return 0;
+	}
+
+	// FUNCTION: retrieve a user by their SSO composite key (md5(iss).sub)
+	function get_by_external_account(string $key) {
+		$this->db->where('external_account', $key);
+		return $this->db->get($this->config->item('auth_table'));
+	}
+
+	// FUNCTION: update specific user fields from SSO claims (bypass privilege check, used during login flow)
+	function update_sso_claims(int $user_id, array $fields): void {
+		$this->db->where('user_id', $user_id);
+		$this->db->update('users', $fields);
 	}
 
 	// FUNCTION: set's the last-login timestamp in user table
