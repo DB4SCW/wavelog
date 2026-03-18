@@ -179,15 +179,11 @@ class User extends CI_Controller {
 
 		$data['external_account'] = NULL;
 		$data['auth_header_enable'] = $this->config->item('auth_header_enable') ?? false;
-		if ($data['auth_header_enable']) {
-			// expecting sso.php in the config folder
-			$this->config->load('sso', true, true);
-		}
-		$data['auth_header_allow_direct_login']  = $this->config->item('auth_header_allow_direct_login', 'sso') ?? true;
-		$data['auth_header_hide_password_field'] = $this->config->item('auth_header_hide_password_field', 'sso') ?? false;
-		$data['auth_header_locked_data_badge'] = $this->config->item('auth_header_locked_data_badge', 'sso') ?: 'IdP';
-		$data['auth_header_locked_data_tip'] = $this->config->item('auth_header_locked_data_tip', 'sso') ?: __("Can't be changed. Manage this through your Identity Provider.");
-		$data['sso_claim_config'] = $this->config->item('auth_headers_claim_config', 'sso') ?: [];
+		$data['auth_header_allow_direct_login']  = true;
+		$data['auth_header_hide_password_field'] = false;
+		$data['auth_header_locked_data_badge'] = "Not Visible In Add UI";
+		$data['auth_header_locked_data_tip'] = "You should not see this message";
+		$data['sso_claim_config'] = [];
 
 		// Get themes list
 		$data['themes'] = $this->user_model->getThemes();
