@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-18 21:33+0000\n"
-"PO-Revision-Date: 2026-03-17 22:16+0000\n"
+"PO-Revision-Date: 2026-03-18 22:57+0000\n"
 "Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/pl/>\n"
@@ -10909,11 +10909,11 @@ msgstr "Wersja MySQL"
 
 #: application/views/debug/index.php:124
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "Wersja OpenSSL"
 
 #: application/views/debug/index.php:125
 msgid "not found"
-msgstr ""
+msgstr "nie znaleziono"
 
 #: application/views/debug/index.php:128
 msgid "Codeigniter Version"
