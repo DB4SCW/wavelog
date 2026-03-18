@@ -971,7 +971,7 @@ class User extends CI_Controller {
 			$post_data = $this->input->post();
 			if (!empty($query->row()->external_account)) {
 				$post_data['user_name']  = $query->row()->user_name;
-				if (!($this->config->item('auth_header_allow_direct_login') ?? true)) {
+				if (!($this->config->item('auth_header_allow_direct_login', 'sso') ?? true)) {
 					$post_data['user_password'] = $this->pwd_placeholder; // placeholder → model skips password update
 				}
 			}

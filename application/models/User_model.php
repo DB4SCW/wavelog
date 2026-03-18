@@ -442,7 +442,7 @@ class User_Model extends CI_Model {
 				$pwd_placeholder = '**********';
 
 				// Hash password
-				if($fields['user_password'] != NULL)
+				if(array_key_exists('user_password', $fields) && ($fields['user_password'] != NULL))
 				{
 					if (!file_exists('.demo') || (file_exists('.demo') && $this->session->userdata('user_type') == 99)) {
 
