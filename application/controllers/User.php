@@ -80,6 +80,11 @@ class User extends CI_Controller {
 		if ($this->user_model->exists_by_id($data['user_id']) && $modal != '') {
 			$user = $this->user_model->get_by_id($data['user_id'])->row();
 			$gettext = new Gettext;
+			
+			$data['auth_header_enable'] = $this->config->item('auth_header_enable') ?? false;
+			if ($data['auth_header_enable']) {
+				$this->config->load('sso', true, true);
+			}
 
 			$data['user_name'] = $user->user_name;
 			$data['user_callsign'] = $user->user_callsign;
@@ -92,6 +97,7 @@ class User extends CI_Controller {
 			$data['last_seen'] = $user->last_seen;
 			$data['custom_date_format'] = $custom_date_format;
 			$data['has_flossie'] = ($this->config->item('encryption_key') == 'flossie1234555541') ? true : false;
+			$data['auth_header_allow_direct_login'] = $this->config->item('auth_header_allow_direct_login', 'sso') ?? true;
 
 			$this->load->view('user/modals/'.$modal.'_modal', $data);
 		} else {
@@ -1529,7 +1535,14 @@ class User extends CI_Controller {
 
 					$check_email = $this->user_model->check_email_address($data->user_email);
 
-					if($check_email == TRUE) {
+					// Is local login allowed
+					$auth_header_enable = $this->config->item('auth_header_enable') ?? false;
+					if ($auth_header_enable) {
+						$this->config->load('sso', true, true);
+					}
+					$auth_header_allow_direct_login  = $this->config->item('auth_header_allow_direct_login', 'sso') ?? true;
+
+					if($check_email == TRUE && $auth_header_allow_direct_login) {
 						// Generate password reset code 50 characters long
 						$this->load->helper('string');
 						$reset_code = random_string('alnum', 50);
