@@ -753,10 +753,14 @@ class User_Model extends CI_Model {
 		return 0;
 	}
 
-	// FUNCTION: retrieve a user by their SSO composite key (md5(iss).sub)
+	// FUNCTION: retrieve a user by their SSO composite key {iss, sub} stored as JSON
 	function get_by_external_account(string $key) {
-		$this->db->where('external_account', $key);
-		return $this->db->get($this->config->item('auth_table'));
+		$table = $this->config->item('auth_table');
+		$decoded = json_decode($key, true);
+		return $this->db->query(
+			"SELECT * FROM `$table` WHERE JSON_VALUE(external_account, '$.iss') = ? AND JSON_VALUE(external_account, '$.sub') = ?",
+			[$decoded['iss'], $decoded['sub']]
+		);
 	}
 
 	// FUNCTION: update specific user fields from SSO claims (bypass privilege check, used during login flow)
