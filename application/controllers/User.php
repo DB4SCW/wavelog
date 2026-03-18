@@ -456,7 +456,8 @@ class User extends CI_Controller {
 		}
 		$data['auth_header_allow_direct_login']  = $this->config->item('auth_header_allow_direct_login', 'sso') ?? true;
 		$data['auth_header_hide_password_field'] = $this->config->item('auth_header_hide_password_field', 'sso') ?? false;
-		$data['auth_header_locked_data_batch'] = $this->config->item('auth_header_locked_data_batch', 'sso') ?: '<span class="badge bg-secondary ms-1" data-bs-toggle="tooltip" title="' . __("Can't be changed. Manage this through your Identity Provider.") . '"><i class="fa fa-lock"></i> IdP</span>';
+		$data['auth_header_locked_data_badge'] = $this->config->item('auth_header_locked_data_badge', 'sso') ?: 'IdP';
+		$data['auth_header_locked_data_tip'] = $this->config->item('auth_header_locked_data_tip', 'sso') ?: __("Can't be changed. Manage this through your Identity Provider.");
 		$data['sso_claim_config'] = $this->config->item('auth_headers_claim_config', 'sso') ?: [];
 
 		$data['page_title'] = __("Edit User");
