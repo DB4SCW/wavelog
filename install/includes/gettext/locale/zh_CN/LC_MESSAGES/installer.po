@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 15:25+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
 "PO-Revision-Date: 2026-02-23 05:42+0000\n"
 "Last-Translator: \"Shen RuiQin(BH4FJN)\" <jerry19980425@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
@@ -145,6 +145,10 @@ msgstr "瑞典语"
 #: install/includes/interface_assets/footer.php:84
 msgid "Turkish"
 msgstr "土耳其语"
+
+#: install/includes/interface_assets/footer.php:85
+msgid "Ukrainian"
+msgstr ""
 
 #: install/includes/interface_assets/header.php:94
 msgid "Install | Wavelog"

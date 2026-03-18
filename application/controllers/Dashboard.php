@@ -34,7 +34,7 @@ class Dashboard extends CI_Controller {
 			$data['active_not_linked']=false;
 		}
 
-		if ($logbooks_locations_array[0] == -1) {
+		if ($logbooks_locations_array[0] === -1) {
 			$data['linkedCount']=0;
 		} else {
 			$data['linkedCount']=sizeof($logbooks_locations_array);

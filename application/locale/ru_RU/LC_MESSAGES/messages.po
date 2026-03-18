@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 17:08+0000\n"
-"PO-Revision-Date: 2026-03-12 17:48+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 08:00+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ru/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -11379,6 +11379,10 @@ msgstr "Шведский"
 msgid "Turkish"
 msgstr "Турецкий"
 
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
+
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
 msgstr ""
@@ -18011,15 +18015,15 @@ msgstr "EME QSO не найдено."
 
 #: application/views/statistics/qsltable.php:7
 msgid "Absolute"
-msgstr ""
+msgstr "Всего"
 
 #: application/views/statistics/qsltable.php:8
 msgid "Percent"
-msgstr ""
+msgstr "В процентах"
 
 #: application/views/statistics/qsltable.php:49
 msgid "Overall Stats by Mode"
-msgstr ""
+msgstr "Общая статистика по виду модуляции"
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"

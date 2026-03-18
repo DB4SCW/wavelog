@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 17:08+0000\n"
-"PO-Revision-Date: 2026-03-09 09:12+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 13:30+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -284,7 +284,7 @@ msgstr "API-avaimen %s kuvaus on päivitetty."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Virheellinen pyyntömenetelmä"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -300,7 +300,7 @@ msgstr "API-avainta ei voitu luoda"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Virheellinen API-avain"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -2715,7 +2715,7 @@ msgstr "Luo aseman sijainti"
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
 msgid "Invalid security token"
-msgstr ""
+msgstr "Virheellinen turvatunniste"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -7224,7 +7224,7 @@ msgstr "Manner"
 
 #: application/views/awards/wac/index.php:227
 msgid "No QSOS found matching the criteria for this award!"
-msgstr ""
+msgstr "Tämän awardin kriitereihin sopivia QSOja ei löytynyt!"
 
 #: application/views/awards/wae/index.php:18
 msgid "WAE Award"
@@ -11309,6 +11309,10 @@ msgstr "ruotsalainen"
 #: application/views/debug/index.php:866
 msgid "Turkish"
 msgstr "turkkilainen"
+
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
@@ -17899,15 +17903,15 @@ msgstr "Yhtäjään EME-qsoa ei löytynyt."
 
 #: application/views/statistics/qsltable.php:7
 msgid "Absolute"
-msgstr ""
+msgstr "Absoluuttinen"
 
 #: application/views/statistics/qsltable.php:8
 msgid "Percent"
-msgstr ""
+msgstr "Prosenttia"
 
 #: application/views/statistics/qsltable.php:49
 msgid "Overall Stats by Mode"
-msgstr ""
+msgstr "Kokonaisstatistiikka moden mukaan"
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"

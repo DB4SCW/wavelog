@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 15:25+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
 "PO-Revision-Date: 2025-08-24 12:50+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/"
@@ -142,6 +142,10 @@ msgstr "Шведский"
 #: install/includes/interface_assets/footer.php:84
 msgid "Turkish"
 msgstr "Турецкий"
+
+#: install/includes/interface_assets/footer.php:85
+msgid "Ukrainian"
+msgstr ""
 
 #: install/includes/interface_assets/header.php:94
 msgid "Install | Wavelog"

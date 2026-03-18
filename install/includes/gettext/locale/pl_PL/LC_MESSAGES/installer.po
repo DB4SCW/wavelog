@@ -7,12 +7,13 @@
 # Artur Greficz <sq7acp@gmail.com>, 2025.
 # Szymon <szporwolik@gmail.com>, 2025.
 # Szymon <sp9spm@cqops.com>, 2025.
+# Dariusz Koryto <dariusz@koryto.eu>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 15:25+0000\n"
-"PO-Revision-Date: 2025-11-11 02:08+0000\n"
-"Last-Translator: Szymon <sp9spm@cqops.com>\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 15:25+0000\n"
+"Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/"
 "installer/pl/>\n"
 "Language: pl_PL\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: install/includes/install_config/install_lib.php:123
 msgid "not detected"
@@ -56,7 +57,7 @@ msgstr "Czeski"
 
 #: install/includes/interface_assets/footer.php:63
 msgid "Dutch"
-msgstr "Duński"
+msgstr "Niderlandzki"
 
 #: install/includes/interface_assets/footer.php:64
 msgid "English"
@@ -142,6 +143,10 @@ msgstr "Szwedzki"
 msgid "Turkish"
 msgstr "Turecki"
 
+#: install/includes/interface_assets/footer.php:85
+msgid "Ukrainian"
+msgstr ""
+
 #: install/includes/interface_assets/header.php:94
 msgid "Install | Wavelog"
 msgstr "Zainstaluj | Wavelog"
@@ -152,7 +157,7 @@ msgstr "1. Witamy"
 
 #: install/index.php:50
 msgid "2. Pre Checks"
-msgstr "2. Wstępna sprawdzenia"
+msgstr "2. Wstępne sprawdzenia"
 
 #: install/index.php:53
 msgid "3. Configuration"
@@ -263,7 +268,7 @@ msgid ""
 "Since you are using nginx as web server please make sure that you have made "
 "the changes described in the Wiki before continuing."
 msgstr ""
-"Ponieważ używany jest nginx jako serwer WWW, przed kontynuowaniem należy "
+"Ponieważ używany jest nginx jako serwer www, przed kontynuowaniem należy "
 "upewnić się, że wprowadzono zmiany opisane w Wiki."
 
 #: install/index.php:269
@@ -738,7 +743,7 @@ msgstr "Bez tego modułu instalator Wavelog nie działa!"
 
 #: install/index.php:1978
 msgid "Please install the required modules and restart the webserver."
-msgstr "Należy zainstalować wymagane moduły oraz zresetować serwer WWW."
+msgstr "Należy zainstalować wymagane moduły oraz zresetować serwer www."
 
 #: install/run.php:10
 msgid "Installation"

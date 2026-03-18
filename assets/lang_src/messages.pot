@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 17:08+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10801,6 +10801,10 @@ msgstr ""
 
 #: application/views/debug/index.php:866
 msgid "Turkish"
+msgstr ""
+
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
 msgstr ""
 
 #: application/views/distancerecords/index.php:4

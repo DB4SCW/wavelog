@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 15:25+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
 "PO-Revision-Date: 2025-08-23 15:21+0000\n"
 "Last-Translator: Matthias Jung <jungma@eit.uni-kl.de>\n"
 "Language-Team: Armenian <https://translate.wavelog.org/projects/wavelog/"
@@ -137,6 +137,10 @@ msgstr ""
 
 #: install/includes/interface_assets/footer.php:84
 msgid "Turkish"
+msgstr ""
+
+#: install/includes/interface_assets/footer.php:85
+msgid "Ukrainian"
 msgstr ""
 
 #: install/includes/interface_assets/header.php:94

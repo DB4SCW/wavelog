@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 17:08+0000\n"
-"PO-Revision-Date: 2026-03-15 11:59+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 17:08+0000\n"
 "Last-Translator: iv3cvn <ricentis@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
@@ -286,7 +286,7 @@ msgstr "La descrizione per la chiave %s è stata aggiornata."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Metodo di richiesta non valido"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -302,7 +302,7 @@ msgstr "Impossibile generare la chiave API"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Chiave API non valida"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -2719,7 +2719,7 @@ msgstr "Crea postazione"
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
 msgid "Invalid security token"
-msgstr ""
+msgstr "Token di sicurezza non valido"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -11370,6 +11370,10 @@ msgstr "Svedese"
 msgid "Turkish"
 msgstr "Turco"
 
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
+
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
 msgstr ""
@@ -18028,15 +18032,15 @@ msgstr "Nessun contatto EME è stato trovato."
 
 #: application/views/statistics/qsltable.php:7
 msgid "Absolute"
-msgstr ""
+msgstr "Assoluto"
 
 #: application/views/statistics/qsltable.php:8
 msgid "Percent"
-msgstr ""
+msgstr "Percento"
 
 #: application/views/statistics/qsltable.php:49
 msgid "Overall Stats by Mode"
-msgstr ""
+msgstr "Statistiche complessive per modo"
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"

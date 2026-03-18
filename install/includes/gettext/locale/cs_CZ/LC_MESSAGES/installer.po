@@ -4,12 +4,13 @@
 #
 # Michal Šiman <michal.siman@gmail.com>, 2024.
 # Petr OK1PTR <ok1ptr@pm.me>, 2024.
+# Dariusz Koryto <dariusz@koryto.eu>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 15:25+0000\n"
-"PO-Revision-Date: 2024-08-26 12:58+0000\n"
-"Last-Translator: Petr OK1PTR <ok1ptr@pm.me>\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 13:53+0000\n"
+"Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Czech <https://translate.wavelog.org/projects/wavelog/"
 "installer/cs/>\n"
 "Language: cs_CZ\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.7\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: install/includes/install_config/install_lib.php:123
 msgid "not detected"
@@ -29,7 +30,7 @@ msgstr "Albánština"
 
 #: install/includes/interface_assets/footer.php:57
 msgid "Armenian"
-msgstr ""
+msgstr "Arménština"
 
 #: install/includes/interface_assets/footer.php:58
 msgid "Bosnian"
@@ -61,7 +62,7 @@ msgstr "Angličtina"
 
 #: install/includes/interface_assets/footer.php:65
 msgid "Estonian"
-msgstr ""
+msgstr "Estonština"
 
 #: install/includes/interface_assets/footer.php:66
 msgid "Finnish"
@@ -81,7 +82,7 @@ msgstr "Řečtina"
 
 #: install/includes/interface_assets/footer.php:70
 msgid "Hungarian"
-msgstr ""
+msgstr "Maďarština"
 
 #: install/includes/interface_assets/footer.php:71
 msgid "Italian"
@@ -89,15 +90,15 @@ msgstr "Italština"
 
 #: install/includes/interface_assets/footer.php:72
 msgid "Japanese"
-msgstr ""
+msgstr "Japonština"
 
 #: install/includes/interface_assets/footer.php:73
 msgid "Latvian"
-msgstr ""
+msgstr "Lotyština"
 
 #: install/includes/interface_assets/footer.php:74
 msgid "Lithuanian"
-msgstr ""
+msgstr "Litevština"
 
 #: install/includes/interface_assets/footer.php:75
 msgid "Montenegrin"
@@ -121,11 +122,11 @@ msgstr "Srbština"
 
 #: install/includes/interface_assets/footer.php:80
 msgid "Slovak"
-msgstr ""
+msgstr "Slovenština"
 
 #: install/includes/interface_assets/footer.php:81
 msgid "Slovenian"
-msgstr ""
+msgstr "Slovinština"
 
 #: install/includes/interface_assets/footer.php:82
 msgid "Spanish"
@@ -138,6 +139,10 @@ msgstr "Švédština"
 #: install/includes/interface_assets/footer.php:84
 msgid "Turkish"
 msgstr "Turečtina"
+
+#: install/includes/interface_assets/footer.php:85
+msgid "Ukrainian"
+msgstr ""
 
 #: install/includes/interface_assets/header.php:94
 msgid "Install | Wavelog"
@@ -304,7 +309,7 @@ msgstr ""
 
 #: install/index.php:363
 msgid "You have some warnings!"
-msgstr ""
+msgstr "Máte nějaká varování!"
 
 #: install/index.php:364
 msgid ""
@@ -323,7 +328,7 @@ msgid ""
 "Configure some basic parameters for your wavelog instance. You can change "
 "them later in 'application/config/config.php'"
 msgstr ""
-"Nastavte některé základní parametry vašeho Wavelog. Později je můžete změnit "
+"Nastavte základní parametry vaší instance Wavelog. Později je můžete změnit "
 "v souboru 'application/config/config.php'"
 
 #: install/index.php:387
@@ -333,14 +338,18 @@ msgid ""
 "check your web server configuration. This is the base_url in your config."
 "php, which can be edited after the installation."
 msgstr ""
+"Toto je URL adresa, kde budete mít přístup k této instanci Wavelog po "
+"dokončení instalace. Pokud se nezobrazuje to, co očekáváte, možná budete "
+"muset zkontrolovat konfiguraci vašeho webového serveru. Toto je base_url ve "
+"vašem souboru config.php, který lze upravit po instalaci."
 
 #: install/index.php:387
 msgid "Your final Wavelog URL"
-msgstr ""
+msgstr "Vaše finální URL adresa Wavelog"
 
 #: install/index.php:393
 msgid "Optional: Global Callbook Lookup"
-msgstr ""
+msgstr "Volitelné: Globální vyhledávání v callbooku"
 
 #: install/index.php:393
 msgid ""
@@ -350,22 +359,27 @@ msgid ""
 "credentials for QRZ.com. To also get the Call Locator in QRZ.com you'll need "
 "an XML subscription. HamQTH does not always provide the locator information."
 msgstr ""
+"Tato konfigurace je volitelná. Vyhledávání značek bude dostupné pro všechny "
+"uživatele této instalace. Můžete si vybrat mezi QRZ.com a HamQTH. Zatímco "
+"HamQTH funguje i bez uživatelského jména a hesla, pro QRZ.com budete "
+"potřebovat přihlašovací údaje. Pro získání lokátoru v QRZ.com budete "
+"potřebovat XML předplatné. HamQTH ne vždy poskytuje informace o lokátoru."
 
 #: install/index.php:404 install/index.php:485 install/index.php:937
 msgid "Username"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 #: install/index.php:407 install/index.php:489 install/index.php:947
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: install/index.php:412
 msgid "Callbook Username"
-msgstr ""
+msgstr "Uživatelské jméno callbooku"
 
 #: install/index.php:415
 msgid "Callbook Password"
-msgstr ""
+msgstr "Heslo callbooku"
 
 #: install/index.php:417
 #, php-format
@@ -374,109 +388,119 @@ msgstr "Heslo nesmí obsahovat %s nebo být prázdné"
 
 #: install/index.php:422
 msgid "Good to know:"
-msgstr ""
+msgstr "Dobré vědět:"
 
 #: install/index.php:423
 msgid ""
 "Use your callsign as your username for QRZ.com. The XML API does not support "
 "email addresses."
 msgstr ""
+"Použijte svou značku jako uživatelské jméno pro QRZ.com. XML API nepodporuje "
+"e-mailové adresy."
 
 #: install/index.php:426 install/index.php:431
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Pokročilá nastavení"
 
 #: install/index.php:434
 msgid "These settings should only be set if you know what you're doing."
-msgstr ""
+msgstr "Tato nastavení by měla být nastavena pouze pokud víte, co děláte."
 
 #: install/index.php:437
 msgid "Error Logs"
-msgstr ""
+msgstr "Chybové logy"
 
 #: install/index.php:438
 msgid ""
 "Optional: Enable Error Logging by setting the log threshold bigger then 0. "
 "Only enable this if you really need it."
 msgstr ""
+"Volitelné: Povolte zaznamenávání chyb nastavením prahu logu většího než 0. "
+"Povolte to pouze pokud to skutečně potřebujete."
 
 #: install/index.php:443
 msgid "0 - No logs"
-msgstr ""
+msgstr "0 - Žádné logy"
 
 #: install/index.php:444
 msgid "1 - Error messages"
-msgstr ""
+msgstr "1 - Chybové zprávy"
 
 #: install/index.php:445
 msgid "2 - Debug messages"
-msgstr ""
+msgstr "2 - Ladící zprávy"
 
 #: install/index.php:446
 msgid "3 - Info messages"
-msgstr ""
+msgstr "3 - Informační zprávy"
 
 #: install/index.php:447
 msgid "4 - All messages"
-msgstr ""
+msgstr "4 - Všechny zprávy"
 
 #: install/index.php:469
 msgid ""
 "To properly install Wavelog you already should have setup a mariadb/mysql "
 "database. Provide the parameters here."
 msgstr ""
+"Pro správnou instalaci Wavelog byste měli mít již nastavenou databázi "
+"mariadb/mysql. Zadejte parametry zde."
 
 #: install/index.php:473
 msgid "Hostname or IP"
-msgstr ""
+msgstr "Název hostitele nebo IP"
 
 #: install/index.php:473
 msgid ""
 "Usually 'localhost'.<br>Optional with '[host]:[port]'. Default port: 3306."
 "<br>In a docker compose install type 'wavelog-db'."
 msgstr ""
+"Obvykle 'localhost'.<br>Volitelně s '[host]:[port]'. Výchozí port: 3306."
+"<br>V instalaci docker compose zadejte 'wavelog-db'."
 
 #: install/index.php:479
 msgid "Database Name"
-msgstr ""
+msgstr "Název databáze"
 
 #: install/index.php:479
 msgid "Name of the Database"
-msgstr ""
+msgstr "Název databáze"
 
 #: install/index.php:485
 msgid "Username of the Database User which has full access to the database."
-msgstr ""
+msgstr "Uživatelské jméno uživatele databáze s plným přístupem k databázi."
 
 #: install/index.php:489
 msgid "Password of the Database User"
-msgstr ""
+msgstr "Heslo uživatele databáze"
 
 #: install/index.php:493
 msgid "Connection Test"
-msgstr ""
+msgstr "Test připojení"
 
 #: install/index.php:504
 msgid ""
 "Now you can create your first user in Wavelog. Fill out all fields and click "
 "continue. Make sure you use a safe password."
 msgstr ""
+"Nyní můžete vytvořit svého prvního uživatele ve Wavelog. Vyplňte všechna "
+"pole a klikněte na pokračovat. Ujistěte se, že používáte bezpečné heslo."
 
 #: install/index.php:505
 msgid "All fields are required!"
-msgstr ""
+msgstr "Všechna pole jsou povinná!"
 
 #: install/index.php:513
 msgid "First Name"
-msgstr ""
+msgstr "Jméno"
 
 #: install/index.php:517
 msgid "DXCC"
-msgstr ""
+msgstr "DXCC"
 
 #: install/index.php:519
 msgid "Please select one"
-msgstr ""
+msgstr "Vyberte prosím jednu možnost"
 
 #: install/index.php:520 install/index.php:526 install/index.php:550
 #: install/index.php:562 install/index.php:565 install/index.php:570
@@ -500,63 +524,63 @@ msgstr ""
 #: install/index.php:881 install/index.php:886 install/index.php:912
 #: install/index.php:918 install/index.php:920 install/index.php:1726
 msgid "Deleted DXCC"
-msgstr ""
+msgstr "Smazané DXCC"
 
 #: install/index.php:927
 msgid "Last Name"
-msgstr ""
+msgstr "Příjmení"
 
 #: install/index.php:931
 msgid "Callsign"
-msgstr ""
+msgstr "Značka"
 
 #: install/index.php:941
 msgid "Gridsquare/Locator"
-msgstr ""
+msgstr "Lokátor"
 
 #: install/index.php:951
 msgid "City"
-msgstr ""
+msgstr "Město"
 
 #: install/index.php:957
 msgid "Confirm Password"
-msgstr ""
+msgstr "Potvrdit heslo"
 
 #: install/index.php:961
 msgid "Timezone"
-msgstr ""
+msgstr "Časové pásmo"
 
 #: install/index.php:1064
 msgid "E-Mail Address"
-msgstr ""
+msgstr "E-mailová adresa"
 
 #: install/index.php:1086
 msgid "Checklist"
-msgstr ""
+msgstr "Kontrolní seznam"
 
 #: install/index.php:1091
 msgid "Pre-Checks"
-msgstr ""
+msgstr "Předinstalační kontroly"
 
 #: install/index.php:1100
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigurace"
 
 #: install/index.php:1109
 msgid "Database"
-msgstr ""
+msgstr "Databáze"
 
 #: install/index.php:1118
 msgid "First User"
-msgstr ""
+msgstr "První uživatel"
 
 #: install/index.php:1128
 msgid "Nearly done!"
-msgstr ""
+msgstr "Téměř hotovo!"
 
 #: install/index.php:1130
 msgid "You prepared all neccessary steps."
-msgstr ""
+msgstr "Připravili jste všechny nezbytné kroky."
 
 #: install/index.php:1131
 msgid "We now can install Wavelog. This process can take a few minutes."
@@ -564,15 +588,15 @@ msgstr "Nyní můžeme nainstalovat Wavelog. Proces může trvat několik minut.
 
 #: install/index.php:1137
 msgid "Reset"
-msgstr ""
+msgstr "Resetovat"
 
 #: install/index.php:1142
 msgid "Installer Reset"
-msgstr ""
+msgstr "Reset instalátoru"
 
 #: install/index.php:1145
 msgid "Do you really want to reset all data and start from scratch?"
-msgstr ""
+msgstr "Opravdu chcete resetovat všechna data a začít od začátku?"
 
 #: install/index.php:1148
 msgid "Yes"
@@ -595,6 +619,8 @@ msgid ""
 "You can't continue. Solve the red marked issues, restart the webserver and "
 "reload this page."
 msgstr ""
+"Nemůžete pokračovat. Vyřešte problémy označené červeně, restartujte webový "
+"server a znovu načtěte tuto stránku."
 
 #: install/index.php:1365
 msgid "Password can't contain ' / \\ < >"
@@ -605,30 +631,38 @@ msgid ""
 "The callsign should not contain any pre- or suffixes as it is used as "
 "personal operator callsign."
 msgstr ""
+"Značka by neměla obsahovat žádné předpony ani přípony, protože se používá "
+"jako osobní značka operátora."
 
 #: install/index.php:1381
 msgid ""
 "The callsign can not contain any special characters. It's your personal "
 "callsign without any pre- or suffixes."
 msgstr ""
+"Značka nemůže obsahovat žádné speciální znaky. Je to vaše osobní značka bez "
+"jakýchkoli předpon nebo přípon."
 
 #: install/index.php:1514
 msgid "Error: At least Hostname/IP, Database Name and Username are required."
 msgstr ""
+"Chyba: Vyžaduje se alespoň název hostitele/IP, název databáze a uživatelské "
+"jméno."
 
 #: install/index.php:1524
 msgid "Connecting..."
-msgstr ""
+msgstr "Připojování..."
 
 #: install/index.php:1548
 msgid "Connection was successful and your database should be compatible."
-msgstr ""
+msgstr "Připojení bylo úspěšné a vaše databáze by měla být kompatibilní."
 
 #: install/index.php:1552
 msgid ""
 "Connection was successful but your database seems too old for Wavelog. You "
 "can try to continue but you could run into issues."
 msgstr ""
+"Připojení bylo úspěšné, ale vaše databáze se zdá být pro Wavelog příliš "
+"stará. Můžete zkusit pokračovat, ale můžete narazit na problémy."
 
 #: install/index.php:1552
 #, php-format
@@ -649,18 +683,24 @@ msgid ""
 "Check which DXCC for this particular location is the correct one. If you are "
 "sure, ignore this warning."
 msgstr ""
+"Zde na chvíli zastavte. Vámi zvolené DXCC je zastaralé a již není platné. "
+"Zkontrolujte, které DXCC je pro tuto konkrétní lokalitu správné. Pokud jste "
+"si jisti, ignorujte toto varování."
 
 #: install/index.php:1752
 msgid ""
 "The locator seems to be not in the correct format. Should look like AA11AA "
 "(6-char grid locator)."
 msgstr ""
+"Lokátor zřejmě není ve správném formátu. Měl by vypadat jako AA11AA (6-"
+"místný lokátor)."
 
 #: install/index.php:1766
 msgid ""
 "The e-mail adress does not look correct. Make sure it's a valid e-mail "
 "address"
 msgstr ""
+"E-mailová adresa nevypadá správně. Ujistěte se, že je platná e-mailová adresa"
 
 #: install/index.php:1793
 msgid "Password should be at least 8 characters long"
@@ -676,7 +716,7 @@ msgstr "Instalovat nyní"
 
 #: install/index.php:1862
 msgid "Install not possible. Checklist incomplete."
-msgstr ""
+msgstr "Instalace není možná. Kontrolní seznam není kompletní."
 
 #: install/index.php:1974
 msgid "PHP Module missing"
@@ -747,11 +787,11 @@ msgstr "Skrýt detailní ladící log"
 
 #: install/run.php:182
 msgid "Could not create application/config/config.php"
-msgstr ""
+msgstr "Nepodařilo se vytvořit application/config/config.php"
 
 #: install/run.php:217
 msgid "Could not create application/config/database.php"
-msgstr ""
+msgstr "Nepodařilo se vytvořit application/config/database.php"
 
 #: install/run.php:251
 msgid "Could not create database tables"
@@ -767,7 +807,7 @@ msgstr "Nelze aktualizovat DXCC data"
 
 #: install/run.php:342
 msgid "Could not create install/.lock file"
-msgstr ""
+msgstr "Nepodařilo se vytvořit soubor install/.lock"
 
 #~ msgid "Directory"
 #~ msgstr "Adresář"
