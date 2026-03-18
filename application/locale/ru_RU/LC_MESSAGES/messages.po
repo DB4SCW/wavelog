@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"POT-Creation-Date: 2026-03-18 21:33+0000\n"
 "PO-Revision-Date: 2026-03-16 08:00+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -887,12 +887,12 @@ msgstr "Редактирование задачи"
 
 #: application/controllers/Cron.php:227 application/controllers/Cron.php:228
 #: application/views/cron/index.php:96 application/views/cron/index.php:98
-#: application/views/cron/index.php:100 application/views/debug/index.php:673
-#: application/views/debug/index.php:680 application/views/debug/index.php:686
-#: application/views/debug/index.php:692 application/views/debug/index.php:698
-#: application/views/debug/index.php:704 application/views/debug/index.php:710
-#: application/views/debug/index.php:716 application/views/debug/index.php:722
-#: application/views/debug/index.php:728 application/views/debug/index.php:734
+#: application/views/cron/index.php:100 application/views/debug/index.php:678
+#: application/views/debug/index.php:685 application/views/debug/index.php:691
+#: application/views/debug/index.php:697 application/views/debug/index.php:703
+#: application/views/debug/index.php:709 application/views/debug/index.php:715
+#: application/views/debug/index.php:721 application/views/debug/index.php:727
+#: application/views/debug/index.php:733 application/views/debug/index.php:739
 msgid "never"
 msgstr "никогда"
 
@@ -1535,7 +1535,7 @@ msgstr "Все запросы к коллбукам не удались или �
 #: application/views/contesting/index.php:265
 #: application/views/continents/index.php:39 application/views/csv/index.php:42
 #: application/views/dashboard/index.php:4
-#: application/views/debug/index.php:757
+#: application/views/debug/index.php:762
 #: application/views/distancerecords/index.php:19
 #: application/views/dxatlas/index.php:42
 #: application/views/eqsl/analysis.php:39
@@ -1857,7 +1857,7 @@ msgstr "Дистанция"
 #: application/views/contesting/index.php:264
 #: application/views/continents/index.php:30 application/views/csv/index.php:31
 #: application/views/dashboard/index.php:15
-#: application/views/debug/index.php:758 application/views/dxatlas/index.php:31
+#: application/views/debug/index.php:763 application/views/dxatlas/index.php:31
 #: application/views/eqsl/download.php:41
 #: application/views/eqslcard/index.php:32
 #: application/views/gridmap/index.php:63 application/views/kml/index.php:19
@@ -2489,7 +2489,7 @@ msgstr "Метка времени"
 msgid "Options"
 msgstr "Опции"
 
-#: application/controllers/Radio.php:53 application/views/debug/index.php:360
+#: application/controllers/Radio.php:53 application/views/debug/index.php:365
 #: application/views/qso/index.php:841
 msgid "Settings"
 msgstr "Настройки"
@@ -3248,7 +3248,7 @@ msgstr "Пользователь %s вышел."
 msgid "Station Name"
 msgstr "Профиль QTH"
 
-#: application/controllers/User.php:1334 application/views/debug/index.php:759
+#: application/controllers/User.php:1334 application/views/debug/index.php:764
 #: application/views/public_search/result.php:17
 #: application/views/station_profile/create.php:60
 #: application/views/station_profile/edit.php:77
@@ -4640,7 +4640,7 @@ msgstr ""
 #: application/views/contesting/index.php:103
 #: application/views/contesting/index.php:262
 #: application/views/dashboard/index.php:242
-#: application/views/debug/index.php:754
+#: application/views/debug/index.php:759
 #: application/views/distancerecords/index.php:16
 #: application/views/eqsl/analysis.php:36
 #: application/views/eqsl/download.php:36 application/views/eqsl/result.php:33
@@ -4687,7 +4687,7 @@ msgstr "Дата"
 #: application/views/contesting/index.php:108
 #: application/views/contesting/index.php:262
 #: application/views/dashboard/index.php:245
-#: application/views/debug/index.php:755
+#: application/views/debug/index.php:760
 #: application/views/distancerecords/index.php:17
 #: application/views/eqsl/analysis.php:37
 #: application/views/eqsl/download.php:37 application/views/eqsl/result.php:34
@@ -4715,7 +4715,7 @@ msgstr "Время"
 #: application/views/awards/vucc/band.php:18
 #: application/views/contesting/index.php:263
 #: application/views/dcl_views/key_import.php:45
-#: application/views/debug/index.php:756 application/views/debug/index.php:791
+#: application/views/debug/index.php:761 application/views/debug/index.php:796
 #: application/views/dxcalendar/index.php:12
 #: application/views/eqsl/analysis.php:38
 #: application/views/eqsl/download.php:38 application/views/eqsl/result.php:35
@@ -4776,8 +4776,8 @@ msgstr "Максимальный размер загружаемого файл�
 
 #: application/views/adif/import.php:94 application/views/adif/import.php:358
 #: application/views/clublog/export.php:70
-#: application/views/debug/index.php:202 application/views/debug/index.php:219
-#: application/views/debug/index.php:746 application/views/hrdlog/export.php:25
+#: application/views/debug/index.php:207 application/views/debug/index.php:224
+#: application/views/debug/index.php:751 application/views/hrdlog/export.php:25
 #: application/views/hrdlog/export.php:74
 #: application/views/interface_assets/footer.php:37
 #: application/views/notes/add.php:23 application/views/notes/edit.php:29
@@ -9792,7 +9792,7 @@ msgstr "название для ADIF"
 #: application/views/contesting/add.php:44
 #: application/views/contesting/edit.php:43
 #: application/views/contesting/edit.php:46
-#: application/views/debug/index.php:463 application/views/debug/index.php:474
+#: application/views/debug/index.php:468 application/views/debug/index.php:479
 #: application/views/interface_assets/header.php:586
 #: application/views/mode/create.php:46 application/views/mode/create.php:48
 #: application/views/mode/edit.php:57 application/views/mode/edit.php:60
@@ -10928,15 +10928,23 @@ msgstr "Устарело"
 msgid "MySQL Version"
 msgstr "Версия MySQL"
 
-#: application/views/debug/index.php:123
+#: application/views/debug/index.php:124
+msgid "OpenSSL Version"
+msgstr ""
+
+#: application/views/debug/index.php:125
+msgid "not found"
+msgstr ""
+
+#: application/views/debug/index.php:128
 msgid "Codeigniter Version"
 msgstr "Версия Codeigniter"
 
-#: application/views/debug/index.php:131
+#: application/views/debug/index.php:136
 msgid "Folder Permissions"
 msgstr "Права доступа к каталогам"
 
-#: application/views/debug/index.php:133
+#: application/views/debug/index.php:138
 msgid ""
 "This verifies that the folders used by Wavelog have read and write "
 "permissions by PHP."
@@ -10944,34 +10952,34 @@ msgstr ""
 "Это проверяет, что папки, используемые Wavelog, имеют права на чтение и "
 "запись в PHP."
 
-#: application/views/debug/index.php:139 application/views/debug/index.php:150
-#: application/views/debug/index.php:161 application/views/debug/index.php:172
-#: application/views/debug/index.php:184
+#: application/views/debug/index.php:144 application/views/debug/index.php:155
+#: application/views/debug/index.php:166 application/views/debug/index.php:177
+#: application/views/debug/index.php:189
 #: application/views/interface_assets/footer.php:38
 msgid "Success"
 msgstr "Успешно"
 
-#: application/views/debug/index.php:141 application/views/debug/index.php:152
-#: application/views/debug/index.php:163 application/views/debug/index.php:174
-#: application/views/debug/index.php:186 application/views/debug/index.php:465
-#: application/views/debug/index.php:476
+#: application/views/debug/index.php:146 application/views/debug/index.php:157
+#: application/views/debug/index.php:168 application/views/debug/index.php:179
+#: application/views/debug/index.php:191 application/views/debug/index.php:470
+#: application/views/debug/index.php:481
 msgid "Failed"
 msgstr "Ошибка"
 
-#: application/views/debug/index.php:196
+#: application/views/debug/index.php:201
 msgid "Config Maintenance"
 msgstr "Настройка режима обслуживания"
 
-#: application/views/debug/index.php:202
+#: application/views/debug/index.php:207
 msgid "Your authentication mode is outdated and possibly unsafe"
 msgstr "Ваш режим аутентификации устарел и, возможно, небезопасен"
 
-#: application/views/debug/index.php:204 application/views/debug/index.php:221
+#: application/views/debug/index.php:209 application/views/debug/index.php:226
 #, php-format
 msgid "Please edit your %s File:"
 msgstr "Пожалуйста, отредактируйте ваш %s файл:"
 
-#: application/views/debug/index.php:205
+#: application/views/debug/index.php:210
 msgid ""
 "Go to your application/config Folder and compare config.sample.php with your "
 "config.php"
@@ -10979,28 +10987,28 @@ msgstr ""
 "Перейдите в папку application/config и сравните config.sample.php с вашим "
 "config.php"
 
-#: application/views/debug/index.php:206
+#: application/views/debug/index.php:211
 #, php-format
 msgid "Change %s to the value %s (Strongly recommended)"
 msgstr "Замените %s на значение %s (настоятельно рекомендуется)"
 
-#: application/views/debug/index.php:212
+#: application/views/debug/index.php:217
 msgid "Authentication Mode is set correctly"
 msgstr "Режим аутентификации установлен правильно"
 
-#: application/views/debug/index.php:212 application/views/debug/index.php:229
+#: application/views/debug/index.php:217 application/views/debug/index.php:234
 msgid "Ok"
 msgstr "ОК"
 
-#: application/views/debug/index.php:219
+#: application/views/debug/index.php:224
 msgid "You use the default encryption key. You should change it!"
 msgstr "Вы используете ключ шифрования по умолчанию. Вам следует его изменить!"
 
-#: application/views/debug/index.php:222
+#: application/views/debug/index.php:227
 msgid "This will also enable the 'Keep me logged in' feature."
 msgstr "Это также включит функцию «Оставаться в системе»."
 
-#: application/views/debug/index.php:223
+#: application/views/debug/index.php:228
 #, php-format
 msgid ""
 "Change the value of %s to a new encryption key other then "
@@ -11010,15 +11018,15 @@ msgstr ""
 "'flossie1234555541'. Выберите безопасный и длинный пароль. (Настоятельно "
 "рекомендуется)"
 
-#: application/views/debug/index.php:229
+#: application/views/debug/index.php:234
 msgid "You do not use the default encryption key"
 msgstr "Вы не используете ключ шифрования по умолчанию"
 
-#: application/views/debug/index.php:236
+#: application/views/debug/index.php:241
 msgid "Migrate Userdata"
 msgstr "Перенести пользовательский данные"
 
-#: application/views/debug/index.php:238
+#: application/views/debug/index.php:243
 msgid ""
 "Here you can migrate existing QSL cards and eQSL cards to the new userdata "
 "folder."
@@ -11026,74 +11034,74 @@ msgstr ""
 "Здесь вы можете перенести существующие QSL-карточки и eQSL-карточки в новую "
 "папку userdata."
 
-#: application/views/debug/index.php:251
+#: application/views/debug/index.php:256
 msgid "Modules"
 msgstr "Модули"
 
-#: application/views/debug/index.php:257 application/views/debug/index.php:268
-#: application/views/debug/index.php:279 application/views/debug/index.php:290
-#: application/views/debug/index.php:301 application/views/debug/index.php:312
-#: application/views/debug/index.php:324 application/views/debug/index.php:337
-#: application/views/debug/index.php:350
+#: application/views/debug/index.php:262 application/views/debug/index.php:273
+#: application/views/debug/index.php:284 application/views/debug/index.php:295
+#: application/views/debug/index.php:306 application/views/debug/index.php:317
+#: application/views/debug/index.php:329 application/views/debug/index.php:342
+#: application/views/debug/index.php:355
 msgid "Installed"
 msgstr "Установленные"
 
-#: application/views/debug/index.php:259 application/views/debug/index.php:270
-#: application/views/debug/index.php:281 application/views/debug/index.php:292
-#: application/views/debug/index.php:303 application/views/debug/index.php:314
-#: application/views/debug/index.php:326 application/views/debug/index.php:339
-#: application/views/debug/index.php:352
+#: application/views/debug/index.php:264 application/views/debug/index.php:275
+#: application/views/debug/index.php:286 application/views/debug/index.php:297
+#: application/views/debug/index.php:308 application/views/debug/index.php:319
+#: application/views/debug/index.php:331 application/views/debug/index.php:344
+#: application/views/debug/index.php:357
 msgid "Not Installed"
 msgstr "Не установленные"
 
-#: application/views/debug/index.php:452
+#: application/views/debug/index.php:457
 msgid "Cache Information"
 msgstr "Информация о кэше"
 
-#: application/views/debug/index.php:456
+#: application/views/debug/index.php:461
 msgid "Current Configuration"
 msgstr "Текущая конфигурация"
 
-#: application/views/debug/index.php:459
+#: application/views/debug/index.php:464
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
 msgstr "Основной адаптер"
 
-#: application/views/debug/index.php:470
+#: application/views/debug/index.php:475
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
 msgstr "Резервный адаптер"
 
-#: application/views/debug/index.php:481
+#: application/views/debug/index.php:486
 #, php-format
 msgctxt "Cache Path"
 msgid "Path for %s adapter"
 msgstr "Путь к адаптеру %s"
 
-#: application/views/debug/index.php:485
+#: application/views/debug/index.php:490
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
 msgstr "Ключевой префикс"
 
-#: application/views/debug/index.php:491
+#: application/views/debug/index.php:496
 msgid "Cache Details"
 msgstr "Подробная информация о кэше"
 
-#: application/views/debug/index.php:494
+#: application/views/debug/index.php:499
 msgctxt "Cache Details"
 msgid "Total Size"
 msgstr "Общий размер"
 
-#: application/views/debug/index.php:500
+#: application/views/debug/index.php:505
 msgctxt "Cache Key"
 msgid "Number of Keys"
 msgstr "Количество ключей"
 
-#: application/views/debug/index.php:510
+#: application/views/debug/index.php:515
 msgid "Cache is working properly. Everything okay!"
 msgstr "Кэш работает нормально. Всё в порядке!"
 
-#: application/views/debug/index.php:514
+#: application/views/debug/index.php:519
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable. Check your file permissions, PHP extensions, and/or your "
@@ -11103,7 +11111,7 @@ msgstr ""
 "недоступен. Проверьте разрешения на файлы, расширения PHP и/или ваше сетевое "
 "соединение с сервисами (если используется redis/memcached)."
 
-#: application/views/debug/index.php:518
+#: application/views/debug/index.php:523
 #, php-format
 msgid ""
 "Cache does not work! Currently the system is using a %s adapter. Check your "
@@ -11116,45 +11124,45 @@ msgstr ""
 "сетью для сервисов (если используете redis/memcached). Вы можете продолжать "
 "использовать Wavelog, но значения не будут кэшироваться (что плохо)."
 
-#: application/views/debug/index.php:526
+#: application/views/debug/index.php:531
 msgid "Available Adapters"
 msgstr "Доступные адаптеры"
 
-#: application/views/debug/index.php:543
+#: application/views/debug/index.php:548
 msgid "Clear Cache"
 msgstr "Очистить кеш"
 
-#: application/views/debug/index.php:590
+#: application/views/debug/index.php:595
 msgid "Git Information"
 msgstr "Информация Git"
 
-#: application/views/debug/index.php:594
+#: application/views/debug/index.php:599
 msgid "Branch"
 msgstr "Ветка"
 
-#: application/views/debug/index.php:605 application/views/debug/index.php:616
-#: application/views/debug/index.php:626
+#: application/views/debug/index.php:610 application/views/debug/index.php:621
+#: application/views/debug/index.php:631
 #: application/views/lotw_views/index.php:95
 msgid "n/a"
 msgstr "недоступно"
 
-#: application/views/debug/index.php:611
+#: application/views/debug/index.php:616
 msgid "Commit"
 msgstr "Коммит"
 
-#: application/views/debug/index.php:621
+#: application/views/debug/index.php:626
 msgid "Tag"
 msgstr "Тэг"
 
-#: application/views/debug/index.php:631
+#: application/views/debug/index.php:636
 msgid "Last Fetch"
 msgstr "Последнее обновление"
 
-#: application/views/debug/index.php:643
+#: application/views/debug/index.php:648
 msgid "Check for new version"
 msgstr "Проверить наличие новой версии"
 
-#: application/views/debug/index.php:644
+#: application/views/debug/index.php:649
 #: application/views/logbookadvanced/checkresult.php:52
 #: application/views/logbookadvanced/checkresult.php:68
 #: application/views/logbookadvanced/checkresult.php:78
@@ -11162,77 +11170,77 @@ msgstr "Проверить наличие новой версии"
 msgid "Update now"
 msgstr "Обновить сейчас"
 
-#: application/views/debug/index.php:662
+#: application/views/debug/index.php:667
 msgid "File download date"
 msgstr "Дата скачивания файла"
 
-#: application/views/debug/index.php:666
+#: application/views/debug/index.php:671
 msgid "File"
 msgstr "Файл"
 
-#: application/views/debug/index.php:667
+#: application/views/debug/index.php:672
 msgid "Last update"
 msgstr "Последнее обновление"
 
-#: application/views/debug/index.php:671
+#: application/views/debug/index.php:676
 msgid "DXCC update from Club Log"
 msgstr "Обновление DXCC из Clublog"
 
-#: application/views/debug/index.php:674 application/views/debug/index.php:681
-#: application/views/debug/index.php:687 application/views/debug/index.php:693
-#: application/views/debug/index.php:699 application/views/debug/index.php:705
-#: application/views/debug/index.php:711 application/views/debug/index.php:717
-#: application/views/debug/index.php:723 application/views/debug/index.php:729
-#: application/views/debug/index.php:735
+#: application/views/debug/index.php:679 application/views/debug/index.php:686
+#: application/views/debug/index.php:692 application/views/debug/index.php:698
+#: application/views/debug/index.php:704 application/views/debug/index.php:710
+#: application/views/debug/index.php:716 application/views/debug/index.php:722
+#: application/views/debug/index.php:728 application/views/debug/index.php:734
+#: application/views/debug/index.php:740
 #: application/views/station_profile/edit.php:53
 msgid "Update"
 msgstr "Обновить"
 
-#: application/views/debug/index.php:678
+#: application/views/debug/index.php:683
 msgid "DOK file download"
 msgstr "Скачать файл DOK"
 
-#: application/views/debug/index.php:684
+#: application/views/debug/index.php:689
 msgid "LoTW users download"
 msgstr "Скачать список пользователей LoTW"
 
-#: application/views/debug/index.php:690
+#: application/views/debug/index.php:695
 msgid "POTA file download"
 msgstr "Скачать файл POTA"
 
-#: application/views/debug/index.php:696
+#: application/views/debug/index.php:701
 msgid "SCP file download"
 msgstr "Скачать файл SCP"
 
-#: application/views/debug/index.php:702
+#: application/views/debug/index.php:707
 msgid "SOTA file download"
 msgstr "Скачать файл SOTA"
 
-#: application/views/debug/index.php:708
+#: application/views/debug/index.php:713
 msgid "WWFF file download"
 msgstr "Скачать файл WWFF"
 
-#: application/views/debug/index.php:714
+#: application/views/debug/index.php:719
 msgid "TLE update"
 msgstr "Обновление TLE"
 
-#: application/views/debug/index.php:720
+#: application/views/debug/index.php:725
 msgid "Hams Of Note update"
 msgstr "Обновление \"Заметок о корреспондентах\""
 
-#: application/views/debug/index.php:726
+#: application/views/debug/index.php:731
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:732
+#: application/views/debug/index.php:737
 msgid "VUCC Grids"
 msgstr "Квадраты VUCC"
 
-#: application/views/debug/index.php:742
+#: application/views/debug/index.php:747
 msgid "QSO-DB Maintenance"
 msgstr "Обслуживание БД QSO"
 
-#: application/views/debug/index.php:746
+#: application/views/debug/index.php:751
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
@@ -11241,145 +11249,145 @@ msgstr[0] "База данных содержит %d QSO без привязан
 msgstr[1] "База данных содержит %d QSO без привязанного профиля QTH"
 msgstr[2] "База данных содержит %d QSO без привязанного профиля QTH"
 
-#: application/views/debug/index.php:784
+#: application/views/debug/index.php:789
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr "Пожалуйста, отметьте QSO и привяжите их к существующему профилю QTH:"
 
-#: application/views/debug/index.php:792
+#: application/views/debug/index.php:797
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "Целевой профиль QTH"
 
-#: application/views/debug/index.php:793 application/views/debug/index.php:804
+#: application/views/debug/index.php:798 application/views/debug/index.php:809
 msgid "Reassign"
 msgstr "Переназначить"
 
-#: application/views/debug/index.php:813
+#: application/views/debug/index.php:818
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr ""
 "Каждое QSO в вашей базе данных привязано к соответствующему профилю QTH"
 
-#: application/views/debug/index.php:813
+#: application/views/debug/index.php:818
 msgid "Everything ok"
 msgstr "Всё ОК"
 
-#: application/views/debug/index.php:838
+#: application/views/debug/index.php:843
 msgid "Albanian"
 msgstr "Албанский"
 
-#: application/views/debug/index.php:839
+#: application/views/debug/index.php:844
 msgid "Armenian"
 msgstr "Армянский"
 
-#: application/views/debug/index.php:840
+#: application/views/debug/index.php:845
 msgid "Bosnian"
 msgstr "Боснийский"
 
-#: application/views/debug/index.php:841
+#: application/views/debug/index.php:846
 msgid "Bulgarian"
 msgstr "Болгарский"
 
-#: application/views/debug/index.php:842
+#: application/views/debug/index.php:847
 msgid "Chinese (Simplified)"
 msgstr "Китайский (упрощённый)"
 
-#: application/views/debug/index.php:843
+#: application/views/debug/index.php:848
 msgid "Croatian"
 msgstr "Хорватский"
 
-#: application/views/debug/index.php:844
+#: application/views/debug/index.php:849
 msgid "Czech"
 msgstr "Чешский"
 
-#: application/views/debug/index.php:845
+#: application/views/debug/index.php:850
 msgid "Dutch"
 msgstr "Голландский"
 
-#: application/views/debug/index.php:846
+#: application/views/debug/index.php:851
 msgid "English"
 msgstr "Английский"
 
-#: application/views/debug/index.php:847
+#: application/views/debug/index.php:852
 msgid "Estonian"
 msgstr "Эстонский"
 
-#: application/views/debug/index.php:848
+#: application/views/debug/index.php:853
 msgid "Finnish"
 msgstr "Финский"
 
-#: application/views/debug/index.php:849
+#: application/views/debug/index.php:854
 msgid "French"
 msgstr "Французский"
 
-#: application/views/debug/index.php:850
+#: application/views/debug/index.php:855
 msgid "German"
 msgstr "Немецкий"
 
-#: application/views/debug/index.php:851
+#: application/views/debug/index.php:856
 msgid "Greek"
 msgstr "Греческий"
 
-#: application/views/debug/index.php:852
+#: application/views/debug/index.php:857
 msgid "Hungarian"
 msgstr "Венгерский"
 
-#: application/views/debug/index.php:853
+#: application/views/debug/index.php:858
 msgid "Italian"
 msgstr "Итальянский"
 
-#: application/views/debug/index.php:854
+#: application/views/debug/index.php:859
 msgid "Japanese"
 msgstr "Японский"
 
-#: application/views/debug/index.php:855
+#: application/views/debug/index.php:860
 msgid "Latvian"
 msgstr "Латышский"
 
-#: application/views/debug/index.php:856
+#: application/views/debug/index.php:861
 msgid "Lithuanian"
 msgstr "Литовский"
 
-#: application/views/debug/index.php:857
+#: application/views/debug/index.php:862
 msgid "Montenegrin"
 msgstr "Черногорский"
 
-#: application/views/debug/index.php:858
+#: application/views/debug/index.php:863
 msgid "Polish"
 msgstr "Польский"
 
-#: application/views/debug/index.php:859
+#: application/views/debug/index.php:864
 msgid "Portuguese"
 msgstr "Португальский"
 
-#: application/views/debug/index.php:860
+#: application/views/debug/index.php:865
 msgid "Russian"
 msgstr "Русский"
 
-#: application/views/debug/index.php:861
+#: application/views/debug/index.php:866
 msgid "Serbian"
 msgstr "Сербский"
 
-#: application/views/debug/index.php:862
+#: application/views/debug/index.php:867
 msgid "Slovak"
 msgstr "Словацкий"
 
-#: application/views/debug/index.php:863
+#: application/views/debug/index.php:868
 msgid "Slovenian"
 msgstr "Словенский"
 
-#: application/views/debug/index.php:864
+#: application/views/debug/index.php:869
 msgid "Spanish"
 msgstr "Испанский"
 
-#: application/views/debug/index.php:865
+#: application/views/debug/index.php:870
 msgid "Swedish"
 msgstr "Шведский"
 
-#: application/views/debug/index.php:866
+#: application/views/debug/index.php:871
 msgid "Turkish"
 msgstr "Турецкий"
 
-#: application/views/debug/index.php:867
+#: application/views/debug/index.php:872
 msgid "Ukrainian"
 msgstr ""
 
