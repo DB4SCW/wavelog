@@ -71,6 +71,17 @@ $config['auth_header_hide_password_field'] = true;
 
 
 /**
+ * --------------------------------------------------------------------------
+ * Locked Data Badge
+ * --------------------------------------------------------------------------
+ * 
+ * HTML snippet for a badge indicating that a field is locked and managed through the Identity Provider. This is shown next to fields in the user profile that are mapped to JWT claims and not allowed to be changed manually.
+ * You can customize the appearance and tooltip text as needed. Leave empty to use the default.
+ */
+$config['auth_header_locked_data_batch'] = "";
+
+
+/**
  *--------------------------------------------------------------------------
  * Access Token Header
  *--------------------------------------------------------------------------

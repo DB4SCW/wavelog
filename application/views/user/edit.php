@@ -58,7 +58,7 @@
 										$idp_locked = function($field) use ($external_account, $sso_claim_config) {
 											return $external_account && isset($sso_claim_config[$field]) && empty($sso_claim_config[$field]['allow_manual_change']);
 										};
-										$idp_badge = '<span class="badge bg-secondary ms-1" data-bs-toggle="tooltip" title="' . __("Can't be changed. Manage this through your Identity Provider.") . '"><i class="fa fa-lock"></i> IdP</span>';
+										$idp_badge = $auth_header_locked_data_batch;
 									?>
 
 									<div class="mb-3">
