@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-17 19:56+0000\n"
-"PO-Revision-Date: 2026-03-15 21:47+0000\n"
+"PO-Revision-Date: 2026-03-18 20:55+0000\n"
 "Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
@@ -286,7 +286,7 @@ msgstr "API sleutel %s beschrijving is gewijzigd."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Ongeldige verzoekmethode"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -302,7 +302,7 @@ msgstr "API sleutel kon niet worden gegenereerd"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Ongeldige API-sleutel"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -2716,7 +2716,7 @@ msgstr "Maak stationslocatie aan"
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
 msgid "Invalid security token"
-msgstr ""
+msgstr "Ongeldig beveiligingstoken"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -11335,7 +11335,7 @@ msgstr "Turks"
 
 #: application/views/debug/index.php:867
 msgid "Ukrainian"
-msgstr ""
+msgstr "Oekraïens"
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
