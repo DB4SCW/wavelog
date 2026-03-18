@@ -18,8 +18,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 11:35+0000\n"
-"PO-Revision-Date: 2026-03-12 17:48+0000\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 13:30+0000\n"
 "Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -54,7 +54,6 @@ msgstr ""
 #: application/controllers/Contesting.php:14
 #: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
-#: application/controllers/Dashboard.php:10
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
 #: application/controllers/Dcl.php:24 application/controllers/Dcl.php:50
@@ -295,7 +294,7 @@ msgstr "Les informations sur la clé API %s ont été mises à jour."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Méthode de requête invalide"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -311,7 +310,7 @@ msgstr "La clé API n'a pas pu être générée"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Clé API invalide"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -955,7 +954,7 @@ msgstr "Ne fonctionne pas"
 msgid "SOTA CSV Export"
 msgstr "SOTA - Export CSV"
 
-#: application/controllers/Dashboard.php:157
+#: application/controllers/Dashboard.php:156
 #: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "Tableau de bord"
@@ -2735,7 +2734,7 @@ msgstr "Créer un emplacement de station"
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
 msgid "Invalid security token"
-msgstr ""
+msgstr "Jeton de sécurité invalide"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -11435,6 +11434,10 @@ msgstr "Suédois"
 msgid "Turkish"
 msgstr "Turque"
 
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
+
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
 msgstr ""
@@ -18139,15 +18142,15 @@ msgstr "Aucun QSO EME n'a été trouvé."
 
 #: application/views/statistics/qsltable.php:7
 msgid "Absolute"
-msgstr ""
+msgstr "Absolue"
 
 #: application/views/statistics/qsltable.php:8
 msgid "Percent"
-msgstr ""
+msgstr "Pour cent"
 
 #: application/views/statistics/qsltable.php:49
 msgid "Overall Stats by Mode"
-msgstr ""
+msgstr "Statistiques générales par mode"
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"

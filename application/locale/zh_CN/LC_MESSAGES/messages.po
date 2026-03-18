@@ -25,12 +25,13 @@
 # FATDEER <fatdeer@yeah.net>, 2025.
 # 范明明 <mingming@live.com>, 2026.
 # "Xu, Zefan (BI1GHZ)" <ceba_robot@outlook.com>, 2026.
+# "Shen RuiQin(BH4FJN)" <jerry19980425@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 11:35+0000\n"
-"PO-Revision-Date: 2026-03-15 02:06+0000\n"
-"Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 08:00+0000\n"
+"Last-Translator: BH3HNI <mmf@live.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
 "org/projects/wavelog/main-translation/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -64,7 +65,6 @@ msgstr ""
 #: application/controllers/Contesting.php:14
 #: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
-#: application/controllers/Dashboard.php:10
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
 #: application/controllers/Dcl.php:24 application/controllers/Dcl.php:50
@@ -961,7 +961,7 @@ msgstr "未运行"
 msgid "SOTA CSV Export"
 msgstr "SOTA CSV 导出"
 
-#: application/controllers/Dashboard.php:157
+#: application/controllers/Dashboard.php:156
 #: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "仪表盘"
@@ -11020,6 +11020,10 @@ msgstr "瑞典语"
 msgid "Turkish"
 msgstr "土耳其语"
 
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
+
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
 msgstr "本页根据网格列出了每个卫星通联的距离记录。"
@@ -11427,8 +11431,7 @@ msgstr "标记所有 QSO 已上传至 eQSL"
 msgid ""
 "Use this if you have lots of QSOs to upload to eQSL it will save the server "
 "timing out."
-msgstr ""
-"如果你有大量/全量 QSO 需要上传到 eQSL，建议使用此功能，以避免服务器超时。"
+msgstr "如果你有很多QSO要上传至eQSL可以使用该功能以避免服务器超时。"
 
 #: application/views/eqslcard/index.php:10
 #, php-format
@@ -17392,15 +17395,15 @@ msgstr "未找到 EME 通联记录。"
 
 #: application/views/statistics/qsltable.php:7
 msgid "Absolute"
-msgstr ""
+msgstr "绝对"
 
 #: application/views/statistics/qsltable.php:8
 msgid "Percent"
-msgstr ""
+msgstr "百分比"
 
 #: application/views/statistics/qsltable.php:49
 msgid "Overall Stats by Mode"
-msgstr ""
+msgstr "按模式统计"
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"
@@ -17418,7 +17421,7 @@ msgstr "文件夹名称"
 msgid ""
 "This is the name of the folder where your CSS-files are placed under assets/"
 "css."
-msgstr "这是在 assets/css 下存放主题资源 CSS 文件的文件夹名称。"
+msgstr "存放 CSS 文件的文件夹名称，该文件夹位于 assets/css 目录下。"
 
 #: application/views/themes/add.php:16 application/views/themes/edit.php:16
 #: application/views/themes/index.php:84
@@ -17435,7 +17438,7 @@ msgstr "深色"
 
 #: application/views/themes/add.php:21
 msgid "This defines wherever the theme is a light or a dark one."
-msgstr "定义主题的配色风格。"
+msgstr "用于定义浅色还是深色主题。"
 
 #: application/views/themes/add.php:25 application/views/themes/edit.php:25
 #: application/views/themes/index.php:85

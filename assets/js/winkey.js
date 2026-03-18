@@ -9,24 +9,22 @@ $(document).ready(function() {
 		$('#winkey').hide(); // Hide the CW buttons
 	}
 
-	if (ModeSelected.value == 'CW') {
-		// Show the CW buttons
-		$('#winkey').show();
-	} else {
-		// Hide the CW buttons
-		$('#winkey').hide();
-	}
-
-	ModeSelected.addEventListener('change', (event) => {
-
-		if (event.target.value == 'CW') {
-			// Show the CW buttons
+	// Function to update winkey visibility based on mode
+	// Can be called directly from other scripts (e.g., cat.js)
+	window.updateWinkeyVisibility = function(mode) {
+		if (mode == 'CW') {
 			$('#winkey').show();
-
 		} else {
-			// Hide the CW buttons
 			$('#winkey').hide();
 		}
+	};
+
+	// Initial check
+	updateWinkeyVisibility(ModeSelected.value);
+
+	// Listen for manual changes from dropdown
+	ModeSelected.addEventListener('change', (event) => {
+		updateWinkeyVisibility(event.target.value);
 	});
 
 	$('#winkeycwspeed').change(function (event) {

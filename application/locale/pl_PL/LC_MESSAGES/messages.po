@@ -16,9 +16,9 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 11:35+0000\n"
-"PO-Revision-Date: 2026-02-14 18:19+0000\n"
-"Last-Translator: Szymon <sp9spm@cqops.com>\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 15:25+0000\n"
+"Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/pl/>\n"
 "Language: pl_PL\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: application/controllers/Accumulated.php:12
 #: application/controllers/Activators.php:13
@@ -53,7 +53,6 @@ msgstr ""
 #: application/controllers/Contesting.php:14
 #: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
-#: application/controllers/Dashboard.php:10
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
 #: application/controllers/Dcl.php:24 application/controllers/Dcl.php:50
@@ -294,7 +293,7 @@ msgstr "Opis klucza API %s został zaktualizowany."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Nieprawidłowa metoda żądania"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -310,7 +309,7 @@ msgstr "Nie udało się wygenerować klucza API"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Nieprawidłowy klucz API"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -432,7 +431,7 @@ msgstr "Przegląd dziennika"
 
 #: application/controllers/Awards.php:575
 msgid "and"
-msgstr ""
+msgstr "i"
 
 #: application/controllers/Awards.php:576
 #: application/views/awards/cq/index.php:135
@@ -448,7 +447,7 @@ msgstr "Wszystkie pasma (bez satelitów)"
 
 #: application/controllers/Awards.php:576
 msgid "band"
-msgstr ""
+msgstr "pasmo"
 
 #: application/controllers/Awards.php:579
 msgid " and satellite "
@@ -730,7 +729,7 @@ msgstr "Tester połączeń"
 #: application/controllers/Calltester.php:240
 #: application/controllers/Calltester.php:300
 msgid "CSV Call Tester"
-msgstr ""
+msgstr "Tester znaków CSV"
 
 #: application/controllers/Calltester.php:917
 msgid "Callsign Tester"
@@ -952,7 +951,7 @@ msgstr "Nie działa"
 msgid "SOTA CSV Export"
 msgstr "Eksport CSV SOTA"
 
-#: application/controllers/Dashboard.php:157
+#: application/controllers/Dashboard.php:156
 #: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "Panel użytkownika"
@@ -2501,7 +2500,7 @@ msgstr "Ustawienia"
 
 #: application/controllers/Radio.php:59
 msgid "WebSocket"
-msgstr ""
+msgstr "WebSocket"
 
 #: application/controllers/Radio.php:65 application/controllers/Radio.php:126
 msgid "Default (click to release)"
@@ -2571,11 +2570,11 @@ msgstr "Usuń"
 
 #: application/controllers/Radio.php:138
 msgid "WebSocket is currently default (click to release)"
-msgstr ""
+msgstr "WebSocket jest obecnie domyślny (kliknij, aby zwolnić)"
 
 #: application/controllers/Radio.php:140
 msgid "Set WebSocket as default radio"
-msgstr ""
+msgstr "Ustaw WebSocket jako domyślne radio"
 
 #: application/controllers/Radio.php:144
 msgid "No CAT interfaced radios found."
@@ -2583,7 +2582,7 @@ msgstr "Nie znaleziono radiostacji z interfejsem CAT."
 
 #: application/controllers/Radio.php:145
 msgid "You can still set the WebSocket option as your default radio."
-msgstr ""
+msgstr "Wciąż możesz ustawić opcję WebSocket jako domyślne radio."
 
 #: application/controllers/Radio.php:162 application/views/radio/index.php:2
 msgid "Edit CAT Settings"
@@ -2591,7 +2590,7 @@ msgstr "Edytuj ustawienia CAT"
 
 #: application/controllers/Radio.php:334
 msgid "Radio removed successfully"
-msgstr ""
+msgstr "Radio usunięte pomyślnie"
 
 #: application/controllers/Reg1test.php:22
 msgid "Export EDI"
@@ -2729,7 +2728,7 @@ msgstr "Utwórz lokalizację stacji"
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
 msgid "Invalid security token"
-msgstr ""
+msgstr "Nieprawidłowy token bezpieczeństwa"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -3026,7 +3025,7 @@ msgstr "SCP Ładowanie zakończone sukcesem. Rezultaty: "
 
 #: application/controllers/Update.php:364
 msgid "SCP Update failed. Result: "
-msgstr "SCP Ładowanie zakończone błędem. Rezulat: "
+msgstr "SCP Ładowanie zakończone błędem. Rezultat: "
 
 #: application/controllers/Update.php:401
 msgid "LoTW Users Update complete. Result: "
@@ -3034,7 +3033,7 @@ msgstr "Użytkownicy LoTW aktualizacja zakończona sukcesem. Rezultaty: "
 
 #: application/controllers/Update.php:403
 msgid "LoTW Users Update failed. Result: "
-msgstr "Użytkownicy LoTW aktualizacja zakończona błedem. Rezulataty: "
+msgstr "Użytkownicy LoTW aktualizacja zakończona błędem. Rezultaty: "
 
 #: application/controllers/Update.php:438
 msgid "DOK Update complete. Result: "
@@ -3046,7 +3045,7 @@ msgstr "DOK aktualizacja zakończona niepowodzeniem. Rezultat: "
 
 #: application/controllers/Update.php:473
 msgid "SOTA Update complete. Result: "
-msgstr "SOTA aktualizacja zakończona sukcesemm. Rezultat: "
+msgstr "SOTA aktualizacja zakończona sukcesem. Rezultat: "
 
 #: application/controllers/Update.php:475
 msgid "SOTA Update failed. Result: "
@@ -3119,7 +3118,7 @@ msgstr "Nie udało się odblokować użytkownika!"
 
 #: application/controllers/User.php:114
 msgid "User not found!"
-msgstr "Użytkownik nie znaleziony !"
+msgstr "Użytkownik nie znaleziony!"
 
 #: application/controllers/User.php:127
 msgid "Invalid Parameter!"
@@ -3464,12 +3463,12 @@ msgstr "Wyszukiwarka Strefy Lokatora"
 
 #: application/libraries/Callbook.php:60
 msgid "Lookup not configured. Please review configuration."
-msgstr ""
+msgstr "Wyszukiwanie nie jest skonfigurowane. Sprawdź konfigurację."
 
 #: application/libraries/Callbook.php:61
 #, php-format
 msgid "Error obtaining a session key for callbook. Error: %s"
-msgstr ""
+msgstr "Błąd podczas uzyskiwania klucza sesji dla callbook. Błąd: %s"
 
 #: application/libraries/Callbook.php:200
 msgid "QRZCQ Error"
@@ -6019,7 +6018,7 @@ msgstr "Podsumowanie"
 #: application/views/awards/wac/index.php:175
 #: application/views/awards/wae/index.php:240
 msgid "Total (ex SAT)"
-msgstr ""
+msgstr "Razem (bez SAT)"
 
 #: application/views/awards/cq/index.php:242
 #: application/views/awards/dok/index.php:179
@@ -7254,7 +7253,7 @@ msgstr "Kontynent"
 
 #: application/views/awards/wac/index.php:227
 msgid "No QSOS found matching the criteria for this award!"
-msgstr ""
+msgstr "Nie znaleziono QSO spełniających kryteria dla tej nagrody!"
 
 #: application/views/awards/wae/index.php:18
 msgid "WAE Award"
@@ -7408,7 +7407,7 @@ msgstr "Prowincja"
 #: application/views/awards/wapc/index.php:3
 msgctxt "China Province"
 msgid "Province"
-msgstr ""
+msgstr "Prowincja"
 
 #: application/views/awards/wapc/index.php:22
 msgid "WAPC - Worked All Provinces of China"
@@ -7447,7 +7446,7 @@ msgstr ""
 
 #: application/views/awards/wapc/index.php:122
 msgid "Show WAPC Map"
-msgstr ""
+msgstr "Pokaż mapę WAPC"
 
 #: application/views/awards/was/index.php:3
 msgctxt "USA State"
@@ -7590,7 +7589,7 @@ msgid ""
 msgstr ""
 "Coś poszło nie tak podczas procesu tworzenia kopii zapasowej. Sprawdź, czy "
 "folder kopii zapasowej istnieje i czy jest zapisywalny przez użytkownika/"
-"grupę serwera WWW."
+"grupę serwera www."
 
 #: application/views/backup/main.php:17
 msgid ""
@@ -8424,15 +8423,15 @@ msgstr "Mapa DX"
 
 #: application/views/bandmap/list.php:545
 msgid "Search Column"
-msgstr ""
+msgstr "Kolumna wyszukiwania"
 
 #: application/views/bandmap/list.php:546
 msgid "All Columns"
-msgstr ""
+msgstr "Wszystkie kolumny"
 
 #: application/views/bandmap/list.php:547
 msgid "Spot Info"
-msgstr ""
+msgstr "Informacje o spocie"
 
 #: application/views/bandmap/list.php:552
 #: application/views/bandmap/list.php:592
@@ -8443,7 +8442,7 @@ msgstr "Podemisja"
 
 #: application/views/bandmap/list.php:554
 msgid "DX Station"
-msgstr ""
+msgstr "Stacja DX"
 
 #: application/views/bandmap/list.php:558
 #: application/views/bandmap/list.php:597
@@ -9868,8 +9867,7 @@ msgstr "Ustaw jako aktywne, aby pojawiło się na liście zawodów"
 
 #: application/views/contesting/index.php:2
 msgid "You need to start a new session before you can change the contest name!"
-msgstr ""
-"Zanim będzie można zmienić nazwę zawodów, należy rozpocząć nową sesję, !"
+msgstr "Zanim będzie można zmienić nazwę zawodów, należy rozpocząć nową sesję!"
 
 #: application/views/contesting/index.php:3
 msgid "Are you really sure you want to start a new contest session?"
@@ -10483,35 +10481,35 @@ msgstr "Dane dostarczone przez HAMqsl."
 
 #: application/views/dashboard/index.php:527
 msgid "K-index: Planetary geomagnetic activity (0-9)"
-msgstr ""
+msgstr "Indeks K: Aktywność geomagnetyczna planetarna (0-9)"
 
 #: application/views/dashboard/index.php:528
 msgid "A-index: Daily geomagnetic activity index"
-msgstr ""
+msgstr "Indeks A: Dzienny wskaźnik aktywności geomagnetycznej"
 
 #: application/views/dashboard/index.php:529
 msgid "Solar Flux Index"
-msgstr ""
+msgstr "Indeks strumienia słonecznego"
 
 #: application/views/dashboard/index.php:530
 msgid "Solar Wind speed (km/s)"
-msgstr ""
+msgstr "Prędkość wiatru słonecznego (km/s)"
 
 #: application/views/dashboard/index.php:531
 msgid "Signal Noise ratio"
-msgstr ""
+msgstr "Stosunek sygnału do szumu"
 
 #: application/views/dashboard/index.php:532
 msgid "X-Ray solar flux level"
-msgstr ""
+msgstr "Poziom strumienia rentgenowskiego Słońca"
 
 #: application/views/dashboard/index.php:533
 msgid "Sunspot Number"
-msgstr ""
+msgstr "Liczba plam słonecznych"
 
 #: application/views/dashboard/index.php:534
 msgid "Aurora activity level (Kp borealis)"
-msgstr ""
+msgstr "Poziom aktywności zorzy (Kp borealis)"
 
 #: application/views/dayswithqso/index.php:3
 msgid "Number of QSOs for this day of the week"
@@ -11080,6 +11078,9 @@ msgid ""
 "unavailable. Check your file permissions, PHP extensions, and/or your "
 "network connection to the services (if using redis/memcached)."
 msgstr ""
+"Cache obecnie używa adaptera zapasowego, ponieważ główny jest niedostępny. "
+"Sprawdź uprawnienia do plików, rozszerzenia PHP i/lub połączenie sieciowe z "
+"usługami (jeśli używasz redis/memcached)."
 
 #: application/views/debug/index.php:518
 #, php-format
@@ -11089,6 +11090,10 @@ msgid ""
 "services (if using redis/memcached). You can continue using Wavelog, but no "
 "values will be cached (which is bad)."
 msgstr ""
+"Cache nie działa! Obecnie system używa adaptera %s. Sprawdź uprawnienia do "
+"plików, rozszerzenia PHP i/lub połączenie sieciowe z usługami (jeśli używasz "
+"redis/memcached). Możesz nadal używać Wavelog, ale żadne wartości nie będą "
+"buforowane (co jest złe)."
 
 #: application/views/debug/index.php:526
 msgid "Available Adapters"
@@ -11235,7 +11240,7 @@ msgstr ""
 
 #: application/views/debug/index.php:813
 msgid "Everything ok"
-msgstr "Wszystko OK"
+msgstr "Wszystko ok"
 
 #: application/views/debug/index.php:838
 msgid "Albanian"
@@ -11352,6 +11357,10 @@ msgstr "Szwedzki"
 #: application/views/debug/index.php:866
 msgid "Turkish"
 msgstr "Turecki"
+
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
@@ -12398,6 +12407,7 @@ msgstr "Lokatory"
 #: application/views/interface_assets/footer.php:1296
 msgid "Location Lookup failed. Please check browser console."
 msgstr ""
+"Wyszukiwanie lokalizacji nie powiodło się. Sprawdź konsolę przeglądarki."
 
 #: application/views/interface_assets/footer.php:1447
 #: application/views/interface_assets/footer.php:1451
@@ -12956,7 +12966,7 @@ msgstr "Drukuj"
 #: application/views/labels/index.php:4
 #: application/views/logbookadvanced/index.php:82
 msgid "Label Print Options"
-msgstr ""
+msgstr "Opcje drukowania etykiet"
 
 #: application/views/labels/index.php:34
 msgid "Create New Label Type"
@@ -13021,7 +13031,7 @@ msgstr "Zobacz QSO"
 #: application/views/labels/startatform.php:21
 #: application/views/logbookadvanced/startatform.php:20
 msgid "Include my call?"
-msgstr ""
+msgstr "Dołączyć mój znak?"
 
 #: application/views/labels/startatform.php:33
 #: application/views/logbookadvanced/startatform.php:32
@@ -13056,7 +13066,7 @@ msgstr "Rozpocząć drukowanie od?"
 #: application/views/labels/startatform.php:100
 #: application/views/logbookadvanced/startatform.php:111
 msgid "Enter the starting position for label printing"
-msgstr ""
+msgstr "Wprowadź pozycję początkową dla drukowania etykiet"
 
 #: application/views/logbookadvanced/callbookdialog.php:5
 msgid ""
@@ -14052,6 +14062,8 @@ msgid ""
 "Duration in minutes. Search will look for durations greater than or equal to "
 "this value."
 msgstr ""
+"Czas trwania w minutach. Wyszukiwanie będzie szukało czasów trwania "
+"większych lub równych tej wartości."
 
 #: application/views/logbookadvanced/index.php:523
 msgid "Sort column"
@@ -16396,6 +16408,9 @@ msgid ""
 "you. This allows you to have a default radio that is automatically selected "
 "when you log in, while still being able to use other radios if you want."
 msgstr ""
+"Jako operator stacji klubowej możesz ustawić domyślne radio, które dotyczy "
+"tylko Ciebie. Pozwala to mieć domyślne radio automatycznie wybierane przy "
+"logowaniu, z możliwością korzystania z innych radii, jeśli chcesz."
 
 #: application/views/radio/index.php:27
 msgid ""
@@ -16403,11 +16418,14 @@ msgid ""
 "to have a default radio that is automatically selected when you log in, "
 "while still being able to use other radios if you want."
 msgstr ""
+"Jako zwykły użytkownik możesz ustawić dla siebie domyślne radio. Pozwala to "
+"mieć domyślne radio automatycznie wybierane przy logowaniu, z możliwością "
+"korzystania z innych radii, jeśli chcesz."
 
 #: application/views/radio/index.php:30
 #, php-format
 msgid "You can find out how to use the %sradio functions%s in the wiki."
-msgstr ""
+msgstr "W wiki dowiesz się, jak używać %sfunkcji radiowych%s."
 
 #: application/views/radio/index.php:35
 msgid "Please wait..."
@@ -17978,15 +17996,15 @@ msgstr "Nie znaleziono łączności EME."
 
 #: application/views/statistics/qsltable.php:7
 msgid "Absolute"
-msgstr ""
+msgstr "Bezwzględne"
 
 #: application/views/statistics/qsltable.php:8
 msgid "Percent"
-msgstr ""
+msgstr "Procent"
 
 #: application/views/statistics/qsltable.php:49
 msgid "Overall Stats by Mode"
-msgstr ""
+msgstr "Statystyki ogólne według trybu"
 
 #: application/views/themes/add.php:4 application/views/themes/edit.php:4
 msgid "Theme Name"
@@ -18631,7 +18649,7 @@ msgstr "Pokaż pola na karcie QSO"
 
 #: application/views/user/edit.php:693
 msgid "Show map at QSO-Window"
-msgstr ""
+msgstr "Pokaż mapę w oknie QSO"
 
 #: application/views/user/edit.php:702
 msgid ""
@@ -19369,6 +19387,8 @@ msgid ""
 "A single gridsquare was entered into the VUCC gridsquares field which should "
 "contain two or four gridsquares instead of a single grid."
 msgstr ""
+"Pojedynczy kwadrat lokatora został wprowadzony do pola kwadratów VUCC, które "
+"powinno zawierać dwa lub cztery kwadraty zamiast pojedynczego."
 
 #: application/views/view_log/qso.php:335
 msgid "Antenna Azimuth"

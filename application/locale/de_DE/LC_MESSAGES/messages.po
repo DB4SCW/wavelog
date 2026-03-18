@@ -5,7 +5,7 @@
 # Fabian Berg <hb9hil@wavelog.org>, 2024.
 # Christian Egger <christian@hb9hjq.ch>, 2024.
 # Nikolas Hagelstein <nikolas.hagelstein@gmail.com>, 2024.
-# Jörg Dorgeist <wavelog@dj7nt.de>, 2024, 2025.
+# Jörg Dorgeist <wavelog@dj7nt.de>, 2024, 2025, 2026.
 # Florian Wolters <wavelog@df2et.de>, 2024, 2025, 2026.
 # Byt3 <falko@205er.de>, 2024.
 # Kim - DG9VH <kim.huebel@gmail.com>, 2024, 2025.
@@ -26,9 +26,9 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-16 11:35+0000\n"
-"PO-Revision-Date: 2026-03-15 20:22+0000\n"
-"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
+"POT-Creation-Date: 2026-03-17 19:56+0000\n"
+"PO-Revision-Date: 2026-03-16 11:35+0000\n"
+"Last-Translator: Jörg Dorgeist <wavelog@dj7nt.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -62,7 +62,6 @@ msgstr ""
 #: application/controllers/Contesting.php:14
 #: application/controllers/Cron.php:26 application/controllers/Cron.php:171
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
-#: application/controllers/Dashboard.php:10
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
 #: application/controllers/Dcl.php:24 application/controllers/Dcl.php:50
@@ -303,7 +302,7 @@ msgstr "API-Schlüssel %s Beschreibung wurde aktualisiert."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Fehlerhafte Abfragemethode"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -319,7 +318,7 @@ msgstr "API-Schlüssel konnte nicht generiert werden"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Falscher API Schlüssel"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -962,7 +961,7 @@ msgstr "Läuft nicht"
 msgid "SOTA CSV Export"
 msgstr "SOTA CSV-Export"
 
-#: application/controllers/Dashboard.php:157
+#: application/controllers/Dashboard.php:156
 #: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -2739,7 +2738,7 @@ msgstr "Erstelle Stationsstandort"
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
 msgid "Invalid security token"
-msgstr ""
+msgstr "Fehlerhaftes Sicherheitstoken"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -11394,6 +11393,10 @@ msgstr "Schwedisch"
 #: application/views/debug/index.php:866
 msgid "Turkish"
 msgstr "Türkisch"
+
+#: application/views/debug/index.php:867
+msgid "Ukrainian"
+msgstr ""
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
