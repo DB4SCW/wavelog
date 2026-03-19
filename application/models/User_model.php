@@ -769,7 +769,6 @@ class User_Model extends CI_Model {
 		// Only modify the following
 		$allowed = [
 			'user_name',
-			'user_password',
 			'user_email',
 			'user_callsign',
 			'user_locator',
