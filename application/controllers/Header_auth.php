@@ -28,7 +28,7 @@ class Header_auth extends CI_Controller {
      * The reverse proxy validates the user's session and forwards a JWT access token containing the user's identity and claims in a trusted HTTP header. This method decodes the token, verifies it, extracts the user information 
      * and logs the user in. Depending on configuration, it can also automatically create a local user account if one does not exist, and update existing user data.
      * 
-     * For more information check out the documentation: https://docs.wavelog.org/admin-guide/configuration/third-party-authentication
+     * For more information check out the documentation: https://docs.wavelog.org/admin-guide/configuration/thirdparty-authentication/
      */
     public function login() {
         // Guard: feature must be enabled

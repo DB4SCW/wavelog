@@ -117,7 +117,7 @@ $config['auth_level'][99] = 'Administrator';
 | Enable SSO support via a trusted HTTP header containing a JWT access token.
 | When enabled, a sso.php config file is required (see sso.sample.php).
 |
-| Documentation: https://docs.wavelog.org/admin-guide/configuration/third-party-authentication
+| Documentation: https://docs.wavelog.org/admin-guide/configuration/thirdparty-authentication/
 */
 
 $config['auth_header_enable'] = false;

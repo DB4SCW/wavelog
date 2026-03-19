@@ -8,7 +8,7 @@
  * Copy this file to sso.php and adjust the values to your environment.
  * This file is loaded automatically when auth_header_enable = true in config.php.
  *
- * Documentation: https://docs.wavelog.org/admin-guide/configuration/third-party-authentication
+ * Documentation: https://docs.wavelog.org/admin-guide/configuration/thirdparty-authentication/
  */
 
 /**
