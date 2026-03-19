@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-18 21:33+0000\n"
-"PO-Revision-Date: 2026-03-18 17:59+0000\n"
+"PO-Revision-Date: 2026-03-20 07:25+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -10838,11 +10838,11 @@ msgstr "MySQL-version"
 
 #: application/views/debug/index.php:124
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "OpenSSL-version"
 
 #: application/views/debug/index.php:125
 msgid "not found"
-msgstr ""
+msgstr "hittades inte"
 
 #: application/views/debug/index.php:128
 msgid "Codeigniter Version"
