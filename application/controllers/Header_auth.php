@@ -259,6 +259,10 @@ class Header_auth extends CI_Controller {
             log_message('error', 'SSO Authentication: Missing email or callsign claim in access token.');
             $this->_sso_error();
         }
+        if (empty($mapped['user_name'])) {
+            log_message('error', 'SSO Authentication: Missing username claim in access token.');
+            $this->_sso_error();
+        }
 
         // $club_id = $this->config->item('auth_header_club_id', 'sso') ?: ''; // TODO: Add support to add a user to a clubstation
 
