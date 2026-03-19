@@ -215,6 +215,7 @@ class User_Model extends CI_Model {
 	// !!!!!!!!!!!!!!!!
 	// !! IMPORTANT NOTICE: Please inform DJ7NT and/or DF2ET when adding/removing/changing parameters here. 
 	// !! Also make sure you modify Header_auth::_create_user accordingly, otherwise SSO user creation will break.
+	// !! Also modify User_model::update_sso_claims with attributes that can be modified by IdP
 	// !!!!!!!!!!!!!!!!
 	function add($username, $password, $email, $type, $firstname, $lastname, $callsign, $locator, $timezone,
 		$measurement, $dashboard_map, $user_date_format, $user_stylesheet, $user_qth_lookup, $user_sota_lookup, $user_wwff_lookup,
@@ -765,9 +766,52 @@ class User_Model extends CI_Model {
 
 	// FUNCTION: update specific user fields from SSO claims (bypass privilege check, used during login flow)
 	function update_sso_claims(int $user_id, array $fields): void {
-		// Cannot modify the following
-		$blocked = ['user_type', 'user_password', 'clubstation', 'external_account', 'login_attempts', 'created_at', 'modified_at', 'last_modified', 'last_seen', 'reset_password_date', 'reset_password_code'];
-		$fields = array_diff_key($fields, array_flip($blocked));
+		// Only modify the following
+		$allowed = [
+			'user_name',
+			'user_password',
+			'user_email',
+			'user_callsign',
+			'user_locator',
+			'user_firstname',
+			'user_lastname',
+			'user_timezone',
+			'user_lotw_name',
+			'user_lotw_password',
+			'user_eqsl_name',
+			'user_eqsl_password',
+			'user_eqsl_qth_nickname',
+			'active_station_logbook',
+			'user_language',
+			'user_clublog_name',
+			'user_clublog_password',
+			'user_clublog_callsign',
+			'user_measurement_base',
+			'user_date_format',
+			'user_stylesheet',
+			'user_sota_lookup',
+			'user_wwff_lookup',
+			'user_pota_lookup',
+			'user_qth_lookup',
+			'user_show_notes',
+			'user_column1',
+			'user_column2',
+			'user_column3',
+			'user_column4',
+			'user_column5',
+			'user_show_profile_image',
+			'user_previous_qsl_type',
+			'user_amsat_status_upload',
+			'user_mastodon_url',
+			'user_default_band',
+			'user_default_confirmation',
+			'user_quicklog_enter',
+			'user_quicklog',
+			'user_qso_end_times',
+			'winkey',
+			'slug'
+		];
+		$fields = array_intersect_key($fields, array_flip($allowed));
 
 		$this->db->where('user_id', $user_id);
 		$this->db->update('users', $fields);
