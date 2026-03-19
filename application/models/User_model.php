@@ -765,6 +765,10 @@ class User_Model extends CI_Model {
 
 	// FUNCTION: update specific user fields from SSO claims (bypass privilege check, used during login flow)
 	function update_sso_claims(int $user_id, array $fields): void {
+		// Cannot modify the following
+		$blocked = ['user_type', 'user_password', 'clubstation', 'external_account', 'login_attempts', 'created_at', 'modified_at', 'last_modified', 'last_seen', 'reset_password_date', 'reset_password_code'];
+		$fields = array_diff_key($fields, array_flip($blocked));
+
 		$this->db->where('user_id', $user_id);
 		$this->db->update('users', $fields);
 	}
