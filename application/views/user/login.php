@@ -88,11 +88,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="w-100 btn btn-primary" type="submit"><?= __("Login"); ?> →</button>
+                <button class="w-100 btn btn-primary mb-2" type="submit"><?= __("Login"); ?> →</button>
                 <?php } ?>
                 <?php  // only show if header auth enabled
                     if ($auth_header_enable == true) { ?>
-                    <div class="mt-2 mb-2">  
+                    <div class="mb-2">  
                         <a href="<?php echo site_url('header_auth/login'); ?>" class="btn btn-secondary w-100">  
                             <?= $auth_header_text; ?>  
                         </a>  
