@@ -24,9 +24,9 @@ class Header_auth extends CI_Controller {
     }
 
     /**
-     * Authenticate using a trusted request header/JWT token. This endpoint is meant to be called by a reverse proxy that sits in front of Wavelog and handles the actual authentication (e.g. OAuth2 Proxy, Apache mod_auth_oidc, etc.). 
+     * Authenticate using a JWT from a trusted request header. This endpoint is meant to be called by a reverse proxy that sits in front of Wavelog and handles the actual authentication (e.g. OAuth2 Proxy, Apache mod_auth_oidc, etc.). 
      * The reverse proxy validates the user's session and forwards a JWT access token containing the user's identity and claims in a trusted HTTP header. This method decodes the token, verifies it, extracts the user information 
-     * and logs the user in. Depending on configuration, it can also automatically create a local user account if one does not exist.
+     * and logs the user in. Depending on configuration, it can also automatically create a local user account if one does not exist, and update existing user data.
      * 
      * For more information check out the documentation: https://docs.wavelog.org/admin-guide/configuration/third-party-authentication
      */
@@ -99,9 +99,6 @@ class Header_auth extends CI_Controller {
 
         $user = $query->row();
 
-        // Update fields from JWT claims where override_on_update is enabled
-        $this->_update_user_from_claims($user->user_id, $mapped);
-
         // Prevent clubstation direct login via header (mirrors User::login)  
         if (!empty($user->clubstation) && $user->clubstation == 1) {
             $this->_sso_error(__("You can't login to a clubstation directly. Use your personal account instead."));
@@ -111,6 +108,15 @@ class Header_auth extends CI_Controller {
         if (ENVIRONMENT === 'maintenance' && (int)$user->user_type !== 99) {
             $this->_sso_error(__("Sorry. This instance is currently in maintenance mode. Only administrators are currently allowed to log in."));
         }
+
+        // Check if club station before update
+        // Don't update fields in maintenance mode
+        if (ENVIRONMENT !== 'maintenance') {
+            // Update fields from JWT claims where override_on_update is enabled
+            $this->_update_user_from_claims($user->user_id, $mapped);
+        }
+
+
 
         // Establish session  
         $this->user_model->update_session($user->user_id);
