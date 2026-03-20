@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-20 09:28+0000\n"
-"PO-Revision-Date: 2026-03-16 08:00+0000\n"
+"PO-Revision-Date: 2026-03-21 13:06+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ru/>\n"
@@ -289,7 +289,7 @@ msgstr "Описание ключа API %s обновлено."
 #: application/controllers/Api.php:89 application/controllers/Api.php:124
 #: application/controllers/Qso.php:577
 msgid "Invalid request method"
-msgstr ""
+msgstr "Недопустимый метод запроса"
 
 #: application/controllers/Api.php:100
 msgid "Invalid API rights"
@@ -305,7 +305,7 @@ msgstr "Не удалось сгенерировать ключ API"
 
 #: application/controllers/Api.php:134
 msgid "Invalid API Key"
-msgstr ""
+msgstr "Недействительный ключ API"
 
 #: application/controllers/Api.php:143
 #, php-format
@@ -1204,15 +1204,16 @@ msgstr "Hamsat — охота на спутники"
 
 #: application/controllers/Header_auth.php:22
 msgid "SSO Authentication is disabled."
-msgstr ""
+msgstr "Аутентификация через SSO отключена."
 
 #: application/controllers/Header_auth.php:36
+#, fuzzy
 msgid "SSO Authentication is disabled. Check your configuration."
-msgstr ""
+msgstr "Аутентификация через SSO отключена. Проверьте вашу конфигурацию."
 
 #: application/controllers/Header_auth.php:89
 msgid "User not found."
-msgstr ""
+msgstr "Пользователь не найден."
 
 #: application/controllers/Header_auth.php:104
 #: application/controllers/User.php:1329
@@ -1227,15 +1228,17 @@ msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"Извините. Этот экземпляр сейчас находится в режиме обслуживания. Вход в "
+"систему разрешен только администраторам."
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "Что-то пошло не так. Проверьте журнал ошибок."
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "Ошибка конфигурации SSO. Проверьте журнал ошибок."
 
 #: application/controllers/Hrdlog.php:70 application/controllers/Hrdlog.php:71
 msgid "HRD Log upload for this station is disabled."
@@ -2763,7 +2766,7 @@ msgstr "Создать профиль QTH"
 #: application/controllers/Station.php:100 application/controllers/User.php:273
 #: application/controllers/User.php:978 application/controllers/User.php:1151
 msgid "Invalid security token"
-msgstr ""
+msgstr "Недействительный токен безопасности"
 
 #: application/controllers/Station.php:89
 msgid "Edit Station Location: "
@@ -3191,6 +3194,7 @@ msgstr "Пользователи"
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
 msgstr ""
+"Изменить нельзя. Управление только через вашего провайдера идентификации."
 
 #: application/controllers/User.php:471
 #: application/views/club/permissions.php:279
@@ -10962,11 +10966,11 @@ msgstr "Версия MySQL"
 
 #: application/views/debug/index.php:124
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "Версия OpenSSL"
 
 #: application/views/debug/index.php:125
 msgid "not found"
-msgstr ""
+msgstr "не найдено"
 
 #: application/views/debug/index.php:128
 msgid "Codeigniter Version"
@@ -11421,7 +11425,7 @@ msgstr "Турецкий"
 
 #: application/views/debug/index.php:872
 msgid "Ukrainian"
-msgstr ""
+msgstr "Украинский"
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
