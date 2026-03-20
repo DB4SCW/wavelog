@@ -263,6 +263,18 @@
         padding-right: 5px;
         padding-left: 5px;
     }
+    .btn-filter-active {
+        background-color: #ffc107 !important;
+        border-color: #ffc107 !important;
+        color: #000 !important;
+    }
+    .btn-filter-active:hover {
+        background-color: #e0a800 !important;
+        border-color: #e0a800 !important;
+    }
+    .btn-filter-active .fas {
+        color: #000 !important;
+    }
 </style>
 <?php
 $options = json_decode($options);

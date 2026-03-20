@@ -1592,6 +1592,7 @@ $(document).ready(function () {
 			} else {
 				$("#"+type).val(col1);
 			}
+			updateFilterButtonStates();
 			$('#searchForm').submit();
 		});
 	}
@@ -1663,16 +1664,55 @@ $(document).ready(function () {
     	    silentReset = false; // reset flag
         	return; // skip submit
     	}
+		requestAnimationFrame(function() {
+			updateFilterButtonStates();
+		});
 		setTimeout(function() {
 			$('#searchForm').submit();
 		});
+	});
+
+	$('#searchForm').on('change', 'input, select', function() {
+		updateFilterButtonStates();
 	});
 
 	rebind_checkbox_trigger();
 
 	$('#searchForm').submit();
 
+	setTimeout(function() {
+		updateFilterButtonStates();
+	}, 100);
+
 });
+
+function hasActiveFilters() {
+	const textFilters = ['#dx', '#state', '#gridsquare', '#county', '#dok', '#sota', '#pota', '#wwff', '#operator', '#contest', '#comment', '#qslvia', '#distance', '#duration'];
+	const dateFilters = ['#dateFrom', '#dateTo'];
+	const selectFilters = ['#dxcc', '#mode', '#band', '#sats', '#orbits', '#propmode', '#cqzone', '#ituzone', '#iota', '#continent', '#qslSent', '#qslReceived', '#qslSentMethod', '#qslReceivedMethod', '#lotwSent', '#lotwReceived', '#clublogSent', '#clublogReceived', '#eqslSent', '#eqslReceived', '#dclSent', '#dclReceived', '#qrzSent', '#qrzReceived', '#qslimages'];
+	const hiddenFilters = ['#dupes', '#invalid', '#dupedate', '#dupemode', '#dupeband', '#dupesat'];
+	const allFilters = [...textFilters, ...dateFilters, ...selectFilters, ...hiddenFilters];
+
+	return allFilters.some(selector => {
+		const $el = $(selector);
+		if (!$el.length) return false;
+		const val = $el.val();
+		if (Array.isArray(val)) {
+			return false;
+		}
+		return val && val !== '*' && val !== '' && val !== 'All';
+	});
+}
+
+function updateFilterButtonStates() {
+	const hasActive = hasActiveFilters();
+
+	if (hasActive) {
+		$('#filterDropdown').addClass('btn-filter-active');
+	} else {
+		$('#filterDropdown').removeClass('btn-filter-active');
+	}
+}
 
 function rebind_checkbox_trigger() {
 	$('#checkBoxAll').change(function (event) {
@@ -1960,6 +2000,7 @@ function saveOptions() {
                 dateTo.value = '';
                 break;
         }
+        updateFilterButtonStates();
     }
 
     // Reset dates function
@@ -1968,6 +2009,7 @@ function saveOptions() {
         const dateTo = document.getElementById('dateTo');
         dateFrom.value = '';
         dateTo.value = '';
+        updateFilterButtonStates();
     }
 
 	function checkUpdateDistances() {
