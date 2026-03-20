@@ -533,7 +533,7 @@ $options = json_decode($options);
 								<div class="row">
                                     <div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="sortcolumn"><?= __("Sort column"); ?></label>
-										<select id="sortcolumn" name="sortcolumn" class="form-select form-select-sm border border-secondary">
+										<select id="sortcolumn" name="sortcolumn" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value="qsotime"><?= __("QSO Time"); ?></option>
                                             <option value="band"><?= __("Band"); ?></option>
                                             <option value="mode"><?= __("Mode"); ?></option>
@@ -542,7 +542,7 @@ $options = json_decode($options);
                                     </div>
 									<div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="sortdirection"><?= __("Sort direction"); ?></label>
-										<select id="sortdirection" name="sortdirection" class="form-select form-select-sm border border-secondary">
+										<select id="sortdirection" name="sortdirection" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value="desc"><?= __("Descending"); ?></option>
                                             <option value="asc"><?= __("Ascending"); ?></option>
                                         </select>
