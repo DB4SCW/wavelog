@@ -6,6 +6,7 @@ let inStateFixing = false;
 let stateFixStats = {fixed: 0, skipped: 0, fixedDxcc: new Set(), skippedDxcc: new Set(), skipReasons: new Set(), skippedDetails: []};
 let lastChecked = null;
 let silentReset = false;
+const filterDefaults = {};
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('.dropdown').forEach(dd => {
@@ -626,7 +627,22 @@ function unselectQsoID(qsoID) {
 	$('#checkBoxAll').prop("checked", false);
 }
 
+// Capture default values for all filter fields on page load
+function captureFilterDefaults() {
+	$('.filter-field').each(function() {
+		const $el = $(this);
+		const id = $el.attr('id');
+		const name = $el.attr('name');
+		// Use id as key if available, otherwise use name
+		const key = id ? '#' + id : '[name="' + name + '"]';
+		filterDefaults[key] = $el.val();
+	});
+}
+
 $(document).ready(function () {
+	// Capture default filter values BEFORE any other initialization
+	captureFilterDefaults();
+
 	// initialize multiselect dropdown for locations
 	// Documentation: https://davidstutz.github.io/bootstrap-multiselect/index.html
 
@@ -1687,20 +1703,19 @@ $(document).ready(function () {
 });
 
 function hasActiveFilters() {
-	const textFilters = ['#dx', '#state', '#gridsquare', '#county', '#dok', '#sota', '#pota', '#wwff', '#operator', '#contest', '#comment', '#qslvia', '#distance', '#duration'];
-	const dateFilters = ['#dateFrom', '#dateTo'];
-	const selectFilters = ['#dxcc', '#mode', '#band', '#sats', '#orbits', '#propmode', '#cqzone', '#ituzone', '#iota', '#continent', '#qslSent', '#qslReceived', '#qslSentMethod', '#qslReceivedMethod', '#lotwSent', '#lotwReceived', '#clublogSent', '#clublogReceived', '#eqslSent', '#eqslReceived', '#dclSent', '#dclReceived', '#qrzSent', '#qrzReceived', '#qslimages'];
-	const hiddenFilters = ['#dupes', '#invalid', '#dupedate', '#dupemode', '#dupeband', '#dupesat'];
-	const allFilters = [...textFilters, ...dateFilters, ...selectFilters, ...hiddenFilters];
-
-	return allFilters.some(selector => {
+	return Object.keys(filterDefaults).some(selector => {
 		const $el = $(selector);
 		if (!$el.length) return false;
-		const val = $el.val();
-		if (Array.isArray(val)) {
-			return false;
+		const currentVal = $el.val();
+		const defaultVal = filterDefaults[selector];
+
+		// Handle arrays (multi-select)
+		if (Array.isArray(currentVal)) {
+			return false; // Multi-selects not currently used
 		}
-		return val && val !== '*' && val !== '' && val !== 'All';
+
+		// Compare current value to stored default
+		return currentVal !== defaultVal;
 	});
 }
 
