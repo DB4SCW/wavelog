@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-18 21:33+0000\n"
-"PO-Revision-Date: 2026-03-18 23:13+0000\n"
+"PO-Revision-Date: 2026-03-21 13:07+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -19912,34 +19912,36 @@ msgstr "CQz geojson"
 
 #: application/controllers/Header_auth.php:22
 msgid "SSO Authentication is disabled."
-msgstr ""
+msgstr "SSO認証は無効になっています。"
 
 #: application/controllers/Header_auth.php:36
 msgid "SSO Authentication is disabled. Check your configuration."
-msgstr ""
+msgstr "SSO認証が無効になっています。設定を確認してください。"
 
 #: application/controllers/Header_auth.php:89
 msgid "User not found."
-msgstr ""
+msgstr "ユーザーが見つかりません。"
 
 #: application/controllers/Header_auth.php:109
 msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"申し訳ありません。このインスタンスは現在メンテナンス中です。管理者のみが"
+"ログインできます。"
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "何かがひどく間違っています。エラーログを確認してください。"
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "SSO設定エラー。エラーログを確認してください。"
 
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
-msgstr ""
+msgstr "変更できません。IDプロバイダーを通じて管理してください。"
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "
