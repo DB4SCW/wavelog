@@ -3,7 +3,7 @@
 # This file is distributed under the MIT licence.
 #
 # Fabian Berg <hb9hil@wavelog.org>, 2024.
-# Florian Wolters <wavelog@df2et.de>, 2024.
+# Florian Wolters <wavelog@df2et.de>, 2024, 2026.
 # Fabian Berg <80885850+HB9HIL@users.noreply.github.com>, 2024.
 # Jörg Dorgeist <wavelog@dj7nt.de>, 2024.
 # Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2025.
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-17 19:56+0000\n"
-"PO-Revision-Date: 2025-08-19 16:58+0000\n"
-"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
+"PO-Revision-Date: 2026-03-18 08:45+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/"
 "installer/de/>\n"
 "Language: de_DE\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: install/includes/install_config/install_lib.php:123
 msgid "not detected"
@@ -146,7 +146,7 @@ msgstr "Türkisch"
 
 #: install/includes/interface_assets/footer.php:85
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrainisch"
 
 #: install/includes/interface_assets/header.php:94
 msgid "Install | Wavelog"

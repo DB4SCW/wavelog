@@ -4,12 +4,13 @@
 #
 # Fabian Berg <fabian.berg@hb9hil.org>, 2025.
 # Viliam Petrik <tatralom@gmail.com>, 2025.
+# Dariusz Koryto <dariusz@koryto.eu>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-17 19:56+0000\n"
-"PO-Revision-Date: 2025-11-26 23:33+0000\n"
-"Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
+"PO-Revision-Date: 2026-03-17 23:36+0000\n"
+"Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/"
 "installer/sk/>\n"
 "Language: sk\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: install/includes/install_config/install_lib.php:123
 msgid "not detected"
@@ -141,7 +142,7 @@ msgstr "Turečtina"
 
 #: install/includes/interface_assets/footer.php:85
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrajinský"
 
 #: install/includes/interface_assets/header.php:94
 msgid "Install | Wavelog"
@@ -474,7 +475,7 @@ msgstr ""
 
 #: install/index.php:489
 msgid "Password of the Database User"
-msgstr "Heslo používateľa databázy."
+msgstr "Heslo používateľa databázy"
 
 #: install/index.php:493
 msgid "Connection Test"
@@ -685,9 +686,11 @@ msgid ""
 "Check which DXCC for this particular location is the correct one. If you are "
 "sure, ignore this warning."
 msgstr ""
-"Zastav sa tu na chvíľu. Tvoj vybraný DXCC je zastaraný a už nie je platný. "
-"Skontroluj, ktorý DXCC je pre toto konkrétne miesto správny. Ak si si istý, "
-"ignoruj toto varovanie."
+"Tu na chvíľu zastavte. Vami zvolený DXCC je zastaraný a už nie je platný. "
+"Skontrolujte, ktorý DXCC je pre túto konkrétnu lokalitu správny. Ak ste si "
+"istí, ignorujte toto varovanie.Zastav sa tu na chvíľu. Tvoj vybraný DXCC je "
+"zastaraný a už nie je platný. Skontroluj, ktorý DXCC je pre toto konkrétne "
+"miesto správny. Ak si si istý, ignoruj toto varovanie."
 
 #: install/index.php:1752
 msgid ""
@@ -707,7 +710,7 @@ msgstr ""
 
 #: install/index.php:1793
 msgid "Password should be at least 8 characters long"
-msgstr "Heslo by malo mať aspoň 8 znakov."
+msgstr "Heslo by malo mať aspoň 8 znakov"
 
 #: install/index.php:1802
 msgid "Passwords do not match"
@@ -767,7 +770,7 @@ msgstr "Aktualizácia údajov DXCC"
 
 #: install/run.php:35
 msgid "Lock the installer"
-msgstr "Zamkni inštalátor."
+msgstr "Zamkni inštalátor"
 
 #: install/run.php:39
 #, php-format
@@ -806,7 +809,7 @@ msgstr "Nepodarilo sa spustiť migrácie databázy"
 
 #: install/run.php:309
 msgid "Could not update DXCC data"
-msgstr "Nepodarilo sa aktualizovať údaje o DXCC."
+msgstr "Nepodarilo sa aktualizovať údaje o DXCC"
 
 #: install/run.php:342
 msgid "Could not create install/.lock file"
