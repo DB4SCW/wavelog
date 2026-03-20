@@ -3198,3 +3198,16 @@ function saveOptions() {
 			window.map.setView([30, 0], 1.5);
 		}
 	}
+
+	function getQsos(id) {
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/getQsos',
+			type: 'post',
+			data: {
+				id: id
+			},
+			success: function (data) {
+				updateRow(data);
+			}
+		});
+	}
