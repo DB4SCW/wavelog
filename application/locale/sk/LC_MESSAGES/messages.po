@@ -128,7 +128,14 @@ msgstr ""
 #: application/controllers/Webadif.php:11
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/User.php:16
+#: application/controllers/User.php:63 application/controllers/User.php:111
+#: application/controllers/User.php:129 application/controllers/User.php:153
+#: application/controllers/User.php:410 application/controllers/User.php:411
+#: application/controllers/User.php:1114 application/controllers/User.php:1133
+#: application/controllers/User.php:1385 application/controllers/User.php:1525
+#: application/controllers/User.php:1750 application/controllers/User.php:1766
+#: application/controllers/User.php:1792
 msgid "You're not allowed to do that!"
 msgstr "To nesmieš robiť!"
 
@@ -354,7 +361,7 @@ msgstr "Diplomy - %s"
 #: application/views/qso/award_tabs.php:41
 #: application/views/qso/edit_ajax.php:402 application/views/qso/index.php:361
 #: application/views/qso/index.php:656 application/views/user/edit.php:725
-#: application/views/view_log/qso.php:478
+#: application/views/view_log/qso.php:478 application/views/user/edit.php:773
 msgid "DOK"
 msgstr "DOK"
 
@@ -489,7 +496,9 @@ msgstr " a "
 #: application/views/user/edit.php:296 application/views/user/edit.php:319
 #: application/views/user/edit.php:343
 #: application/views/view_log/partial/log_ajax.php:9
-#: application/views/visitor/index.php:21
+#: application/views/visitor/index.php:21 application/views/user/edit.php:298
+#: application/views/user/edit.php:321 application/views/user/edit.php:344
+#: application/views/user/edit.php:367 application/views/user/edit.php:391
 msgid "SOTA"
 msgstr "SOTA"
 
@@ -512,6 +521,9 @@ msgstr "SOTA"
 #: application/views/user/edit.php:297 application/views/user/edit.php:320
 #: application/views/user/edit.php:344
 #: application/views/view_log/partial/log_ajax.php:10
+#: application/views/user/edit.php:299 application/views/user/edit.php:322
+#: application/views/user/edit.php:345 application/views/user/edit.php:368
+#: application/views/user/edit.php:392
 msgid "WWFF"
 msgstr "WWFF"
 
@@ -535,6 +547,9 @@ msgstr "WWFF"
 #: application/views/user/edit.php:298 application/views/user/edit.php:321
 #: application/views/user/edit.php:345
 #: application/views/view_log/partial/log_ajax.php:11
+#: application/views/user/edit.php:300 application/views/user/edit.php:323
+#: application/views/user/edit.php:346 application/views/user/edit.php:369
+#: application/views/user/edit.php:393
 msgid "POTA"
 msgstr "POTA"
 
@@ -605,7 +620,7 @@ msgstr "Fred Fish Memorial Award (FFMA)"
 #: application/views/qso/edit_ajax.php:393 application/views/qso/index.php:345
 #: application/views/qso/index.php:642 application/views/user/edit.php:721
 #: application/views/view_log/qso.php:443
-#: application/views/view_log/qso.php:761
+#: application/views/view_log/qso.php:761 application/views/user/edit.php:769
 msgid "SIG"
 msgstr "SIG"
 
@@ -836,7 +851,8 @@ msgstr "Žiadny používateľ nekonfiguroval Clublog."
 #: application/views/user/edit.php:865
 #: application/views/view_log/partial/log_ajax.php:222
 #: application/views/view_log/qso.php:583
-#: application/views/view_log/qso.php:588
+#: application/views/view_log/qso.php:588 application/views/user/edit.php:678
+#: application/views/user/edit.php:913
 msgid "Clublog"
 msgstr "Clublog"
 
@@ -927,8 +943,9 @@ msgid ""
 "It should run every minute (* * * * *)."
 msgstr ""
 "Posledné spustenie prebehlo pred viac ako %s sekundami.%sProsím,\n"
-"skontrolujte svoj hlavný cron! Mal by sa spúšťať každú minútu (* * * * *)."
-"Posledné spustenie sa uskutočnilo pred viac ako %s sekundami.%sSkontroluj\n"
+"skontrolujte svoj hlavný cron! Mal by sa spúšťať každú minútu (* * * * "
+"*).Posledné spustenie sa uskutočnilo pred viac ako %s sekundami."
+"%sSkontroluj\n"
 "svoj hlavný cron! Mal by bežať každú minútu (* * * * *).Posledné spustenie "
 "sa uskutočnilo pred viac ako %s sekundami.%sSkontroluj svoj\n"
 "hlavný cron! Mal by bežať každú minútu (* * * * *).Posledný spustenie sa "
@@ -983,7 +1000,8 @@ msgstr "Import DCL kľúča"
 #: application/views/user/edit.php:631 application/views/user/edit.php:873
 #: application/views/view_log/partial/log_ajax.php:225
 #: application/views/view_log/qso.php:593
-#: application/views/view_log/qso.php:598
+#: application/views/view_log/qso.php:598 application/views/user/edit.php:679
+#: application/views/user/edit.php:921
 msgid "DCL"
 msgstr "DCL"
 
@@ -1439,7 +1457,8 @@ msgstr "Logbook"
 #: application/views/qslprint/qsolist.php:18
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:115
 #: application/views/timeline/index.php:56 application/views/user/edit.php:626
-#: application/views/user/edit.php:831
+#: application/views/user/edit.php:831 application/views/user/edit.php:674
+#: application/views/user/edit.php:879
 msgid "QSL"
 msgstr "QSL"
 
@@ -1481,7 +1500,8 @@ msgstr "QSL"
 #: application/views/search/search_result_ajax.php:316
 #: application/views/timeline/index.php:60 application/views/user/edit.php:627
 #: application/views/user/edit.php:841 application/views/view_log/qso.php:549
-#: application/views/view_log/qso.php:554
+#: application/views/view_log/qso.php:554 application/views/user/edit.php:675
+#: application/views/user/edit.php:889
 msgid "LoTW"
 msgstr "LoTW"
 
@@ -1519,14 +1539,17 @@ msgstr "LoTW"
 #: application/views/station_profile/edit.php:301
 #: application/views/timeline/index.php:64 application/views/user/edit.php:628
 #: application/views/user/edit.php:849 application/views/user/edit.php:923
+#: application/views/user/edit.php:676 application/views/user/edit.php:897
+#: application/views/user/edit.php:971
 msgid "eQSL"
 msgstr "eQSL"
 
 #: application/controllers/Logbook.php:993
 msgid "All callbook lookups failed or provided no results."
 msgstr ""
-"Všetky vyhľadávania v callbooku zlyhali alebo neposkytli žiadne výsledky."
-"Všetky vyhľadávania v callbooku zlyhali alebo neposkytli žiadne výsledky."
+"Všetky vyhľadávania v callbooku zlyhali alebo neposkytli žiadne "
+"výsledky.Všetky vyhľadávania v callbooku zlyhali alebo neposkytli žiadne "
+"výsledky."
 
 #: application/controllers/Logbook.php:1458
 #: application/controllers/Radio.php:49
@@ -1624,7 +1647,9 @@ msgstr ""
 #: application/views/view_log/partial/log.php:9
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
-#: application/views/widgets/qsos.php:18
+#: application/views/widgets/qsos.php:18 application/views/user/edit.php:293
+#: application/views/user/edit.php:316 application/views/user/edit.php:339
+#: application/views/user/edit.php:362 application/views/user/edit.php:386
 msgid "Mode"
 msgstr "Mód"
 
@@ -1654,6 +1679,9 @@ msgstr "Mód"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
+#: application/views/user/edit.php:294 application/views/user/edit.php:317
+#: application/views/user/edit.php:340 application/views/user/edit.php:363
+#: application/views/user/edit.php:387
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1683,7 +1711,9 @@ msgstr "RST (S)"
 #: application/views/view_log/partial/log.php:11
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
-#: application/views/visitor/index.php:12
+#: application/views/visitor/index.php:12 application/views/user/edit.php:295
+#: application/views/user/edit.php:318 application/views/user/edit.php:341
+#: application/views/user/edit.php:364 application/views/user/edit.php:388
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1704,7 +1734,9 @@ msgstr "RST (R)"
 #: application/views/view_log/partial/log_ajax.php:7
 #: application/views/view_log/qso.php:349
 #: application/views/view_log/qso.php:705
-#: application/views/visitor/index.php:15
+#: application/views/visitor/index.php:15 application/views/user/edit.php:296
+#: application/views/user/edit.php:319 application/views/user/edit.php:342
+#: application/views/user/edit.php:365 application/views/user/edit.php:389
 msgid "Country"
 msgstr "Krajina"
 
@@ -1735,7 +1767,9 @@ msgstr "Krajina"
 #: application/views/user/edit.php:272 application/views/user/edit.php:295
 #: application/views/user/edit.php:318 application/views/user/edit.php:342
 #: application/views/view_log/partial/log_ajax.php:8
-#: application/views/visitor/index.php:18
+#: application/views/visitor/index.php:18 application/views/user/edit.php:297
+#: application/views/user/edit.php:320 application/views/user/edit.php:343
+#: application/views/user/edit.php:366 application/views/user/edit.php:390
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1766,7 +1800,9 @@ msgstr "IOTA"
 #: application/views/user/edit.php:276 application/views/user/edit.php:299
 #: application/views/user/edit.php:322 application/views/user/edit.php:346
 #: application/views/view_log/partial/log_ajax.php:12
-#: application/views/visitor/index.php:24
+#: application/views/visitor/index.php:24 application/views/user/edit.php:301
+#: application/views/user/edit.php:324 application/views/user/edit.php:347
+#: application/views/user/edit.php:370 application/views/user/edit.php:394
 msgid "State"
 msgstr "Štát"
 
@@ -1817,6 +1853,9 @@ msgstr "Štát"
 #: application/views/view_log/qso.php:692
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
+#: application/views/user/edit.php:188 application/views/user/edit.php:302
+#: application/views/user/edit.php:325 application/views/user/edit.php:348
+#: application/views/user/edit.php:371 application/views/user/edit.php:395
 msgid "Gridsquare"
 msgstr "Lokátor"
 
@@ -1846,7 +1885,9 @@ msgstr "Lokátor"
 #: application/views/user/edit.php:301 application/views/user/edit.php:324
 #: application/views/user/edit.php:348
 #: application/views/view_log/partial/log_ajax.php:14
-#: application/views/visitor/index.php:30
+#: application/views/visitor/index.php:30 application/views/user/edit.php:303
+#: application/views/user/edit.php:326 application/views/user/edit.php:349
+#: application/views/user/edit.php:372 application/views/user/edit.php:396
 msgid "Distance"
 msgstr "Vzdialenosť"
 
@@ -1940,7 +1981,9 @@ msgstr "Vzdialenosť"
 #: application/views/view_log/partial/log.php:12
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
-#: application/views/widgets/qsos.php:21
+#: application/views/widgets/qsos.php:21 application/views/user/edit.php:291
+#: application/views/user/edit.php:314 application/views/user/edit.php:337
+#: application/views/user/edit.php:360 application/views/user/edit.php:384
 msgid "Band"
 msgstr "Pásmo"
 
@@ -1968,7 +2011,9 @@ msgstr "Pásmo"
 #: application/views/user/edit.php:337
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
-#: application/views/visitor/index.php:36
+#: application/views/visitor/index.php:36 application/views/user/edit.php:292
+#: application/views/user/edit.php:315 application/views/user/edit.php:338
+#: application/views/user/edit.php:361 application/views/user/edit.php:385
 msgid "Frequency"
 msgstr "Frekvencia"
 
@@ -1992,7 +2037,9 @@ msgstr "Frekvencia"
 #: application/views/user/edit.php:349
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:712
-#: application/views/visitor/index.php:39
+#: application/views/visitor/index.php:39 application/views/user/edit.php:304
+#: application/views/user/edit.php:327 application/views/user/edit.php:350
+#: application/views/user/edit.php:373 application/views/user/edit.php:397
 msgid "Operator"
 msgstr "Operátor"
 
@@ -2050,6 +2097,7 @@ msgstr "Rýchly náhľad"
 #: application/views/lotw/import.php:3 application/views/lotw_views/index.php:9
 #: application/views/lotw_views/upload_cert.php:3
 #: application/views/user/edit.php:895 application/views/visitor/index.php:328
+#: application/views/user/edit.php:943
 msgid "Logbook of the World"
 msgstr "Logbook of the World"
 
@@ -2075,8 +2123,8 @@ msgid ""
 msgstr ""
 "Certifikát nájdený v súbore %s obsahuje heslo a nemôže byť spracovaný.\n"
 "%sProsím, uistite sa, že exportujete LoTW certifikát z aplikácie tqsl bez\n"
-"hesla!%s Ďalšie informácie nájdete na %sstránke LoTW FAQ%s vo Wavelog Wiki."
-"Certifikát nájdený v súbore %s obsahuje heslo a nemožno ho spracovať.\n"
+"hesla!%s Ďalšie informácie nájdete na %sstránke LoTW FAQ%s vo Wavelog "
+"Wiki.Certifikát nájdený v súbore %s obsahuje heslo a nemožno ho spracovať.\n"
 "%sProsím, uistite sa, že exportujete certifikát LoTW z aplikácie tqsl bez\n"
 "hesla!%s Pre ďalšie informácie navštívte %sstránku LoTW FAQ%s vo Wavelog\n"
 "Wiki.Certifikát nájdený v súbore %s obsahuje heslo a nemožno ho spracovať. "
@@ -2789,6 +2837,8 @@ msgstr "Zadať polohu stanice"
 #: application/controllers/Station.php:75
 #: application/controllers/Station.php:100 application/controllers/User.php:257
 #: application/controllers/User.php:950 application/controllers/User.php:1113
+#: application/controllers/User.php:273 application/controllers/User.php:978
+#: application/controllers/User.php:1151
 msgid "Invalid security token"
 msgstr "Neplatný bezpečnostný token"
 
@@ -2813,6 +2863,7 @@ msgstr "Upraviť polohu stanice "
 #: application/views/view_log/qso.php:9 application/views/webadif/export.php:75
 #: application/views/webadif/export.php:115
 #: application/views/zonechecker/index.php:5
+#: application/views/user/edit.php:399 application/views/user/edit.php:777
 msgid "Station Location"
 msgstr "Poloha stanice"
 
@@ -2822,6 +2873,7 @@ msgstr "Duplicitná poloha stanice:"
 
 #: application/controllers/Station.php:234
 #: application/controllers/User.php:1351 application/controllers/User.php:1601
+#: application/controllers/User.php:1406 application/controllers/User.php:1663
 #, php-format
 msgid "Please check value for grid locator (%s)"
 msgstr "Skontroluj hodnotu pre lokátor (%s)"
@@ -2888,7 +2940,9 @@ msgstr "Chyba. Odkaz sa už používa!"
 #: application/views/stationsetup/stationsetup.php:81
 #: application/views/user/edit.php:453 application/views/user/edit.php:504
 #: application/views/user/edit.php:513 application/views/user/edit.php:670
-#: application/views/user/edit.php:680
+#: application/views/user/edit.php:680 application/views/user/edit.php:501
+#: application/views/user/edit.php:552 application/views/user/edit.php:561
+#: application/views/user/edit.php:718 application/views/user/edit.php:728
 msgid "Disabled"
 msgstr "Vypnuté"
 
@@ -3167,89 +3221,94 @@ msgstr "Aktualizácia súboru VUCC lokátorov zlyhala. Výsledok: "
 
 #: application/controllers/User.php:50
 #: application/views/interface_assets/header.php:324
+#: application/controllers/User.php:52
 msgid "User Accounts"
 msgstr "Používateľské účty"
 
-#: application/controllers/User.php:96
+#: application/controllers/User.php:96 application/controllers/User.php:104
 msgid "Invalid User ID or missing modal!"
 msgstr "Neplatné používateľské ID alebo chýbajúci modal!"
 
-#: application/controllers/User.php:107
+#: application/controllers/User.php:107 application/controllers/User.php:115
 msgid "User unlocked!"
 msgstr "Používateľ odomknutý!"
 
-#: application/controllers/User.php:110
+#: application/controllers/User.php:110 application/controllers/User.php:118
 msgid "Failed to unlock user!"
 msgstr "Nepodarilo sa odomknúť používateľa!"
 
-#: application/controllers/User.php:114
+#: application/controllers/User.php:114 application/controllers/User.php:122
 msgid "User not found!"
 msgstr "Používateľ sa nenašiel!"
 
-#: application/controllers/User.php:127
+#: application/controllers/User.php:127 application/controllers/User.php:135
 msgid "Invalid Parameter!"
 msgstr "Neplatný parameter!"
 
 #: application/controllers/User.php:193
 #: application/views/club/permissions.php:178
+#: application/controllers/User.php:209
 msgid "Add User"
 msgstr "Pridať používateľa"
 
-#: application/controllers/User.php:329
+#: application/controllers/User.php:329 application/controllers/User.php:345
 #, php-format
 msgid "Username %s already in use!"
 msgstr "Používateľské meno %s je už obsadené!"
 
-#: application/controllers/User.php:332
+#: application/controllers/User.php:332 application/controllers/User.php:348
 #, php-format
 msgid "E-mail %s already in use!"
 msgstr "E-mail %s sa už používa!"
 
-#: application/controllers/User.php:335
+#: application/controllers/User.php:335 application/controllers/User.php:351
 msgid "Invalid Password!"
 msgstr "Neplatné heslo!"
 
-#: application/controllers/User.php:339
+#: application/controllers/User.php:339 application/controllers/User.php:355
 #, php-format
 msgid "User %s added!"
 msgstr "Používateľ %s pridaný!"
 
-#: application/controllers/User.php:343
+#: application/controllers/User.php:343 application/controllers/User.php:359
 msgid "Users"
 msgstr "Používatelia"
 
 #: application/controllers/User.php:443
 #: application/views/club/permissions.php:279
+#: application/controllers/User.php:471
 msgid "Edit User"
 msgstr "Upraviť používateľa"
 
 #: application/controllers/User.php:1009 application/controllers/User.php:1012
+#: application/controllers/User.php:1047 application/controllers/User.php:1050
 #, php-format
 msgid "User %s edited"
 msgstr "Používateľ %s upravený"
 
-#: application/controllers/User.php:1079
+#: application/controllers/User.php:1079 application/controllers/User.php:1117
 msgid "Profile"
 msgstr "Profil"
 
 #: application/controllers/User.php:1103
 #: application/views/club/permissions.php:336
+#: application/controllers/User.php:1141
 msgid "Delete User"
 msgstr "Vymazať používateľa"
 
-#: application/controllers/User.php:1119
+#: application/controllers/User.php:1119 application/controllers/User.php:1157
 msgid "User deleted"
 msgstr "Používateľ bol odstránený"
 
-#: application/controllers/User.php:1122
+#: application/controllers/User.php:1122 application/controllers/User.php:1160
 msgid "Could not delete user!"
 msgstr "Používateľa sa nepodarilo vymazať!"
 
-#: application/controllers/User.php:1122
+#: application/controllers/User.php:1122 application/controllers/User.php:1160
 msgid "Database error:"
 msgstr "Chyba databázy:"
 
-#: application/controllers/User.php:1147
+#: application/controllers/User.php:1147 application/controllers/User.php:1185
 msgid ""
 "Congrats! Wavelog was successfully installed. You can now login for the "
 "first time."
@@ -3258,11 +3317,12 @@ msgstr ""
 "prihlásiť.Gratulujeme! Wavelog bol úspešne nainštalovaný. Teraz sa môžete "
 "prihlásiť prvýkrát."
 
-#: application/controllers/User.php:1186
+#: application/controllers/User.php:1186 application/controllers/User.php:1224
 msgid "This is not allowed!"
 msgstr "To nie je povolené!"
 
 #: application/controllers/User.php:1223 application/controllers/User.php:1236
+#: application/controllers/User.php:1261 application/controllers/User.php:1274
 msgid "Login failed. Try again."
 msgstr "Prihlásenie zlyhalo. Skúste to znova."
 
@@ -3270,17 +3330,20 @@ msgstr "Prihlásenie zlyhalo. Skúste to znova."
 #: application/views/interface_assets/header.php:412
 #: application/views/user/login.php:91
 #: application/views/visitor/layout/header.php:87
+#: application/controllers/User.php:1282
 msgid "Login"
 msgstr "Prihlásiť sa"
 
 #: application/controllers/User.php:1282
+#: application/controllers/Header_auth.php:104
+#: application/controllers/User.php:1329
 msgid ""
 "You can't login to a clubstation directly. Use your personal account instead."
 msgstr ""
 "Nemôžeš sa priamo prihlásiť do klubovej stanice. Použi radšej svoj osobný "
 "účet."
 
-#: application/controllers/User.php:1285
+#: application/controllers/User.php:1285 application/controllers/User.php:1332
 msgid ""
 "Your account is locked, due to too many failed login-attempts. Please reset "
 "your password."
@@ -3289,7 +3352,7 @@ msgstr ""
 "prihlásenie. Prosím, resetujte svoje heslo.Váš účet je zablokovaný kvôli "
 "príliš veľa neúspešným pokusom o prihlásenie. Prosím, obnovte svoje heslo."
 
-#: application/controllers/User.php:1289
+#: application/controllers/User.php:1289 application/controllers/User.php:1336
 msgid ""
 "Sorry. This instance is currently in maintenance mode. If this message "
 "appears unexpectedly or keeps showing up, please contact an administrator. "
@@ -3299,11 +3362,11 @@ msgstr ""
 "správa objaví neočakávane alebo sa stále zobrazuje, kontaktujte správcu. Len "
 "administrátori sa môžu momentálne prihlásiť."
 
-#: application/controllers/User.php:1292
+#: application/controllers/User.php:1292 application/controllers/User.php:1339
 msgid "Incorrect username or password!"
 msgstr "Nesprávne používateľské meno alebo heslo!"
 
-#: application/controllers/User.php:1317
+#: application/controllers/User.php:1317 application/controllers/User.php:1364
 #, php-format
 msgid "User %s logged out."
 msgstr "Používateľ %s sa odhlásil."
@@ -3311,6 +3374,7 @@ msgstr "Používateľ %s sa odhlásil."
 #: application/controllers/User.php:1333
 #: application/views/oqrs/request_grouped.php:16
 #: application/views/user/modals/first_login_wizard.php:26
+#: application/controllers/User.php:1388
 msgid "Station Name"
 msgstr "Názov stanice"
 
@@ -3321,6 +3385,7 @@ msgstr "Názov stanice"
 #: application/views/stationsetup/linkedlocations.php:32
 #: application/views/stationsetup/stationsetup.php:130
 #: application/views/user/modals/first_login_wizard.php:34
+#: application/controllers/User.php:1389
 msgid "Station Callsign"
 msgstr "Značka stanice"
 
@@ -3328,23 +3393,25 @@ msgstr "Značka stanice"
 #: application/views/station_profile/create.php:82
 #: application/views/station_profile/edit.php:99
 #: application/views/user/modals/first_login_wizard.php:42
+#: application/controllers/User.php:1390
 msgid "Station DXCC"
 msgstr "DXCC stanice"
 
-#: application/controllers/User.php:1336
+#: application/controllers/User.php:1336 application/controllers/User.php:1391
 msgid "Station CQ Zone"
 msgstr "CQ zóna stanice"
 
-#: application/controllers/User.php:1337
+#: application/controllers/User.php:1337 application/controllers/User.php:1392
 msgid "Station ITU Zone"
 msgstr "ITU zóna stanice"
 
 #: application/controllers/User.php:1338
 #: application/views/user/modals/first_login_wizard.php:91
+#: application/controllers/User.php:1393
 msgid "Station Locator"
 msgstr "Lokátor stanice"
 
-#: application/controllers/User.php:1359
+#: application/controllers/User.php:1359 application/controllers/User.php:1414
 #, php-format
 msgid ""
 "Station created successfully! Welcome to Wavelog! To complete your station "
@@ -3354,24 +3421,26 @@ msgstr ""
 "nastavenia vašej stanice kliknite %stu%s.Stanica bola úspešne vytvorená! "
 "Vitajte vo Wavelog! Na dokončenie nastavenia stanice kliknite %ssem%s."
 
-#: application/controllers/User.php:1362
+#: application/controllers/User.php:1362 application/controllers/User.php:1417
 msgid "Station setup failed! Please set up your station manually."
 msgstr "Stanica nebola nastavená! Nastav svoju stanicu manuálne."
 
-#: application/controllers/User.php:1379
+#: application/controllers/User.php:1379 application/controllers/User.php:1434
 msgid "Password Reset is disabled on the Demo!"
 msgstr "Obnovenie hesla je v demo režime zakázané!"
 
-#: application/controllers/User.php:1393
+#: application/controllers/User.php:1393 application/controllers/User.php:1448
 msgid "Forgot Password"
 msgstr "Zabudnuté heslo"
 
 #: application/controllers/User.php:1444
 #: application/views/user/modals/more_actions_modal.php:88
+#: application/controllers/User.php:1499
 msgid "Email settings are incorrect."
 msgstr "Nastavenia e-mailu sú nesprávne."
 
 #: application/controllers/User.php:1448 application/controllers/User.php:1453
+#: application/controllers/User.php:1503 application/controllers/User.php:1508
 msgid "Password Reset Processed."
 msgstr "Proces resetovania hesla bol spracovaný."
 
@@ -3379,23 +3448,24 @@ msgstr "Proces resetovania hesla bol spracovaný."
 #: application/views/user/forgot_password.php:51
 #: application/views/user/reset_password.php:8
 #: application/views/user/reset_password.php:35
+#: application/controllers/User.php:1616
 msgid "Reset Password"
 msgstr "Obnoviť heslo"
 
-#: application/controllers/User.php:1575
+#: application/controllers/User.php:1575 application/controllers/User.php:1637
 #, php-format
 msgid ""
 "Couldn't set account to this username. Please try another one than \"%s\"."
 msgstr ""
 "Nepodarilo sa nastaviť účet na toto používateľské meno. Skúste iné ako „%s“."
 
-#: application/controllers/User.php:1584
+#: application/controllers/User.php:1584 application/controllers/User.php:1646
 #, php-format
 msgid ""
 "Couldn't set account to this email. Please try another address than \"%s\"."
 msgstr "Nedá sa nastaviť účet na tento email. Skúste inú adresu ako \"%s\"."
 
-#: application/controllers/User.php:1623
+#: application/controllers/User.php:1623 application/controllers/User.php:1685
 #, php-format
 msgid ""
 "You currently can't impersonate another user. You need to set %s to %s in "
@@ -3407,24 +3477,25 @@ msgstr ""
 
 #: application/controllers/User.php:1637
 #: application/views/user/modals/admin_impersonate_modal.php:36
+#: application/controllers/User.php:1699
 msgid ""
 "You currently can't impersonate another user. Please change the "
 "encryption_key in your config.php file first!"
 msgstr ""
 "Momentálne nemôžete zastupovať iného používateľa. Najskôr zmeňte\n"
 "encryption_key vo vašom súbore config.php!Momentálne nemôžete predstierať, "
-"že ste iný používateľ. Najprv zmeňte encryption_key vo svojom súbore config."
-"php!"
+"že ste iný používateľ. Najprv zmeňte encryption_key vo svojom súbore "
+"config.php!"
 
-#: application/controllers/User.php:1644
+#: application/controllers/User.php:1644 application/controllers/User.php:1706
 msgid "Invalid Hash"
 msgstr "Neplatný hash"
 
-#: application/controllers/User.php:1657
+#: application/controllers/User.php:1657 application/controllers/User.php:1719
 msgid "The impersonation hash is too old. Please try again."
 msgstr "Impersonizačný hash je príliš starý. Skúste to znova."
 
-#: application/controllers/User.php:1664
+#: application/controllers/User.php:1664 application/controllers/User.php:1726
 msgid ""
 "You can't impersonate another user while you're not logged in as the source "
 "user"
@@ -3432,15 +3503,15 @@ msgstr ""
 "Nemôžeš sa vydávať za iného používateľa, keď nie si prihlásený ako zdrojový "
 "používateľ"
 
-#: application/controllers/User.php:1670
+#: application/controllers/User.php:1670 application/controllers/User.php:1732
 msgid "There was a problem with your session. Please try again."
 msgstr "Vyskytol sa problém s vašou reláciou. Skúste to znova."
 
-#: application/controllers/User.php:1677
+#: application/controllers/User.php:1677 application/controllers/User.php:1739
 msgid "The requested user to impersonate does not exist"
 msgstr "Požadovaný používateľ na zosobnenie neexistuje"
 
-#: application/controllers/User.php:1698
+#: application/controllers/User.php:1698 application/controllers/User.php:1760
 msgid ""
 "Could not determine the correct permission level for the clubstation. Try "
 "again after re-login."
@@ -3451,11 +3522,13 @@ msgstr ""
 
 #: application/controllers/User.php:1743 application/controllers/User.php:1755
 #: application/controllers/User.php:1761 application/controllers/User.php:1770
-#: application/controllers/User.php:1778
+#: application/controllers/User.php:1778 application/controllers/User.php:1805
+#: application/controllers/User.php:1817 application/controllers/User.php:1823
+#: application/controllers/User.php:1832 application/controllers/User.php:1840
 msgid "Ups.. Something went wrong. Try to log back in."
 msgstr "Ups.. Niečo sa pokazilo. Skús sa znovu prihlásiť."
 
-#: application/controllers/User.php:1784
+#: application/controllers/User.php:1784 application/controllers/User.php:1846
 msgid ""
 "The ability to return quickly has been disabled after the security hash "
 "expired. Please log in again."
@@ -3464,7 +3537,7 @@ msgstr ""
 "hashu. Prosím, prihláste sa znova.Možnosť rýchlo sa vrátiť bola deaktivovaná "
 "po vypršaní bezpečnostného hashu. Prosím, prihláste sa znova."
 
-#: application/controllers/User.php:1800
+#: application/controllers/User.php:1800 application/controllers/User.php:1862
 #, php-format
 msgid ""
 "You have been logged out of the account %s. Welcome back, %s, to your "
@@ -3687,8 +3760,9 @@ msgstr "HRDlog: Pre volaciu značku neboli nájdené žiadne QSOs na nahratie: "
 #: application/models/Hrdlog_model.php:31
 msgid "HRDlog: No station profiles with HRDlog Credentials found."
 msgstr ""
-"HRDlog: Nenašli sa žiadne profily staníc s HRDlog prihlasovacími údajmi."
-"HRDlog: Nenašli sa žiadne profily staníc s prihlasovacími údajmi HRDlog."
+"HRDlog: Nenašli sa žiadne profily staníc s HRDlog prihlasovacími "
+"údajmi.HRDlog: Nenašli sa žiadne profily staníc s prihlasovacími údajmi "
+"HRDlog."
 
 #: application/models/Logbook_model.php:311
 msgid "Station not accessible"
@@ -3812,6 +3886,8 @@ msgstr "QSO aktualizované"
 #: application/views/user/edit.php:281 application/views/user/edit.php:304
 #: application/views/user/edit.php:327 application/views/user/edit.php:352
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/views/user/edit.php:306 application/views/user/edit.php:329
+#: application/views/user/edit.php:375 application/views/user/edit.php:400
 msgid "Bearing"
 msgstr "Smerovanie"
 
@@ -3829,7 +3905,7 @@ msgstr "Spojenia"
 #: application/views/interface_assets/footer.php:110
 #: application/views/qso/index.php:101
 #: application/views/statistics/index.php:81
-#: application/views/user/edit.php:169
+#: application/views/user/edit.php:169 application/views/user/edit.php:217
 msgid "General"
 msgstr "Všeobecné"
 
@@ -4066,6 +4142,7 @@ msgstr "Rozdiel"
 #: application/views/timeplotter/index.php:47
 #: application/views/user/edit.php:815
 #: application/views/visitor/layout/footer.php:168
+#: application/views/user/edit.php:863
 msgid "All"
 msgstr "Všetko"
 
@@ -4113,7 +4190,7 @@ msgstr "Obdobie"
 #: application/views/logbookadvanced/useroptions.php:283
 #: application/views/timeline/index.php:79 application/views/user/edit.php:353
 #: application/views/view_log/partial/log_ajax.php:21
-#: application/views/view_log/qso.php:248
+#: application/views/view_log/qso.php:248 application/views/user/edit.php:401
 msgid "Propagation"
 msgstr "Šírenie"
 
@@ -4501,6 +4578,7 @@ msgstr "Potvrdenie"
 #: application/views/awards/was/index.php:73
 #: application/views/awards/wpx/index.php:40
 #: application/views/gridmap/index.php:202 application/views/user/edit.php:857
+#: application/views/user/edit.php:905
 msgid "QRZ.com"
 msgstr "QRZ.com"
 
@@ -4631,6 +4709,7 @@ msgstr "Nič sa nenašlo!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:684
 #: application/views/zonechecker/result.php:50
+#: application/views/user/edit.php:175
 msgid "Callsign"
 msgstr "Volacia značka"
 
@@ -6229,8 +6308,8 @@ msgstr ""
 "viac ako 630 km od východu na západ a takmer 900 km od severu na juh. Asi 70 "
 "000 z 82 miliónov obyvateľov Nemecka sú licencovaní rádioamatéri, z ktorých "
 "viac ako 40 000 je členmi DARC. DOK je systém, ktorý poskytuje jednotlivým "
-"miestnym pobočkám identifikátor a znamená \"Deutscher Ortsverband "
-"Kenner\" (po slovensky: \"Identifikátor nemeckého miestneho združenia\")."
+"miestnym pobočkám identifikátor a znamená \"Deutscher Ortsverband Kenner\" "
+"(po slovensky: \"Identifikátor nemeckého miestneho združenia\")."
 
 #: application/views/awards/dok/index.php:9
 msgid ""
@@ -6332,6 +6411,7 @@ msgstr "Každé pásmo"
 #: application/views/oqrs/showrequests.php:70
 #: application/views/qrbcalc/index.php:19
 #: application/views/search/filter.php:37 application/views/user/edit.php:733
+#: application/views/user/edit.php:781
 msgid "Reset"
 msgstr "Resetovať"
 
@@ -6532,9 +6612,9 @@ msgstr "Prefix"
 #: application/views/awards/dxcc/index.php:369
 msgid "No results found for your search criteria. Please try again."
 msgstr ""
-"Pre vaše vyhľadávacie kritériá sa nenašli žiadne výsledky. Skúste to znova."
-"Podľa vašich vyhľadávacích kritérií neboli nájdené žiadne výsledky. Skúste "
-"to prosím znovu."
+"Pre vaše vyhľadávacie kritériá sa nenašli žiadne výsledky. Skúste to "
+"znova.Podľa vašich vyhľadávacích kritérií neboli nájdené žiadne výsledky. "
+"Skúste to prosím znovu."
 
 #: application/views/awards/ffma/index.php:11
 #: application/views/interface_assets/header.php:294
@@ -6549,9 +6629,9 @@ msgid ""
 msgstr ""
 "Pamätné vyznamenanie Fred Fish bolo vytvorené na počesť Freda Fisha, W5FF\n"
 "(SK), ktorý bol prvým rádioamatérom, ktorý nadviazal a potvrdil všetkých\n"
-"488 lokátorov Maidenhead v 48 susediacich štátoch USA na pásme 6 metrov."
-"Diplom Freda Fisha bola vytvorená na počesť Freda Fisha, W5FF (SK), ktorý "
-"bol prvým amatérom, ktorý odpracoval a potvrdil všetky 488 Maidenhead "
+"488 lokátorov Maidenhead v 48 susediacich štátoch USA na pásme 6 "
+"metrov.Diplom Freda Fisha bola vytvorená na počesť Freda Fisha, W5FF (SK), "
+"ktorý bol prvým amatérom, ktorý odpracoval a potvrdil všetky 488 Maidenhead "
 "lokátorových štvorcov v 48 susediacich štátoch USA na 6 metroch."
 
 #: application/views/awards/ffma/index.php:13
@@ -6904,7 +6984,9 @@ msgstr "Zobraziť IOTA mapu"
 #: application/views/user/edit.php:326 application/views/user/edit.php:350
 #: application/views/view_log/partial/log_ajax.php:19
 #: application/views/view_log/qso.php:232
-#: application/views/view_log/qso.php:688
+#: application/views/view_log/qso.php:688 application/views/user/edit.php:305
+#: application/views/user/edit.php:328 application/views/user/edit.php:351
+#: application/views/user/edit.php:374 application/views/user/edit.php:398
 msgid "Name"
 msgstr "Meno"
 
@@ -7313,7 +7395,7 @@ msgstr ""
 #: application/views/station_profile/create.php:242
 #: application/views/station_profile/edit.php:267
 #: application/views/user/edit.php:717 application/views/view_log/qso.php:421
-#: application/views/view_log/qso.php:754
+#: application/views/view_log/qso.php:754 application/views/user/edit.php:765
 msgid "POTA Reference(s)"
 msgstr "POTA referencia(e)"
 
@@ -7745,12 +7827,12 @@ msgstr ""
 "Provinces (WAP) rádiovým amatérom, ktorí majú potvrdené spojenia so\n"
 "stanicami v každej z dvanástich provincií Holandska. Toto ocenenie\n"
 "povzbudzuje operátorov, aby nadviazali spojenia s rozmanitými stanicami v\n"
-"celej krajine, čím podporuje národnú dostupnosť aj prevádzkové zručnosti."
-"VRZA (Vereniging voor Radio Zend Amateurs) ponúka diplom Worked All "
-"Provinces (WAP) rádioamatérom, ktorí majú potvrdené spojenia so stanicami v "
-"každej z dvanástich provincií Holandska. Toto ocenenie povzbudzuje "
-"operátorov, aby spolupracovali s rôznorodým spektrom staníc v celej krajine, "
-"čím podporuje národné prepojenie a prevádzkovú zručnosť."
+"celej krajine, čím podporuje národnú dostupnosť aj prevádzkové "
+"zručnosti.VRZA (Vereniging voor Radio Zend Amateurs) ponúka diplom Worked "
+"All Provinces (WAP) rádioamatérom, ktorí majú potvrdené spojenia so "
+"stanicami v každej z dvanástich provincií Holandska. Toto ocenenie "
+"povzbudzuje operátorov, aby spolupracovali s rôznorodým spektrom staníc v "
+"celej krajine, čím podporuje národné prepojenie a prevádzkovú zručnosť."
 
 #: application/views/awards/wap/index.php:24
 #, php-format
@@ -7820,8 +7902,8 @@ msgstr ""
 "Použité polia pre toto ocenenie: DXCC (Musí byť jedno z Čína/318,\n"
 "Hongkong/321, Macao/152, Taiwan/386, Pratas Isl./505 alebo Scarborough\n"
 "Reef/506) a platný štát (ADIF: DXCC a STATE)Pre tento diplom sa používajú "
-"oblasti: DXCC (musí byť jedno z Čína/318, HongKong/321, Macao/152, "
-"Taiwan/386, Pratas Isl./505 alebo Scarborough"
+"oblasti: DXCC (musí byť jedno z Čína/318, HongKong/321, Macao/152, Taiwan/"
+"386, Pratas Isl./505 alebo Scarborough"
 
 #: application/views/awards/wapc/index.php:122
 msgid "Show WAPC Map"
@@ -7956,7 +8038,7 @@ msgstr "Pre tento diplom sa používajú oblasti: WWFF (ADIF: WWFF_REF)"
 #: application/views/station_profile/create.php:228
 #: application/views/station_profile/edit.php:253
 #: application/views/user/edit.php:713 application/views/view_log/qso.php:414
-#: application/views/view_log/qso.php:747
+#: application/views/view_log/qso.php:747 application/views/user/edit.php:761
 msgid "WWFF Reference"
 msgstr "WWFF referencie"
 
@@ -9123,8 +9205,8 @@ msgstr "Výsledky aktualizácie contestového CBR"
 msgid ""
 "Your contest QSOs have been updated using the values of your Cabrillo file."
 msgstr ""
-"Vaše súťažné QSO boli aktualizované pomocou hodnôt z vášho Cabrillo súboru."
-"Tvoje contestové spojenia boli aktualizované pomocou hodnôt z tvojho "
+"Vaše súťažné QSO boli aktualizované pomocou hodnôt z vášho Cabrillo "
+"súboru.Tvoje contestové spojenia boli aktualizované pomocou hodnôt z tvojho "
 "Cabrillo súboru."
 
 #: application/views/cabrillo/cbr_success.php:19
@@ -9378,7 +9460,16 @@ msgstr ""
 #: application/views/user/edit.php:995 application/views/user/edit.php:1011
 #: application/views/user/edit.php:1019 application/views/user/edit.php:1039
 #: application/views/user/edit.php:1068 application/views/user/edit.php:1100
-#: application/views/user/edit.php:1125
+#: application/views/user/edit.php:1125 application/views/user/edit.php:417
+#: application/views/user/edit.php:428 application/views/user/edit.php:438
+#: application/views/user/edit.php:449 application/views/user/edit.php:459
+#: application/views/user/edit.php:469 application/views/user/edit.php:479
+#: application/views/user/edit.php:520 application/views/user/edit.php:531
+#: application/views/user/edit.php:652 application/views/user/edit.php:706
+#: application/views/user/edit.php:744 application/views/user/edit.php:1043
+#: application/views/user/edit.php:1059 application/views/user/edit.php:1067
+#: application/views/user/edit.php:1087 application/views/user/edit.php:1116
+#: application/views/user/edit.php:1148 application/views/user/edit.php:1173
 msgid "Yes"
 msgstr "Áno"
 
@@ -9450,6 +9541,16 @@ msgstr "Áno"
 #: application/views/user/edit.php:994 application/views/user/edit.php:1010
 #: application/views/user/edit.php:1038 application/views/user/edit.php:1069
 #: application/views/user/edit.php:1099 application/views/user/edit.php:1124
+#: application/views/user/edit.php:418 application/views/user/edit.php:429
+#: application/views/user/edit.php:439 application/views/user/edit.php:450
+#: application/views/user/edit.php:460 application/views/user/edit.php:470
+#: application/views/user/edit.php:480 application/views/user/edit.php:521
+#: application/views/user/edit.php:532 application/views/user/edit.php:623
+#: application/views/user/edit.php:627 application/views/user/edit.php:653
+#: application/views/user/edit.php:708 application/views/user/edit.php:745
+#: application/views/user/edit.php:1042 application/views/user/edit.php:1058
+#: application/views/user/edit.php:1086 application/views/user/edit.php:1117
+#: application/views/user/edit.php:1147 application/views/user/edit.php:1172
 msgid "No"
 msgstr "Nie"
 
@@ -9815,6 +9916,7 @@ msgstr "Priezvisko"
 #: application/views/user/edit.php:57 application/views/user/index.php:152
 #: application/views/user/login.php:58 application/views/user/login.php:69
 #: application/views/user/login.php:70 application/views/user/profile.php:14
+#: application/views/user/edit.php:66 application/views/user/login.php:71
 msgid "Username"
 msgstr "Používateľské meno"
 
@@ -10481,7 +10583,10 @@ msgstr "Identifikátor"
 #: application/views/user/edit.php:451 application/views/user/edit.php:452
 #: application/views/user/edit.php:505 application/views/user/edit.php:514
 #: application/views/user/edit.php:669 application/views/user/edit.php:679
-#: application/views/user/edit.php:991
+#: application/views/user/edit.php:991 application/views/user/edit.php:499
+#: application/views/user/edit.php:500 application/views/user/edit.php:553
+#: application/views/user/edit.php:562 application/views/user/edit.php:717
+#: application/views/user/edit.php:727 application/views/user/edit.php:1039
 msgid "Enabled"
 msgstr "Povolené"
 
@@ -10657,8 +10762,9 @@ msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your version "
 "is: %s."
 msgstr ""
-"Musíte upgradovať verziu PHP. Minimálna verzia je %s. Vaša verzia je: %s."
-"Musíš si aktualizovať verziu PHP. Minimálna verzia je %s. Tvoja verzia je %s."
+"Musíte upgradovať verziu PHP. Minimálna verzia je %s. Vaša verzia je: "
+"%s.Musíš si aktualizovať verziu PHP. Minimálna verzia je %s. Tvoja verzia je "
+"%s."
 
 #: application/views/dashboard/index.php:118
 #, php-format
@@ -11415,8 +11521,8 @@ msgid ""
 "config.php"
 msgstr ""
 "Prejdite do priečinka application/config a porovnajte config.sample.php s\n"
-"vašim config.phpPrejdi do priečinka application/config a porovnaj config."
-"sample.php so svojím config.php"
+"vašim config.phpPrejdi do priečinka application/config a porovnaj "
+"config.sample.php so svojím config.php"
 
 #: application/views/debug/index.php:211
 #, php-format
@@ -12402,8 +12508,9 @@ msgstr "O kód možno požiadať na %s"
 #: application/views/webadif/export.php:34
 msgid "This might take a while as QSO uploads are processed sequentially."
 msgstr ""
-"Toto môže chvíľu trvať, pretože nahrávania QSO sa spracovávajú sekvenčne."
-"Môže to chvíľu trvať, pretože nahrávané spojenia sa spracúvajú postupne."
+"Toto môže chvíľu trvať, pretože nahrávania QSO sa spracovávajú "
+"sekvenčne.Môže to chvíľu trvať, pretože nahrávané spojenia sa spracúvajú "
+"postupne."
 
 #: application/views/hrdlog/export.php:60
 msgid ""
@@ -12466,7 +12573,7 @@ msgid "Warning! Are you sure you want delete QSO with "
 msgstr "Upozornenie! Ste si istý, že chcete vymazať spojenie s "
 
 #: application/views/interface_assets/footer.php:44
-#: application/views/user/edit.php:546
+#: application/views/user/edit.php:546 application/views/user/edit.php:594
 msgid "Colors"
 msgstr "Farby"
 
@@ -13003,7 +13110,7 @@ msgid "Maintenance Mode"
 msgstr "Režim údržby"
 
 #: application/views/interface_assets/header.php:105
-#: application/views/user/edit.php:90
+#: application/views/user/edit.php:90 application/views/user/edit.php:114
 msgid "Clubstation"
 msgstr "Klubová stanica"
 
@@ -13172,6 +13279,7 @@ msgstr "Denník"
 #: application/views/logbookadvanced/index.php:749
 #: application/views/oqrs/index.php:28 application/views/user/edit.php:493
 #: application/views/visitor/layout/header.php:95
+#: application/views/user/edit.php:541
 msgid "Search Callsign"
 msgstr "Vyhľadať volaciu značku"
 
@@ -13658,8 +13766,9 @@ msgstr ""
 #: application/views/logbookadvanced/distancedialog.php:4
 msgid "Update will only set the distance for QSOs where the distance is empty."
 msgstr ""
-"Aktualizácia nastaví vzdialenosť iba pre QSO, kde je vzdialenosť prázdna."
-"Aktualizácia nastaví vzdialenosť iba pre QSO, kde je vzdialenosť prázdna."
+"Aktualizácia nastaví vzdialenosť iba pre QSO, kde je vzdialenosť "
+"prázdna.Aktualizácia nastaví vzdialenosť iba pre QSO, kde je vzdialenosť "
+"prázdna."
 
 #: application/views/logbookadvanced/checkresult.php:58
 msgid "Continent Check Results"
@@ -13789,7 +13898,7 @@ msgstr "DXCC zóna CQ"
 #: application/views/view_log/qso.php:747
 #: application/views/view_log/qso.php:754
 #: application/views/view_log/qso.php:761
-#: application/views/view_log/qso.php:766
+#: application/views/view_log/qso.php:766 application/views/user/edit.php:579
 msgid "Station"
 msgstr "Stanica"
 
@@ -14951,6 +15060,7 @@ msgstr "de"
 #: application/views/logbookadvanced/useroptions.php:142
 #: application/views/qso/edit_ajax.php:429
 #: application/views/timeline/index.php:72 application/views/user/edit.php:629
+#: application/views/user/edit.php:677
 msgid "QRZ"
 msgstr "QRZ"
 
@@ -15288,9 +15398,9 @@ msgstr "Zobraziť meno"
 #: application/views/lotw_views/index.php:4
 msgid "Upload folder is not writable. Please contact your admin."
 msgstr ""
-"Priečinok na nahrávanie nie je zapisovateľný. Kontaktujte svojho správcu."
-"Priečinok na nahrávanie nie je zapisovateľný. Prosím, kontaktujte svojho "
-"správcu."
+"Priečinok na nahrávanie nie je zapisovateľný. Kontaktujte svojho "
+"správcu.Priečinok na nahrávanie nie je zapisovateľný. Prosím, kontaktujte "
+"svojho správcu."
 
 #: application/views/lotw_views/index.php:8
 msgid "LoTW Import"
@@ -15562,7 +15672,7 @@ msgid "You have to provide your personal callsign."
 msgstr "Máš poskytnúť svoju osobnú volaciu značku."
 
 #: application/views/options/appearance.php:39
-#: application/views/user/edit.php:172
+#: application/views/user/edit.php:172 application/views/user/edit.php:220
 msgid "Theme"
 msgstr "Téma"
 
@@ -15693,6 +15803,7 @@ msgstr "Meno odosielateľa e-mailu, napr. 'Wavelog'"
 
 #: application/views/options/email.php:72 application/views/user/edit.php:63
 #: application/views/user/forgot_password.php:47
+#: application/views/user/edit.php:79
 msgid "Email Address"
 msgstr "Emailová adresa"
 
@@ -15712,8 +15823,8 @@ msgid ""
 "or 'tls://')"
 msgstr ""
 "Názov hostiteľa poštového servera, napr. 'mail.example.com' (bez 'ssl://'\n"
-"alebo 'tls://')Názov hostiteľa poštového servera, napr. 'mail.example."
-"com' (bez 'ssl://'"
+"alebo 'tls://')Názov hostiteľa poštového servera, napr. 'mail.example.com' "
+"(bez 'ssl://'"
 
 #: application/views/options/email.php:88
 msgid "SMTP Port"
@@ -15923,8 +16034,8 @@ msgid ""
 msgstr ""
 "Informácie o verzii sa zobrazujú každému používateľovi. Používateľ má\n"
 "možnosť zatvoriť dialóg po prečítaní. Vyberte, či chcete zobraziť iba\n"
-"poznámky k vydaniu (získané z githubu), iba vlastný text alebo oboje."
-"Informácie o verzii sa zobrazujú každému používateľovi. Používateľ má "
+"poznámky k vydaniu (získané z githubu), iba vlastný text alebo "
+"oboje.Informácie o verzii sa zobrazujú každému používateľovi. Používateľ má "
 "možnosť zavrieť dialógové okno po jeho prečítaní. Vyberte si, či chcete "
 "zobraziť iba poznámky k vydaniu (získané z githubu), iba vlastný text alebo "
 "oboje."
@@ -16488,9 +16599,9 @@ msgid ""
 "No additional QSOs were found. That means they are probably already in the "
 "queue."
 msgstr ""
-"Nenašli sa žiadne ďalšie QSO. To znamená, že sú pravdepodobne už vo fronte."
-"Žiadne ďalšie spojenia sa nenašli. To znamená, že sú pravdepodobne už v "
-"poradovníku."
+"Nenašli sa žiadne ďalšie QSO. To znamená, že sú pravdepodobne už vo "
+"fronte.Žiadne ďalšie spojenia sa nenašli. To znamená, že sú pravdepodobne už "
+"v poradovníku."
 
 #: application/views/qso/award_tabs.php:2
 msgid "Showing summary for DXCC"
@@ -16692,7 +16803,7 @@ msgstr "Okres stanice"
 #: application/views/qso/edit_ajax.php:397 application/views/qso/index.php:352
 #: application/views/qso/index.php:648 application/views/user/edit.php:721
 #: application/views/view_log/qso.php:459
-#: application/views/view_log/qso.php:766
+#: application/views/view_log/qso.php:766 application/views/user/edit.php:769
 msgid "SIG Info"
 msgstr "SIG Info"
 
@@ -16867,7 +16978,7 @@ msgstr "Prehľadaj DXCluster pre najnovší spot"
 #: application/views/station_profile/create.php:188
 #: application/views/station_profile/edit.php:213
 #: application/views/user/edit.php:705 application/views/view_log/qso.php:400
-#: application/views/view_log/qso.php:733
+#: application/views/view_log/qso.php:733 application/views/user/edit.php:753
 msgid "IOTA Reference"
 msgstr "IOTA referencia"
 
@@ -16875,7 +16986,7 @@ msgstr "IOTA referencia"
 #: application/views/station_profile/create.php:214
 #: application/views/station_profile/edit.php:239
 #: application/views/user/edit.php:709 application/views/view_log/qso.php:407
-#: application/views/view_log/qso.php:740
+#: application/views/view_log/qso.php:740 application/views/user/edit.php:757
 msgid "SOTA Reference"
 msgstr "SOTA referencia"
 
@@ -17478,9 +17589,9 @@ msgstr "Max elevácia"
 #: application/views/satellite/skedtable.php:85
 msgid "No overlapping passes found. Please check the input parameters."
 msgstr ""
-"Nenašli sa žiadne prekrývajúce sa prelety. Skontrolujte vstupné parametre."
-"Neboli nájdené žiadne prekrývajúce sa prelety. Skontrolujte prosím vstupné "
-"parametre."
+"Nenašli sa žiadne prekrývajúce sa prelety. Skontrolujte vstupné "
+"parametre.Neboli nájdené žiadne prekrývajúce sa prelety. Skontrolujte prosím "
+"vstupné parametre."
 
 #: application/views/satellite/tleinfo.php:6
 #, php-format
@@ -17564,9 +17675,9 @@ msgid ""
 "worked has uploaded to LoTW after your QSO date."
 msgstr ""
 "Vyhľadávanie zobrazuje QSO, ktoré nie sú potvrdené na LoTW, ale značka, s\n"
-"ktorou ste nadviazali spojenie, nahrala na LoTW až po dátume vášho QSO."
-"Vyhľadávanie zobrazuje spojenia, ktoré nie sú potvrdené na LoTW, ale volacia "
-"značka, s ktorou ste pracovali, nahrala na LoTW po dátume vášho QSO."
+"ktorou ste nadviazali spojenie, nahrala na LoTW až po dátume vášho "
+"QSO.Vyhľadávanie zobrazuje spojenia, ktoré nie sú potvrdené na LoTW, ale "
+"volacia značka, s ktorou ste pracovali, nahrala na LoTW po dátume vášho QSO."
 
 #: application/views/search/lotw_unconfirmed_result.php:10
 msgid "Last LoTW upload"
@@ -17984,8 +18095,8 @@ msgstr ""
 "rovnako ako poradie. Výmena, ktorú ste odoslali, bude automaticky zahrnutá\n"
 "do ďalšieho QSO, ak obsahuje prijatú výmenu, alebo ak použijete jednu\n"
 "čiarku ','. Pre automatické zvyšovanie odoslaného sériového čísla použite\n"
-"',++' a uveďte počiatočnú odoslanú výmenu. Pre deaktiváciu použite ',+0':"
-"Prijatá výmena musí mať predponu s bodkou '.', odoslaná výmena s čiarkou "
+"',++' a uveďte počiatočnú odoslanú výmenu. Pre deaktiváciu použite ',"
+"+0':Prijatá výmena musí mať predponu s bodkou '.', odoslaná výmena s čiarkou "
 "','. Posledné dva riadky sú ekvivalentné - teda na medzerách nezáleží, ako "
 "ani na poradí. Výmena, ktorú ste poslali, bude automaticky zahrnutá v "
 "nasledujúcom QSO, ak obsahuje prijatú výmenu, alebo ak použijete jednu "
@@ -18008,9 +18119,9 @@ msgid ""
 "the previous exchange 'D23' would have been set also."
 msgstr ""
 "Najprv sa vymaže všetok predchádzajúci výmenný údaj, potom sa nastaví iba\n"
-"sériové číslo. Inak by sa nastavil aj predchádzajúci výmenný údaj 'D23'."
-"Najprv sa všetky predchádzajúce výmeny vymažú a potom sa nastaví iba sériové "
-"číslo. Inak by bola nastavená aj predchádzajúca výmena 'D23'."
+"sériové číslo. Inak by sa nastavil aj predchádzajúci výmenný údaj "
+"'D23'.Najprv sa všetky predchádzajúce výmeny vymažú a potom sa nastaví iba "
+"sériové číslo. Inak by bola nastavená aj predchádzajúca výmena 'D23'."
 
 #: application/views/simplefle/syntax_help.php:60
 msgid ""
@@ -18225,7 +18336,7 @@ msgstr "Informácie o skupine osobitného záujmu stanice (napr. DA/NW-357)."
 
 #: application/views/station_profile/create.php:276
 #: application/views/station_profile/edit.php:301
-#: application/views/user/edit.php:923
+#: application/views/user/edit.php:923 application/views/user/edit.php:971
 #, php-format
 msgid "Trouble? Check the %swiki%s."
 msgstr "Problémy? Mrkni na %swiki%s."
@@ -18817,8 +18928,9 @@ msgid ""
 msgstr ""
 "Vytvorte nový priečinok v 'assets/css/' a nahrajte súbor\n"
 "'bootstrap.min.css', ktorý obsahuje základné pravidlá štýlovania. Používame\n"
-"témy z %sVytvor nový priečinok v 'assets/css/' a nahraj súbor 'bootstrap.min."
-"css', ktorý obsahuje základné pravidlá štýlov. Používame témy z %s"
+"témy z %sVytvor nový priečinok v 'assets/css/' a nahraj súbor "
+"'bootstrap.min.css', ktorý obsahuje základné pravidlá štýlov. Používame témy "
+"z %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
@@ -18911,10 +19023,10 @@ msgid ""
 "you worked certain CQ zones or DXCC countries on a selected band."
 msgstr ""
 "Časový graf sa používa na analýzu vášho denníka a zistenie, v akých časoch\n"
-"ste pracovali v určitých CQ zónach alebo DXCC krajinách na vybranom pásme."
-"Timeplotter sa používa na analýzu vášho denníka, aby ste zistili, v akých "
-"časoch ste pracovali v určitých CQ zónach alebo DXCC krajinách na vybranom "
-"pásme."
+"ste pracovali v určitých CQ zónach alebo DXCC krajinách na vybranom "
+"pásme.Timeplotter sa používa na analýzu vášho denníka, aby ste zistili, v "
+"akých časoch ste pracovali v určitých CQ zónach alebo DXCC krajinách na "
+"vybranom pásme."
 
 #: application/views/update/hamsofnote.php:7
 msgid "Name / Description"
@@ -18991,124 +19103,125 @@ msgstr "Všeobecné informácie"
 #: application/views/user/reset_password.php:21
 #: application/views/user/reset_password.php:23
 #: application/views/user/reset_password.php:30
+#: application/views/user/edit.php:92 application/views/user/login.php:75
 msgid "Password"
 msgstr "Heslo"
 
-#: application/views/user/edit.php:75
+#: application/views/user/edit.php:75 application/views/user/edit.php:98
 msgid "Don't share this password with operators!"
 msgstr "Nesdieľajte toto heslo s operátormi!"
 
-#: application/views/user/edit.php:85
+#: application/views/user/edit.php:85 application/views/user/edit.php:109
 msgid "User Role"
 msgstr "Používateľská úloha"
 
-#: application/views/user/edit.php:114
+#: application/views/user/edit.php:114 application/views/user/edit.php:138
 msgid "Callsign Owner"
 msgstr "Volací znak majiteľa"
 
-#: application/views/user/edit.php:114
+#: application/views/user/edit.php:114 application/views/user/edit.php:138
 msgid "Personal"
 msgstr "Osobné"
 
-#: application/views/user/edit.php:117
+#: application/views/user/edit.php:117 application/views/user/edit.php:142
 msgid "First Name"
 msgstr "Krstné meno"
 
-#: application/views/user/edit.php:124
+#: application/views/user/edit.php:124 application/views/user/edit.php:155
 msgid "Last Name"
 msgstr "Priezvisko"
 
-#: application/views/user/edit.php:135
+#: application/views/user/edit.php:135 application/views/user/edit.php:171
 msgid "Ham Radio"
 msgstr "Amatérske rádio"
 
-#: application/views/user/edit.php:138
+#: application/views/user/edit.php:138 application/views/user/edit.php:175
 msgid "Special/Club Callsign"
 msgstr "Špeciálna/klubová volacia značka"
 
-#: application/views/user/edit.php:161
+#: application/views/user/edit.php:161 application/views/user/edit.php:209
 msgid "Wavelog Preferences"
 msgstr "Predvoľby Wavelog"
 
-#: application/views/user/edit.php:172
+#: application/views/user/edit.php:172 application/views/user/edit.php:220
 msgid "Stylesheet"
 msgstr "Súbor so štýlmi"
 
-#: application/views/user/edit.php:184
+#: application/views/user/edit.php:184 application/views/user/edit.php:232
 msgid "Wavelog Language"
 msgstr "Jazyk Wavelog"
 
-#: application/views/user/edit.php:191
+#: application/views/user/edit.php:191 application/views/user/edit.php:239
 msgid "Choose Wavelog language."
 msgstr "Vyber si jazyk Wavelog."
 
-#: application/views/user/edit.php:194
+#: application/views/user/edit.php:194 application/views/user/edit.php:242
 msgid "Timezone"
 msgstr "Časové pásmo"
 
-#: application/views/user/edit.php:202
+#: application/views/user/edit.php:202 application/views/user/edit.php:250
 msgid "Date Format"
 msgstr "Formát dátumu"
 
-#: application/views/user/edit.php:216
+#: application/views/user/edit.php:216 application/views/user/edit.php:264
 msgid "Select how you would like dates shown when logged into your account."
 msgstr ""
 "Vyberte, ako chcete zobrazovať dátumy po prihlásení do vášho účtu.Vyber si, "
 "ako chceš, aby sa dátumy zobrazovali po prihlásení do svojho účtu."
 
-#: application/views/user/edit.php:220
+#: application/views/user/edit.php:220 application/views/user/edit.php:268
 msgid "Measurement preference"
 msgstr "Preferencie merania"
 
-#: application/views/user/edit.php:224
+#: application/views/user/edit.php:224 application/views/user/edit.php:272
 msgid "Kilometers"
 msgstr "Kilometre"
 
-#: application/views/user/edit.php:225
+#: application/views/user/edit.php:225 application/views/user/edit.php:273
 msgid "Miles"
 msgstr "Míle"
 
-#: application/views/user/edit.php:226
+#: application/views/user/edit.php:226 application/views/user/edit.php:274
 msgid "Nautical miles"
 msgstr "Námorné míle"
 
-#: application/views/user/edit.php:228
+#: application/views/user/edit.php:228 application/views/user/edit.php:276
 msgid "Choose which unit distances will be shown in"
 msgstr "Vyberte, ktoré jednotky vzdialenosti sa zobrazia"
 
-#: application/views/user/edit.php:237
+#: application/views/user/edit.php:237 application/views/user/edit.php:285
 msgid "Logbook fields"
 msgstr "Polia denníka"
 
-#: application/views/user/edit.php:240
+#: application/views/user/edit.php:240 application/views/user/edit.php:288
 msgid "Choose column 1"
 msgstr "Vyber stĺpec 1"
 
-#: application/views/user/edit.php:263
+#: application/views/user/edit.php:263 application/views/user/edit.php:311
 msgid "Choose column 2"
 msgstr "Vyber stĺpec 2"
 
-#: application/views/user/edit.php:286
+#: application/views/user/edit.php:286 application/views/user/edit.php:334
 msgid "Choose column 3"
 msgstr "Vyber stĺpec 3"
 
-#: application/views/user/edit.php:309
+#: application/views/user/edit.php:309 application/views/user/edit.php:357
 msgid "Choose column 4"
 msgstr "Vyber stĺpec 4"
 
-#: application/views/user/edit.php:332
+#: application/views/user/edit.php:332 application/views/user/edit.php:380
 msgid "Choose column 5 (only for logbook)"
 msgstr "Vyber stĺpec 5 (iba pre denník)"
 
-#: application/views/user/edit.php:363
+#: application/views/user/edit.php:363 application/views/user/edit.php:411
 msgid "QSO Logging Options"
 msgstr "Možnosti logovania QSO"
 
-#: application/views/user/edit.php:366
+#: application/views/user/edit.php:366 application/views/user/edit.php:414
 msgid "Log End Times for QSOs Separately"
 msgstr "Zaznamenaj koncové časy pre QSOs zvlášť"
 
-#: application/views/user/edit.php:372
+#: application/views/user/edit.php:372 application/views/user/edit.php:420
 msgid ""
 "Choose yes here if you want to log QSO start and end times separately. If "
 "set to 'No' the end time will be the same as start time."
@@ -19118,11 +19231,11 @@ msgstr ""
 "áno, ak chcete zaznamenávať časy začiatku a konca QSO osobitne. Ak nastavíte "
 "na 'Nie', koncový čas bude rovnaký ako čas začiatku."
 
-#: application/views/user/edit.php:377
+#: application/views/user/edit.php:377 application/views/user/edit.php:425
 msgid "Prioritize database search over external lookup"
 msgstr "Uprednostni vyhľadávanie v databáze pred externým vyhľadávaním"
 
-#: application/views/user/edit.php:383
+#: application/views/user/edit.php:383 application/views/user/edit.php:431
 msgid ""
 "When set to \"Yes\", callsign lookup will first use data from your previous "
 "QSOs before querying external services. Set to \"No\" to always use external "
@@ -19133,7 +19246,7 @@ msgstr ""
 "služby. Nastavte na \"Nie\", aby ste vždy používali externé služby "
 "vyhľadávania."
 
-#: application/views/user/edit.php:387
+#: application/views/user/edit.php:387 application/views/user/edit.php:435
 msgid ""
 "Show profile picture of QSO partner from qrz.com/hamqth.com profile in the "
 "log QSO section."
@@ -19142,7 +19255,7 @@ msgstr ""
 "časti záznamu QSO.Zobraz profilový obrázok QSO partnera z profilu qrz.com/"
 "hamqth.com v sekcii logu QSO."
 
-#: application/views/user/edit.php:393
+#: application/views/user/edit.php:393 application/views/user/edit.php:441
 msgid ""
 "Please set your qrz.com/hamqth.com credentials in the general config file."
 msgstr ""
@@ -19150,20 +19263,21 @@ msgstr ""
 "všeobecnej konfigurácie.Prosím, nastav svoje prihlasovacie údaje na qrz.com/"
 "hamqth.com v všeobecnom konfiguračnom súbore."
 
-#: application/views/user/edit.php:398
+#: application/views/user/edit.php:398 application/views/user/edit.php:446
 msgid "Location auto lookup."
 msgstr "Automatické vyhľadávanie polohy."
 
-#: application/views/user/edit.php:404
+#: application/views/user/edit.php:404 application/views/user/edit.php:452
 msgid "If set, gridsquare is fetched based on location name."
 msgstr "Ak je nastavené, lokátor je získaný na základe názvu miesta."
 
-#: application/views/user/edit.php:408
+#: application/views/user/edit.php:408 application/views/user/edit.php:456
 msgid "SOTA auto lookup gridsquare and name for summit."
 msgstr "SOTA automatické vyhľadanie lokátora a názvu pre vrchol."
 
 #: application/views/user/edit.php:414 application/views/user/edit.php:424
-#: application/views/user/edit.php:434
+#: application/views/user/edit.php:434 application/views/user/edit.php:462
+#: application/views/user/edit.php:472 application/views/user/edit.php:482
 msgid ""
 "If set, name and gridsquare is fetched from the API and filled in location "
 "and locator."
@@ -19172,43 +19286,43 @@ msgstr ""
 "umiestnenia a lokátora.Ak sú nastavené, meno a lokátor sa načítajú z API a "
 "vyplnia sa v polohe a lokátore."
 
-#: application/views/user/edit.php:418
+#: application/views/user/edit.php:418 application/views/user/edit.php:466
 msgid "WWFF auto lookup gridsquare and name for reference."
 msgstr "Automatické vyhľadávanie WWFF lokátora a názvu pre referenciu."
 
-#: application/views/user/edit.php:428
+#: application/views/user/edit.php:428 application/views/user/edit.php:476
 msgid "POTA auto lookup gridsquare and name for park."
 msgstr "POTA automatické vyhľadanie lokátora a názvu pre park."
 
-#: application/views/user/edit.php:437
+#: application/views/user/edit.php:437 application/views/user/edit.php:485
 msgid "Number of previous contacts displayed on QSO page."
 msgstr "Počet predchádzajúcich spojení zobrazený na QSO stránke."
 
-#: application/views/user/edit.php:448
+#: application/views/user/edit.php:448 application/views/user/edit.php:496
 msgid "DX Waterfall"
 msgstr "DX vodopád"
 
-#: application/views/user/edit.php:452
+#: application/views/user/edit.php:452 application/views/user/edit.php:500
 msgid "squelched"
 msgstr "umlčaný"
 
-#: application/views/user/edit.php:455
+#: application/views/user/edit.php:455 application/views/user/edit.php:503
 msgid "Show an interactive DX Cluster 'Waterfall' on the QSO logging page."
 msgstr "Zobraz na stránke logovania QSO interaktívny DX Cluster 'Waterfall'."
 
-#: application/views/user/edit.php:466
+#: application/views/user/edit.php:466 application/views/user/edit.php:514
 msgid "Menu Options"
 msgstr "Možnosti ponuky"
 
-#: application/views/user/edit.php:469
+#: application/views/user/edit.php:469 application/views/user/edit.php:517
 msgid "Show notes in the main menu."
 msgstr "Zobraziť poznámky v hlavnom menu."
 
-#: application/views/user/edit.php:480
+#: application/views/user/edit.php:480 application/views/user/edit.php:528
 msgid "Quicklog Field"
 msgstr "Quicklog pole"
 
-#: application/views/user/edit.php:486
+#: application/views/user/edit.php:486 application/views/user/edit.php:534
 msgid ""
 "With this feature, you can log callsigns using the search field in the "
 "header."
@@ -19217,24 +19331,24 @@ msgstr ""
 "poľa v hlavičke.Pomocou tejto funkcie môžeš zapisovať volacie značky pomocou "
 "vyhľadávacieho"
 
-#: application/views/user/edit.php:490
+#: application/views/user/edit.php:490 application/views/user/edit.php:538
 msgid "Quicklog - Action on press Enter"
 msgstr "Quicklog - akcia po stlačení klávesy Enter"
 
-#: application/views/user/edit.php:494
+#: application/views/user/edit.php:494 application/views/user/edit.php:542
 msgid "Log Callsign"
 msgstr "Zaznamenaj volačku"
 
-#: application/views/user/edit.php:496
+#: application/views/user/edit.php:496 application/views/user/edit.php:544
 msgid ""
 "What action should be performed when Enter is pressed in the quicklog field?"
 msgstr "Akú akciu treba vykonať, keď v poli Quicklog stlačíte Enter?"
 
-#: application/views/user/edit.php:502
+#: application/views/user/edit.php:502 application/views/user/edit.php:550
 msgid "Station Locations Quickswitch"
 msgstr "Rýchly prepínač umiestnenia stanice"
 
-#: application/views/user/edit.php:507
+#: application/views/user/edit.php:507 application/views/user/edit.php:555
 msgid ""
 "Show the Station Locations Quickswitch in the main menu. You can add "
 "locations by adding them to favourites at the station setup page."
@@ -19244,145 +19358,149 @@ msgstr ""
 "rýchle prepínanie umiestnenia staníc v hlavnom menu. Miesta môžete pridávať "
 "pridaním do obľúbených na stránke nastavenia staníc."
 
-#: application/views/user/edit.php:511
+#: application/views/user/edit.php:511 application/views/user/edit.php:559
 msgid "UTC Time in Menu"
 msgstr "UTC čas v menu"
 
-#: application/views/user/edit.php:516
+#: application/views/user/edit.php:516 application/views/user/edit.php:564
 msgid "Show the current UTC Time in the menu"
 msgstr "Zobraziť aktuálny čas UTC v menu"
 
-#: application/views/user/edit.php:527
+#: application/views/user/edit.php:527 application/views/user/edit.php:575
 msgid "Map Settings"
 msgstr "Nastavenia mapy"
 
-#: application/views/user/edit.php:534
+#: application/views/user/edit.php:534 application/views/user/edit.php:582
 msgid "Icon"
 msgstr "Ikona"
 
-#: application/views/user/edit.php:537
+#: application/views/user/edit.php:537 application/views/user/edit.php:585
 msgid "Not display"
 msgstr "Nezobraziť"
 
-#: application/views/user/edit.php:541
+#: application/views/user/edit.php:541 application/views/user/edit.php:589
 msgid "Not displayed"
 msgstr "Nezobrazené"
 
-#: application/views/user/edit.php:550
+#: application/views/user/edit.php:550 application/views/user/edit.php:598
 msgid "QSO (worked, not confirmed)"
 msgstr "QSO (urobené, nepotvrdené)"
 
-#: application/views/user/edit.php:569
+#: application/views/user/edit.php:569 application/views/user/edit.php:617
 msgid "QSO (confirmed)"
 msgstr "QSO (potvrdené)"
 
-#: application/views/user/edit.php:570
+#: application/views/user/edit.php:570 application/views/user/edit.php:618
 msgid "(If 'No', displayed as 'QSO (worked, not confirmed)')"
 msgstr "(Ak 'Nie', zobrazené ako 'QSO (urobené, nepotvrdené)')"
 
-#: application/views/user/edit.php:589
+#: application/views/user/edit.php:589 application/views/user/edit.php:637
 msgid "Unworked (e.g. Zones)"
 msgstr "Neurobené (napr. zóny)"
 
-#: application/views/user/edit.php:590
+#: application/views/user/edit.php:590 application/views/user/edit.php:638
 msgid "(Color for unworked zones)"
 msgstr "(Farba pre neurobené zóny)"
 
-#: application/views/user/edit.php:600
+#: application/views/user/edit.php:600 application/views/user/edit.php:648
 msgid "Show Locator"
 msgstr "Zobraziť lokátor"
 
-#: application/views/user/edit.php:619
+#: application/views/user/edit.php:619 application/views/user/edit.php:667
 msgid "Previous QSL Type"
 msgstr "Predchádzajúci typ QSL"
 
-#: application/views/user/edit.php:623
+#: application/views/user/edit.php:623 application/views/user/edit.php:671
 msgid "Select the type of QSL to show in the previous QSOs section."
 msgstr "Vyberte typ QSL, ktorý sa má zobraziť v sekcii predchádzajúcich QSO."
 
-#: application/views/user/edit.php:640
+#: application/views/user/edit.php:640 application/views/user/edit.php:688
 msgid "Dashboard Settings"
 msgstr "Nastavenia panela"
 
-#: application/views/user/edit.php:644
+#: application/views/user/edit.php:644 application/views/user/edit.php:692
 msgid "Select the number of latest QSOs to be displayed on dashboard."
 msgstr "Vyber počet najnovších QSO, ktoré sa majú zobraziť na paneli."
 
-#: application/views/user/edit.php:651
+#: application/views/user/edit.php:651 application/views/user/edit.php:699
 msgid "Choose the number of latest QSOs to be displayed on dashboard."
 msgstr "Vyber počet najnovších QSO na zobrazenie na paneli."
 
-#: application/views/user/edit.php:655
+#: application/views/user/edit.php:655 application/views/user/edit.php:703
 msgid "Show Dashboard Map"
 msgstr "Zobraziť mapu v paneli"
 
-#: application/views/user/edit.php:659
+#: application/views/user/edit.php:659 application/views/user/edit.php:707
 msgid "Map at right"
 msgstr "Mapa vpravo"
 
-#: application/views/user/edit.php:662
+#: application/views/user/edit.php:662 application/views/user/edit.php:710
 msgid "Choose whether to show map on dashboard or not"
 msgstr "Vyber, či sa má na ovládacom paneli zobraziť mapa alebo nie"
 
-#: application/views/user/edit.php:666
+#: application/views/user/edit.php:666 application/views/user/edit.php:714
 msgid "Dashboard Notification Banner"
 msgstr "Banner s upozorneniami na paneli"
 
-#: application/views/user/edit.php:672
+#: application/views/user/edit.php:672 application/views/user/edit.php:720
 msgid "This allows to disable the global notification banner on the dashboard."
 msgstr "To umožňuje vypnúť globálny oznamovací banner na paneli."
 
-#: application/views/user/edit.php:676
+#: application/views/user/edit.php:676 application/views/user/edit.php:724
 msgid "Dashboard solar and propagation data"
 msgstr "Údaje o slnečnej aktivite a šírení na paneli"
 
-#: application/views/user/edit.php:682
+#: application/views/user/edit.php:682 application/views/user/edit.php:730
 msgid ""
 "This switches the display of the solar and propagation data on the dashboard."
 msgstr "Toto prepína zobrazenie údajov o slnečnej aktivite a šírení na paneli."
 
-#: application/views/user/edit.php:690
+#: application/views/user/edit.php:690 application/views/user/edit.php:738
 msgid "Show Fields on QSO Tab"
 msgstr "Zobraziť lokátor na karte QSO"
 
-#: application/views/user/edit.php:693
+#: application/views/user/edit.php:693 application/views/user/edit.php:741
 msgid "Show map at QSO-Window"
 msgstr "Zobraz mapu v okne QSO"
 
-#: application/views/user/edit.php:702
+#: application/views/user/edit.php:702 application/views/user/edit.php:750
 msgid ""
 "The enabled items will be shown on the QSO tab rather than the General tab."
 msgstr "Povolené položky sa zobrazia na karte QSO namiesto karty Všeobecné."
 
-#: application/views/user/edit.php:744
+#: application/views/user/edit.php:744 application/views/user/edit.php:792
 msgid "Online QSL request (OQRS) settings"
 msgstr "Nastavenia online žiadosti o QSL (OQRS)"
 
-#: application/views/user/edit.php:748
+#: application/views/user/edit.php:748 application/views/user/edit.php:796
 msgid "Global text"
 msgstr "Globálny text"
 
-#: application/views/user/edit.php:750
+#: application/views/user/edit.php:750 application/views/user/edit.php:798
 msgid ""
 "This text is an optional text that can be displayed on top of the OQRS page."
 msgstr ""
 "Tento text je voliteľný text, ktorý možno zobraziť na vrchole stránky OQRS."
 
-#: application/views/user/edit.php:753
+#: application/views/user/edit.php:753 application/views/user/edit.php:801
 msgid "Grouped search"
 msgstr "Zoskupené vyhľadávanie"
 
 #: application/views/user/edit.php:755 application/views/user/edit.php:764
 #: application/views/user/edit.php:773 application/views/user/edit.php:782
+#: application/views/user/edit.php:803 application/views/user/edit.php:812
+#: application/views/user/edit.php:821 application/views/user/edit.php:830
 msgid "Off"
 msgstr "Vypnuté"
 
 #: application/views/user/edit.php:756 application/views/user/edit.php:765
 #: application/views/user/edit.php:774 application/views/user/edit.php:783
+#: application/views/user/edit.php:804 application/views/user/edit.php:813
+#: application/views/user/edit.php:822 application/views/user/edit.php:831
 msgid "On"
 msgstr "Zapnuté"
 
-#: application/views/user/edit.php:758
+#: application/views/user/edit.php:758 application/views/user/edit.php:806
 msgid ""
 "When this is on, all station locations with OQRS active, will be searched at "
 "once."
@@ -19391,13 +19509,13 @@ msgstr ""
 "prehľadávané naraz.Keď je to zapnuté, všetky umiestnenia staníc s aktívnym "
 "OQRS budú prehľadané naraz."
 
-#: application/views/user/edit.php:762
+#: application/views/user/edit.php:762 application/views/user/edit.php:810
 msgid "Show station location name in grouped search results"
 msgstr ""
 "Zobraziť názov polohy stanice v zoskupených výsledkoch vyhľadávaniaZobraziť "
 "názov umiestnenia stanice v zoskupených výsledkoch vyhľadávania"
 
-#: application/views/user/edit.php:767
+#: application/views/user/edit.php:767 application/views/user/edit.php:815
 msgid ""
 "If grouped search is ON, you can decide if the name of the station location "
 "shall be shown in the results table."
@@ -19407,11 +19525,11 @@ msgstr ""
 "vyhľadávanie, môžete sa rozhodnúť, či sa názov miesta stanice zobrazí v "
 "tabuľke výsledkov."
 
-#: application/views/user/edit.php:771
+#: application/views/user/edit.php:771 application/views/user/edit.php:819
 msgid "Automatic OQRS matching"
 msgstr "Automatické párovanie OQRS"
 
-#: application/views/user/edit.php:776
+#: application/views/user/edit.php:776 application/views/user/edit.php:824
 msgid ""
 "If this is on, automatic OQRS matching will happen, and the system will try "
 "to match incoming requests with existing logs automatically."
@@ -19422,70 +19540,70 @@ msgstr ""
 "uskutoční a systém sa pokúsi automaticky spárovať prichádzajúce požiadavky s "
 "existujúcimi záznamami."
 
-#: application/views/user/edit.php:780
+#: application/views/user/edit.php:780 application/views/user/edit.php:828
 msgid "Automatic OQRS matching for direct requests"
 msgstr "Automatické zodpovedanie priamych žiadostí prostredníctvom OQRS"
 
-#: application/views/user/edit.php:785
+#: application/views/user/edit.php:785 application/views/user/edit.php:833
 msgid "If this is on, automatic OQRS matching for direct request will happen."
 msgstr ""
 "Ak je táto možnosť zapnutá, automatické párovanie OQRS pre priamu žiadosť sa "
 "vykoná.Ak je to zapnuté, automatické OQRS spárovanie pre priamu požiadavku "
 "sa uskutoční."
 
-#: application/views/user/edit.php:801
+#: application/views/user/edit.php:801 application/views/user/edit.php:849
 msgid "Default Values"
 msgstr "Predvolené hodnoty"
 
-#: application/views/user/edit.php:809
+#: application/views/user/edit.php:809 application/views/user/edit.php:857
 msgid "Settings for Default Band and Confirmation"
 msgstr "Nastavenia pre predvolené pásmo a potvrdenie"
 
-#: application/views/user/edit.php:812
+#: application/views/user/edit.php:812 application/views/user/edit.php:860
 msgid "Default Band"
 msgstr "Predvolené pásmo"
 
-#: application/views/user/edit.php:822
+#: application/views/user/edit.php:822 application/views/user/edit.php:870
 msgid "Default QSL-Methods"
 msgstr "Predvolené QSL spôsoby"
 
-#: application/views/user/edit.php:887
+#: application/views/user/edit.php:887 application/views/user/edit.php:935
 msgid "Third Party Services"
 msgstr "Služby tretích strán"
 
-#: application/views/user/edit.php:898
+#: application/views/user/edit.php:898 application/views/user/edit.php:946
 msgid "Logbook of The World (LoTW) Username"
 msgstr "Používateľské meno Logbook of The World (LoTW)"
 
-#: application/views/user/edit.php:904
+#: application/views/user/edit.php:904 application/views/user/edit.php:952
 msgid "Logbook of The World (LoTW) Password"
 msgstr "Heslo Logbook of The World (LoTW)"
 
-#: application/views/user/edit.php:908
+#: application/views/user/edit.php:908 application/views/user/edit.php:956
 msgid "Test Login"
 msgstr "Otestovať prihlásenie"
 
-#: application/views/user/edit.php:926
+#: application/views/user/edit.php:926 application/views/user/edit.php:974
 msgid "eQSL.cc Username"
 msgstr "eQSL.cc používateľské meno"
 
-#: application/views/user/edit.php:932
+#: application/views/user/edit.php:932 application/views/user/edit.php:980
 msgid "eQSL.cc Password"
 msgstr "eQSL.cc heslo"
 
-#: application/views/user/edit.php:949
+#: application/views/user/edit.php:949 application/views/user/edit.php:997
 msgid "Club Log"
 msgstr "ClubLog"
 
-#: application/views/user/edit.php:952
+#: application/views/user/edit.php:952 application/views/user/edit.php:1000
 msgid "Club Log Email"
 msgstr "ClubLog email"
 
-#: application/views/user/edit.php:958
+#: application/views/user/edit.php:958 application/views/user/edit.php:1006
 msgid "Club Log Password"
 msgstr "ClubLog heslo"
 
-#: application/views/user/edit.php:963
+#: application/views/user/edit.php:963 application/views/user/edit.php:1011
 #, php-format
 msgid ""
 "If you have 2FA enabled at Clublog, you have to generate an App. Password to "
@@ -19497,15 +19615,15 @@ msgstr ""
 "vygenerovať heslo aplikácie na používanie Clublogu vo Wavelog. Navštív "
 "%sstránku nastavení Clublog%s, aby si to urobil."
 
-#: application/views/user/edit.php:980
+#: application/views/user/edit.php:980 application/views/user/edit.php:1028
 msgid "Widgets"
 msgstr "Widgety"
 
-#: application/views/user/edit.php:988
+#: application/views/user/edit.php:988 application/views/user/edit.php:1036
 msgid "On-Air widget"
 msgstr "Widgety živého vysielania"
 
-#: application/views/user/edit.php:998
+#: application/views/user/edit.php:998 application/views/user/edit.php:1046
 msgid ""
 "Note: In order to use this widget, you need to have at least one CAT radio "
 "configured and working."
@@ -19514,16 +19632,16 @@ msgstr ""
 "a funkčné aspoň jedno CAT rádio.Všimnite si, že na používanie tohto widgetu "
 "musíte mať nakonfigurované a funkčné aspoň jedno CAT rádio."
 
-#: application/views/user/edit.php:1002
+#: application/views/user/edit.php:1002 application/views/user/edit.php:1050
 #, php-format
 msgid "When enabled, widget will be available at %s."
 msgstr "Keď je povolený, widget bude dostupný na %s."
 
-#: application/views/user/edit.php:1007
+#: application/views/user/edit.php:1007 application/views/user/edit.php:1055
 msgid "Display \"Last seen\" time"
 msgstr "Zobraziť čas \"naposledy online\""
 
-#: application/views/user/edit.php:1013
+#: application/views/user/edit.php:1013 application/views/user/edit.php:1061
 msgid ""
 "This setting control whether the 'Last seen' time is displayed in widget or "
 "not."
@@ -19532,15 +19650,15 @@ msgstr ""
 "videný' alebo nie.Toto nastavenie určuje, či sa čas 'Naposledy videné' "
 "zobrazuje vo widgete alebo nie."
 
-#: application/views/user/edit.php:1016
+#: application/views/user/edit.php:1016 application/views/user/edit.php:1064
 msgid "Display only most recently updated radio"
 msgstr "Zobraziť iba naposledy aktualizované rádio"
 
-#: application/views/user/edit.php:1020
+#: application/views/user/edit.php:1020 application/views/user/edit.php:1068
 msgid "No, show all radios"
 msgstr "Nie, ukáž všetky rádiá"
 
-#: application/views/user/edit.php:1022
+#: application/views/user/edit.php:1022 application/views/user/edit.php:1070
 msgid ""
 "If you have multiple CAT radios configured, this setting controls whether "
 "the widget should display all on-air radios of the user, or just the most "
@@ -19555,15 +19673,15 @@ msgstr ""
 "ktoré sú v prevádzke, alebo iba tú, ktorá bola najnovšie aktualizovaná. Ak "
 "máš len jedno rádio, toto nastavenie nemá žiadny vplyv."
 
-#: application/views/user/edit.php:1032
+#: application/views/user/edit.php:1032 application/views/user/edit.php:1080
 msgid "QSOs widget"
 msgstr "QSO widget"
 
-#: application/views/user/edit.php:1035
+#: application/views/user/edit.php:1035 application/views/user/edit.php:1083
 msgid "Display exact QSO time"
 msgstr "Zobraziť presný čas QSO"
 
-#: application/views/user/edit.php:1041
+#: application/views/user/edit.php:1041 application/views/user/edit.php:1089
 msgid ""
 "This setting control whether exact QSO time should displayed in the QSO "
 "widget or not."
@@ -19572,40 +19690,40 @@ msgstr ""
 "alebo nie.Toto nastavenie kontroluje, či sa má vo widgete QSO zobraziť "
 "presný čas QSO"
 
-#: application/views/user/edit.php:1054
+#: application/views/user/edit.php:1054 application/views/user/edit.php:1102
 msgid "Miscellaneous"
 msgstr "Rôzne"
 
-#: application/views/user/edit.php:1062
+#: application/views/user/edit.php:1062 application/views/user/edit.php:1110
 msgid "AMSAT Status Upload"
 msgstr "Upload AMSAT statusu"
 
-#: application/views/user/edit.php:1065
+#: application/views/user/edit.php:1065 application/views/user/edit.php:1113
 msgid "Upload status of SAT QSOs to"
 msgstr "Nahratie stavu SAT QSOs na"
 
-#: application/views/user/edit.php:1079
+#: application/views/user/edit.php:1079 application/views/user/edit.php:1127
 msgid "Mastodonserver"
 msgstr "Mastodon server"
 
-#: application/views/user/edit.php:1082
+#: application/views/user/edit.php:1082 application/views/user/edit.php:1130
 msgid "URL of Mastodonserver"
 msgstr "URL servera Mastodon"
 
-#: application/views/user/edit.php:1084
+#: application/views/user/edit.php:1084 application/views/user/edit.php:1132
 #, php-format
 msgid "Main URL of your Mastodon server, e.g. %s"
 msgstr "Hlavná URL adresa vášho Mastodon servera, napr. %s"
 
-#: application/views/user/edit.php:1093
+#: application/views/user/edit.php:1093 application/views/user/edit.php:1141
 msgid "Winkeyer"
 msgstr "Winkeyer"
 
-#: application/views/user/edit.php:1096
+#: application/views/user/edit.php:1096 application/views/user/edit.php:1144
 msgid "Winkeyer Features Enabled"
 msgstr "Povolené funkcie Winkeyer"
 
-#: application/views/user/edit.php:1102
+#: application/views/user/edit.php:1102 application/views/user/edit.php:1150
 #, php-format
 msgid ""
 "Winkeyer support in Wavelog is very experimental. Read the wiki first at %s "
@@ -19615,25 +19733,25 @@ msgstr ""
 "najskôr prečítajte wiki na %s.Podpora Winkeyer vo Wavelog je veľmi "
 "experimentálna. Najprv si prečítaj wiki na %s, než to povolíš."
 
-#: application/views/user/edit.php:1113
+#: application/views/user/edit.php:1113 application/views/user/edit.php:1161
 msgid "Hams.at"
 msgstr "Hams.at"
 
-#: application/views/user/edit.php:1116
+#: application/views/user/edit.php:1116 application/views/user/edit.php:1164
 msgid "Private Feed Key"
 msgstr "Súkromný kľúč kanála"
 
-#: application/views/user/edit.php:1118
+#: application/views/user/edit.php:1118 application/views/user/edit.php:1166
 #, php-format
 msgctxt "Hint for Hamsat API Key; uses Link"
 msgid "See your profile at %s."
 msgstr "Pozri si svoj profil na %s."
 
-#: application/views/user/edit.php:1121
+#: application/views/user/edit.php:1121 application/views/user/edit.php:1169
 msgid "Show Workable Passes Only"
 msgstr "Zobraz iba použiteľné oblety"
 
-#: application/views/user/edit.php:1127
+#: application/views/user/edit.php:1127 application/views/user/edit.php:1175
 msgid ""
 "If enabled shows only workable passes based on the gridsquare set in your "
 "hams.at account. Requires private feed key to be set."
@@ -19644,7 +19762,7 @@ msgstr ""
 "nastaveného lokátora vo vašom účte na hams.at. Vyžaduje nastavenie "
 "privátneho kľúča kanála."
 
-#: application/views/user/edit.php:1139
+#: application/views/user/edit.php:1139 application/views/user/edit.php:1187
 msgid "Save Account"
 msgstr "Uložiť účet"
 
@@ -19693,10 +19811,11 @@ msgid ""
 msgstr ""
 "Pomocou tlačidla na reset hesla môžete používateľovi odoslať e-mail\n"
 "obsahujúci odkaz na resetovanie hesla. Aby to fungovalo, uistite sa, že\n"
-"nastavenia e-mailu v globálnych možnostiach sú správne nakonfigurované."
-"Pomocou tlačidla na obnovenie hesla môžete používateľovi poslať e-mail, "
-"ktorý obsahuje odkaz na obnovenie hesla. Na dosiahnutie tohto zabezpečte, "
-"aby boli v globálnych možnostiach správne nastavené e-mailové nastavenia."
+"nastavenia e-mailu v globálnych možnostiach sú správne "
+"nakonfigurované.Pomocou tlačidla na obnovenie hesla môžete používateľovi "
+"poslať e-mail, ktorý obsahuje odkaz na obnovenie hesla. Na dosiahnutie tohto "
+"zabezpečte, aby boli v globálnych možnostiach správne nastavené e-mailové "
+"nastavenia."
 
 #: application/views/user/index.php:19
 msgid "Create user"
@@ -19792,11 +19911,11 @@ msgstr "Toto demo sa každú noc o 0200z resetuje."
 msgid "More Information about Wavelog on %sGithub%s."
 msgstr "Viac informácií o Wavelogu na %sGithub%s."
 
-#: application/views/user/login.php:79
+#: application/views/user/login.php:79 application/views/user/login.php:80
 msgid "Forgot your password?"
 msgstr "Zabudli ste svoje heslo?"
 
-#: application/views/user/login.php:85
+#: application/views/user/login.php:85 application/views/user/login.php:86
 msgid "Keep me logged in"
 msgstr "Ponechať ma prihláseného"
 
@@ -20446,6 +20565,37 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/controllers/Header_auth.php:22
+msgid "SSO Authentication is disabled."
+msgstr ""
+
+#: application/controllers/Header_auth.php:36
+msgid "SSO Authentication is disabled. Check your configuration."
+msgstr ""
+
+#: application/controllers/Header_auth.php:89
+msgid "User not found."
+msgstr ""
+
+#: application/controllers/Header_auth.php:109
+msgid ""
+"Sorry. This instance is currently in maintenance mode. Only administrators "
+"are currently allowed to log in."
+msgstr ""
+
+#: application/controllers/Header_auth.php:341
+#: application/controllers/Header_auth.php:345
+msgid "Something went terribly wrong. Check the error log."
+msgstr ""
+
+#: application/controllers/Header_auth.php:361
+msgid "SSO Config Error. Check error log."
+msgstr ""
+
+#: application/controllers/User.php:468
+msgid "Can't be changed. Manage this through your Identity Provider."
+msgstr ""
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "
