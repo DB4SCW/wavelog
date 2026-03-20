@@ -28,7 +28,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-18 21:33+0000\n"
 "PO-Revision-Date: 2026-03-20 08:30+0000\n"
-"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -19912,19 +19912,22 @@ msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"Entschuldigung. Diese Instanz befindet sich derzeit im Wartungsmodus. Nur "
+"Administratoren können sich momentan anmelden."
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "Etwas ist schiefgelaufen. Überprüfe das Fehlerprotokoll."
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "SSO-Konfigurationsfehler. Prüfe Fehlerprotokoll."
 
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
 msgstr ""
+"Kann nicht geändert werden. Verwalte dies über deinen Identitätsanbieter."
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "
