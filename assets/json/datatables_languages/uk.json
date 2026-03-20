@@ -1,123 +1,123 @@
 {
-    "search": "Search:",
+    "search": "Пошук:",
     "paginate": {
-        "first": "First",
-        "previous": "Previous",
-        "next": "Next",
-        "last": "Last"
+        "first": "Перша",
+        "previous": "Попередня",
+        "next": "Наступна",
+        "last": "Остання"
     },
     "autoFill": {
-        "cancel": "Cancel",
-        "fill": "Fill all cells with <i>%d</i>",
-        "fillHorizontal": "Fill cells horizontally",
-        "fillVertical": "Fill cells vertically",
-        "info": "AutoFill info example"
+        "cancel": "Скасувати",
+        "fill": "Заповнити всі комірки значенням <i>%d</i>",
+        "fillHorizontal": "Заповнити комірки горизонтально",
+        "fillVertical": "Заповнити комірки вертикально",
+        "info": "Приклад інформації автозаповнення"
     },
     "buttons": {
-        "colvis": "Column visibility",
-        "copy": "Copy",
-        "copyTitle": "Copy to clipboard",
+        "colvis": "Видимість стовпців",
+        "copy": "Копіювати",
+        "copyTitle": "Копіювати в буфер обміну",
         "csv": "CSV",
         "excel": "Excel",
         "pdf": "PDF",
         "pageLength": {
-            "-1": "Show all rows",
-            "_": "Show %d rows",
-            "1": "Show 1 row"
+            "-1": "Показати всі рядки",
+            "_": "Показати %d рядків",
+            "1": "Показати 1 рядок"
         },
-        "print": "Print",
-        "copyKeys": "Press Ctrl or u2318 + C to copy the table data to your system clipboard.<br /><br />To cancel, click this message or press Escape.",
+        "print": "Друк",
+        "copyKeys": "Натисніть Ctrl або ⌘ + C, щоб скопіювати дані таблиці в буфер обміну.<br /><br />Щоб скасувати, натисніть це повідомлення або клавішу Escape.",
         "copySuccess": {
-            "1": "Copied 1 row to clipboard",
-            "_": "Copied %d rows to clipboard"
+            "1": "Скопійовано 1 рядок у буфер обміну",
+            "_": "Скопійовано %d рядків у буфер обміну"
         },
-        "createState": "Create state",
-        "removeAllStates": "Remove all states",
-        "removeState": "Remove",
-        "renameState": "Rename",
-        "stateRestore": "State %d",
-        "updateState": "Update",
-        "collection": "Collection<span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"></span>",
-        "colvisRestore": "Restore visibility",
-        "savedStates": "Saved states"
+        "createState": "Створити стан",
+        "removeAllStates": "Видалити всі стани",
+        "removeState": "Видалити",
+        "renameState": "Перейменувати",
+        "stateRestore": "Стан %d",
+        "updateState": "Оновити",
+        "collection": "Колекція<span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"></span>",
+        "colvisRestore": "Відновити видимість",
+        "savedStates": "Збережені стани"
     },
     "searchBuilder": {
         "button": {
-            "0": "Search builder",
-            "_": "Search builder (%d)"
+            "0": "Конструктор пошуку",
+            "_": "Конструктор пошуку (%d)"
         },
-        "clearAll": "Clear all",
-        "condition": "Condition",
-        "data": "Data",
+        "clearAll": "Очистити все",
+        "condition": "Умова",
+        "data": "Дані",
         "title": {
-            "0": "Search builder",
-            "_": "Search builder (%d)"
+            "0": "Конструктор пошуку",
+            "_": "Конструктор пошуку (%d)"
         },
-        "value": "Value",
+        "value": "Значення",
         "conditions": {
             "date": {
-                "equals": "Equals",
-                "after": "After",
-                "before": "Before",
-                "between": "Between",
-                "empty": "Empty",
-                "not": "Not",
-                "notBetween": "Not between",
-                "notEmpty": "Not empty"
+                "equals": "Дорівнює",
+                "after": "Після",
+                "before": "До",
+                "between": "Між",
+                "empty": "Порожньо",
+                "not": "Не",
+                "notBetween": "Не між",
+                "notEmpty": "Не порожньо"
             },
             "number": {
-                "between": "Between",
-                "empty": "Empty",
-                "equals": "Equals",
-                "gt": "Greater than",
-                "gte": "Greater than or equal to",
-                "lt": "Less than",
-                "lte": "Less than or equal to",
-                "not": "Not",
-                "notBetween": "Not between",
-                "notEmpty": "Not empty"
+                "between": "Між",
+                "empty": "Порожньо",
+                "equals": "Дорівнює",
+                "gt": "Більше ніж",
+                "gte": "Більше або дорівнює",
+                "lt": "Менше ніж",
+                "lte": "Менше або дорівнює",
+                "not": "Не",
+                "notBetween": "Не між",
+                "notEmpty": "Не порожньо"
             },
             "string": {
-                "contains": "Contains",
-                "empty": "Empty",
-                "endsWith": "Ends with",
-                "equals": "Equals",
-                "not": "Not",
-                "notEmpty": "Not empty",
-                "startsWith": "Starts with",
-                "notContains": "Does not contain",
-                "notStartsWith": "Does not start with",
-                "notEndsWith": "Does not end with"
+                "contains": "Містить",
+                "empty": "Порожньо",
+                "endsWith": "Закінчується на",
+                "equals": "Дорівнює",
+                "not": "Не",
+                "notEmpty": "Не порожньо",
+                "startsWith": "Починається з",
+                "notContains": "Не містить",
+                "notStartsWith": "Не починається з",
+                "notEndsWith": "Не закінчується на"
             },
             "array": {
-                "equals": "Equals",
-                "empty": "Empty",
-                "contains": "Contains",
-                "not": "Not",
-                "notEmpty": "Not empty",
-                "without": "Without"
+                "equals": "Дорівнює",
+                "empty": "Порожньо",
+                "contains": "Містить",
+                "not": "Не",
+                "notEmpty": "Не порожньо",
+                "without": "Без"
             }
         },
-        "add": "Add condition",
-        "deleteTitle": "Delete filtering rule",
-        "logicAnd": "And",
-        "logicOr": "Or",
-        "leftTitle": "Outdent criteria",
-        "rightTitle": "Indent criteria"
+        "add": "Додати умову",
+        "deleteTitle": "Видалити правило фільтрації",
+        "logicAnd": "Та",
+        "logicOr": "Або",
+        "leftTitle": "Зменшити відступ",
+        "rightTitle": "Збільшити відступ"
     },
     "searchPanes": {
-        "clearMessage": "Clear all",
+        "clearMessage": "Очистити все",
         "collapse": {
-            "0": "Search panes",
-            "_": "Search panes (%d)"
+            "0": "Панелі пошуку",
+            "_": "Панелі пошуку (%d)"
         },
         "count": "{total}",
         "countFiltered": "{shown} ({total})",
-        "emptyPanes": "No search panes",
-        "loadMessage": "Loading search panes...",
-        "showMessage": "Show all",
-        "collapseMessage": "Collapse all",
-        "title": "Filters active - %d"
+        "emptyPanes": "Немає панелей пошуку",
+        "loadMessage": "Завантаження панелей пошуку...",
+        "showMessage": "Показати все",
+        "collapseMessage": "Згорнути все",
+        "title": "Активні фільтри - %d"
     },
     "infoThousands": ",",
     "thousands": ",",
@@ -126,121 +126,121 @@
             "AM",
             "PM"
         ],
-        "minutes": "Minute",
+        "minutes": "Хвилина",
         "months": {
-            "0": "January",
-            "1": "February",
-            "10": "November",
-            "11": "December",
-            "2": "March",
-            "3": "April",
-            "4": "May",
-            "5": "June",
-            "6": "July",
-            "7": "August",
-            "8": "September",
-            "9": "October"
+            "0": "Січень",
+            "1": "Лютий",
+            "10": "Листопад",
+            "11": "Грудень",
+            "2": "Березень",
+            "3": "Квітень",
+            "4": "Травень",
+            "5": "Червень",
+            "6": "Липень",
+            "7": "Серпень",
+            "8": "Вересень",
+            "9": "Жовтень"
         },
-        "seconds": "Second",
-        "previous": "Previous",
-        "next": "Next",
-        "hours": "Hour",
+        "seconds": "Секунда",
+        "previous": "Попередній",
+        "next": "Наступний",
+        "hours": "Година",
         "unknown": "-",
         "weekdays": [
-            "Sun",
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat"
+            "Нд",
+            "Пн",
+            "Вт",
+            "Ср",
+            "Чт",
+            "Пт",
+            "Сб"
         ]
     },
     "editor": {
-        "close": "Close",
+        "close": "Закрити",
         "create": {
-            "button": "New",
-            "submit": "Create",
-            "title": "Create new entry"
+            "button": "Новий",
+            "submit": "Створити",
+            "title": "Створити новий запис"
         },
         "edit": {
-            "button": "Edit",
-            "submit": "Update",
-            "title": "Edit entry"
+            "button": "Редагувати",
+            "submit": "Оновити",
+            "title": "Редагувати запис"
         },
         "multi": {
-            "restore": "Undo changes",
-            "title": "Multiple values",
-            "noMulti": "This input can be edited individually, but not part of a group.",
-            "info": "The selected items contain different values for this input. To edit and set all items for this input to the same value, click or tap here, otherwise they will retain their individual values."
+            "restore": "Скасувати зміни",
+            "title": "Кілька значень",
+            "noMulti": "Це поле можна редагувати окремо, але не як частину групи.",
+            "info": "Вибрані елементи містять різні значення для цього поля. Щоб редагувати та встановити для всіх елементів цього поля однакове значення, натисніть або торкніться тут, інакше вони збережуть свої індивідуальні значення."
         },
         "remove": {
-            "button": "Delete",
-            "submit": "Delete",
-            "title": "Delete",
+            "button": "Видалити",
+            "submit": "Видалити",
+            "title": "Видалити",
             "confirm": {
-                "_": "Are you sure you wish to delete %d rows?",
-                "1": "Are you sure you wish to delete 1 row?"
+                "_": "Ви впевнені, що хочете видалити %d рядків?",
+                "1": "Ви впевнені, що хочете видалити 1 рядок?"
             }
         },
         "error": {
-            "system": "A system error has occurred (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">More information&lt;\\/a&gt;).</a>"
+            "system": "Виникла системна помилка (<a target=\"\" rel=\" nofollow\" href=\"\">Докладніше&lt;\\/a&gt;).</a>"
         }
     },
-    "loadingRecords": "Loading...",
-    "processing": "Processing...",
+    "loadingRecords": "Завантаження...",
+    "processing": "Обробка...",
     "decimal": ".",
-    "emptyTable": "No data available in table",
+    "emptyTable": "Немає даних у таблиці",
     "select": {
         "cells": {
-            "1": "1 cell selected",
-            "_": "%d cells selected"
+            "1": "Вибрано 1 комірку",
+            "_": "Вибрано %d комірок"
         },
         "columns": {
-            "1": "1 column selected",
-            "_": "%d columns selected"
+            "1": "Вибрано 1 стовпець",
+            "_": "Вибрано %d стовпців"
         },
         "rows": {
-            "1": "1 row selected",
-            "_": "%d rows selected"
+            "1": "Вибрано 1 рядок",
+            "_": "Вибрано %d рядків"
         }
     },
-    "zeroRecords": "No matching records found",
+    "zeroRecords": "Не знайдено відповідних записів",
     "stateRestore": {
         "creationModal": {
-            "button": "Create",
+            "button": "Створити",
             "columns": {
-                "search": "Column search",
-                "visible": "Column visibility"
+                "search": "Пошук у стовпці",
+                "visible": "Видимість стовпця"
             },
-            "name": "Name:",
-            "order": "Sorting",
-            "paging": "Paging",
-            "search": "Search",
-            "searchBuilder": "Search builder",
-            "select": "Select",
-            "title": "Create new state",
-            "toggleLabel": "Include:",
-            "scroller": "Scroll position"
+            "name": "Назва:",
+            "order": "Сортування",
+            "paging": "Пагінація",
+            "search": "Пошук",
+            "searchBuilder": "Конструктор пошуку",
+            "select": "Вибір",
+            "title": "Створити новий стан",
+            "toggleLabel": "Включити:",
+            "scroller": "Позиція прокрутки"
         },
-        "duplicateError": "A state with this name already exists.",
-        "emptyError": "Name cannot be empty.",
-        "emptyStates": "No saved states",
-        "removeConfirm": "Are you sure you want to remove %s?",
-        "removeError": "Failed to remove state.",
-        "removeJoiner": "and",
-        "removeSubmit": "Remove",
-        "removeTitle": "Remove state",
-        "renameButton": "Rename",
-        "renameLabel": "New name for %s:",
-        "renameTitle": "Rename state"
+        "duplicateError": "Стан з такою назвою вже існує.",
+        "emptyError": "Назва не може бути порожньою.",
+        "emptyStates": "Немає збережених станів",
+        "removeConfirm": "Ви впевнені, що хочете видалити %s?",
+        "removeError": "Не вдалося видалити стан.",
+        "removeJoiner": "та",
+        "removeSubmit": "Видалити",
+        "removeTitle": "Видалити стан",
+        "renameButton": "Перейменувати",
+        "renameLabel": "Нова назва для %s:",
+        "renameTitle": "Перейменувати стан"
     },
-    "info": "Showing _START_ to _END_ of _TOTAL_ entries",
-    "infoEmpty": "Showing 0 to 0 of 0 entries",
-    "infoFiltered": "(filtered from _MAX_ total entries)",
-    "lengthMenu": "Show _MENU_ entries",
+    "info": "Показано від _START_ до _END_ із _TOTAL_ записів",
+    "infoEmpty": "Показано від 0 до 0 із 0 записів",
+    "infoFiltered": "(відфільтровано з _MAX_ загальних записів)",
+    "lengthMenu": "Показати _MENU_ записів",
     "aria": {
-        "sortAscending": ": activate to sort column ascending",
-        "sortDescending": ": activate to sort column descending"
+        "sortAscending": ": активувати для сортування стовпця за зростанням",
+        "sortDescending": ": активувати для сортування стовпця за спаданням"
     }
 }

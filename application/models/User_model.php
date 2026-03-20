@@ -213,7 +213,9 @@ class User_Model extends CI_Model {
 	// FUNCTION: bool add($username, $password, $email, $type)
 	// Add a user
 	// !!!!!!!!!!!!!!!!
-	// !! IMPORTANT NOTICE: Please inform DJ7NT and/or DF2ET when adding/removing/changing parameters here.
+	// !! IMPORTANT NOTICE: Please inform DJ7NT and/or DF2ET when adding/removing/changing parameters here. 
+	// !! Also make sure you modify Header_auth::_create_user accordingly, otherwise SSO user creation will break.
+	// !! Also modify User_model::update_sso_claims with attributes that can be modified by IdP
 	// !!!!!!!!!!!!!!!!
 	function add($username, $password, $email, $type, $firstname, $lastname, $callsign, $locator, $timezone,
 		$measurement, $dashboard_map, $user_date_format, $user_stylesheet, $user_qth_lookup, $user_sota_lookup, $user_wwff_lookup,
@@ -225,7 +227,7 @@ class User_Model extends CI_Model {
 		$user_lotw_name, $user_lotw_password, $user_eqsl_name, $user_eqsl_password, $user_clublog_name, $user_clublog_password,
 		$user_winkey, $on_air_widget_enabled, $on_air_widget_display_last_seen, $on_air_widget_show_only_most_recent_radio,
 		$qso_widget_display_qso_time, $dashboard_banner, $dashboard_solar, $global_oqrs_text, $oqrs_grouped_search,
-		$oqrs_grouped_search_show_station_name, $oqrs_auto_matching, $oqrs_direct_auto_matching,$user_dxwaterfall_enable, $user_qso_show_map, $clubstation = 0) {
+		$oqrs_grouped_search_show_station_name, $oqrs_auto_matching, $oqrs_direct_auto_matching,$user_dxwaterfall_enable, $user_qso_show_map, $clubstation = 0, $external_account = null) {
 		// Check that the user isn't already used
 		if(!$this->exists($username)) {
 			$data = array(
@@ -269,6 +271,7 @@ class User_Model extends CI_Model {
 				'user_clublog_password' => xss_clean($user_clublog_password),
 				'winkey' => xss_clean($user_winkey),
 				'clubstation' => $clubstation,
+				'external_account' => $external_account
 			);
 
 			// Check the password is valid
@@ -440,7 +443,7 @@ class User_Model extends CI_Model {
 				$pwd_placeholder = '**********';
 
 				// Hash password
-				if($fields['user_password'] != NULL)
+				if(array_key_exists('user_password', $fields) && ($fields['user_password'] != NULL))
 				{
 					if (!file_exists('.demo') || (file_exists('.demo') && $this->session->userdata('user_type') == 99)) {
 
@@ -537,6 +540,11 @@ class User_Model extends CI_Model {
 	// Validates a username/password combination
 	// This is really just a wrapper around User_Model::authenticate
 	function login() {
+
+		if (($this->config->item('auth_header_enable') ?? false) && !($this->config->item('auth_header_allow_direct_login') ?? true)) {
+			$this->session->set_flashdata('error', 'Direct login is disabled. Please use the SSO option to log in.');
+			redirect('user/login');
+		}
 
 		$username = $this->input->post('user_name', true);
 		$password = htmlspecialchars_decode($this->input->post('user_password', true));
@@ -744,6 +752,68 @@ class User_Model extends CI_Model {
 			}
 		}
 		return 0;
+	}
+
+	// FUNCTION: retrieve a user by their SSO composite key {iss, sub} stored as JSON
+	function get_by_external_account(string $key) {
+		$table = $this->config->item('auth_table');
+		$decoded = json_decode($key, true);
+		return $this->db->query(
+			"SELECT * FROM `$table` WHERE JSON_VALUE(external_account, '$.iss') = ? AND JSON_VALUE(external_account, '$.sub') = ?",
+			[$decoded['iss'], $decoded['sub']]
+		);
+	}
+
+	// FUNCTION: update specific user fields from SSO claims (bypass privilege check, used during login flow)
+	function update_sso_claims(int $user_id, array $fields): void {
+		// Only modify the following
+		$allowed = [
+			'user_name',
+			'user_email',
+			'user_callsign',
+			'user_locator',
+			'user_firstname',
+			'user_lastname',
+			'user_timezone',
+			'user_lotw_name',
+			'user_lotw_password',
+			'user_eqsl_name',
+			'user_eqsl_password',
+			'user_eqsl_qth_nickname',
+			'active_station_logbook',
+			'user_language',
+			'user_clublog_name',
+			'user_clublog_password',
+			'user_clublog_callsign',
+			'user_measurement_base',
+			'user_date_format',
+			'user_stylesheet',
+			'user_sota_lookup',
+			'user_wwff_lookup',
+			'user_pota_lookup',
+			'user_qth_lookup',
+			'user_show_notes',
+			'user_column1',
+			'user_column2',
+			'user_column3',
+			'user_column4',
+			'user_column5',
+			'user_show_profile_image',
+			'user_previous_qsl_type',
+			'user_amsat_status_upload',
+			'user_mastodon_url',
+			'user_default_band',
+			'user_default_confirmation',
+			'user_quicklog_enter',
+			'user_quicklog',
+			'user_qso_end_times',
+			'winkey',
+			'slug'
+		];
+		$fields = array_intersect_key($fields, array_flip($allowed));
+
+		$this->db->where('user_id', $user_id);
+		$this->db->update('users', $fields);
 	}
 
 	// FUNCTION: set's the last-login timestamp in user table
