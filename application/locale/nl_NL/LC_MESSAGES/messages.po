@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-17 19:56+0000\n"
-"PO-Revision-Date: 2026-03-18 20:55+0000\n"
+"PO-Revision-Date: 2026-03-21 13:06+0000\n"
 "Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
@@ -20108,42 +20108,44 @@ msgstr "CQz geojson"
 
 #: application/views/debug/index.php:124
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "OpenSSL-versie"
 
 #: application/views/debug/index.php:125
 msgid "not found"
-msgstr ""
+msgstr "niet gevonden"
 
 #: application/controllers/Header_auth.php:22
 msgid "SSO Authentication is disabled."
-msgstr ""
+msgstr "SSO-authenticatie is uitgeschakeld."
 
 #: application/controllers/Header_auth.php:36
 msgid "SSO Authentication is disabled. Check your configuration."
-msgstr ""
+msgstr "SSO-authenticatie is uitgeschakeld. Controleer je configuratie."
 
 #: application/controllers/Header_auth.php:89
 msgid "User not found."
-msgstr ""
+msgstr "Gebruiker niet gevonden."
 
 #: application/controllers/Header_auth.php:109
 msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"Sorry. Deze instantie is momenteel in onderhoudsmodus. Alleen beheerders "
+"mogen momenteel inloggen."
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "Er is iets vreselijk misgegaan. Controleer het foutlogboek."
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "SSO-configuratiefout. Controleer de foutlog."
 
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
-msgstr ""
+msgstr "Kan niet worden gewijzigd. Beheer dit via uw identiteitsprovider."
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "
