@@ -7,6 +7,7 @@ class Waip extends CI_Model {
 	private $DXCC_SARDINIA = '225';
 	private $VALID_BANDS = array('160M','80M','40M','30M','20M','17M','15M','12M','10M');
 	private $MODE_CATEGORIES = array('MIXED', 'PHONE', 'CW', 'DIGI');
+	private $AWARD_START_DATE = '1948-06-02';
 
 	// Italian provinces mapping (2-letter codes to names)
 	private $province_names = array(
@@ -151,6 +152,7 @@ class Waip extends CI_Model {
 		$sql = $select . "
 			FROM " . $this->config->item('table_name') . " thcv
 			WHERE station_id IN (" . $location_list . ")
+			AND COL_TIME_ON >= '" . $this->AWARD_START_DATE . "'
 			AND COL_DXCC IN ('" . $this->DXCC_ITALY . "', '" . $this->DXCC_SARDINIA . "')
 			AND (COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)
 			AND COL_BAND IN ('" . implode("','", $this->VALID_BANDS) . "')
