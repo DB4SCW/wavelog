@@ -202,8 +202,8 @@ class Header_auth extends CI_Controller {
                 return null;
             }
 
-            $alg = $header['alg'] ?? '';
-            if (!in_array($alg, ['RS256', 'RS384', 'RS512', 'ES256', 'ES384'], true)) {
+            $alg = $header['alg'] ?? 'none';
+            if ($alg == "none") {
                 log_message('error', 'SSO Authentication: Algorithm "' . $alg . '" is not allowed.');
                 return null;
             }
