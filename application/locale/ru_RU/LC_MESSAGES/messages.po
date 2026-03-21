@@ -1207,7 +1207,6 @@ msgid "SSO Authentication is disabled."
 msgstr "Аутентификация через SSO отключена."
 
 #: application/controllers/Header_auth.php:36
-#, fuzzy
 msgid "SSO Authentication is disabled. Check your configuration."
 msgstr "Аутентификация через SSO отключена. Проверьте вашу конфигурацию."
 
