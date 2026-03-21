@@ -257,7 +257,7 @@ function loadQSOTable(rows) {
 											data = data.replace(/<[^>]*>/g, '');
 										}
 										// then replace Ø with 0 in specific columns
-										if (column === 1 || column === 2 || column === 3) {
+										if (column === 1 || column === 2 || column === 3 || column === 4) {
 											// remove a trailing "L" and trim whitespaces
 											data = data.replace(/\s*L\s*$/, '').trim();
 											if (typeof data === 'string' && data.includes('Ø')) {
