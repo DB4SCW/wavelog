@@ -1425,6 +1425,133 @@ $(document).ready(function () {
 		});
 	});
 
+	// Merge QSOs button handler
+	$('#mergeQsos').click(function (event) {
+		const id_list = getSelectedIds();
+
+		if (id_list.length === 0 || id_list.length === 1 || id_list.length > 2) {
+			BootstrapDialog.alert({
+				title: lang_gen_advanced_logbook_info,
+				message: 'You need to select exactly 2 QSOs to merge!',
+				type: BootstrapDialog.TYPE_INFO,
+				closable: false,
+				draggable: false,
+				callback: function (result) {
+				}
+			});
+			return;
+		}
+
+		// Load merge dialog
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/mergeDialog',
+			type: 'post',
+			data: {
+				qsoIds: id_list
+			},
+			success: function (html) {
+				BootstrapDialog.show({
+					title: 'Merge QSOs',
+					size: BootstrapDialog.SIZE_WIDE,
+					cssClass: 'merge-dialog',
+					nl2br: false,
+					message: html,
+					buttons: [
+					{
+						label: 'Merge QSOs <div class="ld ld-ring ld-spin"></div>',
+						cssClass: 'btn btn-sm btn-danger ld-ext-right',
+						id: 'mergeButton',
+						action: function (dialogItself) {
+							// Show confirmation dialog
+							BootstrapDialog.confirm({
+								title: 'Danger',
+								message: 'Are you really sure you want to merge these QSOs? This operation CAN\'T be undone!',
+								type: BootstrapDialog.TYPE_DANGER,
+								closable: true,
+								draggable: true,
+								btnCancelLabel: 'Cancel',
+								btnOKLabel: 'Yes, Merge QSOs',
+								btnOKClass: 'btn-danger',
+								callback: function(result) {
+									if (result) {
+										// User confirmed, proceed with merge
+										const formData = $('#mergeForm').serialize();
+
+										$('#mergeButton').prop("disabled", true).addClass("running");
+										$('#closeMergeButton').prop("disabled", true);
+
+										$.ajax({
+											url: base_url + 'index.php/logbookadvanced/mergeQsos',
+											type: 'post',
+											data: formData,
+											dataType: 'json',
+											success: function (response) {
+												dialogItself.close();
+												if (response.success) {
+													BootstrapDialog.alert({
+														title: lang_gen_advanced_logbook_success,
+														message: 'QSOs merged successfully!',
+														type: BootstrapDialog.TYPE_SUCCESS,
+														closable: false,
+														draggable: false,
+														callback: function (result) {
+															$('#searchButton').click();
+														}
+													});
+												} else {
+													BootstrapDialog.alert({
+														title: lang_gen_advanced_logbook_error,
+														message: response.message || 'Error merging QSOs',
+														type: BootstrapDialog.TYPE_DANGER,
+														closable: false,
+														draggable: false,
+														callback: function (result) {
+														}
+													});
+												}
+											},
+											error: function () {
+												dialogItself.close();
+												BootstrapDialog.alert({
+													title: lang_gen_advanced_logbook_error,
+													message: 'An error occurred while merging QSOs',
+													type: BootstrapDialog.TYPE_DANGER,
+													closable: false,
+													draggable: false,
+													callback: function (result) {
+													}
+												});
+											}
+										});
+									}
+								}
+							});
+						}
+					},
+					{
+						label: lang_admin_close,
+						cssClass: 'btn btn-sm btn-secondary',
+						id: 'closeMergeButton',
+						action: function (dialogItself) {
+							dialogItself.close();
+						}
+					}],
+				});
+			},
+			error: function () {
+				BootstrapDialog.alert({
+					title: lang_gen_advanced_logbook_error,
+					message: 'Error loading merge dialog',
+					type: BootstrapDialog.TYPE_DANGER,
+					closable: false,
+					draggable: false,
+					callback: function (result) {
+					}
+				});
+			}
+		});
+	});
+
 	function dupeSearchDialog() {
 		$.ajax({
 			url: base_url + 'index.php/logbookadvanced/dupeSearchDialog',
@@ -3197,4 +3324,18 @@ function saveOptions() {
 		} else {
 			window.map.setView([30, 0], 1.5);
 		}
+	}
+
+	function selectAllQso1Fields() {
+		console.log('Selecting all QSO 1 fields');
+		$('#primaryQso').val('qso1');
+		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso1"]').prop('checked', true);
+	}
+
+	function selectAllQso2Fields() {
+		console.log('Selecting all QSO 2 fields');
+		$('#primaryQso').val('qso2');
+		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso2"]').prop('checked', true);
 	}
