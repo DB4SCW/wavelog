@@ -3327,14 +3327,12 @@ function saveOptions() {
 	}
 
 	function selectAllQso1Fields() {
-		console.log('Selecting all QSO 1 fields');
 		$('#primaryQso').val('qso1');
 		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso1"]').prop('checked', true);
 	}
 
 	function selectAllQso2Fields() {
-		console.log('Selecting all QSO 2 fields');
 		$('#primaryQso').val('qso2');
 		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso2"]').prop('checked', true);
