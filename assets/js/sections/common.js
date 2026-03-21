@@ -56,8 +56,8 @@ var PlatformDetection = {
 
 function setRst(mode) {
 	if(mode == 'JT65' || mode == 'JT65B' || mode == 'JT6C' || mode == 'JTMS' || mode == 'ISCAT' || mode == 'MSK144' || mode == 'JTMSK' || mode == 'QRA64' || mode == 'FT8' || mode == 'FT4' || mode == 'JS8' || mode == 'JT9' || mode == 'JT9-1' || mode == 'ROS'){
-		$('#rst_sent').val('-5');
-		$('#rst_rcvd').val('-5');
+		$('#rst_sent').val('-05');
+		$('#rst_rcvd').val('-05');
 	} else if (mode == 'FSK441' || mode == 'JT6M') {
 		$('#rst_sent').val('26');
 		$('#rst_rcvd').val('26');
