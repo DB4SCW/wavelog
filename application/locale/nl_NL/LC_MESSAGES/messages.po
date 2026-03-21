@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-21 22:04+0000\n"
-"PO-Revision-Date: 2026-03-21 13:06+0000\n"
+"PO-Revision-Date: 2026-03-22 09:55+0000\n"
 "Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
@@ -786,6 +786,7 @@ msgstr "Ongeldig berichttype."
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
 msgstr ""
+"E-mail kan niet worden geïnitialiseerd. Controleer de e-mailinstellingen."
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
@@ -13569,11 +13570,11 @@ msgstr "Band RX"
 
 #: application/views/logbookadvanced/edit.php:137
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "Frequentie TX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "Frequentie RX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:178
 #: application/views/logbookadvanced/edit.php:186
