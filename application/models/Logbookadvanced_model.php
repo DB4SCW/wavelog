@@ -1191,6 +1191,8 @@ class Logbookadvanced_model extends CI_Model {
 
 			if ($value == '') return;
 
+			$value2 == '' ? null : $this->frequency->GetBand($value2);
+
 			$sql = "UPDATE ".$this->config->item('table_name')." JOIN station_profile ON ". $this->config->item('table_name').".station_id = station_profile.station_id" .
 			" SET " . $this->config->item('table_name').".COL_FREQ = ?" .
 			", " . $this->config->item('table_name').".COL_FREQ_RX = ?" .
@@ -1199,7 +1201,7 @@ class Logbookadvanced_model extends CI_Model {
 			" WHERE " . $this->config->item('table_name').".col_primary_key in ? and station_profile.user_id = ?";
 
 			$band = $this->frequency->GetBand($value);
-			$bandRx = $value2 == '' ? null : $this->frequency->GetBand($value2);
+			$bandRx = $value2 == null ? null : $this->frequency->GetBand($value2);
 
 			$query = $this->db->query($sql, array($value, $value2, $band, $bandRx, json_decode($ids, true), $this->session->userdata('user_id')));
 		} else if ($column == 'COL_GRIDSQUARE') {
