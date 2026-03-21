@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-20 09:28+0000\n"
-"PO-Revision-Date: 2026-03-21 13:06+0000\n"
+"PO-Revision-Date: 2026-03-21 17:42+0000\n"
 "Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/pl/>\n"
@@ -1227,15 +1227,17 @@ msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"Przepraszamy. Ta instancja znajduje się obecnie w trybie konserwacji. W tej "
+"chwili dostęp do logowania mają wyłącznie administratorzy."
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "Coś poszło nie tak. Sprawdź dziennik błędów."
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "Błąd konfiguracji SSO. Sprawdź dziennik błędów."
 
 #: application/controllers/Hrdlog.php:70 application/controllers/Hrdlog.php:71
 msgid "HRD Log upload for this station is disabled."
@@ -3190,6 +3192,8 @@ msgstr "Użytkownicy"
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
 msgstr ""
+"Nie można tego zmienić. Należy to skonfigurować za pośrednictwem dostawcy "
+"tożsamości."
 
 #: application/controllers/User.php:471
 #: application/views/club/permissions.php:279
