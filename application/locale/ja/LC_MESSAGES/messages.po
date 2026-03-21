@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-21 19:39+0000\n"
-"PO-Revision-Date: 2026-03-21 13:07+0000\n"
+"PO-Revision-Date: 2026-03-21 22:04+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -782,7 +782,7 @@ msgstr "メッセージ タイプが無効です。"
 
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
-msgstr ""
+msgstr "メールを初期化できません。メール設定を確認してください。"
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
@@ -13490,11 +13490,11 @@ msgstr "バンドRX"
 
 #: application/views/logbookadvanced/edit.php:137
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "送信周波数（Hz）"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "受信周波数（Hz）"
 
 #: application/views/logbookadvanced/edit.php:178
 #: application/views/logbookadvanced/edit.php:186
