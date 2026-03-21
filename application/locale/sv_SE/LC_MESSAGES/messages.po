@@ -355,6 +355,7 @@ msgstr "Diplom - %s"
 #: application/views/qso/edit_ajax.php:402 application/views/qso/index.php:361
 #: application/views/qso/index.php:656 application/views/user/edit.php:773
 #: application/views/view_log/qso.php:478
+#: application/views/logbookadvanced/index.php:1007
 msgid "DOK"
 msgstr "DOK"
 
@@ -383,6 +384,7 @@ msgstr "DOK"
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:33
 #: application/views/timeplotter/index.php:24
+#: application/views/logbookadvanced/index.php:983
 msgid "DXCC"
 msgstr "DXCC"
 
@@ -535,6 +537,7 @@ msgstr "WWFF"
 #: application/views/user/edit.php:346 application/views/user/edit.php:369
 #: application/views/user/edit.php:393
 #: application/views/view_log/partial/log_ajax.php:11
+#: application/views/logbookadvanced/index.php:1001
 msgid "POTA"
 msgstr "POTA"
 
@@ -968,6 +971,7 @@ msgstr "DCL-nyckelimport"
 #: application/views/view_log/partial/log_ajax.php:225
 #: application/views/view_log/qso.php:593
 #: application/views/view_log/qso.php:598
+#: application/views/logbookadvanced/index.php:974
 msgid "DCL"
 msgstr "DCL"
 
@@ -1437,6 +1441,7 @@ msgstr "Loggbok"
 #: application/views/qso/edit_ajax.php:39 application/views/qso/index.php:115
 #: application/views/timeline/index.php:56 application/views/user/edit.php:674
 #: application/views/user/edit.php:879
+#: application/views/logbookadvanced/index.php:962
 msgid "QSL"
 msgstr "QSL"
 
@@ -1620,6 +1625,7 @@ msgstr "Alla callbook-sökningar misslyckades eller gav inga resultat."
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
 #: application/views/widgets/qsos.php:18
+#: application/views/logbookadvanced/index.php:932
 msgid "Mode"
 msgstr "Trafiksätt"
 
@@ -1649,6 +1655,7 @@ msgstr "Trafiksätt"
 #: application/views/view_log/partial/log.php:10
 #: application/views/view_log/partial/log_ajax.php:5
 #: application/views/view_log/qso.php:119 application/views/visitor/index.php:9
+#: application/views/logbookadvanced/index.php:935
 msgid "RST (S)"
 msgstr "RST (S)"
 
@@ -1679,6 +1686,7 @@ msgstr "RST (S)"
 #: application/views/view_log/partial/log_ajax.php:6
 #: application/views/view_log/qso.php:124
 #: application/views/visitor/index.php:12
+#: application/views/logbookadvanced/index.php:938
 msgid "RST (R)"
 msgstr "RST (R)"
 
@@ -1731,6 +1739,7 @@ msgstr "Land"
 #: application/views/user/edit.php:366 application/views/user/edit.php:390
 #: application/views/view_log/partial/log_ajax.php:8
 #: application/views/visitor/index.php:18
+#: application/views/logbookadvanced/index.php:998
 msgid "IOTA"
 msgstr "IOTA"
 
@@ -1762,6 +1771,7 @@ msgstr "IOTA"
 #: application/views/user/edit.php:370 application/views/user/edit.php:394
 #: application/views/view_log/partial/log_ajax.php:12
 #: application/views/visitor/index.php:24
+#: application/views/logbookadvanced/index.php:986
 msgid "State"
 msgstr "Delstat"
 
@@ -1812,6 +1822,7 @@ msgstr "Delstat"
 #: application/views/view_log/qso.php:692
 #: application/views/visitor/index.php:27
 #: application/views/zonechecker/result.php:53
+#: application/views/logbookadvanced/index.php:947
 msgid "Gridsquare"
 msgstr "Lokatorruta"
 
@@ -1842,6 +1853,7 @@ msgstr "Lokatorruta"
 #: application/views/user/edit.php:396
 #: application/views/view_log/partial/log_ajax.php:14
 #: application/views/visitor/index.php:30
+#: application/views/logbookadvanced/index.php:1037
 msgid "Distance"
 msgstr "Avstånd"
 
@@ -1936,6 +1948,7 @@ msgstr "Avstånd"
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
 #: application/views/widgets/qsos.php:21
+#: application/views/logbookadvanced/index.php:941
 msgid "Band"
 msgstr "Band"
 
@@ -1964,6 +1977,7 @@ msgstr "Band"
 #: application/views/view_log/partial/log_ajax.php:16
 #: application/views/view_log/qso.php:101
 #: application/views/visitor/index.php:36
+#: application/views/logbookadvanced/index.php:944
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -1988,6 +2002,7 @@ msgstr "Frekvens"
 #: application/views/view_log/partial/log_ajax.php:17
 #: application/views/view_log/qso.php:712
 #: application/views/visitor/index.php:39
+#: application/views/logbookadvanced/index.php:1019
 msgid "Operator"
 msgstr "Operatör"
 
@@ -4055,6 +4070,7 @@ msgstr "Period"
 #: application/views/timeline/index.php:79 application/views/user/edit.php:401
 #: application/views/view_log/partial/log_ajax.php:21
 #: application/views/view_log/qso.php:248
+#: application/views/logbookadvanced/index.php:1025
 msgid "Propagation"
 msgstr "Utbredning"
 
@@ -5519,6 +5535,7 @@ msgstr "Filtrering på"
 #: application/views/logbookadvanced/index.php:462
 #: application/views/logbookadvanced/index.php:988
 #: application/views/logbookadvanced/useroptions.php:187
+#: application/views/logbookadvanced/index.php:989
 msgid "County"
 msgstr "Län"
 
@@ -5620,6 +5637,7 @@ msgstr "Totalt"
 #: application/views/timeplotter/index.php:44
 #: application/views/user/modals/first_login_wizard.php:74
 #: application/views/zonechecker/index.php:17
+#: application/views/logbookadvanced/index.php:992
 msgid "CQ Zone"
 msgstr "CQ-zon"
 
@@ -6615,6 +6633,7 @@ msgstr "Visa IOTA-karta"
 #: application/views/view_log/partial/log_ajax.php:19
 #: application/views/view_log/qso.php:232
 #: application/views/view_log/qso.php:688
+#: application/views/logbookadvanced/index.php:950
 msgid "Name"
 msgstr "Namn"
 
@@ -6637,6 +6656,7 @@ msgstr "Raderad"
 #: application/views/station_profile/edit.php:169
 #: application/views/user/modals/first_login_wizard.php:84
 #: application/views/zonechecker/index.php:18
+#: application/views/logbookadvanced/index.php:995
 msgid "ITU Zone"
 msgstr "ITU-zon"
 
@@ -7081,6 +7101,7 @@ msgstr "Referens"
 #: application/views/qso/components/previous_contacts.php:6
 #: application/views/search/lotw_unconfirmed_result.php:7
 #: application/views/view_log/qso.php:72
+#: application/views/logbookadvanced/index.php:917
 msgid "Date/Time"
 msgstr "Datum/Tid"
 
@@ -7236,6 +7257,7 @@ msgstr "Diplom - Worked All Continents (WAC)"
 #: application/views/lookup/index.php:4 application/views/qso/award_tabs.php:37
 #: application/views/qso/edit_ajax.php:262 application/views/qso/index.php:484
 #: application/views/view_log/qso.php:360
+#: application/views/logbookadvanced/index.php:1034
 msgid "Continent"
 msgstr "Kontinent"
 
@@ -7427,8 +7449,8 @@ msgid ""
 "State (ADIF: DXCC and STATE)"
 msgstr ""
 "Fält som använts för detta diplom: DXCC (måste vara ett av Kina/318, "
-"HongKong/321, Macao/152, Taiwan/386, Pratas Isl./505 eller Scarborough "
-"Reef/506) och giltig stat (ADIF: DXCC och STATE)"
+"HongKong/321, Macao/152, Taiwan/386, Pratas Isl./505 eller Scarborough Reef/"
+"506) och giltig stat (ADIF: DXCC och STATE)"
 
 #: application/views/awards/wapc/index.php:122
 msgid "Show WAPC Map"
@@ -7929,6 +7951,7 @@ msgstr "Färsk spot (< 5 minuter gammal)"
 #: application/views/logbookadvanced/useroptions.php:289
 #: application/views/qso/edit_ajax.php:42
 #: application/views/simplefle/index.php:84
+#: application/views/logbookadvanced/index.php:1028
 msgid "Contest"
 msgstr "Tävling"
 
@@ -8038,6 +8061,7 @@ msgstr "Spotter"
 #: application/views/logbookadvanced/useroptions.php:277
 #: application/views/qso/edit_ajax.php:183 application/views/qso/index.php:386
 #: application/views/view_log/qso.php:240
+#: application/views/logbookadvanced/index.php:1022
 msgid "Comment"
 msgstr "Notering"
 
@@ -9446,6 +9470,7 @@ msgstr ""
 #: application/views/qslprint/qslprint.php:32
 #: application/views/qslprint/qsolist.php:15
 #: application/views/webadif/export.php:41
+#: application/views/logbookadvanced/index.php:1046
 msgid "Profile name"
 msgstr "Profilnamn"
 
@@ -9901,6 +9926,7 @@ msgstr "Lokator"
 #: application/views/logbookadvanced/index.php:952
 #: application/views/logbookadvanced/useroptions.php:97
 #: application/views/qso/edit_ajax.php:177
+#: application/views/logbookadvanced/index.php:953
 msgid "QTH"
 msgstr "QTH"
 
@@ -13049,8 +13075,8 @@ msgid ""
 "We’ll keep the original value and add a more precise locator (e.g., JO90AB "
 "or JO90AB12) when a match is confident."
 msgstr ""
-"Vi behåller det ursprungliga värdet och lägger till en mer exakt lokator (t."
-"ex. JO90AB eller JO90AB12) när en matchning är säker."
+"Vi behåller det ursprungliga värdet och lägger till en mer exakt lokator "
+"(t.ex. JO90AB eller JO90AB12) när en matchning är säker."
 
 #: application/views/logbookadvanced/checkresult.php:42
 msgid "Distance Check Results"
@@ -13427,6 +13453,7 @@ msgstr "DARC DOK"
 #: application/views/logbookadvanced/useroptions.php:256
 #: application/views/qso/edit_ajax.php:328 application/views/qso/index.php:497
 #: application/views/view_log/qso.php:493
+#: application/views/logbookadvanced/index.php:1016
 msgid "Region"
 msgstr "Region"
 
@@ -13498,6 +13525,7 @@ msgstr "QSL Skickat Via"
 #: application/views/logbookadvanced/index.php:704
 #: application/views/logbookadvanced/index.php:955
 #: application/views/logbookadvanced/useroptions.php:103
+#: application/views/logbookadvanced/index.php:956
 msgid "QSL via"
 msgstr "QSL via"
 
@@ -13994,6 +14022,7 @@ msgstr "to"
 #: application/views/logbookadvanced/index.php:336
 #: application/views/logbookadvanced/index.php:928
 #: application/views/logbookadvanced/useroptions.php:40
+#: application/views/logbookadvanced/index.php:929
 msgid "Dx"
 msgstr "Dx"
 
@@ -14017,6 +14046,7 @@ msgstr ""
 #: application/views/satellite/skedtable.php:10
 #: application/views/satellite/skedtable.php:37
 #: application/views/sattimers/index.php:46
+#: application/views/logbookadvanced/index.php:920
 msgid "Duration"
 msgstr "Varaktighet"
 
@@ -14334,11 +14364,13 @@ msgstr "Databasverktyg"
 
 #: application/views/logbookadvanced/index.php:922
 #: application/views/logbookadvanced/useroptions.php:342
+#: application/views/logbookadvanced/index.php:923
 msgid "Last modified"
 msgstr "Senast ändrad"
 
 #: application/views/logbookadvanced/index.php:925
 #: application/views/logbookadvanced/useroptions.php:34
+#: application/views/logbookadvanced/index.php:926
 msgid "De"
 msgstr "De"
 
@@ -14346,46 +14378,55 @@ msgstr "De"
 #: application/views/logbookadvanced/useroptions.php:142
 #: application/views/qso/edit_ajax.php:429
 #: application/views/timeline/index.php:72 application/views/user/edit.php:677
+#: application/views/logbookadvanced/index.php:971
 msgid "QRZ"
 msgstr "QRZ"
 
 #: application/views/logbookadvanced/index.php:976
 #: application/views/logbookadvanced/useroptions.php:154
 #: application/views/qso/edit_ajax.php:528
+#: application/views/logbookadvanced/index.php:977
 msgid "QSL Msg (S)"
 msgstr "QSL Meddelande (S)"
 
 #: application/views/logbookadvanced/index.php:979
 #: application/views/logbookadvanced/useroptions.php:160
 #: application/views/qso/edit_ajax.php:537
+#: application/views/logbookadvanced/index.php:980
 msgid "QSL Msg (R)"
 msgstr "QSL Meddelande (R)"
 
 #: application/views/logbookadvanced/index.php:1030
 #: application/views/logbookadvanced/useroptions.php:295
+#: application/views/logbookadvanced/index.php:1031
 msgid "My Refs"
 msgstr "Mina referenser"
 
 #: application/views/logbookadvanced/index.php:1039
+#: application/views/logbookadvanced/index.php:1040
 msgid "Ant az"
 msgstr "Ant az"
 
 #: application/views/logbookadvanced/index.php:1039
 #: application/views/logbookadvanced/useroptions.php:317
+#: application/views/logbookadvanced/index.php:1040
 msgid "Antenna azimuth"
 msgstr "Antenn azimuth"
 
 #: application/views/logbookadvanced/index.php:1042
+#: application/views/logbookadvanced/index.php:1043
 msgid "Ant el"
 msgstr "Ant el"
 
 #: application/views/logbookadvanced/index.php:1042
 #: application/views/logbookadvanced/useroptions.php:323
+#: application/views/logbookadvanced/index.php:1043
 msgid "Antenna elevation"
 msgstr "Antenn elevation"
 
 #: application/views/logbookadvanced/index.php:1048
 #: application/views/logbookadvanced/useroptions.php:335
+#: application/views/logbookadvanced/index.php:1049
 msgid "Station power"
 msgstr "Stationens uteffekt"
 
@@ -18088,8 +18129,8 @@ msgid ""
 "Only PNG files are allowed, and they should have a pixel ratio of 1:1 (e.g., "
 "1000px height and 1000px width)."
 msgstr ""
-"Endast PNG-filer är tillåtna, och de bör ha ett pixel-förhållande på 1:1 (t."
-"ex. 1000px höjd och 1000px bredd)."
+"Endast PNG-filer är tillåtna, och de bör ha ett pixel-förhållande på 1:1 "
+"(t.ex. 1000px höjd och 1000px bredd)."
 
 #: application/views/themes/index.php:64
 msgid "Place the two logo files in the folder 'assets/logo/'"
