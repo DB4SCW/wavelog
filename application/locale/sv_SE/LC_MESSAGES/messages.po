@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-20 09:28+0000\n"
-"PO-Revision-Date: 2026-03-21 17:42+0000\n"
+"PO-Revision-Date: 2026-03-21 22:04+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -19742,15 +19742,15 @@ msgstr "CQz geojson"
 
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
-msgstr ""
+msgstr "E-post kan inte initieras. Kontrollera e-postinställningarna."
 
 #: application/views/logbookadvanced/edit.php:137
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "Frekvens TX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "Frekvens RX (Hz)"
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "
