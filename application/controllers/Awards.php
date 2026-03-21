@@ -458,15 +458,6 @@ class Awards extends CI_Controller {
 		return;
 	}
 
-	public function jcc_cities() {
-		$this->load->model('Jcc_model');
-		$data['user_map_custom'] = $this->optionslib->get_map_custom();
-		$data = $this->Jcc_model->jccCities();
-		header('Content-Type: application/json');
-		echo json_encode($data, JSON_PRETTY_PRINT);
-	}
-
-
 	public function vucc()	{
 		$this->load->model('vucc');
 		$this->load->model('bands');
