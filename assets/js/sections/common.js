@@ -643,8 +643,8 @@ function qso_edit(id) {
 }
 
 function qso_save() {
-    var myform = $("#qsoform")[0];
-    var fd = new FormData(myform);
+    let myform = $("#qsoform")[0];
+    let fd = new FormData(myform);
     $.ajax({
         url: base_url + 'index.php/qso/qso_save_ajax',
         data: fd,
@@ -658,6 +658,10 @@ function qso_save() {
 			$(".qso-dialog").modal('hide');
 			if (reload_after_qso_safe == true) {
 				location.reload();
+			}
+			if (reload_qso_line == true) {
+				let qsoId = document.querySelector('input[name="id"]').value;
+				getQsos(qsoId);
 			}
 		} else {
 			$("#error-messages-qso-edit").html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'+dataofconfirm.detail+'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
