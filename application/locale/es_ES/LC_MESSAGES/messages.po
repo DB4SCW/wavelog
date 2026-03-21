@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-21 17:41+0000\n"
+"POT-Creation-Date: 2026-03-21 18:58+0000\n"
 "PO-Revision-Date: 2026-02-20 14:54+0000\n"
 "Last-Translator: Juan Pablo Tamayo <hj3kos@gmail.com>\n"
 "Language-Team: Spanish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -790,11 +790,11 @@ msgstr "No se pudo eliminar al usuario del club."
 msgid "Invalid message type."
 msgstr "Tipo de mensaje no válido."
 
-#: application/controllers/Club.php:221
-msgid "Email settings not configured."
-msgstr "Configuración de correo electrónico no configurada."
+#: application/controllers/Club.php:218
+msgid "Email can't be initialized. Check the email settings."
+msgstr ""
 
-#: application/controllers/Club.php:228 application/views/api/index.php:68
+#: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
 #: application/views/satellite/satinfo.php:51
 msgid "Unknown"
@@ -19828,6 +19828,9 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#~ msgid "Email settings not configured."
+#~ msgstr "Configuración de correo electrónico no configurada."
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "

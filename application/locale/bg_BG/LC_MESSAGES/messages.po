@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-21 17:41+0000\n"
+"POT-Creation-Date: 2026-03-21 18:58+0000\n"
 "PO-Revision-Date: 2024-11-01 08:53+0000\n"
 "Last-Translator: Plamen Panteleev <lz1ppl@abv.bg>\n"
 "Language-Team: Bulgarian <https://translate.wavelog.org/projects/wavelog/"
@@ -776,11 +776,11 @@ msgstr ""
 msgid "Invalid message type."
 msgstr ""
 
-#: application/controllers/Club.php:221
-msgid "Email settings not configured."
+#: application/controllers/Club.php:218
+msgid "Email can't be initialized. Check the email settings."
 msgstr ""
 
-#: application/controllers/Club.php:228 application/views/api/index.php:68
+#: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
 #: application/views/satellite/satinfo.php:51
 msgid "Unknown"

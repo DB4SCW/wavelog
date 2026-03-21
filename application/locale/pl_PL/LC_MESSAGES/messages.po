@@ -800,6 +800,7 @@ msgstr "Email nie został skonfigurowany."
 #: application/controllers/Club.php:228 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
 #: application/views/satellite/satinfo.php:51
+#: application/controllers/Club.php:225
 msgid "Unknown"
 msgstr "Nieznane"
 
@@ -19778,6 +19779,10 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/controllers/Club.php:218
+msgid "Email can't be initialized. Check the email settings."
+msgstr ""
 
 #~ msgid ""
 #~ "Cache is currently using the backup adapter because the primary is "
