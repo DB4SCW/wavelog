@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-20 09:28+0000\n"
-"PO-Revision-Date: 2026-03-16 17:08+0000\n"
+"PO-Revision-Date: 2026-03-21 13:06+0000\n"
 "Last-Translator: iv3cvn <ricentis@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
@@ -1199,15 +1199,15 @@ msgstr "Hamsat - Satellite Roving"
 
 #: application/controllers/Header_auth.php:22
 msgid "SSO Authentication is disabled."
-msgstr ""
+msgstr "L'autenticazione SSO è disabilitata."
 
 #: application/controllers/Header_auth.php:36
 msgid "SSO Authentication is disabled. Check your configuration."
-msgstr ""
+msgstr "L'autenticazione SSO è disabilitata. Controlla la tua configurazione."
 
 #: application/controllers/Header_auth.php:89
 msgid "User not found."
-msgstr ""
+msgstr "Utente non trovato."
 
 #: application/controllers/Header_auth.php:104
 #: application/controllers/User.php:1329
@@ -1222,15 +1222,17 @@ msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"Spiacente. Questa istanza è attualmente in modalità di manutenzione. Solo "
+"gli amministratori possono effettuare l'accesso al momento."
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "Qualcosa è andato gravemente storto. Controlla il log degli errori."
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "Errore di configurazione SSO. Controlla il log degli errori."
 
 #: application/controllers/Hrdlog.php:70 application/controllers/Hrdlog.php:71
 msgid "HRD Log upload for this station is disabled."
@@ -3184,6 +3186,8 @@ msgstr "Utenti"
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
 msgstr ""
+"Non può essere modificato. Gestisci questo tramite il tuo Provider di "
+"Identità."
 
 #: application/controllers/User.php:471
 #: application/views/club/permissions.php:279
@@ -10948,11 +10952,11 @@ msgstr "Versione MySQL"
 
 #: application/views/debug/index.php:124
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "Versione OpenSSL"
 
 #: application/views/debug/index.php:125
 msgid "not found"
-msgstr ""
+msgstr "non trovato"
 
 #: application/views/debug/index.php:128
 msgid "Codeigniter Version"
@@ -11412,7 +11416,7 @@ msgstr "Turco"
 
 #: application/views/debug/index.php:872
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ucraino"
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
