@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-21 18:58+0000\n"
-"PO-Revision-Date: 2026-03-20 08:30+0000\n"
-"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
+"PO-Revision-Date: 2026-03-21 19:02+0000\n"
+"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -803,6 +803,7 @@ msgstr "Ungültiger Nachrichtentyp."
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
 msgstr ""
+"E-Mail kann nicht initialisiert werden. Überprüfe die E-Mail-Einstellungen."
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
