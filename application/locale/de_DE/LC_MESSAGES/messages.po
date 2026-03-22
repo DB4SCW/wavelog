@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-21 18:58+0000\n"
-"PO-Revision-Date: 2026-03-21 19:02+0000\n"
-"Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
+"PO-Revision-Date: 2026-03-22 16:49+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
 "Language: de_DE\n"
@@ -20035,15 +20035,15 @@ msgstr "CQz geojson"
 
 #: application/views/logbookadvanced/edit.php:137
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "TX Frequenz (Hz)"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "RX Frequenz (Hz)"
 
 #: application/views/debug/index.php:50
 msgid "ADIF Version"
-msgstr ""
+msgstr "ADIF-Version"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "E-Mail-Einstellungen nicht konfiguriert."
