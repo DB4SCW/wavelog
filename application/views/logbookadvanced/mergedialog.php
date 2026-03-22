@@ -16,9 +16,9 @@
                         <strong><?= __("QSO"); ?> #<?= $qso1->COL_PRIMARY_KEY ?></strong>
                         <label class="float-end">
                             <input type="radio" name="primaryQsoRadio" value="<?= $qsoIds[0] ?>"
-                                   onclick="selectAllQso1Fields()"
-                                   data-qso-id="<?= $qsoIds[0] ?>"
-                                   <?= $qsoIds[0] == $qsoIds[0] ? 'checked' : '' ?>>
+								onclick="selectAllQso1Fields()"
+								data-qso-id="<?= $qsoIds[0] ?>"
+								<?= $qsoIds[0] == $qsoIds[0] ? 'checked' : '' ?>>
                             <?= __("Keep this QSO"); ?>
                         </label>
                     </div>
@@ -38,10 +38,10 @@
                     <div class="card-header bg-secondary text-white">
                         <strong><?= __("QSO"); ?> #<?= $qso2->COL_PRIMARY_KEY ?></strong>
                         <label class="float-end">
-                            <input type="radio" name="primaryQsoRadio" value="<?= $qsoIds[1] ?>"
-                                   onclick="selectAllQso2Fields()"
-                                   data-qso-id="<?= $qsoIds[1] ?>"
-                                   <?= $qsoIds[0] == $qsoIds[1] ? 'checked' : '' ?>>
+                            <input type="radio" name="secondaryQsoRadio" value="<?= $qsoIds[1] ?>"
+								onclick="selectAllQso2Fields()"
+								data-qso-id="<?= $qsoIds[1] ?>"
+								<?= $qsoIds[0] == $qsoIds[1] ? 'checked' : '' ?>>
                             <?= __("Keep this QSO"); ?>
                         </label>
                     </div>
@@ -69,8 +69,8 @@
                     <thead>
                         <tr>
                             <th style="width: 30%"><?= __("Field"); ?></th>
-                            <th style="width: 35%"><?= __("QSO"); ?> #<?= $qso1->COL_PRIMARY_KEY ?></th>
-                            <th style="width: 35%"><?= __("QSO"); ?> #<?= $qso2->COL_PRIMARY_KEY ?></th>
+                            <th style="width: 35%"><?= __("QSO"); ?> #<?php echo $qso1->COL_PRIMARY_KEY; ?></th>
+                            <th style="width: 35%"><?= __("QSO"); ?> #<?php echo $qso2->COL_PRIMARY_KEY; ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -274,7 +274,6 @@
 
 // Initialize on load
 $(document).ready(function() {
-    console.log('Document ready, initializing QSO 1 fields');
     selectAllQso1Fields();
 });
 </script>

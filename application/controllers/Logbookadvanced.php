@@ -758,7 +758,7 @@ class Logbookadvanced extends CI_Controller {
 	public function mergeDialog() {
 		if(!clubaccess_check(9)) return;
 
-		$qsoIds = $this->input->post('qsoIds');
+		$qsoIds = $this->input->post('qsoIds', true);
 		if (!is_array($qsoIds) || count($qsoIds) !== 2) {
 			show_error('Invalid QSO IDs');
 		}
