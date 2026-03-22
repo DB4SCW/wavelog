@@ -1,7 +1,7 @@
 <form id="mergeForm">
-    <input type="hidden" name="qsoIds[]" value="<?= $qsoIds[0] ?>">
-    <input type="hidden" name="qsoIds[]" value="<?= $qsoIds[1] ?>">
-    <input type="hidden" name="mergeData[primaryQso]" id="primaryQso" value="<?= $qsoIds[0] ?>">
+    <input type="hidden" name="qsoIds[]" value="<?php echo $qsoIds[0] ?>">
+    <input type="hidden" name="qsoIds[]" value="<?php echo $qsoIds[1] ?>">
+    <input type="hidden" name="mergeData[primaryQso]" id="primaryQso" value="<?php echo $qsoIds[0] ?>">
 
     <div class="container-fluid">
         <div class="alert alert-info">
@@ -13,22 +13,22 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <strong><?= __("QSO"); ?> #<?= $qso1->COL_PRIMARY_KEY ?></strong>
+                        <strong><?= __("QSO"); ?> #<?php echo $qso1->COL_PRIMARY_KEY ?></strong>
                         <label class="float-end">
-                            <input type="radio" name="primaryQsoRadio" value="<?= $qsoIds[0] ?>"
+                            <input type="radio" name="primaryQsoRadio" value="<?php echo $qsoIds[0] ?>"
 								onclick="selectAllQso1Fields()"
-								data-qso-id="<?= $qsoIds[0] ?>"
-								<?= $qsoIds[0] == $qsoIds[0] ? 'checked' : '' ?>>
+								data-qso-id="<?php echo $qsoIds[0] ?>"
+								<?php echo $qsoIds[0] == $qsoIds[0] ? 'checked' : '' ?>>
                             <?= __("Keep this QSO"); ?>
                         </label>
                     </div>
                     <div class="card-body">
                         <small>
-                            <strong><?= __("Date/Time"); ?>:</strong> <?= $qso1->COL_TIME_ON ?><br>
-                            <strong><?= __("Call"); ?>:</strong> <?= $qso1->COL_CALL ?><br>
-                            <strong><?= __("Mode"); ?>:</strong> <?= $qso1->COL_MODE ?> <?= $qso1->COL_SUBMODE ?? '' ?><br>
-                            <strong><?= __("Band"); ?>:</strong> <?= $qso1->COL_BAND ?><br>
-                            <strong><?= __("Station"); ?>:</strong> <?= $qso1->COL_STATION_CALLSIGN ?>
+                            <strong><?= __("Date/Time"); ?>:</strong> <?php echo $qso1->COL_TIME_ON ?><br>
+                            <strong><?= __("Call"); ?>:</strong> <?php echo $qso1->COL_CALL ?><br>
+                            <strong><?= __("Mode"); ?>:</strong> <?php echo $qso1->COL_MODE ?> <?php echo $qso1->COL_SUBMODE ?? '' ?><br>
+                            <strong><?= __("Band"); ?>:</strong> <?php echo $qso1->COL_BAND ?><br>
+                            <strong><?= __("Station"); ?>:</strong> <?php echo $qso1->COL_STATION_CALLSIGN ?>
                         </small>
                     </div>
                 </div>
@@ -36,22 +36,22 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-secondary text-white">
-                        <strong><?= __("QSO"); ?> #<?= $qso2->COL_PRIMARY_KEY ?></strong>
+                        <strong><?= __("QSO"); ?> #<?php echo $qso2->COL_PRIMARY_KEY ?></strong>
                         <label class="float-end">
-                            <input type="radio" name="secondaryQsoRadio" value="<?= $qsoIds[1] ?>"
+                            <input type="radio" name="secondaryQsoRadio" value="<?php echo $qsoIds[1] ?>"
 								onclick="selectAllQso2Fields()"
-								data-qso-id="<?= $qsoIds[1] ?>"
-								<?= $qsoIds[0] == $qsoIds[1] ? 'checked' : '' ?>>
+								data-qso-id="<?php echo $qsoIds[1] ?>"
+								<?php echo $qsoIds[0] == $qsoIds[1] ? 'checked' : '' ?>>
                             <?= __("Keep this QSO"); ?>
                         </label>
                     </div>
                     <div class="card-body">
                         <small>
-                            <strong><?= __("Date/Time"); ?>:</strong> <?= $qso2->COL_TIME_ON ?><br>
-                            <strong><?= __("Call"); ?>:</strong> <?= $qso2->COL_CALL ?><br>
-                            <strong><?= __("Mode"); ?>:</strong> <?= $qso2->COL_MODE ?> <?= $qso2->COL_SUBMODE ?? '' ?><br>
-                            <strong><?= __("Band"); ?>:</strong> <?= $qso2->COL_BAND ?><br>
-                            <strong><?= __("Station"); ?>:</strong> <?= $qso2->COL_STATION_CALLSIGN ?>
+                            <strong><?= __("Date/Time"); ?>:</strong> <?php echo $qso2->COL_TIME_ON ?><br>
+                            <strong><?= __("Call"); ?>:</strong> <?php echo $qso2->COL_CALL ?><br>
+                            <strong><?= __("Mode"); ?>:</strong> <?php echo $qso2->COL_MODE ?> <?php echo $qso2->COL_SUBMODE ?? '' ?><br>
+                            <strong><?= __("Band"); ?>:</strong> <?php echo $qso2->COL_BAND ?><br>
+                            <strong><?= __("Station"); ?>:</strong> <?php echo $qso2->COL_STATION_CALLSIGN ?>
                         </small>
                     </div>
                 </div>
