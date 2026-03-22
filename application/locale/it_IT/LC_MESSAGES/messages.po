@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-21 22:04+0000\n"
-"PO-Revision-Date: 2026-03-21 13:06+0000\n"
+"PO-Revision-Date: 2026-03-22 09:55+0000\n"
 "Last-Translator: iv3cvn <ricentis@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
@@ -627,7 +627,7 @@ msgstr "Zone ITU"
 #: application/views/awards/wac/index.php:8
 #: application/views/interface_assets/header.php:202
 msgid "Worked All Continents (WAC)"
-msgstr "Collegato in tutti i continenti (WAC)"
+msgstr "Worked All Continents (WAC)"
 
 #: application/controllers/Awards.php:2333
 msgid "WAE"
@@ -786,7 +786,7 @@ msgstr "Tipologia di messaggio non valida."
 
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
-msgstr ""
+msgstr "Impossibile inizializzare l'email. Controlla le impostazioni email."
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
@@ -7272,7 +7272,7 @@ msgstr ""
 
 #: application/views/awards/wac/index.php:14
 msgid "Awards - Worked All Continents (WAC)"
-msgstr "Diplomi - Collegati tutti i continenti (WAC)"
+msgstr "Diplomi - Worked All Continents (WAC)"
 
 #: application/views/awards/wac/index.php:142
 #: application/views/bandmap/list.php:101
@@ -7296,7 +7296,7 @@ msgstr ""
 
 #: application/views/awards/wae/index.php:18
 msgid "WAE Award"
-msgstr "Premio WAE"
+msgstr "Diploma WAE"
 
 #: application/views/awards/wae/index.php:19
 msgid ""
@@ -7385,7 +7385,7 @@ msgstr "Provincia"
 
 #: application/views/awards/wap/index.php:21
 msgid "VRZA WAP Award"
-msgstr "Premio VRZA WAP"
+msgstr "Diploma VRZA WAP"
 
 #: application/views/awards/wap/index.php:22
 msgid ""
@@ -7414,9 +7414,9 @@ msgid ""
 "encourages operators to engage with a diverse range of stations across the "
 "country, promoting both national connectivity and operational skill."
 msgstr ""
-"Il VRZA (Vereniging voor Radio Zend Amateurs) offre il premio Worked All "
+"Il VRZA (Vereniging voor Radio Zend Amateurs) offre il diploma Worked All "
 "Provinces (WAP) ai radioamatori che hanno confermato i contatti con le "
-"stazioni in ciascuna delle dodici province dei Paesi Bassi. Questo premio "
+"stazioni in ciascuna delle dodici province dei Paesi Bassi. Questo diploma "
 "incoraggia gli operatori a impegnarsi con una vasta gamma di stazioni in "
 "tutto il paese, promuovendo sia la connettività nazionale che le competenze "
 "operative."
@@ -7451,8 +7451,9 @@ msgid "Province"
 msgstr "Provincia"
 
 #: application/views/awards/wapc/index.php:22
+#, fuzzy
 msgid "WAPC - Worked All Provinces of China"
-msgstr "WAPC - Collegate tutte le province della Cina"
+msgstr "WAPC - Worked All Provinces of China"
 
 #: application/views/awards/wapc/index.php:23
 msgid ""
@@ -7461,17 +7462,18 @@ msgid ""
 "municipalities, autonomous regions, and special administrative regions of "
 "China, fostering a deeper understanding of China."
 msgstr ""
-"Il WAPC Award, emesso dal Mulan DX Club, mira a promuovere la comunicazione "
-"tra gli operatori radioamatoriali di tutto il mondo e gli operatori di tutte "
-"le province, comuni, regioni autonome e regioni amministrative speciali "
-"della Cina, promuovendo una più profonda comprensione della Cina."
+"Il diploma WAPC , emesso dal Mulan DX Club, mira a promuovere la "
+"comunicazione tra gli operatori radioamatoriali di tutto il mondo e gli "
+"operatori di tutte le province, comuni, regioni autonome e regioni "
+"amministrative speciali della Cina, promuovendo una più profonda "
+"comprensione della Cina."
 
 #: application/views/awards/wapc/index.php:24
 msgid ""
 "The award can be earned through long-term accumulation of contacts or "
 "achieved in a single effort during the annual WAPC Contest."
 msgstr ""
-"Il premio può essere ottenuto attraverso l'accumulo a lungo termine di "
+"Il diploma può essere ottenuto attraverso l'accumulo a lungo termine di "
 "contatti o raggiunto in un unico sforzo durante il contest annuale WAPC."
 
 #: application/views/awards/wapc/index.php:26
@@ -12605,7 +12607,7 @@ msgstr "ITU"
 
 #: application/views/interface_assets/header.php:200
 msgid "Worked All Europe (WAE)"
-msgstr "Collegato tutta Europa (WAE)"
+msgstr "Worked All Europe (WAE)"
 
 #: application/views/interface_assets/header.php:204
 msgid "Worked All Prefixes (WPX)"
@@ -12664,8 +12666,9 @@ msgid "The Netherlands"
 msgstr "Paesi Bassi"
 
 #: application/views/interface_assets/header.php:282
+#, fuzzy
 msgid "WAP Worked All Provinces"
-msgstr "WAP - Collegato tutte le province"
+msgstr "WAP Worked All Provinces"
 
 #: application/views/interface_assets/header.php:286
 msgid "USA"
@@ -13605,7 +13608,7 @@ msgstr "Metodo di invio QSL"
 #: application/views/logbookadvanced/index.php:956
 #: application/views/logbookadvanced/useroptions.php:103
 msgid "QSL via"
-msgstr "QSL tramite"
+msgstr "QSL via"
 
 #: application/views/logbookadvanced/edit.php:108
 #: application/views/satellite/edit.php:51
@@ -13622,12 +13625,13 @@ msgid "Band RX"
 msgstr "Banda RX"
 
 #: application/views/logbookadvanced/edit.php:137
+#, fuzzy
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "Frequenza TX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "Frequenza RX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:178
 #: application/views/logbookadvanced/edit.php:186
@@ -17466,7 +17470,7 @@ msgstr "Nome breve per la posizione della stazione. Ad esempio: %s"
 #: application/views/station_profile/create.php:62
 #: application/views/station_profile/edit.php:79
 msgid "Station callsign. For example: 4W7EST/P"
-msgstr "Indicativo della stazione. Ad esempio: 4W7EST/P"
+msgstr "Nominativo della stazione. Ad esempio: 4W7EST/P"
 
 #: application/views/station_profile/create.php:65
 #: application/views/station_profile/edit.php:82
