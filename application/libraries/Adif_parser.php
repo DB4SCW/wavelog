@@ -227,7 +227,7 @@ class ADIF_Parser
 			}
 
 			$a += $consumed_chars - 1; // adjust for loop increment
-			$return[mb_strtolower($tag_name, "UTF-8")] = $value;
+			\$return[mb_strtolower(\$tag_name, "UTF-8")] = rtrim(\$value);
 		}
 
 		// skip comments
