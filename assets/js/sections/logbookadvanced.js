@@ -1440,7 +1440,7 @@ $(document).ready(function () {
 		if (id_list.length === 0 || id_list.length === 1 || id_list.length > 2) {
 			BootstrapDialog.alert({
 				title: lang_gen_advanced_logbook_info,
-				message: 'You need to select exactly 2 QSOs to merge!',
+				message: lang_gen_advanced_logbook_select_row_merge_qso,
 				type: BootstrapDialog.TYPE_INFO,
 				closable: false,
 				draggable: false,
@@ -1459,7 +1459,7 @@ $(document).ready(function () {
 			},
 			success: function (html) {
 				BootstrapDialog.show({
-					title: 'Merge QSOs',
+					title: lang_gen_advanced_logbook_merge_qsos,
 					size: BootstrapDialog.SIZE_WIDE,
 					cssClass: 'merge-dialog',
 					nl2br: false,
@@ -1472,13 +1472,13 @@ $(document).ready(function () {
 						action: function (dialogItself) {
 							// Show confirmation dialog
 							BootstrapDialog.confirm({
-								title: 'Danger',
-								message: 'Are you really sure you want to merge these QSOs? This operation CAN\'T be undone!',
+								title: lang_gen_advanced_logbook_danger,
+								message: lang_gen_advanced_logbook_confirm_merge_qsos,
 								type: BootstrapDialog.TYPE_DANGER,
 								closable: true,
 								draggable: true,
-								btnCancelLabel: 'Cancel',
-								btnOKLabel: 'Yes, Merge QSOs',
+								btnCancelLabel: lang_gen_advanced_logbook_cancel,
+								btnOKLabel: lang_gen_advanced_logbook_yes_merge_qsos,
 								btnOKClass: 'btn-danger',
 								callback: function(result) {
 									if (result) {
@@ -1498,7 +1498,7 @@ $(document).ready(function () {
 												if (response.success) {
 													BootstrapDialog.alert({
 														title: lang_gen_advanced_logbook_success,
-														message: 'QSOs merged successfully!',
+														message: lang_gen_advanced_logbook_qsos_merged,
 														type: BootstrapDialog.TYPE_SUCCESS,
 														closable: false,
 														draggable: false,
@@ -1509,7 +1509,7 @@ $(document).ready(function () {
 												} else {
 													BootstrapDialog.alert({
 														title: lang_gen_advanced_logbook_error,
-														message: response.message || 'Error merging QSOs',
+														message: response.message || lang_gen_advanced_logbook_error_merging_qsos,
 														type: BootstrapDialog.TYPE_DANGER,
 														closable: false,
 														draggable: false,
@@ -1522,7 +1522,7 @@ $(document).ready(function () {
 												dialogItself.close();
 												BootstrapDialog.alert({
 													title: lang_gen_advanced_logbook_error,
-													message: 'An error occurred while merging QSOs',
+													message: lang_gen_advanced_logbook_error_merging_qsos,
 													type: BootstrapDialog.TYPE_DANGER,
 													closable: false,
 													draggable: false,
@@ -1549,7 +1549,7 @@ $(document).ready(function () {
 			error: function () {
 				BootstrapDialog.alert({
 					title: lang_gen_advanced_logbook_error,
-					message: 'Error loading merge dialog',
+					message: lang_gen_advanced_logbook_error_loading_merge_dialog,
 					type: BootstrapDialog.TYPE_DANGER,
 					closable: false,
 					draggable: false,
@@ -3344,6 +3344,7 @@ function saveOptions() {
 		$('#primaryQso').val('qso2');
 		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso2"]').prop('checked', true);
+	}
 
 	function getQsos(id) {
 		$.ajax({
