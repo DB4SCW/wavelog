@@ -945,6 +945,7 @@ msgstr "SOTA CSVエクスポート"
 
 #: application/controllers/Dashboard.php:156
 #: application/controllers/Visitor.php:134
+#: application/controllers/Dashboard.php:161
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -3661,6 +3662,7 @@ msgid "DXCC has to be Numeric"
 msgstr "DXCCは数値でなければなりません"
 
 #: application/models/Logbook_model.php:4765
+#: application/models/Logbook_model.php:4773
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
@@ -3668,6 +3670,7 @@ msgstr ""
 "されました: スキップされました"
 
 #: application/models/Logbook_model.php:4779
+#: application/models/Logbook_model.php:4787
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3676,10 +3679,12 @@ msgstr ""
 "んでした。無効です"
 
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4796
 msgid "QSO on"
 msgstr "QSOオン"
 
 #: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4796
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3688,6 +3693,7 @@ msgstr ""
 "されませんでした。無効です"
 
 #: application/models/Logbook_model.php:4837
+#: application/models/Logbook_model.php:4845
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3697,44 +3703,55 @@ msgstr ""
 "はインポートされませんでした。無効です"
 
 #: application/models/Logbook_model.php:5110
+#: application/models/Logbook_model.php:5118
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5121
+#: application/models/Logbook_model.php:5129
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5182
+#: application/models/Logbook_model.php:5190
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5555
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5563
 msgid "Duplicate for"
 msgstr "複製用"
 
 #: application/models/Logbook_model.php:5620
 #: application/models/Logbook_model.php:5715
+#: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5723
 msgid "QSO could not be matched"
 msgstr "QSOが一致しませんでした"
 
 #: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5636
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "LoTW/Clublog/eQSL/コンテストで確認済み"
 
 #: application/models/Logbook_model.php:5634
+#: application/models/Logbook_model.php:5642
 msgid "confirmed by award manager"
 msgstr "賞の管理者によって確認された"
 
 #: application/models/Logbook_model.php:5638
+#: application/models/Logbook_model.php:5646
 msgid "confirmed by cross-check of DCL data"
 msgstr "DCLデータのクロスチェックによって確認された"
 
 #: application/models/Logbook_model.php:5642
+#: application/models/Logbook_model.php:5650
 msgid "confirmation pending"
 msgstr "確認中"
 
 #: application/models/Logbook_model.php:5645
+#: application/models/Logbook_model.php:5653
 msgid "unconfirmed"
 msgstr "未確認"
 
@@ -3742,14 +3759,17 @@ msgstr "未確認"
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
+#: application/models/Logbook_model.php:5656
 msgid "unknown"
 msgstr "不明"
 
 #: application/models/Logbook_model.php:5718
+#: application/models/Logbook_model.php:5726
 msgid "POTA reference already in log"
 msgstr "POTA 参照。既にログに存在します"
 
 #: application/models/Logbook_model.php:5721
+#: application/models/Logbook_model.php:5729
 msgid "QSO updated"
 msgstr "QSOが更新されました"
 
@@ -3764,6 +3784,7 @@ msgstr "QSOが更新されました"
 #: application/views/user/edit.php:329 application/views/user/edit.php:352
 #: application/views/user/edit.php:375 application/views/user/edit.php:400
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6126
 msgid "Bearing"
 msgstr "方位"
 
@@ -5710,6 +5731,7 @@ msgstr "日付プリセット"
 #: application/views/gridmap/index.php:31
 #: application/views/logbookadvanced/index.php:314
 #: application/views/statistics/index.php:56
+#: application/views/dashboard/index.php:450
 msgid "Today"
 msgstr "本日"
 
@@ -5823,6 +5845,7 @@ msgstr "日付"
 #: application/views/interface_assets/footer.php:45
 #: application/views/search/result.php:32
 #: application/views/visitor/index.php:270
+#: application/views/dashboard/index.php:481
 msgid "Confirmed"
 msgstr "確認済み"
 
@@ -5833,6 +5856,7 @@ msgstr "確認済み"
 #: application/views/dashboard/index.php:454
 #: application/views/search/result.php:35
 #: application/views/visitor/index.php:266
+#: application/views/dashboard/index.php:475
 msgid "Worked"
 msgstr "作業した"
 
@@ -6735,6 +6759,7 @@ msgstr "市"
 #: application/views/qslprint/qsolist.php:50
 #: application/views/qslprint/qsolist.php:57
 #: application/views/qslprint/qsolist.php:59
+#: application/views/dashboard/index.php:471
 msgid "SAT"
 msgstr "衛星"
 
@@ -10327,7 +10352,7 @@ msgstr "必要"
 #: application/views/widgets/qsos.php:19 src/QSLManager/QSO.php:420
 #: src/QSLManager/QSO.php:521 src/QSLManager/QSO.php:575
 #: src/QSLManager/QSO.php:664 src/QSLManager/QSO.php:721
-#: src/QSLManager/QSO.php:810
+#: src/QSLManager/QSO.php:810 application/views/dashboard/index.php:454
 msgid "Sent"
 msgstr "送信済み"
 
@@ -10363,7 +10388,7 @@ msgstr "送信済み"
 #: application/views/visitor/index.php:337 src/QSLManager/QSO.php:465
 #: src/QSLManager/QSO.php:548 src/QSLManager/QSO.php:625
 #: src/QSLManager/QSO.php:691 src/QSLManager/QSO.php:771
-#: src/QSLManager/QSO.php:838
+#: src/QSLManager/QSO.php:838 application/views/dashboard/index.php:460
 msgid "Received"
 msgstr "受領"
 
@@ -10418,51 +10443,63 @@ msgid "Logbook of the World"
 msgstr "世界の日誌"
 
 #: application/views/dashboard/index.php:449
+#: application/views/dashboard/index.php:470
 msgid "VUCC-Grids"
 msgstr "VUCCグリッド"
 
 #: application/views/dashboard/index.php:474
+#: application/views/dashboard/index.php:495
 msgid "Solar Data & Propagation"
 msgstr "太陽データと伝搬"
 
 #: application/views/dashboard/index.php:476
+#: application/views/dashboard/index.php:497
 #, php-format
 msgid "Last update at %s."
 msgstr "最終更新日時：%s。"
 
 #: application/views/dashboard/index.php:485
+#: application/views/dashboard/index.php:506
 msgid "Data provided by HAMqsl."
 msgstr "HAMqsl 提供のデータ。"
 
 #: application/views/dashboard/index.php:527
+#: application/views/dashboard/index.php:548
 msgid "K-index: Planetary geomagnetic activity (0-9)"
 msgstr "K指数：惑星の地磁気活動（0-9）"
 
 #: application/views/dashboard/index.php:528
+#: application/views/dashboard/index.php:549
 msgid "A-index: Daily geomagnetic activity index"
 msgstr "A指数: 日次地磁気活動指数"
 
 #: application/views/dashboard/index.php:529
+#: application/views/dashboard/index.php:550
 msgid "Solar Flux Index"
 msgstr "太陽フラックス指数"
 
 #: application/views/dashboard/index.php:530
+#: application/views/dashboard/index.php:551
 msgid "Solar Wind speed (km/s)"
 msgstr "太陽風速度（km/s）"
 
 #: application/views/dashboard/index.php:531
+#: application/views/dashboard/index.php:552
 msgid "Signal Noise ratio"
 msgstr "信号対雑音比"
 
 #: application/views/dashboard/index.php:532
+#: application/views/dashboard/index.php:553
 msgid "X-Ray solar flux level"
 msgstr "X線太陽フラックスレベル"
 
 #: application/views/dashboard/index.php:533
+#: application/views/dashboard/index.php:554
 msgid "Sunspot Number"
 msgstr "太陽黒点数"
 
 #: application/views/dashboard/index.php:534
+#: application/views/dashboard/index.php:555
 msgid "Aurora activity level (Kp borealis)"
 msgstr "オーロラ活動レベル（Kp borealis）"
 

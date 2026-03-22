@@ -29,7 +29,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-21 22:04+0000\n"
+"POT-Creation-Date: 2026-03-22 12:34+0000\n"
 "PO-Revision-Date: 2026-03-18 08:19+0000\n"
 "Last-Translator: BG6HJE <1753409828@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
@@ -961,7 +961,7 @@ msgstr "未运行"
 msgid "SOTA CSV Export"
 msgstr "SOTA CSV 导出"
 
-#: application/controllers/Dashboard.php:156
+#: application/controllers/Dashboard.php:161
 #: application/controllers/Visitor.php:134
 msgid "Dashboard"
 msgstr "仪表盘"
@@ -3612,28 +3612,28 @@ msgstr "未提供呼号"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC 应该是数字"
 
-#: application/models/Logbook_model.php:4765
+#: application/models/Logbook_model.php:4773
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "导入 QSO 时出现错误：本台呼号 %s 对方呼号 %s %s，已跳过"
 
-#: application/models/Logbook_model.php:4779
+#: application/models/Logbook_model.php:4787
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
 msgstr "导入QSO时使用了无效日期，该QSO未被导入。这是无效的"
 
-#: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4796
 msgid "QSO on"
 msgstr "QSO 时间"
 
-#: application/models/Logbook_model.php:4788
+#: application/models/Logbook_model.php:4796
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
 msgstr "试图导入的 QSO 不存在对方呼号（CALL）。此 QSO 无效，未导入"
 
-#: application/models/Logbook_model.php:4837
+#: application/models/Logbook_model.php:4845
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3641,64 +3641,64 @@ msgid ""
 msgstr ""
 "在 %s 上的 QSO：你尝试导入一个未指定频段的 QSO。该 QSO 未被导入。此 QSO 无效"
 
-#: application/models/Logbook_model.php:5110
+#: application/models/Logbook_model.php:5118
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate 字段错误（YYYYMMDD）"
 
-#: application/models/Logbook_model.php:5121
+#: application/models/Logbook_model.php:5129
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate 字段错误（YYYYMMDD）"
 
-#: application/models/Logbook_model.php:5182
+#: application/models/Logbook_model.php:5190
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date 字段错误（ YYYYMMDD）"
 
-#: application/models/Logbook_model.php:5555
+#: application/models/Logbook_model.php:5563
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "内容重复"
 
-#: application/models/Logbook_model.php:5620
-#: application/models/Logbook_model.php:5715
+#: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5723
 msgid "QSO could not be matched"
 msgstr "QSO 无法匹配"
 
-#: application/models/Logbook_model.php:5628
+#: application/models/Logbook_model.php:5636
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "已经通过 LoTW/Clublog/eQSL/竞赛 确认"
 
-#: application/models/Logbook_model.php:5634
+#: application/models/Logbook_model.php:5642
 msgid "confirmed by award manager"
 msgstr "已经通过奖项管理员确认"
 
-#: application/models/Logbook_model.php:5638
+#: application/models/Logbook_model.php:5646
 msgid "confirmed by cross-check of DCL data"
 msgstr "已经通过 DCL 数据交叉检查确认"
 
-#: application/models/Logbook_model.php:5642
+#: application/models/Logbook_model.php:5650
 msgid "confirmation pending"
 msgstr "等待确认"
 
-#: application/models/Logbook_model.php:5645
+#: application/models/Logbook_model.php:5653
 msgid "unconfirmed"
 msgstr "未确认"
 
-#: application/models/Logbook_model.php:5648
+#: application/models/Logbook_model.php:5656
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
 msgid "unknown"
 msgstr "未知"
 
-#: application/models/Logbook_model.php:5718
+#: application/models/Logbook_model.php:5726
 msgid "POTA reference already in log"
 msgstr "日志中已存在 POTA 编号"
 
-#: application/models/Logbook_model.php:5721
+#: application/models/Logbook_model.php:5729
 msgid "QSO updated"
 msgstr "QSO已上传"
 
-#: application/models/Logbook_model.php:6118
+#: application/models/Logbook_model.php:6126
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -5613,6 +5613,7 @@ msgstr "预设日期"
 #: application/views/dashboard/index.php:387
 #: application/views/dashboard/index.php:408
 #: application/views/dashboard/index.php:429
+#: application/views/dashboard/index.php:450
 #: application/views/gridmap/index.php:31
 #: application/views/logbookadvanced/index.php:314
 #: application/views/statistics/index.php:56
@@ -5725,7 +5726,7 @@ msgstr "结束日期"
 #: application/views/awards/wpx/wpx_details.php:24
 #: application/views/bandmap/list.php:88 application/views/bandmap/list.php:299
 #: application/views/dashboard/index.php:342
-#: application/views/dashboard/index.php:460
+#: application/views/dashboard/index.php:481
 #: application/views/interface_assets/footer.php:45
 #: application/views/search/result.php:32
 #: application/views/visitor/index.php:270
@@ -5736,7 +5737,7 @@ msgstr "已确认"
 #: application/views/awards/itu/index.php:90
 #: application/views/bandmap/list.php:87 application/views/bandmap/list.php:298
 #: application/views/dashboard/index.php:338
-#: application/views/dashboard/index.php:454
+#: application/views/dashboard/index.php:475
 #: application/views/search/result.php:35
 #: application/views/visitor/index.php:266
 msgid "Worked"
@@ -6593,7 +6594,7 @@ msgid "City"
 msgstr "城市"
 
 #: application/views/awards/jcc/index.php:189
-#: application/views/dashboard/index.php:450
+#: application/views/dashboard/index.php:471
 #: application/views/distances/index.php:23
 #: application/views/qslprint/qslprint.php:57
 #: application/views/qslprint/qslprint.php:58
@@ -10061,6 +10062,7 @@ msgstr "待通联"
 #: application/views/dashboard/index.php:391
 #: application/views/dashboard/index.php:412
 #: application/views/dashboard/index.php:433
+#: application/views/dashboard/index.php:454
 #: application/views/oqrs/qsolist.php:51 application/views/oqrs/qsolist.php:131
 #: application/views/oqrs/qsolist.php:160
 #: application/views/qslprint/qsolist.php:78
@@ -10098,6 +10100,7 @@ msgstr "已发送"
 #: application/views/dashboard/index.php:397
 #: application/views/dashboard/index.php:418
 #: application/views/dashboard/index.php:439
+#: application/views/dashboard/index.php:460
 #: application/views/oqrs/qsolist.php:93 application/views/oqrs/qsolist.php:144
 #: application/views/oqrs/qsolist.php:175
 #: application/views/qslprint/qsolist.php:120
@@ -10180,52 +10183,52 @@ msgctxt "Probably no translation needed as this is a name."
 msgid "Logbook of the World"
 msgstr "Logbook of the World (LoTW)"
 
-#: application/views/dashboard/index.php:449
+#: application/views/dashboard/index.php:470
 msgid "VUCC-Grids"
 msgstr "VUCC 网格"
 
-#: application/views/dashboard/index.php:474
+#: application/views/dashboard/index.php:495
 msgid "Solar Data & Propagation"
 msgstr "太阳与传播数据"
 
-#: application/views/dashboard/index.php:476
+#: application/views/dashboard/index.php:497
 #, php-format
 msgid "Last update at %s."
 msgstr "上次更新时间：%s。"
 
-#: application/views/dashboard/index.php:485
+#: application/views/dashboard/index.php:506
 msgid "Data provided by HAMqsl."
 msgstr "数据由 HAMqsl 提供。"
 
-#: application/views/dashboard/index.php:527
+#: application/views/dashboard/index.php:548
 msgid "K-index: Planetary geomagnetic activity (0-9)"
 msgstr "K-index: 行星地磁活动指数 (0-9)"
 
-#: application/views/dashboard/index.php:528
+#: application/views/dashboard/index.php:549
 msgid "A-index: Daily geomagnetic activity index"
 msgstr "A-index: 日地磁活动指数"
 
-#: application/views/dashboard/index.php:529
+#: application/views/dashboard/index.php:550
 msgid "Solar Flux Index"
 msgstr "太阳通量指数"
 
-#: application/views/dashboard/index.php:530
+#: application/views/dashboard/index.php:551
 msgid "Solar Wind speed (km/s)"
 msgstr "太阳风速度 (km/s)"
 
-#: application/views/dashboard/index.php:531
+#: application/views/dashboard/index.php:552
 msgid "Signal Noise ratio"
 msgstr "信噪比"
 
-#: application/views/dashboard/index.php:532
+#: application/views/dashboard/index.php:553
 msgid "X-Ray solar flux level"
 msgstr "X射线太阳通量等级"
 
-#: application/views/dashboard/index.php:533
+#: application/views/dashboard/index.php:554
 msgid "Sunspot Number"
 msgstr "太阳黑子数"
 
-#: application/views/dashboard/index.php:534
+#: application/views/dashboard/index.php:555
 msgid "Aurora activity level (Kp borealis)"
 msgstr "极光活动等级(Kp 指数)"
 
