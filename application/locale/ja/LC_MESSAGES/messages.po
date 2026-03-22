@@ -887,6 +887,12 @@ msgstr "Cronジョブを編集する"
 #: application/views/debug/index.php:709 application/views/debug/index.php:715
 #: application/views/debug/index.php:721 application/views/debug/index.php:727
 #: application/views/debug/index.php:733 application/views/debug/index.php:739
+#: application/views/debug/index.php:683 application/views/debug/index.php:690
+#: application/views/debug/index.php:696 application/views/debug/index.php:702
+#: application/views/debug/index.php:708 application/views/debug/index.php:714
+#: application/views/debug/index.php:720 application/views/debug/index.php:726
+#: application/views/debug/index.php:732 application/views/debug/index.php:738
+#: application/views/debug/index.php:744
 msgid "never"
 msgstr "一度もない"
 
@@ -1623,7 +1629,7 @@ msgstr "すべてのコールブック検索が失敗したか、結果が提供
 #: application/views/view_log/partial/log.php:9
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
-#: application/views/widgets/qsos.php:18
+#: application/views/widgets/qsos.php:18 application/views/debug/index.php:767
 msgid "Mode"
 msgstr "モード"
 
@@ -1939,7 +1945,7 @@ msgstr "距離"
 #: application/views/view_log/partial/log.php:12
 #: application/views/view_log/partial/log_ajax.php:15
 #: application/views/view_log/qso.php:94 application/views/visitor/index.php:33
-#: application/views/widgets/qsos.php:21
+#: application/views/widgets/qsos.php:21 application/views/debug/index.php:768
 msgid "Band"
 msgstr "バンド"
 
@@ -2513,7 +2519,7 @@ msgid "Options"
 msgstr "オプション"
 
 #: application/controllers/Radio.php:53 application/views/debug/index.php:365
-#: application/views/qso/index.php:841
+#: application/views/qso/index.php:841 application/views/debug/index.php:370
 msgid "Settings"
 msgstr "設定"
 
@@ -3274,6 +3280,7 @@ msgstr "ステーション名"
 #: application/views/stationsetup/linkedlocations.php:32
 #: application/views/stationsetup/stationsetup.php:130
 #: application/views/user/modals/first_login_wizard.php:34
+#: application/views/debug/index.php:769
 msgid "Station Callsign"
 msgstr "ステーションのコールサイン"
 
@@ -4737,7 +4744,7 @@ msgstr ""
 #: application/views/view_log/partial/log.php:4
 #: application/views/view_log/partial/log_ajax.php:196
 #: application/views/visitor/index.php:151
-#: application/views/widgets/qsos.php:16
+#: application/views/widgets/qsos.php:16 application/views/debug/index.php:764
 msgid "Date"
 msgstr "日付"
 
@@ -4772,6 +4779,7 @@ msgstr "日付"
 #: application/views/view_log/partial/log.php:6
 #: application/views/view_log/partial/log_ajax.php:198
 #: application/views/visitor/index.php:154
+#: application/views/debug/index.php:765
 msgid "Time"
 msgstr "時間"
 
@@ -4793,7 +4801,8 @@ msgstr "時間"
 #: application/views/view_log/partial/log.php:8
 #: application/views/view_log/partial/log_ajax.php:200
 #: application/views/visitor/index.php:156
-#: application/views/widgets/qsos.php:17
+#: application/views/widgets/qsos.php:17 application/views/debug/index.php:766
+#: application/views/debug/index.php:801
 msgid "Call"
 msgstr "コールサイン"
 
@@ -4851,6 +4860,8 @@ msgstr "最大ファイルアップロードサイズは "
 #: application/views/view_log/qso.php:806
 #: application/views/webadif/export.php:34
 #: application/views/webadif/export.php:94
+#: application/views/debug/index.php:212 application/views/debug/index.php:229
+#: application/views/debug/index.php:756
 msgid "Warning"
 msgstr "警告"
 
@@ -5368,6 +5379,7 @@ msgstr "API URL"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
 #: application/views/cron/index.php:35 application/views/debug/index.php:55
+#: application/views/debug/index.php:60
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
 
@@ -9793,6 +9805,7 @@ msgstr "ADIF名"
 #: application/views/mode/index.php:8 application/views/mode/index.php:55
 #: application/views/usermode/index.php:6
 #: application/views/usermode/index.php:51
+#: application/views/debug/index.php:473 application/views/debug/index.php:484
 msgid "Active"
 msgstr "アクティブ"
 
@@ -10830,27 +10843,27 @@ msgstr "最新バージョン"
 msgid "Latest Release"
 msgstr "最新リリース"
 
-#: application/views/debug/index.php:50
+#: application/views/debug/index.php:50 application/views/debug/index.php:55
 msgid "Language"
 msgstr "言語"
 
-#: application/views/debug/index.php:54
+#: application/views/debug/index.php:54 application/views/debug/index.php:59
 msgid "Base URL"
 msgstr "ベースURL"
 
-#: application/views/debug/index.php:58
+#: application/views/debug/index.php:58 application/views/debug/index.php:63
 msgid "Migration"
 msgstr "移住"
 
-#: application/views/debug/index.php:59
+#: application/views/debug/index.php:59 application/views/debug/index.php:64
 msgid "There is something wrong with your Migration in Database!"
 msgstr "データベースの移行に問題が発生しました!"
 
-#: application/views/debug/index.php:64
+#: application/views/debug/index.php:64 application/views/debug/index.php:69
 msgid "Migration is outdated and locked!"
 msgstr "移行は古いバージョンであり、ロックされています！"
 
-#: application/views/debug/index.php:65
+#: application/views/debug/index.php:65 application/views/debug/index.php:70
 #, php-format
 msgid ""
 "The current migration is not the version it is supposed to be. Reload this "
@@ -10863,79 +10876,80 @@ msgstr ""
 "がロックされている可能性があります。移行を再実行するには、ファイル%sを削除し"
 "てください。"
 
-#: application/views/debug/index.php:66
+#: application/views/debug/index.php:66 application/views/debug/index.php:71
 #, php-format
 msgid "Check this wiki article %shere%s for more information."
 msgstr "詳細については、このウィキ記事 %shere%s を参照してください。"
 
-#: application/views/debug/index.php:67
+#: application/views/debug/index.php:67 application/views/debug/index.php:72
 #, php-format
 msgid "Current migration is %s"
 msgstr "現在の移行率は%sです"
 
-#: application/views/debug/index.php:68
+#: application/views/debug/index.php:68 application/views/debug/index.php:73
 #, php-format
 msgid "Migration should be %s"
 msgstr "移行は %s であるべきです"
 
-#: application/views/debug/index.php:73
+#: application/views/debug/index.php:73 application/views/debug/index.php:78
 msgid "Environment"
 msgstr "環境"
 
-#: application/views/debug/index.php:77
+#: application/views/debug/index.php:77 application/views/debug/index.php:82
 msgid "System Time"
 msgstr "システム時間"
 
-#: application/views/debug/index.php:85
+#: application/views/debug/index.php:85 application/views/debug/index.php:90
 msgid "Total QSO on this instance"
 msgstr "このインスタンスでの合計QSO"
 
-#: application/views/debug/index.php:89
+#: application/views/debug/index.php:89 application/views/debug/index.php:94
 msgid "Total User"
 msgstr "総ユーザー数"
 
 #: application/views/debug/index.php:90 application/views/user/index.php:27
+#: application/views/debug/index.php:95
 msgid "User"
 msgid_plural "Users"
 msgstr[0] "ユーザー"
 
-#: application/views/debug/index.php:97
+#: application/views/debug/index.php:97 application/views/debug/index.php:102
 msgid "Server Information"
 msgstr "サーバー情報"
 
-#: application/views/debug/index.php:101
+#: application/views/debug/index.php:101 application/views/debug/index.php:106
 msgid "Server Software"
 msgstr "サーバーソフトウェア"
 
-#: application/views/debug/index.php:106
+#: application/views/debug/index.php:106 application/views/debug/index.php:111
 msgid "PHP Version"
 msgstr "PHPバージョン"
 
-#: application/views/debug/index.php:112
+#: application/views/debug/index.php:112 application/views/debug/index.php:117
 msgid "Deprecated"
 msgstr "非推奨"
 
-#: application/views/debug/index.php:119
+#: application/views/debug/index.php:119 application/views/debug/index.php:124
 msgid "MySQL Version"
 msgstr "MySQLバージョン"
 
-#: application/views/debug/index.php:124
+#: application/views/debug/index.php:124 application/views/debug/index.php:129
 msgid "OpenSSL Version"
 msgstr "OpenSSLバージョン"
 
-#: application/views/debug/index.php:125
+#: application/views/debug/index.php:125 application/views/debug/index.php:130
 msgid "not found"
 msgstr "見つかりません"
 
-#: application/views/debug/index.php:128
+#: application/views/debug/index.php:128 application/views/debug/index.php:133
 msgid "Codeigniter Version"
 msgstr "Codeigniter バージョン"
 
-#: application/views/debug/index.php:136
+#: application/views/debug/index.php:136 application/views/debug/index.php:141
 msgid "Folder Permissions"
 msgstr "フォルダ権限"
 
-#: application/views/debug/index.php:138
+#: application/views/debug/index.php:138 application/views/debug/index.php:143
 msgid ""
 "This verifies that the folders used by Wavelog have read and write "
 "permissions by PHP."
@@ -10947,58 +10961,66 @@ msgstr ""
 #: application/views/debug/index.php:166 application/views/debug/index.php:177
 #: application/views/debug/index.php:189
 #: application/views/interface_assets/footer.php:38
+#: application/views/debug/index.php:149 application/views/debug/index.php:160
+#: application/views/debug/index.php:171 application/views/debug/index.php:182
+#: application/views/debug/index.php:194
 msgid "Success"
 msgstr "成功"
 
 #: application/views/debug/index.php:146 application/views/debug/index.php:157
 #: application/views/debug/index.php:168 application/views/debug/index.php:179
 #: application/views/debug/index.php:191 application/views/debug/index.php:470
-#: application/views/debug/index.php:481
+#: application/views/debug/index.php:481 application/views/debug/index.php:151
+#: application/views/debug/index.php:162 application/views/debug/index.php:173
+#: application/views/debug/index.php:184 application/views/debug/index.php:196
+#: application/views/debug/index.php:475 application/views/debug/index.php:486
 msgid "Failed"
 msgstr "失敗した"
 
-#: application/views/debug/index.php:201
+#: application/views/debug/index.php:201 application/views/debug/index.php:206
 msgid "Config Maintenance"
 msgstr "設定メンテナンス"
 
-#: application/views/debug/index.php:207
+#: application/views/debug/index.php:207 application/views/debug/index.php:212
 msgid "Your authentication mode is outdated and possibly unsafe"
 msgstr "認証モードが古く、安全でない可能性があります"
 
 #: application/views/debug/index.php:209 application/views/debug/index.php:226
+#: application/views/debug/index.php:214 application/views/debug/index.php:231
 #, php-format
 msgid "Please edit your %s File:"
 msgstr "%s ファイルを編集してください:"
 
-#: application/views/debug/index.php:210
+#: application/views/debug/index.php:210 application/views/debug/index.php:215
 msgid ""
 "Go to your application/config Folder and compare config.sample.php with your "
 "config.php"
 msgstr ""
 "application/configフォルダに移動し、config.sample.phpとconfig.phpを比較します"
 
-#: application/views/debug/index.php:211
+#: application/views/debug/index.php:211 application/views/debug/index.php:216
 #, php-format
 msgid "Change %s to the value %s (Strongly recommended)"
 msgstr "%s を %s の値に変更してください（強く推奨されます）"
 
-#: application/views/debug/index.php:217
+#: application/views/debug/index.php:217 application/views/debug/index.php:222
 msgid "Authentication Mode is set correctly"
 msgstr "認証モードが正しく設定されています"
 
 #: application/views/debug/index.php:217 application/views/debug/index.php:234
+#: application/views/debug/index.php:222 application/views/debug/index.php:239
 msgid "Ok"
 msgstr "わかりました"
 
-#: application/views/debug/index.php:224
+#: application/views/debug/index.php:224 application/views/debug/index.php:229
 msgid "You use the default encryption key. You should change it!"
 msgstr "デフォルトの暗号化キーを使用しています。変更してください!"
 
-#: application/views/debug/index.php:227
+#: application/views/debug/index.php:227 application/views/debug/index.php:232
 msgid "This will also enable the 'Keep me logged in' feature."
 msgstr "これにより、「ログイン状態を維持する」機能も有効になります。"
 
-#: application/views/debug/index.php:228
+#: application/views/debug/index.php:228 application/views/debug/index.php:233
 #, php-format
 msgid ""
 "Change the value of %s to a new encryption key other then "
@@ -11007,15 +11029,15 @@ msgstr ""
 "値を変更する %s を 「flossie1234555541」以外の新しい暗号化キーに設定してくだ"
 "さい。安全で長いパスワードを選択してください。（強く推奨）"
 
-#: application/views/debug/index.php:234
+#: application/views/debug/index.php:234 application/views/debug/index.php:239
 msgid "You do not use the default encryption key"
 msgstr "デフォルトの暗号化キーを使用しない"
 
-#: application/views/debug/index.php:241
+#: application/views/debug/index.php:241 application/views/debug/index.php:246
 msgid "Migrate Userdata"
 msgstr "ユーザーデータの移行"
 
-#: application/views/debug/index.php:243
+#: application/views/debug/index.php:243 application/views/debug/index.php:248
 msgid ""
 "Here you can migrate existing QSL cards and eQSL cards to the new userdata "
 "folder."
@@ -11023,7 +11045,7 @@ msgstr ""
 "ここで、既存の QSL カードと eQSL カードを新しい userdata フォルダーに移行でき"
 "ます。"
 
-#: application/views/debug/index.php:256
+#: application/views/debug/index.php:256 application/views/debug/index.php:261
 msgid "Modules"
 msgstr "モジュール"
 
@@ -11031,7 +11053,11 @@ msgstr "モジュール"
 #: application/views/debug/index.php:284 application/views/debug/index.php:295
 #: application/views/debug/index.php:306 application/views/debug/index.php:317
 #: application/views/debug/index.php:329 application/views/debug/index.php:342
-#: application/views/debug/index.php:355
+#: application/views/debug/index.php:355 application/views/debug/index.php:267
+#: application/views/debug/index.php:278 application/views/debug/index.php:289
+#: application/views/debug/index.php:300 application/views/debug/index.php:311
+#: application/views/debug/index.php:322 application/views/debug/index.php:334
+#: application/views/debug/index.php:347 application/views/debug/index.php:360
 msgid "Installed"
 msgstr "インストール済み"
 
@@ -11039,58 +11065,62 @@ msgstr "インストール済み"
 #: application/views/debug/index.php:286 application/views/debug/index.php:297
 #: application/views/debug/index.php:308 application/views/debug/index.php:319
 #: application/views/debug/index.php:331 application/views/debug/index.php:344
-#: application/views/debug/index.php:357
+#: application/views/debug/index.php:357 application/views/debug/index.php:269
+#: application/views/debug/index.php:280 application/views/debug/index.php:291
+#: application/views/debug/index.php:302 application/views/debug/index.php:313
+#: application/views/debug/index.php:324 application/views/debug/index.php:336
+#: application/views/debug/index.php:349 application/views/debug/index.php:362
 msgid "Not Installed"
 msgstr "インストールされていません"
 
-#: application/views/debug/index.php:457
+#: application/views/debug/index.php:457 application/views/debug/index.php:462
 msgid "Cache Information"
 msgstr "キャッシュ情報"
 
-#: application/views/debug/index.php:461
+#: application/views/debug/index.php:461 application/views/debug/index.php:466
 msgid "Current Configuration"
 msgstr "現在の構成"
 
-#: application/views/debug/index.php:464
+#: application/views/debug/index.php:464 application/views/debug/index.php:469
 msgctxt "Cache Adapter"
 msgid "Primary adapter"
 msgstr "プライマリアダプタ"
 
-#: application/views/debug/index.php:475
+#: application/views/debug/index.php:475 application/views/debug/index.php:480
 msgctxt "Cache Backup Adapter (Fallback)"
 msgid "Backup adapter"
 msgstr "バックアップアダプター"
 
-#: application/views/debug/index.php:486
+#: application/views/debug/index.php:486 application/views/debug/index.php:491
 #, php-format
 msgctxt "Cache Path"
 msgid "Path for %s adapter"
 msgstr "パス %s アダプタ"
 
-#: application/views/debug/index.php:490
+#: application/views/debug/index.php:490 application/views/debug/index.php:495
 msgctxt "Cache Key Prefix"
 msgid "Key Prefix"
 msgstr "キープレフィックス"
 
-#: application/views/debug/index.php:496
+#: application/views/debug/index.php:496 application/views/debug/index.php:501
 msgid "Cache Details"
 msgstr "キャッシュの詳細"
 
-#: application/views/debug/index.php:499
+#: application/views/debug/index.php:499 application/views/debug/index.php:504
 msgctxt "Cache Details"
 msgid "Total Size"
 msgstr "合計サイズ"
 
-#: application/views/debug/index.php:505
+#: application/views/debug/index.php:505 application/views/debug/index.php:510
 msgctxt "Cache Key"
 msgid "Number of Keys"
 msgstr "キーの数"
 
-#: application/views/debug/index.php:515
+#: application/views/debug/index.php:515 application/views/debug/index.php:520
 msgid "Cache is working properly. Everything okay!"
 msgstr "キャッシュは正常に動作し、すべて正常です！"
 
-#: application/views/debug/index.php:519
+#: application/views/debug/index.php:519 application/views/debug/index.php:524
 msgid ""
 "Cache is currently using the backup adapter because the primary is "
 "unavailable. Check your file permissions, PHP extensions, and/or your "
@@ -11100,7 +11130,7 @@ msgstr ""
 "ています。ファイルのアクセス権限、PHP拡張機能、およびサービスへのネットワーク"
 "接続（redis/memcachedを使用している場合）を確認してください。"
 
-#: application/views/debug/index.php:523
+#: application/views/debug/index.php:523 application/views/debug/index.php:528
 #, php-format
 msgid ""
 "Cache does not work! Currently the system is using a %s adapter. Check your "
@@ -11113,41 +11143,43 @@ msgstr ""
 "memcachedを使用している場合）を確認してください。Wavelogは引き続き使用できま"
 "すが、値はキャッシュされません（これは問題です）。"
 
-#: application/views/debug/index.php:531
+#: application/views/debug/index.php:531 application/views/debug/index.php:536
 msgid "Available Adapters"
 msgstr "利用可能なアダプター"
 
-#: application/views/debug/index.php:548
+#: application/views/debug/index.php:548 application/views/debug/index.php:553
 msgid "Clear Cache"
 msgstr "キャッシュをクリア"
 
-#: application/views/debug/index.php:595
+#: application/views/debug/index.php:595 application/views/debug/index.php:600
 msgid "Git Information"
 msgstr "Git情報"
 
-#: application/views/debug/index.php:599
+#: application/views/debug/index.php:599 application/views/debug/index.php:604
 msgid "Branch"
 msgstr "支店"
 
 #: application/views/debug/index.php:610 application/views/debug/index.php:621
 #: application/views/debug/index.php:631
 #: application/views/lotw_views/index.php:95
+#: application/views/debug/index.php:615 application/views/debug/index.php:626
+#: application/views/debug/index.php:636
 msgid "n/a"
 msgstr "該当なし"
 
-#: application/views/debug/index.php:616
+#: application/views/debug/index.php:616 application/views/debug/index.php:621
 msgid "Commit"
 msgstr "コミット"
 
-#: application/views/debug/index.php:626
+#: application/views/debug/index.php:626 application/views/debug/index.php:631
 msgid "Tag"
 msgstr "タグ"
 
-#: application/views/debug/index.php:636
+#: application/views/debug/index.php:636 application/views/debug/index.php:641
 msgid "Last Fetch"
 msgstr "最後の取得"
 
-#: application/views/debug/index.php:648
+#: application/views/debug/index.php:648 application/views/debug/index.php:653
 msgid "Check for new version"
 msgstr "新しいバージョンを確認する"
 
@@ -11156,22 +11188,23 @@ msgstr "新しいバージョンを確認する"
 #: application/views/logbookadvanced/checkresult.php:68
 #: application/views/logbookadvanced/checkresult.php:78
 #: application/views/logbookadvanced/index.php:57
+#: application/views/debug/index.php:654
 msgid "Update now"
 msgstr "今すぐ更新"
 
-#: application/views/debug/index.php:667
+#: application/views/debug/index.php:667 application/views/debug/index.php:672
 msgid "File download date"
 msgstr "ファイルのダウンロード日"
 
-#: application/views/debug/index.php:671
+#: application/views/debug/index.php:671 application/views/debug/index.php:676
 msgid "File"
 msgstr "ファイル"
 
-#: application/views/debug/index.php:672
+#: application/views/debug/index.php:672 application/views/debug/index.php:677
 msgid "Last update"
 msgstr "最終更新日"
 
-#: application/views/debug/index.php:676
+#: application/views/debug/index.php:676 application/views/debug/index.php:681
 msgid "DXCC update from Club Log"
 msgstr "クラブログからのDXCCアップデート"
 
@@ -11182,54 +11215,60 @@ msgstr "クラブログからのDXCCアップデート"
 #: application/views/debug/index.php:728 application/views/debug/index.php:734
 #: application/views/debug/index.php:740
 #: application/views/station_profile/edit.php:53
+#: application/views/debug/index.php:684 application/views/debug/index.php:691
+#: application/views/debug/index.php:697 application/views/debug/index.php:703
+#: application/views/debug/index.php:709 application/views/debug/index.php:715
+#: application/views/debug/index.php:721 application/views/debug/index.php:727
+#: application/views/debug/index.php:733 application/views/debug/index.php:739
+#: application/views/debug/index.php:745
 msgid "Update"
 msgstr "アップデート"
 
-#: application/views/debug/index.php:683
+#: application/views/debug/index.php:683 application/views/debug/index.php:688
 msgid "DOK file download"
 msgstr "DOKファイルのダウンロード"
 
-#: application/views/debug/index.php:689
+#: application/views/debug/index.php:689 application/views/debug/index.php:694
 msgid "LoTW users download"
 msgstr "LoTWユーザーはダウンロード"
 
-#: application/views/debug/index.php:695
+#: application/views/debug/index.php:695 application/views/debug/index.php:700
 msgid "POTA file download"
 msgstr "POTAファイルのダウンロード"
 
-#: application/views/debug/index.php:701
+#: application/views/debug/index.php:701 application/views/debug/index.php:706
 msgid "SCP file download"
 msgstr "SCPファイルのダウンロード"
 
-#: application/views/debug/index.php:707
+#: application/views/debug/index.php:707 application/views/debug/index.php:712
 msgid "SOTA file download"
 msgstr "SOTAファイルのダウンロード"
 
-#: application/views/debug/index.php:713
+#: application/views/debug/index.php:713 application/views/debug/index.php:718
 msgid "WWFF file download"
 msgstr "WWFFファイルのダウンロード"
 
-#: application/views/debug/index.php:719
+#: application/views/debug/index.php:719 application/views/debug/index.php:724
 msgid "TLE update"
 msgstr "TLEアップデート"
 
-#: application/views/debug/index.php:725
+#: application/views/debug/index.php:725 application/views/debug/index.php:730
 msgid "Hams Of Note update"
 msgstr "注目すべきハムの更新"
 
-#: application/views/debug/index.php:731
+#: application/views/debug/index.php:731 application/views/debug/index.php:736
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:737
+#: application/views/debug/index.php:737 application/views/debug/index.php:742
 msgid "VUCC Grids"
 msgstr "VUCCグリッド"
 
-#: application/views/debug/index.php:747
+#: application/views/debug/index.php:747 application/views/debug/index.php:752
 msgid "QSO-DB Maintenance"
 msgstr "QSO-DBメンテナンス"
 
-#: application/views/debug/index.php:751
+#: application/views/debug/index.php:751 application/views/debug/index.php:756
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
@@ -11238,146 +11277,147 @@ msgstr[0] ""
 "データベースには、ステーションプロファイル（位置情報）のない%d件のQSOが含まれ"
 "ています"
 
-#: application/views/debug/index.php:789
+#: application/views/debug/index.php:789 application/views/debug/index.php:794
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr "QSO をマークし、既存の局の場所に再割り当てしてください:"
 
-#: application/views/debug/index.php:797
+#: application/views/debug/index.php:797 application/views/debug/index.php:802
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "ターゲットロケーション"
 
 #: application/views/debug/index.php:798 application/views/debug/index.php:809
+#: application/views/debug/index.php:803 application/views/debug/index.php:814
 msgid "Reassign"
 msgstr "再割り当て"
 
-#: application/views/debug/index.php:818
+#: application/views/debug/index.php:818 application/views/debug/index.php:823
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr ""
 "データベース内のすべてのQSOはステーションプロファイル（場所）に割り当てられま"
 "す"
 
-#: application/views/debug/index.php:818
+#: application/views/debug/index.php:818 application/views/debug/index.php:823
 msgid "Everything ok"
 msgstr "すべて順調"
 
-#: application/views/debug/index.php:843
+#: application/views/debug/index.php:843 application/views/debug/index.php:848
 msgid "Albanian"
 msgstr "アルバニア語"
 
-#: application/views/debug/index.php:844
+#: application/views/debug/index.php:844 application/views/debug/index.php:849
 msgid "Armenian"
 msgstr "アルメニア語"
 
-#: application/views/debug/index.php:845
+#: application/views/debug/index.php:845 application/views/debug/index.php:850
 msgid "Bosnian"
 msgstr "ボスニア語"
 
-#: application/views/debug/index.php:846
+#: application/views/debug/index.php:846 application/views/debug/index.php:851
 msgid "Bulgarian"
 msgstr "ブルガリア語"
 
-#: application/views/debug/index.php:847
+#: application/views/debug/index.php:847 application/views/debug/index.php:852
 msgid "Chinese (Simplified)"
 msgstr "中国語（簡体字）"
 
-#: application/views/debug/index.php:848
+#: application/views/debug/index.php:848 application/views/debug/index.php:853
 msgid "Croatian"
 msgstr "クロアチア語"
 
-#: application/views/debug/index.php:849
+#: application/views/debug/index.php:849 application/views/debug/index.php:854
 msgid "Czech"
 msgstr "チェコ語"
 
-#: application/views/debug/index.php:850
+#: application/views/debug/index.php:850 application/views/debug/index.php:855
 msgid "Dutch"
 msgstr "オランダ語"
 
-#: application/views/debug/index.php:851
+#: application/views/debug/index.php:851 application/views/debug/index.php:856
 msgid "English"
 msgstr "英語"
 
-#: application/views/debug/index.php:852
+#: application/views/debug/index.php:852 application/views/debug/index.php:857
 msgid "Estonian"
 msgstr "エストニア語"
 
-#: application/views/debug/index.php:853
+#: application/views/debug/index.php:853 application/views/debug/index.php:858
 msgid "Finnish"
 msgstr "フィンランド語"
 
-#: application/views/debug/index.php:854
+#: application/views/debug/index.php:854 application/views/debug/index.php:859
 msgid "French"
 msgstr "フランス語"
 
-#: application/views/debug/index.php:855
+#: application/views/debug/index.php:855 application/views/debug/index.php:860
 msgid "German"
 msgstr "ドイツ語"
 
-#: application/views/debug/index.php:856
+#: application/views/debug/index.php:856 application/views/debug/index.php:861
 msgid "Greek"
 msgstr "ギリシャ語"
 
-#: application/views/debug/index.php:857
+#: application/views/debug/index.php:857 application/views/debug/index.php:862
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: application/views/debug/index.php:858
+#: application/views/debug/index.php:858 application/views/debug/index.php:863
 msgid "Italian"
 msgstr "イタリア語"
 
-#: application/views/debug/index.php:859
+#: application/views/debug/index.php:859 application/views/debug/index.php:864
 msgid "Japanese"
 msgstr "日本語"
 
-#: application/views/debug/index.php:860
+#: application/views/debug/index.php:860 application/views/debug/index.php:865
 msgid "Latvian"
 msgstr "ラトビア語"
 
-#: application/views/debug/index.php:861
+#: application/views/debug/index.php:861 application/views/debug/index.php:866
 msgid "Lithuanian"
 msgstr "リトアニア語"
 
-#: application/views/debug/index.php:862
+#: application/views/debug/index.php:862 application/views/debug/index.php:867
 msgid "Montenegrin"
 msgstr "モンテネグロ語"
 
-#: application/views/debug/index.php:863
+#: application/views/debug/index.php:863 application/views/debug/index.php:868
 msgid "Polish"
 msgstr "ポーランド語"
 
-#: application/views/debug/index.php:864
+#: application/views/debug/index.php:864 application/views/debug/index.php:869
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-#: application/views/debug/index.php:865
+#: application/views/debug/index.php:865 application/views/debug/index.php:870
 msgid "Russian"
 msgstr "ロシア語"
 
-#: application/views/debug/index.php:866
+#: application/views/debug/index.php:866 application/views/debug/index.php:871
 msgid "Serbian"
 msgstr "セルビア語"
 
-#: application/views/debug/index.php:867
+#: application/views/debug/index.php:867 application/views/debug/index.php:872
 msgid "Slovak"
 msgstr "スロバキア語"
 
-#: application/views/debug/index.php:868
+#: application/views/debug/index.php:868 application/views/debug/index.php:873
 msgid "Slovenian"
 msgstr "スロベニア語"
 
-#: application/views/debug/index.php:869
+#: application/views/debug/index.php:869 application/views/debug/index.php:874
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: application/views/debug/index.php:870
+#: application/views/debug/index.php:870 application/views/debug/index.php:875
 msgid "Swedish"
 msgstr "スウェーデン語"
 
-#: application/views/debug/index.php:871
+#: application/views/debug/index.php:871 application/views/debug/index.php:876
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: application/views/debug/index.php:872
+#: application/views/debug/index.php:872 application/views/debug/index.php:877
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
@@ -19643,6 +19683,10 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/views/debug/index.php:50
+msgid "ADIF Version"
+msgstr ""
 
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"
