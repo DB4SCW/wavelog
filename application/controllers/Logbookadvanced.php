@@ -783,8 +783,8 @@ class Logbookadvanced extends CI_Controller {
 	public function mergeQsos() {
 		if(!clubaccess_check(9)) return;
 
-		$qsoIds = $this->input->post('qsoIds');
-		$mergeData = $this->input->post('mergeData');
+		$qsoIds = $this->input->post('qsoIds', true);
+		$mergeData = $this->input->post('mergeData', true);
 
 		if (!is_array($qsoIds) || count($qsoIds) !== 2) {
 			header("Content-Type: application/json");
