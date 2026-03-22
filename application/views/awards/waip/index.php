@@ -4,15 +4,15 @@
     <div class="position-relative">
         <div id="awardInfoButton">
             <script>
-            var lang_awards_info_button = "<?= __('Award Info'); ?>";
-            var lang_award_info_ln1 = "<?= __('WAIP Award'); ?>";
-            var lang_award_info_ln2 = "<?= __('The WAIP (Worked All Italian Provinces) Award is issued for contacts with stations operating from Italian provinces. Italy has over 100 provinces, making this a challenging and prestigious award.'); ?>";
-            var lang_award_info_ln3 = "<?= __('Award categories: PHONE (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.), and individual bands. All provinces must be confirmed via QSL card.'); ?>";
-            var lang_award_info_ln4 = "<?= __('Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or 225 (Sardinia), QSL card confirmation only. No satellite contacts allowed.'); ?>";
-			var lang_award_info_ln5 = "<?= __('Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, NA=Napoli). See Italian provincial award references for complete list.'); ?>";
+            var lang_awards_info_button = "<?= __("Award Info"); ?>";
+            var lang_award_info_ln1 = "<?= __("WAIP Award"); ?>";
+            var lang_award_info_ln2 = "<?= __("The WAIP (Worked All Italian Provinces) Award is issued for contacts with stations operating from Italian provinces. Italy has over 100 provinces, making this a challenging and prestigious award."); ?>";
+            var lang_award_info_ln3 = "<?= __("Award categories: PHONE (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.), and individual bands. All provinces must be confirmed via QSL card. Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or 225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."); ?>";
+			var lang_award_info_ln4 = "<?= __("Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, NA=Napoli). See Italian provincial award references for complete list."); ?>";
+			var lang_award_info_ln5 = "<?= sprintf(__("For more information about the WAIP award, visit: %s"), "<a href='https://www.ari.it/diplomi-hf/diplomiari/waip/1724-waip-worked-all-italian-provinces.html' target='_blank'>" . __("WAIP Award Information") . "</a>"); ?>";
             </script>
             <h2><?php echo $page_title; ?></h2>
-            <button type="button" class="btn btn-sm btn-primary me-1" id="displayAwardInfo"><?= __('Award Info'); ?></button>
+            <button type="button" class="btn btn-sm btn-primary me-1" id="displayAwardInfo"><?= __("Award Info"); ?></button>
         </div>
 
     </div>
@@ -20,7 +20,7 @@
 
     <div class="alert alert-info mb-3">
         <i class="fas fa-info-circle"></i>
-        <?= __('This award tracks worked and confirmed status for Italian provinces. Only QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but not confirmed.'); ?>
+        <?= __("This award tracks worked and confirmed status for Italian provinces. Only QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but not confirmed."); ?>
     </div>
 
 <?php
@@ -29,17 +29,17 @@ if ($waip_array) {
 
     // Progress summary
     echo '<div class="card mb-3">';
-    echo '<div class="card-header"><h5 class="mb-0"><i class="fas fa-trophy"></i> ' . __('Award Progress') . '</h5></div>';
+    echo '<div class="card-header"><h5 class="mb-0"><i class="fas fa-trophy"></i> ' . __("Award Progress") . '</h5></div>';
     echo '<div class="card-body">';
-    echo '<p class="mb-2">' . __('Progress toward working all Italian provinces:') . '</p>';
+    echo '<p class="mb-2">' . __("Progress toward working all Italian provinces:") . '</p>';
 
     $total_provinces = count($waip_array);
 
     echo '<div class="row">';
     echo '<div class="col-md-6">';
-    echo '<h6>' . __('By Mode Category') . '</h6>';
+    echo '<h6>' . __("By Mode Category") . '</h6>';
     echo '<table class="table table-sm">';
-    echo '<thead><tr><th>' . __('Category') . '</th><th>' . __('Confirmed') . '</th><th>' . __('Progress') . '</th></tr></thead>';
+    echo '<thead><tr><th>' . __("Category") . '</th><th>' . __("Confirmed") . '</th><th>' . __("Progress") . '</th></tr></thead>';
     echo '<tbody>';
 
     foreach ($mode_categories as $category) {
@@ -59,9 +59,9 @@ if ($waip_array) {
 
     if (isset($waip_totals_bands) && !empty($waip_totals_bands)) {
         echo '<div class="col-md-6">';
-        echo '<h6>' . __('By Band') . '</h6>';
+        echo '<h6>' . __("By Band") . '</h6>';
         echo '<table class="table table-sm">';
-        echo '<thead><tr><th>' . __('Band') . '</th><th>' . __('Confirmed') . '</th><th>' . __('Progress') . '</th></tr></thead>';
+        echo '<thead><tr><th>' . __("Band") . '</th><th>' . __("Confirmed") . '</th><th>' . __("Progress") . '</th></tr></thead>';
         echo '<tbody>';
 
         foreach (array_keys($waip_totals_bands) as $band) {
@@ -89,12 +89,12 @@ if ($waip_array) {
 <ul class="nav nav-tabs" id="waipTabs" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="mode-tab" data-bs-toggle="tab" data-bs-target="#mode-content" type="button" role="tab" aria-controls="mode-content" aria-selected="true">
-            <?= __('By Mode Category') ?>
+            <?= __("By Mode Category") ?>
         </button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="band-tab" data-bs-toggle="tab" data-bs-target="#band-content" type="button" role="tab" aria-controls="band-content" aria-selected="false">
-            <?= __('By Band') ?>
+            <?= __("By Band") ?>
         </button>
     </li>
 </ul>
@@ -108,12 +108,12 @@ if ($waip_array) {
     echo '<table style="width:100%" id="waiptable" class="table table-sm table-bordered table-hover table-striped table-condensed text-center">
         <thead class="table-secondary">
         <tr>
-            <th style="width: 30%"><strong>' . __('Province') . '</strong></th>
-            <th style="width: 10%"><strong>' . __('Code') . '</strong></th>
-            <th style="width: 15%"><strong>' . __('MIXED') . '</strong></th>
-            <th style="width: 15%"><strong>' . __('PHONE') . '</strong></th>
-            <th style="width: 15%"><strong>' . __('CW') . '</strong></th>
-            <th style="width: 15%"><strong>' . __('DIGI') . '</strong></th>
+            <th style="width: 30%"><strong>' . __("Province") . '</strong></th>
+            <th style="width: 10%"><strong>' . __("Code") . '</strong></th>
+            <th style="width: 15%"><strong>' . __("MIXED") . '</strong></th>
+            <th style="width: 15%"><strong>' . __("PHONE") . '</strong></th>
+            <th style="width: 15%"><strong>' . __("CW") . '</strong></th>
+            <th style="width: 15%"><strong>' . __("DIGI") . '</strong></th>
         </tr>
         </thead>
         <tbody>';
@@ -144,7 +144,7 @@ if ($waip_array) {
     echo '</tbody>
     <tfoot class="table-secondary">
         <tr>
-            <td colspan="2" style="text-align: left"><strong>' . __('Total confirmed') . '</strong></td>';
+            <td colspan="2" style="text-align: left"><strong>' . __("Total confirmed") . '</strong></td>';
 
     foreach ($mode_categories as $category) {
         $count = isset($waip_totals[$category]) ? $waip_totals[$category] : 0;
@@ -166,8 +166,8 @@ if ($waip_array) {
         echo '<table style="width:100%" id="waiptable_bands" class="table table-sm table-bordered table-hover table-striped table-condensed text-center">
             <thead class="table-secondary">
             <tr>
-                <th style="text-align: left; width: 25%"><strong>' . __('Province') . '</strong></th>
-                <th style="width: 7%"><strong>' . __('Code') . '</strong></th>';
+                <th style="text-align: left; width: 25%"><strong>' . __("Province") . '</strong></th>
+                <th style="width: 7%"><strong>' . __("Code") . '</strong></th>';
 
         foreach(array_keys($waip_totals_bands) as $band) {
             echo '<th><strong>' . $band . '</strong></th>';
@@ -208,7 +208,7 @@ if ($waip_array) {
         echo '</tbody>
         <tfoot class="table-secondary">
             <tr>
-                <td colspan="2" style="text-align: left"><strong>' . __('Total confirmed') . '</strong></td>';
+                <td colspan="2" style="text-align: left"><strong>' . __("Total confirmed") . '</strong></td>';
 
         foreach (array_keys($waip_totals_bands) as $band) {
             $count = isset($waip_totals_bands[$band]) ? $waip_totals_bands[$band] : 0;
@@ -230,6 +230,6 @@ if ($waip_array) {
 
 <?php
 } else {
-    echo '<div class="alert alert-danger" role="alert">' . __('No QSOs found matching the criteria for the WAIP award!') . '</div>';
+    echo '<div class="alert alert-danger" role="alert">' . __("No QSOs found matching the criteria for the WAIP award!") . '</div>';
 }
 ?>
