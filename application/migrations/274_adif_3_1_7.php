@@ -23,6 +23,8 @@ class Migration_adif_3_1_7 extends CI_Migration {
 			}
 		}
 
+		$this->db->insert('options', array('option_name' => 'adif_version', 'option_value' => '3.1.7', 'autoload' => 'yes'));
+
 	}
 
 	public function down() {
@@ -37,5 +39,7 @@ class Migration_adif_3_1_7 extends CI_Migration {
 		$this->db->where_in('submode', $mode_names);
 		$this->db->delete('adif_modes');
 
+		$this->db->where('option_name', 'adif_version');
+		$this->db->delete('options');
 	}
 }
