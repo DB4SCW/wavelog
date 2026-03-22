@@ -23,7 +23,10 @@ class Migration_adif_3_1_7 extends CI_Migration {
 			}
 		}
 
-		$this->db->insert('options', array('option_name' => 'adif_version', 'option_value' => '3.1.7', 'autoload' => 'yes'));
+		$exists = $this->db->where('option_name', 'adif_version')->get('options')->num_rows() > 0;
+		if (!$exists) {
+			$this->db->insert('options', array('option_name' => 'adif_version', 'option_value' => '3.1.7', 'autoload' => 'yes'));
+		}
 
 	}
 
