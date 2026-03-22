@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-22 17:51+0000\n"
-"PO-Revision-Date: 2026-03-21 22:04+0000\n"
+"PO-Revision-Date: 2026-03-22 19:17+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -621,7 +621,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -7298,7 +7298,7 @@ msgstr "WAE Namn"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "WAIP-diplom"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7306,6 +7306,9 @@ msgid ""
 "stations operating from Italian provinces. Italy has over 100 provinces, "
 "making this a challenging and prestigious award."
 msgstr ""
+"WAIP (Worked All Italian Provinces) Diplom utfärdas för kontakter med "
+"stationer i olika italienska provinser. Italien har över 100 provinser, "
+"vilket gör detta till ett utmanande och prestigefyllt diplom."
 
 #: application/views/awards/waip/index.php:10
 msgid ""
@@ -7314,21 +7317,28 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
+"Diplomkategorier: FONI (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.) och "
+"individuella band. Alla provinser måste bekräftas via QSL-kort. Krav: "
+"COL_STATE (2-bokstavs provinskod), COL_DXCC=248 (Italien) eller 225 "
+"(Sardinien), endast bekräftelse med QSL-kort . Inga satellitkontakter "
+"tillåtna."
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
+"Provinskoder är 2-bokstavsförkortningar (t.ex. RM=Roma, MI=Milano, NA=Napoli)"
+". Se italienska provinsdiplomet för komplett lista."
 
 #: application/views/awards/waip/index.php:12
 #, php-format
 msgid "For more information about the WAIP award, visit: %s"
-msgstr ""
+msgstr "För mer information om WAIP-diplomet, besök: %s"
 
 #: application/views/awards/waip/index.php:12
 msgid "WAIP Award Information"
-msgstr ""
+msgstr "WAIP-diplominformation"
 
 #: application/views/awards/waip/index.php:23
 msgid ""
@@ -7336,19 +7346,22 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
+"Detta diplom håller koll på kontaktade och bekräftade QSO med italienska "
+"provinser. Endast QSL-kortbekräftelser accepteras. Grön = Bekräftad, Orange "
+"= Kontaktad men inte bekräftad."
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
-msgstr ""
+msgstr "Diplom Framsteg"
 
 #: application/views/awards/waip/index.php:34
 msgid "Progress toward working all Italian provinces:"
-msgstr ""
+msgstr "Framsteg mot att kontakta alla italienska provinser:"
 
 #: application/views/awards/waip/index.php:40
 #: application/views/awards/waip/index.php:92
 msgid "By Mode Category"
-msgstr ""
+msgstr "Per trafiksätt kategori"
 
 #: application/views/awards/waip/index.php:42
 #: application/views/notes/add.php:47 application/views/notes/edit.php:42
@@ -7359,12 +7372,12 @@ msgstr "Kategori"
 #: application/views/awards/waip/index.php:42
 #: application/views/awards/waip/index.php:64
 msgid "Progress"
-msgstr ""
+msgstr "Framsteg"
 
 #: application/views/awards/waip/index.php:62
 #: application/views/awards/waip/index.php:97
 msgid "By Band"
-msgstr ""
+msgstr "Per band"
 
 #: application/views/awards/waip/index.php:111
 #: application/views/awards/waip/index.php:169
@@ -7375,7 +7388,7 @@ msgstr "Provins"
 
 #: application/views/awards/waip/index.php:233
 msgid "No QSOs found matching the criteria for the WAIP award!"
-msgstr ""
+msgstr "Inga QSOs hittades som matchar kriterierna för WAIP-diplomet!"
 
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
@@ -10881,7 +10894,7 @@ msgstr "Senaste utgåvan"
 
 #: application/views/debug/index.php:50
 msgid "ADIF Version"
-msgstr ""
+msgstr "ADIF-version"
 
 #: application/views/debug/index.php:55
 msgid "Language"
@@ -12638,7 +12651,7 @@ msgstr "WAB"
 
 #: application/views/interface_assets/header.php:252
 msgid "Italy"
-msgstr ""
+msgstr "Italien"
 
 #: application/views/interface_assets/header.php:258
 msgid "Japan"
