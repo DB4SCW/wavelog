@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-22 17:51+0000\n"
-"PO-Revision-Date: 2026-03-22 16:49+0000\n"
+"PO-Revision-Date: 2026-03-23 03:28+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -638,7 +638,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
