@@ -693,6 +693,12 @@ class Logbook_model extends CI_Model {
 			case 'QRZSDATE':
 				$this->db->where('date(COL_QRZCOM_QSO_UPLOAD_DATE)=date(SYSDATE())');
 				break;
+			case 'CLUBLOGRDATE':
+				$this->db->where('date(COL_CLUBLOG_QSO_DOWNLOAD_DATE)=date(SYSDATE())');
+				break;
+			case 'CLUBLOGSDATE':
+				$this->db->where('date(COL_CLUBLOG_QSO_UPLOAD_DATE)=date(SYSDATE())');
+				break;
 		}
 
 		$this->db->where_in($this->config->item('table_name') . '.station_id', $logbooks_locations_array);

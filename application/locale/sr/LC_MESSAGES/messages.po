@@ -3672,12 +3672,14 @@ msgstr "DXCC мора бити нумерички"
 
 #: application/models/Logbook_model.php:4765
 #: application/models/Logbook_model.php:4773
+#: application/models/Logbook_model.php:4779
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Приликом увоза QSO-ова, погрешан је знак %s са %s за %s: ПРЕСКОЧЕНО"
 
 #: application/models/Logbook_model.php:4779
 #: application/models/Logbook_model.php:4787
+#: application/models/Logbook_model.php:4793
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3685,11 +3687,13 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4788
 #: application/models/Logbook_model.php:4796
+#: application/models/Logbook_model.php:4802
 msgid "QSO on"
 msgstr "Почетак QSO"
 
 #: application/models/Logbook_model.php:4788
 #: application/models/Logbook_model.php:4796
+#: application/models/Logbook_model.php:4802
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3699,6 +3703,7 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4837
 #: application/models/Logbook_model.php:4845
+#: application/models/Logbook_model.php:4851
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3707,22 +3712,26 @@ msgstr ""
 
 #: application/models/Logbook_model.php:5110
 #: application/models/Logbook_model.php:5118
+#: application/models/Logbook_model.php:5124
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "датум пријема QSL је неисправан (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5121
 #: application/models/Logbook_model.php:5129
+#: application/models/Logbook_model.php:5135
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "датум слања QSL је неисправан (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5182
 #: application/models/Logbook_model.php:5190
+#: application/models/Logbook_model.php:5196
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "Датум учитавања веза на Clublog је неисправан (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5555
 #: application/views/simplefle/index.php:41
 #: application/models/Logbook_model.php:5563
+#: application/models/Logbook_model.php:5569
 msgid "Duplicate for"
 msgstr "Дупликат за"
 
@@ -3730,31 +3739,38 @@ msgstr "Дупликат за"
 #: application/models/Logbook_model.php:5715
 #: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5723
+#: application/models/Logbook_model.php:5634
+#: application/models/Logbook_model.php:5729
 msgid "QSO could not be matched"
 msgstr "QSO се не поклапа"
 
 #: application/models/Logbook_model.php:5628
 #: application/models/Logbook_model.php:5636
+#: application/models/Logbook_model.php:5642
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "потврђено преко LoTW/Clublog/eQSL/Контест"
 
 #: application/models/Logbook_model.php:5634
 #: application/models/Logbook_model.php:5642
+#: application/models/Logbook_model.php:5648
 msgid "confirmed by award manager"
 msgstr "потврђено од стране менаџера за дипломе"
 
 #: application/models/Logbook_model.php:5638
 #: application/models/Logbook_model.php:5646
+#: application/models/Logbook_model.php:5652
 msgid "confirmed by cross-check of DCL data"
 msgstr "потврђено унакрсном провером DCL података"
 
 #: application/models/Logbook_model.php:5642
 #: application/models/Logbook_model.php:5650
+#: application/models/Logbook_model.php:5656
 msgid "confirmation pending"
 msgstr "чека потврђивање"
 
 #: application/models/Logbook_model.php:5645
 #: application/models/Logbook_model.php:5653
+#: application/models/Logbook_model.php:5659
 msgid "unconfirmed"
 msgstr "непотврђено"
 
@@ -3763,6 +3779,7 @@ msgstr "непотврђено"
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
 #: application/models/Logbook_model.php:5656
+#: application/models/Logbook_model.php:5662
 msgid "unknown"
 msgstr "непознато"
 
@@ -3786,6 +3803,7 @@ msgstr "QSO ажуриран"
 #: application/views/user/edit.php:375 application/views/user/edit.php:400
 #: application/views/view_log/partial/log_ajax.php:20
 #: application/models/Logbook_model.php:6126
+#: application/models/Logbook_model.php:6132
 msgid "Bearing"
 msgstr "Смер"
 
