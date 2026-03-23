@@ -26,8 +26,27 @@ class Logbookadvanced_model extends CI_Model {
 			$conditions[] = "COL_PROP_MODE = 'SAT' and COL_SAT_NAME <> '' and COL_SAT_NAME is not null";
 		}
 
-		$id_sql .= " from " . $this->config->item('table_name') . "
-			join station_profile on " . $this->config->item('table_name') . ".station_id = station_profile.station_id where station_profile.user_id = ?";
+		if (isset($searchCriteria['de']) && $searchCriteria['de'] == '') {
+			$stationids = 'null';
+		} else {
+			// Sanitize station IDs to prevent SQL injection
+			$de_array = is_array($searchCriteria['de']) ? $searchCriteria['de'] : [$searchCriteria['de']];
+			$sanitized_ids = array_map('intval', $de_array);
+			$sanitized_ids = array_filter($sanitized_ids, function($id) {
+				return $id > 0;
+			});
+			if (!empty($sanitized_ids)) {
+				$stationids = implode(',', $sanitized_ids);
+			} else {
+				$stationids = 'null';
+			}
+		}
+		$conditions[] = "qsos.station_id in (".$stationids.")";
+		$dupeWhere = " and qsos.station_id in (".$stationids.") ";
+
+		$id_sql .= " from " . $this->config->item('table_name') . " qsos
+			join station_profile on qsos.station_id = station_profile.station_id where station_profile.user_id = ?";
+		$id_sql .= $dupeWhere;
 
 		$id_sql .= "group by COL_CALL, station_callsign";
 		$id_sql .= $group_by_append;
@@ -1107,6 +1126,7 @@ class Logbookadvanced_model extends CI_Model {
 			case "rsts": $column = 'COL_RST_SENT'; break;
 			case "qslsentmethod": $column = 'COL_QSL_SENT_VIA'; break;
 			case "qslreceivedmethod": $column = 'COL_QSL_RCVD_VIA'; break;
+			case "frequency": $column = 'COL_FREQUENCY'; break;
 			default: return;
 		}
 
@@ -1167,6 +1187,23 @@ class Logbookadvanced_model extends CI_Model {
 			$frequencyBandRx = $bandrx == '' ? null : $this->frequency->defaultFrequencies[$bandrx]['CW'];
 
 			$query = $this->db->query($sql, array($value, $value2, $frequencyBand, $frequencyBandRx, json_decode($ids, true), $this->session->userdata('user_id')));
+		}  else if ($column == 'COL_FREQUENCY') {
+
+			if ($value == '') return;
+
+			if (trim($value2 ?? '') == '') { $value2=null; }
+
+			$sql = "UPDATE ".$this->config->item('table_name')." JOIN station_profile ON ". $this->config->item('table_name').".station_id = station_profile.station_id" .
+			" SET " . $this->config->item('table_name').".COL_FREQ = ?" .
+			", " . $this->config->item('table_name').".COL_FREQ_RX = ?" .
+			", " . $this->config->item('table_name').".COL_BAND = ?" .
+			", " . $this->config->item('table_name').".COL_BAND_RX = ?" .
+			" WHERE " . $this->config->item('table_name').".col_primary_key in ? and station_profile.user_id = ?";
+
+			$band = $this->frequency->GetBand($value);
+			$bandRx = $value2 == null ? null : $this->frequency->GetBand($value2);
+
+			$query = $this->db->query($sql, array($value, $value2, $band, $bandRx, json_decode($ids, true), $this->session->userdata('user_id')));
 		} else if ($column == 'COL_GRIDSQUARE') {
 			if ($value == '') {
 				$grid_value = null;

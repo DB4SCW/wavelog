@@ -6,6 +6,7 @@ let inStateFixing = false;
 let stateFixStats = {fixed: 0, skipped: 0, fixedDxcc: new Set(), skippedDxcc: new Set(), skipReasons: new Set(), skippedDetails: []};
 let lastChecked = null;
 let silentReset = false;
+const filterDefaults = {};
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('.dropdown').forEach(dd => {
@@ -205,6 +206,10 @@ function loadQSOTable(rows) {
 
 	// Prevent initializing if already a DataTable
 	if ($.fn.DataTable.isDataTable($table)) {
+		// Remove ALL buttons containers to prevent duplicates
+		$('#qsoList').prev('.dt-buttons').remove();
+		$('#qsoList_wrapper').find('.dt-buttons').remove();
+		$('.dt-buttons').remove();
 		$table.DataTable().clear().destroy();
 	}
 
@@ -231,14 +236,15 @@ function loadQSOTable(rows) {
 				{ targets: $(".antennaelevation-column-sort").index(), type: "numbersort" },
 				{ targets: $(".stationpower-column-sort").index(), type: "numbersort" },
 			],
-			dom: 'Bfrtip',
+			dom: 'frtip',
 			buttons: [
 						{
 							extend: 'csv',
-							className: 'mb-1 btn btn-sm btn-primary', // Bootstrap classes
-								init: function(api, node, config) {
-									$(node).removeClass('dt-button').addClass('btn btn-primary'); // Ensure Bootstrap class applies
-								},
+							text: 'CSV',
+							className: 'mb-1 btn btn-sm btn-primary',
+							filename: function() {
+								return 'qso_export_' + new Date().toISOString().slice(0,10);
+							},
 								exportOptions: {
 								columns: ':visible:not(:eq(0))', // export all visible except column 4
 								format: {
@@ -251,7 +257,7 @@ function loadQSOTable(rows) {
 											data = data.replace(/<[^>]*>/g, '');
 										}
 										// then replace Ø with 0 in specific columns
-										if (column === 1 || column === 2 || column === 3) {
+										if (column === 1 || column === 2 || column === 3 || column === 4) {
 											// remove a trailing "L" and trim whitespaces
 											data = data.replace(/\s*L\s*$/, '').trim();
 											if (typeof data === 'string' && data.includes('Ø')) {
@@ -273,6 +279,9 @@ function loadQSOTable(rows) {
 						}
                     ]
 		});
+
+		// Place buttons in custom container
+		table.buttons().container().appendTo('#csv-button-container');
 
 	for (i = 0; i < rows.length; i++) {
 		let qso = rows[i];
@@ -626,7 +635,22 @@ function unselectQsoID(qsoID) {
 	$('#checkBoxAll').prop("checked", false);
 }
 
+// Capture default values for all filter fields on page load
+function captureFilterDefaults() {
+	$('.filter-field').each(function() {
+		const $el = $(this);
+		const id = $el.attr('id');
+		const name = $el.attr('name');
+		// Use id as key if available, otherwise use name
+		const key = id ? '#' + id : '[name="' + name + '"]';
+		filterDefaults[key] = $el.val();
+	});
+}
+
 $(document).ready(function () {
+	// Capture default filter values BEFORE any other initialization
+	captureFilterDefaults();
+
 	// initialize multiselect dropdown for locations
 	// Documentation: https://davidstutz.github.io/bootstrap-multiselect/index.html
 
@@ -1592,6 +1616,7 @@ $(document).ready(function () {
 			} else {
 				$("#"+type).val(col1);
 			}
+			updateFilterButtonStates();
 			$('#searchForm').submit();
 		});
 	}
@@ -1663,16 +1688,54 @@ $(document).ready(function () {
     	    silentReset = false; // reset flag
         	return; // skip submit
     	}
+		requestAnimationFrame(function() {
+			updateFilterButtonStates();
+		});
 		setTimeout(function() {
 			$('#searchForm').submit();
 		});
+	});
+
+	$('#searchForm').on('change', 'input, select', function() {
+		updateFilterButtonStates();
 	});
 
 	rebind_checkbox_trigger();
 
 	$('#searchForm').submit();
 
+	setTimeout(function() {
+		updateFilterButtonStates();
+	}, 100);
+
 });
+
+function hasActiveFilters() {
+	return Object.keys(filterDefaults).some(selector => {
+		const $el = $(selector);
+		if (!$el.length) return false;
+		const currentVal = $el.val();
+		const defaultVal = filterDefaults[selector];
+
+		// Handle arrays (multi-select)
+		if (Array.isArray(currentVal)) {
+			return false; // Multi-selects not currently used
+		}
+
+		// Compare current value to stored default
+		return currentVal !== defaultVal;
+	});
+}
+
+function updateFilterButtonStates() {
+	const hasActive = hasActiveFilters();
+
+	if (hasActive) {
+		$('#filterDropdown').addClass('btn-filter-active');
+	} else {
+		$('#filterDropdown').removeClass('btn-filter-active');
+	}
+}
 
 function rebind_checkbox_trigger() {
 	$('#checkBoxAll').change(function (event) {
@@ -1929,28 +1992,28 @@ function saveOptions() {
                 break;
 
             case 'thismonth':
-                const firstDayOfMonth = new Date(today.getUTCFullYear(), today.getUTCMonth(), 1);
+                const firstDayOfMonth = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 1));
                 dateFrom.value = formatDate(firstDayOfMonth);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastmonth':
-                const firstDayOfLastMonth = new Date(today.getUTCFullYear(), today.getUTCMonth() - 1, 1);
-                const lastDayOfLastMonth = new Date(today.getUTCFullYear(), today.getUTCMonth(), 0);
+                const firstDayOfLastMonth = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() - 1, 1));
+                const lastDayOfLastMonth = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 0));
                 dateFrom.value = formatDate(firstDayOfLastMonth);
                 dateTo.value = formatDate(lastDayOfLastMonth);
                 break;
 
             case 'thisyear':
-                const firstDayOfYear = new Date(today.getUTCFullYear(), 0, 1);
+                const firstDayOfYear = new Date(Date.UTC(today.getUTCFullYear(), 0, 1));
                 dateFrom.value = formatDate(firstDayOfYear);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastyear':
                 const lastYear = today.getUTCFullYear() - 1;
-                const firstDayOfLastYear = new Date(lastYear, 0, 1);
-                const lastDayOfLastYear = new Date(lastYear, 11, 31);
+                const firstDayOfLastYear = new Date(Date.UTC(lastYear, 0, 1));
+                const lastDayOfLastYear = new Date(Date.UTC(lastYear, 11, 31));
                 dateFrom.value = formatDate(firstDayOfLastYear);
                 dateTo.value = formatDate(lastDayOfLastYear);
                 break;
@@ -1960,6 +2023,7 @@ function saveOptions() {
                 dateTo.value = '';
                 break;
         }
+        updateFilterButtonStates();
     }
 
     // Reset dates function
@@ -1968,6 +2032,7 @@ function saveOptions() {
         const dateTo = document.getElementById('dateTo');
         dateFrom.value = '';
         dateTo.value = '';
+        updateFilterButtonStates();
     }
 
 	function checkUpdateDistances() {
@@ -3140,4 +3205,17 @@ function saveOptions() {
 		} else {
 			window.map.setView([30, 0], 1.5);
 		}
+	}
+
+	function getQsos(id) {
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/getQsos',
+			type: 'post',
+			data: {
+				id: id
+			},
+			success: function (data) {
+				updateRow(data);
+			}
+		});
 	}

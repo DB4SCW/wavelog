@@ -132,7 +132,7 @@ $(document).ready(function() {
                 reconnectAttempts = 0;
                 websocketEnabled = true;
                 activeWebSocketProtocol = protocol; // Remember which protocol worked
-                
+
                 // Debug log if connected in Hybrid/Auto mode
                 if (isHybridMode) {
                     console.log("CAT: Hybrid WebSocket connected successfully.");
@@ -296,7 +296,7 @@ $(document).ready(function() {
         } else if (qrgunit == 'GHz') {
             frequency_formatted=(freq / 1000000000);
         }
-        return frequency_formatted+''+qrgunit;
+        return frequency_formatted+' '+qrgunit;
     }
 
     /**
@@ -689,14 +689,14 @@ $(document).ready(function() {
         // Check if we have RX frequency (split operation)
         if(data.frequency_rx != null && data.frequency_rx != 0) {
             // Split operation: show TX and RX separately
-            freqLine = '<b>' + lang_cat_tx + ':</b> ' + data.frequency_formatted;
-            data.frequency_rx_formatted = format_frequency(data.frequency_rx);
-            if (data.frequency_rx_formatted) {
-                freqLine = freqLine + separator + '<b>' + lang_cat_rx + ':</b> ' + data.frequency_rx_formatted;
+            freqLine = '<b>' + lang_cat_tx + ':</b> ' + format_frequency(data.frequency);
+            var freq_rx_formatted = format_frequency(data.frequency_rx);
+            if (freq_rx_formatted) {
+                freqLine = freqLine + separator + '<b>' + lang_cat_rx + ':</b> ' + freq_rx_formatted;
             }
         } else {
             // Simplex operation: show TX/RX combined
-            freqLine = '<b>' + lang_cat_tx_rx + ':</b> ' + data.frequency_formatted;
+            freqLine = '<b>' + lang_cat_tx_rx + ':</b> ' + format_frequency(data.frequency);
         }
 
         // Add mode and power (only if we have valid frequency)
@@ -767,25 +767,20 @@ $(document).ready(function() {
 				var connectionType = $(".radios option:selected").val() == 'ws' ? lang_cat_live : lang_cat_polling;
 				tooltipContent = '<b>' + radioName + '</b> (' + connectionType + ')';
 
-				// Ensure frequency_formatted exists
-				var freqFormatted = data.frequency_formatted;
-				if (!freqFormatted || freqFormatted === 'undefined' || freqFormatted === 'nullkHz') {
-					freqFormatted = format_frequency(data.frequency);
-				}
-
 				// Add frequency info
+				var freqFormatted = format_frequency(data.frequency);
 				if(data.frequency_rx && data.frequency_rx != 0 && data.frequency_rx !== 'undefined') {
 					// Split operation: show TX and RX separately
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx + ':</b> ' + freqFormatted;
 					}
 					var rxFormatted = format_frequency(data.frequency_rx);
-					if (rxFormatted && rxFormatted !== 'undefined') {
+					if (rxFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_rx + ':</b> ' + rxFormatted;
 					}
 				} else {
 					// Simplex operation: show TX/RX combined
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx_rx + ':</b> ' + freqFormatted;
 					}
 				}
@@ -858,25 +853,20 @@ $(document).ready(function() {
 			}
 			tooltipContent = '<b>' + radioName + '</b> (' + connectionType + ')';
 
-				// Ensure frequency_formatted exists
-				var freqFormatted = data.frequency_formatted;
-				if (!freqFormatted || freqFormatted === 'undefined' || freqFormatted === 'nullkHz') {
-					freqFormatted = format_frequency(data.frequency);
-				}
-
 				// Add frequency info
+				var freqFormatted = format_frequency(data.frequency);
 				if(data.frequency_rx && data.frequency_rx != 0 && data.frequency_rx !== 'undefined') {
 					// Split operation: show TX and RX separately
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx + ':</b> ' + freqFormatted;
 					}
 					var rxFormatted = format_frequency(data.frequency_rx);
-					if (rxFormatted && rxFormatted !== 'undefined') {
+					if (rxFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_rx + ':</b> ' + rxFormatted;
 					}
 				} else {
 					// Simplex operation: show TX/RX combined
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx_rx + ':</b> ' + freqFormatted;
 					}
 				}
@@ -1108,6 +1098,11 @@ $(document).ready(function() {
 
         cat2UI($mode,newMode,false,false);
 
+        // Update winkey visibility directly
+        if (typeof updateWinkeyVisibility === 'function') {
+            updateWinkeyVisibility(newMode);
+        }
+
         // Update RST fields when mode changes
         // Check if mode was actually updated (catValue changed after cat2UI call)
         var currentMode = $mode.data('catValue');
@@ -1305,7 +1300,7 @@ $(document).ready(function() {
             reconnectAttempts = 0; // Reset reconnect attempts
             hasTriedWsFallback = false; // Reset WSS failover state - try WSS first again
             isHybridMode = false; // Explicitly NOT hybrid
-            
+
             // Set DX Waterfall CAT state to websocket if variable exists
             if (typeof dxwaterfall_cat_state !== 'undefined') {
                 dxwaterfall_cat_state = "websocket";
@@ -1324,7 +1319,7 @@ $(document).ready(function() {
                 dxwaterfall_cat_state = "polling";
             }
             $('#toggleCatTracking').prop('disabled', false).removeClass('disabled');
-            
+
             // Start standard polling
             CATInterval = setInterval(updateFromCAT, CAT_CONFIG.POLL_INTERVAL);
 
@@ -1335,7 +1330,7 @@ $(document).ready(function() {
             reconnectAttempts = 0;
             hasTriedWsFallback = false;
             isHybridMode = true; // Activate Hybrid Mode restrictions (limited retries, no UI errors)
-            
+
             initializeWebSocketConnection();
 
             if ((window.CAT_COMPACT_MODE === 'ultra-compact' || window.CAT_COMPACT_MODE === 'icon-only') && typeof window.isCatTrackingEnabled !== 'undefined' && !window.isCatTrackingEnabled) {
@@ -1353,7 +1348,7 @@ $(document).ready(function() {
 	/**
      * Broadcast Callsign Lookup Result via WebSocket
      * Triggered when Wavelog completes a callsign lookup.
-     * 
+     *
      * @param {object} data - The lookup data object
      */
     window.broadcastLookupResult = function(data) {
@@ -1391,5 +1386,5 @@ $(document).ready(function() {
         } catch (error) {
             console.warn('Failed to broadcast lookup result:', error);
         }
-    };	
+    };
 });

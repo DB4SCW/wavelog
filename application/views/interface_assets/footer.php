@@ -180,32 +180,27 @@
 <!-- DATATABLES LANGUAGE -->
 <?php
 $local_code = $language['locale'];
-$lang_code = $language['code'];
-$file_path = $this->paths->cache_buster('/assets/json/datatables_languages/' . $local_code . '.json');
+$lang_code  = $language['code'];
 
-// Check if the file exists
-if ($lang_code != 'en' && !file_exists(FCPATH . "assets/json/datatables_languages/" . $local_code . ".json")) {
-    $datatables_language_url = '';
-} else {
-    $datatables_language_url = $file_path;
+$datatables_language_url = '';
+if ($lang_code !== 'en' && file_exists(FCPATH . "assets/json/datatables_languages/" . $local_code . ".json")) {
+    $datatables_language_url = $this->paths->cache_buster('/assets/json/datatables_languages/' . $local_code . '.json');
 }
 ?>
 
-<script type="text/javascript">
+<script>
     function getDataTablesLanguageUrl() {
-        locale = "<?php echo $local_code ?>";
-        lang_code = "<?php echo $lang_code; ?>";
-        datatables_language_url = "<?php echo $datatables_language_url; ?>";
+        const datatables_language_url = "<?php echo $datatables_language_url; ?>";
 
-        // if language is set to english we don't need to load any language files
-        if (lang_code != 'en') {
-            if (datatables_language_url !== '') {
-                return datatables_language_url;
-            } else {
-                console.error("Datatables language file does not exist for locale: " + locale);
-                return null;
-            }
+        if (datatables_language_url !== '') {
+            return datatables_language_url;
         }
+
+        <?php if ($lang_code !== 'en'): ?>
+        console.warn("Datatables language file does not exist for locale: <?php echo $local_code; ?>; Using english instead.");
+        <?php endif; ?>
+
+        return null;
     }
 </script>
 <!-- DATATABLES LANGUAGE END -->
@@ -2159,13 +2154,17 @@ $('#sats').change(function(){
 
 
 <script>
-    var reload_after_qso_safe = false;
+	let reload_qso_line = false;
+    let reload_after_qso_safe = false;
     <?php if (
 	$this->uri->segment(1) != "search" &&
 	$this->uri->segment(2) != "filter" &&
 	$this->uri->segment(1) != "qso" &&
 	$this->uri->segment(1) != "logbookadvanced") { ?>
 		reload_after_qso_safe = true;
+	<?php }
+	if ($this->uri->segment(1) == "logbookadvanced") { ?>
+		reload_qso_line = true;
 	<?php } ?>
 </script>
 

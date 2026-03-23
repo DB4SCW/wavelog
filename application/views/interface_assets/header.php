@@ -249,6 +249,12 @@
 									</ul>
 								</li>
 								<div class="dropdown-divider"></div>
+								<li><a class="dropdown-item dropdown-toggle dropdown-toggle-submenu" data-bs-toggle="dropdown" href="#">🇮🇹 <?= __("Italy"); ?></a>
+									<ul class="submenu dropdown-menu">
+										<li><a class="dropdown-item" href="<?php echo site_url('awards/waip'); ?>"><i class="fas fa-trophy"></i> <?= __("WAIP"); ?></a></li>
+									</ul>
+								</li>
+								<div class="dropdown-divider"></div>
 								<li><a class="dropdown-item dropdown-toggle dropdown-toggle-submenu" data-bs-toggle="dropdown" href="#">🇯🇵 <?= __("Japan"); ?></a>
 									<ul class="submenu dropdown-menu">
 										<li><a class="dropdown-item" href="<?php echo site_url('awards/waja'); ?>"><i class="fas fa-trophy"></i> <?= __("WAJA"); ?></a></li>
@@ -494,7 +500,7 @@
 
 								<?php
 								$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-								if ($logbooks_locations_array) {
+								if ($logbooks_locations_array[0] !== -1) {
 									$location_list = "'" . implode("','", $logbooks_locations_array) . "'";
 								} else {
 									$location_list = null;

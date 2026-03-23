@@ -7,7 +7,6 @@ class Dashboard extends CI_Controller {
 
 		$this->load->model('user_model');
 		if (!$this->user_model->authorize(2)) {
-			$this->session->set_flashdata('error', __("You're not allowed to do that!"));
 			redirect('user/login');
 		}
 	}
@@ -35,7 +34,7 @@ class Dashboard extends CI_Controller {
 			$data['active_not_linked']=false;
 		}
 
-		if ($logbooks_locations_array[0] == -1) {
+		if ($logbooks_locations_array[0] === -1) {
 			$data['linkedCount']=0;
 		} else {
 			$data['linkedCount']=sizeof($logbooks_locations_array);
@@ -144,6 +143,11 @@ class Dashboard extends CI_Controller {
 		$data['total_qrz_rcvd'] = $stats['QRZ_Received'];
 		$data['qrz_sent_today'] = $stats['QRZ_Sent_today'];
 		$data['qrz_rcvd_today'] = $stats['QRZ_Received_today'];
+
+		$data['total_clublog_sent'] = $stats['ClubLog_Sent'];
+		$data['total_clublog_rcvd'] = $stats['ClubLog_Received'];
+		$data['clublog_sent_today'] = $stats['ClubLog_Sent_today'];
+		$data['clublog_rcvd_today'] = $stats['ClubLog_Received_today'];
 
 		$data['last_qso_count'] = empty($this->session->userdata('dashboard_last_qso_count')) ? DASHBOARD_DEFAULT_QSOS_COUNT : $this->session->userdata('dashboard_last_qso_count');
 		$data['last_qsos_list'] = $this->logbook_model->get_last_qsos(

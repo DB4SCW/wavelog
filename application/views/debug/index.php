@@ -47,6 +47,11 @@
                         </tr>
                         <?php } ?>
                         <tr>
+                            <td><?= __("ADIF Version"); ?></td>
+                            <td><?php echo $this->optionslib->get_option('adif_version'); ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <td><?= __("Language"); ?></td>
                             <td><?= __(ucfirst($this->config->item('language'))) . "\n"; ?></td>
                         </tr>
@@ -118,6 +123,11 @@
                         <tr>
                             <td><?= __("MySQL Version"); ?></td>
                             <td><?php echo $this->db->version(); ?></td>
+                        </tr>
+
+                        <tr>
+                            <td><?= __("OpenSSL Version"); ?></td>
+                            <td><?php echo OPENSSL_VERSION_TEXT ?? __("not found"); ?></td>
                         </tr>
                         <tr>
                             <td><?= __("Codeigniter Version"); ?></td>
@@ -864,4 +874,5 @@
     <?= __("Spanish"); ?>
     <?= __("Swedish"); ?>
     <?= __("Turkish"); ?>
+    <?= __("Ukrainian"); ?>
 </div>
