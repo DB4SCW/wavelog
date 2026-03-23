@@ -621,7 +621,6 @@ msgstr "WAP"
 
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
-#, fuzzy
 msgid "WAIP"
 msgstr "WAIP"
 
