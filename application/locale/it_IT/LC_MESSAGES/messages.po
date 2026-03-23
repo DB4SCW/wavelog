@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-22 17:51+0000\n"
-"PO-Revision-Date: 2026-03-22 09:55+0000\n"
+"PO-Revision-Date: 2026-03-23 07:59+0000\n"
 "Last-Translator: iv3cvn <ricentis@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
@@ -621,8 +621,9 @@ msgstr "WAP"
 
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
+#, fuzzy
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -7348,7 +7349,7 @@ msgstr "Nome WAE"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "Diploma WAIP"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7356,6 +7357,9 @@ msgid ""
 "stations operating from Italian provinces. Italy has over 100 provinces, "
 "making this a challenging and prestigious award."
 msgstr ""
+"Il diploma WAIP (Worked All Italian Provinces) viene assegnato per i "
+"contatti con stazioni operanti dalle province italiane. L'Italia conta oltre "
+"100 province, rendendo questo diploma impegnativo e prestigioso."
 
 #: application/views/awards/waip/index.php:10
 msgid ""
@@ -7364,12 +7368,20 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
+"Categorie del diploma: FONIA (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.) "
+"e singole bande. Tutte le province devono essere confermate via cartolina "
+"QSL. Requisiti: COL_STATE (codice provincia a 2 lettere), COL_DXCC=248 "
+"(Italia) o 225 (Sardegna), solo conferme via cartolina QSL. Non sono "
+"consentiti collegamenti satellitari."
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
+"I codici delle province sono abbreviazioni di due lettere (es. RM=Roma, "
+"MI=Milano, NA=Napoli). Vedi i riferimenti del diploma province italiane per "
+"l'elenco completo."
 
 #: application/views/awards/waip/index.php:12
 #, php-format
