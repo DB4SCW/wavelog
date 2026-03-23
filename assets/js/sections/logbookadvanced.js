@@ -1697,7 +1697,15 @@ $(document).ready(function () {
     	    silentReset = false; // reset flag
         	return; // skip submit
 		}
+
+		// Preserve selected locations during normal reset
+		const selectedLocations = $('#de').val();
+
 		requestAnimationFrame(function() {
+			// Restore locations after reset
+			if (selectedLocations && selectedLocations.length > 0) {
+				$('#de').multiselect('select', selectedLocations);
+			}
 			updateFilterButtonStates();
 		});
 		setTimeout(function() {
