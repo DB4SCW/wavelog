@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-22 17:51+0000\n"
-"PO-Revision-Date: 2026-03-22 09:55+0000\n"
+"PO-Revision-Date: 2026-03-23 14:21+0000\n"
 "Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
@@ -630,7 +630,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -7392,7 +7392,7 @@ msgstr "Nom WAE"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "Prix WAIP"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7400,6 +7400,9 @@ msgid ""
 "stations operating from Italian provinces. Italy has over 100 provinces, "
 "making this a challenging and prestigious award."
 msgstr ""
+"Le prix WAIP (Worked All Italian Provinces) récompense les contacts avec des "
+"stations opérant depuis les provinces italiennes. L'Italie comptant plus de "
+"100 provinces, ce prix est à la fois prestigieux et difficile à décerner."
 
 #: application/views/awards/waip/index.php:10
 msgid ""
@@ -7408,21 +7411,29 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
+"Catégories de récompenses : TÉLÉPHONE (BLU/AM/FM/SSTV), CW, NUMÉRIQUE (RTTY/"
+"PSK/FT8/etc.) et bandes individuelles. Toutes les provinces doivent être "
+"confirmées par carte QSL. Exigences : COL_STATE (code province à 2 lettres), "
+"COL_DXCC = 248 (Italie) ou 225 (Sardaigne), confirmation par carte QSL "
+"uniquement. Les contacts par satellite ne sont pas autorisés."
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
+"Les codes de province sont des abréviations à deux lettres (par exemple, RM "
+"= Rome, MI = Milan, NA = Naples). Consultez les références relatives aux "
+"récompenses provinciales italiennes pour obtenir la liste complète."
 
 #: application/views/awards/waip/index.php:12
 #, php-format
 msgid "For more information about the WAIP award, visit: %s"
-msgstr ""
+msgstr "Pour plus d'informations sur le prix WAIP, veuillez consulter : %s"
 
 #: application/views/awards/waip/index.php:12
 msgid "WAIP Award Information"
-msgstr ""
+msgstr "Informations sur le prix WAIP"
 
 #: application/views/awards/waip/index.php:23
 msgid ""
@@ -7430,19 +7441,24 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
+"Ce système de suivi des contacts établis et confirmés pour les provinces "
+"italiennes est pris en compte. Seules les confirmations par carte QSL sont "
+"acceptées. Vert = Confirmé, Orange = Établi mais non confirmé."
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
-msgstr ""
+msgstr "Progrès de l'attribution"
 
 #: application/views/awards/waip/index.php:34
 msgid "Progress toward working all Italian provinces:"
 msgstr ""
+"Progrès accomplis dans le cadre du travail sur toutes les provinces "
+"italiennes :"
 
 #: application/views/awards/waip/index.php:40
 #: application/views/awards/waip/index.php:92
 msgid "By Mode Category"
-msgstr ""
+msgstr "Par catégorie de mode"
 
 #: application/views/awards/waip/index.php:42
 #: application/views/notes/add.php:47 application/views/notes/edit.php:42
@@ -7453,12 +7469,12 @@ msgstr "Catégorie"
 #: application/views/awards/waip/index.php:42
 #: application/views/awards/waip/index.php:64
 msgid "Progress"
-msgstr ""
+msgstr "progresser"
 
 #: application/views/awards/waip/index.php:62
 #: application/views/awards/waip/index.php:97
 msgid "By Band"
-msgstr ""
+msgstr "Par Groupe"
 
 #: application/views/awards/waip/index.php:111
 #: application/views/awards/waip/index.php:169
@@ -7469,7 +7485,7 @@ msgstr "Province"
 
 #: application/views/awards/waip/index.php:233
 msgid "No QSOs found matching the criteria for the WAIP award!"
-msgstr ""
+msgstr "Aucun QSO correspondant aux critères du prix WAIP n'a été trouvé !"
 
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
@@ -11025,7 +11041,7 @@ msgstr "Derniére version"
 
 #: application/views/debug/index.php:50
 msgid "ADIF Version"
-msgstr ""
+msgstr "Version ADIF"
 
 #: application/views/debug/index.php:55
 msgid "Language"
@@ -12809,7 +12825,7 @@ msgstr "WAB"
 
 #: application/views/interface_assets/header.php:252
 msgid "Italy"
-msgstr ""
+msgstr "Italie"
 
 #: application/views/interface_assets/header.php:258
 msgid "Japan"
