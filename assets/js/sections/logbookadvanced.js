@@ -1433,6 +1433,133 @@ $(document).ready(function () {
 		});
 	});
 
+	// Merge QSOs button handler
+	$('#mergeQsos').click(function (event) {
+		const id_list = getSelectedIds();
+
+		if (id_list.length === 0 || id_list.length === 1 || id_list.length > 2) {
+			BootstrapDialog.alert({
+				title: lang_gen_advanced_logbook_info,
+				message: lang_gen_advanced_logbook_select_row_merge_qso,
+				type: BootstrapDialog.TYPE_INFO,
+				closable: false,
+				draggable: false,
+				callback: function (result) {
+				}
+			});
+			return;
+		}
+
+		// Load merge dialog
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/mergeDialog',
+			type: 'post',
+			data: {
+				qsoIds: id_list
+			},
+			success: function (html) {
+				BootstrapDialog.show({
+					title: lang_gen_advanced_logbook_merge_qsos,
+					size: BootstrapDialog.SIZE_WIDE,
+					cssClass: 'merge-dialog',
+					nl2br: false,
+					message: html,
+					buttons: [
+					{
+						label: 'Merge QSOs <div class="ld ld-ring ld-spin"></div>',
+						cssClass: 'btn btn-sm btn-danger ld-ext-right',
+						id: 'mergeButton',
+						action: function (dialogItself) {
+							// Show confirmation dialog
+							BootstrapDialog.confirm({
+								title: lang_gen_advanced_logbook_danger,
+								message: lang_gen_advanced_logbook_confirm_merge_qsos,
+								type: BootstrapDialog.TYPE_DANGER,
+								closable: true,
+								draggable: true,
+								btnCancelLabel: lang_gen_advanced_logbook_cancel,
+								btnOKLabel: lang_gen_advanced_logbook_yes_merge_qsos,
+								btnOKClass: 'btn-danger',
+								callback: function(result) {
+									if (result) {
+										// User confirmed, proceed with merge
+										const formData = $('#mergeForm').serialize();
+
+										$('#mergeButton').prop("disabled", true).addClass("running");
+										$('#closeMergeButton').prop("disabled", true);
+
+										$.ajax({
+											url: base_url + 'index.php/logbookadvanced/mergeQsos',
+											type: 'post',
+											data: formData,
+											dataType: 'json',
+											success: function (response) {
+												dialogItself.close();
+												if (response.success) {
+													BootstrapDialog.alert({
+														title: lang_gen_advanced_logbook_success,
+														message: lang_gen_advanced_logbook_qsos_merged,
+														type: BootstrapDialog.TYPE_SUCCESS,
+														closable: false,
+														draggable: false,
+														callback: function (result) {
+															$('#searchButton').click();
+														}
+													});
+												} else {
+													BootstrapDialog.alert({
+														title: lang_gen_advanced_logbook_error,
+														message: response.message || lang_gen_advanced_logbook_error_merging_qsos,
+														type: BootstrapDialog.TYPE_DANGER,
+														closable: false,
+														draggable: false,
+														callback: function (result) {
+														}
+													});
+												}
+											},
+											error: function () {
+												dialogItself.close();
+												BootstrapDialog.alert({
+													title: lang_gen_advanced_logbook_error,
+													message: lang_gen_advanced_logbook_error_merging_qsos,
+													type: BootstrapDialog.TYPE_DANGER,
+													closable: false,
+													draggable: false,
+													callback: function (result) {
+													}
+												});
+											}
+										});
+									}
+								}
+							});
+						}
+					},
+					{
+						label: lang_admin_close,
+						cssClass: 'btn btn-sm btn-secondary',
+						id: 'closeMergeButton',
+						action: function (dialogItself) {
+							dialogItself.close();
+						}
+					}],
+				});
+			},
+			error: function () {
+				BootstrapDialog.alert({
+					title: lang_gen_advanced_logbook_error,
+					message: lang_gen_advanced_logbook_error_loading_merge_dialog,
+					type: BootstrapDialog.TYPE_DANGER,
+					closable: false,
+					draggable: false,
+					callback: function (result) {
+					}
+				});
+			}
+		});
+	});
+
 	function dupeSearchDialog() {
 		$.ajax({
 			url: base_url + 'index.php/logbookadvanced/dupeSearchDialog',
@@ -3205,6 +3332,20 @@ function saveOptions() {
 		} else {
 			window.map.setView([30, 0], 1.5);
 		}
+	}
+
+	function selectAllQso1Fields() {
+		$('#primaryQso').val($('input[name="primaryQsoRadio"]:checked').val());
+		$('#mergeForm input[type="radio"][name="secondaryQsoRadio"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso1"]').prop('checked', true);
+	}
+
+	function selectAllQso2Fields() {
+		$('#primaryQso').val($('input[name="secondaryQsoRadio"]:checked').val());
+		$('#mergeForm input[type="radio"][name="primaryQsoRadio"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso2"]').prop('checked', true);
 	}
 
 	function getQsos(id) {
