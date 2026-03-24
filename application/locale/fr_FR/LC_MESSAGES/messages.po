@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-22 17:51+0000\n"
-"PO-Revision-Date: 2026-03-23 14:21+0000\n"
-"Last-Translator: Telectroboy <telectroboy@hotmail.com>\n"
+"PO-Revision-Date: 2026-03-24 12:27+0000\n"
+"Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
 "Language: fr_FR\n"
@@ -20332,53 +20332,58 @@ msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
 msgstr ""
+"Identifiant QSO principal invalide, ou vous n'êtes pas autorisé à accéder à "
+"l'un des QSO"
 
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
 msgstr ""
+"Aucun champ sélectionné pour la fusion ou aucune différence entre les QSO"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "Les QSO ont été fusionnés avec succès"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "Vous devez sélectionner exactement 2 QSO à fusionner !"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "Fusionner les QSO"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
 msgstr ""
+"Êtes-vous vraiment sûr de vouloir fusionner ces QSO ? Cette opération est "
+"irréversible !"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "Danger"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "Oui, fusionner les QSO"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "Les QSO ont été fusionnés avec succès !"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "Erreur lors de la fusion des QSO"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "Erreur lors du chargement de la boîte de dialogue de fusion"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "Quel QSO faut-il conserver ?"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
