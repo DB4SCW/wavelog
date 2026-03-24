@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-22 17:51+0000\n"
-"PO-Revision-Date: 2026-03-24 12:27+0000\n"
+"PO-Revision-Date: 2026-03-25 09:06+0000\n"
 "Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
@@ -20389,25 +20389,28 @@ msgstr "Quel QSO faut-il conserver ?"
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
 msgstr ""
+"Sélectionnez le QSO qui sera conservé après la fusion. L'autre sera supprimé."
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "Conservez ce QSO"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "Sélectionnez les champs à conserver pour chaque QSO :"
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
 msgstr ""
+"Les champs sélectionnés seront fusionnés dans le QSO principal. Vous pouvez "
+"sélectionner des champs différents pour chaque QSO."
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "Champ"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "Paramètres de messagerie non configurés."
