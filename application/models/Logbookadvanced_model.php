@@ -1009,9 +1009,14 @@ class Logbookadvanced_model extends CI_Model {
 
 		foreach($query->result() as $mode){
 			if ($mode->col_submode == null || $mode->col_submode == "") {
-				array_push($modes, $mode->col_mode);
+				$newMode = $mode->col_mode;
 			} else {
-				array_push($modes, $mode->col_submode);
+				$newMode = $mode->col_submode;
+			}
+
+			// Case-insensitive check if mode already exists
+			if (!in_array(strtolower($newMode), array_map('strtolower', $modes))) {
+				array_push($modes, $newMode);
 			}
 		}
 
