@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-23 06:01+0000\n"
+"PO-Revision-Date: 2026-03-24 12:27+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -3826,6 +3826,8 @@ msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
 msgstr ""
+"Invalide primäre QSO ID oder du hast keinen Zugriff auf mindestens eines der "
+"QSOs"
 
 #: application/models/Logbookadvanced_model.php:2412
 #: application/views/view_log/qso.php:945
@@ -3835,10 +3837,12 @@ msgstr "QSO nicht gefunden"
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
 msgstr ""
+"Keine Felder für die Zusammenführung ausgewählt oder es exisitieren keine "
+"Unterschiede zwischen den QSOs"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSOs erfolgreich zusammengeführt"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -14288,38 +14292,40 @@ msgstr "Planquadrat, das nicht dem DXCC entspricht"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "Du musst genau 2 QSOs für eine Zusammenführung auswählen!"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "Führe QSOs zusammen"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
 msgstr ""
+"Bist du sicher, dass du diese QSOs zusammenführen willst? Dieser Vorgang "
+"kann NICHT rückgängig gemacht werden!"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "Achtung"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "Ja, führe QSOs zusammen"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "QSOs wurden erfolgreich zusammengeführt!"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "Fehler bei der Zusammenführung von QSOs"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "Fehler beim Laden des Dialogs für die Zusammenführung"
 
 #: application/views/logbookadvanced/index.php:338
 msgid "From"
@@ -14729,31 +14735,35 @@ msgstr "Sendeleistung"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "Welches QSO soll behalten werden?"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
 msgstr ""
+"Wähle das QSO, welches nach der Zusammenführung erhalten bleiben soll. Das "
+"andere wird gelöscht."
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "Behalte dieses QSO"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "Wähle die Felder, die von jedem QSO erhalten bleiben sollen:"
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
 msgstr ""
+"Der Inhalt der gewählten Felder wird in das primäre QSO zusammengeführt. Zu "
+"kannst unterschiedliche Felder von jedem QSO wählen."
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "Feld"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
