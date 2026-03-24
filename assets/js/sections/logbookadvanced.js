@@ -3336,12 +3336,14 @@ function saveOptions() {
 
 	function selectAllQso1Fields() {
 		$('#primaryQso').val($('input[name="primaryQsoRadio"]:checked').val());
+		$('#mergeForm input[type="radio"][name="secondaryQsoRadio"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso1"]').prop('checked', true);
 	}
 
 	function selectAllQso2Fields() {
 		$('#primaryQso').val($('input[name="secondaryQsoRadio"]:checked').val());
+		$('#mergeForm input[type="radio"][name="primaryQsoRadio"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
 		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso2"]').prop('checked', true);
 	}
