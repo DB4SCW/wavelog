@@ -228,10 +228,15 @@
                             $val1 = $qso1->$field ?? '';
                             $val2 = $qso2->$field ?? '';
 
+                            $diff = false;
+                            if (!empty($val1) && !empty($val2) && strtolower($val1) != strtolower($val2)) {
+                                $diff = true;
+                            }
+
                             // Don't skip empty fields - show all fields
                             $fieldName = str_replace('COL_', '', $field);
 
-                            echo '<tr>';
+                            echo '<tr style="">';
                             echo '<td><strong>' . $label . '</strong></td>';
 
                             // QSO 1 - Default to checked (QSO 1 is primary by default)
@@ -240,7 +245,11 @@
                             $checked1 = 'checked';
                             echo '<input type="radio" name="mergeData[' . $fieldName . ']" value="qso1" ' . $checked1 . '> ';
                             if (!empty($val1)) {
-                                echo htmlspecialchars($val1);
+                                if ($diff) {
+                                    echo "<strong>".htmlspecialchars($val1)."</strong>";
+                                } else {
+                                    echo htmlspecialchars($val1);
+                                }
                             } else {
                                 echo '<em class="text-muted">(empty)</em>';
                             }
@@ -253,7 +262,11 @@
                             $checked2 = '';
                             echo '<input type="radio" name="mergeData[' . $fieldName . ']" value="qso2" ' . $checked2 . '> ';
                             if (!empty($val2)) {
-                                echo htmlspecialchars($val2);
+                                if ($diff) {
+                                    echo "<strong>".htmlspecialchars($val2)."</strong>";
+                                } else {
+                                    echo htmlspecialchars($val2);
+                                }
                             } else {
                                 echo '<em class="text-muted">(empty)</em>';
                             }
