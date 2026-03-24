@@ -1673,6 +1673,7 @@ $(document).ready(function () {
 
 			// Restore selected locations after reset
 			if (selectedLocations && selectedLocations.length > 0) {
+				$("#de").multiselect('deselectAll');
 				$('#de').multiselect('select', selectedLocations);
 			}
 
@@ -1831,6 +1832,7 @@ $(document).ready(function () {
 		requestAnimationFrame(function() {
 			// Restore locations after reset
 			if (selectedLocations && selectedLocations.length > 0) {
+				$("#de").multiselect('deselectAll');
 				$('#de').multiselect('select', selectedLocations);
 			}
 			updateFilterButtonStates();
