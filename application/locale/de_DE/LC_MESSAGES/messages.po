@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-22 17:51+0000\n"
+"POT-Creation-Date: 2026-03-24 06:50+0000\n"
 "PO-Revision-Date: 2026-03-23 06:01+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3809,7 +3809,7 @@ msgstr "QSO aktualisiert"
 msgid "Bearing"
 msgstr "Peilung"
 
-#: application/models/Logbookadvanced_model.php:1777
+#: application/models/Logbookadvanced_model.php:1782
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccGrids Tabelle ist leer. Bitte aktualisiere die VUCC-Grid-Daten."
 
@@ -7465,7 +7465,8 @@ msgstr "Provinz"
 
 #: application/views/awards/waip/index.php:233
 msgid "No QSOs found matching the criteria for the WAIP award!"
-msgstr "Keine QSOs gefunden, die den Kriterien für das WAIP-Diplom entsprechen!"
+msgstr ""
+"Keine QSOs gefunden, die den Kriterien für das WAIP-Diplom entsprechen!"
 
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"

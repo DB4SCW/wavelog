@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-22 17:51+0000\n"
+"POT-Creation-Date: 2026-03-24 06:50+0000\n"
 "PO-Revision-Date: 2026-03-22 19:17+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3767,7 +3767,7 @@ msgstr "QSO uppdaterad"
 msgid "Bearing"
 msgstr "Bäring"
 
-#: application/models/Logbookadvanced_model.php:1777
+#: application/models/Logbookadvanced_model.php:1782
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr "VuccLokator-tabellen är tom. Importera VUCC-lokatordata först."
 
@@ -7328,8 +7328,8 @@ msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
-"Provinskoder är 2-bokstavsförkortningar (t.ex. RM=Roma, MI=Milano, NA=Napoli)"
-". Se italienska provinsdiplomet för komplett lista."
+"Provinskoder är 2-bokstavsförkortningar (t.ex. RM=Roma, MI=Milano, "
+"NA=Napoli). Se italienska provinsdiplomet för komplett lista."
 
 #: application/views/awards/waip/index.php:12
 #, php-format
