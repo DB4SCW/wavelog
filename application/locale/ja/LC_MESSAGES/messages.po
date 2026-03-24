@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-22 17:51+0000\n"
+"POT-Creation-Date: 2026-03-24 06:50+0000\n"
 "PO-Revision-Date: 2026-03-23 03:28+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3770,7 +3770,7 @@ msgstr "QSOが更新されました"
 msgid "Bearing"
 msgstr "方位"
 
-#: application/models/Logbookadvanced_model.php:1777
+#: application/models/Logbookadvanced_model.php:1782
 msgid "VuccGrids table is empty. Please import the VUCC grids data first."
 msgstr ""
 "VuccGridsテーブルが空です。まずVUCCグリッドデータをインポートしてください。"
@@ -7306,18 +7306,18 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
-"アワードのカテゴリー：電話（SSB/AM/FM/SSTV）、CW、デジタル（RTTY/PSK/FT8など"
-"）、および各バンド。すべての州はQSLカードで確認する必要があります。要件："
-"COL_STATE（2文字の州コード）、COL_DXCC=248（イタリア）または225（サルデーニャ"
-"）、QSLカードによる確認のみ。衛星通信は認められません。"
+"アワードのカテゴリー：電話（SSB/AM/FM/SSTV）、CW、デジタル（RTTY/PSK/FT8な"
+"ど）、および各バンド。すべての州はQSLカードで確認する必要があります。要件："
+"COL_STATE（2文字の州コード）、COL_DXCC=248（イタリア）または225（サルデー"
+"ニャ）、QSLカードによる確認のみ。衛星通信は認められません。"
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
-"州コードは2文字の略語です（例：RM＝ローマ、MI＝ミラノ、NA＝ナポリ）。完全な"
-"リストについては、イタリアの州アワードに関する資料を参照してください。"
+"州コードは2文字の略語です（例：RM＝ローマ、MI＝ミラノ、NA＝ナポリ）。完全なリ"
+"ストについては、イタリアの州アワードに関する資料を参照してください。"
 
 #: application/views/awards/waip/index.php:12
 #, php-format
@@ -7334,9 +7334,9 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
-"このアワードは、イタリアの各州における交信状況と確認状況を追跡します。QSL"
-"カードによる確認のみが認められます。緑色＝確認済み、オレンジ色＝交信済みだが"
-"未確認。"
+"このアワードは、イタリアの各州における交信状況と確認状況を追跡します。QSLカー"
+"ドによる確認のみが認められます。緑色＝確認済み、オレンジ色＝交信済みだが未確"
+"認。"
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
