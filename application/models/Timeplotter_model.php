@@ -5,9 +5,7 @@ class Timeplotter_model extends CI_Model
 {
 
     function getTimes($postdata) {
-		$CI =& get_instance();
-		$CI->load->model('logbooks_model');
-		$logbooks_locations_array = $CI->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
+		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
 
         if ($logbooks_locations_array[0] === -1) {
             header('Content-Type: application/json');
@@ -33,6 +31,10 @@ class Timeplotter_model extends CI_Model
 
         if ($postdata['cqzone'] != 'All') {
             $this->db->where('col_cqz', $postdata['cqzone']);
+        }
+
+        if (!empty($postdata['mode']) && $postdata['mode'] != 'All') {
+            $this->db->where('col_mode', $postdata['mode']);
         }
 
         $this->db->where_in('station_id', $logbooks_locations_array);
@@ -96,4 +98,40 @@ class Timeplotter_model extends CI_Model
         }
 
     }
+
+	/*
+	 * Get's the worked modes from the log
+	 */
+	function get_worked_modes() {
+
+		$this->load->model('logbooks_model');
+		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
+
+		if ($logbooks_locations_array[0] === -1) {
+			return null;
+		}
+
+		$location_list = "'".implode("','",$logbooks_locations_array)."'";
+
+		// get all worked modes from database
+		$data = $this->db->query(
+			"SELECT distinct LOWER(`COL_MODE`) as `COL_MODE` FROM `" . $this->config->item('table_name') . "` WHERE station_id in (" . $location_list . ") order by COL_MODE ASC"
+		);
+		$results = array();
+		foreach ($data->result() as $row) {
+			array_push($results, $row->COL_MODE);
+		}
+
+		$data = $this->db->query(
+			"SELECT distinct LOWER(`COL_SUBMODE`) as `COL_SUBMODE` FROM `" . $this->config->item('table_name') . "` WHERE station_id in (" . $location_list . ") and coalesce(COL_SUBMODE, '') <> '' order by COL_SUBMODE ASC"
+		);
+		foreach ($data->result() as $row) {
+			if (!in_array($row, $results)) {
+				array_push($results, $row->COL_SUBMODE);
+			}
+		}
+		asort($results);
+
+		return $results;
+	}
 }
