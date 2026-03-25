@@ -670,7 +670,7 @@ $(document).ready(function () {
 	$('#dxcc').multiselect({
 		// template is needed for bs5 support
 		templates: {
-		  button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-secondary me-2 w-auto" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
+			button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-secondary me-2 w-auto" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
 		},
 		enableFiltering: true,
 		enableFullValueFiltering: false,
@@ -1664,80 +1664,90 @@ $(document).ready(function () {
 				case 'date': 		col1 = currentRow.find("td:eq(1)").text(); break;
 			}
 			if (col1.length == 0) return;
+
+			// Preserve selected locations before reset
+			const selectedLocations = $('#de').val();
+
 			silentReset = true;
 			$('#searchForm').trigger("reset");
+
+			// Restore selected locations after reset
+			if (selectedLocations && selectedLocations.length > 0) {
+				$("#de").multiselect('deselectAll');
+				$('#de').multiselect('select', selectedLocations);
+			}
 
 			if (type == 'date') {
 				let dateParts;
 				let formattedDate;
 
-			switch (custom_date_format) {
-				case "DD/MM/YY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[1]}-${dateParts[0]}`;
-					break;
+				switch (custom_date_format) {
+					case "DD/MM/YY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[1]}-${dateParts[0]}`;
+						break;
 
-				case "DD/MM/YYYY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-					break;
+					case "DD/MM/YYYY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+						break;
 
-				case "MM/DD/YY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[0]}-${dateParts[1]}`;
-					break;
+					case "MM/DD/YY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[0]}-${dateParts[1]}`;
+						break;
 
-				case "MM/DD/YYYY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
-					break;
+					case "MM/DD/YYYY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
+						break;
 
-				case "DD.MM.YYYY":
-					dateParts = col1.split(' ')[0].split('.');
-					formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-					break;
+					case "DD.MM.YYYY":
+						dateParts = col1.split(' ')[0].split('.');
+						formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+						break;
 
-				case "YY/MM/DD":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${ensureFourDigitYear(dateParts[0])}-${dateParts[1]}-${dateParts[2]}`;
-					break;
+					case "YY/MM/DD":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${ensureFourDigitYear(dateParts[0])}-${dateParts[1]}-${dateParts[2]}`;
+						break;
 
-				case "YYYY-MM-DD":
-					dateParts = col1.split(' ')[0].split('-');
-					formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
-					break;
+					case "YYYY-MM-DD":
+						dateParts = col1.split(' ')[0].split('-');
+						formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
+						break;
 
-				case "MMM DD, YY":
-				case "MMM DD, YYYY":
-					const monthNames = {
-						Jan: "01",
-						Feb: "02",
-						Mar: "03",
-						Apr: "04",
-						May: "05",
-						Jun: "06",
-						Jul: "07",
-						Aug: "08",
-						Sep: "09",
-						Oct: "10",
-						Nov: "11",
-						Dec: "12"
-					};
+					case "MMM DD, YY":
+					case "MMM DD, YYYY":
+						const monthNames = {
+							Jan: "01",
+							Feb: "02",
+							Mar: "03",
+							Apr: "04",
+							May: "05",
+							Jun: "06",
+							Jul: "07",
+							Aug: "08",
+							Sep: "09",
+							Oct: "10",
+							Nov: "11",
+							Dec: "12"
+						};
 
-					// Split by space and comma
-					const parts = col1.replace(',', '').split(' '); // Example: ["Dec", "03", "24"]
+						// Split by space and comma
+						const parts = col1.replace(',', '').split(' '); // Example: ["Dec", "03", "24"]
 
-					const month = monthNames[parts[0]]; // Convert month name to numeric format
-					const day = parts[1].padStart(2, '0'); // Ensure day has leading zero
-					const year = ensureFourDigitYear(parts[2]); // Ensure 4-digit year
+						const month = monthNames[parts[0]]; // Convert month name to numeric format
+						const day = parts[1].padStart(2, '0'); // Ensure day has leading zero
+						const year = ensureFourDigitYear(parts[2]); // Ensure 4-digit year
 
-					formattedDate = `${year}-${month}-${day}`; // Convert to 'YYYY-MM-DD'
-					break;
+						formattedDate = `${year}-${month}-${day}`; // Convert to 'YYYY-MM-DD'
+						break;
 
-				default:
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-			}
+					default:
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+				}
 				$("#dateFrom").val(formattedDate);
 				$("#dateTo").val(formattedDate);
 			} else {
@@ -1814,8 +1824,17 @@ $(document).ready(function () {
 		if (silentReset) {
     	    silentReset = false; // reset flag
         	return; // skip submit
-    	}
+		}
+
+		// Preserve selected locations during normal reset
+		const selectedLocations = $('#de').val();
+
 		requestAnimationFrame(function() {
+			// Restore locations after reset
+			if (selectedLocations && selectedLocations.length > 0) {
+				$("#de").multiselect('deselectAll');
+				$('#de').multiselect('select', selectedLocations);
+			}
 			updateFilterButtonStates();
 		});
 		setTimeout(function() {
