@@ -408,6 +408,7 @@ class Awards extends CI_Controller {
 			$postdata['includedeleted'] = $this->security->xss_clean($this->input->post('includedeleted'));
 			$postdata['band'] = $this->security->xss_clean($this->input->post('band'));
 			$postdata['mode'] = $this->security->xss_clean($this->input->post('mode'));
+			$postdata['prop_mode'] = $this->security->xss_clean($this->input->post('prop_mode'));
 		} else { // Setting default values at first load of page
 			$postdata['qsl'] = 1;
 			$postdata['lotw'] = 1;
@@ -420,6 +421,7 @@ class Awards extends CI_Controller {
 			$postdata['includedeleted'] = 0;
 			$postdata['band'] = 'All';
 			$postdata['mode'] = 'All';
+			$postdata['prop_mode'] = 'All';
 		}
 
 		$data['jcc_array'] = $this->jcc_model->get_jcc_array($bands, $postdata);
@@ -444,8 +446,9 @@ class Awards extends CI_Controller {
 		$postdata['notworked'] = $this->security->xss_clean($this->input->post('notworked'));
 		$postdata['band'] = $this->security->xss_clean($this->input->post('band'));
 		$postdata['mode'] = $this->security->xss_clean($this->input->post('mode'));
+		$postdata['prop_mode'] = $this->security->xss_clean($this->input->post('prop_mode'));
 
-		$qsos = $this->Jcc_model->exportJcc($postdata);
+		$qsos = $this->Jcc_model->export_jcc($postdata);
 
 		$fp = fopen( 'php://output', 'w' );
 		$i=1;
@@ -1920,6 +1923,7 @@ class Awards extends CI_Controller {
 	    $postdata['notworked'] = $this->input->post('notworked')  == 0 ? NULL: 1;
 	    $postdata['band'] = $this->security->xss_clean($this->input->post('band'));
 	    $postdata['mode'] = $this->security->xss_clean($this->input->post('mode'));
+	    $postdata['prop_mode'] = $this->security->xss_clean($this->input->post('prop_mode'));
 
 	    $jcc_wkd = $this->jcc_model->fetch_jcc_wkd($postdata);
 	    $jcc_cnfm = $this->jcc_model->fetch_jcc_cnfm($postdata);

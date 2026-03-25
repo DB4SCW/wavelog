@@ -175,5 +175,5 @@ function addMarker(L, D, mapColor, map) {
 
 function onClick(e) {
     var marker = e.target;
-    displayContactsOnMap($("#jccmap"),marker.options.prefix, $('#band2').val(), 'All', 'All', $('#mode').val(), 'JCC');
+    displayContactsOnMap($("#jccmap"), marker.options.prefix, $('#band2').val(), 'All', 'All', $('#mode').val(), 'JCC');
 }

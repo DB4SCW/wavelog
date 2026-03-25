@@ -90,7 +90,7 @@
                 <label class="col-md-2 control-label" for="mode"><?= __("Mode"); ?></label>
                 <div class="col-md-2">
                 <select id="mode" name="mode" class="form-select form-select-sm">
-                    <option value="All" <?php if ($this->input->post('mode') == "All" || $this->input->method() !== 'mode') echo ' selected'; ?>><?= __("All"); ?></option>
+                    <option value="All" <?php if ($this->input->post('mode') == "All" || $this->input->method() !== 'post') echo ' selected'; ?>><?= __("All"); ?></option>
                     <?php
                     foreach($modes->result() as $mode){
                         if ($mode->submode == null) {
