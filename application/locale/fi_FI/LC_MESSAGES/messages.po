@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-16 13:30+0000\n"
+"PO-Revision-Date: 2026-03-26 03:04+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fi/>\n"
@@ -620,7 +620,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -789,7 +789,7 @@ msgstr "Virheellinen viestityyppi."
 
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
-msgstr ""
+msgstr "Sähköpostia ei voida lähettää. Tarkista sähköpostiasetuksesi."
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
@@ -1201,15 +1201,15 @@ msgstr "Hamsat - Satellite Roving"
 
 #: application/controllers/Header_auth.php:22
 msgid "SSO Authentication is disabled."
-msgstr ""
+msgstr "SSO-autentikointi on pois käytöstä."
 
 #: application/controllers/Header_auth.php:36
 msgid "SSO Authentication is disabled. Check your configuration."
-msgstr ""
+msgstr "SSO-autentikointi on pois käytöstä. Tarkista asetuksesi."
 
 #: application/controllers/Header_auth.php:89
 msgid "User not found."
-msgstr ""
+msgstr "Käyttäjää ei löydy."
 
 #: application/controllers/Header_auth.php:104
 #: application/controllers/User.php:1329
@@ -1224,15 +1224,17 @@ msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
 msgstr ""
+"Pahoittelut. Tämä instanssi on tällä hetkellä ylläpitotilassa. Vain "
+"järjestelmänvalvojat voivat tällä hetkellä kirjautua sisään."
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "Jokin meni pahasti pieleen. Tarkista virheloki."
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "SSO-konfikuraation virhe. Tarkista virheloki."
 
 #: application/controllers/Hrdlog.php:70 application/controllers/Hrdlog.php:71
 msgid "HRD Log upload for this station is disabled."
@@ -3192,7 +3194,7 @@ msgstr "Käyttäjät"
 
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
-msgstr ""
+msgstr "Ei voida muuttaa. Hallinnoi tätä identiteetintarjoajasi kautta."
 
 #: application/controllers/User.php:471
 #: application/views/club/permissions.php:279
@@ -3786,6 +3788,8 @@ msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
 msgstr ""
+"Virheellinen ensisijainen QSO-tunnus tai sinulla ei ole oikeutta käyttää "
+"mitään QSO:ista"
 
 #: application/models/Logbookadvanced_model.php:2412
 #: application/views/view_log/qso.php:945
@@ -3795,10 +3799,11 @@ msgstr "QSOa ei löytynyt"
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
 msgstr ""
+"Yhdistettäväksi ei ole valittu kenttiä tai QSO:iden välillä ei ole eroja"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSO-yhteydet yhdistettiin onnistuneesti"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -7344,7 +7349,7 @@ msgstr "WAE-nimi"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "WAIP-awardi"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7352,6 +7357,9 @@ msgid ""
 "stations operating from Italian provinces. Italy has over 100 provinces, "
 "making this a challenging and prestigious award."
 msgstr ""
+"WAIP-awardi (Worked All Italian Provinces) myönnetään yhteyksistä Italian "
+"provinsseissa toimiviin asemiin. Italiassa on yli 100 provinssia, mikä tekee "
+"tästä haastavan ja arvostetun awardin."
 
 #: application/views/awards/waip/index.php:10
 msgid ""
@@ -7360,21 +7368,29 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
+"Awardikategoriat: PHONE (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/jne.) ja "
+"yksittäiset taajuusalueet. Kaikki provinssit on vahvistettava QSL-kortilla. "
+"Edellytys: COL_STATE (2-numeroinen provinssikoodi, COL_DXCC=248 (Italia) tai "
+"225 (Sardinia)), ainoastaan QSL-kortilla saadut vahvistukset. "
+"Satelliittiyhteyksiä ei oteta huomioon."
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
+"Maakuntakoodit ovat kaksikirjaimisia lyhenteitä (esim. RM=Rooma, MI=Milano, "
+"NA=Napoli). Katso täydellinen luettelo Italian maakuntatutkintojen "
+"luettelosta."
 
 #: application/views/awards/waip/index.php:12
 #, php-format
 msgid "For more information about the WAIP award, visit: %s"
-msgstr ""
+msgstr "Lisätietoja WAIP-awardista on osoitteessa %s"
 
 #: application/views/awards/waip/index.php:12
 msgid "WAIP Award Information"
-msgstr ""
+msgstr "WAIP-awardin informaatio"
 
 #: application/views/awards/waip/index.php:23
 msgid ""
@@ -7382,19 +7398,22 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
+"Tämä awardi tunnustaa Italian maakuntien vakiintuneet ja vahvistetut "
+"yhteydet. Vain QSL-kortilla tehdyt vahvistukset huomioidaan. Vihreä = "
+"Vahvistettu, oranssi = Vakioitu, mutta ei vahvistettu."
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
-msgstr ""
+msgstr "Awardin edistyminen"
 
 #: application/views/awards/waip/index.php:34
 msgid "Progress toward working all Italian provinces:"
-msgstr ""
+msgstr "Kaikkien Italian provinssien vahvistamisen edistyminen:"
 
 #: application/views/awards/waip/index.php:40
 #: application/views/awards/waip/index.php:92
 msgid "By Mode Category"
-msgstr ""
+msgstr "Mode-kategorian mukaan"
 
 #: application/views/awards/waip/index.php:42
 #: application/views/notes/add.php:47 application/views/notes/edit.php:42
@@ -7405,12 +7424,12 @@ msgstr "Kategoria"
 #: application/views/awards/waip/index.php:42
 #: application/views/awards/waip/index.php:64
 msgid "Progress"
-msgstr ""
+msgstr "Edistyminen"
 
 #: application/views/awards/waip/index.php:62
 #: application/views/awards/waip/index.php:97
 msgid "By Band"
-msgstr ""
+msgstr "Bandin mukaisesti"
 
 #: application/views/awards/waip/index.php:111
 #: application/views/awards/waip/index.php:169
@@ -7421,7 +7440,7 @@ msgstr "Maakunta"
 
 #: application/views/awards/waip/index.php:233
 msgid "No QSOs found matching the criteria for the WAIP award!"
-msgstr ""
+msgstr "Yhtään WAIP-awardinkriteerit täyttävää QSOa ei löytynyt!"
 
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
@@ -10933,7 +10952,7 @@ msgstr "Uusin versio"
 
 #: application/views/debug/index.php:50
 msgid "ADIF Version"
-msgstr ""
+msgstr "ADIF-versio"
 
 #: application/views/debug/index.php:55
 msgid "Language"
@@ -11027,11 +11046,11 @@ msgstr "MySQL versio"
 
 #: application/views/debug/index.php:129
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "OpenSSL-versio"
 
 #: application/views/debug/index.php:130
 msgid "not found"
-msgstr ""
+msgstr "ei löydy"
 
 #: application/views/debug/index.php:133
 msgid "Codeigniter Version"
@@ -11487,7 +11506,7 @@ msgstr "turkkilainen"
 
 #: application/views/debug/index.php:877
 msgid "Ukrainian"
-msgstr ""
+msgstr "ukrainalainen"
 
 #: application/views/distancerecords/index.php:4
 msgid "This page lists distance records per satellite based on gridsquares."
@@ -12691,7 +12710,7 @@ msgstr "WAB"
 
 #: application/views/interface_assets/header.php:252
 msgid "Italy"
-msgstr ""
+msgstr "Italia"
 
 #: application/views/interface_assets/header.php:258
 msgid "Japan"
@@ -13676,11 +13695,11 @@ msgstr "RX bandi"
 
 #: application/views/logbookadvanced/edit.php:137
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "Taajuus TX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "Taajuus RX (Hz)"
 
 #: application/views/logbookadvanced/edit.php:178
 #: application/views/logbookadvanced/edit.php:186
@@ -14155,38 +14174,39 @@ msgstr "Lokaattoriruutu ei vastaa DXCC-aluetta"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "Sinun on valittava täsmälleen 2 QSO:ta yhdistämistä varten!"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "Yhdistä QSOt"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
 msgstr ""
+"Oletko varma, että haluat yhdistää nämä QSO:t? Tätä toimintoa EI VOI perua!"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "Varoitus"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "Kyllä, yhdistä QSO:t"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "QSOt saatiin onnistuneesti kohdistettua!"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "Virhe QSOjen yhdistämisessä"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "Yhdistämisikkunan lataamisessa tapahtui virhe"
 
 #: application/views/logbookadvanced/index.php:338
 msgid "From"
@@ -14596,31 +14616,33 @@ msgstr "Lähetysteho"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "Mikä QSO tulisi säilyttää?"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
-msgstr ""
+msgstr "Valitse yhdistämisen jälkeen säilytettävä QSO. Toinen poistetaan."
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "Säilytä tämä QSO"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "Valitse kentät, jotka säilytetään kustakin QSOsta:"
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
 msgstr ""
+"Valittujen kenttien sisältö yhdistetään ensisijaiseen QSOon. Voit valita eri "
+"kentät kullekin QSOlle."
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "Kenttä"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
