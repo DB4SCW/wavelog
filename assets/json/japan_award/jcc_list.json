@@ -1407,6 +1407,190 @@
     "lat": 35.6821936,
     "lon": 139.762221
   },
+  "100101": {
+    "name": "Chiyoda",
+    "ja_name": "千代田",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.6938097,
+    "lon": 139.7532163
+  },
+  "100102": {
+    "name": "Chuo",
+    "ja_name": "中央",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.666255,
+    "lon": 139.775565
+  },
+  "100103": {
+    "name": "Minato",
+    "ja_name": "港",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.6432274,
+    "lon": 139.7400553
+  },
+  "100104": {
+    "name": "Shinjuku",
+    "ja_name": "新宿",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.6937632,
+    "lon": 139.7036319
+  },
+  "100105": {
+    "name": "Bunkyo",
+    "ja_name": "文京",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.71881,
+    "lon": 139.744732
+  },
+  "100106": {
+    "name": "Taito",
+    "ja_name": "台東",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.71745,
+    "lon": 139.790859
+  },
+  "100107": {
+    "name": "Sumida",
+    "ja_name": "墨田",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.7003789,
+    "lon": 139.8058673
+  },
+  "100108": {
+    "name": "Koto",
+    "ja_name": "江東",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.6727747,
+    "lon": 139.8169621
+  },
+  "100109": {
+    "name": "Shinagawa",
+    "ja_name": "品川",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.599252,
+    "lon": 139.73891
+  },
+  "100110": {
+    "name": "Meguro",
+    "ja_name": "目黒",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.62125,
+    "lon": 139.688014
+  },
+  "100111": {
+    "name": "Ota",
+    "ja_name": "大田",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.561206,
+    "lon": 139.715843
+  },
+  "100112": {
+    "name": "Setagaya",
+    "ja_name": "世田谷",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.646096,
+    "lon": 139.65627
+  },
+  "100113": {
+    "name": "Shibuya",
+    "ja_name": "渋谷",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.6645956,
+    "lon": 139.6987107
+  },
+  "100114": {
+    "name": "Nakano",
+    "ja_name": "中野",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.718123,
+    "lon": 139.664468
+  },
+  "100115": {
+    "name": "Suginami",
+    "ja_name": "杉並",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.6994929,
+    "lon": 139.6362876
+  },
+  "100116": {
+    "name": "Toshima",
+    "ja_name": "豊島",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.736156,
+    "lon": 139.714222
+  },
+  "100117": {
+    "name": "Kita",
+    "ja_name": "北",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.755838,
+    "lon": 139.736687
+  },
+  "100118": {
+    "name": "Arakawa",
+    "ja_name": "荒川",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.737529,
+    "lon": 139.78131
+  },
+  "100119": {
+    "name": "Itabashi",
+    "ja_name": "板橋",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.774143,
+    "lon": 139.681209
+  },
+  "100120": {
+    "name": "Nerima",
+    "ja_name": "練馬",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.74836,
+    "lon": 139.638735
+  },
+  "100121": {
+    "name": "Adachi",
+    "ja_name": "足立",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.783703,
+    "lon": 139.795319
+  },
+  "100122": {
+    "name": "Katsushika",
+    "ja_name": "葛飾",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.751733,
+    "lon": 139.863816
+  },
+  "100123": {
+    "name": "Edogawa",
+    "ja_name": "江戸川",
+    "deleted": false,
+    "deleted_date": "",
+    "lat": 35.678278,
+    "lon": 139.871091
+  },
   "1002": {
     "name": "Hachioji",
     "ja_name": "八王子",
@@ -7126,189 +7310,5 @@
     "deleted_date": "",
     "lat": 26.1625434,
     "lon": 127.771152
-  },
-  "100101": {
-    "name": "Chiyoda",
-    "ja_name": "千代田",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.6938097,
-    "lon": 139.7532163
-  },
-  "100102": {
-    "name": "Chuo",
-    "ja_name": "中央",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.666255,
-    "lon": 139.775565
-  },
-  "100103": {
-    "name": "Minato",
-    "ja_name": "港",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.6432274,
-    "lon": 139.7400553
-  },
-  "100104": {
-    "name": "Shinjuku",
-    "ja_name": "新宿",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.6937632,
-    "lon": 139.7036319
-  },
-  "100105": {
-    "name": "Bunkyo",
-    "ja_name": "文京",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.71881,
-    "lon": 139.744732
-  },
-  "100106": {
-    "name": "Taito",
-    "ja_name": "台東",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.71745,
-    "lon": 139.790859
-  },
-  "100107": {
-    "name": "Sumida",
-    "ja_name": "墨田",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.7003789,
-    "lon": 139.8058673
-  },
-  "100108": {
-    "name": "Koto",
-    "ja_name": "江東",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.6727747,
-    "lon": 139.8169621
-  },
-  "100109": {
-    "name": "Shinagawa",
-    "ja_name": "品川",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.599252,
-    "lon": 139.73891
-  },
-  "100110": {
-    "name": "Meguro",
-    "ja_name": "目黒",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.62125,
-    "lon": 139.688014
-  },
-  "100111": {
-    "name": "Ota",
-    "ja_name": "大田",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.561206,
-    "lon": 139.715843
-  },
-  "100112": {
-    "name": "Setagaya",
-    "ja_name": "世田谷",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.646096,
-    "lon": 139.65627
-  },
-  "100113": {
-    "name": "Shibuya",
-    "ja_name": "渋谷",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.6645956,
-    "lon": 139.6987107
-  },
-  "100114": {
-    "name": "Nakano",
-    "ja_name": "中野",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.718123,
-    "lon": 139.664468
-  },
-  "100115": {
-    "name": "Suginami",
-    "ja_name": "杉並",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.6994929,
-    "lon": 139.6362876
-  },
-  "100116": {
-    "name": "Toshima",
-    "ja_name": "豊島",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.736156,
-    "lon": 139.714222
-  },
-  "100117": {
-    "name": "Kita",
-    "ja_name": "北",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.755838,
-    "lon": 139.736687
-  },
-  "100118": {
-    "name": "Arakawa",
-    "ja_name": "荒川",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.737529,
-    "lon": 139.78131
-  },
-  "100119": {
-    "name": "Itabashi",
-    "ja_name": "板橋",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.774143,
-    "lon": 139.681209
-  },
-  "100120": {
-    "name": "Nerima",
-    "ja_name": "練馬",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.74836,
-    "lon": 139.638735
-  },
-  "100121": {
-    "name": "Adachi",
-    "ja_name": "足立",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.783703,
-    "lon": 139.795319
-  },
-  "100122": {
-    "name": "Katsushika",
-    "ja_name": "葛飾",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.751733,
-    "lon": 139.863816
-  },
-  "100123": {
-    "name": "Edogawa",
-    "ja_name": "江戸川",
-    "deleted": false,
-    "deleted_date": "",
-    "lat": 35.678278,
-    "lon": 139.871091
   }
 }

@@ -161,8 +161,10 @@
                     <tbody>';
         foreach ($jcc_array as $jcc => $value) {      // Fills the table with the data
             echo '<tr>';
-            foreach ($value as $name => $key) {
-				echo '<td style="text-align: center">' . $key . '</td>';
+            echo '<td style="text-align: center">' . $value['Number'] . '</td>';
+            echo '<td style="text-align: center">' . $value['City'] . '</td>';
+            foreach ($bands as $band) {
+                echo '<td style="text-align: center">' . $value[$band] . '</td>';
             }
             echo '</tr>';
         }
