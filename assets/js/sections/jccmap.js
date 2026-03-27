@@ -28,6 +28,7 @@ function load_jcc_map() {
             qrz: +$('#qrz').prop('checked'),
             clublog: +$('#clublog').prop('checked'),
             eqsl: +$('#eqsl').prop('checked'),
+			includedeleted: +$('#includedeleted').prop('checked'),
         },
         success: function(data) {
             load_jcc_map2(data, worked, confirmed, notworked);

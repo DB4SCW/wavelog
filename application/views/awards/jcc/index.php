@@ -73,6 +73,16 @@
             </div>
 
             <div class="mb-3 row">
+                <div class="col-md-2"><?= __("Deleted cities"); ?></div>
+                <div class="col-md-10">
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="includedeleted" value="1" id="includedeleted" <?php if ($this->input->post('includedeleted')) echo ' checked="checked"'; ?> >
+                        <label class="form-check-label" for="includedeleted"><?= __("Include deleted"); ?></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
                 <label class="col-md-2 control-label" for="band2"><?= __("Band"); ?></label>
                 <div class="col-md-2">
                     <select id="band2" name="band" class="form-select form-select-sm">
