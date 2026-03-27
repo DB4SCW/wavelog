@@ -51,22 +51,22 @@ class Jcc_model extends CI_Model {
 
 	private function get_qsl_confirmed_expr($postdata) {
 		$qsl = array();
-		if (($postdata['qsl'] ?? '') != '') {
+		if (($postdata['qsl'] ?? null) == 1) {
 			$qsl[] = "col_qsl_rcvd = 'Y'";
 		}
-		if (($postdata['lotw'] ?? '') != '') {
+		if (($postdata['lotw'] ?? null) == 1) {
 			$qsl[] = "col_lotw_qsl_rcvd = 'Y'";
 		}
-		if (($postdata['eqsl'] ?? '') != '') {
+		if (($postdata['eqsl'] ?? null) == 1) {
 			$qsl[] = "col_eqsl_qsl_rcvd = 'Y'";
 		}
-		if (($postdata['qrz'] ?? '') != '') {
+		if (($postdata['qrz'] ?? null) == 1) {
 			$qsl[] = "COL_QRZCOM_QSO_DOWNLOAD_STATUS = 'Y'";
 		}
-		if (($postdata['clublog'] ?? '') != '') {
+		if (($postdata['clublog'] ?? null) == 1) {
 			$qsl[] = "COL_CLUBLOG_QSO_DOWNLOAD_STATUS = 'Y'";
 		}
-		if (($postdata['dcl'] ?? '') != '') {
+		if (($postdata['dcl'] ?? null) == 1) {
 			$qsl[] = "COL_DCL_QSL_RCVD = 'Y'";
 		}
 
