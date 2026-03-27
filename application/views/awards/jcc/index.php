@@ -115,7 +115,7 @@
                     <button id="button1id" type="submit" name="button1id" class="btn btn-sm btn-primary"><?= __("Show"); ?></button>
                     <?php if ($jcc_array) {?>
                     <button type="button" onclick="load_jcc_map();" class="btn btn-info btn-sm"><i class="fas fa-globe-asia"></i> <?= __("Show JCC Map"); ?></button>
-                    <button id="button3id" type="button" onclick="export_qsos();" name="button3id" class="btn btn-sm btn-info"><?= __("Export"); ?></button>
+					<button id="button3id" type="button" onclick="export_qsos();" name="button3id" class="btn btn-sm btn-info"><?= __("Export confirmed QSOs"); ?></button>
                     <?php } ?>
                 </div>
             </div>

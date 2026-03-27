@@ -30,7 +30,7 @@ class Jcc_model extends CI_Model {
 		}
 
 		return array_filter($entity_data, function ($entity) {
-			return !(isset($entity['deleted']) && $entity['deleted'] === true);
+			return !(isset($entity['deleted']) && $entity['deleted'] == true);
 		});
 	}
 
@@ -49,7 +49,7 @@ class Jcc_model extends CI_Model {
 		end";
 	}
 
-	private function get_qsl_confirmed_expr($postdata) {
+	private function get_qsl_condition_sql($postdata) {
 		$qsl = array();
 		if (($postdata['qsl'] ?? null) == 1) {
 			$qsl[] = "col_qsl_rcvd = 'Y'";
@@ -70,9 +70,11 @@ class Jcc_model extends CI_Model {
 			$qsl[] = "COL_DCL_QSL_RCVD = 'Y'";
 		}
 
-		$condition_sql = count($qsl) > 0 ? implode(' or ', $qsl) : '1=0';
+		return count($qsl) > 0 ? implode(' or ', $qsl) : '1=0';
+	}
 
-		return 'case when (' . $condition_sql . ') then 1 else 0 end';
+	private function get_qsl_confirmed_expr($postdata) {
+		return 'case when (' . $this->get_qsl_condition_sql($postdata) . ') then 1 else 0 end';
 	}
 
 	private function build_entity_in_list_sql($entity_data) {
@@ -83,11 +85,43 @@ class Jcc_model extends CI_Model {
 		return implode(',', $keys);
 	}
 
-	private function build_entity_status_base_query($entity_expr, $entity_in_list_sql, $key_col, $postdata, &$bindings) {
-		$confirmed_expr = $this->get_qsl_confirmed_expr($postdata);
+	private function build_entity_query_where_sql($entity_in_list_sql, $postdata, &$bindings, $confirmed_only = false) {
 		$band = $postdata['band'] ?? 'All';
 		$mode = $postdata['mode'] ?? 'All';
 		$prop_mode = $postdata['prop_mode'] ?? 'All';
+
+		$where = array(
+			"col_dxcc in ('339')",
+			"col_cnty in (" . $entity_in_list_sql . ")",
+			"station_id in (" . $this->location_list . ")",
+		);
+		if ($band != 'All') {
+			if ($band === 'SAT') {
+				$where[] = "(col_prop_mode = ?)";
+				$bindings[] = $band;
+			} else {
+				$where[] = "(col_band = ?)";
+				$bindings[] = $band;
+			}
+		}
+		if ($mode != 'All') {
+			$where[] = "(col_mode = ? or col_submode = ?)";
+			$bindings[] = $mode;
+			$bindings[] = $mode;
+		}
+		if ($prop_mode != 'All') {
+			$where[] = "(col_prop_mode = ?)";
+			$bindings[] = $prop_mode;
+		}
+		if ($confirmed_only) {
+			$where[] = '(' . $this->get_qsl_condition_sql($postdata) . ')';
+		}
+
+		return implode(" and ", $where);
+	}
+
+	private function build_entity_status_base_query($entity_expr, $entity_in_list_sql, $key_col, $postdata, &$bindings) {
+		$confirmed_expr = $this->get_qsl_confirmed_expr($postdata);
 
 		$select = array(
 			$entity_expr . ' as entity',
@@ -105,30 +139,7 @@ class Jcc_model extends CI_Model {
 
 		$from = $this->config->item('table_name') . " thcv";
 
-		$where = array(
-			"col_dxcc in ('339')",
-			"col_cnty in (" . $entity_in_list_sql . ")",
-			"station_id in (" . $this->location_list . ")",
-		);
-		if ($band != 'All') {
-			if ($band == 'SAT') {
-				$where[] = "(col_prop_mode = ?)";
-				$bindings[] = $band;
-			} else {
-				$where[] = "(col_band = ?)";
-				$bindings[] = $band;
-			}
-		}
-		if ($mode != 'All') {
-			$where[] = "(col_mode = ? or col_submode = ?)";
-			$bindings[] = $mode;
-			$bindings[] = $mode;
-		}
-		if ($prop_mode != 'All') {
-			$where[] = "(col_prop_mode = ?)";
-			$bindings[] = $prop_mode;
-		}
-		$where_str = implode(" and ", $where);
+		$where_str = $this->build_entity_query_where_sql($entity_in_list_sql, $postdata, $bindings);
 
 		$sql = "select " . $select_str . " from " . $from . " where " . $where_str;
 
@@ -153,7 +164,7 @@ class Jcc_model extends CI_Model {
 
 		$step_1a = $this->build_entity_status_base_query('col_cnty', $jcc_in_list, $key_col, $postdata, $bindings);
 		$step_2a = $this->build_entity_status_max_confirmed_group_by_sql($step_1a);
-		
+
 		$step_1b = $this->build_entity_status_base_query('left(col_cnty, 4)', $ku_in_list, $key_col, $postdata, $bindings);
 		$step_2b = $this->build_entity_status_max_confirmed_group_by_sql($step_1b);
 
@@ -180,7 +191,8 @@ class Jcc_model extends CI_Model {
 			$cities[$city]['City'] = $city_data['name'];
 			$cities[$city]['count'] = 0;
 			foreach ($bands as $band) {
-				$cities[$city][$band] = '-';                  // Sets all to dash to indicate no result
+				// Sets all to dash to indicate no result
+				$cities[$city][$band] = '-';
 			}
 		}
 
@@ -265,82 +277,6 @@ class Jcc_model extends CI_Model {
 		return $summary;
 	}
 
-	function export_jcc($postdata) {
-		$bindings=[];
-		$prop_mode = $postdata['prop_mode'] ?? 'All';
-		$sql = "SELECT distinct col_cnty FROM " . $this->config->item('table_name') . " thcv
-			where station_id in (" . $this->location_list . ")";
-
-		if ($postdata['mode'] != 'All') {
-			$sql .= " and (col_mode = ? or col_submode = ?)";
-			$bindings[]=$postdata['mode'];
-			$bindings[]=$postdata['mode'];
-		}
-
-		$sql .= $this->add_state_to_query($postdata);
-		if ($postdata['band'] != 'All') {
-			if ($postdata['band'] == 'SAT') {
-				$sql .= " and col_prop_mode = ?";
-			} else {
-				$sql .= " and col_prop_mode !='SAT'";
-				$sql .= " and col_band = ?";
-			}
-			$bindings[] = $postdata['band'];
-		}
-		if ($prop_mode != 'All') {
-			$sql .= " and col_prop_mode = ?";
-			$bindings[] = $prop_mode;
-		}
-		$sql .= $this->genfunctions->addQslToQuery($postdata);
-		$sql .= ' ORDER BY COL_CNTY ASC';
-
-		$query = $this->db->query($sql,$bindings);
-
-		$jccs = array();
-		foreach($query->result() as $line) {
-			$jccs[] = $line->col_cnty;
-		}
-		$qsos = array();
-		foreach($jccs as $jcc) {
-			$qso = $this->get_first_qso($this->location_list, $jcc, $postdata);
-			$qsos[] = array('call' => $qso[0]->COL_CALL, 'date' => $qso[0]->COL_TIME_ON, 'band' => $qso[0]->COL_BAND, 'mode' => $qso[0]->COL_MODE, 'prop_mode' => $qso[0]->COL_PROP_MODE, 'cnty' => $qso[0]->COL_CNTY, 'jcc' => $this->ja_cities[$qso[0]->COL_CNTY]['name']);
-		}
-
-		return $qsos;
-	}
-
-	function get_first_qso($location_list, $jcc, $postdata) {
-		$bindings=[];
-		$prop_mode = $postdata['prop_mode'] ?? 'All';
-		$sql = 'SELECT COL_CNTY, COL_CALL, COL_TIME_ON, COL_BAND, COL_MODE, COL_PROP_MODE FROM '.$this->config->item('table_name').' t1
-			WHERE station_id in ('.$location_list.')';
-		if ($postdata['mode'] != 'All') {
-			$sql .= " and (col_mode = ? or col_submode = ?)";
-			$bindings[]=$postdata['mode'];
-			$bindings[]=$postdata['mode'];
-		}
-		$sql .= $this->add_state_to_query($postdata);
-		if ($postdata['band'] != 'All') {
-			if ($postdata['band'] == 'SAT') {
-				$sql .= " and col_prop_mode = ?";
-			} else {
-				$sql .= " and col_prop_mode !='SAT'";
-				$sql .= " and col_band = ?";
-			}
-			$bindings[] = $postdata['band'];
-		}
-		if ($prop_mode != 'All') {
-			$sql .= " and col_prop_mode = ?";
-			$bindings[] = $prop_mode;
-		}
-		$sql .= $this->genfunctions->addQslToQuery($postdata);
-		$sql .= ' AND COL_CNTY = ?';
-		$bindings[]=$jcc;
-		$sql .= ' ORDER BY COL_TIME_ON ASC LIMIT 1';
-		$query = $this->db->query($sql,$bindings);
-		return $query->result();
-	}
-
 	function get_jcc_map_array($postdata, $entity_status = null) {
 		if ($entity_status === null) {
 			$entity_status = $this->query_entity_status($postdata, 'none');
@@ -361,6 +297,66 @@ class Jcc_model extends CI_Model {
 		ksort($jccs, SORT_STRING);
 
 		return $jccs;
+	}
+
+	private function build_export_entity_source_query($entity_expr, $entity_in_list_sql, $postdata, &$bindings) {
+		$select = array(
+			$entity_expr . ' as entity',
+			'COL_PRIMARY_KEY',
+			'COL_CNTY',
+			'COL_CALL',
+			'COL_TIME_ON',
+			'COL_BAND',
+			'COL_MODE',
+			'COL_PROP_MODE',
+		);
+
+		$select_str = implode(", ", $select);
+
+		$from = $this->config->item('table_name') . " thcv";
+
+		$where_str = $this->build_entity_query_where_sql($entity_in_list_sql, $postdata, $bindings, true);
+
+		return 'select ' . $select_str . ' from ' . $from . ' where ' . $where_str;
+	}
+
+	function export_qsos($postdata) {
+		$jcc_data = $this->filter_entity_data($this->ja_cities, $postdata);
+		$ku_data = $this->filter_entity_data($this->ja_kus, $postdata);
+		$jcc_in_list = $this->build_entity_in_list_sql($jcc_data);
+		$ku_in_list = $this->build_entity_in_list_sql($ku_data);
+
+		$bindings = array();
+		$jcc_source_sql = $this->build_export_entity_source_query('col_cnty', $jcc_in_list, $postdata, $bindings);
+		$ku_source_sql = $this->build_export_entity_source_query('left(col_cnty, 4)', $ku_in_list, $postdata, $bindings);
+		$source_sql = $this->build_entity_status_union_all_sql($jcc_source_sql, $ku_source_sql);
+
+		$ranked_sql = 'select source.*, row_number() over (partition by entity order by COL_TIME_ON asc, COL_PRIMARY_KEY asc) as rn from (' . $source_sql . ') source';
+		$final_sql = 'select entity, COL_CNTY, COL_CALL, COL_TIME_ON, COL_BAND, COL_MODE, COL_PROP_MODE from (' . $ranked_sql . ') ranked where rn = 1 order by entity asc';
+
+		$query = $this->db->query($final_sql, $bindings);
+		$rows = $query->result_array();
+
+		return $rows;
+	}
+
+	function export_jcc($postdata) {
+		$rows = $this->export_qsos($postdata);
+		$qsos = array();
+		foreach ($rows as $row) {
+			$entity = $row['entity'];
+			$qsos[] = array(
+				'call' => $row['COL_CALL'],
+				'date' => $row['COL_TIME_ON'],
+				'band' => $row['COL_BAND'],
+				'mode' => $row['COL_MODE'],
+				'prop_mode' => $row['COL_PROP_MODE'],
+				'cnty' => $entity,
+				'jcc' => $this->ja_cities[$entity]['name'] ?? '',
+			);
+		}
+
+		return $qsos;
 	}
 
 }
