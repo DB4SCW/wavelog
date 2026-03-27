@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-23 03:28+0000\n"
+"PO-Revision-Date: 2026-03-25 09:06+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -3787,7 +3787,7 @@ msgstr ""
 msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
-msgstr ""
+msgstr "プライマリQSOIDが無効、またはQSOへのアクセス権限がない"
 
 #: application/models/Logbookadvanced_model.php:2412
 #: application/views/view_log/qso.php:945
@@ -3796,11 +3796,11 @@ msgstr "QSOが見つかりません"
 
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
-msgstr ""
+msgstr "統合用のフィールドが選択されていないか、QSO同士の違いもありません"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSOの統合に成功しました"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -14117,38 +14117,38 @@ msgstr "DXCC 非対応のグリッドスクエア"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "マージするには、正確に2つの交信を選択する必要があります！"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "交信を統合する"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
-msgstr ""
+msgstr "本当にこれらの交信記録を統合しますか？この操作は元に戻せません！"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "危険"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "はい、QSOを統合します"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "QSOの統合に成功しました！"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "QSOのマージ中にエラーが発生しました"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "マージダイアログの読み込みエラー"
 
 #: application/views/logbookadvanced/index.php:338
 msgid "From"
@@ -14554,31 +14554,33 @@ msgstr "ステーション電力"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "どの交信記録を保存すべきか？"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
-msgstr ""
+msgstr "統合後に残すQSOを選択してください。残すQSOは削除されます。"
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "このQSOを保存"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "各QSOから保持するフィールドを選択してください。"
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
 msgstr ""
+"選択されたフィールドは、メインのQSOに統合されます。各QSOから異なるフィールド"
+"を選択することも可能です。"
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "分野"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25

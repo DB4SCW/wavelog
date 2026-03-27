@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-22 09:55+0000\n"
+"PO-Revision-Date: 2026-03-26 03:04+0000\n"
 "Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
@@ -622,7 +622,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -3794,6 +3794,8 @@ msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
 msgstr ""
+"Ongeldige primaire QSO-ID, of je hebt geen toestemming om toegang te krijgen "
+"tot een van de QSO's"
 
 #: application/models/Logbookadvanced_model.php:2412
 #: application/views/view_log/qso.php:945
@@ -3803,10 +3805,11 @@ msgstr "QSO niet gevonden"
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
 msgstr ""
+"Geen velden geselecteerd voor samenvoegen of geen verschillen tussen QSOs"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSOs succesvol samengevoegd"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -7362,7 +7365,7 @@ msgstr "WAE Naam"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "WAIP Award"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7370,6 +7373,10 @@ msgid ""
 "stations operating from Italian provinces. Italy has over 100 provinces, "
 "making this a challenging and prestigious award."
 msgstr ""
+"De WAIP (Worked All Italian Provinces) Award wordt uitgegeven voor contacten "
+"met stations die opereren vanuit Italiaanse provincies. Italië heeft meer "
+"dan 100 provincies, wat dit een uitdagende en prestigieuze onderscheiding "
+"maakt."
 
 #: application/views/awards/waip/index.php:10
 msgid ""
@@ -7378,21 +7385,29 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
+"Award categorieën: PHONE (SSB/AM/FM/SSTV), CW, DIGI (RTTY/PSK/FT8/etc.), en "
+"individuele banden. Alle provincies moeten bevestigd zijn via QSL-kaart. "
+"Vereisten: COL_STATE (2-letterige provinciecode), COL_DXCC=248 (Italië) of "
+"225 (Sardinië), alleen QSL-kaartbevestiging. Geen satellietcontacten "
+"toegestaan."
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
+"Provinciecodes zijn 2-letterige afkortingen (bijv. RM=Rome, MI=Milaan, "
+"NA=Napels). Zie Italiaanse provinciale awardreferenties voor de volledige "
+"lijst."
 
 #: application/views/awards/waip/index.php:12
 #, php-format
 msgid "For more information about the WAIP award, visit: %s"
-msgstr ""
+msgstr "Voor meer informatie over de WAIP-award, bezoek: %s"
 
 #: application/views/awards/waip/index.php:12
 msgid "WAIP Award Information"
-msgstr ""
+msgstr "WAIP Awardinformatie"
 
 #: application/views/awards/waip/index.php:23
 msgid ""
@@ -7400,19 +7415,22 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
+"Deze prijs houdt de gewerkte en bevestigde status bij voor Italiaanse "
+"provincies. Alleen QSL-kaartbevestigingen worden geaccepteerd. Groen = "
+"Bevestigd, Oranje = Gewerkt maar niet bevestigd."
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
-msgstr ""
+msgstr "Award voortgang"
 
 #: application/views/awards/waip/index.php:34
 msgid "Progress toward working all Italian provinces:"
-msgstr ""
+msgstr "Voortgang geboekt bij het werken in alle Italiaanse provincies:"
 
 #: application/views/awards/waip/index.php:40
 #: application/views/awards/waip/index.php:92
 msgid "By Mode Category"
-msgstr ""
+msgstr "Per modus categorie"
 
 #: application/views/awards/waip/index.php:42
 #: application/views/notes/add.php:47 application/views/notes/edit.php:42
@@ -7423,12 +7441,12 @@ msgstr "Categorie"
 #: application/views/awards/waip/index.php:42
 #: application/views/awards/waip/index.php:64
 msgid "Progress"
-msgstr ""
+msgstr "Voortgang"
 
 #: application/views/awards/waip/index.php:62
 #: application/views/awards/waip/index.php:97
 msgid "By Band"
-msgstr ""
+msgstr "Per band"
 
 #: application/views/awards/waip/index.php:111
 #: application/views/awards/waip/index.php:169
@@ -7439,7 +7457,7 @@ msgstr "Provincie"
 
 #: application/views/awards/waip/index.php:233
 msgid "No QSOs found matching the criteria for the WAIP award!"
-msgstr ""
+msgstr "Geen QSOs gevonden die voldoen aan de criteria voor de WAIP-award!"
 
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
@@ -10961,7 +10979,7 @@ msgstr "Laatste release"
 
 #: application/views/debug/index.php:50
 msgid "ADIF Version"
-msgstr ""
+msgstr "ADIF-versie"
 
 #: application/views/debug/index.php:55
 msgid "Language"
@@ -12720,7 +12738,7 @@ msgstr "WAB"
 
 #: application/views/interface_assets/header.php:252
 msgid "Italy"
-msgstr ""
+msgstr "Italië"
 
 #: application/views/interface_assets/header.php:258
 msgid "Japan"
@@ -14187,38 +14205,40 @@ msgstr "Niet-DXCC overeenkomende locatorvak"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "Je moet precies 2 QSOs selecteren om samen te voegen!"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "QSO's samenvoegen"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
 msgstr ""
+"Weet je heel zeker dat je deze QSOs wilt samenvoegen? Deze handeling KAN "
+"niet ongedaan worden gemaakt!"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "Gevaar"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "Ja, QSOs samenvoegen"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "QSOs succesvol samengevoegd!"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "Fout bij het samenvoegen van QSOs"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "Fout bij het laden van het samenvoegvenster"
 
 #: application/views/logbookadvanced/index.php:338
 msgid "From"
@@ -14629,31 +14649,34 @@ msgstr "Station vermogen"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "Welke QSO moet behouden blijven?"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
 msgstr ""
+"Selecteer welk QSO na het samenvoegen overblijft. De andere wordt verwijderd."
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "Bewaar dit QSO"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "Selecteer welke velden je wil behouden van elk QSO:"
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
 msgstr ""
+"De geselecteerde velden worden samengevoegd in het primaire QSO. Je kunt "
+"verschillende velden uit elk QSO selecteren."
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "Veld"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
