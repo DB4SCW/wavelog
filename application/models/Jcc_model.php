@@ -251,14 +251,16 @@ class Jcc_model extends CI_Model {
 
 		// make sure SAT is after Total
 		// I don't know why, but the origin design is such.
-		$summary_worked_sat = $summary['worked']['SAT'];
-		$summary_confirmed_sat = $summary['confirmed']['SAT'];
+		if (isset($summary['worked']['SAT']) && isset($summary['confirmed']['SAT'])) {
+			$summary_worked_sat = $summary['worked']['SAT'];
+			$summary_confirmed_sat = $summary['confirmed']['SAT'];
 
-		unset($summary['worked']['SAT']);
-		unset($summary['confirmed']['SAT']);
+			unset($summary['worked']['SAT']);
+			unset($summary['confirmed']['SAT']);
 
-		$summary['worked']['SAT'] = $summary_worked_sat;
-		$summary['confirmed']['SAT'] = $summary_confirmed_sat;
+			$summary['worked']['SAT'] = $summary_worked_sat;
+			$summary['confirmed']['SAT'] = $summary_confirmed_sat;
+		}
 
 		return $summary;
 	}
