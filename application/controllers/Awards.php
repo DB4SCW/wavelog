@@ -424,8 +424,9 @@ class Awards extends CI_Controller {
 			$postdata['prop_mode'] = 'All';
 		}
 
-		$data['jcc_array'] = $this->jcc_model->get_jcc_array($bands, $postdata);
-		$data['jcc_summary'] = $this->jcc_model->get_jcc_summary($bands, $postdata);
+		$jcc_entity_status = $this->jcc_model->query_entity_status($postdata, 'band');
+		$data['jcc_array'] = $this->jcc_model->get_jcc_array($bands, $postdata, $jcc_entity_status);
+		$data['jcc_summary'] = $this->jcc_model->get_jcc_summary($bands, $postdata, $jcc_entity_status);
 
 		// Render Page
 		$data['page_title'] = sprintf(__("Awards - %s"), __("JCC"));
@@ -1905,7 +1906,7 @@ class Awards extends CI_Controller {
 
     /*
         function jcc_map
-        This displays the DXCC map
+        This displays the JCC map
     */
     public function jcc_map() {
 	    $this->load->model('jcc_model');
@@ -1925,16 +1926,8 @@ class Awards extends CI_Controller {
 	    $postdata['mode'] = $this->security->xss_clean($this->input->post('mode'));
 	    $postdata['prop_mode'] = $this->security->xss_clean($this->input->post('prop_mode'));
 
-	    $jcc_wkd = $this->jcc_model->fetch_jcc_wkd($postdata);
-	    $jcc_cnfm = $this->jcc_model->fetch_jcc_cnfm($postdata);
-
-	    $jccs = [];
-	    foreach ($jcc_wkd as $jcc) {
-		    $jccs[$jcc->COL_CNTY] = array(1, 0);
-	    }
-	    foreach ($jcc_cnfm as $jcc) {
-		    $jccs[$jcc->COL_CNTY][1] = 1;
-	    }
+	    $jcc_entity_status = $this->jcc_model->query_entity_status($postdata, 'none');
+	    $jccs = $this->jcc_model->get_jcc_map_array($postdata, $jcc_entity_status);
 
 	    header('Content-Type: application/json');
 	    echo json_encode($jccs);

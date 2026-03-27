@@ -13,18 +13,18 @@ class Jcc_model extends CI_Model {
 		$this->load_ku_data_from_json();
 	}
 
-	public $jaCities = array();
-	public $jaKus = array();
+	public $ja_cities = array();
+	public $ja_kus = array();
 
 	private function load_jcc_data_from_json() {
-		$this->jaCities = json_decode(file_get_contents(FCPATH . 'assets/json/japan_award/jcc_list.json'), true);
+		$this->ja_cities = json_decode(file_get_contents(FCPATH . 'assets/json/japan_award/jcc_list.json'), true);
 	}
 
 	private function load_ku_data_from_json() {
-		$this->jaKus = json_decode(file_get_contents(FCPATH . 'assets/json/japan_award/ku_list.json'), true);
+		$this->ja_kus = json_decode(file_get_contents(FCPATH . 'assets/json/japan_award/ku_list.json'), true);
 	}
 
-	private function get_entity_data_for_postdata($entity_data, $postdata) {
+	private function filter_entity_data($entity_data, $postdata) {
 		if (($postdata['includedeleted'] ?? null) != null) {
 			return $entity_data;
 		}
@@ -144,8 +144,8 @@ class Jcc_model extends CI_Model {
 	}
 
 	function query_entity_status($postdata, $key_col = "none") {
-		$jcc_data = $this->get_entity_data_for_postdata($this->jaCities, $postdata);
-		$ku_data = $this->get_entity_data_for_postdata($this->jaKus, $postdata);
+		$jcc_data = $this->filter_entity_data($this->ja_cities, $postdata);
+		$ku_data = $this->filter_entity_data($this->ja_kus, $postdata);
 		$jcc_in_list = $this->build_entity_in_list_sql($jcc_data);
 		$ku_in_list = $this->build_entity_in_list_sql($ku_data);
 
@@ -166,10 +166,12 @@ class Jcc_model extends CI_Model {
 		return $rows;
 	}
 
-	function get_jcc_array($bands, $postdata) {
+	function get_jcc_array($bands, $postdata, $entity_status = null) {
+		if ($entity_status === null) {
+			$entity_status = $this->query_entity_status($postdata, 'band');
+		}
 
-		$jcc_list = $this->get_entity_data_for_postdata($this->jaCities, $postdata);
-		$prop_mode = $postdata['prop_mode'] ?? 'All';
+		$jcc_list = $this->filter_entity_data($this->ja_cities, $postdata);
 
 		$cities = array();
 		// Initializing the array with all cities and bands
@@ -182,9 +184,7 @@ class Jcc_model extends CI_Model {
 			}
 		}
 
-		$jcc_status = $this->query_entity_status($postdata, 'band');
-
-		foreach ($jcc_status as $row) {
+		foreach ($entity_status as $row) {
 			if ($row['confirmed'] == 1) {
 				if ($postdata['confirmed'] != NULL) {
 					$cities[$row['entity']][$row['key_col']] = 'C';
@@ -206,7 +206,7 @@ class Jcc_model extends CI_Model {
 			}
 		}
 
-		if (isset($cities)) {
+		if (!empty($cities)) {
 			return $cities;
 		} else {
 			return 0;
@@ -217,136 +217,50 @@ class Jcc_model extends CI_Model {
 	/*
 	 * Function gets worked and confirmed summary on each band on the active stationprofile
 	 */
-	function get_jcc_summary($bands, $postdata) {
+	function get_jcc_summary($bands, $postdata, $entity_status = null) {
+		if ($entity_status === null) {
+			$entity_status = $this->query_entity_status($postdata, 'band');
+		}
+
+		$summary = array(
+			'worked' => array(),
+			'confirmed' => array(),
+		);
+
+		// $worked_by_band = array();
+		// $confirmed_by_band = array();
 		foreach ($bands as $band) {
-			if ($band != 'SAT') {
-				$worked = $this->get_summary_by_band($band, $postdata, $this->location_list);
-				$confirmed = $this->get_summary_by_band_confirmed($band, $postdata, $this->location_list);
-				$jcc_summary['worked'][$band] = $worked[0]->count;
-				$jcc_summary['confirmed'][$band] = $confirmed[0]->count;
+			$summary['worked'][$band] = 0;
+			$summary['confirmed'][$band] = 0;
+		}
+
+		$worked_total = array();
+		$confirmed_total = array();
+
+		foreach ($entity_status as $row) {
+			$worked_total[$row['entity']] = true;
+			$summary['worked'][$row['key_col']] += 1;
+			if ($row['confirmed'] == 1) {
+				$confirmed_total[$row['entity']] = true;
+				$summary['confirmed'][$row['key_col']] += 1;
 			}
 		}
 
-		$worked_total = $this->get_summary_by_band($postdata['band'], $postdata, $this->location_list);
-		$confirmed_total = $this->get_summary_by_band_confirmed($postdata['band'], $postdata, $this->location_list);
+		$summary['worked']['Total'] = count($worked_total);
+		$summary['confirmed']['Total'] = count($confirmed_total);
 
-		$jcc_summary['worked']['Total'] = $worked_total[0]->count;
-		$jcc_summary['confirmed']['Total'] = $confirmed_total[0]->count;
+		// make sure SAT is after Total
+		// I don't know why, but the origin design is such.
+		$summary_worked_sat = $summary['worked']['SAT'];
+		$summary_confirmed_sat = $summary['confirmed']['SAT'];
 
-		if (in_array('SAT', $bands)) {
-			$worked = $this->get_summary_by_band('SAT', $postdata, $this->location_list);
-			$confirmed = $this->get_summary_by_band_confirmed('SAT', $postdata, $this->location_list);
-			$jcc_summary['worked']['SAT'] = $worked[0]->count;
-			$jcc_summary['confirmed']['SAT'] = $confirmed[0]->count;
-		}
+		unset($summary['worked']['SAT']);
+		unset($summary['confirmed']['SAT']);
 
-		return $jcc_summary;
-	}
+		$summary['worked']['SAT'] = $summary_worked_sat;
+		$summary['confirmed']['SAT'] = $summary_confirmed_sat;
 
-	function get_summary_by_band($band, $postdata, $location_list) {
-		$bindings=[];
-		$prop_mode = $postdata['prop_mode'] ?? 'All';
-		$sql = "SELECT count(distinct thcv.col_cnty) as count FROM " . $this->config->item('table_name') . " thcv";
-		$sql .= " where station_id in (" . $location_list . ")";
-
-		if ($band == 'SAT') {
-			$sql .= " and thcv.col_prop_mode = ?";
-			$bindings[]=$band;
-		} else if ($band == 'All') {
-			if ($prop_mode == 'All') {
-				$this->load->model('bands');
-				$bandslots = $this->bands->get_worked_bands('jcc');
-				$bandslots_list = "'".implode("','",$bandslots)."'";
-
-				$sql .= " and thcv.col_band in (" . $bandslots_list . ")" .
-					" and thcv.col_prop_mode !='SAT'";
-			}
-		} else {
-			if ($prop_mode == 'All') {
-				$sql .= " and thcv.col_prop_mode !='SAT'";
-			}
-			$sql .= " and thcv.col_band = ?";
-			$bindings[]=$band;
-		}
-
-		if ($postdata['mode'] != 'All') {
-			$sql .= " and (col_mode = ? or col_submode = ?)";
-			$bindings[]=$postdata['mode'];
-			$bindings[]=$postdata['mode'];
-		}
-
-		if ($prop_mode != 'All') {
-			$sql .= " and col_prop_mode = ?";
-			$bindings[] = $prop_mode;
-		}
-
-		$sql .= $this->add_state_to_query($postdata);
-
-		$query = $this->db->query($sql,$bindings);
-
-		return $query->result();
-	}
-
-	function get_summary_by_band_confirmed($band, $postdata, $location_list) {
-		$bindings=[];
-		$prop_mode = $postdata['prop_mode'] ?? 'All';
-		$sql = "SELECT count(distinct thcv.col_cnty) as count FROM " . $this->config->item('table_name') . " thcv";
-		$sql .= " where station_id in (" . $location_list . ")";
-
-		if ($band == 'SAT') {
-			$sql .= " and thcv.col_prop_mode = ?";
-			$bindings[]=$band;
-		} else if ($band == 'All') {
-			if ($prop_mode == 'All') {
-				$this->load->model('bands');
-				$bandslots = $this->bands->get_worked_bands('jcc');
-				$bandslots_list = "'".implode("','",$bandslots)."'";
-
-				$sql .= " and thcv.col_band in (" . $bandslots_list . ")" .
-					" and thcv.col_prop_mode !='SAT'";
-			}
-		} else {
-			if ($prop_mode == 'All') {
-				$sql .= " and thcv.col_prop_mode !='SAT'";
-			}
-			$sql .= " and thcv.col_band = ?";
-			$bindings[]=$band;
-		}
-
-		if ($postdata['mode'] != 'All') {
-			$sql .= " and (col_mode = ? or col_submode = ?)";
-			$bindings[]=$postdata['mode'];
-			$bindings[]=$postdata['mode'];
-		}
-
-		if ($prop_mode != 'All') {
-			$sql .= " and col_prop_mode = ?";
-			$bindings[] = $prop_mode;
-		}
-
-		$sql .= $this->genfunctions->addQslToQuery($postdata);
-		$sql .= $this->add_state_to_query($postdata);
-		$query = $this->db->query($sql,$bindings);
-		return $query->result();
-	}
-
-
-	function add_state_to_query($postdata = array()) {
-		$entity_data = $this->get_entity_data_for_postdata($this->jaCities, $postdata);
-
-		if (empty($entity_data)) {
-			return " and 1 = 0";
-		}
-
-		$keys = array_map(function ($key) {
-			return $this->db->escape((string) $key);
-		}, array_keys($entity_data));
-
-		$sql = '';
-		$sql .= " and COL_DXCC in ('339')";
-		$sql .= " and (COL_CNTY LIKE '____' OR COL_CNTY LIKE '10____')";
-		$sql .= " and COL_CNTY in (" . implode(',', $keys) . ")";
-		return $sql;
+		return $summary;
 	}
 
 	function export_jcc($postdata) {
@@ -387,7 +301,7 @@ class Jcc_model extends CI_Model {
 		$qsos = array();
 		foreach($jccs as $jcc) {
 			$qso = $this->get_first_qso($this->location_list, $jcc, $postdata);
-			$qsos[] = array('call' => $qso[0]->COL_CALL, 'date' => $qso[0]->COL_TIME_ON, 'band' => $qso[0]->COL_BAND, 'mode' => $qso[0]->COL_MODE, 'prop_mode' => $qso[0]->COL_PROP_MODE, 'cnty' => $qso[0]->COL_CNTY, 'jcc' => $this->jaCities[$qso[0]->COL_CNTY]['name']);
+			$qsos[] = array('call' => $qso[0]->COL_CALL, 'date' => $qso[0]->COL_TIME_ON, 'band' => $qso[0]->COL_BAND, 'mode' => $qso[0]->COL_MODE, 'prop_mode' => $qso[0]->COL_PROP_MODE, 'cnty' => $qso[0]->COL_CNTY, 'jcc' => $this->ja_cities[$qso[0]->COL_CNTY]['name']);
 		}
 
 		return $qsos;
@@ -425,40 +339,26 @@ class Jcc_model extends CI_Model {
 		return $query->result();
 	}
 
-	function fetch_jcc_wkd($postdata) {
-		$status_rows = $this->query_entity_status($postdata, 'none');
-		$result = array();
-
-		foreach ($status_rows as $row) {
-			$line = new stdClass();
-			$line->COL_CNTY = $row['entity'];
-			$result[] = $line;
+	function get_jcc_map_array($postdata, $entity_status = null) {
+		if ($entity_status === null) {
+			$entity_status = $this->query_entity_status($postdata, 'none');
 		}
 
-		usort($result, function ($a, $b) {
-			return strcmp((string) $a->COL_CNTY, (string) $b->COL_CNTY);
-		});
+		$jccs = array();
+		foreach ($entity_status as $row) {
+			$entity = $row['entity'];
+			if (!isset($jccs[$entity])) {
+				$jccs[$entity] = array(1, 0);
+			}
 
-		return $result;
-	}
-
-	function fetch_jcc_cnfm($postdata) {
-		$status_rows = $this->query_entity_status($postdata, 'none');
-		$result = array();
-
-		foreach ($status_rows as $row) {
-			if ((int) $row['confirmed'] === 1) {
-				$line = new stdClass();
-				$line->COL_CNTY = $row['entity'];
-				$result[] = $line;
+			if ($row['confirmed'] == 1) {
+				$jccs[$entity][1] = 1;
 			}
 		}
 
-		usort($result, function ($a, $b) {
-			return strcmp((string) $a->COL_CNTY, (string) $b->COL_CNTY);
-		});
+		ksort($jccs, SORT_STRING);
 
-		return $result;
+		return $jccs;
 	}
 
 }
