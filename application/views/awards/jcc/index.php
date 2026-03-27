@@ -164,7 +164,7 @@
             echo '<td style="text-align: center">' . $value['Number'] . '</td>';
             echo '<td style="text-align: center">' . $value['City'] . '</td>';
             foreach ($bands as $band) {
-                echo '<td style="text-align: center">' . $value[$band] . '</td>';
+				echo '<td style="text-align: center">' . awards_render_jcc_cell($jcc, $band, $value[$band], $postdata) . '</td>';
             }
             echo '</tr>';
         }

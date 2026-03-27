@@ -376,6 +376,7 @@ class Awards extends CI_Controller {
 			'assets/js/sections/jccmap.js'
 		];
 
+		$this->load->helper('awards');
 		$this->load->model('jcc_model');
 		$this->load->model('modes');
 		$this->load->model('bands');
@@ -425,6 +426,7 @@ class Awards extends CI_Controller {
 		}
 
 		$jcc_entity_status = $this->jcc_model->query_entity_status($postdata, 'band');
+		$data['postdata'] = $postdata;
 		$data['jcc_array'] = $this->jcc_model->get_jcc_array($bands, $postdata, $jcc_entity_status);
 		$data['jcc_summary'] = $this->jcc_model->get_jcc_summary($bands, $postdata, $jcc_entity_status);
 
