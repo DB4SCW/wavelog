@@ -82,7 +82,7 @@ class cron extends CI_Controller {
 						$set_status = true;
 
 						$next_run = $cronjob->getNext();
-						$next_run_date = date('Y-m-d H:i:s', $next_run);
+						$next_run_date = gmdate('Y-m-d H:i:s', $next_run);
 						$this->cron_model->set_next_run($cron->id, $next_run_date);
 
 						if ($isdue == true) {
