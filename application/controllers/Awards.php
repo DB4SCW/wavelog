@@ -449,13 +449,20 @@ class Awards extends CI_Controller {
 		$postdata['mode'] = $this->input->post('mode', true) ?? 'All';
 		$postdata['prop_mode'] = $this->input->post('prop_mode', true) ?? 'All';
 
-		$qsos = $this->Jcc_model->export_jcc($postdata);
+		$qsos = $this->Jcc_model->get_jcc_export($postdata);
 
 		$fp = fopen( 'php://output', 'w' );
 		$i=1;
 		fputcsv($fp, array('No', 'Callsign', 'Date', 'Band', 'Mode', 'Remarks'), escape: '\\');
 		foreach ($qsos as $qso) {
-			fputcsv($fp, array($i, $qso['call'], $qso['date'], ($qso['prop_mode'] != null ? $qso['band'].' / '.$qso['prop_mode'] : $qso['band']), $qso['mode'], $qso['cnty'].' - '.$qso['jcc']), escape: '\\');
+			fputcsv($fp, array(
+				$i, 
+				$qso['COL_CALL'], 
+				$qso['COL_TIME_ON'], 
+				$qso['COL_BAND'] . ($qso['COL_PROP_MODE'] ? (' / ' . $qso['COL_PROP_MODE']) : ''), 
+				$qso['COL_MODE'], 
+				$qso['entity'] . ' - ' . $qso['entity_name']
+			), escape: '\\');
 			$i++;
 		}
 		fclose($fp);

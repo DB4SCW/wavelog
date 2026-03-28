@@ -162,16 +162,16 @@ class Jcc_model extends CI_Model {
 
 		$bindings = array();
 
-		$step_1a = $this->build_entity_status_base_query('col_cnty', $jcc_in_list, $key_col, $postdata, $bindings);
-		$step_2a = $this->build_entity_status_max_confirmed_group_by_sql($step_1a);
+		$jcc_source_sql = $this->build_entity_status_base_query('col_cnty', $jcc_in_list, $key_col, $postdata, $bindings);
+		$jcc_group_sql = $this->build_entity_status_max_confirmed_group_by_sql($jcc_source_sql);
 
-		$step_1b = $this->build_entity_status_base_query('left(col_cnty, 4)', $ku_in_list, $key_col, $postdata, $bindings);
-		$step_2b = $this->build_entity_status_max_confirmed_group_by_sql($step_1b);
+		$ku_source_sql = $this->build_entity_status_base_query('left(col_cnty, 4)', $ku_in_list, $key_col, $postdata, $bindings);
+		$ku_group_sql = $this->build_entity_status_max_confirmed_group_by_sql($ku_source_sql);
 
-		$step_3 = $this->build_entity_status_union_all_sql($step_2a, $step_2b);
-		$step_4 = $this->build_entity_status_max_confirmed_group_by_sql($step_3);
+		$union_sql = $this->build_entity_status_union_all_sql($jcc_group_sql, $ku_group_sql);
+		$final_sql = $this->build_entity_status_max_confirmed_group_by_sql($union_sql);
 
-		$query = $this->db->query($step_4, $bindings);
+		$query = $this->db->query($final_sql, $bindings);
 		$rows = $query->result_array();
 
 		return $rows;
@@ -303,7 +303,6 @@ class Jcc_model extends CI_Model {
 		$select = array(
 			$entity_expr . ' as entity',
 			'COL_PRIMARY_KEY',
-			'COL_CNTY',
 			'COL_CALL',
 			'COL_TIME_ON',
 			'COL_BAND',
@@ -320,7 +319,7 @@ class Jcc_model extends CI_Model {
 		return 'select ' . $select_str . ' from ' . $from . ' where ' . $where_str;
 	}
 
-	function export_qsos($postdata) {
+	function query_export_qsos($postdata) {
 		$jcc_data = $this->filter_entity_data($this->ja_cities, $postdata);
 		$ku_data = $this->filter_entity_data($this->ja_kus, $postdata);
 		$jcc_in_list = $this->build_entity_in_list_sql($jcc_data);
@@ -332,7 +331,7 @@ class Jcc_model extends CI_Model {
 		$source_sql = $this->build_entity_status_union_all_sql($jcc_source_sql, $ku_source_sql);
 
 		$ranked_sql = 'select source.*, row_number() over (partition by entity order by COL_TIME_ON asc, COL_PRIMARY_KEY asc) as rn from (' . $source_sql . ') source';
-		$final_sql = 'select entity, COL_CNTY, COL_CALL, COL_TIME_ON, COL_BAND, COL_MODE, COL_PROP_MODE from (' . $ranked_sql . ') ranked where rn = 1 order by entity asc';
+		$final_sql = 'select entity, COL_CALL, COL_TIME_ON, COL_BAND, COL_MODE, COL_PROP_MODE from (' . $ranked_sql . ') ranked where rn = 1 order by entity asc';
 
 		$query = $this->db->query($final_sql, $bindings);
 		$rows = $query->result_array();
@@ -340,23 +339,15 @@ class Jcc_model extends CI_Model {
 		return $rows;
 	}
 
-	function export_jcc($postdata) {
-		$rows = $this->export_qsos($postdata);
-		$qsos = array();
-		foreach ($rows as $row) {
-			$entity = $row['entity'];
-			$qsos[] = array(
-				'call' => $row['COL_CALL'],
-				'date' => $row['COL_TIME_ON'],
-				'band' => $row['COL_BAND'],
-				'mode' => $row['COL_MODE'],
-				'prop_mode' => $row['COL_PROP_MODE'],
-				'cnty' => $entity,
-				'jcc' => $this->ja_cities[$entity]['name'] ?? '',
-			);
-		}
+	function get_jcc_export($postdata) {
+		$rows = $this->query_export_qsos($postdata);
 
-		return $qsos;
+		foreach ($rows as &$row) {
+			$row['entity_name'] = $this->ja_cities[$row['entity']]['name'] ?? '';
+		}
+		unset($row);
+
+		return $rows;
 	}
 
 }
