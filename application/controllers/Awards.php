@@ -369,7 +369,10 @@ class Awards extends CI_Controller {
 		$this->load->view('interface_assets/footer', $footerData);
 	}
 
-	public function jcc () {
+	/**
+	 * JCC Award Main Page.
+	 */
+	public function jcc() {
 		$footerData = [];
 		$footerData['scripts'] = [
 			'assets/js/sections/jcc.js',
@@ -380,22 +383,6 @@ class Awards extends CI_Controller {
 		$this->load->model('jcc_model');
 		$this->load->model('modes');
 		$this->load->model('bands');
-
-		$data['worked_bands'] = $this->bands->get_worked_bands('jcc');
-		$data['modes'] = $this->modes->active();
-		$data['user_map_custom'] = $this->optionslib->get_map_custom();
-
-		if ($this->input->post('band') != NULL) {   			// Band is not set when page first loads.
-			if ($this->input->post('band') == 'All') {         // Did the user specify a band? If not, use all bands
-				$bands = $data['worked_bands'];
-			} else {
-				$bands[] = $this->security->xss_clean($this->input->post('band'));
-			}
-		} else {
-			$bands = $data['worked_bands'];
-		}
-
-		$data['bands'] = $bands; // Used for displaying selected band(s) in the table in the view
 
 		if($this->input->method() === 'post') {
 			$postdata['qsl'] = ($this->input->post('qsl', true) ?? 0) == 0 ? null : 1;
@@ -410,7 +397,8 @@ class Awards extends CI_Controller {
 			$postdata['band'] = $this->input->post('band', true) ?? 'All';
 			$postdata['mode'] = $this->input->post('mode', true) ?? 'All';
 			$postdata['prop_mode'] = $this->input->post('prop_mode', true) ?? 'All';
-		} else { // Setting default values at first load of page
+		} else {
+			// Setting default values at first load of page
 			$postdata['qsl'] = 1;
 			$postdata['lotw'] = 1;
 			$postdata['eqsl'] = 1;
@@ -424,9 +412,23 @@ class Awards extends CI_Controller {
 			$postdata['mode'] = 'All';
 			$postdata['prop_mode'] = 'All';
 		}
-
-		$jcc_entity_status = $this->jcc_model->query_entity_status($postdata, 'band');
 		$data['postdata'] = $postdata;
+
+		$data['worked_bands'] = $this->bands->get_worked_bands('jcc');
+		$data['modes'] = $this->modes->active();
+		$data['user_map_custom'] = $this->optionslib->get_map_custom();
+
+		// If "All" is selected, show all bands that have been worked. Otherwise, just the selected band.
+		if ($postdata['band'] == 'All') {
+			$bands = $data['worked_bands'];
+		} else {
+			$bands = [$postdata['band']];
+		}
+		$data['bands'] = $bands; // Used for displaying selected band(s) in the table in the view
+
+		// Query the database for JCC status
+		$jcc_entity_status = $this->jcc_model->query_entity_status($postdata, 'band');
+		
 		$data['jcc_array'] = $this->jcc_model->get_jcc_array($bands, $postdata, $jcc_entity_status);
 		$data['jcc_summary'] = $this->jcc_model->get_jcc_summary($bands, $postdata, $jcc_entity_status);
 
@@ -437,6 +439,9 @@ class Awards extends CI_Controller {
 		$this->load->view('interface_assets/footer', $footerData);
 	}
 
+	/**
+	 * Export JCC QSOs as CSV for Award Application
+	 */
 	public function jcc_export() {
 		$this->load->model('Jcc_model');
 		$postdata['qsl'] = ($this->input->post('qsl', true) ?? 0) == 0 ? null : 1;
@@ -1911,10 +1916,9 @@ class Awards extends CI_Controller {
 		echo json_encode($newdxcc);
     }
 
-    /*
-        function jcc_map
-        This displays the JCC map
-    */
+	/**
+	 * Provide data for AJAX to render the JCC map
+	 */
     public function jcc_map() {
 	    $this->load->model('jcc_model');
 	    $this->load->model('bands');
