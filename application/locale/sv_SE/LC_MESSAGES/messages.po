@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-25 09:06+0000\n"
+"PO-Revision-Date: 2026-03-28 23:33+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -12221,7 +12221,7 @@ msgstr ""
 
 #: application/views/interface_assets/footer.php:90
 msgid "DXCC was already worked in the past on this band and mode!"
-msgstr "DXCC hade redan kontaktats tidigare på detta band och trafiksätt!"
+msgstr "DXCC har redan tidigare kontaktats på detta band och trafiksätt!"
 
 #: application/views/interface_assets/footer.php:91
 msgid "New DXCC, not worked on this band and mode!"
