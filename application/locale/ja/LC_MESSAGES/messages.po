@@ -5,12 +5,13 @@
 # Fabian Berg <fabian.berg@hb9hil.org>, 2025.
 # "S.NAKAO" <hlx.nakao@gmail.com>, 2025.
 # "S.NAKAO(JG3HLX)" <hlx.nakao@gmail.com>, 2025, 2026.
+# "Xu, Zefan (BI1GHZ)" <ceba_robot@outlook.com>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-25 09:06+0000\n"
-"Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
+"PO-Revision-Date: 2026-03-28 23:33+0000\n"
+"Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
 "Language: ja\n"
@@ -620,7 +621,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr "待機中"
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -14580,7 +14581,7 @@ msgstr ""
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr "分野"
+msgstr "フィールド"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
