@@ -102,8 +102,27 @@ function load_cq_map2(data) {
         var title = '<span class="grid-text" style="cursor: default"><font style="color: \'white\'; font-size: 1.5em; font-weight: 900;">' + (Number(i)+Number(1)) + '</font></span>';
         var myIcon = L.divIcon({className: 'my-div-icon', html: title});
 
+        // Original position
         L.marker(
             [cqzonenames[i][0], cqzonenames[i][1]], {
+                icon: myIcon,
+                title: (Number(i)+Number(1)),
+                zIndex: 1000,
+            }
+        ).addTo(map).on('click', onClick);
+
+        // Shifted west (-360°)
+        L.marker(
+            [cqzonenames[i][0], parseFloat(cqzonenames[i][1]) - 360], {
+                icon: myIcon,
+                title: (Number(i)+Number(1)),
+                zIndex: 1000,
+            }
+        ).addTo(map).on('click', onClick);
+
+        // Shifted east (+360°)
+        L.marker(
+            [cqzonenames[i][0], parseFloat(cqzonenames[i][1]) + 360], {
                 icon: myIcon,
                 title: (Number(i)+Number(1)),
                 zIndex: 1000,
@@ -143,7 +162,7 @@ function load_cq_map2(data) {
 		};
 
 	info.addTo(map);
-	geojson = L.geoJson(zonestuff, {style: style, onEachFeature: onEachFeature}).addTo(map);
+	geojson = L.geoJson(zonestuff_wrapped, {style: style, onEachFeature: onEachFeature}).addTo(map);
 
     map.setView([20, 0], 2);
 }
