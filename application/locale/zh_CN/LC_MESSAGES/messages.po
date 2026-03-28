@@ -30,10 +30,10 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-22 12:58+0000\n"
+"PO-Revision-Date: 2026-03-28 23:33+0000\n"
 "Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
-"Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
-"org/projects/wavelog/main-translation/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -641,7 +641,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1495
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2209
 #: application/views/awards/itu/index.php:34
@@ -809,7 +809,7 @@ msgstr "消息类型无效。"
 
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
-msgstr ""
+msgstr "无法初始化 Email 组件。请检查 Email 配置。"
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
@@ -1218,15 +1218,15 @@ msgstr "Hamsat - 卫星追踪"
 
 #: application/controllers/Header_auth.php:22
 msgid "SSO Authentication is disabled."
-msgstr ""
+msgstr "SSO 认证已停用。"
 
 #: application/controllers/Header_auth.php:36
 msgid "SSO Authentication is disabled. Check your configuration."
-msgstr ""
+msgstr "SSO 认证已停用。请检查设置。"
 
 #: application/controllers/Header_auth.php:89
 msgid "User not found."
-msgstr ""
+msgstr "未找到此用户。"
 
 #: application/controllers/Header_auth.php:104
 #: application/controllers/User.php:1329
@@ -1238,16 +1238,16 @@ msgstr "你不能直接登录集体台站。使用你的个人账户登录。"
 msgid ""
 "Sorry. This instance is currently in maintenance mode. Only administrators "
 "are currently allowed to log in."
-msgstr ""
+msgstr "抱歉。该服务器目前处于维护模式。目前仅允许管理员登录。"
 
 #: application/controllers/Header_auth.php:341
 #: application/controllers/Header_auth.php:345
 msgid "Something went terribly wrong. Check the error log."
-msgstr ""
+msgstr "出现了严重的问题，请检查错误日志。"
 
 #: application/controllers/Header_auth.php:361
 msgid "SSO Config Error. Check error log."
-msgstr ""
+msgstr "SSO 设置错误，请检查错误日志。"
 
 #: application/controllers/Hrdlog.php:70 application/controllers/Hrdlog.php:71
 msgid "HRD Log upload for this station is disabled."
@@ -3175,7 +3175,7 @@ msgstr "用户"
 
 #: application/controllers/User.php:468
 msgid "Can't be changed. Manage this through your Identity Provider."
-msgstr ""
+msgstr "无法修改设置，请通过您的身份提供商进行管理。"
 
 #: application/controllers/User.php:471
 #: application/views/club/permissions.php:279
@@ -3735,7 +3735,7 @@ msgstr "VuccGrids 表为空。请先导入 VUCC 网格数据。"
 msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
-msgstr ""
+msgstr "主 QSO ID 无效，或您无权访问其中一个 QSO"
 
 #: application/models/Logbookadvanced_model.php:2412
 #: application/views/view_log/qso.php:945
@@ -3744,11 +3744,11 @@ msgstr "QSO 未找到"
 
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
-msgstr ""
+msgstr "未选择要合并的字段，或 QSO 之间无差异"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSO 合并成功"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -7169,7 +7169,7 @@ msgstr "WAE 名称"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "WAIP 奖状"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7177,6 +7177,9 @@ msgid ""
 "stations operating from Italian provinces. Italy has over 100 provinces, "
 "making this a challenging and prestigious award."
 msgstr ""
+"WAIP（Worked All Italian Provinces，通联意大利所有省份）奖状，颁发给与意大利"
+"各省电台进行通联的业余无线电爱好者。意大利有一百多个省，使得这项奖项颇具挑战"
+"性且享有盛誉。"
 
 #: application/views/awards/waip/index.php:10
 msgid ""
@@ -7185,21 +7188,27 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
+"奖状类别：PHONE（SSB/AM/FM/SSTV）、CW、DIGI（RTTY、PSK、FT8 等）以及各个频段"
+"。所有省份必须通过 QSL 卡片确认。要求：COL_STATE（两位字母的省份代码）、"
+"COL_DXCC=248（意大利本土）或225（撒丁岛），仅接受QSL卡片确认。禁止使用卫星联"
+"络。"
 
 #: application/views/awards/waip/index.php:11
 msgid ""
 "Province codes are 2-letter abbreviations (e.g., RM=Roma, MI=Milano, "
 "NA=Napoli). See Italian provincial award references for complete list."
 msgstr ""
+"省份代码为两位字母缩写（例如：RM=罗马，MI=米兰，NA=那不勒斯）。完整列表请参阅"
+"意大利省份奖网站。"
 
 #: application/views/awards/waip/index.php:12
 #, php-format
 msgid "For more information about the WAIP award, visit: %s"
-msgstr ""
+msgstr "有关 WAIP 奖状的更多信息，请访问：%s"
 
 #: application/views/awards/waip/index.php:12
 msgid "WAIP Award Information"
-msgstr ""
+msgstr "WAIP 奖状信息"
 
 #: application/views/awards/waip/index.php:23
 msgid ""
@@ -7207,19 +7216,21 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
+"该奖状用于追踪意大利各省的通联及确认状态。仅接受 QSL 卡片确认。绿色 = 已确认"
+"，橙色 = 已通联但未确认。"
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
-msgstr ""
+msgstr "奖状进展"
 
 #: application/views/awards/waip/index.php:34
 msgid "Progress toward working all Italian provinces:"
-msgstr ""
+msgstr "通联所有意大利省份的进展："
 
 #: application/views/awards/waip/index.php:40
 #: application/views/awards/waip/index.php:92
 msgid "By Mode Category"
-msgstr ""
+msgstr "按模式"
 
 #: application/views/awards/waip/index.php:42
 #: application/views/notes/add.php:47 application/views/notes/edit.php:42
@@ -7230,12 +7241,12 @@ msgstr "分类"
 #: application/views/awards/waip/index.php:42
 #: application/views/awards/waip/index.php:64
 msgid "Progress"
-msgstr ""
+msgstr "进展"
 
 #: application/views/awards/waip/index.php:62
 #: application/views/awards/waip/index.php:97
 msgid "By Band"
-msgstr ""
+msgstr "按波段"
 
 #: application/views/awards/waip/index.php:111
 #: application/views/awards/waip/index.php:169
@@ -7246,7 +7257,7 @@ msgstr "省份"
 
 #: application/views/awards/waip/index.php:233
 msgid "No QSOs found matching the criteria for the WAIP award!"
-msgstr ""
+msgstr "未找到符合 WAIP 奖状要求的 QSO！"
 
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
@@ -10658,7 +10669,7 @@ msgstr "最新发布"
 
 #: application/views/debug/index.php:50
 msgid "ADIF Version"
-msgstr ""
+msgstr "ADIF 版本"
 
 #: application/views/debug/index.php:55
 msgid "Language"
@@ -10749,11 +10760,11 @@ msgstr "MySQL 版本"
 
 #: application/views/debug/index.php:129
 msgid "OpenSSL Version"
-msgstr ""
+msgstr "OpenSSL 版本"
 
 #: application/views/debug/index.php:130
 msgid "not found"
-msgstr ""
+msgstr "未找到"
 
 #: application/views/debug/index.php:133
 msgid "Codeigniter Version"
@@ -12363,7 +12374,7 @@ msgstr "WAB"
 
 #: application/views/interface_assets/header.php:252
 msgid "Italy"
-msgstr ""
+msgstr "意大利"
 
 #: application/views/interface_assets/header.php:258
 msgid "Japan"
@@ -13324,11 +13335,11 @@ msgstr "接收频段"
 
 #: application/views/logbookadvanced/edit.php:137
 msgid "Frequency TX (Hz)"
-msgstr ""
+msgstr "发送频率（Hz）"
 
 #: application/views/logbookadvanced/edit.php:140
 msgid "Frequency RX (Hz)"
-msgstr ""
+msgstr "接收频率（Hz）"
 
 #: application/views/logbookadvanced/edit.php:178
 #: application/views/logbookadvanced/edit.php:186
@@ -13792,38 +13803,38 @@ msgstr "DXCC 匹配失败的网格"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "请选择恰好 2 个 QSO 来合并！"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "合并 QSO"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
-msgstr ""
+msgstr "你确定要合并这些 QSO？该操作不可逆！"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "危险"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "是的，合并这些 QSO"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "QSO 合并成功！"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "合并 QSO 时发生错误"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "加载合并对话框时出错"
 
 #: application/views/logbookadvanced/index.php:338
 msgid "From"
@@ -14229,31 +14240,31 @@ msgstr "台站功率"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "要保留哪个 QSO？"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
-msgstr ""
+msgstr "请选择合并后要保留的 QSO，另一条将被删除。"
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "保存此 QSO"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "请选择每个 QSO 要保留哪些字段："
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
-msgstr ""
+msgstr "所选字段将合并到主 QSO，你可以在每个 QSO 中选择不同的字段。"
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "字段"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
