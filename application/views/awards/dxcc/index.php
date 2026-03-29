@@ -313,7 +313,7 @@
 				}
 				if ($posted_band != 'SAT') {
 					echo '<td><b>' . __("Total (ex SAT)") . '</b></td>';
-					echo '<td><b>' . __("Band slots (ex SAT)") . '</b></td>';
+					echo '<td><b>' . __("Slots") . '</b></td>';
 				}
 				echo '
 	</tr>
