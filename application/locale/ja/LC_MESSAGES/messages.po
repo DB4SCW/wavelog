@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-28 23:33+0000\n"
+"PO-Revision-Date: 2026-03-29 17:38+0000\n"
 "Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -3575,7 +3575,7 @@ msgstr "米国の州"
 #: application/libraries/Subdivisions.php:67
 msgctxt "Division Name (States in various countries)."
 msgid "Prefecture"
-msgstr "県"
+msgstr "都道府県"
 
 #: application/libraries/Subdivisions.php:69
 msgctxt "Division Name (States in various countries)."
@@ -7413,7 +7413,7 @@ msgstr "WAIPアワードの基準に合致する交信は見つかりません�
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
 msgid "Prefecture"
-msgstr "県"
+msgstr "都道府県"
 
 #: application/views/awards/waja/index.php:4
 msgid "Hover over a prefecture"
@@ -7457,7 +7457,7 @@ msgstr "WAJAマップを表示"
 #: application/views/awards/waja/index.php:158
 #: application/views/timeline/index.php:243
 msgid "Prefecture"
-msgstr "県"
+msgstr "都道府県"
 
 #: application/views/awards/wap/index.php:4
 msgctxt "The Netherlands Province"
