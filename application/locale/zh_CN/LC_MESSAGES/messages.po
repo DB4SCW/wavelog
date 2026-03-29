@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-28 23:33+0000\n"
+"PO-Revision-Date: 2026-03-29 17:37+0000\n"
 "Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
@@ -3535,7 +3535,7 @@ msgstr "美国州"
 #: application/libraries/Subdivisions.php:67
 msgctxt "Division Name (States in various countries)."
 msgid "Prefecture"
-msgstr "县"
+msgstr "都道府县"
 
 #: application/libraries/Subdivisions.php:69
 msgctxt "Division Name (States in various countries)."
@@ -7262,11 +7262,11 @@ msgstr "未找到符合 WAIP 奖状要求的 QSO！"
 #: application/views/awards/waja/index.php:3
 msgctxt "Japan Prefecture"
 msgid "Prefecture"
-msgstr "县"
+msgstr "都道府县"
 
 #: application/views/awards/waja/index.php:4
 msgid "Hover over a prefecture"
-msgstr "鼠标停留到一个县"
+msgstr "鼠标停留到一个都道府县"
 
 #: application/views/awards/waja/index.php:22
 msgid "WAJA - Worked All Japan prefectures Award"
@@ -7303,7 +7303,7 @@ msgstr "显示 WAJA 地图"
 #: application/views/awards/waja/index.php:158
 #: application/views/timeline/index.php:243
 msgid "Prefecture"
-msgstr "县"
+msgstr "都道府县"
 
 #: application/views/awards/wap/index.php:4
 msgctxt "The Netherlands Province"
