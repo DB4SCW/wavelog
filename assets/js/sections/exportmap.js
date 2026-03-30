@@ -140,13 +140,12 @@ function loadMap(data, iconsList) {
 	}
 
 	if (iconsList.cqzone_layer === "true") {
-		geojson = L.geoJson(zonestuff_wrapped, {style: style}).addTo(map);
+		geojson = L.geoJson(zonestuff, {style: style}).addTo(map);
 		for (var i = 0; i < cqzonenames.length; i++) {
 
 			var title = '<span class="grid-text" style="cursor: default"><font style="color: \'white\'; font-size: 1.5em; font-weight: 900;">' + (Number(i)+Number(1)) + '</font></span>';
 			var myIcon = L.divIcon({className: 'my-div-icon', html: title});
 
-			// Original position
 			var marker = L.marker(
 				[cqzonenames[i][0], cqzonenames[i][1]], {
 					icon: myIcon,
@@ -155,26 +154,6 @@ function loadMap(data, iconsList) {
 				}
 			).addTo(map);
 			zonemarkers.push(marker);
-
-			// Shifted west (-360°)
-			var markerWest = L.marker(
-				[cqzonenames[i][0], parseFloat(cqzonenames[i][1]) - 360], {
-					icon: myIcon,
-					title: (Number(i)+Number(1)),
-					zIndex: 1000,
-				}
-			).addTo(map);
-			zonemarkers.push(markerWest);
-
-			// Shifted east (+360°)
-			var markerEast = L.marker(
-				[cqzonenames[i][0], parseFloat(cqzonenames[i][1]) + 360], {
-					icon: myIcon,
-					title: (Number(i)+Number(1)),
-					zIndex: 1000,
-				}
-			).addTo(map);
-			zonemarkers.push(markerEast);
 		}
 	}
 
