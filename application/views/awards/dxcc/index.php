@@ -315,7 +315,7 @@
 					echo '<td><b>' . __("Total (ex SAT)") . '</b></td>';
 				}
 				if ($posted_band == 'All') {
-					echo '<td><b>' . __("Slots") . '</b></td>';
+					echo '<td>' . __("Slots") . '</td>';
 				}
 				echo '
 	</tr>
