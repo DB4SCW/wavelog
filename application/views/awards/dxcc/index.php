@@ -327,7 +327,7 @@
 			continue;
 		}
 
-		if (($posted_band == 'SAT') && ($band == 'Total')) {
+		if (($posted_band == 'SAT') && (($band == 'Total') || ($band == 'Slots'))) {
 			continue;
 		}
 
@@ -348,7 +348,7 @@
 			continue;
 		}
 
-		if (($posted_band == 'SAT') && ($band == 'Total')) {
+		if (($posted_band == 'SAT') && (($band == 'Total') || ($band == 'Slots'))) {
 			continue;
 		}
 
