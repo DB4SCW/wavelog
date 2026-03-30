@@ -313,6 +313,8 @@
 				}
 				if ($posted_band != 'SAT') {
 					echo '<td><b>' . __("Total (ex SAT)") . '</b></td>';
+				}
+				if ($posted_band == 'All') {
 					echo '<td><b>' . __("Slots") . '</b></td>';
 				}
 				echo '
@@ -327,7 +329,11 @@
 			continue;
 		}
 
-		if (($posted_band == 'SAT') && (($band == 'Total') || ($band == 'Slots'))) {
+		if (($posted_band == 'SAT') && ($band == 'Total')) {
+			continue;
+		}
+
+		if (($posted_band != 'All') && ($band == 'Slots')) {
 			continue;
 		}
 
@@ -348,7 +354,11 @@
 			continue;
 		}
 
-		if (($posted_band == 'SAT') && (($band == 'Total') || ($band == 'Slots'))) {
+		if (($posted_band == 'SAT') && ($band == 'Total')) {
+			continue;
+		}
+
+        if (($posted_band != 'All') && ($band == 'Slots')) {
 			continue;
 		}
 
