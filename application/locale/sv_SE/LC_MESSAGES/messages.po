@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-28 23:33+0000\n"
+"PO-Revision-Date: 2026-03-30 21:27+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -12304,7 +12304,7 @@ msgstr "Technician"
 #: application/views/interface_assets/footer.php:111
 #: application/views/interface_assets/header.php:117
 msgid "Advanced"
-msgstr "Advanced"
+msgstr "Avancerad"
 
 #: application/views/interface_assets/footer.php:112
 msgid "Extra"
@@ -19838,7 +19838,7 @@ msgstr "CQz geojson"
 
 #: application/views/awards/dxcc/index.php:318
 msgid "Slots"
-msgstr ""
+msgstr "Slots"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "E-postinställningar inte konfigurerade."
