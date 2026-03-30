@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-24 11:57+0000\n"
+"POT-Creation-Date: 2026-03-30 16:14+0000\n"
 "PO-Revision-Date: 2024-11-19 01:22+0000\n"
 "Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: Latvian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -5898,7 +5898,7 @@ msgstr ""
 
 #: application/views/awards/cq/index.php:242
 #: application/views/awards/dok/index.php:179
-#: application/views/awards/dxcc/index.php:322
+#: application/views/awards/dxcc/index.php:325
 #: application/views/awards/helvetia/index.php:187
 #: application/views/awards/iota/index.php:245
 #: application/views/awards/itu/index.php:244
@@ -5916,7 +5916,7 @@ msgstr ""
 
 #: application/views/awards/cq/index.php:255
 #: application/views/awards/dok/index.php:186
-#: application/views/awards/dxcc/index.php:343
+#: application/views/awards/dxcc/index.php:350
 #: application/views/awards/helvetia/index.php:194
 #: application/views/awards/iota/index.php:271
 #: application/views/awards/itu/index.php:257
@@ -6187,7 +6187,11 @@ msgstr ""
 msgid "Prefix"
 msgstr ""
 
-#: application/views/awards/dxcc/index.php:369
+#: application/views/awards/dxcc/index.php:318
+msgid "Slots"
+msgstr ""
+
+#: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
 msgstr ""
 
