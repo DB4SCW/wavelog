@@ -5989,6 +5989,7 @@ msgstr "合计（除卫星）"
 #: application/views/awards/wapc/index.php:188
 #: application/views/awards/was/index.php:190
 #: application/views/awards/wpx/index.php:183
+#: application/views/awards/dxcc/index.php:325
 msgid "Total worked"
 msgstr "共通联"
 
@@ -6009,6 +6010,7 @@ msgstr "共通联"
 #: application/views/awards/wapc/index.php:195
 #: application/views/awards/was/index.php:197
 #: application/views/awards/wpx/index.php:204
+#: application/views/awards/dxcc/index.php:350
 msgid "Total confirmed"
 msgstr "共确认"
 
@@ -6278,6 +6280,7 @@ msgid "Prefix"
 msgstr "前缀"
 
 #: application/views/awards/dxcc/index.php:369
+#: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
 msgstr "根据您的搜索条件，未找到相关结果。请再试一次。"
 
@@ -6932,8 +6935,8 @@ msgid ""
 "any kind of 'Special Interest Group Award' for awards that are not "
 "implemented in Wavelog."
 msgstr ""
-"SIG 或特别兴趣小组类别（Special Interest Group Category）允许用户使用任意"
-"的“特别兴趣小组奖”来奖励未在当前 Wavelog 实现的奖。"
+"SIG 或特别兴趣小组类别（Special Interest Group Category）允许用户使用任意的"
+"“特别兴趣小组奖”来奖励未在当前 Wavelog 实现的奖。"
 
 #: application/views/awards/sig/index.php:9
 msgid ""
@@ -7188,8 +7191,8 @@ msgid ""
 "Requirements: COL_STATE (2-letter province code), COL_DXCC=248 (Italy) or "
 "225 (Sardinia), QSL card confirmation only. No satellite contacts allowed."
 msgstr ""
-"奖状类别：PHONE（SSB/AM/FM/SSTV）、CW、DIGI（RTTY、PSK、FT8 等）以及各个频段"
-"。所有省份必须通过 QSL 卡片确认。要求：COL_STATE（两位字母的省份代码）、"
+"奖状类别：PHONE（SSB/AM/FM/SSTV）、CW、DIGI（RTTY、PSK、FT8 等）以及各个频"
+"段。所有省份必须通过 QSL 卡片确认。要求：COL_STATE（两位字母的省份代码）、"
 "COL_DXCC=248（意大利本土）或225（撒丁岛），仅接受QSL卡片确认。禁止使用卫星联"
 "络。"
 
@@ -7216,8 +7219,8 @@ msgid ""
 "QSL card confirmations are accepted. Green = Confirmed, Orange = Worked but "
 "not confirmed."
 msgstr ""
-"该奖状用于追踪意大利各省的通联及确认状态。仅接受 QSL 卡片确认。绿色 = 已确认"
-"，橙色 = 已通联但未确认。"
+"该奖状用于追踪意大利各省的通联及确认状态。仅接受 QSL 卡片确认。绿色 = 已确"
+"认，橙色 = 已通联但未确认。"
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
@@ -17816,8 +17819,8 @@ msgid ""
 "Click here on 'Add a Theme' and type in the necessary data. Type in the "
 "filenames for the logos %swithout%s the file extension '.png'"
 msgstr ""
-"在这里添加主题，Logo 文件请输入 png 文件的文件名部分（ %s不带有%s 后缀 '."
-"png'）"
+"在这里添加主题，Logo 文件请输入 png 文件的文件名部分（ %s不带有%s 后缀 "
+"'.png'）"
 
 #: application/views/themes/index.php:83
 msgid "Foldername"
@@ -19248,6 +19251,10 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
+#: application/views/awards/dxcc/index.php:318
+msgid "Slots"
+msgstr ""
+
 #~ msgid "Email settings not configured."
 #~ msgstr "邮件设置未配置。"
 
@@ -20150,8 +20157,8 @@ msgstr "CQz geojson"
 #~ "Click here on 'Add a Theme' and type in the necessary data. Type in the "
 #~ "filenames for the logos <b>without</b> the file extension '.png'"
 #~ msgstr ""
-#~ "在这里点击 '添加主题'，输入必要的信息，填写 Logo 的文件名（<b>不要带有 ."
-#~ "png 后缀名</b>）"
+#~ "在这里点击 '添加主题'，输入必要的信息，填写 Logo 的文件名（<b>不要带"
+#~ "有 .png 后缀名</b>）"
 
 #, php-format
 #~ msgid ""

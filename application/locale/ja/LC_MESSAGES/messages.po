@@ -6079,6 +6079,7 @@ msgstr "合計（SATを除く）"
 #: application/views/awards/wapc/index.php:188
 #: application/views/awards/was/index.php:190
 #: application/views/awards/wpx/index.php:183
+#: application/views/awards/dxcc/index.php:325
 msgid "Total worked"
 msgstr "合計作業時間"
 
@@ -6099,6 +6100,7 @@ msgstr "合計作業時間"
 #: application/views/awards/wapc/index.php:195
 #: application/views/awards/was/index.php:197
 #: application/views/awards/wpx/index.php:204
+#: application/views/awards/dxcc/index.php:350
 msgid "Total confirmed"
 msgstr "確認された合計"
 
@@ -6376,6 +6378,7 @@ msgid "Prefix"
 msgstr "Prefix"
 
 #: application/views/awards/dxcc/index.php:369
+#: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
 msgstr "検索条件に一致する結果は見つかりませんでした。もう一度お試しください。"
 
@@ -19772,6 +19775,10 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
+#: application/views/awards/dxcc/index.php:318
+msgid "Slots"
+msgstr ""
+
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"
 
@@ -19929,9 +19936,9 @@ msgstr "CQz geojson"
 #~ "processed. %s Please make sure you export the LoTW certificate from tqsl "
 #~ "application without password! %s"
 #~ msgstr ""
-#~ "ファイル %s 内の証明書にはパスワードが含まれており、処理できませ"
-#~ "ん。%stqsl アプリケーションから LoTW 証明書をエクスポートする際は、パス"
-#~ "ワードなしで実行してください！%s"
+#~ "ファイル %s 内の証明書にはパスワードが含まれており、処理できません。"
+#~ "%stqsl アプリケーションから LoTW 証明書をエクスポートする際は、パスワード"
+#~ "なしで実行してください！%s"
 
 #~ msgid "Column"
 #~ msgstr "カラム"
@@ -20265,8 +20272,8 @@ msgstr "CQz geojson"
 #~ "Your active Station Location isn't linked to your Logbook. Click %shere%s "
 #~ "to do it."
 #~ msgstr ""
-#~ "現在のステーション位置がログブックとリンクされていません。リンクするに"
-#~ "は、%shere%s をクリックしてください。"
+#~ "現在のステーション位置がログブックとリンクされていません。リンクするには、"
+#~ "%shere%s をクリックしてください。"
 
 #, php-format
 #~ msgctxt "Dashboard Warning"
