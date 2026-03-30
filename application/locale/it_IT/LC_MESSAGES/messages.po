@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-30 16:14+0000\n"
-"PO-Revision-Date: 2026-03-24 10:41+0000\n"
+"PO-Revision-Date: 2026-03-30 21:27+0000\n"
 "Last-Translator: iv3cvn <ricentis@gmail.com>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
@@ -3808,6 +3808,8 @@ msgid ""
 "Invalid primary QSO ID, or you do not have permission to access one of the "
 "QSOs"
 msgstr ""
+"ID QSO primario non valido, oppure non hai il permesso di accedere a uno dei "
+"QSO"
 
 #: application/models/Logbookadvanced_model.php:2412
 #: application/views/view_log/qso.php:945
@@ -3816,11 +3818,11 @@ msgstr "QSO non trovato"
 
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
-msgstr ""
+msgstr "Nessun campo selezionato per l'unione o nessuna differenza tra i QSO"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSOs uniti con successo"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -6411,8 +6413,9 @@ msgid "Prefix"
 msgstr "Prefisso"
 
 #: application/views/awards/dxcc/index.php:318
+#, fuzzy
 msgid "Slots"
-msgstr ""
+msgstr "Slots"
 
 #: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
@@ -14260,38 +14263,40 @@ msgstr "Locatori non corrispondenti al DXCC"
 
 #: application/views/logbookadvanced/index.php:84
 msgid "You need to select exactly 2 QSOs to merge!"
-msgstr ""
+msgstr "Devi selezionare esattamente 2 QSO da unire!"
 
 #: application/views/logbookadvanced/index.php:85
 #: application/views/logbookadvanced/index.php:852
 msgid "Merge QSOs"
-msgstr ""
+msgstr "Unione QSO"
 
 #: application/views/logbookadvanced/index.php:86
 msgid ""
 "Are you really sure you want to merge these QSOs? This operation CAN\\'T be "
 "undone!"
 msgstr ""
+"Sei davvero sicuro di voler unire questi QSO? Questa operazione NON può "
+"essere annullata!"
 
 #: application/views/logbookadvanced/index.php:87
 msgid "Danger"
-msgstr ""
+msgstr "Pericolo"
 
 #: application/views/logbookadvanced/index.php:89
 msgid "Yes, Merge QSOs"
-msgstr ""
+msgstr "Sì, unisci i QSO"
 
 #: application/views/logbookadvanced/index.php:90
 msgid "QSOs merged successfully!"
-msgstr ""
+msgstr "QSO uniti con correttamente!"
 
 #: application/views/logbookadvanced/index.php:91
 msgid "Error merging QSOs"
-msgstr ""
+msgstr "Errore nell'unione dei QSO"
 
 #: application/views/logbookadvanced/index.php:92
 msgid "Error loading merge dialog"
-msgstr ""
+msgstr "Errore nel caricamento della finestra di dialogo di unione QSO"
 
 #: application/views/logbookadvanced/index.php:338
 msgid "From"
@@ -14701,31 +14706,33 @@ msgstr "Potenza di trasmissione"
 
 #: application/views/logbookadvanced/mergedialog.php:8
 msgid "Which QSO should be kept?"
-msgstr ""
+msgstr "Quale QSO deve essere mantenuto?"
 
 #: application/views/logbookadvanced/mergedialog.php:9
 msgid ""
 "Select which QSO will remain after the merge. The other will be deleted."
-msgstr ""
+msgstr "Seleziona quale QSO rimarrà dopo la fusione. L'altro verrà eliminato."
 
 #: application/views/logbookadvanced/mergedialog.php:22
 #: application/views/logbookadvanced/mergedialog.php:45
 msgid "Keep this QSO"
-msgstr ""
+msgstr "Mantieni questo QSO"
 
 #: application/views/logbookadvanced/mergedialog.php:62
 msgid "Select which fields to keep from each QSO:"
-msgstr ""
+msgstr "Seleziona quali campi mantenere da ciascun QSO:"
 
 #: application/views/logbookadvanced/mergedialog.php:63
 msgid ""
 "The selected fields will be merged into the primary QSO. You can select "
 "different fields from each QSO."
 msgstr ""
+"I campi selezionati verranno uniti nel QSO principale. Puoi selezionare "
+"campi diversi da ciascun QSO."
 
 #: application/views/logbookadvanced/mergedialog.php:71
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: application/views/logbookadvanced/qslcarousel.php:59
 #: application/views/qslcard/qslcarousel.php:25
