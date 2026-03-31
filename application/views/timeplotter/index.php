@@ -119,12 +119,13 @@
         </div>
         <div class="card-body" style="min-height: 200px;">
             <div class="heatmap-legend mb-3">
-                <span class="text-muted small me-2">Relative Intensity</span>
-                <span class="legend-item"><span class="legend-swatch none"></span>None</span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-1"></span>Low</span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-2"></span>Medium</span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-3"></span>High</span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-4"></span>Very High</span>
+                <span class="text-muted small me-2">Less</span>
+                <span class="legend-item"><span class="legend-swatch none"></span></span>
+                <span class="legend-item"><span class="legend-swatch glanceyear-legend-1"></span></span>
+                <span class="legend-item"><span class="legend-swatch glanceyear-legend-2"></span></span>
+                <span class="legend-item"><span class="legend-swatch glanceyear-legend-3"></span></span>
+                <span class="legend-item"><span class="legend-swatch glanceyear-legend-4"></span></span>
+				<span class="text-muted small me-2">More</span>
             </div>
             <div class="heatmap-grid-wrapper">
                 <div id="timeplotterHeatmap" class="heatmap-grid" style="display:none;"></div>
@@ -143,25 +144,17 @@
     .heatmap-header {
         text-align: center;
         padding: 6px 4px;
-        /* font-size: 0.75rem; */
-        /* font-weight: 700; */
-        /* color: #586069; */
-        /* background: #f8f9fa; */
-        /* border: 1px solid #e1e4e8; */
     }
     .heatmap-cell {
         text-align: center;
         padding: 8px 4px;
-        /* font-size: 0.75rem; */
-        /* font-weight: 600; */
         border-radius: 3px;
         border: 1px solid #d1d5da;
         cursor: default;
+		color: #000;
     }
-    .heatmap-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
     .legend-item { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem;}
     .legend-swatch { width: 16px; height: 16px; border: 1px solid #d1d5da; border-radius: 3px; display: inline-block; }
-    .legend-swatch.none { background-color: #ebedf0; }
 
     @media (max-width: 992px) {
         .heatmap-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }

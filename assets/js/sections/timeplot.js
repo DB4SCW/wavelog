@@ -150,7 +150,7 @@ function formatCount(count) {
 function plotTimeplotterChart(tmp) {
 	$("#container").remove();
 	$("#info").remove();
-	$("#timeplotter_div").append('<p id="info">' + tmp.qsocount + ' ' + lang_statistics_timeplotter_contacts_plotted + '</p><div id="container" style="height: 600px;"></div>');
+	$("#timeplotter_div").append('<div id="container" style="height: 600px;"></div>');
 	var color = ifDarkModeThemeReturn('white', 'grey');
 
 	// Build categories from time slots
