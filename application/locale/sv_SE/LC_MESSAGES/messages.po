@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-30 21:27+0000\n"
+"PO-Revision-Date: 2026-03-31 20:33+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -3210,7 +3210,7 @@ msgstr "Uppdatering av Hams of Note"
 
 #: application/controllers/Update.php:707
 msgid "VUCC Grid file update complete. Result: "
-msgstr "VUCC-locatorfiluppdatering slutförd. Resultat: "
+msgstr "VUCC-lokatorfiluppdatering slutförd. Resultat: "
 
 #: application/controllers/Update.php:709
 msgid "VUCC Grid file update failed. Result: "
@@ -3570,7 +3570,7 @@ msgstr "Flera användare hittades med slug"
 
 #: application/controllers/Zonechecker.php:26
 msgid "Gridsquare Zone finder"
-msgstr "Locator Zon sökare"
+msgstr "Lokator Zon sökare"
 
 #: application/libraries/Callbook.php:60
 msgid "Lookup not configured. Please review configuration."
@@ -10150,7 +10150,7 @@ msgstr "Serienummer + Utbyte"
 
 #: application/views/contesting/index.php:29
 msgid "Serial + Gridsquare"
-msgstr "Serienummer + Locatorruta"
+msgstr "Serienummer + Lokatorruta"
 
 #: application/views/contesting/index.php:30
 msgid "Serial + Gridsquare + Exchange"
@@ -12225,7 +12225,7 @@ msgstr "Beräkna QRB och QTF"
 
 #: application/views/interface_assets/footer.php:56
 msgid "Error in locators. Please check."
-msgstr "Fel i lokalisatorer. Vänligen kontrollera."
+msgstr "Fel i lokator. Vänligen kontrollera."
 
 #: application/views/interface_assets/footer.php:57
 #: application/views/user/index.php:20 application/views/user/index.php:144
@@ -13000,7 +13000,7 @@ msgstr "GeoJSON QSO-karta"
 
 #: application/views/interface_assets/header.php:547
 msgid "Gridsquare Zone checker"
-msgstr "Locator Zon kontrollerare"
+msgstr "Lokator Zon kontrollerare"
 
 #: application/views/interface_assets/header.php:554
 #: application/views/logbookadvanced/index.php:913
@@ -13412,7 +13412,7 @@ msgstr ""
 #: application/views/logbookadvanced/checkresult.php:74
 #: application/views/logbookadvanced/checkresult.php:146
 msgid "Gridsquare Check Results"
-msgstr "Locator-kontrollresultat"
+msgstr "Lokator-kontrollresultat"
 
 #: application/views/logbookadvanced/checkresult.php:83
 msgid "DXCC Check Results"
@@ -13665,7 +13665,7 @@ msgstr "Använd Wavelog för att bestämma DXCC för alla QSOs."
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:111
 msgid "Lookup QSOs with missing grid in callbook"
-msgstr "Leta efter QSOs med saknad locator i callboken"
+msgstr "Leta efter QSOs med saknad lokator i callboken"
 
 #: application/views/logbookadvanced/dbtoolsdialog.php:112
 msgid "Use callbook lookup to set gridsquare"
@@ -15971,11 +15971,11 @@ msgstr "Söker efter"
 
 #: application/views/qrbcalc/index.php:3
 msgid "Locator 1"
-msgstr "Locator 1"
+msgstr "Lokator 1"
 
 #: application/views/qrbcalc/index.php:10
 msgid "Locator 2"
-msgstr "Locator 2"
+msgstr "Lokator 2"
 
 #: application/views/qrbcalc/index.php:20
 msgid "Calculate"
@@ -19984,37 +19984,40 @@ msgstr "Slots"
 
 #: application/views/cron/index.php:29
 msgid "All times are shown in UTC."
-msgstr ""
+msgstr "Alla tider visas i UTC."
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "Raderade städer"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "Exportera bekräftade QSOs"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
 msgid ""
 "Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
 msgstr ""
+"Fel lokator %s vid import av QSO med %s för stationslokator %s: HOPPADES ÖVER"
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "Ignorera lokatorkontroll vid import"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even when their my_gridsquare "
 "does not match the chosen station-location locator."
 msgstr ""
+"Om denna väljs kommer Wavelog försöka importera QSOs även när deras "
+"my_gridsquare inte stämmer överens med den valda stationsplatsens lokator."
 
 #: application/models/Logbook_model.php:4882
 #, php-format
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
-msgstr ""
+msgstr "Fel anropssignal %s vid import av QSO med %s för %s: HOPPADES ÖVER"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
@@ -20022,12 +20025,16 @@ msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
+"Fel lokator %s vid import av QSO med %s för stationslokator %s: HOPPADES ÖVER"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
 "in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
+"Om denna väljs kommer Wavelog att försöka importera QSOs där fältet "
+"MY_GRIDSQUARE i ADIF-posten inte matchar lokatorn för den valda "
+"stationsplatsen."
 
 #~ msgid "Email settings not configured."
 #~ msgstr "E-postinställningar inte konfigurerade."
