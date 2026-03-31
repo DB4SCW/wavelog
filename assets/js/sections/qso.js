@@ -5,9 +5,11 @@ var scps = [];
 let lookupCall = null;
 let preventLookup = false;
 var submitTimeout = null; // Debounce timer for QSO submission
+var localTimeInterval = null; // Interval for updating local time display   
+
 
 // Calculate local time based on GMT offset
-function calculateLocalTime(gmtOffset) {
+function calculateLocalTime(gmtOffset) {        
 	let now = new Date();
 	let utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
 	let localTime = new Date(utcTime + (3600000 * gmtOffset));
@@ -1870,15 +1872,18 @@ $("#callsign").on("focusout", function () {
 					if (result.profile_url) {
 						profileInfo += '<p class="mb-1" style="font-size: 0.875rem;"><i class="fas fa-globe me-1"></i><a href="' + result.profile_url + '" target="_blank">' + lang_qso_profile_website + '</a></p>';
 					}
-
 					// Local time (will be auto-updated)
 					if (result.profile_GMTOffset) {
 						let offsetHours = parseFloat(result.profile_GMTOffset);
 						let localTime = calculateLocalTime(offsetHours);
 						profileInfo += '<p class="mb-1" id="profile-local-time" style="font-size: 0.875rem;"><i class="fas fa-clock me-1"></i>' + lang_qso_profile_local_time + ': ' + localTime + '</p>';
 
+                        // Clear any existing interval to prevent multiple timers
+                        if(localTimeInterval) {
+                            clearInterval(localTimeInterval);
+                        }   
 						// Set up auto-update every minute
-						setInterval(function() {
+						localTimeInterval = setInterval(function() {
 							let updatedTime = calculateLocalTime(offsetHours);
 							$('#profile-local-time').html('<i class="fas fa-clock me-1"></i>' + lang_qso_profile_local_time + ': ' + updatedTime);
 						}, 60000);
