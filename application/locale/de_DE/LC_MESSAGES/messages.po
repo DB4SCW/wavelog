@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-31 12:55+0000\n"
-"PO-Revision-Date: 2026-03-24 12:27+0000\n"
+"PO-Revision-Date: 2026-03-31 12:57+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -4968,7 +4968,7 @@ msgstr ""
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "Ignoriere Planquadratprüfung beim Import"
 
 #: application/views/adif/import.php:171
 msgid ""
@@ -6458,7 +6458,7 @@ msgstr "Präfix"
 
 #: application/views/awards/dxcc/index.php:318
 msgid "Slots"
-msgstr ""
+msgstr "Slots"
 
 #: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
@@ -6842,7 +6842,7 @@ msgstr ""
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "Gelöschte Städte"
 
 #: application/views/awards/jcc/index.php:127
 msgid "Show JCC Map"
@@ -6850,7 +6850,7 @@ msgstr "Zeige Karte der JCCs"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "Export bestätigter QSOs"
 
 #: application/views/awards/jcc/index.php:138
 #: application/views/public_search/empty.php:2
@@ -10367,7 +10367,7 @@ msgstr ""
 
 #: application/views/cron/index.php:29
 msgid "All times are shown in UTC."
-msgstr ""
+msgstr "Alle Zeiten werden in UTC dargestellt."
 
 #: application/views/cron/index.php:33
 msgid ""
