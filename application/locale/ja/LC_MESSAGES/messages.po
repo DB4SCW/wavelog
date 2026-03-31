@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-31 05:50+0000\n"
+"PO-Revision-Date: 2026-03-31 12:34+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -19796,7 +19796,7 @@ msgstr "スロット"
 
 #: application/views/cron/index.php:29
 msgid "All times are shown in UTC."
-msgstr ""
+msgstr "時刻はすべてUTCで表示されています。"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"
