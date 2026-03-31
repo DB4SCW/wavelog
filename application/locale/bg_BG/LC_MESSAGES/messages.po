@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-30 16:14+0000\n"
+"POT-Creation-Date: 2026-03-31 05:50+0000\n"
 "PO-Revision-Date: 2024-11-01 08:53+0000\n"
 "Last-Translator: Plamen Panteleev <lz1ppl@abv.bg>\n"
 "Language-Team: Bulgarian <https://translate.wavelog.org/projects/wavelog/"
@@ -40,7 +40,7 @@ msgstr ""
 #: application/controllers/Components.php:13
 #: application/controllers/Contestcalendar.php:15
 #: application/controllers/Contesting.php:14
-#: application/controllers/Cron.php:26 application/controllers/Cron.php:171
+#: application/controllers/Cron.php:26 application/controllers/Cron.php:177
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
@@ -875,13 +875,13 @@ msgstr ""
 msgid "Cron Manager"
 msgstr ""
 
-#: application/controllers/Cron.php:163 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:169 application/views/cron/edit.php:5
 msgid "Edit Cronjob"
 msgstr ""
 
-#: application/controllers/Cron.php:227 application/controllers/Cron.php:228
-#: application/views/cron/index.php:96 application/views/cron/index.php:98
-#: application/views/cron/index.php:100 application/views/debug/index.php:683
+#: application/controllers/Cron.php:233 application/controllers/Cron.php:234
+#: application/views/cron/index.php:97 application/views/cron/index.php:99
+#: application/views/cron/index.php:101 application/views/debug/index.php:683
 #: application/views/debug/index.php:690 application/views/debug/index.php:696
 #: application/views/debug/index.php:702 application/views/debug/index.php:708
 #: application/views/debug/index.php:714 application/views/debug/index.php:720
@@ -890,46 +890,46 @@ msgstr ""
 msgid "never"
 msgstr ""
 
-#: application/controllers/Cron.php:228
+#: application/controllers/Cron.php:234
 msgid "calculating..."
 msgstr ""
 
-#: application/controllers/Cron.php:239 application/views/cron/index.php:83
+#: application/controllers/Cron.php:245 application/views/cron/index.php:84
 msgid "healthy"
 msgstr ""
 
-#: application/controllers/Cron.php:241 application/views/cron/index.php:85
+#: application/controllers/Cron.php:247 application/views/cron/index.php:86
 msgid "failed"
 msgstr ""
 
-#: application/controllers/Cron.php:243 application/views/cron/index.php:87
+#: application/controllers/Cron.php:249 application/views/cron/index.php:88
 msgid "pending"
 msgstr ""
 
-#: application/controllers/Cron.php:248 application/views/cron/index.php:92
+#: application/controllers/Cron.php:254 application/views/cron/index.php:93
 msgid "disabled"
 msgstr ""
 
-#: application/controllers/Cron.php:287
+#: application/controllers/Cron.php:293
 #: application/views/interface_assets/footer.php:41
 msgid "OK"
 msgstr ""
 
-#: application/controllers/Cron.php:291
+#: application/controllers/Cron.php:297
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
 "It should run every minute (* * * * *)."
 msgstr ""
 
-#: application/controllers/Cron.php:294
+#: application/controllers/Cron.php:300
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
 "isn't running!%sIt should run every minute (* * * * *)."
 msgstr ""
 
-#: application/controllers/Cron.php:299 application/views/cron/index.php:42
+#: application/controllers/Cron.php:305 application/views/cron/index.php:43
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr ""
@@ -2515,7 +2515,7 @@ msgstr ""
 #: application/controllers/Stationsetup.php:402
 #: application/views/api/index.php:74 application/views/bands/bandedges.php:32
 #: application/views/club/permissions.php:274
-#: application/views/contesting/add.php:59 application/views/cron/index.php:71
+#: application/views/contesting/add.php:59 application/views/cron/index.php:72
 #: application/views/interface_assets/footer.php:681
 #: application/views/interface_assets/footer.php:690
 #: application/views/labels/index.php:48 application/views/labels/index.php:84
@@ -5132,7 +5132,7 @@ msgid "POTA REF in ADIF"
 msgstr ""
 
 #: application/views/adif/pota_success.php:36
-#: application/views/api/index.php:37 application/views/cron/index.php:67
+#: application/views/api/index.php:37 application/views/cron/index.php:68
 #: application/views/lotw/satupdate.php:7
 #: application/views/lotw_views/index.php:38
 #: application/views/mode/index.php:43
@@ -5207,7 +5207,7 @@ msgid "API URL"
 msgstr ""
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
-#: application/views/cron/index.php:35 application/views/debug/index.php:60
+#: application/views/cron/index.php:36 application/views/debug/index.php:60
 msgid "Copy to clipboard"
 msgstr ""
 
@@ -5246,7 +5246,7 @@ msgid "API Key"
 msgstr ""
 
 #: application/views/api/index.php:31 application/views/cron/edit.php:30
-#: application/views/cron/index.php:66
+#: application/views/cron/index.php:67
 #: application/views/search/stored_queries.php:8
 msgid "Description"
 msgstr ""
@@ -9722,7 +9722,7 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-#: application/views/cron/edit.php:36 application/views/cron/index.php:68
+#: application/views/cron/edit.php:36 application/views/cron/index.php:69
 msgid "Intervall"
 msgstr ""
 
@@ -9785,60 +9785,64 @@ msgid ""
 "requiring CLI access."
 msgstr ""
 
-#: application/views/cron/index.php:32
+#: application/views/cron/index.php:29
+msgid "All times are shown in UTC."
+msgstr ""
+
+#: application/views/cron/index.php:33
 msgid ""
 "To execute cron jobs based on the data below, remove all old cron jobs and "
 "create a new one:"
 msgstr ""
 
-#: application/views/cron/index.php:42 application/views/cron/index.php:46
+#: application/views/cron/index.php:43 application/views/cron/index.php:47
 msgid "Status Master-Cron:"
 msgstr ""
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:47
 msgctxt "PHP Version"
 msgid "Min. Version is"
 msgstr ""
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:47
 msgid "PHP Version not supported."
 msgstr ""
 
-#: application/views/cron/index.php:56
+#: application/views/cron/index.php:57
 msgid "Cron List"
 msgstr ""
 
-#: application/views/cron/index.php:65
+#: application/views/cron/index.php:66
 #: application/views/stationsetup/stationsetup.php:33
 #: application/views/stationsetup/stationsetup.php:128
 msgid "ID"
 msgstr ""
 
-#: application/views/cron/index.php:69
+#: application/views/cron/index.php:70
 msgid "Last Run"
 msgstr ""
 
-#: application/views/cron/index.php:70
+#: application/views/cron/index.php:71
 msgid "Next Run"
 msgstr ""
 
-#: application/views/cron/index.php:115
+#: application/views/cron/index.php:116
 msgid "Your Mastercron isn't running."
 msgstr ""
 
-#: application/views/cron/index.php:116
+#: application/views/cron/index.php:117
 msgid ""
 "Copy the cron above to a external cron service or into your server's cron to "
 "use this cron manager."
 msgstr ""
 
-#: application/views/cron/index.php:117
+#: application/views/cron/index.php:118
 msgid ""
 "On a basic linux server with shell access use this command to edit your "
 "crons:"
 msgstr ""
 
-#: application/views/cron/index.php:124
+#: application/views/cron/index.php:125
 #, php-format
 msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your Version is "
