@@ -168,7 +168,7 @@
                                             <input class="form-check-input" type="checkbox" name="skipGridCheck" value="1" id="skipGridCheck">
                                             <label class="form-check-label" for="skipGridCheck"><span class="badge text-bg-warning"><?= __("DANGER") ?></span> <?= __("Ignore grid check on import") ?></label>
                                         </div>
-                                        <div class="small form-text text-muted"><?= __("If selected, Wavelog will try to import QSOs even when their my_gridsquare does not match the chosen station-location locator.") ?></div>
+                                        <div class="small form-text text-muted"><?= __("If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field in ADIF records does not match the locator of the chosen station-location.") ?></div>
                                     </div>
                                 <?php } ?>
                                 </div>
