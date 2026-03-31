@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-24 11:57+0000\n"
+"POT-Creation-Date: 2026-03-31 13:02+0000\n"
 "PO-Revision-Date: 2026-03-21 17:42+0000\n"
 "Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Serbian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -44,7 +44,7 @@ msgstr ""
 #: application/controllers/Components.php:13
 #: application/controllers/Contestcalendar.php:15
 #: application/controllers/Contesting.php:14
-#: application/controllers/Cron.php:26 application/controllers/Cron.php:171
+#: application/controllers/Cron.php:26 application/controllers/Cron.php:177
 #: application/controllers/Csv.php:8 application/controllers/Csv.php:31
 #: application/controllers/Dayswithqso.php:11
 #: application/controllers/Dcl.php:10 application/controllers/Dcl.php:19
@@ -144,8 +144,8 @@ msgid "Activated Gridsquare Map"
 msgstr "Mapa aktiviranih polja"
 
 #: application/controllers/Activated_gridmap.php:31
-#: application/controllers/Awards.php:1066
-#: application/controllers/Awards.php:1102
+#: application/controllers/Awards.php:1059
+#: application/controllers/Awards.php:1095
 #: application/controllers/Gridmap.php:32
 #: application/controllers/Visitor.php:385
 #: application/views/activators/index.php:100
@@ -318,28 +318,28 @@ msgstr "Diplome"
 
 #: application/controllers/Awards.php:101
 #: application/controllers/Awards.php:205
-#: application/controllers/Awards.php:443
-#: application/controllers/Awards.php:493
-#: application/controllers/Awards.php:610
-#: application/controllers/Awards.php:628
-#: application/controllers/Awards.php:646
-#: application/controllers/Awards.php:728
-#: application/controllers/Awards.php:790
-#: application/controllers/Awards.php:852
-#: application/controllers/Awards.php:914
-#: application/controllers/Awards.php:999
-#: application/controllers/Awards.php:1011
-#: application/controllers/Awards.php:1087
-#: application/controllers/Awards.php:1293
-#: application/controllers/Awards.php:1444
-#: application/controllers/Awards.php:1495
-#: application/controllers/Awards.php:2060
-#: application/controllers/Awards.php:2209
-#: application/controllers/Awards.php:2339
-#: application/controllers/Awards.php:2413
-#: application/controllers/Awards.php:2426
-#: application/controllers/Awards.php:2501
-#: application/controllers/Awards.php:2643
+#: application/controllers/Awards.php:436
+#: application/controllers/Awards.php:486
+#: application/controllers/Awards.php:603
+#: application/controllers/Awards.php:621
+#: application/controllers/Awards.php:639
+#: application/controllers/Awards.php:721
+#: application/controllers/Awards.php:783
+#: application/controllers/Awards.php:845
+#: application/controllers/Awards.php:907
+#: application/controllers/Awards.php:992
+#: application/controllers/Awards.php:1004
+#: application/controllers/Awards.php:1080
+#: application/controllers/Awards.php:1286
+#: application/controllers/Awards.php:1437
+#: application/controllers/Awards.php:1488
+#: application/controllers/Awards.php:2046
+#: application/controllers/Awards.php:2195
+#: application/controllers/Awards.php:2325
+#: application/controllers/Awards.php:2399
+#: application/controllers/Awards.php:2412
+#: application/controllers/Awards.php:2487
+#: application/controllers/Awards.php:2629
 #, php-format
 msgid "Awards - %s"
 msgstr "Diplome - %s"
@@ -396,21 +396,21 @@ msgstr "Дипломе - WAPC"
 msgid "Awards - WAJA"
 msgstr "Diplome - WAJA"
 
-#: application/controllers/Awards.php:443 application/views/bands/index.php:53
+#: application/controllers/Awards.php:436 application/views/bands/index.php:53
 #: application/views/interface_assets/header.php:262
 msgid "JCC"
 msgstr "JCC"
 
-#: application/controllers/Awards.php:493 application/views/bands/index.php:59
+#: application/controllers/Awards.php:486 application/views/bands/index.php:59
 #: application/views/interface_assets/header.php:198
 msgid "VUCC"
 msgstr "VUCC"
 
-#: application/controllers/Awards.php:524
+#: application/controllers/Awards.php:517
 msgid "Log View - VUCC"
 msgstr "Pregled loga - VUCC"
 
-#: application/controllers/Awards.php:574
+#: application/controllers/Awards.php:567
 #: application/controllers/Callstats.php:100
 #: application/controllers/Distancerecords.php:87
 #: application/controllers/Statistics.php:372
@@ -423,11 +423,11 @@ msgstr "Pregled loga - VUCC"
 msgid "Log View"
 msgstr "Pregled loga"
 
-#: application/controllers/Awards.php:575
+#: application/controllers/Awards.php:568
 msgid "and"
 msgstr "и"
 
-#: application/controllers/Awards.php:576
+#: application/controllers/Awards.php:569
 #: application/views/awards/cq/index.php:135
 #: application/views/awards/dxcc/index.php:32
 #: application/views/awards/dxcc/index.php:176
@@ -439,35 +439,35 @@ msgstr "и"
 msgid "Every band (w/o SAT)"
 msgstr "Сваки опсег (без SAT)"
 
-#: application/controllers/Awards.php:576
+#: application/controllers/Awards.php:569
 msgid "band"
 msgstr "опсег"
 
-#: application/controllers/Awards.php:579
+#: application/controllers/Awards.php:572
 msgid " and satellite "
 msgstr " и сателит "
 
-#: application/controllers/Awards.php:582
+#: application/controllers/Awards.php:575
 #: application/controllers/Callstats.php:107
 msgid " and orbit type "
 msgstr " i vrsta orbite "
 
-#: application/controllers/Awards.php:586
+#: application/controllers/Awards.php:579
 #: application/controllers/Callstats.php:111
 msgid " and propagation "
 msgstr " . i propagacije "
 
-#: application/controllers/Awards.php:589
+#: application/controllers/Awards.php:582
 #: application/controllers/Callstats.php:114
 msgid " and mode "
 msgstr " i vrsta rada "
 
-#: application/controllers/Awards.php:592
+#: application/controllers/Awards.php:585
 #: application/controllers/Callstats.php:117
 msgid " and "
 msgstr " i "
 
-#: application/controllers/Awards.php:610
+#: application/controllers/Awards.php:603
 #: application/controllers/Logbook.php:1463
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
@@ -495,7 +495,7 @@ msgstr " i "
 msgid "SOTA"
 msgstr "SOTA"
 
-#: application/controllers/Awards.php:628
+#: application/controllers/Awards.php:621
 #: application/controllers/Logbook.php:1464
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
@@ -517,7 +517,7 @@ msgstr "SOTA"
 msgid "WWFF"
 msgstr "WWFF"
 
-#: application/controllers/Awards.php:646
+#: application/controllers/Awards.php:639
 #: application/controllers/Logbook.php:1465
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:328
 #: application/views/bands/index.php:54
@@ -540,68 +540,68 @@ msgstr "WWFF"
 msgid "POTA"
 msgstr "POTA"
 
-#: application/controllers/Awards.php:728
+#: application/controllers/Awards.php:721
 msgid "CQ WAZ (Worked All Zones)"
 msgstr "CQ WAZ (Worked All Zones)"
 
-#: application/controllers/Awards.php:790
+#: application/controllers/Awards.php:783
 #: application/views/accumulate/index.php:54
 #: application/views/timeline/index.php:45
 msgid "Worked All States (WAS)"
 msgstr "Worked All States (WAS)"
 
-#: application/controllers/Awards.php:852 application/views/bands/index.php:55
+#: application/controllers/Awards.php:845 application/views/bands/index.php:55
 #: application/views/interface_assets/header.php:228
 msgid "RAC"
 msgstr "RAC"
 
-#: application/controllers/Awards.php:914 application/views/bands/index.php:51
+#: application/controllers/Awards.php:907 application/views/bands/index.php:51
 msgid "H26"
 msgstr "H26"
 
-#: application/controllers/Awards.php:999
+#: application/controllers/Awards.php:992
 msgid "IOTA (Island On The Air)"
 msgstr "IOTA (Island On The Air - Ostrva u eteru)"
 
-#: application/controllers/Awards.php:1011
-#: application/controllers/Awards.php:1026
+#: application/controllers/Awards.php:1004
+#: application/controllers/Awards.php:1019
 #: application/views/interface_assets/header.php:294
 msgid "US Counties"
 msgstr "US Okruzi"
 
-#: application/controllers/Awards.php:1041
+#: application/controllers/Awards.php:1034
 msgid "Log View - Counties"
 msgstr "Pregled loga - Okruzi"
 
-#: application/controllers/Awards.php:1048
+#: application/controllers/Awards.php:1041
 msgid "Awards - "
 msgstr "Diplome - "
 
-#: application/controllers/Awards.php:1067
-#: application/controllers/Awards.php:1103
+#: application/controllers/Awards.php:1060
+#: application/controllers/Awards.php:1096
 msgid "Gridsquares worked"
 msgstr "Rađenih polja"
 
-#: application/controllers/Awards.php:1068
-#: application/controllers/Awards.php:1104
+#: application/controllers/Awards.php:1061
+#: application/controllers/Awards.php:1097
 msgid "Gridsquares confirmed on LoTW"
 msgstr "Polja potvrđenih preko LoTW"
 
-#: application/controllers/Awards.php:1069
-#: application/controllers/Awards.php:1105
+#: application/controllers/Awards.php:1062
+#: application/controllers/Awards.php:1098
 msgid "Gridsquares confirmed by paper QSL"
 msgstr "Polja potvrđenih QSL kartama"
 
-#: application/controllers/Awards.php:1070
-#: application/controllers/Awards.php:1106
+#: application/controllers/Awards.php:1063
+#: application/controllers/Awards.php:1099
 msgid "Total Gridsquares worked"
 msgstr "Укупно рађених поља"
 
-#: application/controllers/Awards.php:1087
+#: application/controllers/Awards.php:1080
 msgid "Fred Fish Memorial Award (FFMA)"
 msgstr "Fred Fish Memorial Award (FFMA)"
 
-#: application/controllers/Awards.php:1293
+#: application/controllers/Awards.php:1286
 #: application/views/interface_assets/header.php:196
 #: application/views/logbookadvanced/useroptions.php:250
 #: application/views/qso/edit_ajax.php:393 application/views/qso/index.php:345
@@ -611,45 +611,45 @@ msgstr "Fred Fish Memorial Award (FFMA)"
 msgid "SIG"
 msgstr "SIG"
 
-#: application/controllers/Awards.php:1312
+#: application/controllers/Awards.php:1305
 msgid "Awards - SIG - "
 msgstr "Diplome - SIG - "
 
-#: application/controllers/Awards.php:1444 application/views/bands/index.php:60
+#: application/controllers/Awards.php:1437 application/views/bands/index.php:60
 msgid "WAP"
 msgstr "WAP"
 
-#: application/controllers/Awards.php:1495
+#: application/controllers/Awards.php:1488
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
 msgstr ""
 
-#: application/controllers/Awards.php:2209
+#: application/controllers/Awards.php:2195
 #: application/views/awards/itu/index.php:34
 msgid "ITU Zones"
 msgstr "ITU Zone"
 
-#: application/controllers/Awards.php:2339
+#: application/controllers/Awards.php:2325
 #: application/views/awards/wac/index.php:8
 #: application/views/interface_assets/header.php:202
 msgid "Worked All Continents (WAC)"
 msgstr "Worked all Continents (WAC)"
 
-#: application/controllers/Awards.php:2413
+#: application/controllers/Awards.php:2399
 msgid "WAE"
 msgstr "WAE"
 
-#: application/controllers/Awards.php:2426
+#: application/controllers/Awards.php:2412
 #: application/views/interface_assets/header.php:212
 msgid "73 on 73"
 msgstr "73 on 73"
 
-#: application/controllers/Awards.php:2501
+#: application/controllers/Awards.php:2487
 #: application/views/awards/wpx/wpx_details.php:19
 msgid "WPX"
 msgstr "WPX"
 
-#: application/controllers/Awards.php:2643
+#: application/controllers/Awards.php:2629
 #: application/views/awards/pl_polska/index.php:37
 #: application/views/interface_assets/header.php:276
 msgid "\"Polska\" Award"
@@ -881,13 +881,13 @@ msgstr "Kontinenti"
 msgid "Cron Manager"
 msgstr "Cron menadžer"
 
-#: application/controllers/Cron.php:163 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:169 application/views/cron/edit.php:5
 msgid "Edit Cronjob"
 msgstr "Uredi cronjob"
 
-#: application/controllers/Cron.php:227 application/controllers/Cron.php:228
-#: application/views/cron/index.php:96 application/views/cron/index.php:98
-#: application/views/cron/index.php:100 application/views/debug/index.php:683
+#: application/controllers/Cron.php:233 application/controllers/Cron.php:234
+#: application/views/cron/index.php:97 application/views/cron/index.php:99
+#: application/views/cron/index.php:101 application/views/debug/index.php:683
 #: application/views/debug/index.php:690 application/views/debug/index.php:696
 #: application/views/debug/index.php:702 application/views/debug/index.php:708
 #: application/views/debug/index.php:714 application/views/debug/index.php:720
@@ -896,32 +896,32 @@ msgstr "Uredi cronjob"
 msgid "never"
 msgstr "nikada"
 
-#: application/controllers/Cron.php:228
+#: application/controllers/Cron.php:234
 msgid "calculating..."
 msgstr "računam..."
 
-#: application/controllers/Cron.php:239 application/views/cron/index.php:83
+#: application/controllers/Cron.php:245 application/views/cron/index.php:84
 msgid "healthy"
 msgstr "zdravo"
 
-#: application/controllers/Cron.php:241 application/views/cron/index.php:85
+#: application/controllers/Cron.php:247 application/views/cron/index.php:86
 msgid "failed"
 msgstr "neuspešno"
 
-#: application/controllers/Cron.php:243 application/views/cron/index.php:87
+#: application/controllers/Cron.php:249 application/views/cron/index.php:88
 msgid "pending"
 msgstr "na čekanju"
 
-#: application/controllers/Cron.php:248 application/views/cron/index.php:92
+#: application/controllers/Cron.php:254 application/views/cron/index.php:93
 msgid "disabled"
 msgstr "onemogućeno"
 
-#: application/controllers/Cron.php:287
+#: application/controllers/Cron.php:293
 #: application/views/interface_assets/footer.php:41
 msgid "OK"
 msgstr "OK"
 
-#: application/controllers/Cron.php:291
+#: application/controllers/Cron.php:297
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
@@ -930,7 +930,7 @@ msgstr ""
 "Posljednji put se desilo pre više od %s sekundi. %sMolimo proverite vaš "
 "master kron! Trebalo bi da radi svakog minuta (* * * * *)."
 
-#: application/controllers/Cron.php:294
+#: application/controllers/Cron.php:300
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
@@ -939,7 +939,7 @@ msgstr ""
 "Posljednji put se desilo pre više od %s minuta. %sMolimo proverite vaš "
 "master kron! %sTrebalo bi da radi svakog minuta (* * * * *)."
 
-#: application/controllers/Cron.php:299 application/views/cron/index.php:42
+#: application/controllers/Cron.php:305 application/views/cron/index.php:43
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr "Ne izvršava se"
@@ -1541,7 +1541,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:91
 #: application/views/awards/iota/index.php:134
 #: application/views/awards/itu/index.php:147
-#: application/views/awards/jcc/index.php:90
+#: application/views/awards/jcc/index.php:100
 #: application/views/awards/rac/index.php:82
 #: application/views/awards/sig/qso_list.php:12
 #: application/views/awards/wab/index.php:55
@@ -1864,7 +1864,7 @@ msgstr "Udaljenost"
 #: application/views/awards/helvetia/index.php:77
 #: application/views/awards/iota/index.php:120
 #: application/views/awards/itu/index.php:134
-#: application/views/awards/jcc/index.php:76
+#: application/views/awards/jcc/index.php:86
 #: application/views/awards/pota/index.php:36
 #: application/views/awards/rac/index.php:68
 #: application/views/awards/sig/qso_list.php:13
@@ -2542,7 +2542,7 @@ msgstr "последње ажурирање"
 #: application/controllers/Stationsetup.php:402
 #: application/views/api/index.php:74 application/views/bands/bandedges.php:32
 #: application/views/club/permissions.php:274
-#: application/views/contesting/add.php:59 application/views/cron/index.php:71
+#: application/views/contesting/add.php:59 application/views/cron/index.php:72
 #: application/views/interface_assets/footer.php:681
 #: application/views/interface_assets/footer.php:690
 #: application/views/labels/index.php:48 application/views/labels/index.php:84
@@ -3525,13 +3525,13 @@ msgid "Federal State"
 msgstr "Федерална држава"
 
 #: application/libraries/Subdivisions.php:56
-#: application/libraries/Subdivisions.php:94
+#: application/libraries/Subdivisions.php:93
 msgctxt "Division Name (States in various countries)."
 msgid "County"
 msgstr "Округ"
 
 #: application/libraries/Subdivisions.php:60
-#: application/libraries/Subdivisions.php:85
+#: application/libraries/Subdivisions.php:84
 msgctxt "Division Name (States in various countries)."
 msgid "District"
 msgstr "Област"
@@ -3546,27 +3546,27 @@ msgctxt "Division Name (States in various countries)."
 msgid "US State"
 msgstr "САД држава"
 
-#: application/libraries/Subdivisions.php:67
+#: application/libraries/Subdivisions.php:66
 msgctxt "Division Name (States in various countries)."
 msgid "Prefecture"
 msgstr "Префектура"
 
-#: application/libraries/Subdivisions.php:69
+#: application/libraries/Subdivisions.php:68
 msgctxt "Division Name (States in various countries)."
 msgid "State"
 msgstr "Држава"
 
-#: application/libraries/Subdivisions.php:78
+#: application/libraries/Subdivisions.php:77
 msgctxt "Division Name (States in various countries)."
 msgid "US County"
 msgstr "САД округ"
 
-#: application/libraries/Subdivisions.php:90
+#: application/libraries/Subdivisions.php:89
 msgctxt "Division Name (States in various countries)."
 msgid "DME"
 msgstr "DME"
 
-#: application/libraries/Subdivisions.php:92
+#: application/libraries/Subdivisions.php:91
 msgctxt "Division Name (States in various countries)."
 msgid "City / Ku / Gun"
 msgstr "Град / Ku / Gun"
@@ -3649,22 +3649,30 @@ msgstr "Није дат позивни знак"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC мора бити нумерички"
 
-#: application/models/Logbook_model.php:4812
+#: application/models/Logbook_model.php:4882
 #, php-format
-msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
-msgstr "Приликом увоза QSO-ова, погрешан је знак %s са %s за %s: ПРЕСКОЧЕНО"
+msgid ""
+"Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
+msgstr ""
 
-#: application/models/Logbook_model.php:4826
+#: application/models/Logbook_model.php:4889
+#, php-format
+msgid ""
+"Differing locator %s while importing QSO with %s for station locator %s: "
+"SKIPPED"
+msgstr ""
+
+#: application/models/Logbook_model.php:4904
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
 msgstr ""
 
-#: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid "QSO on"
 msgstr "Почетак QSO"
 
-#: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3672,71 +3680,71 @@ msgstr ""
 "Pokušali ste uvesti QSO bez bilo kojeg znaka. Ovaj QSO nije uvežen, "
 "neispravan je"
 
-#: application/models/Logbook_model.php:4884
+#: application/models/Logbook_model.php:4962
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
 "imported. It's invalid"
 msgstr ""
 
-#: application/models/Logbook_model.php:5157
+#: application/models/Logbook_model.php:5235
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "датум пријема QSL је неисправан (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5168
+#: application/models/Logbook_model.php:5246
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "датум слања QSL је неисправан (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5229
+#: application/models/Logbook_model.php:5307
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "Датум учитавања веза на Clublog је неисправан (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5602
+#: application/models/Logbook_model.php:5680
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Дупликат за"
 
-#: application/models/Logbook_model.php:5667
-#: application/models/Logbook_model.php:5762
+#: application/models/Logbook_model.php:5745
+#: application/models/Logbook_model.php:5840
 msgid "QSO could not be matched"
 msgstr "QSO се не поклапа"
 
-#: application/models/Logbook_model.php:5675
+#: application/models/Logbook_model.php:5753
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "потврђено преко LoTW/Clublog/eQSL/Контест"
 
-#: application/models/Logbook_model.php:5681
+#: application/models/Logbook_model.php:5759
 msgid "confirmed by award manager"
 msgstr "потврђено од стране менаџера за дипломе"
 
-#: application/models/Logbook_model.php:5685
+#: application/models/Logbook_model.php:5763
 msgid "confirmed by cross-check of DCL data"
 msgstr "потврђено унакрсном провером DCL података"
 
-#: application/models/Logbook_model.php:5689
+#: application/models/Logbook_model.php:5767
 msgid "confirmation pending"
 msgstr "чека потврђивање"
 
-#: application/models/Logbook_model.php:5692
+#: application/models/Logbook_model.php:5770
 msgid "unconfirmed"
 msgstr "непотврђено"
 
-#: application/models/Logbook_model.php:5695
+#: application/models/Logbook_model.php:5773
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
 msgid "unknown"
 msgstr "непознато"
 
-#: application/models/Logbook_model.php:5765
+#: application/models/Logbook_model.php:5843
 msgid "POTA reference already in log"
 msgstr "POTA референца је већ у дневнику"
 
-#: application/models/Logbook_model.php:5768
+#: application/models/Logbook_model.php:5846
 msgid "QSO updated"
 msgstr "QSO ажуриран"
 
-#: application/models/Logbook_model.php:6165
+#: application/models/Logbook_model.php:6243
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -3906,7 +3914,7 @@ msgstr "Разлика"
 #: application/views/activated_gridmap/index.php:36
 #: application/views/activated_gridmap/index.php:45
 #: application/views/activators/index.php:13
-#: application/views/adif/import.php:262
+#: application/views/adif/import.php:272
 #: application/views/awards/cq/index.php:148
 #: application/views/awards/dok/index.php:95
 #: application/views/awards/dxcc/index.php:190
@@ -3915,7 +3923,7 @@ msgstr "Разлика"
 #: application/views/awards/helvetia/index.php:94
 #: application/views/awards/iota/index.php:137
 #: application/views/awards/itu/index.php:150
-#: application/views/awards/jcc/index.php:93
+#: application/views/awards/jcc/index.php:103
 #: application/views/awards/rac/index.php:85
 #: application/views/awards/wab/index.php:26
 #: application/views/awards/wab/index.php:38
@@ -4346,7 +4354,7 @@ msgstr "Tropospheric ducting"
 #: application/views/awards/helvetia/index.php:116
 #: application/views/awards/iota/index.php:159
 #: application/views/awards/itu/index.php:48
-#: application/views/awards/jcc/index.php:115
+#: application/views/awards/jcc/index.php:125
 #: application/views/awards/pl_polska/index.php:93
 #: application/views/awards/rac/index.php:107
 #: application/views/awards/wac/index.php:119
@@ -4503,7 +4511,7 @@ msgstr "Минималан број"
 #: application/views/awards/helvetia/index.php:204
 #: application/views/awards/iota/index.php:302
 #: application/views/awards/itu/index.php:274
-#: application/views/awards/jcc/index.php:238
+#: application/views/awards/jcc/index.php:250
 #: application/views/awards/pl_polska/index.php:377
 #: application/views/awards/pota/index.php:68
 #: application/views/awards/rac/index.php:195
@@ -4527,7 +4535,7 @@ msgid "Nothing found!"
 msgstr "Ништа није пронађено!"
 
 #: application/views/activators/index.php:98
-#: application/views/adif/import.php:107 application/views/adif/import.php:268
+#: application/views/adif/import.php:107 application/views/adif/import.php:278
 #: application/views/awards/73on73/index.php:35
 #: application/views/awards/pota/index.php:35
 #: application/views/awards/sig/qso_list.php:11
@@ -4771,7 +4779,7 @@ msgstr "Статус DCL QSL"
 msgid "ADIF Export"
 msgstr "ADIF извоз"
 
-#: application/views/adif/import.php:48 application/views/adif/import.php:342
+#: application/views/adif/import.php:48 application/views/adif/import.php:352
 msgid "DARC DCL"
 msgstr "DARC DCL"
 
@@ -4779,8 +4787,8 @@ msgstr "DARC DCL"
 msgid "CBR Import"
 msgstr "CBR увоз"
 
-#: application/views/adif/import.php:93 application/views/adif/import.php:390
-#: application/views/adif/import.php:413 application/views/api/index.php:22
+#: application/views/adif/import.php:93 application/views/adif/import.php:400
+#: application/views/adif/import.php:423 application/views/api/index.php:22
 #: application/views/dashboard/index.php:180
 #: application/views/dashboard/index.php:213
 #: application/views/eqsl/import.php:46 application/views/lotw/import.php:25
@@ -4797,7 +4805,7 @@ msgstr "Датотеке дневника морају бити врсте *.adi
 msgid "Maximum file upload size is "
 msgstr "Максимална величина датотеке за учитавање је "
 
-#: application/views/adif/import.php:94 application/views/adif/import.php:358
+#: application/views/adif/import.php:94 application/views/adif/import.php:368
 #: application/views/clublog/export.php:70
 #: application/views/debug/index.php:212 application/views/debug/index.php:229
 #: application/views/debug/index.php:756 application/views/hrdlog/export.php:25
@@ -4813,7 +4821,7 @@ msgid "Warning"
 msgstr "Упозорење"
 
 #: application/views/adif/import.php:101 application/views/adif/import.php:103
-#: application/views/adif/import.php:260 application/views/eqsl/import.php:37
+#: application/views/adif/import.php:270 application/views/eqsl/import.php:37
 #: application/views/hrdlog/export.php:69 application/views/qrz/export.php:91
 #: application/views/reg1test/index.php:30
 #: application/views/webadif/export.php:89
@@ -4828,7 +4836,7 @@ msgstr "Изаберите ADIF датотеку"
 msgid "Add QSOs to Contest"
 msgstr "Додајте QSO у такмичење"
 
-#: application/views/adif/import.php:119 application/views/adif/import.php:420
+#: application/views/adif/import.php:119 application/views/adif/import.php:430
 #: application/views/simplefle/index.php:86
 msgid "No Contest"
 msgstr "Нема такмичења"
@@ -4863,7 +4871,7 @@ msgstr ""
 "Ako nije selektovano, Wavelog će pokušati da odredi DXCC informacije "
 "automatski."
 
-#: application/views/adif/import.php:162
+#: application/views/adif/import.php:162 application/views/adif/import.php:169
 #: application/views/interface_assets/footer.php:34
 #: application/views/interface_assets/footer.php:641
 #: application/views/interface_assets/footer.php:2399
@@ -4881,62 +4889,72 @@ msgid ""
 "regardless if they match to the chosen station-location."
 msgstr ""
 
+#: application/views/adif/import.php:169
+msgid "Ignore grid check on import"
+msgstr ""
+
 #: application/views/adif/import.php:171
+msgid ""
+"If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
+"in ADIF records does not match the locator of the chosen station-location."
+msgstr ""
+
+#: application/views/adif/import.php:181
 msgid ""
 "Always use the logged-in account callsign as the operator call during import"
 msgstr "Uvek koristite pozivni znak prijavljenog operatora tokom uvoza"
 
-#: application/views/adif/import.php:182
+#: application/views/adif/import.php:192
 msgid "Mark QSOs as uploaded (This does NOT upload QSOs to these services!)"
 msgstr "Означи QSO као учитане (Ово НЕ учитава QSO на ове сервисе!)"
 
-#: application/views/adif/import.php:189
+#: application/views/adif/import.php:199
 msgid "Mark imported QSOs as uploaded to LoTW"
 msgstr "Означи увезене QSO као учитане на LoTW"
 
-#: application/views/adif/import.php:191 application/views/adif/import.php:199
-#: application/views/adif/import.php:209 application/views/adif/import.php:217
-#: application/views/adif/import.php:227 application/views/adif/import.php:235
+#: application/views/adif/import.php:201 application/views/adif/import.php:209
+#: application/views/adif/import.php:219 application/views/adif/import.php:227
+#: application/views/adif/import.php:237 application/views/adif/import.php:245
 msgid "Select if ADIF being imported does not contain this information."
 msgstr "Изабери ако ADIF који је учитан не садржи ове информације."
 
-#: application/views/adif/import.php:197
+#: application/views/adif/import.php:207
 msgid "Mark imported QSOs as uploaded to eQSL Logbook"
 msgstr "Означи увезене везе као учитане на eQSL дневник"
 
-#: application/views/adif/import.php:207
+#: application/views/adif/import.php:217
 msgid "Mark imported QSOs as uploaded to HRDLog.net Logbook"
 msgstr "Означи увезене QSO као учитане на HRDLog.net дневник"
 
-#: application/views/adif/import.php:215
+#: application/views/adif/import.php:225
 msgid "Mark imported QSOs as uploaded to QRZ Logbook"
 msgstr "Означи увезене QSO као учитане у QRZ дневник"
 
-#: application/views/adif/import.php:225
+#: application/views/adif/import.php:235
 msgid "Mark imported QSOs as uploaded to Clublog Logbook"
 msgstr "Означи увезене QSO као учитане у Clublog дневник"
 
-#: application/views/adif/import.php:233
+#: application/views/adif/import.php:243
 msgid "Mark imported QSOs as uploaded to DCL Logbook"
 msgstr "Означи увезене QSO као учитане у DCL дневник"
 
-#: application/views/adif/import.php:238
+#: application/views/adif/import.php:248
 msgid "Toggle all checkboxes"
 msgstr "Пребаци све поља за потврду"
 
-#: application/views/adif/import.php:244 application/views/adif/import.php:373
-#: application/views/adif/import.php:395 application/views/adif/import.php:439
+#: application/views/adif/import.php:254 application/views/adif/import.php:383
+#: application/views/adif/import.php:405 application/views/adif/import.php:449
 #: application/views/clublog/export.php:50
 #: application/views/hrdlog/export.php:50 application/views/qrz/export.php:55
 #: application/views/webadif/export.php:55
 msgid "Upload"
 msgstr "Учитавање"
 
-#: application/views/adif/import.php:254
+#: application/views/adif/import.php:264
 msgid "Take your logbook file anywhere!"
 msgstr "Понесите датотеку са вашим дневником где год желите!"
 
-#: application/views/adif/import.php:255
+#: application/views/adif/import.php:265
 msgid ""
 "Exporting ADIFs allows you to import contacts into third party applications "
 "like LoTW, Awards or just for keeping a backup."
@@ -4944,7 +4962,7 @@ msgstr ""
 "Izvoz ADIFa vam omogućava da uvezete kontakte u treće aplikacije kao što su "
 "LoTW, Diplome ili da ga goristite samo kao rezervnu kopiju."
 
-#: application/views/adif/import.php:256
+#: application/views/adif/import.php:266
 #, php-format
 msgctxt ""
 msgid ""
@@ -4952,7 +4970,7 @@ msgid ""
 "and export!"
 msgstr ""
 
-#: application/views/adif/import.php:279
+#: application/views/adif/import.php:289
 #: application/views/clublog/export.php:73 application/views/csv/index.php:119
 #: application/views/dcl_views/import.php:27
 #: application/views/dxatlas/index.php:118
@@ -4962,7 +4980,7 @@ msgstr ""
 msgid "From date"
 msgstr "Од датума"
 
-#: application/views/adif/import.php:283 application/views/csv/index.php:124
+#: application/views/adif/import.php:293 application/views/csv/index.php:124
 #: application/views/dxatlas/index.php:123
 #: application/views/hrdlog/export.php:82 application/views/kml/index.php:108
 #: application/views/qrz/export.php:104
@@ -4970,35 +4988,35 @@ msgstr "Од датума"
 msgid "To date"
 msgstr "До датума"
 
-#: application/views/adif/import.php:294
+#: application/views/adif/import.php:304
 msgid "Export options"
 msgstr "Опције извоза"
 
-#: application/views/adif/import.php:302
+#: application/views/adif/import.php:312
 msgid "Mark exported QSOs as already uploaded to LoTW"
 msgstr "Означи извезене QSO као већ учитане на LoTW"
 
-#: application/views/adif/import.php:311
+#: application/views/adif/import.php:321
 msgid "Export QSOs not uploaded to LoTW"
 msgstr "Извези QSO који нису учитани на LoTW"
 
-#: application/views/adif/import.php:318
+#: application/views/adif/import.php:328
 msgid "Export QSOs"
 msgstr "Извези QSO"
 
-#: application/views/adif/import.php:323
+#: application/views/adif/import.php:333
 msgid "Export Satellite-Only QSOs"
 msgstr "Извези само сателитске QSO"
 
-#: application/views/adif/import.php:324
+#: application/views/adif/import.php:334
 msgid "Export All Satellite QSOs"
 msgstr "Извези све сателитске QSO"
 
-#: application/views/adif/import.php:326
+#: application/views/adif/import.php:336
 msgid "Export All Satellite QSOs Confirmed on LoTW"
 msgstr "Извези све сателитске QSO потврђене на LoTW"
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 #, php-format
 msgid ""
 "Go to %s and export your logbook with confirmed DOKs. To speed up the "
@@ -5011,18 +5029,18 @@ msgstr ""
 "stavi 'DL'). Preuzeta ADIF datoteka može biti učitana ovde u nameri da "
 "ažurirate QSO sa informacijom o DOK."
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 #, php-format
 msgid ""
 "More information regarding the confirmation status in DCL can be found on "
 "the %sDCL Confluence page%s."
 msgstr ""
 
-#: application/views/adif/import.php:349
+#: application/views/adif/import.php:359
 msgid "Only import DOK data from QSOs confirmed on DCL."
 msgstr "Увези само DOK податке из QSO потврђених на DCL."
 
-#: application/views/adif/import.php:351
+#: application/views/adif/import.php:361
 msgid ""
 "Uncheck if you also want to update DOK with data from unconfirmed QSOs in "
 "DCL."
@@ -5030,11 +5048,11 @@ msgstr ""
 "Nemojte označiti ako takođe želite da ažurirate DOK sa podacima iz "
 "nepotvrđenih QSO u DCL."
 
-#: application/views/adif/import.php:358
+#: application/views/adif/import.php:368
 msgid "Overwrites exisiting DOK in log by DCL (if different)."
 msgstr "Препишите DCL-ом постојеће DOK у дневнику (ако су различити)."
 
-#: application/views/adif/import.php:360
+#: application/views/adif/import.php:370
 msgid ""
 "If checked Wavelog will forcibly overwrite existing DOK with DOK from DCL "
 "log."
@@ -5042,11 +5060,11 @@ msgstr ""
 "Ako je označeno, Wavelog će silom prepisati postojeće DOK sa DOK iz DCL "
 "dnevnika."
 
-#: application/views/adif/import.php:367
+#: application/views/adif/import.php:377
 msgid "Ignore QSOs that cannot be matched."
 msgstr "Занемарите QSO који се не могу поклопити."
 
-#: application/views/adif/import.php:369
+#: application/views/adif/import.php:379
 msgid ""
 "If unchecked, information about QSOs which could not be found in Wavelog "
 "will be displayed."
@@ -5054,14 +5072,14 @@ msgstr ""
 "Ako ostavite neoznačeno, biće prikazane informacije o QSO koji ne mogu biti "
 "pronađeni u Wavelogu."
 
-#: application/views/adif/import.php:391
+#: application/views/adif/import.php:401
 #, php-format
 msgid ""
 "An example for a tool to export the POTA hunter log in ADIF format is %s "
 "made by AF0G and available on GitHub."
 msgstr ""
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:422
 msgid ""
 "If you imported an ADIF file of a contest, provided by another logging "
 "software, sometimes, depending on that software, your exchanges will not be "
@@ -5070,14 +5088,14 @@ msgid ""
 "that data in Wavelog."
 msgstr ""
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:422
 #: application/views/adif/import_success.php:40
 #: application/views/dcl_views/index.php:76
 #: application/views/lotw_views/index.php:160
 msgid "Information"
 msgstr "Информације"
 
-#: application/views/adif/import.php:413
+#: application/views/adif/import.php:423
 msgid ""
 "Please use this function before changing anything about the QSOs in Wavelog, "
 "as this function uses the Contest ID, as well as date and time information "
@@ -5085,33 +5103,33 @@ msgid ""
 "about to upload to match the QSOs and only correct relevant data."
 msgstr ""
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:428
 msgid "Contest Name, only if Contest ID in CBR is different"
 msgstr "Назив такмичења, само ако је ID такмичења у CBR различит"
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:428
 msgid "Optional"
 msgstr "Опционо"
 
-#: application/views/adif/import.php:428
+#: application/views/adif/import.php:438
 msgid ""
 "The CBR file contains a TRX number at the end of each QSO line (for multi-op "
 "stations)"
 msgstr ""
 
-#: application/views/adif/import.php:432
+#: application/views/adif/import.php:442
 msgid ""
 "A serial number is ALWAYS part of the exchange for both parties in this "
 "contest."
 msgstr ""
 
-#: application/views/adif/import.php:434
+#: application/views/adif/import.php:444
 msgid ""
 "If you or your partner only sometimes exchange serial numbers, please leave "
 "this unchecked."
 msgstr ""
 
-#: application/views/adif/import.php:435
+#: application/views/adif/import.php:445
 msgid ""
 "If unchecked, this will erase the default serial number that (for example) "
 "N1MM+ produces. If checked, it will correct the serial number if necessary."
@@ -5210,7 +5228,7 @@ msgid "POTA REF in ADIF"
 msgstr "POTA REF у ADIF-у"
 
 #: application/views/adif/pota_success.php:36
-#: application/views/api/index.php:37 application/views/cron/index.php:67
+#: application/views/api/index.php:37 application/views/cron/index.php:68
 #: application/views/lotw/satupdate.php:7
 #: application/views/lotw_views/index.php:38
 #: application/views/mode/index.php:43
@@ -5292,7 +5310,7 @@ msgid "API URL"
 msgstr "API URL"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
-#: application/views/cron/index.php:35 application/views/debug/index.php:60
+#: application/views/cron/index.php:36 application/views/debug/index.php:60
 msgid "Copy to clipboard"
 msgstr "Копирај у привремену меморију"
 
@@ -5332,7 +5350,7 @@ msgid "API Key"
 msgstr "API кључ"
 
 #: application/views/api/index.php:31 application/views/cron/edit.php:30
-#: application/views/cron/index.php:66
+#: application/views/cron/index.php:67
 #: application/views/search/stored_queries.php:8
 msgid "Description"
 msgstr "Опис"
@@ -5471,7 +5489,7 @@ msgid ""
 msgstr ""
 
 #: application/views/awards/73on73/index.php:32
-#: application/views/awards/jcc/index.php:153
+#: application/views/awards/jcc/index.php:163
 #: application/views/awards/waja/index.php:157
 #: application/views/distancerecords/index.php:13
 msgid "Number"
@@ -5541,7 +5559,7 @@ msgstr "Потврђених округа"
 #: application/views/awards/dok/index.php:175
 #: application/views/awards/helvetia/index.php:183
 #: application/views/awards/iota/index.php:237
-#: application/views/awards/jcc/index.php:187
+#: application/views/awards/jcc/index.php:199
 #: application/views/awards/rac/index.php:174
 #: application/views/awards/waja/index.php:183
 #: application/views/awards/wap/index.php:181
@@ -5890,7 +5908,7 @@ msgstr "Табела"
 #: application/views/awards/helvetia/index.php:131
 #: application/views/awards/iota/index.php:174
 #: application/views/awards/itu/index.php:176
-#: application/views/awards/jcc/index.php:131
+#: application/views/awards/jcc/index.php:141
 #: application/views/awards/pl_polska/index.php:188
 #: application/views/awards/rac/index.php:122
 #: application/views/awards/wab/index.php:110
@@ -5966,7 +5984,7 @@ msgstr "(W)orked"
 #: application/views/awards/helvetia/index.php:174
 #: application/views/awards/iota/index.php:224
 #: application/views/awards/itu/index.php:226
-#: application/views/awards/jcc/index.php:170
+#: application/views/awards/jcc/index.php:182
 #: application/views/awards/rac/index.php:165
 #: application/views/awards/wac/index.php:162
 #: application/views/awards/wae/index.php:227
@@ -5988,11 +6006,11 @@ msgstr "Укупно (без SAT)"
 
 #: application/views/awards/cq/index.php:242
 #: application/views/awards/dok/index.php:179
-#: application/views/awards/dxcc/index.php:322
+#: application/views/awards/dxcc/index.php:325
 #: application/views/awards/helvetia/index.php:187
 #: application/views/awards/iota/index.php:245
 #: application/views/awards/itu/index.php:244
-#: application/views/awards/jcc/index.php:197
+#: application/views/awards/jcc/index.php:209
 #: application/views/awards/rac/index.php:178
 #: application/views/awards/wac/index.php:183
 #: application/views/awards/wae/index.php:247
@@ -6006,11 +6024,11 @@ msgstr "Укупно рађених"
 
 #: application/views/awards/cq/index.php:255
 #: application/views/awards/dok/index.php:186
-#: application/views/awards/dxcc/index.php:343
+#: application/views/awards/dxcc/index.php:350
 #: application/views/awards/helvetia/index.php:194
 #: application/views/awards/iota/index.php:271
 #: application/views/awards/itu/index.php:257
-#: application/views/awards/jcc/index.php:216
+#: application/views/awards/jcc/index.php:228
 #: application/views/awards/rac/index.php:185
 #: application/views/awards/wac/index.php:203
 #: application/views/awards/wae/index.php:269
@@ -6099,7 +6117,7 @@ msgstr "Рађени / Потврђени"
 
 #: application/views/awards/dok/index.php:81
 #: application/views/awards/helvetia/index.php:80
-#: application/views/awards/jcc/index.php:79
+#: application/views/awards/jcc/index.php:89
 #: application/views/awards/rac/index.php:71
 #: application/views/awards/waja/index.php:84
 #: application/views/awards/wap/index.php:78
@@ -6111,7 +6129,7 @@ msgstr "Сваки опсег"
 #: application/views/awards/dok/index.php:127
 #: application/views/awards/helvetia/index.php:115
 #: application/views/awards/iota/index.php:158
-#: application/views/awards/jcc/index.php:114
+#: application/views/awards/jcc/index.php:124
 #: application/views/awards/pl_polska/index.php:92
 #: application/views/awards/rac/index.php:106
 #: application/views/awards/waja/index.php:119
@@ -6184,6 +6202,7 @@ msgstr "Прикажи DXCC карту"
 
 #: application/views/awards/dxcc/index.php:88
 #: application/views/awards/iota/index.php:36
+#: application/views/awards/jcc/index.php:80
 msgid "Include deleted"
 msgstr "Укључујући обрисане"
 
@@ -6298,7 +6317,11 @@ msgstr "Назив DXCC"
 msgid "Prefix"
 msgstr "Префикс"
 
-#: application/views/awards/dxcc/index.php:369
+#: application/views/awards/dxcc/index.php:318
+msgid "Slots"
+msgstr ""
+
+#: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
 msgstr "Нема резултата за ваше критеријуме претраге. Молимо покушајте поново."
 
@@ -6654,31 +6677,32 @@ msgid ""
 "reference!)"
 msgstr ""
 
-#: application/views/awards/jcc/index.php:117
+#: application/views/awards/jcc/index.php:76
+msgid "Deleted cities"
+msgstr ""
+
+#: application/views/awards/jcc/index.php:127
 msgid "Show JCC Map"
 msgstr "Прикажи JCC карту"
 
-#: application/views/awards/jcc/index.php:118
-#: application/views/cabrillo/index.php:209 application/views/csv/index.php:129
-#: application/views/dxatlas/index.php:128 application/views/kml/index.php:113
-#: application/views/reg1test/index.php:145
-msgid "Export"
-msgstr "Извоз"
-
 #: application/views/awards/jcc/index.php:128
+msgid "Export confirmed QSOs"
+msgstr ""
+
+#: application/views/awards/jcc/index.php:138
 #: application/views/public_search/empty.php:2
 #: application/views/public_search/result.php:2
 #: application/views/view_log/partial/log_ajax.php:711
 msgid "Results"
 msgstr "Резултати"
 
-#: application/views/awards/jcc/index.php:154
+#: application/views/awards/jcc/index.php:164
 #: application/views/search/result.php:21
 #: application/views/view_log/qso.php:698
 msgid "City"
 msgstr "Град"
 
-#: application/views/awards/jcc/index.php:189
+#: application/views/awards/jcc/index.php:201
 #: application/views/dashboard/index.php:471
 #: application/views/distances/index.php:23
 #: application/views/qslprint/qslprint.php:57
@@ -8985,6 +9009,12 @@ msgstr "Ако је поље било део размене, требало би
 msgid "Include logged grids?"
 msgstr "Укључити евидентирана поља?"
 
+#: application/views/cabrillo/index.php:209 application/views/csv/index.php:129
+#: application/views/dxatlas/index.php:128 application/views/kml/index.php:113
+#: application/views/reg1test/index.php:145
+msgid "Export"
+msgstr "Извоз"
+
 #: application/views/cabrillo/index.php:215
 #: application/views/reg1test/index.php:150
 msgid "No contests were found in your log."
@@ -9974,7 +10004,7 @@ msgstr "Identifikator"
 msgid "Enabled"
 msgstr "Omogućeno"
 
-#: application/views/cron/edit.php:36 application/views/cron/index.php:68
+#: application/views/cron/edit.php:36 application/views/cron/index.php:69
 msgid "Intervall"
 msgstr "Interval"
 
@@ -10039,7 +10069,11 @@ msgstr ""
 "Kron menaažer pomaže administratoru u upravljanju kron poslovima bez potrebe "
 "za pristupom interfejsu sa komandnom linijom."
 
-#: application/views/cron/index.php:32
+#: application/views/cron/index.php:29
+msgid "All times are shown in UTC."
+msgstr ""
+
+#: application/views/cron/index.php:33
 msgid ""
 "To execute cron jobs based on the data below, remove all old cron jobs and "
 "create a new one:"
@@ -10047,42 +10081,42 @@ msgstr ""
 "Za izvršenje kron posla baziranog na donjim podacima, uklonite sve stare "
 "kron poslove i kreirajte novi:"
 
-#: application/views/cron/index.php:42 application/views/cron/index.php:46
+#: application/views/cron/index.php:43 application/views/cron/index.php:47
 msgid "Status Master-Cron:"
 msgstr "Status Master-krona:"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:47
 msgctxt "PHP Version"
 msgid "Min. Version is"
 msgstr "Min. verzija je"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:47
 msgid "PHP Version not supported."
 msgstr "PHP verzija nije podržana."
 
-#: application/views/cron/index.php:56
+#: application/views/cron/index.php:57
 msgid "Cron List"
 msgstr "Kron lista"
 
-#: application/views/cron/index.php:65
+#: application/views/cron/index.php:66
 #: application/views/stationsetup/stationsetup.php:33
 #: application/views/stationsetup/stationsetup.php:128
 msgid "ID"
 msgstr "ID"
 
-#: application/views/cron/index.php:69
+#: application/views/cron/index.php:70
 msgid "Last Run"
 msgstr "Poslednje pokretanje"
 
-#: application/views/cron/index.php:70
+#: application/views/cron/index.php:71
 msgid "Next Run"
 msgstr "Sledeće pokretanje"
 
-#: application/views/cron/index.php:115
+#: application/views/cron/index.php:116
 msgid "Your Mastercron isn't running."
 msgstr "Vaš Mastercron nije pokrenut."
 
-#: application/views/cron/index.php:116
+#: application/views/cron/index.php:117
 msgid ""
 "Copy the cron above to a external cron service or into your server's cron to "
 "use this cron manager."
@@ -10090,7 +10124,7 @@ msgstr ""
 "Kopirajte gornji kron u spoljni kron servis ili u kron vašeg servara da "
 "biste koristili ovaj kron menadžer."
 
-#: application/views/cron/index.php:117
+#: application/views/cron/index.php:118
 msgid ""
 "On a basic linux server with shell access use this command to edit your "
 "crons:"
@@ -10098,7 +10132,7 @@ msgstr ""
 "Na osnovnom linux serveru koji ima shell pristup koristite ovu komandu za "
 "uređivanje vaših kronova:"
 
-#: application/views/cron/index.php:124
+#: application/views/cron/index.php:125
 #, php-format
 msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your Version is "
@@ -19456,6 +19490,11 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#, php-format
+#~ msgid ""
+#~ "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
+#~ msgstr "Приликом увоза QSO-ова, погрешан је знак %s са %s за %s: ПРЕСКОЧЕНО"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "E-mail подешавања нису конфигурисана."
