@@ -147,7 +147,14 @@ function formatCount(count) {
 	return value + ' QSO' + (value === 1 ? '' : 's');
 }
 
+// Store chart data for re-rendering when tab switches
+var storedChartData = null;
+var storedChartInstance = null;
+
 function plotTimeplotterChart(tmp) {
+	// Store data for re-rendering
+	storedChartData = tmp;
+
 	$("#container").remove();
 	$("#info").remove();
 	$("#timeplotter_div").append('<div id="container" style="height: 600px;"></div>');
@@ -243,5 +250,17 @@ function plotTimeplotterChart(tmp) {
 		options.series.push(series);
 	}
 
-	var chart = new Highcharts.Chart(options);
+	storedChartInstance = new Highcharts.Chart(options);
 }
+
+// Handle tab switching to re-render chart when chart tab is shown
+$(document).ready(function() {
+	$('#chart-tab').on('shown.bs.tab', function() {
+		if (storedChartData && storedChartInstance) {
+			// Reflow the chart to adjust to visible container
+			if (storedChartInstance.reflow) {
+				storedChartInstance.reflow();
+			}
+		}
+	});
+});

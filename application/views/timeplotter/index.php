@@ -59,10 +59,10 @@
                         <option value="All"><?= __("All"); ?></option>
                         <?php
                         foreach ($modes as $mode) {
-							if ($mode->submode ?? '' == '') {
-								echo '<option value="' . $mode . '">' . strtoupper($mode) . '</option>' . "\n";
+								if ($mode->submode ?? '' == '') {
+									echo '<option value="' . $mode . '">' . strtoupper($mode) . '</option>' . "\n";
+								}
 							}
-						}
                         ?>
                     </select>
                 </div>
@@ -113,27 +113,50 @@
         </div>
     </div>
 
-    <div class="card shadow-sm mb-3" id="timeplotter-heatmap-card" style="display:none;">
-        <div class="card-header">
-            <span>Activity by Time of Day (UTC)</span>
+    <!-- Tabs Navigation -->
+    <ul class="nav nav-tabs mb-3" id="timeplotterTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="heatmap-tab" data-bs-toggle="tab" data-bs-target="#heatmap-pane" type="button" role="tab" aria-selected="true">
+                <?= __("Heatmap"); ?>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart-pane" type="button" role="tab" aria-selected="false">
+                <?= __("Chart"); ?>
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="timeplotterTabContent">
+        <!-- Heatmap Tab Pane -->
+        <div class="tab-pane fade show active" id="heatmap-pane" role="tabpanel">
+            <div class="card shadow-sm mb-3" id="timeplotter-heatmap-card" style="display:none;">
+                <div class="card-header">
+                    <span><?= __("Activity by Time of Day (UTC)"); ?></span>
+                </div>
+                <div class="card-body" style="min-height: 200px;">
+                    <div class="heatmap-legend mb-3">
+                        <span class="text-muted small me-2"><?= __("Less"); ?></span>
+                        <span class="legend-item"><span class="legend-swatch none"></span></span>
+                        <span class="legend-item"><span class="legend-swatch glanceyear-legend-1"></span></span>
+                        <span class="legend-item"><span class="legend-swatch glanceyear-legend-2"></span></span>
+                        <span class="legend-item"><span class="legend-swatch glanceyear-legend-3"></span></span>
+                        <span class="legend-item"><span class="legend-swatch glanceyear-legend-4"></span></span>
+						<span class="text-muted small me-2"><?= __("More"); ?></span>
+                    </div>
+                    <div class="heatmap-grid-wrapper">
+                        <div id="timeplotterHeatmap" class="heatmap-grid" style="display:none;"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body" style="min-height: 200px;">
-            <div class="heatmap-legend mb-3">
-                <span class="text-muted small me-2">Less</span>
-                <span class="legend-item"><span class="legend-swatch none"></span></span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-1"></span></span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-2"></span></span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-3"></span></span>
-                <span class="legend-item"><span class="legend-swatch glanceyear-legend-4"></span></span>
-				<span class="text-muted small me-2">More</span>
-            </div>
-            <div class="heatmap-grid-wrapper">
-                <div id="timeplotterHeatmap" class="heatmap-grid" style="display:none;"></div>
-            </div>
+
+        <!-- Chart Tab Pane -->
+        <div class="tab-pane fade" id="chart-pane" role="tabpanel">
+            <div id="timeplotter_div"></div>
         </div>
     </div>
-
-    <div id="timeplotter_div"></div>
 </div>
 
 <style>
@@ -144,6 +167,12 @@
     .heatmap-header {
         text-align: center;
         padding: 6px 4px;
+    }
+    .heatmap-row-label {
+        font-weight: 600;
+        padding: 8px 4px;
+        text-align: left;
+        font-size: 0.85rem;
     }
     .heatmap-cell {
         text-align: center;
