@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 12:49+0000\n"
+"POT-Creation-Date: 2026-03-31 12:55+0000\n"
 "PO-Revision-Date: 2025-08-23 15:21+0000\n"
 "Last-Translator: Matthias Jung <jungma@eit.uni-kl.de>\n"
 "Language-Team: Armenian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3594,13 +3594,15 @@ msgstr ""
 
 #: application/models/Logbook_model.php:4882
 #, php-format
-msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
+msgid ""
+"Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
 
 #: application/models/Logbook_model.php:4889
 #, php-format
 msgid ""
-"Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
+"Differing locator %s while importing QSO with %s for station locator %s: "
+"SKIPPED"
 msgstr ""
 
 #: application/models/Logbook_model.php:4904
@@ -4831,8 +4833,8 @@ msgstr ""
 
 #: application/views/adif/import.php:171
 msgid ""
-"If selected, Wavelog will try to import QSOs even when their my_gridsquare "
-"does not match the chosen station-location locator."
+"If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
+"in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
 
 #: application/views/adif/import.php:181

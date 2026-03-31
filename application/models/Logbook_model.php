@@ -4879,14 +4879,14 @@ class Logbook_model extends CI_Model {
 			$record['station_callsign'] = $station_profile_call;
 		}
 		if ((!$skipStationCheck) && ($station_id != 0) && (trim(strtoupper($record['station_callsign'])) != trim(strtoupper($station_profile_call)))) {     // Check if station_call from import matches profile ONLY when submitting via GUI.
-			$returner['error'] = sprintf(__("Wrong station callsign %s while importing QSO with %s for %s: SKIPPED") .
+			$returner['error'] = sprintf(__("Differing station callsign %s while importing QSO with %s for %s: SKIPPED") .
 				"<br>",
 				'<b>'.htmlentities($record['station_callsign'] ?? '').'</b>',($record['call'] ?? ''),'<b>'.($station_profile_call ?? '').'</b>');
 			return ($returner);
 		}
 		if ((!$skipGridCheck) && ($station_id != 0) && ($adif_grid != '') && ($station_profile_grid != '')) {
 			if (!$this->adif_grid_check_location($adif_grid, $station_profile_grid)) {
-				$returner['error'] = sprintf(__("Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED") .
+				$returner['error'] = sprintf(__("Differing locator %s while importing QSO with %s for station locator %s: SKIPPED") .
 					"<br>",
 					'<b>'.htmlentities($adif_grid ?? '').'</b>', ($record['call'] ?? ''), '<b>'.htmlentities($station_profile_grid ?? '').'</b>');
 				return ($returner);
