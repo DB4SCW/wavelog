@@ -9,7 +9,7 @@ var localTimeInterval = null; // Interval for updating local time display
 
 
 // Calculate local time based on GMT offset
-function calculateLocalTime(gmtOffset) {        
+function calculateLocalTime(gmtOffset) {
 	let now = new Date();
 	let utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
 	let localTime = new Date(utcTime + (3600000 * gmtOffset));
@@ -1872,6 +1872,7 @@ $("#callsign").on("focusout", function () {
 					if (result.profile_url) {
 						profileInfo += '<p class="mb-1" style="font-size: 0.875rem;"><i class="fas fa-globe me-1"></i><a href="' + result.profile_url + '" target="_blank">' + lang_qso_profile_website + '</a></p>';
 					}
+
 					// Local time (will be auto-updated)
 					if (result.profile_GMTOffset) {
 						let offsetHours = parseFloat(result.profile_GMTOffset);
