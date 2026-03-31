@@ -128,7 +128,7 @@ msgstr ""
 #: application/controllers/Webadif.php:11
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/Cron.php:177
 msgid "You're not allowed to do that!"
 msgstr "Det är inte tillåtet!"
 
@@ -881,6 +881,7 @@ msgid "Cron Manager"
 msgstr "Cronhanterare"
 
 #: application/controllers/Cron.php:163 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:169
 msgid "Edit Cronjob"
 msgstr "Redigera Cronjob"
 
@@ -892,35 +893,43 @@ msgstr "Redigera Cronjob"
 #: application/views/debug/index.php:714 application/views/debug/index.php:720
 #: application/views/debug/index.php:726 application/views/debug/index.php:732
 #: application/views/debug/index.php:738 application/views/debug/index.php:744
+#: application/controllers/Cron.php:233 application/controllers/Cron.php:234
+#: application/views/cron/index.php:97 application/views/cron/index.php:99
+#: application/views/cron/index.php:101
 msgid "never"
 msgstr "aldrig"
 
-#: application/controllers/Cron.php:228
+#: application/controllers/Cron.php:228 application/controllers/Cron.php:234
 msgid "calculating..."
 msgstr "beräknar..."
 
 #: application/controllers/Cron.php:239 application/views/cron/index.php:83
+#: application/controllers/Cron.php:245 application/views/cron/index.php:84
 msgid "healthy"
 msgstr "hälsosam"
 
 #: application/controllers/Cron.php:241 application/views/cron/index.php:85
+#: application/controllers/Cron.php:247 application/views/cron/index.php:86
 msgid "failed"
 msgstr "misslyckades"
 
 #: application/controllers/Cron.php:243 application/views/cron/index.php:87
+#: application/controllers/Cron.php:249 application/views/cron/index.php:88
 msgid "pending"
 msgstr "väntande"
 
 #: application/controllers/Cron.php:248 application/views/cron/index.php:92
+#: application/controllers/Cron.php:254 application/views/cron/index.php:93
 msgid "disabled"
 msgstr "inaktiverad"
 
 #: application/controllers/Cron.php:287
 #: application/views/interface_assets/footer.php:41
+#: application/controllers/Cron.php:293
 msgid "OK"
 msgstr "OK"
 
-#: application/controllers/Cron.php:291
+#: application/controllers/Cron.php:291 application/controllers/Cron.php:297
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
@@ -929,7 +938,7 @@ msgstr ""
 "Senaste körningen inträffade för mer än %s sekunder sedan.%sVänligen "
 "kontrollera din master-cron! Den bör köras varje minut (* * * * *)."
 
-#: application/controllers/Cron.php:294
+#: application/controllers/Cron.php:294 application/controllers/Cron.php:300
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
@@ -939,6 +948,7 @@ msgstr ""
 "din Mastercron inte körs!%sDen bör köras varje minut (* * * * *)."
 
 #: application/controllers/Cron.php:299 application/views/cron/index.php:42
+#: application/controllers/Cron.php:305 application/views/cron/index.php:43
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr "Inte igång"
@@ -2566,7 +2576,7 @@ msgstr "senast uppdaterad"
 #: application/views/stationsetup/stationsetup.php:136
 #: application/views/stationsetup/stationsetup.php:174
 #: application/views/themes/index.php:104 application/views/user/index.php:97
-#: application/views/user/index.php:203
+#: application/views/user/index.php:203 application/views/cron/index.php:72
 msgid "Edit"
 msgstr "Redigera"
 
@@ -5282,7 +5292,7 @@ msgstr "POTA REF i ADIF"
 #: application/views/sattimers/index.php:39
 #: application/views/stationsetup/stationsetup.php:35
 #: application/views/timeline/index.php:204
-#: application/views/usermode/index.php:41
+#: application/views/usermode/index.php:41 application/views/cron/index.php:68
 msgid "Status"
 msgstr "Status"
 
@@ -5356,6 +5366,7 @@ msgstr "API URL"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
 #: application/views/cron/index.php:35 application/views/debug/index.php:60
+#: application/views/cron/index.php:36
 msgid "Copy to clipboard"
 msgstr "Kopiera till clipboard"
 
@@ -5400,6 +5411,7 @@ msgstr "API-nyckel"
 #: application/views/api/index.php:31 application/views/cron/edit.php:30
 #: application/views/cron/index.php:66
 #: application/views/search/stored_queries.php:8
+#: application/views/cron/index.php:67
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -10170,6 +10182,7 @@ msgid "Enabled"
 msgstr "Aktiverad"
 
 #: application/views/cron/edit.php:36 application/views/cron/index.php:68
+#: application/views/cron/index.php:69
 msgid "Intervall"
 msgstr "Intervall"
 
@@ -10234,7 +10247,7 @@ msgstr ""
 "Cron Manager hjälper administratören att hantera cron-jobb utan att behöva "
 "CLI-åtkomst."
 
-#: application/views/cron/index.php:32
+#: application/views/cron/index.php:32 application/views/cron/index.php:33
 msgid ""
 "To execute cron jobs based on the data below, remove all old cron jobs and "
 "create a new one:"
@@ -10243,41 +10256,43 @@ msgstr ""
 "och skapa ett nytt:"
 
 #: application/views/cron/index.php:42 application/views/cron/index.php:46
+#: application/views/cron/index.php:43 application/views/cron/index.php:47
 msgid "Status Master-Cron:"
 msgstr "Status Master-Cron:"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgctxt "PHP Version"
 msgid "Min. Version is"
 msgstr "Min. version är"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgid "PHP Version not supported."
 msgstr "PHP-version stöds inte."
 
-#: application/views/cron/index.php:56
+#: application/views/cron/index.php:56 application/views/cron/index.php:57
 msgid "Cron List"
 msgstr "Cronlista"
 
 #: application/views/cron/index.php:65
 #: application/views/stationsetup/stationsetup.php:33
 #: application/views/stationsetup/stationsetup.php:128
+#: application/views/cron/index.php:66
 msgid "ID"
 msgstr "ID"
 
-#: application/views/cron/index.php:69
+#: application/views/cron/index.php:69 application/views/cron/index.php:70
 msgid "Last Run"
 msgstr "Senaste körning"
 
-#: application/views/cron/index.php:70
+#: application/views/cron/index.php:70 application/views/cron/index.php:71
 msgid "Next Run"
 msgstr "Nästa körning"
 
-#: application/views/cron/index.php:115
+#: application/views/cron/index.php:115 application/views/cron/index.php:116
 msgid "Your Mastercron isn't running."
 msgstr "Din Mastercron är inte aktiv."
 
-#: application/views/cron/index.php:116
+#: application/views/cron/index.php:116 application/views/cron/index.php:117
 msgid ""
 "Copy the cron above to a external cron service or into your server's cron to "
 "use this cron manager."
@@ -10285,7 +10300,7 @@ msgstr ""
 "Kopiera cron ovan till en extern cron-tjänst eller till din servers cron för "
 "att använda denna cron-hanterare."
 
-#: application/views/cron/index.php:117
+#: application/views/cron/index.php:117 application/views/cron/index.php:118
 msgid ""
 "On a basic linux server with shell access use this command to edit your "
 "crons:"
@@ -10293,7 +10308,7 @@ msgstr ""
 "På en grundläggande Linux-server med shell-åtkomst, använd det här kommandot "
 "för att redigera dina crons:"
 
-#: application/views/cron/index.php:124
+#: application/views/cron/index.php:124 application/views/cron/index.php:125
 #, php-format
 msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your Version is "
@@ -19839,6 +19854,10 @@ msgstr "CQz geojson"
 #: application/views/awards/dxcc/index.php:318
 msgid "Slots"
 msgstr "Slots"
+
+#: application/views/cron/index.php:29
+msgid "All times are shown in UTC."
+msgstr ""
 
 #~ msgid "Email settings not configured."
 #~ msgstr "E-postinställningar inte konfigurerade."

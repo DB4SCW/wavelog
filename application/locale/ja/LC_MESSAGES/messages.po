@@ -128,7 +128,7 @@ msgstr ""
 #: application/controllers/Webadif.php:11
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/Cron.php:177
 msgid "You're not allowed to do that!"
 msgstr "それは許されません！"
 
@@ -883,6 +883,7 @@ msgid "Cron Manager"
 msgstr "Cronマネージャー"
 
 #: application/controllers/Cron.php:163 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:169
 msgid "Edit Cronjob"
 msgstr "Cronジョブを編集する"
 
@@ -894,35 +895,43 @@ msgstr "Cronジョブを編集する"
 #: application/views/debug/index.php:714 application/views/debug/index.php:720
 #: application/views/debug/index.php:726 application/views/debug/index.php:732
 #: application/views/debug/index.php:738 application/views/debug/index.php:744
+#: application/controllers/Cron.php:233 application/controllers/Cron.php:234
+#: application/views/cron/index.php:97 application/views/cron/index.php:99
+#: application/views/cron/index.php:101
 msgid "never"
 msgstr "一度もない"
 
-#: application/controllers/Cron.php:228
+#: application/controllers/Cron.php:228 application/controllers/Cron.php:234
 msgid "calculating..."
 msgstr "計算中..."
 
 #: application/controllers/Cron.php:239 application/views/cron/index.php:83
+#: application/controllers/Cron.php:245 application/views/cron/index.php:84
 msgid "healthy"
 msgstr "健康"
 
 #: application/controllers/Cron.php:241 application/views/cron/index.php:85
+#: application/controllers/Cron.php:247 application/views/cron/index.php:86
 msgid "failed"
 msgstr "失敗した"
 
 #: application/controllers/Cron.php:243 application/views/cron/index.php:87
+#: application/controllers/Cron.php:249 application/views/cron/index.php:88
 msgid "pending"
 msgstr "保留中"
 
 #: application/controllers/Cron.php:248 application/views/cron/index.php:92
+#: application/controllers/Cron.php:254 application/views/cron/index.php:93
 msgid "disabled"
 msgstr "無効"
 
 #: application/controllers/Cron.php:287
 #: application/views/interface_assets/footer.php:41
+#: application/controllers/Cron.php:293
 msgid "OK"
 msgstr "OK"
 
-#: application/controllers/Cron.php:291
+#: application/controllers/Cron.php:291 application/controllers/Cron.php:297
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
@@ -931,7 +940,7 @@ msgstr ""
 "最後の実行から%s秒以上経過しています。%sマスターのcron設定を確認してくださ"
 "い！1分ごとに実行されるように設定する必要があります（* * * * *）。"
 
-#: application/controllers/Cron.php:294
+#: application/controllers/Cron.php:294 application/controllers/Cron.php:300
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
@@ -941,6 +950,7 @@ msgstr ""
 "です！%s毎分実行されるべきです（* * * * *）。"
 
 #: application/controllers/Cron.php:299 application/views/cron/index.php:42
+#: application/controllers/Cron.php:305 application/views/cron/index.php:43
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr "実行されていません"
@@ -2565,7 +2575,7 @@ msgstr "最終更新日"
 #: application/views/stationsetup/stationsetup.php:136
 #: application/views/stationsetup/stationsetup.php:174
 #: application/views/themes/index.php:104 application/views/user/index.php:97
-#: application/views/user/index.php:203
+#: application/views/user/index.php:203 application/views/cron/index.php:72
 msgid "Edit"
 msgstr "編集"
 
@@ -5282,7 +5292,7 @@ msgstr "ADIFにおけるPOTA参照"
 #: application/views/sattimers/index.php:39
 #: application/views/stationsetup/stationsetup.php:35
 #: application/views/timeline/index.php:204
-#: application/views/usermode/index.php:41
+#: application/views/usermode/index.php:41 application/views/cron/index.php:68
 msgid "Status"
 msgstr "状態"
 
@@ -5355,6 +5365,7 @@ msgstr "API URL"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
 #: application/views/cron/index.php:35 application/views/debug/index.php:60
+#: application/views/cron/index.php:36
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
 
@@ -5399,6 +5410,7 @@ msgstr "APIキー"
 #: application/views/api/index.php:31 application/views/cron/edit.php:30
 #: application/views/cron/index.php:66
 #: application/views/search/stored_queries.php:8
+#: application/views/cron/index.php:67
 msgid "Description"
 msgstr "説明"
 
@@ -10147,6 +10159,7 @@ msgid "Enabled"
 msgstr "有効"
 
 #: application/views/cron/edit.php:36 application/views/cron/index.php:68
+#: application/views/cron/index.php:69
 msgid "Intervall"
 msgstr "間隔"
 
@@ -10211,7 +10224,7 @@ msgstr ""
 "Cron マネージャーは、CLI アクセスを必要とせずに管理者が cron ジョブを管理する"
 "のを支援します。"
 
-#: application/views/cron/index.php:32
+#: application/views/cron/index.php:32 application/views/cron/index.php:33
 msgid ""
 "To execute cron jobs based on the data below, remove all old cron jobs and "
 "create a new one:"
@@ -10220,41 +10233,43 @@ msgstr ""
 "除し、新しい cron ジョブを作成します。"
 
 #: application/views/cron/index.php:42 application/views/cron/index.php:46
+#: application/views/cron/index.php:43 application/views/cron/index.php:47
 msgid "Status Master-Cron:"
 msgstr "ステータス マスター-Cron:"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgctxt "PHP Version"
 msgid "Min. Version is"
 msgstr "最小バージョンは"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgid "PHP Version not supported."
 msgstr "サポートされていないPHPバージョンです。"
 
-#: application/views/cron/index.php:56
+#: application/views/cron/index.php:56 application/views/cron/index.php:57
 msgid "Cron List"
 msgstr "Cronリスト"
 
 #: application/views/cron/index.php:65
 #: application/views/stationsetup/stationsetup.php:33
 #: application/views/stationsetup/stationsetup.php:128
+#: application/views/cron/index.php:66
 msgid "ID"
 msgstr "ID"
 
-#: application/views/cron/index.php:69
+#: application/views/cron/index.php:69 application/views/cron/index.php:70
 msgid "Last Run"
 msgstr "最後の実行"
 
-#: application/views/cron/index.php:70
+#: application/views/cron/index.php:70 application/views/cron/index.php:71
 msgid "Next Run"
 msgstr "次の実行"
 
-#: application/views/cron/index.php:115
+#: application/views/cron/index.php:115 application/views/cron/index.php:116
 msgid "Your Mastercron isn't running."
 msgstr "Mastercron が実行されていません。"
 
-#: application/views/cron/index.php:116
+#: application/views/cron/index.php:116 application/views/cron/index.php:117
 msgid ""
 "Copy the cron above to a external cron service or into your server's cron to "
 "use this cron manager."
@@ -10262,7 +10277,7 @@ msgstr ""
 "この cron マネージャーを使用するには、上記の cron を外部の cron サービスまた"
 "はサーバーの cron にコピーします。"
 
-#: application/views/cron/index.php:117
+#: application/views/cron/index.php:117 application/views/cron/index.php:118
 msgid ""
 "On a basic linux server with shell access use this command to edit your "
 "crons:"
@@ -10270,7 +10285,7 @@ msgstr ""
 "シェル アクセスを備えた基本的な Linux サーバーでは、次のコマンドを使用して "
 "cron を編集します。"
 
-#: application/views/cron/index.php:124
+#: application/views/cron/index.php:124 application/views/cron/index.php:125
 #, php-format
 msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your Version is "
@@ -19778,6 +19793,10 @@ msgstr "CQz geojson"
 #: application/views/awards/dxcc/index.php:318
 msgid "Slots"
 msgstr "スロット"
+
+#: application/views/cron/index.php:29
+msgid "All times are shown in UTC."
+msgstr ""
 
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"

@@ -137,7 +137,7 @@ msgstr ""
 #: application/controllers/Webadif.php:11
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/Cron.php:177
 msgid "You're not allowed to do that!"
 msgstr "Vous n'êtes pas autorisé à faire cela !"
 
@@ -894,6 +894,7 @@ msgid "Cron Manager"
 msgstr "Gestion des Cron"
 
 #: application/controllers/Cron.php:163 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:169
 msgid "Edit Cronjob"
 msgstr "Modifier les traitements Cron"
 
@@ -905,35 +906,43 @@ msgstr "Modifier les traitements Cron"
 #: application/views/debug/index.php:714 application/views/debug/index.php:720
 #: application/views/debug/index.php:726 application/views/debug/index.php:732
 #: application/views/debug/index.php:738 application/views/debug/index.php:744
+#: application/controllers/Cron.php:233 application/controllers/Cron.php:234
+#: application/views/cron/index.php:97 application/views/cron/index.php:99
+#: application/views/cron/index.php:101
 msgid "never"
 msgstr "jamais"
 
-#: application/controllers/Cron.php:228
+#: application/controllers/Cron.php:228 application/controllers/Cron.php:234
 msgid "calculating..."
 msgstr "calcul en cours..."
 
 #: application/controllers/Cron.php:239 application/views/cron/index.php:83
+#: application/controllers/Cron.php:245 application/views/cron/index.php:84
 msgid "healthy"
 msgstr "sain"
 
 #: application/controllers/Cron.php:241 application/views/cron/index.php:85
+#: application/controllers/Cron.php:247 application/views/cron/index.php:86
 msgid "failed"
 msgstr "échoué"
 
 #: application/controllers/Cron.php:243 application/views/cron/index.php:87
+#: application/controllers/Cron.php:249 application/views/cron/index.php:88
 msgid "pending"
 msgstr "en attente"
 
 #: application/controllers/Cron.php:248 application/views/cron/index.php:92
+#: application/controllers/Cron.php:254 application/views/cron/index.php:93
 msgid "disabled"
 msgstr "désactivé"
 
 #: application/controllers/Cron.php:287
 #: application/views/interface_assets/footer.php:41
+#: application/controllers/Cron.php:293
 msgid "OK"
 msgstr "OK"
 
-#: application/controllers/Cron.php:291
+#: application/controllers/Cron.php:291 application/controllers/Cron.php:297
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
@@ -942,7 +951,7 @@ msgstr ""
 "La dernière exécution a eu lieu il y a plus de %s secondes.%sVeuillez "
 "vérifier votre cron maître ! Il devrait s'exécuter chaque minute (* * * * *)."
 
-#: application/controllers/Cron.php:294
+#: application/controllers/Cron.php:294 application/controllers/Cron.php:300
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
@@ -953,6 +962,7 @@ msgstr ""
 "* * * *)."
 
 #: application/controllers/Cron.php:299 application/views/cron/index.php:42
+#: application/controllers/Cron.php:305 application/views/cron/index.php:43
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr "Ne fonctionne pas"
@@ -2590,7 +2600,7 @@ msgstr "dernière mise à jour"
 #: application/views/stationsetup/stationsetup.php:136
 #: application/views/stationsetup/stationsetup.php:174
 #: application/views/themes/index.php:104 application/views/user/index.php:97
-#: application/views/user/index.php:203
+#: application/views/user/index.php:203 application/views/cron/index.php:72
 msgid "Edit"
 msgstr "Editer"
 
@@ -3411,8 +3421,8 @@ msgid ""
 "encryption_key in your config.php file first!"
 msgstr ""
 "Vous ne pouvez actuellement pas usurper l'identité d'un autre utilisateur. "
-"Veuillez d'abord changer la clé de chiffrement dans votre fichier config."
-"php !"
+"Veuillez d'abord changer la clé de chiffrement dans votre fichier "
+"config.php !"
 
 #: application/controllers/User.php:1706
 msgid "Invalid Hash"
@@ -5349,7 +5359,7 @@ msgstr "REF POTA en ADIF"
 #: application/views/sattimers/index.php:39
 #: application/views/stationsetup/stationsetup.php:35
 #: application/views/timeline/index.php:204
-#: application/views/usermode/index.php:41
+#: application/views/usermode/index.php:41 application/views/cron/index.php:68
 msgid "Status"
 msgstr "Statut"
 
@@ -5423,6 +5433,7 @@ msgstr "URL de l'API"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
 #: application/views/cron/index.php:35 application/views/debug/index.php:60
+#: application/views/cron/index.php:36
 msgid "Copy to clipboard"
 msgstr "Copier dans le presse-papier"
 
@@ -5467,6 +5478,7 @@ msgstr "Clé API"
 #: application/views/api/index.php:31 application/views/cron/edit.php:30
 #: application/views/cron/index.php:66
 #: application/views/search/stored_queries.php:8
+#: application/views/cron/index.php:67
 msgid "Description"
 msgstr "Description"
 
@@ -10313,6 +10325,7 @@ msgid "Enabled"
 msgstr "Activé"
 
 #: application/views/cron/edit.php:36 application/views/cron/index.php:68
+#: application/views/cron/index.php:69
 msgid "Intervall"
 msgstr "Intervalle"
 
@@ -10377,7 +10390,7 @@ msgstr ""
 "Le gestionnaire Cron aide l'administrateur à gérer les tâches Cron sans "
 "nécessiter d'accès CLI."
 
-#: application/views/cron/index.php:32
+#: application/views/cron/index.php:32 application/views/cron/index.php:33
 msgid ""
 "To execute cron jobs based on the data below, remove all old cron jobs and "
 "create a new one:"
@@ -10386,41 +10399,43 @@ msgstr ""
 "toutes les anciennes tâches Cron et créez-en une nouvelle :"
 
 #: application/views/cron/index.php:42 application/views/cron/index.php:46
+#: application/views/cron/index.php:43 application/views/cron/index.php:47
 msgid "Status Master-Cron:"
 msgstr "statut Master-Cron :"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgctxt "PHP Version"
 msgid "Min. Version is"
 msgstr "La version minimale est"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgid "PHP Version not supported."
 msgstr "Version PHP non prise en charge."
 
-#: application/views/cron/index.php:56
+#: application/views/cron/index.php:56 application/views/cron/index.php:57
 msgid "Cron List"
 msgstr "Liste Cron"
 
 #: application/views/cron/index.php:65
 #: application/views/stationsetup/stationsetup.php:33
 #: application/views/stationsetup/stationsetup.php:128
+#: application/views/cron/index.php:66
 msgid "ID"
 msgstr "Identité"
 
-#: application/views/cron/index.php:69
+#: application/views/cron/index.php:69 application/views/cron/index.php:70
 msgid "Last Run"
 msgstr "Dernière course"
 
-#: application/views/cron/index.php:70
+#: application/views/cron/index.php:70 application/views/cron/index.php:71
 msgid "Next Run"
 msgstr "Prochaine course"
 
-#: application/views/cron/index.php:115
+#: application/views/cron/index.php:115 application/views/cron/index.php:116
 msgid "Your Mastercron isn't running."
 msgstr "Votre Mastercron ne fonctionne pas."
 
-#: application/views/cron/index.php:116
+#: application/views/cron/index.php:116 application/views/cron/index.php:117
 msgid ""
 "Copy the cron above to a external cron service or into your server's cron to "
 "use this cron manager."
@@ -10428,7 +10443,7 @@ msgstr ""
 "Copiez le Cron ci-dessus sur un service Cron externe ou dans le Cron de "
 "votre serveur pour utiliser ce gestionnaire Cron."
 
-#: application/views/cron/index.php:117
+#: application/views/cron/index.php:117 application/views/cron/index.php:118
 msgid ""
 "On a basic linux server with shell access use this command to edit your "
 "crons:"
@@ -10436,7 +10451,7 @@ msgstr ""
 "Sur un serveur Linux de base avec accès shell, utilisez cette commande pour "
 "modifier vos Crons :"
 
-#: application/views/cron/index.php:124
+#: application/views/cron/index.php:124 application/views/cron/index.php:125
 #, php-format
 msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your Version is "
@@ -12012,8 +12027,8 @@ msgstr ""
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
 msgstr ""
-"Cliquer sur 'Téléverser les QSOs' enverra les informations de QSO vers eQSL."
-"cc."
+"Cliquer sur 'Téléverser les QSOs' enverra les informations de QSO vers "
+"eQSL.cc."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
@@ -15528,8 +15543,8 @@ msgid ""
 "The hostname of the mail server, e.g. 'mail.example.com' (without 'ssl://' "
 "or 'tls://')"
 msgstr ""
-"Le nom d'hôte du serveur de messagerie, par exemple « mail.example."
-"com » (sans « ssl:// » ou « tls:// »)"
+"Le nom d'hôte du serveur de messagerie, par exemple « mail.example.com » "
+"(sans « ssl:// » ou « tls:// »)"
 
 #: application/views/options/email.php:88
 msgid "SMTP Port"
@@ -17663,8 +17678,8 @@ msgid ""
 msgstr ""
 "Pour commencer, assurez-vous d'avoir rempli le formulaire sur la gauche avec "
 "la date, l'indicatif de la station et l'indicatif de l'opérateur. Les "
-"données principales incluent la bande (ou QRG en MHz, par exemple « 7.145 "
-"»), le mode et l'heure. Après l'heure, indiquez le premier QSO, qui "
+"données principales incluent la bande (ou QRG en MHz, par exemple "
+"« 7.145 »), le mode et l'heure. Après l'heure, indiquez le premier QSO, qui "
 "correspond essentiellement à l'indicatif."
 
 #: application/views/simplefle/syntax_help.php:9
@@ -20137,6 +20152,10 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#: application/views/cron/index.php:29
+msgid "All times are shown in UTC."
+msgstr ""
 
 #~ msgid "Email settings not configured."
 #~ msgstr "Paramètres de messagerie non configurés."

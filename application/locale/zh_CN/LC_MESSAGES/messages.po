@@ -148,7 +148,7 @@ msgstr ""
 #: application/controllers/Webadif.php:11
 #: application/controllers/Webadif.php:101
 #: application/controllers/Zonechecker.php:17
-#: application/models/Club_model.php:52
+#: application/models/Club_model.php:52 application/controllers/Cron.php:177
 msgid "You're not allowed to do that!"
 msgstr "请不要这样操作！"
 
@@ -901,6 +901,7 @@ msgid "Cron Manager"
 msgstr "计划任务管理器"
 
 #: application/controllers/Cron.php:163 application/views/cron/edit.php:5
+#: application/controllers/Cron.php:169
 msgid "Edit Cronjob"
 msgstr "编辑计划任务"
 
@@ -912,35 +913,43 @@ msgstr "编辑计划任务"
 #: application/views/debug/index.php:714 application/views/debug/index.php:720
 #: application/views/debug/index.php:726 application/views/debug/index.php:732
 #: application/views/debug/index.php:738 application/views/debug/index.php:744
+#: application/controllers/Cron.php:233 application/controllers/Cron.php:234
+#: application/views/cron/index.php:97 application/views/cron/index.php:99
+#: application/views/cron/index.php:101
 msgid "never"
 msgstr "从不"
 
-#: application/controllers/Cron.php:228
+#: application/controllers/Cron.php:228 application/controllers/Cron.php:234
 msgid "calculating..."
 msgstr "计算中…"
 
 #: application/controllers/Cron.php:239 application/views/cron/index.php:83
+#: application/controllers/Cron.php:245 application/views/cron/index.php:84
 msgid "healthy"
 msgstr "成功"
 
 #: application/controllers/Cron.php:241 application/views/cron/index.php:85
+#: application/controllers/Cron.php:247 application/views/cron/index.php:86
 msgid "failed"
 msgstr "失败"
 
 #: application/controllers/Cron.php:243 application/views/cron/index.php:87
+#: application/controllers/Cron.php:249 application/views/cron/index.php:88
 msgid "pending"
 msgstr "待处理"
 
 #: application/controllers/Cron.php:248 application/views/cron/index.php:92
+#: application/controllers/Cron.php:254 application/views/cron/index.php:93
 msgid "disabled"
 msgstr "禁用"
 
 #: application/controllers/Cron.php:287
 #: application/views/interface_assets/footer.php:41
+#: application/controllers/Cron.php:293
 msgid "OK"
 msgstr "OK"
 
-#: application/controllers/Cron.php:291
+#: application/controllers/Cron.php:291 application/controllers/Cron.php:297
 #, php-format
 msgid ""
 "Last run occurred more than %s seconds ago.%sPlease check your master cron! "
@@ -948,7 +957,7 @@ msgid ""
 msgstr ""
 "上次执行在 %s 秒前。%s请检查你的主计划任务！它应当每分钟运行一次(* * * * *)。"
 
-#: application/controllers/Cron.php:294
+#: application/controllers/Cron.php:294 application/controllers/Cron.php:300
 #, php-format
 msgid ""
 "Last run occurred more than %s minutes ago.%sSeems like your Mastercron "
@@ -958,6 +967,7 @@ msgstr ""
 "钟执行 (* * * * *)。"
 
 #: application/controllers/Cron.php:299 application/views/cron/index.php:42
+#: application/controllers/Cron.php:305 application/views/cron/index.php:43
 msgctxt "Master Cron"
 msgid "Not running"
 msgstr "未运行"
@@ -2556,7 +2566,7 @@ msgstr "上次更新"
 #: application/views/stationsetup/stationsetup.php:136
 #: application/views/stationsetup/stationsetup.php:174
 #: application/views/themes/index.php:104 application/views/user/index.php:97
-#: application/views/user/index.php:203
+#: application/views/user/index.php:203 application/views/cron/index.php:72
 msgid "Edit"
 msgstr "编辑"
 
@@ -5198,7 +5208,7 @@ msgstr "ADIF中的POTA编号"
 #: application/views/sattimers/index.php:39
 #: application/views/stationsetup/stationsetup.php:35
 #: application/views/timeline/index.php:204
-#: application/views/usermode/index.php:41
+#: application/views/usermode/index.php:41 application/views/cron/index.php:68
 msgid "Status"
 msgstr "状态"
 
@@ -5269,6 +5279,7 @@ msgstr "API URL"
 
 #: application/views/api/index.php:19 application/views/api/index.php:54
 #: application/views/cron/index.php:35 application/views/debug/index.php:60
+#: application/views/cron/index.php:36
 msgid "Copy to clipboard"
 msgstr "复制到剪贴板"
 
@@ -5311,6 +5322,7 @@ msgstr "API Key"
 #: application/views/api/index.php:31 application/views/cron/edit.php:30
 #: application/views/cron/index.php:66
 #: application/views/search/stored_queries.php:8
+#: application/views/cron/index.php:67
 msgid "Description"
 msgstr "说明"
 
@@ -9938,6 +9950,7 @@ msgid "Enabled"
 msgstr "已启用"
 
 #: application/views/cron/edit.php:36 application/views/cron/index.php:68
+#: application/views/cron/index.php:69
 msgid "Intervall"
 msgstr "间隔"
 
@@ -10000,61 +10013,63 @@ msgid ""
 "requiring CLI access."
 msgstr "在浏览器内管理计划任务（Cron），摆脱 CLI 命令。"
 
-#: application/views/cron/index.php:32
+#: application/views/cron/index.php:32 application/views/cron/index.php:33
 msgid ""
 "To execute cron jobs based on the data below, remove all old cron jobs and "
 "create a new one:"
 msgstr "请删除所有旧的 Cron 任务，使用如下的唯一 Cron 指令："
 
 #: application/views/cron/index.php:42 application/views/cron/index.php:46
+#: application/views/cron/index.php:43 application/views/cron/index.php:47
 msgid "Status Master-Cron:"
 msgstr "主 Cron 状态："
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgctxt "PHP Version"
 msgid "Min. Version is"
 msgstr "最低版本是"
 
-#: application/views/cron/index.php:46
+#: application/views/cron/index.php:46 application/views/cron/index.php:47
 msgid "PHP Version not supported."
 msgstr "不支持的 PHP 版本。"
 
-#: application/views/cron/index.php:56
+#: application/views/cron/index.php:56 application/views/cron/index.php:57
 msgid "Cron List"
 msgstr "Cron 列表"
 
 #: application/views/cron/index.php:65
 #: application/views/stationsetup/stationsetup.php:33
 #: application/views/stationsetup/stationsetup.php:128
+#: application/views/cron/index.php:66
 msgid "ID"
 msgstr "ID"
 
-#: application/views/cron/index.php:69
+#: application/views/cron/index.php:69 application/views/cron/index.php:70
 msgid "Last Run"
 msgstr "上次执行"
 
-#: application/views/cron/index.php:70
+#: application/views/cron/index.php:70 application/views/cron/index.php:71
 msgid "Next Run"
 msgstr "下次执行"
 
-#: application/views/cron/index.php:115
+#: application/views/cron/index.php:115 application/views/cron/index.php:116
 msgid "Your Mastercron isn't running."
 msgstr "Cron 主任务未运行。"
 
-#: application/views/cron/index.php:116
+#: application/views/cron/index.php:116 application/views/cron/index.php:117
 msgid ""
 "Copy the cron above to a external cron service or into your server's cron to "
 "use this cron manager."
 msgstr ""
 "将上面的 cron 复制到外部 cron 服务或服务器的 cron 中，以使用此 cron 管理器。"
 
-#: application/views/cron/index.php:117
+#: application/views/cron/index.php:117 application/views/cron/index.php:118
 msgid ""
 "On a basic linux server with shell access use this command to edit your "
 "crons:"
 msgstr "在具有 shell 访问权限的基本 Linux 服务器上，使用以下命令来编辑 cron："
 
-#: application/views/cron/index.php:124
+#: application/views/cron/index.php:124 application/views/cron/index.php:125
 #, php-format
 msgid ""
 "You need to upgrade your PHP version. Minimum version is %s. Your Version is "
@@ -19253,6 +19268,10 @@ msgstr "CQz geojson"
 
 #: application/views/awards/dxcc/index.php:318
 msgid "Slots"
+msgstr ""
+
+#: application/views/cron/index.php:29
+msgid "All times are shown in UTC."
 msgstr ""
 
 #~ msgid "Email settings not configured."
