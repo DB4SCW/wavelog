@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 12:33+0000\n"
+"POT-Creation-Date: 2026-03-31 12:49+0000\n"
 "PO-Revision-Date: 2026-03-20 07:25+0000\n"
 "Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
 "Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3755,13 +3755,19 @@ msgstr "Nezadaný volací znak"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC musí byť číselné"
 
-#: application/models/Logbook_model.php:4812
+#: application/models/Logbook_model.php:4882
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
 "Nesprávna volacia značka stanice %s pri importe QSO s %s pre %s: PRESKOČENÉ"
 
-#: application/models/Logbook_model.php:4826
+#: application/models/Logbook_model.php:4889
+#, php-format
+msgid ""
+"Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
+msgstr ""
+
+#: application/models/Logbook_model.php:4904
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3769,11 +3775,11 @@ msgstr ""
 "Pokúsil si sa importovať QSO bez platného dátumu. Toto QSO nebolo "
 "importované. Je neplatné"
 
-#: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid "QSO on"
 msgstr "QSO o"
 
-#: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3782,7 +3788,7 @@ msgstr ""
 "importované. Je neplatnéPokúsil si sa importovať QSO bez uvedenej značky. "
 "Toto QSO nebolo importované. Je neplatné."
 
-#: application/models/Logbook_model.php:4884
+#: application/models/Logbook_model.php:4962
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3792,64 +3798,64 @@ msgstr ""
 "nebolo importované. Je neplatnéQSO na %s: Pokúsil si sa importovať QSO bez "
 "uvedeného pásma. Toto QSO nebolo importované. Je neplatné."
 
-#: application/models/Logbook_model.php:5157
+#: application/models/Logbook_model.php:5235
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate je neplatné (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5168
+#: application/models/Logbook_model.php:5246
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate je neplatné (RRRRMMDD)"
 
-#: application/models/Logbook_model.php:5229
+#: application/models/Logbook_model.php:5307
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date je neplatné (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5602
+#: application/models/Logbook_model.php:5680
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Duplicita pre"
 
-#: application/models/Logbook_model.php:5667
-#: application/models/Logbook_model.php:5762
+#: application/models/Logbook_model.php:5745
+#: application/models/Logbook_model.php:5840
 msgid "QSO could not be matched"
 msgstr "QSO nebolo možné spárovať"
 
-#: application/models/Logbook_model.php:5675
+#: application/models/Logbook_model.php:5753
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "potvrdené cez LoTW/Clublog/eQSL/Contest"
 
-#: application/models/Logbook_model.php:5681
+#: application/models/Logbook_model.php:5759
 msgid "confirmed by award manager"
 msgstr "potvrdené diplomovým manažérom"
 
-#: application/models/Logbook_model.php:5685
+#: application/models/Logbook_model.php:5763
 msgid "confirmed by cross-check of DCL data"
 msgstr "potvrdené krížovou kontrolou údajov DCL"
 
-#: application/models/Logbook_model.php:5689
+#: application/models/Logbook_model.php:5767
 msgid "confirmation pending"
 msgstr "potvrdenie čaká"
 
-#: application/models/Logbook_model.php:5692
+#: application/models/Logbook_model.php:5770
 msgid "unconfirmed"
 msgstr "nepotvrdené"
 
-#: application/models/Logbook_model.php:5695
+#: application/models/Logbook_model.php:5773
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
 msgid "unknown"
 msgstr "neznáme"
 
-#: application/models/Logbook_model.php:5765
+#: application/models/Logbook_model.php:5843
 msgid "POTA reference already in log"
 msgstr "POTA referencia už v logu"
 
-#: application/models/Logbook_model.php:5768
+#: application/models/Logbook_model.php:5846
 msgid "QSO updated"
 msgstr "QSO aktualizované"
 
-#: application/models/Logbook_model.php:6165
+#: application/models/Logbook_model.php:6243
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -4021,7 +4027,7 @@ msgstr "Rozdiel"
 #: application/views/activated_gridmap/index.php:36
 #: application/views/activated_gridmap/index.php:45
 #: application/views/activators/index.php:13
-#: application/views/adif/import.php:262
+#: application/views/adif/import.php:272
 #: application/views/awards/cq/index.php:148
 #: application/views/awards/dok/index.php:95
 #: application/views/awards/dxcc/index.php:190
@@ -4642,7 +4648,7 @@ msgid "Nothing found!"
 msgstr "Nič sa nenašlo!"
 
 #: application/views/activators/index.php:98
-#: application/views/adif/import.php:107 application/views/adif/import.php:268
+#: application/views/adif/import.php:107 application/views/adif/import.php:278
 #: application/views/awards/73on73/index.php:35
 #: application/views/awards/pota/index.php:35
 #: application/views/awards/sig/qso_list.php:11
@@ -4889,7 +4895,7 @@ msgstr "Stav DCL QSL"
 msgid "ADIF Export"
 msgstr "ADIF export"
 
-#: application/views/adif/import.php:48 application/views/adif/import.php:342
+#: application/views/adif/import.php:48 application/views/adif/import.php:352
 msgid "DARC DCL"
 msgstr "DARC DCL"
 
@@ -4897,8 +4903,8 @@ msgstr "DARC DCL"
 msgid "CBR Import"
 msgstr "CBR import"
 
-#: application/views/adif/import.php:93 application/views/adif/import.php:390
-#: application/views/adif/import.php:413 application/views/api/index.php:22
+#: application/views/adif/import.php:93 application/views/adif/import.php:400
+#: application/views/adif/import.php:423 application/views/api/index.php:22
 #: application/views/dashboard/index.php:180
 #: application/views/dashboard/index.php:213
 #: application/views/eqsl/import.php:46 application/views/lotw/import.php:25
@@ -4915,7 +4921,7 @@ msgstr "Súbory denníkov musia mať typ súboru *.adi"
 msgid "Maximum file upload size is "
 msgstr "Maximálna veľkosť nahrávaného súboru je "
 
-#: application/views/adif/import.php:94 application/views/adif/import.php:358
+#: application/views/adif/import.php:94 application/views/adif/import.php:368
 #: application/views/clublog/export.php:70
 #: application/views/debug/index.php:212 application/views/debug/index.php:229
 #: application/views/debug/index.php:756 application/views/hrdlog/export.php:25
@@ -4931,7 +4937,7 @@ msgid "Warning"
 msgstr "Upozornenie"
 
 #: application/views/adif/import.php:101 application/views/adif/import.php:103
-#: application/views/adif/import.php:260 application/views/eqsl/import.php:37
+#: application/views/adif/import.php:270 application/views/eqsl/import.php:37
 #: application/views/hrdlog/export.php:69 application/views/qrz/export.php:91
 #: application/views/reg1test/index.php:30
 #: application/views/webadif/export.php:89
@@ -4946,7 +4952,7 @@ msgstr "Vyber ADIF súbor"
 msgid "Add QSOs to Contest"
 msgstr "Pridať spojenia do contestu"
 
-#: application/views/adif/import.php:119 application/views/adif/import.php:420
+#: application/views/adif/import.php:119 application/views/adif/import.php:430
 #: application/views/simplefle/index.php:86
 msgid "No Contest"
 msgstr "Žiadny contest"
@@ -4985,7 +4991,7 @@ msgstr ""
 "Ak nie je vybrané, Wavelog sa pokúsi určiť DXCC informácie automaticky.Ak sa "
 "nevyberie, Wavelog sa pokúsi automaticky určiť informácie o DXCC."
 
-#: application/views/adif/import.php:162
+#: application/views/adif/import.php:162 application/views/adif/import.php:169
 #: application/views/interface_assets/footer.php:34
 #: application/views/interface_assets/footer.php:641
 #: application/views/interface_assets/footer.php:2399
@@ -5007,7 +5013,17 @@ msgstr ""
 "vybraté, Wavelog sa pokúsi importovať %svšetky%s spojenia z ADIF, bez ohľadu "
 "na to, či zodpovedajú vybranej stanici-lokalizácii."
 
+#: application/views/adif/import.php:169
+msgid "Ignore grid check on import"
+msgstr ""
+
 #: application/views/adif/import.php:171
+msgid ""
+"If selected, Wavelog will try to import QSOs even when their my_gridsquare "
+"does not match the chosen station-location locator."
+msgstr ""
+
+#: application/views/adif/import.php:181
 msgid ""
 "Always use the logged-in account callsign as the operator call during import"
 msgstr ""
@@ -5015,57 +5031,57 @@ msgstr ""
 "operátoraPočas importu vždy použiť volaciu značku prihláseného účtu ako "
 "značku"
 
-#: application/views/adif/import.php:182
+#: application/views/adif/import.php:192
 msgid "Mark QSOs as uploaded (This does NOT upload QSOs to these services!)"
 msgstr "Označ spojenia ako nahraté (Toto nenahráva spojenia na tieto služby!)"
 
-#: application/views/adif/import.php:189
+#: application/views/adif/import.php:199
 msgid "Mark imported QSOs as uploaded to LoTW"
 msgstr "Označ importované spojenie ako nahrané na LoTW"
 
-#: application/views/adif/import.php:191 application/views/adif/import.php:199
-#: application/views/adif/import.php:209 application/views/adif/import.php:217
-#: application/views/adif/import.php:227 application/views/adif/import.php:235
+#: application/views/adif/import.php:201 application/views/adif/import.php:209
+#: application/views/adif/import.php:219 application/views/adif/import.php:227
+#: application/views/adif/import.php:237 application/views/adif/import.php:245
 msgid "Select if ADIF being imported does not contain this information."
 msgstr "Vyber, ak ADIF, ktorý sa importuje, neobsahuje tieto informácie."
 
-#: application/views/adif/import.php:197
+#: application/views/adif/import.php:207
 msgid "Mark imported QSOs as uploaded to eQSL Logbook"
 msgstr "Označ importované spojenia ako nahrané do eQSL"
 
-#: application/views/adif/import.php:207
+#: application/views/adif/import.php:217
 msgid "Mark imported QSOs as uploaded to HRDLog.net Logbook"
 msgstr "Označ importované spojenie ako nahrané do HRDLog.net denníka"
 
-#: application/views/adif/import.php:215
+#: application/views/adif/import.php:225
 msgid "Mark imported QSOs as uploaded to QRZ Logbook"
 msgstr "Označ importované spojenie ako nahrané do QRZ Logbooku"
 
-#: application/views/adif/import.php:225
+#: application/views/adif/import.php:235
 msgid "Mark imported QSOs as uploaded to Clublog Logbook"
 msgstr "Označ importované spojenie ako nahraté do Clublog-u"
 
-#: application/views/adif/import.php:233
+#: application/views/adif/import.php:243
 msgid "Mark imported QSOs as uploaded to DCL Logbook"
 msgstr "Označ importované spojenia ako nahrané do DCL Logbook-u"
 
-#: application/views/adif/import.php:238
+#: application/views/adif/import.php:248
 msgid "Toggle all checkboxes"
 msgstr "Zaškrtni všetky políčka"
 
-#: application/views/adif/import.php:244 application/views/adif/import.php:373
-#: application/views/adif/import.php:395 application/views/adif/import.php:439
+#: application/views/adif/import.php:254 application/views/adif/import.php:383
+#: application/views/adif/import.php:405 application/views/adif/import.php:449
 #: application/views/clublog/export.php:50
 #: application/views/hrdlog/export.php:50 application/views/qrz/export.php:55
 #: application/views/webadif/export.php:55
 msgid "Upload"
 msgstr "Nahrať"
 
-#: application/views/adif/import.php:254
+#: application/views/adif/import.php:264
 msgid "Take your logbook file anywhere!"
 msgstr "Vezmite svoj súbor denníka kamkoľvek!"
 
-#: application/views/adif/import.php:255
+#: application/views/adif/import.php:265
 msgid ""
 "Exporting ADIFs allows you to import contacts into third party applications "
 "like LoTW, Awards or just for keeping a backup."
@@ -5075,7 +5091,7 @@ msgstr ""
 "umožňuje importovať spojenia do aplikácií tretích strán ako LoTW, diplomov "
 "alebo len na uchovávanie zálohy."
 
-#: application/views/adif/import.php:256
+#: application/views/adif/import.php:266
 #, php-format
 msgctxt ""
 msgid ""
@@ -5086,7 +5102,7 @@ msgstr ""
 "filtrovanie a export!Ak potrebuješ viac filtrov, môžeš použiť %srozšírený "
 "denník%s na filtrovanie a export!"
 
-#: application/views/adif/import.php:279
+#: application/views/adif/import.php:289
 #: application/views/clublog/export.php:73 application/views/csv/index.php:119
 #: application/views/dcl_views/import.php:27
 #: application/views/dxatlas/index.php:118
@@ -5096,7 +5112,7 @@ msgstr ""
 msgid "From date"
 msgstr "Od dátumu"
 
-#: application/views/adif/import.php:283 application/views/csv/index.php:124
+#: application/views/adif/import.php:293 application/views/csv/index.php:124
 #: application/views/dxatlas/index.php:123
 #: application/views/hrdlog/export.php:82 application/views/kml/index.php:108
 #: application/views/qrz/export.php:104
@@ -5104,35 +5120,35 @@ msgstr "Od dátumu"
 msgid "To date"
 msgstr "Do dátumu"
 
-#: application/views/adif/import.php:294
+#: application/views/adif/import.php:304
 msgid "Export options"
 msgstr "Možnosti exportu"
 
-#: application/views/adif/import.php:302
+#: application/views/adif/import.php:312
 msgid "Mark exported QSOs as already uploaded to LoTW"
 msgstr "Označ vyexportované spojenia ako už nahrané do LoTW"
 
-#: application/views/adif/import.php:311
+#: application/views/adif/import.php:321
 msgid "Export QSOs not uploaded to LoTW"
 msgstr "Exportovať spojenia, ktoré neboli nahrané do LoTW"
 
-#: application/views/adif/import.php:318
+#: application/views/adif/import.php:328
 msgid "Export QSOs"
 msgstr "Exportovať spojenia"
 
-#: application/views/adif/import.php:323
+#: application/views/adif/import.php:333
 msgid "Export Satellite-Only QSOs"
 msgstr "Exportovať len satelitné spojenia"
 
-#: application/views/adif/import.php:324
+#: application/views/adif/import.php:334
 msgid "Export All Satellite QSOs"
 msgstr "Exportovať všetky satelitné spojenia"
 
-#: application/views/adif/import.php:326
+#: application/views/adif/import.php:336
 msgid "Export All Satellite QSOs Confirmed on LoTW"
 msgstr "Exportovať všetky satelitné spojenia potvrdené na LoTW"
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 #, php-format
 msgid ""
 "Go to %s and export your logbook with confirmed DOKs. To speed up the "
@@ -5148,7 +5164,7 @@ msgstr ""
 "stiahnutie (t.j. zadať 'DL' do zoznamu prefixov). Stiahnutý ADIF súbor môžeš "
 "nahrať sem, aby si aktualizoval spojenia s informáciami o DOK."
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 #, php-format
 msgid ""
 "More information regarding the confirmation status in DCL can be found on "
@@ -5158,11 +5174,11 @@ msgstr ""
 "Confluence%s.Viac informácií o stave potvrdenia v DCL nájdete na %s stránke "
 "DCL Confluence %s."
 
-#: application/views/adif/import.php:349
+#: application/views/adif/import.php:359
 msgid "Only import DOK data from QSOs confirmed on DCL."
 msgstr "Importujte len DOK dáta zo spojení potvrdených na DCL."
 
-#: application/views/adif/import.php:351
+#: application/views/adif/import.php:361
 msgid ""
 "Uncheck if you also want to update DOK with data from unconfirmed QSOs in "
 "DCL."
@@ -5171,11 +5187,11 @@ msgstr ""
 "QSO v DCL.Zrušiť výber, ak chceš aktualizovať DOK aj s údajmi z "
 "nepotvrdených spojení v DCL."
 
-#: application/views/adif/import.php:358
+#: application/views/adif/import.php:368
 msgid "Overwrites exisiting DOK in log by DCL (if different)."
 msgstr "Prepíše existujúci DOK v zázname pomocou DCL (ak je rozdielny)."
 
-#: application/views/adif/import.php:360
+#: application/views/adif/import.php:370
 msgid ""
 "If checked Wavelog will forcibly overwrite existing DOK with DOK from DCL "
 "log."
@@ -5184,11 +5200,11 @@ msgstr ""
 "údajmi z DCL logu.Ak je zaškrtnuté, Wavelog násilne prepíše existujúce DOK s "
 "DOK-mi z DCL logu."
 
-#: application/views/adif/import.php:367
+#: application/views/adif/import.php:377
 msgid "Ignore QSOs that cannot be matched."
 msgstr "Ignoruj spojenia, ktoré sa nedajú spárovať."
 
-#: application/views/adif/import.php:369
+#: application/views/adif/import.php:379
 msgid ""
 "If unchecked, information about QSOs which could not be found in Wavelog "
 "will be displayed."
@@ -5197,7 +5213,7 @@ msgstr ""
 "nájsť vo Wavelogu.Ak je nezaškrtnuté, zobrazia sa informácie o spojenia, "
 "ktoré sa nenašli vo Wavelog-u."
 
-#: application/views/adif/import.php:391
+#: application/views/adif/import.php:401
 #, php-format
 msgid ""
 "An example for a tool to export the POTA hunter log in ADIF format is %s "
@@ -5208,7 +5224,7 @@ msgstr ""
 "hunter logu vo formáte ADIF je %s, ktorý vytvoril AF0G a je dostupný na "
 "GitHub."
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:422
 msgid ""
 "If you imported an ADIF file of a contest, provided by another logging "
 "software, sometimes, depending on that software, your exchanges will not be "
@@ -5226,14 +5242,14 @@ msgstr ""
 "chceš opraviť, môžeš poskytnúť Cabrillo súbor, ktorý tento softvér tiež "
 "poskytuje, na prepísanie týchto údajov vo Wavelog-u."
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:422
 #: application/views/adif/import_success.php:40
 #: application/views/dcl_views/index.php:76
 #: application/views/lotw_views/index.php:160
 msgid "Information"
 msgstr "Informácie"
 
-#: application/views/adif/import.php:413
+#: application/views/adif/import.php:423
 msgid ""
 "Please use this function before changing anything about the QSOs in Wavelog, "
 "as this function uses the Contest ID, as well as date and time information "
@@ -5249,15 +5265,15 @@ msgstr ""
 "súboru, ako aj CBR súbor, ktorý sa chystáte nahrať, na priradenie QSO a "
 "opravenie len relevantných údajov."
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:428
 msgid "Contest Name, only if Contest ID in CBR is different"
 msgstr "Názov contest-u, iba ak je ID contest-u v CBR iné"
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:428
 msgid "Optional"
 msgstr "Voliteľné"
 
-#: application/views/adif/import.php:428
+#: application/views/adif/import.php:438
 msgid ""
 "The CBR file contains a TRX number at the end of each QSO line (for multi-op "
 "stations)"
@@ -5266,7 +5282,7 @@ msgstr ""
 "stanice)Súbor CBR obsahuje číslo TRX na konci každého riadku QSO (pre viac-"
 "operátorské stanice)"
 
-#: application/views/adif/import.php:432
+#: application/views/adif/import.php:442
 msgid ""
 "A serial number is ALWAYS part of the exchange for both parties in this "
 "contest."
@@ -5275,7 +5291,7 @@ msgstr ""
 "súťaži.Sériové číslo je VŽDY súčasťou výmeny pre obe strany v tomto contest-"
 "e."
 
-#: application/views/adif/import.php:434
+#: application/views/adif/import.php:444
 msgid ""
 "If you or your partner only sometimes exchange serial numbers, please leave "
 "this unchecked."
@@ -5284,7 +5300,7 @@ msgstr ""
 "toto nezačiarknuté.Ak vy alebo váš partner len niekedy vymieňate sériové "
 "čísla, prosím nechajte to nezačiarknuté."
 
-#: application/views/adif/import.php:435
+#: application/views/adif/import.php:445
 msgid ""
 "If unchecked, this will erase the default serial number that (for example) "
 "N1MM+ produces. If checked, it will correct the serial number if necessary."

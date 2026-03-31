@@ -3752,6 +3752,7 @@ msgid "DXCC has to be Numeric"
 msgstr "DXCCは数値でなければなりません"
 
 #: application/models/Logbook_model.php:4812
+#: application/models/Logbook_model.php:4882
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
@@ -3759,6 +3760,7 @@ msgstr ""
 "されました: スキップされました"
 
 #: application/models/Logbook_model.php:4826
+#: application/models/Logbook_model.php:4904
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3767,10 +3769,12 @@ msgstr ""
 "んでした。無効です"
 
 #: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid "QSO on"
 msgstr "QSOオン"
 
 #: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3779,6 +3783,7 @@ msgstr ""
 "されませんでした。無効です"
 
 #: application/models/Logbook_model.php:4884
+#: application/models/Logbook_model.php:4962
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3788,44 +3793,55 @@ msgstr ""
 "はインポートされませんでした。無効です"
 
 #: application/models/Logbook_model.php:5157
+#: application/models/Logbook_model.php:5235
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5168
+#: application/models/Logbook_model.php:5246
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5229
+#: application/models/Logbook_model.php:5307
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date が無効です (YYYYMMDD)"
 
 #: application/models/Logbook_model.php:5602
 #: application/views/simplefle/index.php:41
+#: application/models/Logbook_model.php:5680
 msgid "Duplicate for"
 msgstr "複製用"
 
 #: application/models/Logbook_model.php:5667
 #: application/models/Logbook_model.php:5762
+#: application/models/Logbook_model.php:5745
+#: application/models/Logbook_model.php:5840
 msgid "QSO could not be matched"
 msgstr "QSOが一致しませんでした"
 
 #: application/models/Logbook_model.php:5675
+#: application/models/Logbook_model.php:5753
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "LoTW/Clublog/eQSL/コンテストで確認済み"
 
 #: application/models/Logbook_model.php:5681
+#: application/models/Logbook_model.php:5759
 msgid "confirmed by award manager"
 msgstr "賞の管理者によって確認された"
 
 #: application/models/Logbook_model.php:5685
+#: application/models/Logbook_model.php:5763
 msgid "confirmed by cross-check of DCL data"
 msgstr "DCLデータのクロスチェックによって確認された"
 
 #: application/models/Logbook_model.php:5689
+#: application/models/Logbook_model.php:5767
 msgid "confirmation pending"
 msgstr "確認中"
 
 #: application/models/Logbook_model.php:5692
+#: application/models/Logbook_model.php:5770
 msgid "unconfirmed"
 msgstr "未確認"
 
@@ -3833,14 +3849,17 @@ msgstr "未確認"
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
+#: application/models/Logbook_model.php:5773
 msgid "unknown"
 msgstr "不明"
 
 #: application/models/Logbook_model.php:5765
+#: application/models/Logbook_model.php:5843
 msgid "POTA reference already in log"
 msgstr "POTA 参照。既にログに存在します"
 
 #: application/models/Logbook_model.php:5768
+#: application/models/Logbook_model.php:5846
 msgid "QSO updated"
 msgstr "QSOが更新されました"
 
@@ -3855,6 +3874,7 @@ msgstr "QSOが更新されました"
 #: application/views/user/edit.php:329 application/views/user/edit.php:352
 #: application/views/user/edit.php:375 application/views/user/edit.php:400
 #: application/views/view_log/partial/log_ajax.php:20
+#: application/models/Logbook_model.php:6243
 msgid "Bearing"
 msgstr "方位"
 
@@ -4126,6 +4146,7 @@ msgstr "違い"
 #: application/views/user/edit.php:863
 #: application/views/visitor/layout/footer.php:168
 #: application/views/awards/jcc/index.php:103
+#: application/views/adif/import.php:272
 msgid "All"
 msgstr "全て"
 
@@ -4693,6 +4714,7 @@ msgstr "何も見つかりません!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:684
 #: application/views/zonechecker/result.php:50
+#: application/views/adif/import.php:278
 msgid "Callsign"
 msgstr "コールサイン"
 
@@ -4884,6 +4906,7 @@ msgid "ADIF Export"
 msgstr "ADIFエクスポート"
 
 #: application/views/adif/import.php:48 application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 msgid "DARC DCL"
 msgstr "DARC DCL"
 
@@ -4898,6 +4921,7 @@ msgstr "CBRインポート"
 #: application/views/eqsl/import.php:46 application/views/lotw/import.php:25
 #: application/views/lotw_views/index.php:4
 #: application/views/options/maptiles.php:48
+#: application/views/adif/import.php:400 application/views/adif/import.php:423
 msgid "Important"
 msgstr "重要"
 
@@ -4921,6 +4945,7 @@ msgstr "最大ファイルアップロードサイズは "
 #: application/views/view_log/qso.php:806
 #: application/views/webadif/export.php:34
 #: application/views/webadif/export.php:94
+#: application/views/adif/import.php:368
 msgid "Warning"
 msgstr "警告"
 
@@ -4929,6 +4954,7 @@ msgstr "警告"
 #: application/views/hrdlog/export.php:69 application/views/qrz/export.php:91
 #: application/views/reg1test/index.php:30
 #: application/views/webadif/export.php:89
+#: application/views/adif/import.php:270
 msgid "Select Station Location"
 msgstr "ステーションを選択してください"
 
@@ -4942,6 +4968,7 @@ msgstr "コンテストにQSOを追加する"
 
 #: application/views/adif/import.php:119 application/views/adif/import.php:420
 #: application/views/simplefle/index.php:86
+#: application/views/adif/import.php:430
 msgid "No Contest"
 msgstr "ノーコンテスト"
 
@@ -4980,6 +5007,7 @@ msgstr ""
 #: application/views/interface_assets/footer.php:34
 #: application/views/interface_assets/footer.php:641
 #: application/views/interface_assets/footer.php:2399
+#: application/views/adif/import.php:169
 msgid "DANGER"
 msgstr "危険"
 
@@ -4996,51 +5024,53 @@ msgstr ""
 "選択された場合、WavelogはADIFから%sall%sのQSOをインポートしようとします。選択"
 "された局の位置と一致するかどうかに関わらず、すべてのQSOが対象となります。"
 
-#: application/views/adif/import.php:171
+#: application/views/adif/import.php:171 application/views/adif/import.php:181
 msgid ""
 "Always use the logged-in account callsign as the operator call during import"
 msgstr ""
 "インポート中は、オペレータコールとしてログインしているアカウントのコールサイ"
 "ンを常に使用してください"
 
-#: application/views/adif/import.php:182
+#: application/views/adif/import.php:182 application/views/adif/import.php:192
 msgid "Mark QSOs as uploaded (This does NOT upload QSOs to these services!)"
 msgstr ""
 "QSO をアップロード済みとしてマークします (これにより QSO がこれらのサービスに"
 "アップロードされるわけではありません)"
 
-#: application/views/adif/import.php:189
+#: application/views/adif/import.php:189 application/views/adif/import.php:199
 msgid "Mark imported QSOs as uploaded to LoTW"
 msgstr "インポートしたQSOをLoTWにアップロード済みとしてマークする"
 
 #: application/views/adif/import.php:191 application/views/adif/import.php:199
 #: application/views/adif/import.php:209 application/views/adif/import.php:217
 #: application/views/adif/import.php:227 application/views/adif/import.php:235
+#: application/views/adif/import.php:201 application/views/adif/import.php:219
+#: application/views/adif/import.php:237 application/views/adif/import.php:245
 msgid "Select if ADIF being imported does not contain this information."
 msgstr "インポートする ADIF にこの情報が含まれていない場合に選択します。"
 
-#: application/views/adif/import.php:197
+#: application/views/adif/import.php:197 application/views/adif/import.php:207
 msgid "Mark imported QSOs as uploaded to eQSL Logbook"
 msgstr "インポートしたQSOをeQSLログブックにアップロード済みとしてマークする"
 
-#: application/views/adif/import.php:207
+#: application/views/adif/import.php:207 application/views/adif/import.php:217
 msgid "Mark imported QSOs as uploaded to HRDLog.net Logbook"
 msgstr ""
 "インポートしたQSOをHRDLog.netログブックにアップロード済みとしてマークする"
 
-#: application/views/adif/import.php:215
+#: application/views/adif/import.php:215 application/views/adif/import.php:225
 msgid "Mark imported QSOs as uploaded to QRZ Logbook"
 msgstr "インポートしたQSOをQRZログブックにアップロード済みとしてマークする"
 
-#: application/views/adif/import.php:225
+#: application/views/adif/import.php:225 application/views/adif/import.php:235
 msgid "Mark imported QSOs as uploaded to Clublog Logbook"
 msgstr "インポートしたQSOをClublogログブックにアップロード済みとしてマークする"
 
-#: application/views/adif/import.php:233
+#: application/views/adif/import.php:233 application/views/adif/import.php:243
 msgid "Mark imported QSOs as uploaded to DCL Logbook"
 msgstr "インポートしたQSOをDCLログブックにアップロード済みとしてマークする"
 
-#: application/views/adif/import.php:238
+#: application/views/adif/import.php:238 application/views/adif/import.php:248
 msgid "Toggle all checkboxes"
 msgstr "すべてのチェックボックスを切り替える"
 
@@ -5049,14 +5079,16 @@ msgstr "すべてのチェックボックスを切り替える"
 #: application/views/clublog/export.php:50
 #: application/views/hrdlog/export.php:50 application/views/qrz/export.php:55
 #: application/views/webadif/export.php:55
+#: application/views/adif/import.php:254 application/views/adif/import.php:383
+#: application/views/adif/import.php:405 application/views/adif/import.php:449
 msgid "Upload"
 msgstr "アップロード"
 
-#: application/views/adif/import.php:254
+#: application/views/adif/import.php:254 application/views/adif/import.php:264
 msgid "Take your logbook file anywhere!"
 msgstr "ログブックファイルをどこにでも持ち歩けます!"
 
-#: application/views/adif/import.php:255
+#: application/views/adif/import.php:255 application/views/adif/import.php:265
 msgid ""
 "Exporting ADIFs allows you to import contacts into third party applications "
 "like LoTW, Awards or just for keeping a backup."
@@ -5064,7 +5096,7 @@ msgstr ""
 "ADIF をエクスポートすると、LoTW、Awards などのサードパーティ アプリケーション"
 "に連絡先をインポートしたり、バックアップを保存したりすることができます。"
 
-#: application/views/adif/import.php:256
+#: application/views/adif/import.php:256 application/views/adif/import.php:266
 #, php-format
 msgctxt ""
 msgid ""
@@ -5081,6 +5113,7 @@ msgstr ""
 #: application/views/hrdlog/export.php:77 application/views/kml/index.php:103
 #: application/views/lotw/import.php:39 application/views/qrz/export.php:78
 #: application/views/qrz/export.php:99 application/views/webadif/export.php:97
+#: application/views/adif/import.php:289
 msgid "From date"
 msgstr "開始日"
 
@@ -5089,38 +5122,39 @@ msgstr "開始日"
 #: application/views/hrdlog/export.php:82 application/views/kml/index.php:108
 #: application/views/qrz/export.php:104
 #: application/views/webadif/export.php:102
+#: application/views/adif/import.php:293
 msgid "To date"
 msgstr "現在まで"
 
-#: application/views/adif/import.php:294
+#: application/views/adif/import.php:294 application/views/adif/import.php:304
 msgid "Export options"
 msgstr "エクスポートオプション"
 
-#: application/views/adif/import.php:302
+#: application/views/adif/import.php:302 application/views/adif/import.php:312
 msgid "Mark exported QSOs as already uploaded to LoTW"
 msgstr "エクスポートしたQSOをLoTWにアップロード済みとしてマークする"
 
-#: application/views/adif/import.php:311
+#: application/views/adif/import.php:311 application/views/adif/import.php:321
 msgid "Export QSOs not uploaded to LoTW"
 msgstr "LoTWにアップロードされていないQSOをエクスポートする"
 
-#: application/views/adif/import.php:318
+#: application/views/adif/import.php:318 application/views/adif/import.php:328
 msgid "Export QSOs"
 msgstr "QSOをエクスポートする"
 
-#: application/views/adif/import.php:323
+#: application/views/adif/import.php:323 application/views/adif/import.php:333
 msgid "Export Satellite-Only QSOs"
 msgstr "衛星のみのQSOをエクスポートする"
 
-#: application/views/adif/import.php:324
+#: application/views/adif/import.php:324 application/views/adif/import.php:334
 msgid "Export All Satellite QSOs"
 msgstr "すべての衛星QSOをエクスポート"
 
-#: application/views/adif/import.php:326
+#: application/views/adif/import.php:326 application/views/adif/import.php:336
 msgid "Export All Satellite QSOs Confirmed on LoTW"
 msgstr "LoTWで確認されたすべての衛星QSOをエクスポートする"
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:342 application/views/adif/import.php:352
 #, php-format
 msgid ""
 "Go to %s and export your logbook with confirmed DOKs. To speed up the "
@@ -5133,7 +5167,7 @@ msgstr ""
 "り、プレフィックス リストに「DL」を入力します）。ダウンロードした ADIF ファイ"
 "ルをここにアップロードすることで、DOK 情報を用いて QSO を更新できます。"
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:342 application/views/adif/import.php:352
 #, php-format
 msgid ""
 "More information regarding the confirmation status in DCL can be found on "
@@ -5142,22 +5176,22 @@ msgstr ""
 "DCLにおける確認ステータスに関する詳細情報は、%sDCL Confluenceページ%sでご確認"
 "いただけます。"
 
-#: application/views/adif/import.php:349
+#: application/views/adif/import.php:349 application/views/adif/import.php:359
 msgid "Only import DOK data from QSOs confirmed on DCL."
 msgstr "DCL で確認された QSO からの DOK データのみをインポートします。"
 
-#: application/views/adif/import.php:351
+#: application/views/adif/import.php:351 application/views/adif/import.php:361
 msgid ""
 "Uncheck if you also want to update DOK with data from unconfirmed QSOs in "
 "DCL."
 msgstr ""
 "DCL 内の未確認 QSO のデータで DOK も更新する場合は、チェックを外します。"
 
-#: application/views/adif/import.php:358
+#: application/views/adif/import.php:358 application/views/adif/import.php:368
 msgid "Overwrites exisiting DOK in log by DCL (if different)."
 msgstr "ログ内の既存の DOK を DCL によって上書きします (異なる場合)。"
 
-#: application/views/adif/import.php:360
+#: application/views/adif/import.php:360 application/views/adif/import.php:370
 msgid ""
 "If checked Wavelog will forcibly overwrite existing DOK with DOK from DCL "
 "log."
@@ -5165,18 +5199,18 @@ msgstr ""
 "チェックすると、Wavelog は既存の DOK を DCL ログの DOK で強制的に上書きしま"
 "す。"
 
-#: application/views/adif/import.php:367
+#: application/views/adif/import.php:367 application/views/adif/import.php:377
 msgid "Ignore QSOs that cannot be matched."
 msgstr "一致できない QSO は無視します。"
 
-#: application/views/adif/import.php:369
+#: application/views/adif/import.php:369 application/views/adif/import.php:379
 msgid ""
 "If unchecked, information about QSOs which could not be found in Wavelog "
 "will be displayed."
 msgstr ""
 "チェックを外すと、Wavelog で見つからなかった QSO に関する情報が表示されます。"
 
-#: application/views/adif/import.php:391
+#: application/views/adif/import.php:391 application/views/adif/import.php:401
 #, php-format
 msgid ""
 "An example for a tool to export the POTA hunter log in ADIF format is %s "
@@ -5185,7 +5219,7 @@ msgstr ""
 "POTAハンターログをADIF形式でエクスポートするツールの例は次のとおりです。 %s "
 "は AF0G によって作成され、GitHub で入手可能です。"
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:412 application/views/adif/import.php:422
 msgid ""
 "If you imported an ADIF file of a contest, provided by another logging "
 "software, sometimes, depending on that software, your exchanges will not be "
@@ -5203,10 +5237,11 @@ msgstr ""
 #: application/views/adif/import_success.php:40
 #: application/views/dcl_views/index.php:76
 #: application/views/lotw_views/index.php:160
+#: application/views/adif/import.php:422
 msgid "Information"
 msgstr "情報"
 
-#: application/views/adif/import.php:413
+#: application/views/adif/import.php:413 application/views/adif/import.php:423
 msgid ""
 "Please use this function before changing anything about the QSOs in Wavelog, "
 "as this function uses the Contest ID, as well as date and time information "
@@ -5218,15 +5253,15 @@ msgstr ""
 "関連データのみを修正するため、Wavelog で QSO について何かを変更する前に、この"
 "機能を使用してください。"
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:418 application/views/adif/import.php:428
 msgid "Contest Name, only if Contest ID in CBR is different"
 msgstr "コンテスト名（CBRのコンテストIDが異なる場合のみ）"
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:418 application/views/adif/import.php:428
 msgid "Optional"
 msgstr "オプション"
 
-#: application/views/adif/import.php:428
+#: application/views/adif/import.php:428 application/views/adif/import.php:438
 msgid ""
 "The CBR file contains a TRX number at the end of each QSO line (for multi-op "
 "stations)"
@@ -5234,13 +5269,13 @@ msgstr ""
 "CBRファイルには、各QSO行の末尾にTRX番号が含まれています（マルチオペレーター局"
 "の場合）"
 
-#: application/views/adif/import.php:432
+#: application/views/adif/import.php:432 application/views/adif/import.php:442
 msgid ""
 "A serial number is ALWAYS part of the exchange for both parties in this "
 "contest."
 msgstr "このコンテストでは、シリアルナンバーは必ず両当事者間で交換されます。"
 
-#: application/views/adif/import.php:434
+#: application/views/adif/import.php:434 application/views/adif/import.php:444
 msgid ""
 "If you or your partner only sometimes exchange serial numbers, please leave "
 "this unchecked."
@@ -5248,7 +5283,7 @@ msgstr ""
 "あなたやパートナーがたまにしかシリアル番号を交換しない場合は、このチェック"
 "ボックスをオフのままにしてください。"
 
-#: application/views/adif/import.php:435
+#: application/views/adif/import.php:435 application/views/adif/import.php:445
 msgid ""
 "If unchecked, this will erase the default serial number that (for example) "
 "N1MM+ produces. If checked, it will correct the serial number if necessary."
@@ -19889,6 +19924,22 @@ msgstr ""
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
+msgstr ""
+
+#: application/models/Logbook_model.php:4889
+#, php-format
+msgid ""
+"Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
+msgstr ""
+
+#: application/views/adif/import.php:169
+msgid "Ignore grid check on import"
+msgstr ""
+
+#: application/views/adif/import.php:171
+msgid ""
+"If selected, Wavelog will try to import QSOs even when their my_gridsquare "
+"does not match the chosen station-location locator."
 msgstr ""
 
 #~ msgid "Email settings not configured."

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 12:33+0000\n"
+"POT-Creation-Date: 2026-03-31 12:49+0000\n"
 "PO-Revision-Date: 2026-03-26 03:04+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3674,12 +3674,18 @@ msgstr "Kutsumerkkiä ei ole annettu"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC:n on oltava numeerinen"
 
-#: application/models/Logbook_model.php:4812
+#: application/models/Logbook_model.php:4882
 #, php-format
 msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Väärä aseman kutsumerkki %s tuotaessa QSOa %s %s: varten: OHITETTU"
 
-#: application/models/Logbook_model.php:4826
+#: application/models/Logbook_model.php:4889
+#, php-format
+msgid ""
+"Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
+msgstr ""
+
+#: application/models/Logbook_model.php:4904
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3687,11 +3693,11 @@ msgstr ""
 "Yritit tuoda QSOa ilman kelvollista päivämäärää. Tätä QSOa ei tuotu. Se on "
 "virheellinen"
 
-#: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid "QSO on"
 msgstr "QSO alkoi"
 
-#: application/models/Logbook_model.php:4835
+#: application/models/Logbook_model.php:4913
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3699,7 +3705,7 @@ msgstr ""
 "Yritit tuoda QSOa ilman annettua KUTSUA. Tätä QSOa ei tuotu. Se on "
 "virheellinen"
 
-#: application/models/Logbook_model.php:4884
+#: application/models/Logbook_model.php:4962
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3708,64 +3714,64 @@ msgstr ""
 "QSO ajassa %s: Yritit tuoda QSO:n ilman merkittyä bandia. Tätä QSO:ta ei "
 "tuotu. Se on virheellinen"
 
-#: application/models/Logbook_model.php:5157
+#: application/models/Logbook_model.php:5235
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5168
+#: application/models/Logbook_model.php:5246
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5229
+#: application/models/Logbook_model.php:5307
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "the clublog_qso_upload_date on virheellinen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5602
+#: application/models/Logbook_model.php:5680
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Kaksoiskappale"
 
-#: application/models/Logbook_model.php:5667
-#: application/models/Logbook_model.php:5762
+#: application/models/Logbook_model.php:5745
+#: application/models/Logbook_model.php:5840
 msgid "QSO could not be matched"
 msgstr "QSOa ei voitu yhdistää"
 
-#: application/models/Logbook_model.php:5675
+#: application/models/Logbook_model.php:5753
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "vahvistettu LoTW:n/Clublogin/eQSL:n/kilpailun kautta"
 
-#: application/models/Logbook_model.php:5681
+#: application/models/Logbook_model.php:5759
 msgid "confirmed by award manager"
 msgstr "vahvistettu awardimanagerin toimesta"
 
-#: application/models/Logbook_model.php:5685
+#: application/models/Logbook_model.php:5763
 msgid "confirmed by cross-check of DCL data"
 msgstr "varmistettu DCL-datan ristivertailulla"
 
-#: application/models/Logbook_model.php:5689
+#: application/models/Logbook_model.php:5767
 msgid "confirmation pending"
 msgstr "vahvistus odottaa"
 
-#: application/models/Logbook_model.php:5692
+#: application/models/Logbook_model.php:5770
 msgid "unconfirmed"
 msgstr "vahvistamaton"
 
-#: application/models/Logbook_model.php:5695
+#: application/models/Logbook_model.php:5773
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
 msgid "unknown"
 msgstr "tuntematon"
 
-#: application/models/Logbook_model.php:5765
+#: application/models/Logbook_model.php:5843
 msgid "POTA reference already in log"
 msgstr "POTA-referenssi on jo lokissa"
 
-#: application/models/Logbook_model.php:5768
+#: application/models/Logbook_model.php:5846
 msgid "QSO updated"
 msgstr "QSO päivitetty"
 
-#: application/models/Logbook_model.php:6165
+#: application/models/Logbook_model.php:6243
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -3938,7 +3944,7 @@ msgstr "Ero"
 #: application/views/activated_gridmap/index.php:36
 #: application/views/activated_gridmap/index.php:45
 #: application/views/activators/index.php:13
-#: application/views/adif/import.php:262
+#: application/views/adif/import.php:272
 #: application/views/awards/cq/index.php:148
 #: application/views/awards/dok/index.php:95
 #: application/views/awards/dxcc/index.php:190
@@ -4559,7 +4565,7 @@ msgid "Nothing found!"
 msgstr "Mitään ei löytynyt!"
 
 #: application/views/activators/index.php:98
-#: application/views/adif/import.php:107 application/views/adif/import.php:268
+#: application/views/adif/import.php:107 application/views/adif/import.php:278
 #: application/views/awards/73on73/index.php:35
 #: application/views/awards/pota/index.php:35
 #: application/views/awards/sig/qso_list.php:11
@@ -4805,7 +4811,7 @@ msgstr "DCL QSL-tila"
 msgid "ADIF Export"
 msgstr "ADIF-vienti"
 
-#: application/views/adif/import.php:48 application/views/adif/import.php:342
+#: application/views/adif/import.php:48 application/views/adif/import.php:352
 msgid "DARC DCL"
 msgstr "DARC DCL"
 
@@ -4813,8 +4819,8 @@ msgstr "DARC DCL"
 msgid "CBR Import"
 msgstr "CBR-tuonti"
 
-#: application/views/adif/import.php:93 application/views/adif/import.php:390
-#: application/views/adif/import.php:413 application/views/api/index.php:22
+#: application/views/adif/import.php:93 application/views/adif/import.php:400
+#: application/views/adif/import.php:423 application/views/api/index.php:22
 #: application/views/dashboard/index.php:180
 #: application/views/dashboard/index.php:213
 #: application/views/eqsl/import.php:46 application/views/lotw/import.php:25
@@ -4831,7 +4837,7 @@ msgstr "Lokitiedoston pitää olla ADI-tiedosto *.adi"
 msgid "Maximum file upload size is "
 msgstr "Tiedoston maksimilatauskoko on "
 
-#: application/views/adif/import.php:94 application/views/adif/import.php:358
+#: application/views/adif/import.php:94 application/views/adif/import.php:368
 #: application/views/clublog/export.php:70
 #: application/views/debug/index.php:212 application/views/debug/index.php:229
 #: application/views/debug/index.php:756 application/views/hrdlog/export.php:25
@@ -4847,7 +4853,7 @@ msgid "Warning"
 msgstr "Varoitus"
 
 #: application/views/adif/import.php:101 application/views/adif/import.php:103
-#: application/views/adif/import.php:260 application/views/eqsl/import.php:37
+#: application/views/adif/import.php:270 application/views/eqsl/import.php:37
 #: application/views/hrdlog/export.php:69 application/views/qrz/export.php:91
 #: application/views/reg1test/index.php:30
 #: application/views/webadif/export.php:89
@@ -4862,7 +4868,7 @@ msgstr "Valitse ADIF-tiedosto"
 msgid "Add QSOs to Contest"
 msgstr "Lisää QSOja kilpailuun"
 
-#: application/views/adif/import.php:119 application/views/adif/import.php:420
+#: application/views/adif/import.php:119 application/views/adif/import.php:430
 #: application/views/simplefle/index.php:86
 msgid "No Contest"
 msgstr "Ei kilpailua"
@@ -4899,7 +4905,7 @@ msgstr ""
 "Wavelog yrittää määrittää DXCC-tiedot automaattisesti jos tätä ei ole "
 "valittuna."
 
-#: application/views/adif/import.php:162
+#: application/views/adif/import.php:162 application/views/adif/import.php:169
 #: application/views/interface_assets/footer.php:34
 #: application/views/interface_assets/footer.php:641
 #: application/views/interface_assets/footer.php:2399
@@ -4919,64 +4925,74 @@ msgstr ""
 "Jos valittuna, Wavelog yrittää tuoda %skaikki%s QSOT ADIF-tiedostosta "
 "riippumatta siitä, vastaavatko ne valittua asemasijaintia."
 
+#: application/views/adif/import.php:169
+msgid "Ignore grid check on import"
+msgstr ""
+
 #: application/views/adif/import.php:171
+msgid ""
+"If selected, Wavelog will try to import QSOs even when their my_gridsquare "
+"does not match the chosen station-location locator."
+msgstr ""
+
+#: application/views/adif/import.php:181
 msgid ""
 "Always use the logged-in account callsign as the operator call during import"
 msgstr ""
 "Käytä aina sisäänkirjautuneen käyttäjätilin kutsumerkkiä operaattorin "
 "kutsuna tuonnin aikana"
 
-#: application/views/adif/import.php:182
+#: application/views/adif/import.php:192
 msgid "Mark QSOs as uploaded (This does NOT upload QSOs to these services!)"
 msgstr "Merkitse QSOt jo ladatuiksi (Tämä EI lataa QSOja näihin palveluihin!)"
 
-#: application/views/adif/import.php:189
+#: application/views/adif/import.php:199
 msgid "Mark imported QSOs as uploaded to LoTW"
 msgstr "Merkitse tuodut QSO:t ladatuiksi LoTW:iin"
 
-#: application/views/adif/import.php:191 application/views/adif/import.php:199
-#: application/views/adif/import.php:209 application/views/adif/import.php:217
-#: application/views/adif/import.php:227 application/views/adif/import.php:235
+#: application/views/adif/import.php:201 application/views/adif/import.php:209
+#: application/views/adif/import.php:219 application/views/adif/import.php:227
+#: application/views/adif/import.php:237 application/views/adif/import.php:245
 msgid "Select if ADIF being imported does not contain this information."
 msgstr "Valitse, jos tuotava ADIF ei sisällä näitä tietoja."
 
-#: application/views/adif/import.php:197
+#: application/views/adif/import.php:207
 msgid "Mark imported QSOs as uploaded to eQSL Logbook"
 msgstr "Merkitse tuodut QSOt ladatuiksi eQSL palveluun"
 
-#: application/views/adif/import.php:207
+#: application/views/adif/import.php:217
 msgid "Mark imported QSOs as uploaded to HRDLog.net Logbook"
 msgstr "Merkitse tuodut QSOt ladatuiksi HRDLog.net -lokikirjaan"
 
-#: application/views/adif/import.php:215
+#: application/views/adif/import.php:225
 msgid "Mark imported QSOs as uploaded to QRZ Logbook"
 msgstr "Merkitse tuodut yhteydet QRZ-lokikirjaan ladatuiksi"
 
-#: application/views/adif/import.php:225
+#: application/views/adif/import.php:235
 msgid "Mark imported QSOs as uploaded to Clublog Logbook"
 msgstr "Merkitse tuodut QSOt ladatuiksi Clublog:n lokiin"
 
-#: application/views/adif/import.php:233
+#: application/views/adif/import.php:243
 msgid "Mark imported QSOs as uploaded to DCL Logbook"
 msgstr "Merkitse tuodut QSQt ladatuiksi DCL-lokikirjaan"
 
-#: application/views/adif/import.php:238
+#: application/views/adif/import.php:248
 msgid "Toggle all checkboxes"
 msgstr "Valitse kaikki valintaruudut"
 
-#: application/views/adif/import.php:244 application/views/adif/import.php:373
-#: application/views/adif/import.php:395 application/views/adif/import.php:439
+#: application/views/adif/import.php:254 application/views/adif/import.php:383
+#: application/views/adif/import.php:405 application/views/adif/import.php:449
 #: application/views/clublog/export.php:50
 #: application/views/hrdlog/export.php:50 application/views/qrz/export.php:55
 #: application/views/webadif/export.php:55
 msgid "Upload"
 msgstr "Lataa"
 
-#: application/views/adif/import.php:254
+#: application/views/adif/import.php:264
 msgid "Take your logbook file anywhere!"
 msgstr "Vie lokikirjatiedostosi minne tahansa!"
 
-#: application/views/adif/import.php:255
+#: application/views/adif/import.php:265
 msgid ""
 "Exporting ADIFs allows you to import contacts into third party applications "
 "like LoTW, Awards or just for keeping a backup."
@@ -4984,7 +5000,7 @@ msgstr ""
 "ADIF-tiedostoksi vienti mahdollistaa yhteyksien viennin kolmansien "
 "osapuolten sovelluksiin, kuten LoTW, Awards tai vain varmuuskopioksi."
 
-#: application/views/adif/import.php:256
+#: application/views/adif/import.php:266
 #, php-format
 msgctxt ""
 msgid ""
@@ -4994,7 +5010,7 @@ msgstr ""
 "Jos tarvitset enemmän suodatusta, voit käyttää %sEdistynyttä lokikirjaa%s "
 "suodatukseen ja vientiin!"
 
-#: application/views/adif/import.php:279
+#: application/views/adif/import.php:289
 #: application/views/clublog/export.php:73 application/views/csv/index.php:119
 #: application/views/dcl_views/import.php:27
 #: application/views/dxatlas/index.php:118
@@ -5004,7 +5020,7 @@ msgstr ""
 msgid "From date"
 msgstr "päivämäärästä"
 
-#: application/views/adif/import.php:283 application/views/csv/index.php:124
+#: application/views/adif/import.php:293 application/views/csv/index.php:124
 #: application/views/dxatlas/index.php:123
 #: application/views/hrdlog/export.php:82 application/views/kml/index.php:108
 #: application/views/qrz/export.php:104
@@ -5012,35 +5028,35 @@ msgstr "päivämäärästä"
 msgid "To date"
 msgstr "Tähän päivään mennessä"
 
-#: application/views/adif/import.php:294
+#: application/views/adif/import.php:304
 msgid "Export options"
 msgstr "Vientivaihtoehdot"
 
-#: application/views/adif/import.php:302
+#: application/views/adif/import.php:312
 msgid "Mark exported QSOs as already uploaded to LoTW"
 msgstr "Merkitse viedyt yhteydet jo LoTW:iin ladatuiksi"
 
-#: application/views/adif/import.php:311
+#: application/views/adif/import.php:321
 msgid "Export QSOs not uploaded to LoTW"
 msgstr "Vie QSO:t, joita ei ole ladattu LoTW:iin"
 
-#: application/views/adif/import.php:318
+#: application/views/adif/import.php:328
 msgid "Export QSOs"
 msgstr "Vie QSOt"
 
-#: application/views/adif/import.php:323
+#: application/views/adif/import.php:333
 msgid "Export Satellite-Only QSOs"
 msgstr "Vie vain satelliitti-QSOt"
 
-#: application/views/adif/import.php:324
+#: application/views/adif/import.php:334
 msgid "Export All Satellite QSOs"
 msgstr "Vie kaikki satelliitti-QSOt"
 
-#: application/views/adif/import.php:326
+#: application/views/adif/import.php:336
 msgid "Export All Satellite QSOs Confirmed on LoTW"
 msgstr "Vie kaikki LoTW:ssa vahvistetut satelliitti-QSOt"
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 #, php-format
 msgid ""
 "Go to %s and export your logbook with confirmed DOKs. To speed up the "
@@ -5053,7 +5069,7 @@ msgstr ""
 "prefiksilistaan). Ladattu ADIF-tiedosto voidaan ladata tänne päivittääksesi "
 "QSOt DOK-tiedolla."
 
-#: application/views/adif/import.php:342
+#: application/views/adif/import.php:352
 #, php-format
 msgid ""
 "More information regarding the confirmation status in DCL can be found on "
@@ -5062,11 +5078,11 @@ msgstr ""
 "Lisätietoja vahvistettujen yhteyksien tilasta DCL:ssä löytyy %sDCL "
 "Confluence -sivulta%s."
 
-#: application/views/adif/import.php:349
+#: application/views/adif/import.php:359
 msgid "Only import DOK data from QSOs confirmed on DCL."
 msgstr "Tuo vain DOK-tiedot QSOsista, jotka on vahvistettu DCL:ssä."
 
-#: application/views/adif/import.php:351
+#: application/views/adif/import.php:361
 msgid ""
 "Uncheck if you also want to update DOK with data from unconfirmed QSOs in "
 "DCL."
@@ -5074,11 +5090,11 @@ msgstr ""
 "Poista valinta, jos haluat päivittää DOK myös vahvistamattomien QSOjen "
 "tiedoilla DCL:stä."
 
-#: application/views/adif/import.php:358
+#: application/views/adif/import.php:368
 msgid "Overwrites exisiting DOK in log by DCL (if different)."
 msgstr "Korvaa olemassa olevan DOK:n lokissa DCL:llä (jos eri)."
 
-#: application/views/adif/import.php:360
+#: application/views/adif/import.php:370
 msgid ""
 "If checked Wavelog will forcibly overwrite existing DOK with DOK from DCL "
 "log."
@@ -5086,11 +5102,11 @@ msgstr ""
 "Jos valittuna, Wavelog kirjoittaa väkisin olemassa olevan DOK:n päälle DCL-"
 "lokin DOK:lla."
 
-#: application/views/adif/import.php:367
+#: application/views/adif/import.php:377
 msgid "Ignore QSOs that cannot be matched."
 msgstr "Ignore QSOs that cannot be matched"
 
-#: application/views/adif/import.php:369
+#: application/views/adif/import.php:379
 msgid ""
 "If unchecked, information about QSOs which could not be found in Wavelog "
 "will be displayed."
@@ -5098,7 +5114,7 @@ msgstr ""
 "Jos ei ole valittuna, näkyviin tulevat tiedot QSOista, joita ei löytynyt "
 "Wavelogista."
 
-#: application/views/adif/import.php:391
+#: application/views/adif/import.php:401
 #, php-format
 msgid ""
 "An example for a tool to export the POTA hunter log in ADIF format is %s "
@@ -5107,7 +5123,7 @@ msgstr ""
 "Esimerkki työkalusta, jolla voi viedä POTA-huntterilokin ADIF-muodossa, on "
 "%s, jonka on tehnyt AF0G ja saatavilla GitHubissa."
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:422
 msgid ""
 "If you imported an ADIF file of a contest, provided by another logging "
 "software, sometimes, depending on that software, your exchanges will not be "
@@ -5121,14 +5137,14 @@ msgstr ""
 "voit tarjota Cabrillo-tiedoston, jonka tämä ohjelmisto myös tarjoaa "
 "korvataksesi nämä tiedot Wavelogissa."
 
-#: application/views/adif/import.php:412
+#: application/views/adif/import.php:422
 #: application/views/adif/import_success.php:40
 #: application/views/dcl_views/index.php:76
 #: application/views/lotw_views/index.php:160
 msgid "Information"
 msgstr "Info"
 
-#: application/views/adif/import.php:413
+#: application/views/adif/import.php:423
 msgid ""
 "Please use this function before changing anything about the QSOs in Wavelog, "
 "as this function uses the Contest ID, as well as date and time information "
@@ -5140,15 +5156,15 @@ msgstr ""
 "jo tuodusta ADIF-tiedostostasi että ladattavasta CBR-tiedostosta QSO-"
 "tietojen täsmäämiseen ja vain asiaankuuluvien tietojen korjaamiseen."
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:428
 msgid "Contest Name, only if Contest ID in CBR is different"
 msgstr "Kilpailun nimi, vain jos kilpailun ID CBR:ssä on erilainen"
 
-#: application/views/adif/import.php:418
+#: application/views/adif/import.php:428
 msgid "Optional"
 msgstr "Valinnainen"
 
-#: application/views/adif/import.php:428
+#: application/views/adif/import.php:438
 msgid ""
 "The CBR file contains a TRX number at the end of each QSO line (for multi-op "
 "stations)"
@@ -5156,7 +5172,7 @@ msgstr ""
 "CBR-tiedosto sisältää TRX-numeron jokaisen QSO-rivin lopussa "
 "(monioperaattoriasemille [multi-op])"
 
-#: application/views/adif/import.php:432
+#: application/views/adif/import.php:442
 msgid ""
 "A serial number is ALWAYS part of the exchange for both parties in this "
 "contest."
@@ -5164,7 +5180,7 @@ msgstr ""
 "Sarjanumero on AINA osa vaihtoa (exchange) molemmille osapuolille tässä "
 "kilpailussa."
 
-#: application/views/adif/import.php:434
+#: application/views/adif/import.php:444
 msgid ""
 "If you or your partner only sometimes exchange serial numbers, please leave "
 "this unchecked."
@@ -5172,7 +5188,7 @@ msgstr ""
 "Jos sinä tai kumppanisi vaihdatte vain ajoittain sarjanumeroita, jätä tämä "
 "ruksaamatta."
 
-#: application/views/adif/import.php:435
+#: application/views/adif/import.php:445
 msgid ""
 "If unchecked, this will erase the default serial number that (for example) "
 "N1MM+ produces. If checked, it will correct the serial number if necessary."

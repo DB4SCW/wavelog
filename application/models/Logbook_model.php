@@ -4722,7 +4722,75 @@ class Logbook_model extends CI_Model {
 		return '1900-01-01 00:00:00.000';
 	}
 
-	function import_bulk($records, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false) {
+	/**
+	 * Get grid value from one ADIF record
+	 * According to ADIF standard, my_gridsquare, my_gridsquare_ext and my_vucc_grids are used.
+	 * 
+	 * @param array $record ADIF record as associative array
+	 * @return string|null Grid value to be used for this record, or null if no
+	 */
+	function get_adif_grid_value($record) {
+		if (isset($record['my_gridsquare']) && $record['my_gridsquare'] !== '') {
+			$grid = $record['my_gridsquare'];
+			if (strlen(trim($grid)) == 8) {
+				$grid .= $record['my_gridsquare_ext'] ?? '';
+			}
+			return $grid;
+		}
+		if (isset($record['my_vucc_grids']) && $record['my_vucc_grids'] !== '') {
+			return $record['my_vucc_grids'];
+		}
+		return '';
+	}
+
+	/**
+	 * Check whether the ADIF grid is consistent with station's
+	 * 
+	 * @param string|null $adif_grid Grid value from ADIF record
+	 * @param string|null $station_grid Grid value from station profile
+	 * @return bool True if ADIF grid is consistent with station's grid, false otherwise
+	 */
+	function adif_grid_check_location($adif_grid, $station_grid) {
+		$adif_grid = trim(strtoupper($adif_grid ?? ''));
+		$station_grid = trim(strtoupper($station_grid ?? ''));
+
+		$adif_is_margin = strpos($adif_grid, ',') !== false;
+		$station_is_margin = strpos($station_grid, ',') !== false;
+
+		if ($adif_is_margin && $station_is_margin) {
+			// Both are margin
+			// Check if they are exactly same
+			$adif_grid_parts = explode(',', $adif_grid);
+			$station_grid_parts = explode(',', $station_grid);
+			sort($adif_grid_parts);
+			sort($station_grid_parts);
+			return $adif_grid_parts === $station_grid_parts;
+
+		} else if ($adif_is_margin && !$station_is_margin) {
+			// ADIF is margin, station is normal grid.
+			// Not allowed
+			return false;
+
+		} else if (!$adif_is_margin && $station_is_margin) {
+			// ADIF is normal grid, station is margin.
+			// Check whether ADIF grid is "consistent" with station's margin.
+			$station_grid_parts = explode(',', $station_grid);
+			foreach ($station_grid_parts as $part) {
+				if (str_starts_with($adif_grid, $part)) {
+					return true;
+				}
+			}
+			return false;
+
+		} else {
+			// Both are normal grids
+			return str_starts_with($adif_grid, $station_grid) || str_starts_with($station_grid, $adif_grid);
+		} 
+		
+		return false;
+	}
+
+	function import_bulk($records, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false, $skipGridCheck = false) {
 		$this->load->model('user_model');
 		$custom_errors['errormessage'] = '';
 		$a_qsos = [];
@@ -4740,7 +4808,7 @@ class Logbook_model extends CI_Model {
 		$station_qslmsg = (isset($options_object[0]->option_value)) ? $options_object[0]->option_value : '';
 
 		foreach ($records as $record) {
-			$one_error = $this->import($record, $station_id, $skipDuplicate, $markClublog, $markLotw, $dxccAdif, $markQrz, $markEqsl, $markHrd, $markDcl, $skipexport, trim($operatorName), $apicall, $skipStationCheck, true, $station_id_ok, $station_profile, $station_qslmsg);
+			$one_error = $this->import($record, $station_id, $skipDuplicate, $markClublog, $markLotw, $dxccAdif, $markQrz, $markEqsl, $markHrd, $markDcl, $skipexport, trim($operatorName), $apicall, $skipStationCheck, true, $station_id_ok, $station_profile, $station_qslmsg, $skipGridCheck);
 			if ($one_error['error'] ?? '' != '') {
 				$custom_errors['errormessage'] .= $one_error['error'];
 			} else {	// No Errors / QSO doesn't exist so far
@@ -4791,7 +4859,7 @@ class Logbook_model extends CI_Model {
      * $markHrd - used in ADIF import to mark QSOs as exported to HRDLog.net Logbook when importing QSOs
      * $skipexport - used in ADIF import to skip the realtime upload to QRZ Logbook when importing QSOs from ADIF
      */
-	function import($record, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false, $batchmode = false, $station_id_ok = false, $station_profile = null, $station_qslmsg = null) {
+	function import($record, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false, $batchmode = false, $station_id_ok = false, $station_profile = null, $station_qslmsg = null, $skipGridCheck = false) {
 		// be sure that station belongs to user
 		$this->load->is_loaded('stations') ?: $this->load->model('stations');
 		if ($station_id_ok == false) {
@@ -4804,6 +4872,8 @@ class Logbook_model extends CI_Model {
 			$station_profile = $this->stations->profile_clean($station_id);
 		}
 		$station_profile_call = $station_profile->station_callsign;
+		$station_profile_grid = $station_profile->station_gridsquare;
+		$adif_grid = $this->get_adif_grid_value($record);
 
 		if (($station_id != 0) && (!(isset($record['station_callsign'])))) {
 			$record['station_callsign'] = $station_profile_call;
@@ -4813,6 +4883,14 @@ class Logbook_model extends CI_Model {
 				"<br>",
 				'<b>'.htmlentities($record['station_callsign'] ?? '').'</b>',($record['call'] ?? ''),'<b>'.($station_profile_call ?? '').'</b>');
 			return ($returner);
+		}
+		if ((!$skipGridCheck) && ($station_id != 0) && ($adif_grid != '') && ($station_profile_grid != '')) {
+			if (!$this->adif_grid_check_location($adif_grid, $station_profile_grid)) {
+				$returner['error'] = sprintf(__("Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED") .
+					"<br>",
+					'<b>'.htmlentities($adif_grid ?? '').'</b>', ($record['call'] ?? ''), '<b>'.htmlentities($station_profile_grid ?? '').'</b>');
+				return ($returner);
+			}
 		}
 
 		$my_error = "";
