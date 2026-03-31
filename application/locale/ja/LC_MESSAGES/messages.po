@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 12:49+0000\n"
+"POT-Creation-Date: 2026-03-31 12:55+0000\n"
 "PO-Revision-Date: 2026-03-25 09:06+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3673,15 +3673,15 @@ msgstr "DXCCは数値でなければなりません"
 
 #: application/models/Logbook_model.php:4882
 #, php-format
-msgid "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
+msgid ""
+"Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
-"%s との QSO を %s でインポート中に、誤ったステーションコールサイン %s が検出"
-"されました: スキップされました"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
 msgid ""
-"Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
+"Differing locator %s while importing QSO with %s for station locator %s: "
+"SKIPPED"
 msgstr ""
 
 #: application/models/Logbook_model.php:4904
@@ -4925,8 +4925,8 @@ msgstr ""
 
 #: application/views/adif/import.php:171
 msgid ""
-"If selected, Wavelog will try to import QSOs even when their my_gridsquare "
-"does not match the chosen station-location locator."
+"If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
+"in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
 
 #: application/views/adif/import.php:181
@@ -19802,6 +19802,13 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#, php-format
+#~ msgid ""
+#~ "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"
+#~ msgstr ""
+#~ "%s との QSO を %s でインポート中に、誤ったステーションコールサイン %s が検"
+#~ "出されました: スキップされました"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"
