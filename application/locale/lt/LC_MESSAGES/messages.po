@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 05:50+0000\n"
+"POT-Creation-Date: 2026-03-31 12:33+0000\n"
 "PO-Revision-Date: 2024-11-19 01:22+0000\n"
 "Last-Translator: Fabian Berg <fabian.berg@hb9hil.org>\n"
 "Language-Team: Lithuanian <https://translate.wavelog.org/projects/wavelog/"
@@ -142,8 +142,8 @@ msgid "Activated Gridsquare Map"
 msgstr ""
 
 #: application/controllers/Activated_gridmap.php:31
-#: application/controllers/Awards.php:1066
-#: application/controllers/Awards.php:1102
+#: application/controllers/Awards.php:1059
+#: application/controllers/Awards.php:1095
 #: application/controllers/Gridmap.php:32
 #: application/controllers/Visitor.php:385
 #: application/views/activators/index.php:100
@@ -316,28 +316,28 @@ msgstr ""
 
 #: application/controllers/Awards.php:101
 #: application/controllers/Awards.php:205
-#: application/controllers/Awards.php:443
-#: application/controllers/Awards.php:493
-#: application/controllers/Awards.php:610
-#: application/controllers/Awards.php:628
-#: application/controllers/Awards.php:646
-#: application/controllers/Awards.php:728
-#: application/controllers/Awards.php:790
-#: application/controllers/Awards.php:852
-#: application/controllers/Awards.php:914
-#: application/controllers/Awards.php:999
-#: application/controllers/Awards.php:1011
-#: application/controllers/Awards.php:1087
-#: application/controllers/Awards.php:1293
-#: application/controllers/Awards.php:1444
-#: application/controllers/Awards.php:1495
-#: application/controllers/Awards.php:2060
-#: application/controllers/Awards.php:2209
-#: application/controllers/Awards.php:2339
-#: application/controllers/Awards.php:2413
-#: application/controllers/Awards.php:2426
-#: application/controllers/Awards.php:2501
-#: application/controllers/Awards.php:2643
+#: application/controllers/Awards.php:436
+#: application/controllers/Awards.php:486
+#: application/controllers/Awards.php:603
+#: application/controllers/Awards.php:621
+#: application/controllers/Awards.php:639
+#: application/controllers/Awards.php:721
+#: application/controllers/Awards.php:783
+#: application/controllers/Awards.php:845
+#: application/controllers/Awards.php:907
+#: application/controllers/Awards.php:992
+#: application/controllers/Awards.php:1004
+#: application/controllers/Awards.php:1080
+#: application/controllers/Awards.php:1286
+#: application/controllers/Awards.php:1437
+#: application/controllers/Awards.php:1488
+#: application/controllers/Awards.php:2046
+#: application/controllers/Awards.php:2195
+#: application/controllers/Awards.php:2325
+#: application/controllers/Awards.php:2399
+#: application/controllers/Awards.php:2412
+#: application/controllers/Awards.php:2487
+#: application/controllers/Awards.php:2629
 #, php-format
 msgid "Awards - %s"
 msgstr ""
@@ -394,21 +394,21 @@ msgstr ""
 msgid "Awards - WAJA"
 msgstr ""
 
-#: application/controllers/Awards.php:443 application/views/bands/index.php:53
+#: application/controllers/Awards.php:436 application/views/bands/index.php:53
 #: application/views/interface_assets/header.php:262
 msgid "JCC"
 msgstr ""
 
-#: application/controllers/Awards.php:493 application/views/bands/index.php:59
+#: application/controllers/Awards.php:486 application/views/bands/index.php:59
 #: application/views/interface_assets/header.php:198
 msgid "VUCC"
 msgstr ""
 
-#: application/controllers/Awards.php:524
+#: application/controllers/Awards.php:517
 msgid "Log View - VUCC"
 msgstr ""
 
-#: application/controllers/Awards.php:574
+#: application/controllers/Awards.php:567
 #: application/controllers/Callstats.php:100
 #: application/controllers/Distancerecords.php:87
 #: application/controllers/Statistics.php:372
@@ -421,11 +421,11 @@ msgstr ""
 msgid "Log View"
 msgstr ""
 
-#: application/controllers/Awards.php:575
+#: application/controllers/Awards.php:568
 msgid "and"
 msgstr ""
 
-#: application/controllers/Awards.php:576
+#: application/controllers/Awards.php:569
 #: application/views/awards/cq/index.php:135
 #: application/views/awards/dxcc/index.php:32
 #: application/views/awards/dxcc/index.php:176
@@ -437,35 +437,35 @@ msgstr ""
 msgid "Every band (w/o SAT)"
 msgstr ""
 
-#: application/controllers/Awards.php:576
+#: application/controllers/Awards.php:569
 msgid "band"
 msgstr ""
 
-#: application/controllers/Awards.php:579
+#: application/controllers/Awards.php:572
 msgid " and satellite "
 msgstr ""
 
-#: application/controllers/Awards.php:582
+#: application/controllers/Awards.php:575
 #: application/controllers/Callstats.php:107
 msgid " and orbit type "
 msgstr ""
 
-#: application/controllers/Awards.php:586
+#: application/controllers/Awards.php:579
 #: application/controllers/Callstats.php:111
 msgid " and propagation "
 msgstr ""
 
-#: application/controllers/Awards.php:589
+#: application/controllers/Awards.php:582
 #: application/controllers/Callstats.php:114
 msgid " and mode "
 msgstr ""
 
-#: application/controllers/Awards.php:592
+#: application/controllers/Awards.php:585
 #: application/controllers/Callstats.php:117
 msgid " and "
 msgstr ""
 
-#: application/controllers/Awards.php:610
+#: application/controllers/Awards.php:603
 #: application/controllers/Logbook.php:1463
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:327
 #: application/views/bands/index.php:57 application/views/dashboard/index.php:9
@@ -493,7 +493,7 @@ msgstr ""
 msgid "SOTA"
 msgstr ""
 
-#: application/controllers/Awards.php:628
+#: application/controllers/Awards.php:621
 #: application/controllers/Logbook.php:1464
 #: application/views/bandmap/list.php:329 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:10
@@ -515,7 +515,7 @@ msgstr ""
 msgid "WWFF"
 msgstr ""
 
-#: application/controllers/Awards.php:646
+#: application/controllers/Awards.php:639
 #: application/controllers/Logbook.php:1465
 #: application/views/adif/import.php:60 application/views/bandmap/list.php:328
 #: application/views/bands/index.php:54
@@ -538,68 +538,68 @@ msgstr ""
 msgid "POTA"
 msgstr ""
 
-#: application/controllers/Awards.php:728
+#: application/controllers/Awards.php:721
 msgid "CQ WAZ (Worked All Zones)"
 msgstr ""
 
-#: application/controllers/Awards.php:790
+#: application/controllers/Awards.php:783
 #: application/views/accumulate/index.php:54
 #: application/views/timeline/index.php:45
 msgid "Worked All States (WAS)"
 msgstr ""
 
-#: application/controllers/Awards.php:852 application/views/bands/index.php:55
+#: application/controllers/Awards.php:845 application/views/bands/index.php:55
 #: application/views/interface_assets/header.php:228
 msgid "RAC"
 msgstr ""
 
-#: application/controllers/Awards.php:914 application/views/bands/index.php:51
+#: application/controllers/Awards.php:907 application/views/bands/index.php:51
 msgid "H26"
 msgstr ""
 
-#: application/controllers/Awards.php:999
+#: application/controllers/Awards.php:992
 msgid "IOTA (Island On The Air)"
 msgstr ""
 
-#: application/controllers/Awards.php:1011
-#: application/controllers/Awards.php:1026
+#: application/controllers/Awards.php:1004
+#: application/controllers/Awards.php:1019
 #: application/views/interface_assets/header.php:294
 msgid "US Counties"
 msgstr ""
 
-#: application/controllers/Awards.php:1041
+#: application/controllers/Awards.php:1034
 msgid "Log View - Counties"
 msgstr ""
 
-#: application/controllers/Awards.php:1048
+#: application/controllers/Awards.php:1041
 msgid "Awards - "
 msgstr ""
 
-#: application/controllers/Awards.php:1067
-#: application/controllers/Awards.php:1103
+#: application/controllers/Awards.php:1060
+#: application/controllers/Awards.php:1096
 msgid "Gridsquares worked"
 msgstr ""
 
-#: application/controllers/Awards.php:1068
-#: application/controllers/Awards.php:1104
+#: application/controllers/Awards.php:1061
+#: application/controllers/Awards.php:1097
 msgid "Gridsquares confirmed on LoTW"
 msgstr ""
 
-#: application/controllers/Awards.php:1069
-#: application/controllers/Awards.php:1105
+#: application/controllers/Awards.php:1062
+#: application/controllers/Awards.php:1098
 msgid "Gridsquares confirmed by paper QSL"
 msgstr ""
 
-#: application/controllers/Awards.php:1070
-#: application/controllers/Awards.php:1106
+#: application/controllers/Awards.php:1063
+#: application/controllers/Awards.php:1099
 msgid "Total Gridsquares worked"
 msgstr ""
 
-#: application/controllers/Awards.php:1087
+#: application/controllers/Awards.php:1080
 msgid "Fred Fish Memorial Award (FFMA)"
 msgstr ""
 
-#: application/controllers/Awards.php:1293
+#: application/controllers/Awards.php:1286
 #: application/views/interface_assets/header.php:196
 #: application/views/logbookadvanced/useroptions.php:250
 #: application/views/qso/edit_ajax.php:393 application/views/qso/index.php:345
@@ -609,45 +609,45 @@ msgstr ""
 msgid "SIG"
 msgstr ""
 
-#: application/controllers/Awards.php:1312
+#: application/controllers/Awards.php:1305
 msgid "Awards - SIG - "
 msgstr ""
 
-#: application/controllers/Awards.php:1444 application/views/bands/index.php:60
+#: application/controllers/Awards.php:1437 application/views/bands/index.php:60
 msgid "WAP"
 msgstr ""
 
-#: application/controllers/Awards.php:1495
+#: application/controllers/Awards.php:1488
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
 msgstr ""
 
-#: application/controllers/Awards.php:2209
+#: application/controllers/Awards.php:2195
 #: application/views/awards/itu/index.php:34
 msgid "ITU Zones"
 msgstr ""
 
-#: application/controllers/Awards.php:2339
+#: application/controllers/Awards.php:2325
 #: application/views/awards/wac/index.php:8
 #: application/views/interface_assets/header.php:202
 msgid "Worked All Continents (WAC)"
 msgstr ""
 
-#: application/controllers/Awards.php:2413
+#: application/controllers/Awards.php:2399
 msgid "WAE"
 msgstr ""
 
-#: application/controllers/Awards.php:2426
+#: application/controllers/Awards.php:2412
 #: application/views/interface_assets/header.php:212
 msgid "73 on 73"
 msgstr ""
 
-#: application/controllers/Awards.php:2501
+#: application/controllers/Awards.php:2487
 #: application/views/awards/wpx/wpx_details.php:19
 msgid "WPX"
 msgstr ""
 
-#: application/controllers/Awards.php:2643
+#: application/controllers/Awards.php:2629
 #: application/views/awards/pl_polska/index.php:37
 #: application/views/interface_assets/header.php:276
 msgid "\"Polska\" Award"
@@ -1522,7 +1522,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:91
 #: application/views/awards/iota/index.php:134
 #: application/views/awards/itu/index.php:147
-#: application/views/awards/jcc/index.php:90
+#: application/views/awards/jcc/index.php:100
 #: application/views/awards/rac/index.php:82
 #: application/views/awards/sig/qso_list.php:12
 #: application/views/awards/wab/index.php:55
@@ -1845,7 +1845,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:77
 #: application/views/awards/iota/index.php:120
 #: application/views/awards/itu/index.php:134
-#: application/views/awards/jcc/index.php:76
+#: application/views/awards/jcc/index.php:86
 #: application/views/awards/pota/index.php:36
 #: application/views/awards/rac/index.php:68
 #: application/views/awards/sig/qso_list.php:13
@@ -3857,7 +3857,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:94
 #: application/views/awards/iota/index.php:137
 #: application/views/awards/itu/index.php:150
-#: application/views/awards/jcc/index.php:93
+#: application/views/awards/jcc/index.php:103
 #: application/views/awards/rac/index.php:85
 #: application/views/awards/wab/index.php:26
 #: application/views/awards/wab/index.php:38
@@ -4288,7 +4288,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:116
 #: application/views/awards/iota/index.php:159
 #: application/views/awards/itu/index.php:48
-#: application/views/awards/jcc/index.php:115
+#: application/views/awards/jcc/index.php:125
 #: application/views/awards/pl_polska/index.php:93
 #: application/views/awards/rac/index.php:107
 #: application/views/awards/wac/index.php:119
@@ -4445,7 +4445,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:204
 #: application/views/awards/iota/index.php:302
 #: application/views/awards/itu/index.php:274
-#: application/views/awards/jcc/index.php:238
+#: application/views/awards/jcc/index.php:250
 #: application/views/awards/pl_polska/index.php:377
 #: application/views/awards/pota/index.php:68
 #: application/views/awards/rac/index.php:195
@@ -5388,7 +5388,7 @@ msgid ""
 msgstr ""
 
 #: application/views/awards/73on73/index.php:32
-#: application/views/awards/jcc/index.php:153
+#: application/views/awards/jcc/index.php:163
 #: application/views/awards/waja/index.php:157
 #: application/views/distancerecords/index.php:13
 msgid "Number"
@@ -5452,7 +5452,7 @@ msgstr ""
 #: application/views/awards/dok/index.php:175
 #: application/views/awards/helvetia/index.php:183
 #: application/views/awards/iota/index.php:237
-#: application/views/awards/jcc/index.php:187
+#: application/views/awards/jcc/index.php:199
 #: application/views/awards/rac/index.php:174
 #: application/views/awards/waja/index.php:183
 #: application/views/awards/wap/index.php:181
@@ -5801,7 +5801,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:131
 #: application/views/awards/iota/index.php:174
 #: application/views/awards/itu/index.php:176
-#: application/views/awards/jcc/index.php:131
+#: application/views/awards/jcc/index.php:141
 #: application/views/awards/pl_polska/index.php:188
 #: application/views/awards/rac/index.php:122
 #: application/views/awards/wab/index.php:110
@@ -5877,7 +5877,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:174
 #: application/views/awards/iota/index.php:224
 #: application/views/awards/itu/index.php:226
-#: application/views/awards/jcc/index.php:170
+#: application/views/awards/jcc/index.php:182
 #: application/views/awards/rac/index.php:165
 #: application/views/awards/wac/index.php:162
 #: application/views/awards/wae/index.php:227
@@ -5903,7 +5903,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:187
 #: application/views/awards/iota/index.php:245
 #: application/views/awards/itu/index.php:244
-#: application/views/awards/jcc/index.php:197
+#: application/views/awards/jcc/index.php:209
 #: application/views/awards/rac/index.php:178
 #: application/views/awards/wac/index.php:183
 #: application/views/awards/wae/index.php:247
@@ -5921,7 +5921,7 @@ msgstr ""
 #: application/views/awards/helvetia/index.php:194
 #: application/views/awards/iota/index.php:271
 #: application/views/awards/itu/index.php:257
-#: application/views/awards/jcc/index.php:216
+#: application/views/awards/jcc/index.php:228
 #: application/views/awards/rac/index.php:185
 #: application/views/awards/wac/index.php:203
 #: application/views/awards/wae/index.php:269
@@ -5997,7 +5997,7 @@ msgstr ""
 
 #: application/views/awards/dok/index.php:81
 #: application/views/awards/helvetia/index.php:80
-#: application/views/awards/jcc/index.php:79
+#: application/views/awards/jcc/index.php:89
 #: application/views/awards/rac/index.php:71
 #: application/views/awards/waja/index.php:84
 #: application/views/awards/wap/index.php:78
@@ -6009,7 +6009,7 @@ msgstr ""
 #: application/views/awards/dok/index.php:127
 #: application/views/awards/helvetia/index.php:115
 #: application/views/awards/iota/index.php:158
-#: application/views/awards/jcc/index.php:114
+#: application/views/awards/jcc/index.php:124
 #: application/views/awards/pl_polska/index.php:92
 #: application/views/awards/rac/index.php:106
 #: application/views/awards/waja/index.php:119
@@ -6074,6 +6074,7 @@ msgstr ""
 
 #: application/views/awards/dxcc/index.php:88
 #: application/views/awards/iota/index.php:36
+#: application/views/awards/jcc/index.php:80
 msgid "Include deleted"
 msgstr ""
 
@@ -6493,31 +6494,32 @@ msgid ""
 "reference!)"
 msgstr ""
 
-#: application/views/awards/jcc/index.php:117
+#: application/views/awards/jcc/index.php:76
+msgid "Deleted cities"
+msgstr ""
+
+#: application/views/awards/jcc/index.php:127
 msgid "Show JCC Map"
 msgstr ""
 
-#: application/views/awards/jcc/index.php:118
-#: application/views/cabrillo/index.php:209 application/views/csv/index.php:129
-#: application/views/dxatlas/index.php:128 application/views/kml/index.php:113
-#: application/views/reg1test/index.php:145
-msgid "Export"
+#: application/views/awards/jcc/index.php:128
+msgid "Export confirmed QSOs"
 msgstr ""
 
-#: application/views/awards/jcc/index.php:128
+#: application/views/awards/jcc/index.php:138
 #: application/views/public_search/empty.php:2
 #: application/views/public_search/result.php:2
 #: application/views/view_log/partial/log_ajax.php:711
 msgid "Results"
 msgstr ""
 
-#: application/views/awards/jcc/index.php:154
+#: application/views/awards/jcc/index.php:164
 #: application/views/search/result.php:21
 #: application/views/view_log/qso.php:698
 msgid "City"
 msgstr ""
 
-#: application/views/awards/jcc/index.php:189
+#: application/views/awards/jcc/index.php:201
 #: application/views/dashboard/index.php:471
 #: application/views/distances/index.php:23
 #: application/views/qslprint/qslprint.php:57
@@ -8747,6 +8749,12 @@ msgstr ""
 
 #: application/views/cabrillo/index.php:201
 msgid "Include logged grids?"
+msgstr ""
+
+#: application/views/cabrillo/index.php:209 application/views/csv/index.php:129
+#: application/views/dxatlas/index.php:128 application/views/kml/index.php:113
+#: application/views/reg1test/index.php:145
+msgid "Export"
 msgstr ""
 
 #: application/views/cabrillo/index.php:215
