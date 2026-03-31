@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 12:55+0000\n"
+"POT-Creation-Date: 2026-03-31 13:02+0000\n"
 "PO-Revision-Date: 2026-03-25 09:06+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3550,13 +3550,13 @@ msgid "Federal State"
 msgstr "連邦州"
 
 #: application/libraries/Subdivisions.php:56
-#: application/libraries/Subdivisions.php:94
+#: application/libraries/Subdivisions.php:93
 msgctxt "Division Name (States in various countries)."
 msgid "County"
 msgstr "郡"
 
 #: application/libraries/Subdivisions.php:60
-#: application/libraries/Subdivisions.php:85
+#: application/libraries/Subdivisions.php:84
 msgctxt "Division Name (States in various countries)."
 msgid "District"
 msgstr "地区"
@@ -3571,27 +3571,27 @@ msgctxt "Division Name (States in various countries)."
 msgid "US State"
 msgstr "米国の州"
 
-#: application/libraries/Subdivisions.php:67
+#: application/libraries/Subdivisions.php:66
 msgctxt "Division Name (States in various countries)."
 msgid "Prefecture"
 msgstr "県"
 
-#: application/libraries/Subdivisions.php:69
+#: application/libraries/Subdivisions.php:68
 msgctxt "Division Name (States in various countries)."
 msgid "State"
 msgstr "州"
 
-#: application/libraries/Subdivisions.php:78
+#: application/libraries/Subdivisions.php:77
 msgctxt "Division Name (States in various countries)."
 msgid "US County"
 msgstr "米国の郡"
 
-#: application/libraries/Subdivisions.php:90
+#: application/libraries/Subdivisions.php:89
 msgctxt "Division Name (States in various countries)."
 msgid "DME"
 msgstr "DME"
 
-#: application/libraries/Subdivisions.php:92
+#: application/libraries/Subdivisions.php:91
 msgctxt "Division Name (States in various countries)."
 msgid "City / Ku / Gun"
 msgstr "市 / 区 / 郡"

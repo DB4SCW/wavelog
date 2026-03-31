@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 12:55+0000\n"
+"POT-Creation-Date: 2026-03-31 13:02+0000\n"
 "PO-Revision-Date: 2026-02-20 14:54+0000\n"
 "Last-Translator: Juan Pablo Tamayo <hj3kos@gmail.com>\n"
 "Language-Team: Spanish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3576,13 +3576,13 @@ msgid "Federal State"
 msgstr "Estado federal"
 
 #: application/libraries/Subdivisions.php:56
-#: application/libraries/Subdivisions.php:94
+#: application/libraries/Subdivisions.php:93
 msgctxt "Division Name (States in various countries)."
 msgid "County"
 msgstr "Condado"
 
 #: application/libraries/Subdivisions.php:60
-#: application/libraries/Subdivisions.php:85
+#: application/libraries/Subdivisions.php:84
 msgctxt "Division Name (States in various countries)."
 msgid "District"
 msgstr "Distrito"
@@ -3597,27 +3597,27 @@ msgctxt "Division Name (States in various countries)."
 msgid "US State"
 msgstr "Estado de EE.UU"
 
-#: application/libraries/Subdivisions.php:67
+#: application/libraries/Subdivisions.php:66
 msgctxt "Division Name (States in various countries)."
 msgid "Prefecture"
 msgstr "Prefectura"
 
-#: application/libraries/Subdivisions.php:69
+#: application/libraries/Subdivisions.php:68
 msgctxt "Division Name (States in various countries)."
 msgid "State"
 msgstr "Estado"
 
-#: application/libraries/Subdivisions.php:78
+#: application/libraries/Subdivisions.php:77
 msgctxt "Division Name (States in various countries)."
 msgid "US County"
 msgstr "Condado de EE.UU"
 
-#: application/libraries/Subdivisions.php:90
+#: application/libraries/Subdivisions.php:89
 msgctxt "Division Name (States in various countries)."
 msgid "DME"
 msgstr "DME"
 
-#: application/libraries/Subdivisions.php:92
+#: application/libraries/Subdivisions.php:91
 msgctxt "Division Name (States in various countries)."
 msgid "City / Ku / Gun"
 msgstr "Ciudad / Distrito / Municipio"
