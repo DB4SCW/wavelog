@@ -77,12 +77,13 @@ function toggleItuZones(bool) {
 			map.removeLayer(itugeojson);
 		}
 	} else {
-		itugeojson = L.geoJson(ituzonestuff, {style: style}).addTo(map);
+		itugeojson = L.geoJson(ituzonestuff_wrapped, {style: style}).addTo(map);
 		for (var i = 0; i < ituzonenames.length; i++) {
 
 			var title = '<span class="grid-text" style="cursor: default"><font style="color: \'white\'; font-size: 1.5em; font-weight: 900;">' + (Number(i)+Number(1)) + '</font></span>';
 			var myIcon = L.divIcon({className: 'my-div-icon', html: title});
 
+			// Original position
 			var marker = L.marker(
 				[ituzonenames[i][0], ituzonenames[i][1]], {
 					icon: myIcon,
@@ -91,6 +92,26 @@ function toggleItuZones(bool) {
 				}
 			).addTo(map);
 			ituzonemarkers.push(marker);
+			
+			// Shifted west (-360°)
+			var markerWest = L.marker(
+				[ituzonenames[i][0], parseFloat(ituzonenames[i][1]) - 360], {
+					icon: myIcon,
+					title: (Number(i)+Number(1)),
+					zIndex: 1000,
+				}
+			).addTo(map);
+			ituzonemarkers.push(markerWest);
+
+			// Shifted east (+360°)
+			var markerEast = L.marker(
+				[ituzonenames[i][0], parseFloat(ituzonenames[i][1]) + 360], {
+					icon: myIcon,
+					title: (Number(i)+Number(1)),
+					zIndex: 1000,
+				}
+			).addTo(map);
+			ituzonemarkers.push(markerEast);
 		}
 	}
 }
