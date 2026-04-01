@@ -78,7 +78,7 @@
         <div class="col-6 col-md-3">
             <div class="card summary-card h-100">
                 <div class="card-body">
-                    <p class="text-muted small mb-1">Best Time Window</p>
+                    <p class="text-muted small mb-1"><?= __("Best Time Window"); ?></p>
                     <h5 class="mb-0" id="summary-best-window">-</h5>
                     <span class="text-muted small" id="summary-best-window-count"></span>
                 </div>
@@ -87,7 +87,7 @@
         <div class="col-6 col-md-3">
             <div class="card summary-card h-100">
                 <div class="card-body">
-                    <p class="text-muted small mb-1">Best Band</p>
+                    <p class="text-muted small mb-1"><?= __("Best Band"); ?></p>
                     <h5 class="mb-0" id="summary-best-band">-</h5>
                     <span class="text-muted small" id="summary-best-band-count"></span>
                 </div>
@@ -96,7 +96,7 @@
         <div class="col-6 col-md-3">
             <div class="card summary-card h-100">
                 <div class="card-body">
-                    <p class="text-muted small mb-1">Best Mode</p>
+                    <p class="text-muted small mb-1"><?= __("Best Mode"); ?></p>
                     <h5 class="mb-0" id="summary-best-mode">-</h5>
                     <span class="text-muted small" id="summary-best-mode-count"></span>
                 </div>
@@ -105,7 +105,7 @@
         <div class="col-6 col-md-3">
             <div class="card summary-card h-100">
                 <div class="card-body">
-                    <p class="text-muted small mb-1">Total QSOs plotted</p>
+                    <p class="text-muted small mb-1"><?= __("Total QSOs plotted"); ?></p>
                     <h5 class="mb-0" id="summary-total-qsos">-</h5>
                     <span class="text-muted small" id="summary-date-range"></span>
                 </div>
@@ -158,34 +158,3 @@
         </div>
     </div>
 </div>
-
-<style>
-    .summary-card { border: 1px solid #eef0f2; }
-    .summary-card h5 { font-weight: 600; }
-    .heatmap-grid-wrapper { overflow-x: auto; padding-top: 4px; }
-    .heatmap-grid { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: 2px; max-width: 100%; }
-    .heatmap-header {
-        text-align: center;
-        padding: 6px 4px;
-    }
-    .heatmap-row-label {
-        font-weight: 600;
-        padding: 8px 4px;
-        text-align: left;
-        font-size: 0.85rem;
-    }
-    .heatmap-cell {
-        text-align: center;
-        padding: 8px 4px;
-        border-radius: 3px;
-        border: 1px solid #d1d5da;
-        cursor: default;
-		color: #000;
-    }
-    .legend-item { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem;}
-    .legend-swatch { width: 16px; height: 16px; border: 1px solid #d1d5da; border-radius: 3px; display: inline-block; }
-
-    @media (max-width: 992px) {
-        .heatmap-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-    }
-</style>
