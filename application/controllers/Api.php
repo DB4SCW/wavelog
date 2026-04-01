@@ -649,11 +649,11 @@ class API extends CI_Controller {
 		// Return response
 		http_response_code(200);
 		if ($total_fetched <= 0) {
-			echo json_encode(['status' => 'successfull', 'message' => 'No new QSOs available.', 'lastfetchedid' => $fetchfromid, 'exported_qsos' => 0, 'adif' => null]);
+			echo json_encode(['status' => 'successful', 'message' => 'No new QSOs available.', 'lastfetchedid' => $fetchfromid, 'exported_qsos' => 0, 'adif' => null]);
 		} elseif ($output_format === 'json') {
-			echo json_encode(['status' => 'successfull', 'message' => 'Export successfull', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => count($qso_rows), 'qsos' => $qso_rows]);
+			echo json_encode(['status' => 'successful', 'message' => 'Export successful', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => count($qso_rows), 'qsos' => $qso_rows]);
 		} else {
-			echo json_encode(['status' => 'successfull', 'message' => 'Export successfull', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => $total_fetched, 'adif' => $adif_content]);
+			echo json_encode(['status' => 'successful', 'message' => 'Export successful', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => $total_fetched, 'adif' => $adif_content]);
 		}
 	}
 
