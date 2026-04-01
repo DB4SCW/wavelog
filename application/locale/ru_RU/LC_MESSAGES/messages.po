@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-03-31 13:02+0000\n"
+"POT-Creation-Date: 2026-04-01 10:41+0000\n"
 "PO-Revision-Date: 2026-03-24 06:50+0000\n"
 "Last-Translator: Michael Skolsky <r1blh@yandex.ru>\n"
 "Language-Team: Russian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -1042,13 +1042,10 @@ msgstr "Selfupdate() недоступен. Проверьте журнал ош�
 
 #: application/controllers/Debug.php:317
 msgid ""
-"File Migration was successfull, but please check also manually. If "
-"everything seems right you can delete the folders 'assets/qslcard' and "
-"'images/eqsl_card_images'."
-msgstr ""
-"Миграция файлов прошла успешно, но, пожалуйста, проверьте также вручную. "
-"Если все в порядке, можете удалить папки 'assets/qslcard' и 'images/"
+"File Migration was successful, but please check also manually. If everything "
+"seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
+msgstr ""
 
 #: application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
@@ -20000,6 +19997,15 @@ msgstr "CQ"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQ geojson"
+
+#~ msgid ""
+#~ "File Migration was successfull, but please check also manually. If "
+#~ "everything seems right you can delete the folders 'assets/qslcard' and "
+#~ "'images/eqsl_card_images'."
+#~ msgstr ""
+#~ "Миграция файлов прошла успешно, но, пожалуйста, проверьте также вручную. "
+#~ "Если все в порядке, можете удалить папки 'assets/qslcard' и 'images/"
+#~ "eqsl_card_images'."
 
 #, php-format
 #~ msgid ""
