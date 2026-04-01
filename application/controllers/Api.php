@@ -594,6 +594,8 @@ class API extends CI_Controller {
 		$adif_content = ($output_format === 'adif') ? $this->adifhelper->getAdifHeader($this->config->item('app_name'), $this->optionslib->get_option('version'), $this->optionslib->get_option('adif_version')) : '';
 		$qso_rows = [];
 
+			$seen_keys = [];
+
 		do {
 			// Calculate chunk size for this iteration
 			$current_chunk_size = min($chunk_size, $remaining_limit);
@@ -605,7 +607,19 @@ class API extends CI_Controller {
 				// Process chunk
 				foreach ($qsos->result() as $row) {
 					if ($output_format === 'json') {
-						$qso_rows[] = $this->_build_qso_array($row, $fields);
+						$qso_data = $this->_build_qso_array($row, $fields);
+						if ($fields !== null) {
+							$unique_key = '';
+							foreach ($fields as $field) {
+								$unique_key .= (isset($qso_data[$field]) ? $qso_data[$field] : '') . '|';
+							}
+							if (!isset($seen_keys[$unique_key])) {
+								$seen_keys[$unique_key] = true;
+								$qso_rows[] = $qso_data;
+							}
+						} else {
+							$qso_rows[] = $qso_data;
+						}
 					} else {
 						$adif_content .= $this->adifhelper->getAdifLine($row);
 					}
@@ -637,7 +651,7 @@ class API extends CI_Controller {
 		if ($total_fetched <= 0) {
 			echo json_encode(['status' => 'successfull', 'message' => 'No new QSOs available.', 'lastfetchedid' => $fetchfromid, 'exported_qsos' => 0, 'adif' => null]);
 		} elseif ($output_format === 'json') {
-			echo json_encode(['status' => 'successfull', 'message' => 'Export successfull', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => $total_fetched, 'qsos' => $qso_rows]);
+			echo json_encode(['status' => 'successfull', 'message' => 'Export successfull', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => count($qso_rows), 'qsos' => $qso_rows]);
 		} else {
 			echo json_encode(['status' => 'successfull', 'message' => 'Export successfull', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => $total_fetched, 'adif' => $adif_content]);
 		}
