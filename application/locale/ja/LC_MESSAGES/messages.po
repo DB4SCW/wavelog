@@ -6,12 +6,13 @@
 # "S.NAKAO" <hlx.nakao@gmail.com>, 2025.
 # "S.NAKAO(JG3HLX)" <hlx.nakao@gmail.com>, 2025, 2026.
 # "Xu, Zefan (BI1GHZ)" <ceba_robot@outlook.com>, 2026.
+# Florian Wolters <wavelog@df2et.de>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-04-01 08:24+0000\n"
-"Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
+"PO-Revision-Date: 2026-04-01 10:59+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
 "Language: ja\n"
@@ -19985,6 +19986,8 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"ファイルの移行は成功しましたが、手動でもご確認ください。問題がなければ、「"
+"assets/qslcard」と「images/eqsl_card_images」フォルダを削除してください。"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"
