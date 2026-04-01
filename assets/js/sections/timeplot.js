@@ -10,6 +10,7 @@ function timeplot(form) {
 			$(".ld-ext-right").removeClass('running');
 			$(".ld-ext-right").prop('disabled', false);
 			if (tmp.ok == 'OK') {
+				$('#timeplotterTabs').show();
 				plotTimeplotterChart(tmp);
 				updateSummaryCards(tmp, form);
 				renderHeatmap(tmp);

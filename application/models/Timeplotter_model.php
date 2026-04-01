@@ -162,6 +162,23 @@ class Timeplotter_model extends CI_Model
             $data['by_band'] = $byBand;
             $data['hourly_by_band'] = $hourlyByBand;
             $data['bands'] = array_keys($byBand);
+
+            usort(
+                $data['bands'],
+                function($b, $a) {
+                    sscanf($a, '%f%s', $ac, $ar);
+                    sscanf($b, '%f%s', $bc, $br);
+                    return ($ar == $br) ? $ac <=> $bc : $ar <=> $br;
+                }
+            );
+
+            // Rebuild hourly_by_band array in sorted band order
+            $sortedHourlyByBand = array();
+            foreach ($data['bands'] as $band) {
+                $sortedHourlyByBand[$band] = $hourlyByBand[$band];
+            }
+            $data['hourly_by_band'] = $sortedHourlyByBand;
+
             $data['band_counts'] = $bandCounts;
             $data['mode_counts'] = $modeCounts;
             $data['best_band'] = $bestBand;

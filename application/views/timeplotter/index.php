@@ -114,7 +114,7 @@
     </div>
 
     <!-- Tabs Navigation -->
-    <ul class="nav nav-tabs mb-3" id="timeplotterTabs" role="tablist">
+    <ul class="nav nav-tabs mb-3" id="timeplotterTabs" role="tablist" style="display:none;">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="heatmap-tab" data-bs-toggle="tab" data-bs-target="#heatmap-pane" type="button" role="tab" aria-selected="true">
                 <?= __("Heatmap"); ?>
