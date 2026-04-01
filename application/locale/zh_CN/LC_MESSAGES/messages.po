@@ -26,12 +26,13 @@
 # 范明明 <mingming@live.com>, 2026.
 # "Xu, Zefan (BI1GHZ)" <ceba_robot@outlook.com>, 2026.
 # "Shen RuiQin(BH4FJN)" <jerry19980425@gmail.com>, 2026.
+# Florian Wolters <wavelog@df2et.de>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-04-01 08:24+0000\n"
-"Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
+"PO-Revision-Date: 2026-04-01 10:59+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -19459,6 +19460,8 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"文件迁移成功，请手动检查。若一切正常，你可以删除文件夹“assets/qslcard”和“"
+"images/eqsl_card_images”。"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "邮件设置未配置。"
