@@ -6,12 +6,13 @@
 # "Jorgen Dahl, NU1T" <sm6srw@arrl.net>, 2025, 2026.
 # "Erkin Mercan (TA4AQG-SP9AQG)" <ekomeko066@gmail.com>, 2025.
 # "Juuso W." <oh1jw@tuta.io>, 2026.
+# Florian Wolters <wavelog@df2et.de>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-31 20:33+0000\n"
-"Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
+"PO-Revision-Date: 2026-04-01 10:59+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
 "Language: sv_SE\n"
@@ -20042,6 +20043,9 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"Filöverföringen var framgångsrik, men kontrollera också manuellt. Om allt "
+"verkar rätt kan du ta bort mapparna 'assets/qslcard' och 'images/"
+"eqsl_card_images'."
 
 #~ msgid "Email settings not configured."
 #~ msgstr "E-postinställningar inte konfigurerade."
