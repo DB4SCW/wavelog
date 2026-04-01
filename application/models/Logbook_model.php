@@ -554,7 +554,7 @@ class Logbook_model extends CI_Model {
 					$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				}
 				break;
-			case 'ITU':
+			case 'ITUZone':
 				$this->db->where('COL_ITUZ', $searchphrase);
 				if ($band == 'SAT' && $type == 'ITU') {
 					if ($sat != 'All' && $sat != null) {
