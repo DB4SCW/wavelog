@@ -488,7 +488,7 @@ class Logbook_model extends CI_Model {
 						$this->db->where("satellite.orbit", $orbit);
 					}
 				} else {
-					$this->db->where("COL_PROP_MODE !=", "SAT");
+					$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				}
 				break;
 			case 'IOTA':
@@ -530,7 +530,7 @@ class Logbook_model extends CI_Model {
 						$this->db->or_where("COL_PROP_MODE is null");
 						$this->db->group_end();
 					} elseif ($propagation == 'NoSAT') {
-						$this->db->where("COL_PROP_MODE != 'SAT'");
+						$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 					} elseif ($propagation != '' && $propagation != null) {
 						$this->db->where("COL_PROP_MODE", $propagation);
 					}
@@ -551,7 +551,7 @@ class Logbook_model extends CI_Model {
 						$this->db->where("satellite.orbit", $orbit);
 					}
 				} else {
-					$this->db->where("COL_PROP_MODE !=", "SAT");
+					$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				}
 				break;
 			case 'ITU':
@@ -564,7 +564,7 @@ class Logbook_model extends CI_Model {
 						$this->db->where("satellite.orbit", $orbit);
 					}
 				} else {
-					$this->db->where("COL_PROP_MODE !=", "SAT");
+					$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				}
 				break;
 			case 'WAS':
@@ -590,7 +590,7 @@ class Logbook_model extends CI_Model {
 
 				// Exclude satellite contacts for Polska Award
 				$this->db->group_start();
-				$this->db->where('COL_PROP_MODE !=', 'SAT');
+				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				$this->db->or_where('COL_PROP_MODE IS NULL');
 				$this->db->group_end();
 
@@ -648,7 +648,7 @@ class Logbook_model extends CI_Model {
 			case 'WAIP':
 				// Exclude satellite contacts for Polska Award
 				$this->db->group_start();
-				$this->db->where('COL_PROP_MODE !=', 'SAT');
+				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				$this->db->or_where('COL_PROP_MODE IS NULL');
 				$this->db->group_end();
 
@@ -738,7 +738,7 @@ class Logbook_model extends CI_Model {
 
 		if (strtolower($band) != 'all') {
 			if ($band != "SAT") {
-				$this->db->where('COL_PROP_MODE !=', 'SAT');
+				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				$this->db->where('COL_BAND', $band);
 			} else {
 				$this->db->where('COL_PROP_MODE', "SAT");
@@ -836,7 +836,7 @@ class Logbook_model extends CI_Model {
 						break;
 				}
 			} else {
-				$this->db->where('COL_PROP_MODE !=', 'SAT');
+				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				$this->db->where('col_band', $band);
 			}
 		}
@@ -3315,7 +3315,7 @@ class Logbook_model extends CI_Model {
 			if ($band == 'SAT') {
 				$this->db->where('COL_PROP_MODE', $band);
 			} else {
-				$this->db->where('COL_PROP_MODE != \'SAT\'');
+				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 				$this->db->where('COL_BAND', $band);
 			}
 		}
@@ -3802,7 +3802,7 @@ class Logbook_model extends CI_Model {
 		if ($searchCriteria['band'] !== '') {
 			if ($searchCriteria['band'] != "SAT") {
 				$this->db->where('COL_BAND', $searchCriteria['band']);
-				$this->db->where('COL_PROP_MODE != "SAT"');
+				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 			} else {
 				$this->db->where('COL_PROP_MODE', 'SAT');
 			}
@@ -6132,7 +6132,7 @@ class Logbook_model extends CI_Model {
 		$this->db->where_in($this->config->item('table_name') . '.station_id', $logbooks_locations_array);
 		$this->db->where('COL_STATE', $state);
 		$this->db->where('COL_CNTY', $county);
-		$this->db->where('COL_PROP_MODE !=', 'SAT');
+		$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
 
 		return $this->db->get($this->config->item('table_name'));
 	}
