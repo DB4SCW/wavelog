@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-01 12:02+0000\n"
+"POT-Creation-Date: 2026-04-01 14:13+0000\n"
 "PO-Revision-Date: 2026-03-20 07:25+0000\n"
 "Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
 "Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/main-"
@@ -383,7 +383,7 @@ msgstr "DOK"
 #: application/views/search/result.php:27
 #: application/views/stationsetup/linkedlocations.php:17
 #: application/views/stationsetup/linkedlocations.php:33
-#: application/views/timeplotter/index.php:24
+#: application/views/timeplotter/index.php:17
 msgid "DXCC"
 msgstr "DXCC"
 
@@ -1649,10 +1649,11 @@ msgstr ""
 #: application/views/statistics/index.php:102
 #: application/views/statistics/initialresult.php:19
 #: application/views/statistics/initials.php:17
-#: application/views/timeline/index.php:19 application/views/user/edit.php:293
-#: application/views/user/edit.php:316 application/views/user/edit.php:339
-#: application/views/user/edit.php:362 application/views/user/edit.php:386
-#: application/views/usermode/index.php:38
+#: application/views/timeline/index.php:19
+#: application/views/timeplotter/index.php:57
+#: application/views/user/edit.php:293 application/views/user/edit.php:316
+#: application/views/user/edit.php:339 application/views/user/edit.php:362
+#: application/views/user/edit.php:386 application/views/usermode/index.php:38
 #: application/views/view_log/partial/log.php:9
 #: application/views/view_log/partial/log_ajax.php:4
 #: application/views/view_log/qso.php:114 application/views/visitor/index.php:6
@@ -1968,7 +1969,7 @@ msgstr "Vzdialenosť"
 #: application/views/statistics/initialresult.php:18
 #: application/views/statistics/initials.php:8
 #: application/views/timeline/index.php:7
-#: application/views/timeplotter/index.php:14
+#: application/views/timeplotter/index.php:47
 #: application/views/user/edit.php:291 application/views/user/edit.php:314
 #: application/views/user/edit.php:337 application/views/user/edit.php:360
 #: application/views/user/edit.php:384
@@ -2053,7 +2054,7 @@ msgstr "Operátor"
 #: application/views/stationsetup/locationlist.php:75
 #: application/views/stationsetup/stationsetup.php:158
 #: application/views/timeline/index.php:222
-#: application/views/timeplotter/index.php:33
+#: application/views/timeplotter/index.php:25
 #: application/views/user/modals/first_login_wizard.php:52
 #: application/views/view_log/partial/log_ajax.php:31
 #: application/views/view_log/qso.php:353
@@ -3085,7 +3086,7 @@ msgstr "Časová os"
 
 #: application/controllers/Timeplotter.php:17
 #: application/views/interface_assets/header.php:176
-#: application/views/timeplotter/index.php:9
+#: application/views/timeplotter/index.php:10
 msgid "Timeplotter"
 msgstr "Časový graf"
 
@@ -4124,9 +4125,10 @@ msgstr "Rozdiel"
 #: application/views/timeline/index.php:10
 #: application/views/timeline/index.php:22
 #: application/views/timeline/index.php:82
-#: application/views/timeplotter/index.php:17
-#: application/views/timeplotter/index.php:27
-#: application/views/timeplotter/index.php:47
+#: application/views/timeplotter/index.php:19
+#: application/views/timeplotter/index.php:37
+#: application/views/timeplotter/index.php:49
+#: application/views/timeplotter/index.php:59
 #: application/views/user/edit.php:863
 #: application/views/visitor/layout/footer.php:168
 msgid "All"
@@ -4482,7 +4484,7 @@ msgstr "Tropo ducting"
 #: application/views/timeline/index.php:336
 #: application/views/timeline/index.php:370
 #: application/views/timeline/index.php:406
-#: application/views/timeplotter/index.php:59
+#: application/views/timeplotter/index.php:71
 msgid "Show"
 msgstr "Ukáž"
 
@@ -5813,7 +5815,7 @@ msgstr "Celkovo"
 #: application/views/station_profile/create.php:129
 #: application/views/station_profile/edit.php:154
 #: application/views/timeline/index.php:351
-#: application/views/timeplotter/index.php:44
+#: application/views/timeplotter/index.php:35
 #: application/views/user/modals/first_login_wizard.php:74
 #: application/views/zonechecker/index.php:17
 msgid "CQ Zone"
@@ -11181,10 +11183,12 @@ msgid "QSOs per Year"
 msgstr "Spojenia za rok"
 
 #: application/views/dayswithqso/index.php:95
+#: application/views/timeplotter/index.php:140
 msgid "Less"
 msgstr "Menej"
 
 #: application/views/dayswithqso/index.php:100
+#: application/views/timeplotter/index.php:146
 msgid "More"
 msgstr "Viac"
 
@@ -19166,16 +19170,33 @@ msgstr "Časové rozloženie"
 msgid "Callsign(s) worked (max 5)"
 msgstr "Urobené značky (max 5)"
 
-#: application/views/timeplotter/index.php:10
-msgid ""
-"The Timeplotter is used to analyze your logbook and find out at what times "
-"you worked certain CQ zones or DXCC countries on a selected band."
+#: application/views/timeplotter/index.php:81
+msgid "Best Time Window"
 msgstr ""
-"Časový graf sa používa na analýzu vášho denníka a zistenie, v akých časoch\n"
-"ste pracovali v určitých CQ zónach alebo DXCC krajinách na vybranom pásme."
-"Timeplotter sa používa na analýzu vášho denníka, aby ste zistili, v akých "
-"časoch ste pracovali v určitých CQ zónach alebo DXCC krajinách na vybranom "
-"pásme."
+
+#: application/views/timeplotter/index.php:90
+msgid "Best Band"
+msgstr ""
+
+#: application/views/timeplotter/index.php:99
+msgid "Best Mode"
+msgstr ""
+
+#: application/views/timeplotter/index.php:108
+msgid "Total QSOs plotted"
+msgstr ""
+
+#: application/views/timeplotter/index.php:120
+msgid "Heatmap"
+msgstr ""
+
+#: application/views/timeplotter/index.php:125
+msgid "Chart"
+msgstr ""
+
+#: application/views/timeplotter/index.php:136
+msgid "Activity by Time of Day (UTC)"
+msgstr ""
 
 #: application/views/update/hamsofnote.php:7
 msgid "Name / Description"
@@ -20703,6 +20724,17 @@ msgstr "CQz"
 #: application/views/zonechecker/result.php:59
 msgid "CQz geojson"
 msgstr "CQz geojson"
+
+#~ msgid ""
+#~ "The Timeplotter is used to analyze your logbook and find out at what "
+#~ "times you worked certain CQ zones or DXCC countries on a selected band."
+#~ msgstr ""
+#~ "Časový graf sa používa na analýzu vášho denníka a zistenie, v akých "
+#~ "časoch\n"
+#~ "ste pracovali v určitých CQ zónach alebo DXCC krajinách na vybranom pásme."
+#~ "Timeplotter sa používa na analýzu vášho denníka, aby ste zistili, v akých "
+#~ "časoch ste pracovali v určitých CQ zónach alebo DXCC krajinách na "
+#~ "vybranom pásme."
 
 #~ msgid ""
 #~ "File Migration was successfull, but please check also manually. If "
