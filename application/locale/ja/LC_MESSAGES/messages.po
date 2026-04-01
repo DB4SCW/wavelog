@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
 "PO-Revision-Date: 2026-04-01 08:24+0000\n"
-"Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
+"Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
 "Language: ja\n"
@@ -5020,7 +5020,7 @@ msgstr "危険"
 
 #: application/views/adif/import.php:162
 msgid "Ignore Station callsign on import"
-msgstr "インポート時にステーションのコールサインを無視する"
+msgstr "インポート時に本局のコールサインを無視する"
 
 #: application/views/adif/import.php:164
 #, php-format
@@ -19931,7 +19931,7 @@ msgstr "削除された都市"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr "エクスポート確認済みQSO"
+msgstr "確認済みQSOをエクスポートする"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
@@ -19943,7 +19943,7 @@ msgstr ""
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr "インポート時のグリッドチェックを無視する"
+msgstr "インポート時に本局のグリッドを無視する"
 
 #: application/views/adif/import.php:171
 msgid ""
