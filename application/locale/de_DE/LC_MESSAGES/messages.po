@@ -20095,6 +20095,13 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
+#: application/controllers/Debug.php:317
+msgid ""
+"File Migration was successful, but please check also manually. If everything "
+"seems right you can delete the folders 'assets/qslcard' and 'images/"
+"eqsl_card_images'."
+msgstr ""
+
 #, php-format
 #~ msgid ""
 #~ "Wrong station callsign %s while importing QSO with %s for %s: SKIPPED"

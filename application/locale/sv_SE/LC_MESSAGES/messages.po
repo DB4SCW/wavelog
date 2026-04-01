@@ -20036,6 +20036,13 @@ msgstr ""
 "MY_GRIDSQUARE i ADIF-posten inte matchar lokatorn för den valda "
 "stationsplatsen."
 
+#: application/controllers/Debug.php:317
+msgid ""
+"File Migration was successful, but please check also manually. If everything "
+"seems right you can delete the folders 'assets/qslcard' and 'images/"
+"eqsl_card_images'."
+msgstr ""
+
 #~ msgid "Email settings not configured."
 #~ msgstr "E-postinställningar inte konfigurerade."
 
