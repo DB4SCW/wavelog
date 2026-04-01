@@ -26,8 +26,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-01 10:41+0000\n"
-"PO-Revision-Date: 2026-03-24 12:27+0000\n"
+"POT-Creation-Date: 2026-03-31 12:55+0000\n"
+"PO-Revision-Date: 2026-04-01 10:53+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -1055,10 +1055,13 @@ msgstr "Selfupdate() nicht verfügbar. Überprüfe das Fehlerprotokoll."
 
 #: application/controllers/Debug.php:317
 msgid ""
-"File Migration was successful, but please check also manually. If everything "
-"seems right you can delete the folders 'assets/qslcard' and 'images/"
-"eqsl_card_images'."
+"File Migration was successfull, but please check also manually. If "
+"everything seems right you can delete the folders 'assets/qslcard' and "
+"'images/eqsl_card_images'."
 msgstr ""
+"Die Migration der Daten war erfolgreich, bitte dennoch manuell gegenprüfen! "
+"Sofern keine Probleme ersichtlich sind, kannst du die beiden Ordner 'assets/"
+"qslcard' und 'images/eqsl_card_images' löschen."
 
 #: application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
@@ -3583,12 +3586,14 @@ msgid "Federal State"
 msgstr "Bundesstaat"
 
 #: application/libraries/Subdivisions.php:56
+#: application/libraries/Subdivisions.php:94
 #: application/libraries/Subdivisions.php:93
 msgctxt "Division Name (States in various countries)."
 msgid "County"
 msgstr "County"
 
 #: application/libraries/Subdivisions.php:60
+#: application/libraries/Subdivisions.php:85
 #: application/libraries/Subdivisions.php:84
 msgctxt "Division Name (States in various countries)."
 msgid "District"
@@ -3604,26 +3609,31 @@ msgctxt "Division Name (States in various countries)."
 msgid "US State"
 msgstr "US-Staat"
 
+#: application/libraries/Subdivisions.php:67
 #: application/libraries/Subdivisions.php:66
 msgctxt "Division Name (States in various countries)."
 msgid "Prefecture"
 msgstr "Präfektur"
 
+#: application/libraries/Subdivisions.php:69
 #: application/libraries/Subdivisions.php:68
 msgctxt "Division Name (States in various countries)."
 msgid "State"
 msgstr "Staat"
 
+#: application/libraries/Subdivisions.php:78
 #: application/libraries/Subdivisions.php:77
 msgctxt "Division Name (States in various countries)."
 msgid "US County"
 msgstr "US County"
 
+#: application/libraries/Subdivisions.php:90
 #: application/libraries/Subdivisions.php:89
 msgctxt "Division Name (States in various countries)."
 msgid "DME"
 msgstr "DME"
 
+#: application/libraries/Subdivisions.php:92
 #: application/libraries/Subdivisions.php:91
 msgctxt "Division Name (States in various countries)."
 msgid "City / Ku / Gun"
@@ -3712,6 +3722,8 @@ msgstr "DXCC muss numerisch sein"
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
+"Abweichendes Stationsrufzeichen %s beim Import des QSO mit %s für %s: "
+"ÜBERSPRUNGEN"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
@@ -3719,6 +3731,8 @@ msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
+"Abweichendes Planquadrat %s beim Import des QSO mit %s für "
+"Stationsplanquadrat %s: ÜBERSPRUNGEN"
 
 #: application/models/Logbook_model.php:4904
 msgid ""
@@ -4965,13 +4979,16 @@ msgstr ""
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "Ignoriere Planquadratprüfung beim Import"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
 "in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
+"Wenn ausgewählt, wird Wavelog versuchen die QSOs zu importieren selbst wenn "
+"das MY_GRIDSQUARE-Feld in den ADIF-daten nicht dem Planquadradt des "
+"gewählten Stationsstandortes entspricht."
 
 #: application/views/adif/import.php:181
 msgid ""
@@ -6455,7 +6472,7 @@ msgstr "Präfix"
 
 #: application/views/awards/dxcc/index.php:318
 msgid "Slots"
-msgstr ""
+msgstr "Slots"
 
 #: application/views/awards/dxcc/index.php:380
 msgid "No results found for your search criteria. Please try again."
@@ -6839,7 +6856,7 @@ msgstr ""
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "Gelöschte Städte"
 
 #: application/views/awards/jcc/index.php:127
 msgid "Show JCC Map"
@@ -6847,7 +6864,7 @@ msgstr "Zeige Karte der JCCs"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "Export bestätigter QSOs"
 
 #: application/views/awards/jcc/index.php:138
 #: application/views/public_search/empty.php:2
@@ -10364,7 +10381,7 @@ msgstr ""
 
 #: application/views/cron/index.php:29
 msgid "All times are shown in UTC."
-msgstr ""
+msgstr "Alle Zeiten werden in UTC dargestellt."
 
 #: application/views/cron/index.php:33
 msgid ""
@@ -11991,8 +12008,8 @@ msgstr ""
 #: application/views/eqsl/export.php:37
 msgid "Clicking 'Upload QSOs' will send QSO information to eQSL.cc."
 msgstr ""
-"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an eQSL."
-"cc."
+"Wenn du auf 'QSOs hochladen' klickst, sendest du QSO-Informationen an "
+"eQSL.cc."
 
 #: application/views/eqsl/export.php:46
 msgid "The following QSOs were sent to eQSL."
@@ -15479,8 +15496,8 @@ msgstr "E-Mail Adresse"
 msgid ""
 "The email address from which the emails are sent, e.g. 'wavelog@example.com'"
 msgstr ""
-"Die E-Mail Adresse von der die Mails versendet werden, z.B. 'wavelog@example."
-"com'"
+"Die E-Mail Adresse von der die Mails versendet werden, z.B. "
+"'wavelog@example.com'"
 
 #: application/views/options/email.php:80
 msgid "SMTP Host"
@@ -17614,9 +17631,9 @@ msgid ""
 msgstr ""
 "Um zu beginnen, stelle sicher, dass du die Felder auf der linken Seite "
 "bereits mit Datum, Stationsrufzeichen/-standort und Rufzeichen des Operators "
-"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, z."
-"B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was im "
-"wesentlichen das Rufzeichen ist."
+"ausgefüllt hast. Die wichtigsten Daten umfassen das Band (oder QRG in MHz, "
+"z.B. '7.145'), Mode und Zeit. Nach der Zeit gibst du das erste QSO an, was "
+"im wesentlichen das Rufzeichen ist."
 
 #: application/views/simplefle/syntax_help.php:9
 msgid "For example, a QSO that started at 21:34 (UTC) with 4W7EST on 20m SSB."
@@ -18502,9 +18519,9 @@ msgid ""
 "Create a new folder in 'assets/css/' and upload a 'bootstrap.min.css' file "
 "which contains basic styling rules. We use the themes from %s"
 msgstr ""
-"Erstelle einen neuen Ordner in 'assets/css/' und lade eine 'bootstrap.min."
-"css' Datei hoch, welche die grundlegende Styling-Regeln enthält. Wir "
-"verwenden die Themes von %s"
+"Erstelle einen neuen Ordner in 'assets/css/' und lade eine "
+"'bootstrap.min.css' Datei hoch, welche die grundlegende Styling-Regeln "
+"enthält. Wir verwenden die Themes von %s"
 
 #: application/views/themes/index.php:50
 msgid "2. Step"
@@ -20078,14 +20095,15 @@ msgstr "CQz"
 msgid "CQz geojson"
 msgstr "CQz geojson"
 
-#~ msgid ""
-#~ "File Migration was successfull, but please check also manually. If "
-#~ "everything seems right you can delete the folders 'assets/qslcard' and "
-#~ "'images/eqsl_card_images'."
-#~ msgstr ""
-#~ "Die Migration der Daten war erfolgreich, bitte dennoch manuell "
-#~ "gegenprüfen! Sofern keine Probleme ersichtlich sind, kannst du die beiden "
-#~ "Ordner 'assets/qslcard' und 'images/eqsl_card_images' löschen."
+#: application/controllers/Debug.php:317
+msgid ""
+"File Migration was successful, but please check also manually. If everything "
+"seems right you can delete the folders 'assets/qslcard' and 'images/"
+"eqsl_card_images'."
+msgstr ""
+"Die Migration der Daten war erfolgreich, bitte dennoch manuell gegenprüfen! "
+"Sofern keine Probleme ersichtlich sind, kannst du die beiden Ordner 'assets/"
+"qslcard' und 'images/eqsl_card_images' löschen."
 
 #, php-format
 #~ msgid ""
