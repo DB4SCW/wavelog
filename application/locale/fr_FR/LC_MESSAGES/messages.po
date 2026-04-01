@@ -15,12 +15,13 @@
 # F5MQU <f5mqu.p@gmail.com>, 2025.
 # JONCOUX Philippe <joncoux@free.fr>, 2025, 2026.
 # Telectroboy <telectroboy@hotmail.com>, 2026.
+# Florian Wolters <wavelog@df2et.de>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-30 16:14+0000\n"
-"PO-Revision-Date: 2026-03-31 12:34+0000\n"
-"Last-Translator: JONCOUX Philippe <joncoux@free.fr>\n"
+"PO-Revision-Date: 2026-04-01 10:59+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: French <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/fr/>\n"
 "Language: fr_FR\n"
@@ -20333,6 +20334,9 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"La migration des fichiers a réussi, mais veuillez également vérifier "
+"manuellement. Si tout vous semble correct, vous pouvez supprimer les "
+"dossiers 'assets/qslcard' et 'images/eqsl_card_images'."
 
 #~ msgid "Email settings not configured."
 #~ msgstr "Paramètres de messagerie non configurés."
