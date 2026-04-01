@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-31 12:34+0000\n"
+"PO-Revision-Date: 2026-04-01 08:24+0000\n"
 "Last-Translator: \"Xu, Zefan (BI1GHZ)\" <ceba_robot@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.wavelog.org/projects/wavelog/main-translation/zh_Hans/>\n"
@@ -4971,8 +4971,8 @@ msgid ""
 "If selected, Wavelog will try to import %sall%s QSOs from the ADIF, "
 "regardless if they match to the chosen station-location."
 msgstr ""
-"如果选择该选项，Wavelog 将尝试从 ADIF 中导入 %s所有%s QSO，而不管它们是否与所"
-"选的电台位置相匹配。"
+"如果勾选，Wavelog 将尝试从 ADIF 中导入 %s所有%s QSO，而不检查它们是否与所选的"
+"电台地址相匹配。"
 
 #: application/views/adif/import.php:171 application/views/adif/import.php:181
 msgid ""
@@ -19402,33 +19402,39 @@ msgstr "所有时间均为 UTC 时间。"
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "已删除的市"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "导出已确认的 QSO"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
 msgid ""
 "Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
 msgstr ""
+"导入的本台网格 %s 与当前台站地址不匹配，这是与 %s 的 QSO，当前台站地址的网格"
+"为 %s：已跳过"
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "导入时不检查本台网格"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even when their my_gridsquare "
 "does not match the chosen station-location locator."
 msgstr ""
+"如果勾选，Wavelog 将尝试从 ADIF 中导入所有 QSO，而不检查它们的 MY_GRIDSQUARE "
+"字段是否与所选的电台位置相匹配。"
 
 #: application/models/Logbook_model.php:4882
 #, php-format
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
+"导入的本台呼号 %s 与当前台站地址不匹配，这是与 %s 的 QSO，当前台站地址的呼号"
+"为 %s：已跳过"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
@@ -19436,12 +19442,16 @@ msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
+"导入的本台网格 %s 与当前台站地址不匹配，这是与 %s 的 QSO，当前台站地址的网格"
+"为 %s：已跳过"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
 "in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
+"如果勾选，Wavelog 将尝试从 ADIF 中导入所有 QSO，而不检查它们的 MY_GRIDSQUARE "
+"字段是否与所选的电台位置相匹配。"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "邮件设置未配置。"
