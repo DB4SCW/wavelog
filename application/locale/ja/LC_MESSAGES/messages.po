@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-24 11:57+0000\n"
-"PO-Revision-Date: 2026-03-31 12:34+0000\n"
+"PO-Revision-Date: 2026-04-01 08:24+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/ja/>\n"
@@ -19927,33 +19927,39 @@ msgstr "時刻はすべてUTCで表示されています。"
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "削除された都市"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "エクスポート確認済みQSO"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
 msgid ""
 "Wrong locator %s while importing QSO with %s for station locator %s: SKIPPED"
 msgstr ""
+"局位置 %s を持つ %s との QSO をインポート中に、位置情報 %s が不正です："
+"スキップしました"
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "インポート時のグリッドチェックを無視する"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even when their my_gridsquare "
 "does not match the chosen station-location locator."
 msgstr ""
+"このオプションを選択すると、Wavelogはmy_gridsquareが選択された局位置"
+"ロケーターと一致しない場合でも、QSOをインポートしようとします。"
 
 #: application/models/Logbook_model.php:4882
 #, php-format
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
+"%s との QSO をインポート中に、%s のコールサインが %s と異なるため：スキップさ"
+"れました"
 
 #: application/models/Logbook_model.php:4889
 #, php-format
@@ -19961,12 +19967,17 @@ msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
+"局位置 %s を持つ %s の QSO をインポート中に、異なる局位置 %s が検出されました"
+"：スキップしました"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
 "in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
+"このオプションを選択した場合、Wavelogは、ADIFレコードのMY_GRIDSQUARE"
+"フィールドが選択した局の位置のロケーターと一致しない場合でも、QSOをインポート"
+"しようとします。"
 
 #~ msgid "Email settings not configured."
 #~ msgstr "電子メール設定が構成されていません。"
