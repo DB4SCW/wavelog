@@ -618,7 +618,21 @@ class Logbook_model extends CI_Model {
 				}
 				break;
 			case 'JCC':
-				$this->db->where('COL_CNTY', $searchphrase);
+				$designated_cities = array(
+					'0101', '0601', '0801', '1101', '1103', '1110', '1201', '1344', '1801', '1802',
+					'2001', '2201', '2501', '2502', '2701', '3101', '3501', '4001', '4021', '4301',
+				);
+				if (in_array($searchphrase, $designated_cities, true)) {
+					$this->db->group_start();
+					$this->db->where('COL_CNTY', $searchphrase);
+					$this->db->or_group_start();
+					$this->db->like('COL_CNTY', $searchphrase, 'after');
+					$this->db->where('CHAR_LENGTH(COL_CNTY) = 6', null, false);
+					$this->db->group_end();
+					$this->db->group_end();
+				} else {
+					$this->db->where('COL_CNTY', $searchphrase);
+				}
 				$this->db->where('COL_DXCC', '339');
 				break;
 			case 'SOTA':
