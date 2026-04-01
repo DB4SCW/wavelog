@@ -532,6 +532,20 @@ class API extends CI_Controller {
 			$qsl_filter = $qsl_filter_input;
 		}
 
+		// band (optional)
+		$band = null;
+		if (isset($obj['band'])) {
+			$valid_bands = ['160m','80m','60m','40m','30m','20m','17m','15m','12m','10m','6m','4m','2m','1.25m','70cm','33cm','23cm','13cm','9cm','6cm','3cm','1.25cm','sat'];
+			$band_input = strtolower(trim($obj['band']));
+			if (!in_array($band_input, $valid_bands, true)) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => 'Invalid band value']);
+				return;
+			}
+			// Normalize: SAT uppercase (matches COL_PROP_MODE stored value), others lowercase (matches COL_BAND)
+			$band = ($band_input === 'sat') ? 'SAT' : $band_input;
+		}
+
 		//check if goalpost is numeric as an additional layer of SQL injection prevention
 		if(!is_numeric($fetchfromid))
 		{
@@ -585,7 +599,7 @@ class API extends CI_Controller {
 			$current_chunk_size = min($chunk_size, $remaining_limit);
 
 			// Fetch chunk
-			$qsos = $this->adif_data->export_past_id_chunked($station_id, $fetchfromid, $current_chunk_size, null, $offset, $current_chunk_size, $qsl_filter);
+			$qsos = $this->adif_data->export_past_id_chunked($station_id, $fetchfromid, $current_chunk_size, null, $offset, $current_chunk_size, $qsl_filter, $band);
 
 			if ($qsos && $qsos->num_rows() > 0) {
 				// Process chunk

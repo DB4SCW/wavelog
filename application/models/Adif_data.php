@@ -253,7 +253,7 @@ class adif_data extends CI_Model {
 		}
 	}
 
-	function export_past_id_chunked($station_id, $fetchfromid, $limit, $onlyop = null, $offset = 0, $chunk_size = 5000, $qsl_filter = null) {
+	function export_past_id_chunked($station_id, $fetchfromid, $limit, $onlyop = null, $offset = 0, $chunk_size = 5000, $qsl_filter = null, $band = null) {
 		$tbl = $this->config->item('table_name');
 
 		$sql = "SELECT {$tbl}.*, station_profile.*, dxcc_entities.name AS station_country
@@ -285,6 +285,15 @@ class adif_data extends CI_Model {
 			$sql .= " AND (" . implode(" OR ", $clauses) . ")";
 		}
 
+
+		if ($band !== null) {
+			if ($band === 'SAT') {
+				$sql .= " AND {$tbl}.COL_PROP_MODE = ?";
+			} else {
+				$sql .= " AND {$tbl}.COL_BAND = ? AND ({$tbl}.COL_PROP_MODE = '' OR {$tbl}.COL_PROP_MODE is null)";
+			}
+			$bindings[] = $band;
+		}
 		$sql .= " ORDER BY {$tbl}.COL_PRIMARY_KEY ASC LIMIT ? OFFSET ?";
 		$bindings[] = (int)$chunk_size;
 		$bindings[] = (int)$offset;
