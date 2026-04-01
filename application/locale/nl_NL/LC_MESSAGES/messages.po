@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-04-01 14:13+0000\n"
-"PO-Revision-Date: 2026-03-26 03:04+0000\n"
+"PO-Revision-Date: 2026-04-01 19:01+0000\n"
 "Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
@@ -1043,6 +1043,9 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"Bestandsoverdracht was succesvol, maar controleer ook handmatig. Als alles "
+"goed lijkt, kun je de directories 'assets/qslcard' en 'images/"
+"eqsl_card_images' verwijderen."
 
 #: application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
@@ -3681,6 +3684,8 @@ msgstr "DXCC moet numeriek zijn"
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
+"Verkeerde stationsroepnaam %s bij het importeren van QSO met %s voor %s: "
+"OVERGESLAGEN"
 
 #: application/models/Logbook_model.php:4903
 #, php-format
@@ -3688,6 +3693,8 @@ msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
+"Verschillend locatorvak %s bij het importeren van QSO met %s voor station "
+"locator %s: OVERGESLAGEN"
 
 #: application/models/Logbook_model.php:4918
 msgid ""
