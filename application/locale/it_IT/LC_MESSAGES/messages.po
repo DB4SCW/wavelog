@@ -7,12 +7,13 @@
 # Fabian Berg <fabian.berg@hb9hil.org>, 2024, 2026.
 # "Erkin Mercan (TA4AQG-SP9AQG)" <ekomeko066@gmail.com>, 2025.
 # iv3cvn <ricentis@gmail.com>, 2026.
+# Florian Wolters <wavelog@df2et.de>, 2026.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-03-30 16:14+0000\n"
-"PO-Revision-Date: 2026-03-30 21:27+0000\n"
-"Last-Translator: iv3cvn <ricentis@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 10:59+0000\n"
+"Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: Italian <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/it/>\n"
 "Language: it_IT\n"
@@ -20208,6 +20209,9 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"La migrazione dei file è stata completata con successo, ma ti preghiamo di "
+"controllare anche manualmente. Se tutto sembra a posto, puoi eliminare le "
+"cartelle “assets/qslcard” e “images/eqsl_card_images”."
 
 #~ msgid "Email settings not configured."
 #~ msgstr "Email non configurata."
