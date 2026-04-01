@@ -328,7 +328,7 @@ class DXCC extends CI_Model {
 			$bindings[] = $postdata['dateTo'] . ' 23:59:59';
 		}
 
-		$sql .= " and thcv.col_prop_mode != 'SAT'";
+		$sql .= " and (thcv.col_prop_mode != 'SAT' or thcv.col_prop_mode is NULL)";
 
 		// Continent filters
 		$sql .= $this->addContinentsToQuery($postdata);

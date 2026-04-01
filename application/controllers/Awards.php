@@ -191,15 +191,15 @@ class Awards extends CI_Controller {
 			if ($dxcclist && $dxcclist[0]->adif == "0") {
 				unset($dxcclist[0]);
 			}
-            $dxcc_result = $this->dxcc->get_dxcc_array($dxcclist, $bands, $postdata, $location_list);
-            // Extract bands data and summary from the result
-            $data['dxcc_array'] = ($dxcc_result && isset($dxcc_result['matrix'])) ? $dxcc_result['matrix'] : null;
-            $data['dxcc_summary'] = ($dxcc_result && isset($dxcc_result['summary'])) ? $dxcc_result['summary'] : null;
+			$dxcc_result = $this->dxcc->get_dxcc_array($dxcclist, $bands, $postdata, $location_list);
+			// Extract bands data and summary from the result
+			$data['dxcc_array'] = ($dxcc_result && isset($dxcc_result['matrix'])) ? $dxcc_result['matrix'] : null;
+			$data['dxcc_summary'] = ($dxcc_result && isset($dxcc_result['summary'])) ? $dxcc_result['summary'] : null;
 		} else {
-            $location_list = null;
-            $data['dxcc_array'] = null;
-            $data['dxcc_summary'] = null;
-        }
+			$location_list = null;
+			$data['dxcc_array'] = null;
+			$data['dxcc_summary'] = null;
+		}
 
 		// Render Page
 		$data['page_title'] = sprintf(__("Awards - %s"), __("DXCC"));

@@ -249,7 +249,7 @@ class Logbookadvanced_model extends CI_Model {
 		}
 		if ($searchCriteria['band'] !== '') {
 			if($searchCriteria['band'] != "SAT") {
-				$conditions[] = "COL_BAND = ? and COL_PROP_MODE != 'SAT'";
+				$conditions[] = "COL_BAND = ? and (COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)";
 				$binding[] = trim($searchCriteria['band']);
 			} else {
 				$conditions[] = "COL_PROP_MODE = 'SAT'";
@@ -1026,7 +1026,7 @@ class Logbookadvanced_model extends CI_Model {
 	function get_worked_bands() {
 		// get all worked slots from database
 		$sql = "SELECT distinct `COL_BAND` as `COL_BAND` FROM `".$this->config->item('table_name')."` thcv
-			JOIN station_profile on thcv.station_id = station_profile.station_id WHERE station_profile.user_id = ? AND COL_PROP_MODE != \"SAT\" ORDER BY col_band";
+			JOIN station_profile on thcv.station_id = station_profile.station_id WHERE station_profile.user_id = ? AND (COL_PROP_MODE != \"SAT\" OR COL_PROP_MODE IS NULL) ORDER BY col_band";
 
 		$data = $this->db->query($sql, array($this->session->userdata('user_id')));
 
