@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-04-01 14:13+0000\n"
-"PO-Revision-Date: 2026-03-26 03:04+0000\n"
+"PO-Revision-Date: 2026-04-01 20:27+0000\n"
 "Last-Translator: Alexander <alexander@pa8s.nl>\n"
 "Language-Team: Dutch <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/nl/>\n"
@@ -1043,6 +1043,9 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"Bestandsoverdracht was succesvol, maar controleer ook handmatig. Als alles "
+"goed lijkt, kun je de directories 'assets/qslcard' en 'images/"
+"eqsl_card_images' verwijderen."
 
 #: application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
@@ -3681,6 +3684,8 @@ msgstr "DXCC moet numeriek zijn"
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
+"Verkeerde stationsroepnaam %s bij het importeren van QSO met %s voor %s: "
+"OVERGESLAGEN"
 
 #: application/models/Logbook_model.php:4903
 #, php-format
@@ -3688,6 +3693,8 @@ msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
+"Verschillend locatorvak %s bij het importeren van QSO met %s voor station "
+"locator %s: OVERGESLAGEN"
 
 #: application/models/Logbook_model.php:4918
 msgid ""
@@ -4932,13 +4939,16 @@ msgstr ""
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "Locatorvakcontrole bij import negeren"
 
 #: application/views/adif/import.php:171
 msgid ""
 "If selected, Wavelog will try to import QSOs even if the MY_GRIDSQUARE field "
 "in ADIF records does not match the locator of the chosen station-location."
 msgstr ""
+"Als er geselecteerd is, zal Wavelog proberen QSOs te importeren, zelfs als "
+"het MY_GRIDSQUARE-veld in ADIF-records niet overeenkomt met het locatorvak "
+"van de gekozen station-locatie."
 
 #: application/views/adif/import.php:181
 msgid ""
@@ -6800,7 +6810,7 @@ msgstr ""
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "Verwijderde steden"
 
 #: application/views/awards/jcc/index.php:127
 msgid "Show JCC Map"
@@ -6808,7 +6818,7 @@ msgstr "Toon JCC-kaart"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "Bevestigde QSO's exporteren"
 
 #: application/views/awards/jcc/index.php:138
 #: application/views/public_search/empty.php:2
@@ -10311,7 +10321,7 @@ msgstr ""
 
 #: application/views/cron/index.php:29
 msgid "All times are shown in UTC."
-msgstr ""
+msgstr "Alle tijden worden weergegeven in UTC."
 
 #: application/views/cron/index.php:33
 msgid ""
@@ -18495,19 +18505,19 @@ msgstr "Gewerkte roepnamen (maximaal 5)"
 
 #: application/views/timeplotter/index.php:81
 msgid "Best Time Window"
-msgstr ""
+msgstr "Beste tijdvenster"
 
 #: application/views/timeplotter/index.php:90
 msgid "Best Band"
-msgstr ""
+msgstr "Beste band"
 
 #: application/views/timeplotter/index.php:99
 msgid "Best Mode"
-msgstr ""
+msgstr "Beste modus"
 
 #: application/views/timeplotter/index.php:108
 msgid "Total QSOs plotted"
-msgstr ""
+msgstr "Totaal aantal QSOs in kaart gebracht"
 
 #: application/views/timeplotter/index.php:120
 msgid "Heatmap"
@@ -18515,11 +18525,11 @@ msgstr ""
 
 #: application/views/timeplotter/index.php:125
 msgid "Chart"
-msgstr ""
+msgstr "Grafiek"
 
 #: application/views/timeplotter/index.php:136
 msgid "Activity by Time of Day (UTC)"
-msgstr ""
+msgstr "Activiteit per tijd van de dag (UTC)"
 
 #: application/views/update/hamsofnote.php:7
 msgid "Name / Description"

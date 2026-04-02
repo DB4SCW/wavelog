@@ -4,7 +4,7 @@
 #
 # Maciej <github@maciej.website>, 2024.
 # Maciej SP2FE <wavelog@sp2fe.eu>, 2024, 2025.
-# Bartek <achtachtel@gmail.com>, 2024.
+# Bartek <achtachtel@gmail.com>, 2024, 2026.
 # Stanisław Korzeń <stasiek.linux@outlook.com>, 2024.
 # Limes <github@limes.com.pl>, 2024.
 # Artur Greficz <sq7acp@gmail.com>, 2025.
@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-04-01 14:13+0000\n"
-"PO-Revision-Date: 2026-03-21 17:42+0000\n"
-"Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
+"PO-Revision-Date: 2026-04-01 23:44+0000\n"
+"Last-Translator: Bartek <achtachtel@gmail.com>\n"
 "Language-Team: Polish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/pl/>\n"
 "Language: pl_PL\n"
@@ -629,7 +629,7 @@ msgstr "WAP"
 #: application/controllers/Awards.php:1488
 #: application/views/interface_assets/header.php:254
 msgid "WAIP"
-msgstr ""
+msgstr "WAIP"
 
 #: application/controllers/Awards.php:2195
 #: application/views/awards/itu/index.php:34
@@ -798,7 +798,7 @@ msgstr "Nieprawidłowa treść wiadomości."
 
 #: application/controllers/Club.php:218
 msgid "Email can't be initialized. Check the email settings."
-msgstr ""
+msgstr "Poczta nie została zainicjowana poprawnie. Sprawdź ustawienia."
 
 #: application/controllers/Club.php:225 application/views/api/index.php:68
 #: application/views/satellite/index.php:94
@@ -1048,6 +1048,9 @@ msgid ""
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
+"Migracja plików przebiegła pomyślnie, ale proszę o weryfikację manualną. "
+"Jeśli wszystko wydaje się być na swoim miejscu - możesz skasować foldery "
+"'assets/qslcard' oraz 'images/eqsl_card_images'."
 
 #: application/controllers/Debug.php:320
 msgid "File Migration failed. Please check the Error Log."
@@ -3819,11 +3822,11 @@ msgstr "QSO nie znaleziony"
 
 #: application/models/Logbookadvanced_model.php:2498
 msgid "No fields selected for merge or no differences between QSOs"
-msgstr ""
+msgstr "Żadna pola nie zostały wybrane do scalenia, bądź QSO są identyczne"
 
 #: application/models/Logbookadvanced_model.php:2511
 msgid "QSOs merged successfully"
-msgstr ""
+msgstr "QSO scalone poprawnie"
 
 #: application/models/Note.php:7
 msgid "Contacts"
@@ -4945,7 +4948,7 @@ msgstr ""
 
 #: application/views/adif/import.php:169
 msgid "Ignore grid check on import"
-msgstr ""
+msgstr "Ignoruj weryfikację grida podczas importu"
 
 #: application/views/adif/import.php:171
 msgid ""
@@ -6810,7 +6813,7 @@ msgstr ""
 
 #: application/views/awards/jcc/index.php:76
 msgid "Deleted cities"
-msgstr ""
+msgstr "Usunięte miasta"
 
 #: application/views/awards/jcc/index.php:127
 msgid "Show JCC Map"
@@ -6818,7 +6821,7 @@ msgstr "Wyświetl mapę JCC"
 
 #: application/views/awards/jcc/index.php:128
 msgid "Export confirmed QSOs"
-msgstr ""
+msgstr "Eksportuj potwierdzone QSO"
 
 #: application/views/awards/jcc/index.php:138
 #: application/views/public_search/empty.php:2
@@ -7399,7 +7402,7 @@ msgstr "Nazwa WAE"
 
 #: application/views/awards/waip/index.php:8
 msgid "WAIP Award"
-msgstr ""
+msgstr "Nagroda WAIP"
 
 #: application/views/awards/waip/index.php:9
 msgid ""
@@ -7425,11 +7428,11 @@ msgstr ""
 #: application/views/awards/waip/index.php:12
 #, php-format
 msgid "For more information about the WAIP award, visit: %s"
-msgstr ""
+msgstr "Po więcej informacji dot. WAIP, odwiedź: %s"
 
 #: application/views/awards/waip/index.php:12
 msgid "WAIP Award Information"
-msgstr ""
+msgstr "Informacja o nagrodzie WAIP"
 
 #: application/views/awards/waip/index.php:23
 msgid ""
@@ -7440,11 +7443,11 @@ msgstr ""
 
 #: application/views/awards/waip/index.php:32
 msgid "Award Progress"
-msgstr ""
+msgstr "Postęp nagrody"
 
 #: application/views/awards/waip/index.php:34
 msgid "Progress toward working all Italian provinces:"
-msgstr ""
+msgstr "Postęp dot. przeprocowania wszystkich włoskich prowincji:"
 
 #: application/views/awards/waip/index.php:40
 #: application/views/awards/waip/index.php:92
