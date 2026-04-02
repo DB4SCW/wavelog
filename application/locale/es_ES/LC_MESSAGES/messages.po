@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-02 10:19+0000\n"
+"POT-Creation-Date: 2026-04-02 10:46+0000\n"
 "PO-Revision-Date: 2026-02-20 14:54+0000\n"
 "Last-Translator: Juan Pablo Tamayo <hj3kos@gmail.com>\n"
 "Language-Team: Spanish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -247,24 +247,24 @@ msgstr "¡Importación de ADIF con falla!"
 msgid "Station Profile not valid for User"
 msgstr "Perfil de Estación no válida para el Usuario"
 
-#: application/controllers/Adif.php:451
+#: application/controllers/Adif.php:452
 #: application/views/adif/import_success.php:12
 msgid "ADIF Imported"
 msgstr "ADIF Importado"
 
-#: application/controllers/Adif.php:465
+#: application/controllers/Adif.php:466
 msgid "DCL Import"
 msgstr "Importar DCL"
 
-#: application/controllers/Adif.php:526
+#: application/controllers/Adif.php:527
 msgid "DCL Data Imported"
 msgstr "Datos DCL Importados"
 
-#: application/controllers/Adif.php:540
+#: application/controllers/Adif.php:541
 msgid "POTA Import"
 msgstr "Importación POTA"
 
-#: application/controllers/Adif.php:600
+#: application/controllers/Adif.php:601
 msgid "POTA Data Imported"
 msgstr "Datos de POTA importados"
 
@@ -3699,20 +3699,20 @@ msgstr "Ningún indicativo dado"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC tiene que ser numérico"
 
-#: application/models/Logbook_model.php:4896
+#: application/models/Logbook_model.php:4914
 #, php-format
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
 
-#: application/models/Logbook_model.php:4903
+#: application/models/Logbook_model.php:4922
 #, php-format
 msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
 
-#: application/models/Logbook_model.php:4918
+#: application/models/Logbook_model.php:4938
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -3720,11 +3720,11 @@ msgstr ""
 "Intentaste importar un QSO sin una fecha valida. Este QSO no fue importado. "
 "Es invalido"
 
-#: application/models/Logbook_model.php:4927
+#: application/models/Logbook_model.php:4948
 msgid "QSO on"
 msgstr "QSO en"
 
-#: application/models/Logbook_model.php:4927
+#: application/models/Logbook_model.php:4948
 msgid ""
 "You tried to import a QSO without any given CALL. This QSO wasn't imported. "
 "It's invalid"
@@ -3732,7 +3732,7 @@ msgstr ""
 "Intentaste importar un QSO sin ningún indicativo dado. Este QSO no fue "
 "importado. Es inválido"
 
-#: application/models/Logbook_model.php:4976
+#: application/models/Logbook_model.php:4998
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -3741,64 +3741,64 @@ msgstr ""
 "QSO en %s: Intentaste importar un QSO sin la banda. Este QSO no fue "
 "importado. Es inválido"
 
-#: application/models/Logbook_model.php:5249
+#: application/models/Logbook_model.php:5272
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "la qslrfecha es inválida (AAAAMMDD)"
 
-#: application/models/Logbook_model.php:5260
+#: application/models/Logbook_model.php:5283
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "la qslfecha es inválida (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5321
+#: application/models/Logbook_model.php:5344
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "la fecha de carga de clublog_qso es inválida (AAAAMMDD)"
 
-#: application/models/Logbook_model.php:5694
+#: application/models/Logbook_model.php:5717
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Duplicado para"
 
-#: application/models/Logbook_model.php:5759
-#: application/models/Logbook_model.php:5854
+#: application/models/Logbook_model.php:5784
+#: application/models/Logbook_model.php:5879
 msgid "QSO could not be matched"
 msgstr "QSOs que no concuerdan"
 
-#: application/models/Logbook_model.php:5767
+#: application/models/Logbook_model.php:5792
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "confirmados por LoTW/Clublog/eQSL/Concurso"
 
-#: application/models/Logbook_model.php:5773
+#: application/models/Logbook_model.php:5798
 msgid "confirmed by award manager"
 msgstr "confirmados por el administrador del premio"
 
-#: application/models/Logbook_model.php:5777
+#: application/models/Logbook_model.php:5802
 msgid "confirmed by cross-check of DCL data"
 msgstr "confirmados al hacer chequeo cruzadoc on datos de DCL"
 
-#: application/models/Logbook_model.php:5781
+#: application/models/Logbook_model.php:5806
 msgid "confirmation pending"
 msgstr "pendiente de confirmación"
 
-#: application/models/Logbook_model.php:5784
+#: application/models/Logbook_model.php:5809
 msgid "unconfirmed"
 msgstr "sin confirmar"
 
-#: application/models/Logbook_model.php:5787
+#: application/models/Logbook_model.php:5812
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 #: application/views/view_log/qso.php:305
 msgid "unknown"
 msgstr "desconocido"
 
-#: application/models/Logbook_model.php:5857
+#: application/models/Logbook_model.php:5882
 msgid "POTA reference already in log"
 msgstr "La referencia POTA ya se encuentra en el log"
 
-#: application/models/Logbook_model.php:5860
+#: application/models/Logbook_model.php:5885
 msgid "QSO updated"
 msgstr "QSO actualizado"
 
-#: application/models/Logbook_model.php:6257
+#: application/models/Logbook_model.php:6282
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
@@ -5288,16 +5288,28 @@ msgstr ""
 "Encontramos los siguientes números de QSOs para los siguientes IDs de "
 "concurso:"
 
-#: application/views/adif/import_success.php:57
+#: application/views/adif/import_success.php:56
 msgid "Import details / possible problems"
 msgstr "Detalles de importación / posibles problemas"
 
-#: application/views/adif/import_success.php:58
+#: application/views/adif/import_success.php:57
 #, php-format
 msgid "Check %s for hints about errors in ADIF files."
 msgstr "Revisa %s para obtener pistas sobre errores en archivos ADIF."
 
-#: application/views/adif/import_success.php:59
+#: application/views/adif/import_success.php:61
+msgid "Critical Errors - Wrong Call/Location"
+msgstr ""
+
+#: application/views/adif/import_success.php:70
+msgid "Validation Errors - Invalid Data"
+msgstr ""
+
+#: application/views/adif/import_success.php:79
+msgid "Duplicate QSOs"
+msgstr ""
+
+#: application/views/adif/import_success.php:87
 msgid "You might have ADIF errors. Please check the following information:"
 msgstr "El ADIF contiene errores. Por favor verifica la siguiente información:"
 
