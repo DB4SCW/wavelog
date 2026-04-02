@@ -1650,7 +1650,7 @@ $("#callsign").on("focusout", function () {
 
 				// Set Map to Lat/Long
 				markers.clearLayers();
-				mymap.setZoom(8);
+				var zoom = 8;
 				// Remove previous banner (if any)
 				if (window.mapBanner) {
 					mymap.removeControl(window.mapBanner);
@@ -1658,18 +1658,22 @@ $("#callsign").on("focusout", function () {
 
 				if (typeof result.latlng !== "undefined" && result.latlng !== false) {
 					var marker = L.marker([result.latlng[0], result.latlng[1]], { icon: redIcon });
+					mymap.setZoom(zoom);
 					mymap.panTo([result.latlng[0], result.latlng[1]]);
-					mymap.setView([result.latlng[0], result.latlng[1]], 8);
+					mymap.setView([result.latlng[0], result.latlng[1]], zoom);
 					bannerText = "📡 "+lang_qso_location_is_fetched_from_provided_gridsquare+": " + result.callsign_qra.toUpperCase();
 					markers.addLayer(marker).addTo(mymap);
 				} else {
-					mymap.panTo([result.dxcc.lat, result.dxcc.long]);
-					mymap.setView([result.dxcc.lat, result.dxcc.long], 8);
 					if (result.dxcc.adif != 0) {
+						mymap.setZoom(zoom);
 						bannerText = "🌍 "+lang_qso_location_is_fetched_from_dxcc_coordinates+": " + $('#dxcc_id option:selected').text();
 					} else {
+						zoom = 1;
+						mymap.setZoom(zoom);
 						bannerText = "🌍 "+lang_qso_dxcc_none_location;
 					}
+					mymap.panTo([result.dxcc.lat, result.dxcc.long]);
+					mymap.setView([result.dxcc.lat, result.dxcc.long], zoom);
 				}
 
 
