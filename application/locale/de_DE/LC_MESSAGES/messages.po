@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-04-02 10:47+0000\n"
-"PO-Revision-Date: 2026-04-01 20:27+0000\n"
+"PO-Revision-Date: 2026-04-02 10:54+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: German <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/de/>\n"
@@ -5323,15 +5323,15 @@ msgstr "Schaue im %s für Tipps zu möglichen Fehlern in der ADIF-Datei."
 
 #: application/views/adif/import_success.php:61
 msgid "Critical Errors - Wrong Call/Location"
-msgstr ""
+msgstr "Kritischer Fehler - Falscher Call/Standort"
 
 #: application/views/adif/import_success.php:70
 msgid "Validation Errors - Invalid Data"
-msgstr ""
+msgstr "Ungültige Daten im ADIF"
 
 #: application/views/adif/import_success.php:79
 msgid "Duplicate QSOs"
-msgstr ""
+msgstr "Doppelte QSOs"
 
 #: application/views/adif/import_success.php:87
 msgid "You might have ADIF errors. Please check the following information:"
@@ -12581,6 +12581,8 @@ msgstr ""
 msgid ""
 "Location could not be determined as gridsquare is empty and DXCC is -NONE-"
 msgstr ""
+"Standort konnte nicht bestimmt werden, da das Planquadrat nicht angegeben "
+"ist und das DXCC -NONE- ist"
 
 #: application/views/interface_assets/footer.php:138
 msgid "Working without CAT connection"
