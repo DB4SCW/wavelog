@@ -2844,16 +2844,23 @@ $('#dxcc_id').on('change', function () {
 
 			// Set Map to Lat/Long it locator is not empty
 			if ($('#locator').val() == "") {
-				var redIcon = L.icon({
-					iconUrl: icon_dot_url,
-					iconSize: [18, 18], // size of the icon
-				});
-
 				markers.clearLayers();
-				mymap.setZoom(8);
-				mymap.panTo([result.dxcc.lat, result.dxcc.long]);
-				bannerText = "🌍 Location is fetched from DXCC coordinates (no gridsquare provided): " + $('#dxcc_id option:selected').text();
-				window.mapBanner.addTo(mymap);
+				if (dxccadif != 0) {
+					var redIcon = L.icon({
+						iconUrl: icon_dot_url,
+						iconSize: [18, 18], // size of the icon
+					});
+
+					mymap.setZoom(8);
+					mymap.panTo([result.dxcc.lat, result.dxcc.long]);
+					bannerText = "🌍 Location is fetched from DXCC coordinates (no gridsquare provided): " + $('#dxcc_id option:selected').text();
+					window.mapBanner.addTo(mymap);
+				} else {
+					mymap.setZoom(1);
+					mymap.panTo([0, 0]);
+					bannerText = "🌍 Location could not be determined as gridsquare is empty and DXCC is NONE";
+					window.mapBanner.addTo(mymap);
+				}
 			}
 		}
 	});
