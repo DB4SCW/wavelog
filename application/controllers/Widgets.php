@@ -60,7 +60,7 @@ class Widgets extends CI_Controller {
 				// Get associated station locations for mysql queries
 				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
 
-				if (!$logbooks_locations_array) {
+				if ($logbooks_locations_array[0] === -1) {
 					show_404(__("Empty Logbook"));
 				}
 			} else {
@@ -496,6 +496,14 @@ class Widgets extends CI_Controller {
 		if (empty($cat_data->frequency) || $cat_data->frequency == "0") {
 			return "- / -";
 		} elseif (empty($cat_data->frequency_rx) || $cat_data->frequency_rx == "0") {
+			$tx_frequency = $this->frequency->qrg_conversion(
+				$cat_data->frequency, $r_option, $source_unit, $target_unit
+			);
+			$mode_string = empty($cat_data->mode) ? "" : $cat_data->mode;
+
+			return trim(sprintf("%s %s", $tx_frequency, $mode_string));
+		} elseif ($this->frequency->frequencies_are_equal($cat_data->frequency, $cat_data->frequency_rx)) {
+			// Frequencies are equal, show only one
 			$tx_frequency = $this->frequency->qrg_conversion(
 				$cat_data->frequency, $r_option, $source_unit, $target_unit
 			);

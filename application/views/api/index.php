@@ -13,7 +13,7 @@
 			<p class="card-text"><?= __("Links to 3rd-Party-Software which works with Wavelog:")?><ul>
 			<li><a href="https://github.com/wavelog/WaveLogGate/releases" target="_thirdparty">WaveLogGate</a></li>
 			<li><a href="https://sourceforge.net/projects/wsjt-x-improved/files/" target="_thirdparty">WSJT-X Improved Plus</a></li>
-			<li><a href="https://github.com/wavelog/Wavelog/wiki/Third-Party-Tools" target="_thirdparty"><?=__("More Tools")?></a></li>
+			<li><a href="https://docs.wavelog.org/user-guide/integrations/third-party-tools/" target="_thirdparty"><?=__("More Tools")?></a></li>
 			</ul>
 			</p>
 			<p class="card-text"><span class="badge text-bg-warning"><?= __("API URL"); ?></span> <?= __("The API URL for this Wavelog instance is"); ?>: <span class="api-url" id="apiUrl"><code class="ms-3 me-3"><?php echo site_url(); ?></code></span><span data-bs-toggle="tooltip" title="<?= __("Copy to clipboard"); ?>" onClick='copyApiUrl(apiSiteUrl)'><i class="copy-icon fas fa-copy"></i></span></p>
@@ -78,7 +78,13 @@
 										<?php
 											$cfnm_delete = sprintf(__("Are you sure you want delete the API Key %s?"), '&quot;'.($row->description ?? '<noname>').'&quot;');
 										?>
-										<a href="<?php echo site_url('api/delete/' . $api_key); ?>" class="btn btn-danger btn-sm" onclick="return confirm('<?php echo $cfnm_delete; ?>');"><?= __("Delete"); ?></a>
+										<form method="post" action="<?php echo site_url('api/delete'); ?>" style="display:inline;">
+											<input type="hidden" name="key" value="<?php echo $api_key; ?>">
+											<button type="submit" class="btn btn-danger btn-sm"
+												onclick="return confirm('<?php echo $cfnm_delete; ?>');">
+												<?= __("Delete"); ?>
+											</button>
+										</form>
 									<?php } ?>
 								</td>
 
@@ -93,8 +99,18 @@
 			<?php } ?>
 
 			<p>
-				<a href="<?php echo site_url('api/generate/rw'); ?>" class="btn btn-primary "><i class="fas fa-plus"></i> <?= __("Create a read & write key"); ?></a>
-				<a href="<?php echo site_url('api/generate/r'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i> <?= __("Create a read-only key"); ?></a>
+				<form method="post" action="<?php echo site_url('api/generate'); ?>" style="display:inline;">
+					<input type="hidden" name="rights" value="rw">
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-plus"></i> <?= __("Create a read & write key"); ?>
+					</button>
+				</form>
+				<form method="post" action="<?php echo site_url('api/generate'); ?>" style="display:inline;">
+					<input type="hidden" name="rights" value="r">
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-plus"></i> <?= __("Create a read-only key"); ?>
+					</button>
+				</form>
 			</p>
 
 		</div>

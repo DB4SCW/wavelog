@@ -1,5 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+use Wavelog\Dxcc\Dxcc;
+
+require_once APPPATH . '../src/Dxcc/Dxcc.php';
+
 class Dxcalendar extends CI_Controller {
 
 	public function index()	{
@@ -9,8 +13,12 @@ class Dxcalendar extends CI_Controller {
 
 		$data['page_title'] = __("DX Calendar");
 
-		$this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
-		$rssUrl = 'http://www.ng3k.com/adxo.xml';
+		$this->load->driver('cache', [
+			'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+			'backup' => $this->config->item('cache_backup') ?? 'file',
+			'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+		]);
+		$rssUrl = 'https://www.ng3k.com/adxo.xml';
 		if (!$rssRawData = $this->cache->get('RssRawDxCal')) {
 			$rssRawData = file_get_contents($rssUrl, true);
 			$this->cache->save('RssRawDxCal', $rssRawData, (60*60*12));
@@ -31,6 +39,7 @@ class Dxcalendar extends CI_Controller {
 			$custom_date_format = $this->config->item('qso_date_format');
 		}
 
+		$dxccobj = new Dxcc();
 		foreach ($rssdata->channel->item as $item) {
 			$dxped=(object)[];
 			$title = explode('--', $item->title);
@@ -47,7 +56,7 @@ class Dxcalendar extends CI_Controller {
 
 			$call = (string) $descsplit[3];
 			$dxped->call = trim(str_replace('--', '', $call));
-			$chk_dxcc=$this->logbook_model->dxcc_lookup($dxped->call."X",$dxped->dates[2]->format('Y-m-d')); // X because sometimes only the pref is in XML
+			$chk_dxcc = $dxccobj->dxcc_lookup($dxped->call."X",$dxped->dates[2]->format('Y-m-d')); // X because sometimes only the pref is in XML
 			if ($chk_dxcc['adif'] ?? '' != '') {
 				$chk_dxcc_val=$chk_dxcc['adif'];
 				$dxped->no_dxcc=false;
@@ -76,7 +85,7 @@ class Dxcalendar extends CI_Controller {
 
 
 		$footerData['scripts'] = [
-			'assets/js/sections/dxcalendar.js?' . filemtime(realpath(__DIR__ . "/../../assets/js/sections/dxcalendar.js"))
+			'assets/js/sections/dxcalendar.js'
 		];
 
 		$this->load->view('interface_assets/header', $data);

@@ -67,6 +67,8 @@ $(document).ready(function() {
     let reconnectAttempts = 0;
     let websocketEnabled = false;
     let websocketIntentionallyClosed = false; // Flag to prevent auto-reconnect when user switches away
+    let hasTriedWsFallback = false; // Track if we've already tried WS fallback after WSS failed
+    let activeWebSocketProtocol = 'wss'; // Track which protocol is currently active ('wss' or 'ws')
     let CATInterval=null;
     var updateFromCAT_lock = 0; // This mechanism prevents multiple simultaneous calls to query the CAT interface information
     var updateFromCAT_lockTimeout = null; // Timeout to release lock if AJAX fails
@@ -76,6 +78,7 @@ $(document).ready(function() {
         POLL_INTERVAL: 3000, // Polling interval in milliseconds
         WEBSOCKET_RECONNECT_MAX: 5,
         WEBSOCKET_RECONNECT_DELAY_MS: 2000,
+        HYBRID_WS_MAX_RETRIES: 1,
         AJAX_TIMEOUT_MS: 5000,
         LOCK_TIMEOUT_MS: 10000
     };
@@ -114,13 +117,26 @@ $(document).ready(function() {
 
     function initializeWebSocketConnection() {
         try {
+            // Determine which protocol and port to use
+            // Try WSS on port 54323 first, fall back to WS on port 54322
+            const tryWss = !hasTriedWsFallback;
+            const protocol = tryWss ? 'wss' : 'ws';
+            const port = tryWss ? '54323' : '54322';
+            const wsUrl = protocol + '://127.0.0.1:' + port;
+
             // Note: Browser will log WebSocket connection errors to console if server is unreachable
             // This is native browser behavior and cannot be suppressed - errors are handled in GUI via onerror handler
-            websocket = new WebSocket('ws://localhost:54322');
+            websocket = new WebSocket(wsUrl);
 
             websocket.onopen = function(event) {
                 reconnectAttempts = 0;
                 websocketEnabled = true;
+                activeWebSocketProtocol = protocol; // Remember which protocol worked
+
+                // Debug log if connected in Hybrid/Auto mode
+                if (isHybridMode) {
+                    console.log("CAT: Hybrid WebSocket connected successfully.");
+                }
             };
 
             websocket.onmessage = function(event) {
@@ -133,33 +149,58 @@ $(document).ready(function() {
             };
 
             websocket.onerror = function(error) {
-                if ($('.radios option:selected').val() != '0') {
+                // If WSS failed and we haven't tried WS fallback yet, try WS
+                if (tryWss && !hasTriedWsFallback) {
+                    hasTriedWsFallback = true;
+                    // Close current connection (which failed anyway) and retry with WS
+                    if (websocket && websocket.readyState === WebSocket.CONNECTING) {
+                        websocket.close();
+                    }
+                    // Schedule reconnection with WS
+                    setTimeout(() => {
+                        initializeWebSocketConnection();
+                    }, 100); // Short delay before retry
+                    return;
+                }
+
+                // Error handling: Only show GUI error if NOT in hybrid mode
+                // In hybrid mode, we fail silently to avoid annoying users without a WS server
+                if (!isHybridMode && $('.radios option:selected').val() != '0') {
                     var radioName = $('select.radios option:selected').text();
                     displayRadioStatus('error', radioName);
                 }
                 websocketEnabled = false;
             };
 
-        websocket.onclose = function(event) {
-            websocketEnabled = false;
-
-            // Only attempt to reconnect if the closure was not intentional
-            if (!websocketIntentionallyClosed && reconnectAttempts < CAT_CONFIG.WEBSOCKET_RECONNECT_MAX) {
-                setTimeout(() => {
-                reconnectAttempts++;
-                initializeWebSocketConnection();
-            }, CAT_CONFIG.WEBSOCKET_RECONNECT_DELAY_MS * reconnectAttempts);
-            } else if (!websocketIntentionallyClosed) {
-                // Only show error if it wasn't an intentional close AND radio is not "None"
-                if ($('.radios option:selected').val() != '0') {
-                    var radioName = $('select.radios option:selected').text();
-                    displayRadioStatus('error', radioName);
-                }
+            websocket.onclose = function(event) {
                 websocketEnabled = false;
-            }
-        };
+
+                // Reset fallback flag on intentional close so we try WSS first next time
+                if (websocketIntentionallyClosed) {
+                    hasTriedWsFallback = false;
+                }
+
+                // Determine max retries: standard limit or reduced limit for hybrid mode
+                const maxRetries = isHybridMode ? CAT_CONFIG.HYBRID_WS_MAX_RETRIES : CAT_CONFIG.WEBSOCKET_RECONNECT_MAX;
+
+                // Only attempt to reconnect if the closure was not intentional
+                if (!websocketIntentionallyClosed && reconnectAttempts < maxRetries) {
+                    setTimeout(() => {
+                        reconnectAttempts++;
+                        initializeWebSocketConnection();
+                    }, CAT_CONFIG.WEBSOCKET_RECONNECT_DELAY_MS * (reconnectAttempts + 1)); // Progressive delay
+                } else if (!websocketIntentionallyClosed) {
+                    // Only show error if it wasn't an intentional close AND radio is not "None"
+                    // AND we are NOT in hybrid mode
+                    if (!isHybridMode && $('.radios option:selected').val() != '0') {
+                        var radioName = $('select.radios option:selected').text();
+                        displayRadioStatus('error', radioName);
+                    }
+                    websocketEnabled = false;
+                }
+            };
         } catch (error) {
-            websocketEnabled=false;
+            websocketEnabled = false;
         }
     }
 
@@ -255,7 +296,7 @@ $(document).ready(function() {
         } else if (qrgunit == 'GHz') {
             frequency_formatted=(freq / 1000000000);
         }
-        return frequency_formatted+''+qrgunit;
+        return frequency_formatted+' '+qrgunit;
     }
 
     /**
@@ -346,7 +387,8 @@ $(document).ready(function() {
 
     /**
      * Perform the actual radio tuning via CAT interface
-     * Sends frequency and mode to radio via HTTP request
+     * Sends frequency and mode to radio via HTTP/HTTPS request with failover
+     * Tries HTTPS first, falls back to HTTP on failure
      * @param {string} catUrl - CAT interface URL for the radio
      * @param {number} freqHz - Frequency in Hz
      * @param {string} mode - Radio mode (validated against supported modes)
@@ -358,44 +400,75 @@ $(document).ready(function() {
         const validModes = ['lsb', 'usb', 'cw', 'fm', 'am', 'rtty', 'pkt', 'dig', 'pktlsb', 'pktusb', 'pktfm'];
         const catMode = mode && validModes.includes(mode.toLowerCase()) ? mode.toLowerCase() : 'usb';
 
-        // Format: {cat_url}/{frequency}/{mode}
-        const url = catUrl + '/' + freqHz + '/' + catMode;
+        // Determine which protocol to try first
+        // If URL is already HTTPS, use it. If HTTP, upgrade to HTTPS for first attempt.
+        const isHttps = catUrl.startsWith('https://');
+        const httpsUrl = isHttps ? catUrl : catUrl.replace(/^http:\/\//, 'https://');
+        const httpUrl = isHttps ? catUrl.replace(/^https:\/\//, 'http://') : catUrl;
 
-        // Make request with proper error handling
-        fetch(url, {
-            method: 'GET'
-        })
-        .then(response => {
-            if (response.ok) {
-                // Success - HTTP 200-299, get response text
-                return response.text();
-            } else {
-                // HTTP error status (4xx, 5xx)
-                throw new Error('HTTP ' + response.status);
-            }
-        })
-        .then(data => {
-            // Call success callback with response data
-            if (typeof onSuccess === 'function') {
-                onSuccess(data);
-            }
-        })
-        .catch(error => {
-            // Only show error on actual failures (network error, HTTP error, etc.)
-            const freqMHz = (freqHz / 1000000).toFixed(3);
-            const errorTitle = lang_cat_radio_tuning_failed;
-            const errorMsg = lang_cat_failed_to_tune + ' ' + freqMHz + ' MHz (' + catMode.toUpperCase() + '). ' + lang_cat_not_responding;
+        // Build the full URLs with frequency and mode
+        const httpsRequestUrl = httpsUrl + '/' + freqHz + '/' + catMode;
+        const httpRequestUrl = httpUrl + '/' + freqHz + '/' + catMode;
 
-            // Use showToast if available (from qso.js), otherwise use Bootstrap alert
-            if (typeof showToast === 'function') {
-                showToast(errorTitle, errorMsg, 'bg-danger text-white', 5000);
-            }
+        // Try HTTPS first (unless original URL was already HTTPS, then just try that)
+        const tryHttps = !isHttps;
 
-            // Call error callback if provided
-            if (typeof onError === 'function') {
-                onError(null, 'error', error.message);
-            }
-        });
+        // Function to attempt tuning with a specific URL
+        const tryTuning = function(url, isFallback) {
+            return fetch(url, {
+                method: 'GET'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - HTTP 200-299, get response text
+                    return response.text();
+                } else {
+                    // HTTP error status (4xx, 5xx)
+                    throw new Error('HTTP ' + response.status);
+                }
+            })
+            .then(data => {
+                // Call success callback with response data
+                if (typeof onSuccess === 'function') {
+                    onSuccess(data);
+                }
+                return data;
+            });
+        };
+
+        // Execute failover logic: try HTTPS first, then HTTP
+        const primaryUrl = tryHttps ? httpsRequestUrl : httpRequestUrl;
+        const fallbackUrl = tryHttps ? httpRequestUrl : null;
+
+        tryTuning(primaryUrl, false)
+            .catch(error => {
+                // If HTTPS was attempted and failed, try HTTP fallback
+                if (fallbackUrl !== null) {
+                    return tryTuning(fallbackUrl, true)
+                        .catch(fallbackError => {
+                            // Both HTTPS and HTTP failed
+                            throw fallbackError;
+                        });
+                }
+                // No fallback available (was already HTTPS or only one URL to try)
+                throw error;
+            })
+            .catch(error => {
+                // All attempts failed - show error
+                const freqMHz = (freqHz / 1000000).toFixed(3);
+                const errorTitle = lang_cat_radio_tuning_failed;
+                const errorMsg = lang_cat_failed_to_tune + ' ' + freqMHz + ' MHz (' + catMode.toUpperCase() + '). ' + lang_cat_not_responding;
+
+                // Use showToast if available (from qso.js), otherwise use Bootstrap alert
+                if (typeof showToast === 'function') {
+                    showToast(errorTitle, errorMsg, 'bg-danger text-white', 5000);
+                }
+
+                // Call error callback if provided
+                if (typeof onError === 'function') {
+                    onError(null, 'error', error.message);
+                }
+            });
     }
 
     /**
@@ -473,6 +546,91 @@ $(document).ready(function() {
     }
 
     /**
+     * Send QSO data via WebSocket when CAT is enabled via WebSocket
+     * This allows external systems (e.g., WLGate, external logging services) to receive logged QSOs in real-time
+     * @param {object} qsoData - QSO data object with fields from the QSO form
+     * @returns {boolean} - true if sent via WebSocket, false otherwise
+     */
+    function sendQSOViaWebSocket(qsoData) {
+        // Only send if WebSocket is connected and enabled
+        if (!websocket || !websocketEnabled || websocket.readyState !== WebSocket.OPEN) {
+            return false;
+        }
+
+        // Only send for WebSocket radio ('ws')
+        if ($(".radios option:selected").val() != 'ws') {
+            return false;
+        }
+
+        try {
+            // Prepare QSO message with standard format
+            const qsoMessage = {
+                type: 'qso_logged',
+                timestamp: new Date().toISOString(),
+                data: qsoData
+            };
+
+            // Send via WebSocket
+            websocket.send(JSON.stringify(qsoMessage));
+            return true;
+        } catch (error) {
+            console.warn('Failed to send QSO via WebSocket:', error);
+            return false;
+        }
+    }
+
+    // Expose sendQSOViaWebSocket globally so it can be called from qso.js
+    window.sendQSOViaWebSocket = sendQSOViaWebSocket;
+
+    /**
+     * Send real-time satellite position (azimuth/elevation) via WebSocket
+     * Only sends when using WebSocket CAT and working satellite
+     * @param {string} satName - Satellite name
+     * @param {number} azimuth - Antenna azimuth in decimal degrees
+     * @param {number} elevation - Antenna elevation in decimal degrees
+     * @returns {boolean} - true if sent via WebSocket, false otherwise
+     */
+    function sendSatellitePositionViaWebSocket(satName, azimuth, elevation) {
+        // Only send if WebSocket is connected and enabled
+        if (!websocket || !websocketEnabled || websocket.readyState !== WebSocket.OPEN) {
+            return false;
+        }
+
+        // Only send for WebSocket radio ('ws')
+        if ($(".radios option:selected").val() != 'ws') {
+            return false;
+        }
+
+        // Only send if satellite name is provided
+        if (!satName || satName === '') {
+            return false;
+        }
+
+        try {
+            // Prepare satellite position message with standard format
+            const satMessage = {
+                type: 'satellite_position',
+                timestamp: new Date().toISOString(),
+                data: {
+                    sat_name: satName,
+                    azimuth: azimuth,
+                    elevation: elevation
+                }
+            };
+
+            // Send via WebSocket
+            websocket.send(JSON.stringify(satMessage));
+            return true;
+        } catch (error) {
+            console.warn('Failed to send satellite position via WebSocket:', error);
+            return false;
+        }
+    }
+
+    // Expose sendSatellitePositionViaWebSocket globally so it can be called from qso.js
+    window.sendSatellitePositionViaWebSocket = sendSatellitePositionViaWebSocket;
+
+    /**
      * Display radio status in the UI
      * @param {string} state - One of 'success', 'error', 'timeout', 'not_logged_in'
      * @param {object|string} data - Radio data object (success) or radio name string (error/timeout/not_logged_in)
@@ -531,14 +689,14 @@ $(document).ready(function() {
         // Check if we have RX frequency (split operation)
         if(data.frequency_rx != null && data.frequency_rx != 0) {
             // Split operation: show TX and RX separately
-            freqLine = '<b>' + lang_cat_tx + ':</b> ' + data.frequency_formatted;
-            data.frequency_rx_formatted = format_frequency(data.frequency_rx);
-            if (data.frequency_rx_formatted) {
-                freqLine = freqLine + separator + '<b>' + lang_cat_rx + ':</b> ' + data.frequency_rx_formatted;
+            freqLine = '<b>' + lang_cat_tx + ':</b> ' + format_frequency(data.frequency);
+            var freq_rx_formatted = format_frequency(data.frequency_rx);
+            if (freq_rx_formatted) {
+                freqLine = freqLine + separator + '<b>' + lang_cat_rx + ':</b> ' + freq_rx_formatted;
             }
         } else {
             // Simplex operation: show TX/RX combined
-            freqLine = '<b>' + lang_cat_tx_rx + ':</b> ' + data.frequency_formatted;
+            freqLine = '<b>' + lang_cat_tx_rx + ':</b> ' + format_frequency(data.frequency);
         }
 
         // Add mode and power (only if we have valid frequency)
@@ -593,6 +751,11 @@ $(document).ready(function() {
         // Build icon with Bootstrap color class and ID for animation
         var icon = '<i id="radio-status-icon" class="fas fa-radio ' + iconClass + '" style="margin-right: 10px; font-size: 1.2em;"></i>';
         var html = baseStyle + icon + content + '</div>';
+	if (($(".radios option:selected").val() == 'ws') && (data.radio != undefined)) {	// Are we on websocket? add hiddenfield with radioName
+		$("#radio_ws_name").val(data.radio);
+	} else {
+		$("#radio_ws_name").val('');
+	}
 
 		// Update DOM based on global CAT_COMPACT_MODE setting
 		if (window.CAT_COMPACT_MODE === 'icon-only') {
@@ -604,25 +767,20 @@ $(document).ready(function() {
 				var connectionType = $(".radios option:selected").val() == 'ws' ? lang_cat_live : lang_cat_polling;
 				tooltipContent = '<b>' + radioName + '</b> (' + connectionType + ')';
 
-				// Ensure frequency_formatted exists
-				var freqFormatted = data.frequency_formatted;
-				if (!freqFormatted || freqFormatted === 'undefined' || freqFormatted === 'nullkHz') {
-					freqFormatted = format_frequency(data.frequency);
-				}
-
 				// Add frequency info
+				var freqFormatted = format_frequency(data.frequency);
 				if(data.frequency_rx && data.frequency_rx != 0 && data.frequency_rx !== 'undefined') {
 					// Split operation: show TX and RX separately
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx + ':</b> ' + freqFormatted;
 					}
 					var rxFormatted = format_frequency(data.frequency_rx);
-					if (rxFormatted && rxFormatted !== 'undefined') {
+					if (rxFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_rx + ':</b> ' + rxFormatted;
 					}
 				} else {
 					// Simplex operation: show TX/RX combined
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx_rx + ':</b> ' + freqFormatted;
 					}
 				}
@@ -695,25 +853,20 @@ $(document).ready(function() {
 			}
 			tooltipContent = '<b>' + radioName + '</b> (' + connectionType + ')';
 
-				// Ensure frequency_formatted exists
-				var freqFormatted = data.frequency_formatted;
-				if (!freqFormatted || freqFormatted === 'undefined' || freqFormatted === 'nullkHz') {
-					freqFormatted = format_frequency(data.frequency);
-				}
-
 				// Add frequency info
+				var freqFormatted = format_frequency(data.frequency);
 				if(data.frequency_rx && data.frequency_rx != 0 && data.frequency_rx !== 'undefined') {
 					// Split operation: show TX and RX separately
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx + ':</b> ' + freqFormatted;
 					}
 					var rxFormatted = format_frequency(data.frequency_rx);
-					if (rxFormatted && rxFormatted !== 'undefined') {
+					if (rxFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_rx + ':</b> ' + rxFormatted;
 					}
 				} else {
 					// Simplex operation: show TX/RX combined
-					if (freqFormatted && freqFormatted !== 'undefined') {
+					if (freqFormatted) {
 						tooltipContent += '<br><b>' + lang_cat_tx_rx + ':</b> ' + freqFormatted;
 					}
 				}
@@ -945,6 +1098,11 @@ $(document).ready(function() {
 
         cat2UI($mode,newMode,false,false);
 
+        // Update winkey visibility directly
+        if (typeof updateWinkeyVisibility === 'function') {
+            updateWinkeyVisibility(newMode);
+        }
+
         // Update RST fields when mode changes
         // Check if mode was actually updated (catValue changed after cat2UI call)
         var currentMode = $mode.data('catValue');
@@ -1094,6 +1252,9 @@ $(document).ready(function() {
         radioCatUrlCache = {};
         radioNameCache = {};
 
+        // Reset Hybrid Mode flag
+        isHybridMode = false;
+
         // If switching to None, disable CAT tracking FIRST before stopping connections
         // This prevents any pending updates from interfering with the offline status
         if (selectedRadioId == '0') {
@@ -1137,6 +1298,9 @@ $(document).ready(function() {
         } else if (selectedRadioId == 'ws') {
             websocketIntentionallyClosed = false; // Reset flag when opening WebSocket
             reconnectAttempts = 0; // Reset reconnect attempts
+            hasTriedWsFallback = false; // Reset WSS failover state - try WSS first again
+            isHybridMode = false; // Explicitly NOT hybrid
+
             // Set DX Waterfall CAT state to websocket if variable exists
             if (typeof dxwaterfall_cat_state !== 'undefined') {
                 dxwaterfall_cat_state = "websocket";
@@ -1150,15 +1314,25 @@ $(document).ready(function() {
                 displayOfflineStatus('cat_disabled');
             }
         } else {
-            // Set DX Waterfall CAT state to polling if variable exists
+            // Set DX Waterfall CAT state to polling
             if (typeof dxwaterfall_cat_state !== 'undefined') {
                 dxwaterfall_cat_state = "polling";
             }
-            // Enable CAT Control button when radio is selected
             $('#toggleCatTracking').prop('disabled', false).removeClass('disabled');
-            // Always start polling
-            CATInterval=setInterval(updateFromCAT, CAT_CONFIG.POLL_INTERVAL);
-            // In ultra-compact/icon-only mode, show offline status if CAT Control is disabled
+
+            // Start standard polling
+            CATInterval = setInterval(updateFromCAT, CAT_CONFIG.POLL_INTERVAL);
+
+            // Attempt Hybrid WebSocket Connection (Silent, limited retries)
+            // We try to connect to localhost to receive metadata/lookup broadcasts
+            // even though we are in Polling mode for frequency updates.
+            websocketIntentionallyClosed = false;
+            reconnectAttempts = 0;
+            hasTriedWsFallback = false;
+            isHybridMode = true; // Activate Hybrid Mode restrictions (limited retries, no UI errors)
+
+            initializeWebSocketConnection();
+
             if ((window.CAT_COMPACT_MODE === 'ultra-compact' || window.CAT_COMPACT_MODE === 'icon-only') && typeof window.isCatTrackingEnabled !== 'undefined' && !window.isCatTrackingEnabled) {
                 displayOfflineStatus('cat_disabled');
             }
@@ -1170,4 +1344,47 @@ $(document).ready(function() {
 
     // Expose displayOfflineStatus globally for other components (e.g., bandmap CAT Control toggle)
     window.displayOfflineStatus = displayOfflineStatus;
+
+	/**
+     * Broadcast Callsign Lookup Result via WebSocket
+     * Triggered when Wavelog completes a callsign lookup.
+     *
+     * @param {object} data - The lookup data object
+     */
+    window.broadcastLookupResult = function(data) {
+        if (!websocket || !websocketEnabled || websocket.readyState !== WebSocket.OPEN) {
+            return;
+        }
+
+        try {
+            const cleanAzimuth = data.bearing ? parseInt(data.bearing.match(/\d+/)) : null;
+
+            const message = {
+                type: 'lookup_result',
+                timestamp: new Date().toISOString(),
+                payload: {
+                    callsign: data.callsign,
+                    dxcc_id: data.dxcc_id,
+                    name: data.name,
+                    grid: data.gridsquare || data.grid,
+                    city: data.city,
+                    iota: data.iota,
+                    state: data.state,
+                    us_county: data.us_county,
+                    bearing: data.bearing,
+                    azimuth: cleanAzimuth,
+                    distance: data.distance,
+                    lotw_member: data.lotw_member,
+                    lotw_days: data.lotw_days,
+                    eqsl_member: data.eqsl_member,
+                    qsl_manager: data.qsl_manager,
+                    slot_confirmed: data.slot_confirmed
+                }
+            };
+
+            websocket.send(JSON.stringify(message));
+        } catch (error) {
+            console.warn('Failed to broadcast lookup result:', error);
+        }
+    };
 });

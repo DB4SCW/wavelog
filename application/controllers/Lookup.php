@@ -69,6 +69,10 @@ class Lookup extends CI_Controller {
 			$data['location_list'] = $location_list;
 			$data['user_map_custom'] = $this->optionslib->get_map_custom();
 
+			if ($data['type'] == 'vucc') {
+				$data['vuccdxcc'] = $this->lookup_model->getDxccForVucc($data['grid']);
+			}
+
 			$data['result'] = $this->lookup_model->getSearchResult($data);
 			$this->load->view('lookup/result', $data);
 		}
@@ -154,24 +158,6 @@ class Lookup extends CI_Controller {
 		}
 	}
 
-	public function dok($call) {
-		session_write_close();
-
-		if($call) {
-			$call = str_replace("-","/",$call);
-			$uppercase_callsign = strtoupper($call);
-		}
-
-		// DOK results from logbook
-		$this->load->model('logbook_model');
-
-		$query = $this->logbook_model->get_dok($uppercase_callsign);
-
-		if ($query->row()) {
-			echo $query->row()->COL_DARC_DOK;
-		}
-	}
-
 	public function ham_of_note($call = '') {
 		session_write_close();
 
@@ -180,9 +166,9 @@ class Lookup extends CI_Controller {
 			$uppercase_callsign = strtoupper($call);
 			$this->load->model('Pota');
 			$query = $this->Pota->ham_of_note($uppercase_callsign);
-			if ($query->row()) {
+			if ($query->num_rows() > 0) {
 				header('Content-Type: application/json');
-				echo json_encode($query->row());
+				echo json_encode($query->result());
 			} else {
 				return null;
 			}

@@ -20,55 +20,76 @@
     let lang_gen_hamradio_nightshadow = '<?= _pgettext("Map Options", "Night Shadow"); ?>';
     let lang_gen_hamradio_ituzone = '<?= __("ITU Zone"); ?>';
     let lang_gen_hamradio_cqzone = '<?= __("CQ Zone"); ?>';
-	let lang_gen_advanced_logbook_help = '<?= __("Advanced Logbook Help"); ?>';
-	let lang_gen_advanced_logbook_continent_fix = '<?= __("Continent fix"); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_itu_zones = '<?= __("There was a problem fixing ITU Zones."); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_cq_zones = '<?= __("There was a problem fixing CQ Zones."); ?>';
-	let lang_gen_advanced_logbook_itu_zones_updated = '<?= __("ITU Zones updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_cq_zones_updated = '<?= __("CQ Zones updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_select_row_itu_zones = '<?= __("You need to select at least 1 row to fix ITU Zones!"); ?>';
-	let lang_gen_advanced_logbook_select_row_cq_zones = '<?= __("You need to select at least 1 row to fix CQ Zones!"); ?>';
-	let lang_gen_advanced_logbook_select_row_state = '<?= __("You need to select at least 1 row to fix State!"); ?>';
-	let lang_gen_advanced_logbook_state_updated = '<?= __("State updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_state = '<?= __("There was a problem fixing State."); ?>';
-	let lang_gen_advanced_logbook_fixing_state = '<?= __("Fixing State"); ?>';
-	let lang_gen_advanced_logbook_fixing_state_qsos = '<?= __("Fixing State (%s QSOs)"); ?>';
-	let lang_gen_advanced_logbook_fixing_state_remaining = '<?= __("Fixing State: %s remaining"); ?>';
-	let lang_gen_advanced_logbook_fixed = '<?= __("Fixed"); ?>';
-	let lang_gen_advanced_logbook_fixed_with_count = '<?= __("Fixed: %s"); ?>';
-	let lang_gen_advanced_logbook_skipped = '<?= __("Skipped"); ?>';
-	let lang_gen_advanced_logbook_skipped_with_count = '<?= __("Skipped: %s, see details for skipped rows below"); ?>';
-	let lang_gen_advanced_logbook_state_fix_complete = '<?= __("State Fix Complete"); ?>';
-	let lang_gen_advanced_logbook_state_not_supported = '<?= __("Not all DXCC entities have state support. If you need support for additional countries, please create a ticket at %s with the GeoJSON file and desired letter coding for your country."); ?>';
-	let lang_gen_advanced_logbook_github_url = 'https://github.com/wavelog/wavelog/issues';
-	let lang_gen_advanced_logbook_github_link = '<a href="https://github.com/wavelog/wavelog/issues" target="_blank">Wavelog GitHub</a>';
-	let lang_gen_advanced_logbook_select_only_one_row_quickfilter = '<?= __("Only 1 row can be selected for Quickfilter!"); ?>'
-	let lang_gen_advanced_logbook_select_at_least_one_row_quickfilter = '<?= __("You need to select a row to use the Quickfilters!"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_qslcard = '<?= __("You need to select a least 1 row to display a QSL card!"); ?>';
-	let lang_gen_advanced_logbook_continents_updated = '<?= __("Continents updated successfully!"); ?>';
-	let lang_gen_advanced_logbook_problem_fixing_continents = '<?= __("There was a problem fixing Continents."); ?>';
-	let lang_gen_advanced_logbook_error = '<?= __("ERROR"); ?>';
-	let lang_gen_advanced_logbook_success = '<?= __("SUCCESS"); ?>';
-	let lang_gen_advanced_logbook_info = '<?= __("INFO"); ?>';
-	let lang_gen_advanced_logbook_warning = '<?= __("WARNING"); ?>';
-	let lang_gen_advanced_logbook_qsl_card = '<?= __("QSL Card"); ?>';
-	let lang_gen_advanced_logbook_close = '<?= __("Close"); ?>';
-	let lang_gen_advanced_logbook_save = '<?= __("Save"); ?>';
-	let lang_gen_advanced_logbook_update_now = '<?= __("Update now"); ?>';
-	let lang_gen_advanced_logbook_options = '<?= __("Options for the Advanced Logbook"); ?>';
-	let lang_gen_advanced_logbook_label_print_error = '<?= __("Something went wrong with label print. Go to labels and check if you have defined a label, and that it is set for print!"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row = '<?= __("You need to select a least 1 row!"); ?>';
-	let lang_gen_advanced_logbook_start_printing_at_which_label = '<?= __("Start printing at which label?"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_label = '<?= __("You need to select at least 1 row to print a label!"); ?>';
-	let lang_gen_advanced_logbook_error_saving_options = '<?= __("An error occurred while saving options: "); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_delete = '<?= __("You need to select a least 1 row to delete!"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_row_callbook = '<?= __("You need to select a least 1 row to update from callbook!"); ?>';
-	let lang_gen_advanced_logbook_an_error_ocurred_while_making_request = '<?= __("An error ocurred while making the request"); ?>';
-	let lang_gen_advanced_logbook_select_at_least_one_location = '<?= __("You need to select at least 1 location to do a search!"); ?>';
-	let lang_gen_advanced_logbook_update_distances = '<?= __("Update Distances"); ?>';
-	let lang_gen_advanced_logbook_records_updated = '<?= __("QSO records updated."); ?>';
-	let lang_gen_advanced_logbook_problem_updating_distances = '<?= __("There was a problem updating distances."); ?>';
-	let lang_gen_advanced_logbook_distances_updated = '<?= __("Distances updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_help = '<?= __("Advanced Logbook Help"); ?>';
+    let lang_gen_advanced_logbook_continent_fix = '<?= __("Continent fix"); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_itu_zones = '<?= __("There was a problem fixing ITU Zones."); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_cq_zones = '<?= __("There was a problem fixing CQ Zones."); ?>';
+    let lang_gen_advanced_logbook_itu_zones_updated = '<?= __("ITU Zones updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_cq_zones_updated = '<?= __("CQ Zones updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_select_row_itu_zones = '<?= __("You need to select at least 1 row to fix ITU Zones!"); ?>';
+    let lang_gen_advanced_logbook_select_row_cq_zones = '<?= __("You need to select at least 1 row to fix CQ Zones!"); ?>';
+    let lang_gen_advanced_logbook_select_row_state = '<?= __("You need to select at least 1 row to fix State!"); ?>';
+    let lang_gen_advanced_logbook_state_updated = '<?= __("State updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_state = '<?= __("There was a problem fixing State."); ?>';
+    let lang_gen_advanced_logbook_fixing_state = '<?= __("Fixing State"); ?>';
+    let lang_gen_advanced_logbook_fixing_state_qsos = '<?= __("Fixing State (%s QSOs)"); ?>';
+    let lang_gen_advanced_logbook_fixing_state_remaining = '<?= __("Fixing State: %s remaining"); ?>';
+    let lang_gen_advanced_logbook_fixed = '<?= __("Fixed"); ?>';
+    let lang_gen_advanced_logbook_fixed_with_count = '<?= __("Fixed: %s"); ?>';
+    let lang_gen_advanced_logbook_skipped = '<?= __("Skipped"); ?>';
+    let lang_gen_advanced_logbook_skipped_with_count = '<?= __("Skipped: %s, see details for skipped rows below"); ?>';
+    let lang_gen_advanced_logbook_state_fix_complete = '<?= __("State Fix Complete"); ?>';
+    let lang_gen_advanced_logbook_state_not_supported = '<?= __("Not all DXCC entities have state support. If you need support for additional countries, please create a ticket at %s with the GeoJSON file and desired letter coding for your country."); ?>';
+    let lang_gen_advanced_logbook_github_url = 'https://github.com/wavelog/wavelog/issues';
+    let lang_gen_advanced_logbook_github_link = '<a href="https://github.com/wavelog/wavelog/issues" target="_blank">Wavelog GitHub</a>';
+    let lang_gen_advanced_logbook_select_only_one_row_quickfilter = '<?= __("Only 1 row can be selected for Quickfilter!"); ?>'
+    let lang_gen_advanced_logbook_select_at_least_one_row_quickfilter = '<?= __("You need to select a row to use the Quickfilters!"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_qslcard = '<?= __("You need to select a least 1 row to display a QSL card!"); ?>';
+    let lang_gen_advanced_logbook_continents_updated = '<?= __("Continents updated successfully!"); ?>';
+    let lang_gen_advanced_logbook_problem_fixing_continents = '<?= __("There was a problem fixing Continents."); ?>';
+    let lang_gen_advanced_logbook_error = '<?= __("ERROR"); ?>';
+    let lang_gen_advanced_logbook_success = '<?= __("SUCCESS"); ?>';
+    let lang_gen_advanced_logbook_info = '<?= __("INFO"); ?>';
+    let lang_gen_advanced_logbook_warning = '<?= __("WARNING"); ?>';
+    let lang_gen_advanced_logbook_qsl_card = '<?= __("QSL Card"); ?>';
+    let lang_gen_advanced_logbook_close = '<?= __("Close"); ?>';
+    let lang_gen_advanced_logbook_save = '<?= __("Save"); ?>';
+    let lang_gen_advanced_logbook_update_now = '<?= __("Update now"); ?>';
+    let lang_gen_advanced_logbook_options = '<?= __("Options for the Advanced Logbook"); ?>';
+    let lang_gen_advanced_logbook_label_print_error = '<?= __("Something went wrong with label print. Go to labels and check if you have defined a label, and that it is set for print!"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row = '<?= __("You need to select a least 1 row!"); ?>';
+    let lang_gen_advanced_logbook_start_printing_at_which_label = '<?= __("Start printing at which label?"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_label = '<?= __("You need to select at least 1 row to print a label!"); ?>';
+    let lang_gen_advanced_logbook_error_saving_options = '<?= __("An error occurred while saving options: "); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_delete = '<?= __("You need to select a least 1 row to delete!"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_row_callbook = '<?= __("You need to select a least 1 row to update from callbook!"); ?>';
+    let lang_gen_advanced_logbook_an_error_ocurred_while_making_request = '<?= __("An error ocurred while making the request"); ?>';
+    let lang_gen_advanced_logbook_select_at_least_one_location = '<?= __("You need to select at least 1 location to do a search!"); ?>';
+    let lang_gen_advanced_logbook_update_distances = '<?= __("Update Distances"); ?>';
+    let lang_gen_advanced_logbook_records_updated = '<?= __("QSO records updated."); ?>';
+    let lang_gen_advanced_logbook_problem_updating_distances = '<?= __("There was a problem updating distances."); ?>';
+    let lang_gen_advanced_logbook_distances_updated = '<?= __("Distances updated successfully!"); ?>';
+
+    let lang_gen_advanced_logbook_confirm_fix_missing_dxcc = '<?= __("Are you sure you want to fix all QSOs with missing DXCC information? This action cannot be undone."); ?>';
+    let lang_gen_advanced_logbook_dupe_search = '<?= __("Duplicate Search"); ?>';
+    let lang_gen_advanced_logbook_search = '<?= __("Search"); ?>';
+
+    let lang_gen_advanced_logbook_show_more = '<?= __("Show more"); ?>';
+    let lang_gen_advanced_logbook_show_less = '<?= __("Show less"); ?>';
+
+	let lang_gen_advanced_logbook_confirmedLabel = '<?= __("Gridsquares for"); ?>';
+	let lang_gen_advanced_logbook_workedLabel = '<?= __("Non DXCC matching gridsquare"); ?>';
+	let lang_label_print_options = "<?= __("Label Print Options"); ?>";
+
+	let lang_gen_advanced_logbook_select_row_merge_qso = '<?= __("You need to select exactly 2 QSOs to merge!"); ?>';
+	let lang_gen_advanced_logbook_merge_qsos = '<?= __("Merge QSOs"); ?>';
+	let lang_gen_advanced_logbook_confirm_merge_qsos = '<?= __("Are you really sure you want to merge these QSOs? This operation CAN\'T be undone!"); ?>';
+	let lang_gen_advanced_logbook_danger = '<?= __("Danger"); ?>';
+	let lang_gen_advanced_logbook_cancel = '<?= __("Cancel"); ?>';
+	let lang_gen_advanced_logbook_yes_merge_qsos = '<?= __("Yes, Merge QSOs"); ?>';
+	let lang_gen_advanced_logbook_qsos_merged = '<?= __("QSOs merged successfully!"); ?>';
+	let lang_gen_advanced_logbook_error_merging_qsos = '<?= __("Error merging QSOs"); ?>';
+	let lang_gen_advanced_logbook_error_loading_merge_dialog = '<?= __("Error loading merge dialog"); ?>';
 
     let homegrid ='<?php echo strtoupper($homegrid[0]); ?>';
     <?php
@@ -117,6 +138,8 @@
             \"qth\":{\"show\":\"true\"},
             \"frequency\":{\"show\":\"true\"},
             \"dcl\":{\"show\":\"true\"},
+            \"last_modification\":{\"show\":\"false\"},
+            \"duration\":{\"show\":\"false\"},
         }";
     }
     $current_opts = json_decode($options);
@@ -209,23 +232,30 @@
         echo "\nvar o_template = { antennaelevation: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-	if (!isset($current_opts->county)) {
+    if (!isset($current_opts->county)) {
         echo "\nvar o_template = { county: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-	if (!isset($current_opts->qth)) {
+    if (!isset($current_opts->qth)) {
         echo "\nvar o_template = { qth: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-	if (!isset($current_opts->frequency)) {
+    if (!isset($current_opts->frequency)) {
         echo "\nvar o_template = { frequency: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-		if (!isset($current_opts->dcl)) {
+    if (!isset($current_opts->dcl)) {
         echo "\nvar o_template = { dcl: {show: 'true'}};";
         echo "\nuser_options={...user_options, ...o_template};";
     }
-
+    if (!isset($current_opts->last_modification)) {
+        echo "\nvar o_template = { last_modification: {show: 'false'}};";
+        echo "\nuser_options={...user_options, ...o_template};";
+    }
+	if (!isset($current_opts->duration)) {
+        echo "\nvar o_template = { duration: {show: 'false'}};";
+        echo "\nuser_options={...user_options, ...o_template};";
+    }
 
     foreach ($mapoptions as $mo) {
 	    if ($mo != null) {
@@ -243,6 +273,18 @@
         padding-right: 5px;
         padding-left: 5px;
     }
+    .btn-filter-active {
+        background-color: #ffc107 !important;
+        border-color: #ffc107 !important;
+        color: #000 !important;
+    }
+    .btn-filter-active:hover {
+        background-color: #e0a800 !important;
+        border-color: #e0a800 !important;
+    }
+    .btn-filter-active .fas {
+        color: #000 !important;
+    }
 </style>
 <?php
 $options = json_decode($options);
@@ -258,8 +300,12 @@ $options = json_decode($options);
         <div class="row">
 
             <form id="searchForm" name="searchForm" action="<?php echo base_url() . "index.php/logbookadvanced/search"; ?>" method="post">
-                <input type="hidden" id="dupes" name="dupes" value="">
-				<input type="hidden" id="invalid" name="invalid" value="">
+                <input type="hidden" id="dupes" name="dupes" value="" class="filter-field">
+				<input type="hidden" id="invalid" name="invalid" value="" class="filter-field">
+				<input type="hidden" id="dupedate" name="dupedate" value="" class="filter-field">
+				<input type="hidden" id="dupemode" name="dupemode" value="" class="filter-field">
+				<input type="hidden" id="dupeband" name="dupeband" value="" class="filter-field">
+				<input type="hidden" id="dupesat" name="dupesat" value="" class="filter-field">
 
         <div class="row pt-2">
 			<div class="d-flex flex-wrap btn-group w-auto mx-auto">
@@ -290,19 +336,19 @@ $options = json_decode($options);
                                 <div class="row">
                                     <div <?php if (($options->datetime->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="dateFrom"><?= __("From") . ": " ?></label>
-                                        <input name="dateFrom" id="dateFrom" type="date" class="form-control form-control-sm border border-secondary">
+                                        <input name="dateFrom" id="dateFrom" type="date" class="form-control form-control-sm border border-secondary filter-field">
                                     </div>
                                     <div <?php if (($options->datetime->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="dateTo"><?= __("To") . ": " ?></label>
-                                        <input name="dateTo" id="dateTo" type="date" class="form-control form-control-sm border border-secondary">
+                                        <input name="dateTo" id="dateTo" type="date" class="form-control form-control-sm border border-secondary filter-field">
                                     </div>
                                     <div <?php if (($options->dx->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="dx"><?= __("Dx"); ?></label>
-                                        <input onclick="this.select()" type="text" name="dx" id="dx" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="dx" id="dx" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->dxcc->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="dxcc"><?= __("DXCC"); ?></label>
-                                        <select class="form-select form-select-sm border border-secondary" id="dxcc" name="dxcc">
+                                        <select class="form-select form-select-sm border border-secondary filter-field" id="dxcc" name="dxcc">
                                             <option value="">-</option>
                                             <?php
                                             foreach ($dxccarray as $dxcc) {
@@ -323,17 +369,17 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->state->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="state"><?= __("State"); ?></label>
-                                        <input onclick="this.select()" type="text" name="state" id="state" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="state" id="state" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
 								</div>
 								<div class="row">
                                     <div <?php if (($options->gridsquare->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="gridsquare"><?= __("Gridsquare"); ?></label>
-                                        <input onclick="this.select()" type="text" name="gridsquare" id="gridsquare" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="gridsquare" id="gridsquare" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->mode->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="mode"><?= __("Mode"); ?></label>
-                                        <select id="mode" name="mode" class="form-select form-select-sm border border-secondary">
+                                        <select id="mode" name="mode" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <?php
                                             foreach ($modes as $modeId => $mode) {
@@ -344,7 +390,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->band->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="band"><?= __("Band"); ?></label>
-                                        <select id="band" name="band" class="form-select form-select-sm border border-secondary">
+                                        <select id="band" name="band" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <?php
                                             foreach ($bands as $band) {
@@ -355,7 +401,7 @@ $options = json_decode($options);
                                     </div>
                                     <div hidden class="sats_dropdown mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="sats"><?= __("Satellite"); ?></label>
-                                        <select class="form-select form-select-sm border border-secondary" id="sats" name="sats">
+                                        <select class="form-select form-select-sm border border-secondary filter-field" id="sats" name="sats">
                                             <option value="All"><?= __("All"); ?></option>
                                             <?php foreach ($sats as $sat) {
                                                 echo '<option value="' . htmlentities($sat) . '"' . '>' . htmlentities($sat) . '</option>' . "\n";
@@ -364,7 +410,7 @@ $options = json_decode($options);
                                     </div>
                                     <div hidden class="orbits_dropdown mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="orbits"><?= __("Orbit"); ?></label>
-                                        <select class="form-select form-select-sm border border-secondary" id="orbits" name="orbits">
+                                        <select class="form-select form-select-sm border border-secondary filter-field" id="orbits" name="orbits">
                                             <option value="All"><?= __("All"); ?></option>
                                             <?php foreach ($orbits as $orbit) {
                                                 echo '<option value="' . htmlentities($orbit) . '"' . '>' . htmlentities($orbit) . '</option>' . "\n";
@@ -373,7 +419,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->propagation->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="selectPropagation"><?= __("Propagation"); ?></label>
-                                        <select id="selectPropagation" class="form-select form-select-sm border border-secondary" name="propmode">
+                                        <select id="selectPropagation" class="form-select form-select-sm border border-secondary filter-field" name="propmode">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="None"><?= _pgettext("Propagation Mode", "None/Empty"); ?></option>
                                             <option value="AS"><?= _pgettext("Propagation Mode", "Aircraft Scatter"); ?></option>
@@ -398,7 +444,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->cqzone->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="cqzone"><?= __("CQ Zone"); ?></label>
-                                        <select id="cqzone" name="cqzone" class="form-select form-select-sm border border-secondary">
+                                        <select id="cqzone" name="cqzone" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value="All"><?= __("All"); ?></option>
                                             <option value=""><?= __("Empty"); ?></option>
                                             <?php
@@ -412,7 +458,7 @@ $options = json_decode($options);
 								<div class="row">
                                     <div <?php if (($options->ituzone->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="ituzone"><?= __("ITU Zone"); ?></label>
-                                        <select id="ituzone" name="ituzone" class="form-select form-select-sm border border-secondary">
+                                        <select id="ituzone" name="ituzone" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value="All"><?= __("All"); ?></option>
                                             <option value=""><?= __("Empty"); ?></option>
                                             <?php
@@ -424,25 +470,25 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->county->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="county"><?= __("County"); ?></label>
-                                        <input onclick="this.select()" type="text" name="county" id="county" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="county" id="county" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->dok->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="dok"><?= __("DOK"); ?></label>
-                                        <input onclick="this.select()" type="text" name="dok" id="dok" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="dok" id="dok" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->sota->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="sota"><?= __("SOTA"); ?></label>
-                                        <input onclick="this.select()" type="text" name="sota" id="sota" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="sota" id="sota" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->pota->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="pota"><?= __("POTA"); ?></label>
-                                        <input onclick="this.select()" type="text" name="pota" id="pota" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="pota" id="pota" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
 								</div>
 								<div class="row">
                                     <div <?php if (($options->iota->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="iota"><?= __("IOTA"); ?></label>
-                                        <select class="form-select form-select-sm border border-secondary" id="iota" name="iota">
+                                        <select class="form-select form-select-sm border border-secondary filter-field" id="iota" name="iota">
                                             <option value="">-</option>
                                             <?php
                                             foreach ($iotaarray as $iota) {
@@ -454,19 +500,19 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->wwff->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="wwff"><?= __("WWFF"); ?></label>
-                                        <input onclick="this.select()" type="text" name="wwff" id="wwff" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="wwff" id="wwff" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->operator->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="operator"><?= __("Operator"); ?></label>
-                                        <input onclick="this.select()" type="text" name="operator" id="operator" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="operator" id="operator" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->contest->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="contest"><?= __("Contest"); ?></label>
-                                        <input onclick="this.select()" type="text" name="contest" id="contest" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="contest" id="contest" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->continent->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="continent"><?= __("Continent"); ?></label>
-                                        <select id="continent" name="continent" class="form-select form-select-sm border border-secondary">
+                                        <select id="continent" name="continent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="blank"><?= __("None/Empty"); ?></option>
                                             <option value="af"><?= __("Africa"); ?></option>
@@ -483,15 +529,44 @@ $options = json_decode($options);
 								<div class="row">
                                     <div <?php if (($options->comment->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="comment"><?= __("Comment"); ?></label>
-                                        <input onclick="this.select()" type="text" name="comment" id="comment" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="comment" id="comment" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
 									<div <?php if (($options->distance->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label class="form-label" for="distance"><?= __("Distance"); ?> <i class="fa fa-question-circle" aria-hidden="true" data-bs-toggle="tooltip" title="<?= __("Distance in kilometers. Search will look for distances greater than or equal to this value."); ?>"></i></label>
-                                        <input onclick="this.select()" type="text" name="distance" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="text" name="distance" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
+                                    </div>
+									<div <?php if (($options->duration->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="duration"><?= __("Duration"); ?> <i class="fa fa-question-circle" aria-hidden="true" data-bs-toggle="tooltip" title="<?= __("Duration in minutes. Search will look for durations greater than or equal to this value."); ?>"></i></label>
+                                        <input onclick="this.select()" type="text" name="duration" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
+                                    </div>
+                                </div>
+								<div class="row">
+                                    <div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="sortcolumn"><?= __("Sort column"); ?></label>
+										<select id="sortcolumn" name="sortcolumn" class="form-select form-select-sm border border-secondary filter-field">
+                                            <option value="qsotime"><?= __("QSO Time"); ?></option>
+                                            <option value="band"><?= __("Band"); ?></option>
+                                            <option value="mode"><?= __("Mode"); ?></option>
+                                            <option value="qsomodified"><?= __("QSO Modified"); ?></option>
+                                        </select>
+                                    </div>
+									<div class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
+                                        <label class="form-label" for="sortdirection"><?= __("Sort direction"); ?></label>
+										<select id="sortdirection" name="sortdirection" class="form-select form-select-sm border border-secondary filter-field">
+                                            <option value="desc"><?= __("Descending"); ?></option>
+                                            <option value="asc"><?= __("Ascending"); ?></option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+							<div class="row">
+									<div class="col-lg-2 col-md-2 col-sm-3 col-xl">
+										<div class="d-flex flex-wrap gap-1">
+											<button type="button" class="btn btn-primary btn-sm flex-shrink-0" onclick="$('#searchForm').submit(); $('#filterDropdown').dropdown('hide');"><i class="fas fa-search"></i> <?= __("Apply filters"); ?></button>
+										</div>
+									</div>
+								</div>
+							</div>
                     </div>
 
                     <!-- QSL Filters Dropdown -->
@@ -504,7 +579,7 @@ $options = json_decode($options);
                                 <div class="row">
                                     <div <?php if (($options->qsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qslSent"><?= __("QSL sent"); ?></label>
-                                        <select id="qslSent" name="qslSent" class="form-select form-select-sm border border-secondary">
+                                        <select id="qslSent" name="qslSent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -515,7 +590,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->qsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qslReceived"><?= __("QSL received"); ?></label>
-                                        <select id="qslReceived" name="qslReceived" class="form-select form-select-sm border border-secondary">
+                                        <select id="qslReceived" name="qslReceived" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -526,7 +601,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->qsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qslSentMethod"><?= __("QSL send. method"); ?></label>
-                                        <select id="qslSentMethod" name="qslSentMethod" class="form-select form-select-sm border border-secondary">
+                                        <select id="qslSentMethod" name="qslSentMethod" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="B"><?= __("Bureau"); ?></option>
                                             <option value="D"><?= __("Direct"); ?></option>
@@ -536,7 +611,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->qsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qslReceivedMethod"><?= __("QSL recv. method"); ?></label>
-                                        <select id="qslReceivedMethod" name="qslReceivedMethod" class="form-select form-select-sm border border-secondary">
+                                        <select id="qslReceivedMethod" name="qslReceivedMethod" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="B"><?= __("Bureau"); ?></option>
                                             <option value="D"><?= __("Direct"); ?></option>
@@ -548,7 +623,7 @@ $options = json_decode($options);
                                 <div class="row">
                                     <div <?php if (($options->lotw->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="lotwSent"><?= __("LoTW sent"); ?></label>
-                                        <select id="lotwSent" name="lotwSent" class="form-select form-select-sm border border-secondary">
+                                        <select id="lotwSent" name="lotwSent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -559,7 +634,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->lotw->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="lotwReceived"><?= __("LoTW received"); ?></label>
-                                        <select id="lotwReceived" name="lotwReceived" class="form-select form-select-sm border border-secondary">
+                                        <select id="lotwReceived" name="lotwReceived" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -571,7 +646,7 @@ $options = json_decode($options);
 
                                     <div <?php if (($options->clublog->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="clublogSent"><?= __("Clublog sent"); ?></label>
-                                        <select id="clublogSent" name="clublogSent" class="form-select form-select-sm border border-secondary">
+                                        <select id="clublogSent" name="clublogSent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -582,7 +657,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->clublog->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="clublogReceived"><?= __("Clublog received"); ?></label>
-                                        <select id="clublogReceived" name="clublogReceived" class="form-select form-select-sm border border-secondary">
+                                        <select id="clublogReceived" name="clublogReceived" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -595,7 +670,7 @@ $options = json_decode($options);
                                 <div class="row">
                                     <div <?php if (($options->eqsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="eqslSent"><?= __("eQSL sent"); ?></label>
-                                        <select id="eqslSent" name="eqslSent" class="form-select form-select-sm border border-secondary">
+                                        <select id="eqslSent" name="eqslSent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -606,7 +681,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->eqsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="eqslReceived"><?= __("eQSL received"); ?></label>
-                                        <select id="eqslReceived" name="eqslReceived" class="form-select form-select-sm border border-secondary">
+                                        <select id="eqslReceived" name="eqslReceived" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -617,7 +692,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->dcl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="dclSent"><?= __("DCL sent"); ?></label>
-                                        <select id="dclSent" name="dclSent" class="form-select form-select-sm border border-secondary">
+                                        <select id="dclSent" name="dclSent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -626,7 +701,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->dcl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="dclReceived"><?= __("DCL received"); ?></label>
-                                        <select id="dclReceived" name="dclReceived" class="form-select form-select-sm border border-secondary">
+                                        <select id="dclReceived" name="dclReceived" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -637,11 +712,11 @@ $options = json_decode($options);
                                 <div class="row">
                                     <div <?php if (($options->qsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qslvia"><?= __("QSL via"); ?></label>
-                                        <input onclick="this.select()" type="search" name="qslvia" class="form-control form-control-sm border border-secondary" value="*" placeholder="<?= __("Empty"); ?>">
+                                        <input onclick="this.select()" type="search" name="qslvia" class="form-control form-control-sm border border-secondary filter-field" value="*" placeholder="<?= __("Empty"); ?>">
                                     </div>
                                     <div <?php if (($options->qsl->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qslimages"><?= __("QSL Images"); ?></label>
-                                        <select class="form-select form-select-sm border border-secondary" id="qslimages" name="qslimages">
+                                        <select class="form-select form-select-sm border border-secondary filter-field" id="qslimages" name="qslimages">
                                             <option value="">-</option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -649,7 +724,7 @@ $options = json_decode($options);
                                     </div>
 									<div <?php if (($options->qrz->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qrzSent"><?= __("QRZ sent"); ?></label>
-                                        <select id="qrzSent" name="qrzSent" class="form-select form-select-sm border border-secondary">
+                                        <select id="qrzSent" name="qrzSent" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -658,7 +733,7 @@ $options = json_decode($options);
                                     </div>
                                     <div <?php if (($options->qrz->show ?? "true") == "false") { echo 'style="display:none"'; } ?> class="mb-3 col-lg-2 col-md-2 col-sm-3 col-xl">
                                         <label for="qrzReceived"><?= __("QRZ received"); ?></label>
-                                        <select id="qrzReceived" name="qrzReceived" class="form-select form-select-sm border border-secondary">
+                                        <select id="qrzReceived" name="qrzReceived" class="form-select form-select-sm border border-secondary filter-field">
                                             <option value=""><?= __("All"); ?></option>
                                             <option value="Y"><?= __("Yes"); ?></option>
                                             <option value="N"><?= __("No"); ?></option>
@@ -666,6 +741,13 @@ $options = json_decode($options);
                                         </select>
                                     </div>
                                 </div>
+								<div class="row">
+									<div class="col-lg-2 col-md-2 col-sm-3 col-xl">
+										<div class="d-flex flex-wrap gap-1">
+											<button type="button" class="btn btn-primary btn-sm flex-shrink-0" onclick="$('#searchForm').submit(); $('#qslFilterDropdown').dropdown('hide');"><i class="fas fa-search"></i> <?= __("Apply filters"); ?></button>
+										</div>
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>
@@ -750,27 +832,24 @@ $options = json_decode($options);
 								</div>
 								<div class="card-body p-2">
 									<div class="d-grid gap-2">
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="btnUpdateFromCallbook"><?= __("Update from Callbook"); ?></button>
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueBureau"><?= __("Queue Bureau"); ?></button>
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueDirect"><?= __("Queue Direct"); ?></button>
-									<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueElectronic"><?= __("Queue Electronic"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentBureau"><?= __("Sent (Bureau)"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentDirect"><?= __("Sent (Direct)"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentElectronic"><?= __("Sent (Electronic)"); ?></button>
-									<button type="button" class="btn btn-sm btn-danger dropdown-action" id="dontSend"><?= __("Not Sent"); ?></button>
-									<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notRequired"><?= __("QSL Not Required"); ?></button>
-									<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notReceived"><?= __("Not Received"); ?></button>
-									<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedBureau"><?= __("Received (Bureau)"); ?></button>
-									<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedDirect"><?= __("Received (Direct)"); ?></button>
-									<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedElectronic"><?= __("Received (Electronic)"); ?></button>
-									<button type="button" class="btn btn-sm btn-info dropdown-action" id="exportAdif"><?= __("Create ADIF"); ?></button>
-									<button type="button" class="btn btn-sm btn-info dropdown-action" id="printLabel"><?= __("Print Label"); ?></button>
-									<button type="button" class="btn btn-sm btn-info dropdown-action" id="qslSlideshow"><?= __("QSL Slideshow"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixCqZones"><?= __("Fix CQ Zones"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixItuZones"><?= __("Fix ITU Zones"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixContinent"><?= __("Fix Continent"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixState"><?= __("Fix State"); ?></button>
-									<button type="button" class="btn btn-sm btn-success dropdown-action" id="updateDistances"><?= __("Update Distances"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="btnUpdateFromCallbook"><?= __("Update from Callbook"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueBureau"><?= __("Queue Bureau"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueDirect"><?= __("Queue Direct"); ?></button>
+										<button type="button" class="btn btn-sm btn-primary dropdown-action" id="queueElectronic"><?= __("Queue Electronic"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentBureau"><?= __("Sent (Bureau)"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentDirect"><?= __("Sent (Direct)"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="sentElectronic"><?= __("Sent (Electronic)"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="dontSend"><?= __("Not Sent"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notRequired"><?= __("QSL Not Required"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="notReceived"><?= __("Not Received"); ?></button>
+										<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedBureau"><?= __("Received (Bureau)"); ?></button>
+										<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedDirect"><?= __("Received (Direct)"); ?></button>
+										<button type="button" class="btn btn-sm btn-warning dropdown-action" id="receivedElectronic"><?= __("Received (Electronic)"); ?></button>
+										<button type="button" class="btn btn-sm btn-info dropdown-action" id="exportAdif"><?= __("Create ADIF"); ?></button>
+										<button type="button" class="btn btn-sm btn-info dropdown-action" id="printLabel"><?= __("Print Label"); ?></button>
+										<button type="button" class="btn btn-sm btn-info dropdown-action" id="qslSlideshow"><?= __("QSL Slideshow"); ?></button>
+										<button type="button" class="btn btn-sm btn-success dropdown-action" id="fixState"><?= __("Fix State"); ?></button>
+										<button type="button" class="btn btn-sm btn-danger dropdown-action" id="mergeQsos"><?= __("Merge QSOs"); ?></button>
 									</div>
 								</div>
 							</div>
@@ -821,6 +900,9 @@ $options = json_decode($options);
 					<button type="options" class="btn btn-sm btn-primary me-1 flex-grow-0 mb-2" id="optionButton" aria-label="<?= __("Options"); ?>" style="white-space: nowrap;" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= __("Options"); ?>">
 						<i class="fas fa-cog"></i>
 					</button>
+					<button type="button" class="btn btn-sm btn-primary me-1 flex-grow-0 mb-2" id="dbtools" style="white-space: nowrap;" aria-label="<?= __("Database Tools"); ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="<?= __("Database Tools"); ?>">
+						<i class="fas fa-wrench"></i>
+					</button>
 					<button type="button" class="btn btn-sm btn-danger me-1 flex-grow-0 mb-2" id="deleteQsos" style="white-space: nowrap;" aria-label="<?= __("Delete"); ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="<?= __("Delete"); ?>">
 						<i class="fas fa-trash-alt"></i>
 					</button>
@@ -835,6 +917,7 @@ $options = json_decode($options);
 		</div>
 
         </form>
+        <div id="csv-button-container" class="mb-2"></div>
         <table style="width:100%" class="table-sm table table-hover table-striped table-bordered table-condensed text-center" id="qsoList">
             <thead>
                 <tr>
@@ -843,6 +926,12 @@ $options = json_decode($options);
                     </th>
                     <?php if (($options->datetime->show ?? "true") == "true") {
                         echo '<th>' . __("Date/Time") . '</th>';
+                    } ?>
+					 <?php if (($options->duration->show ?? "false") == "true") {
+                        echo '<th>' . __("Duration") . '</th>';
+                    } ?>
+                    <?php if (($options->last_modification->show ?? "false") == "true") {
+                        echo '<th>' . __("Last modified") . '</th>';
                     } ?>
                     <?php if (($options->de->show ?? "true") == "true") {
                         echo '<th>' . __("De") . '</th>';
@@ -862,7 +951,7 @@ $options = json_decode($options);
                     <?php if (($options->band->show ?? "true") == "true") {
                         echo '<th>' . __("Band") . '</th>';
                     } ?>
-					<?php if (($options->frequency->show ?? "true") == "true") {
+                    <?php if (($options->frequency->show ?? "true") == "true") {
                         echo '<th>' . __("Frequency") . '</th>';
                     } ?>
                     <?php if (($options->gridsquare->show ?? "true") == "true") {
@@ -871,7 +960,7 @@ $options = json_decode($options);
                     <?php if (($options->name->show ?? "true") == "true") {
                         echo '<th>' . __("Name") . '</th>';
                     } ?>
-					<?php if (($options->qth->show ?? "true") == "true") {
+                    <?php if (($options->qth->show ?? "true") == "true") {
                         echo '<th>' . __("QTH") . '</th>';
                     } ?>
                     <?php if (($options->qslvia->show ?? "true") == "true") {
@@ -883,16 +972,16 @@ $options = json_decode($options);
                     <?php if (($options->qsl->show ?? "true") == "true") {
                         echo '<th>' . __("QSL") . '</th>';
                     } ?>
-					<?php if (($options->eqsl->show ?? "true") == "true") {
-						echo '<th class="eqslconfirmation">eQSL</th>';
-					} ?>
-					<?php if (($options->lotw->show ?? "true") == "true") {
-						echo '<th class="lotwconfirmation">LoTW</th>';
-					} ?>
+                    <?php if (($options->eqsl->show ?? "true") == "true") {
+                        echo '<th class="eqslconfirmation">eQSL</th>';
+                    } ?>
+                    <?php if (($options->lotw->show ?? "true") == "true") {
+                        echo '<th class="lotwconfirmation">LoTW</th>';
+                    } ?>
                     <?php if (($options->qrz->show ?? "true") == "true") {
                         echo '<th class="qrz">' . __("QRZ") . '</th>';
                     } ?>
-					<?php if (($options->dcl->show ?? "true") == "true") {
+                    <?php if (($options->dcl->show ?? "true") == "true") {
                         echo '<th>' . __("DCL") . '</th>';
                     } ?>
                     <?php if (($options->qslmsgs->show ?? "false") == "true") {
@@ -907,7 +996,7 @@ $options = json_decode($options);
                     <?php if (($options->state->show ?? "true") == "true") {
                         echo '<th>' . __("State") . '</th>';
                     } ?>
-					<?php if (($options->county->show ?? "true") == "true") {
+                    <?php if (($options->county->show ?? "true") == "true") {
                         echo '<th>' . __("County") . '</th>';
                     } ?>
                     <?php if (($options->cqzone->show ?? "true") == "true") {

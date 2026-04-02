@@ -20,10 +20,10 @@ class adif_data extends CI_Model {
 		$this->db->order_by("COL_TIME_ON", "ASC");
 		$this->db->join('station_profile', 'station_profile.station_id = '.$this->config->item('table_name').'.station_id');
 		if ($from) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 		}
 		if ($to) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 		}
 		if ($onlyop) {
 			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -62,10 +62,10 @@ class adif_data extends CI_Model {
 		$this->db->order_by("COL_TIME_ON", "ASC");
 		$this->db->join('station_profile', 'station_profile.station_id = '.$this->config->item('table_name').'.station_id');
 		if ($from) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 		}
 		if ($to) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 		}
 		if ($onlyop) {
 			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -187,10 +187,10 @@ class adif_data extends CI_Model {
 
 		// Apply same filters as export_custom
 		if ($from) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 		}
 		if ($to) {
-			$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+			$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 		}
 		if ($onlyop) {
 			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -229,10 +229,10 @@ class adif_data extends CI_Model {
 
 			// If date is set, we format the date and add it to the where-statement
 			if ($from) {
-				$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) >= ", $from);
+				$this->db->where($this->config->item('table_name').".COL_TIME_ON >= ", $from . ' 00:00:00');
 			}
 			if ($to) {
-				$this->db->where("date(".$this->config->item('table_name').".COL_TIME_ON) <= ",$to);
+				$this->db->where($this->config->item('table_name').".COL_TIME_ON <= ", $to . ' 23:59:59');
 			}
 			if ($onlyop) {
 				$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
@@ -253,25 +253,52 @@ class adif_data extends CI_Model {
 		}
 	}
 
-	function export_past_id_chunked($station_id, $fetchfromid, $limit, $onlyop = null, $offset = 0, $chunk_size = 5000) {
-		// Copy export_past_id logic but add chunking support
-		$this->db->select(''.$this->config->item('table_name').'.*, station_profile.*, dxcc_entities.name as station_country');
-		$this->db->from($this->config->item('table_name'));
-		$this->db->where($this->config->item('table_name').'.station_id', $station_id);
-		$this->db->where($this->config->item('table_name').".COL_PRIMARY_KEY > ", $fetchfromid);
+	function export_past_id_chunked($station_id, $fetchfromid, $limit, $onlyop = null, $offset = 0, $chunk_size = 5000, $qsl_filter = null, $band = null) {
+		$tbl = $this->config->item('table_name');
+
+		$sql = "SELECT {$tbl}.*, station_profile.*, dxcc_entities.name AS station_country
+		        FROM {$tbl}
+		        JOIN station_profile ON station_profile.station_id = {$tbl}.station_id
+		        LEFT OUTER JOIN dxcc_entities ON station_profile.station_dxcc = dxcc_entities.adif
+		        WHERE {$tbl}.station_id = ?
+		        AND {$tbl}.COL_PRIMARY_KEY > ?";
+
+		$bindings = [$station_id, $fetchfromid];
 
 		if ($onlyop) {
-			$this->db->where("upper(".$this->config->item('table_name').".col_operator)",$onlyop);
+			$sql .= " AND UPPER({$tbl}.col_operator) = ?";
+			$bindings[] = $onlyop;
 		}
 
-		// Add chunking
-		$this->db->limit($chunk_size, $offset);
+		if (!empty($qsl_filter)) {
+			$col_map = [
+				'lotw'    => 'COL_LOTW_QSL_RCVD',
+				'qsl'     => 'COL_QSL_RCVD',
+				'eqsl'    => 'COL_EQSL_QSL_RCVD',
+				'clublog' => 'COL_CLUBLOG_QSO_DOWNLOAD_STATUS',
+			];
+			$clauses = [];
+			foreach ($qsl_filter as $method) {
+				if (!isset($col_map[$method])) continue;
+				$clauses[] = "{$tbl}.{$col_map[$method]} = 'Y'";
+			}
+			$sql .= " AND (" . implode(" OR ", $clauses) . ")";
+		}
 
-		$this->db->order_by("COL_PRIMARY_KEY", "ASC");
-		$this->db->join('station_profile', 'station_profile.station_id = '.$this->config->item('table_name').'.station_id');
-		$this->db->join('dxcc_entities', 'station_profile.station_dxcc = dxcc_entities.adif', 'left outer');
 
-		return $this->db->get();
+		if ($band !== null) {
+			if ($band === 'SAT') {
+				$sql .= " AND {$tbl}.COL_PROP_MODE = ?";
+			} else {
+				$sql .= " AND {$tbl}.COL_BAND = ? AND ({$tbl}.COL_PROP_MODE = '' OR {$tbl}.COL_PROP_MODE is null)";
+			}
+			$bindings[] = $band;
+		}
+		$sql .= " ORDER BY {$tbl}.COL_PRIMARY_KEY ASC LIMIT ? OFFSET ?";
+		$bindings[] = (int)$chunk_size;
+		$bindings[] = (int)$offset;
+
+		return $this->db->query($sql, $bindings);
 	}
 
 	function export_lotw($onlyop = null) {
@@ -296,16 +323,6 @@ class adif_data extends CI_Model {
 		$this->db->join('dxcc_entities', 'station_profile.station_dxcc = dxcc_entities.adif', 'left outer');
 
 		return $this->db->get();
-	}
-
-	function mark_lotw_sent($id) {
-		$data = array(
-			'COL_LOTW_QSL_SENT' => 'Y'
-		);
-
-		$this->db->set('COL_LOTW_QSLSDATE', 'now()', FALSE);
-		$this->db->where('COL_PRIMARY_KEY', $id);
-		$this->db->update($this->config->item('table_name'), $data);
 	}
 
 	function sig_all($type) {

@@ -8,22 +8,22 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<link rel="manifest" href="<?php echo base_url(); ?>manifest.json" />
+	<link rel="manifest" href="<?php echo $this->paths->cache_buster('/manifest.json'); ?>" />
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/buttons.dataTables.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/buttons.dataTables.min.css'); ?>" />
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/datatables.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/datatables.min.css'); ?>" />
 
 	<!-- Bootstrap CSS -->
 	<?php
 	$theme = $this->optionslib->get_theme();
 	if ($theme) { ?>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-multiselect.css">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/<?php echo $theme; ?>/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/general.css">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/selectize.bootstrap4.css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-dialog.css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/<?php echo $theme; ?>/overrides.css">
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/bootstrap-multiselect.css'); ?>">
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/'.$theme.'/bootstrap.min.css'); ?>">
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/general.css'); ?>">
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/selectize.bootstrap4.css'); ?>" />
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/bootstrap-dialog.css'); ?>" />
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/'.$theme.'/overrides.css'); ?>">
 	<?php } ?>
 
 	<?php if (($this->uri->segment(1) == "awards")) {
@@ -38,33 +38,33 @@
 		</style>
 	<?php } ?>
 
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/fontawesome/css/all.min.css'); ?>">
 
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/jquery.fancybox.min.css'); ?>" />
 
 	<!-- Maps -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/leaflet/leaflet.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/leaflet/Control.FullScreen.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/js/leaflet/leaflet.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/js/leaflet/Control.FullScreen.css'); ?>" />
 
 	<?php if ($this->uri->segment(1) == "search" && $this->uri->segment(2) == "filter") { ?>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/query-builder.default.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/query-builder.default.min.css'); ?>" />
 	<?php } ?>
 
 	<?php if (($this->uri->segment(1) == "notes" && ($this->uri->segment(2) == "add" || $this->uri->segment(2) == "edit" || $this->uri->segment(2) == "view")) || $this->uri->segment(1) == "qso") { ?>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/plugins/easymde/easymde.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/plugins/easymde/easymde.css'); ?>" />
 	<?php } ?>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/loading.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/ldbtn.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/loading.min.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/ldbtn.min.css'); ?>" />
 
 
 	<?php if ($this->uri->segment(1) == "sattimers") { ?>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sattimers.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/sattimers.css'); ?>" />
 	<?php } ?>
 
-	<?php if (file_exists(APPPATH . '../assets/css/custom.css')) {
-		echo '<link rel="stylesheet" href="' . base_url() . 'assets/css/custom.css">';
-	} ?>
+	<?php if (file_exists(APPPATH . '../assets/css/custom.css')) { ?>
+		<link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/custom.css'); ?>" />
+	<?php } ?>
 
 	<script>
 		var userName = '<?php echo $this->session->userdata('user_name'); ?>';
@@ -80,11 +80,11 @@
                 ?>
 	</script>
 
-	<?php if (file_exists(APPPATH . '../assets/js/sections/custom.js')) {
-		echo '<script src="' . base_url() . 'assets/js/sections/custom.js"></script>';
-	} ?>
+	<?php if (file_exists(APPPATH . '../assets/js/sections/custom.js')) { ?>
+		<script src="<?php echo $this->paths->cache_buster('/assets/js/sections/custom.js'); ?>"></script>
+	<?php } ?>
 
-	<link rel="icon" href="<?php echo base_url(); ?>favicon.ico">
+	<link rel="icon" href="<?php echo $this->paths->cache_buster('/favicon.ico'); ?>">
 
 	<title><?php if (isset($page_title)) {
 				echo $page_title;
@@ -94,7 +94,7 @@
 <body dir="<?php echo $language['direction']; ?>">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light main-nav" id="header-menu">
 		<div class="container">
-			<a class="navbar-brand" href="<?php echo site_url(); ?>"><img class="headerLogo" src="<?php echo base_url(); ?>assets/logo/<?php echo $this->optionslib->get_logo('header_logo'); ?>.png" alt="Logo" /></a>
+			<a class="navbar-brand" href="<?php echo site_url(); ?>"><img class="headerLogo" src="<?php echo $this->paths->cache_buster('/assets/logo/'. $this->optionslib->get_logo('header_logo').'.png'); ?>" alt="Logo" /></a>
 			<?php if (ENVIRONMENT == "development") { ?>
 				<span class="badge text-bg-danger me-1"><?= __("Developer Mode"); ?></span>
 			<?php } ?>
@@ -246,6 +246,12 @@
 								<li><a class="dropdown-item dropdown-toggle dropdown-toggle-submenu" data-bs-toggle="dropdown" href="#">🇬🇧 <?= __("Great Britain"); ?></a>
 									<ul class="submenu dropdown-menu">
 										<li><a class="dropdown-item" href="<?php echo site_url('awards/wab'); ?>"><i class="fas fa-trophy"></i> <?= __("WAB"); ?></a></li>
+									</ul>
+								</li>
+								<div class="dropdown-divider"></div>
+								<li><a class="dropdown-item dropdown-toggle dropdown-toggle-submenu" data-bs-toggle="dropdown" href="#">🇮🇹 <?= __("Italy"); ?></a>
+									<ul class="submenu dropdown-menu">
+										<li><a class="dropdown-item" href="<?php echo site_url('awards/waip'); ?>"><i class="fas fa-trophy"></i> <?= __("WAIP"); ?></a></li>
 									</ul>
 								</li>
 								<div class="dropdown-divider"></div>
@@ -494,7 +500,7 @@
 
 								<?php
 								$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-								if ($logbooks_locations_array) {
+								if ($logbooks_locations_array[0] !== -1) {
 									$location_list = "'" . implode("','", $logbooks_locations_array) . "'";
 								} else {
 									$location_list = null;
@@ -531,9 +537,21 @@
 
 								<li><a class="dropdown-item" href="<?php echo site_url('api'); ?>" title="Manage API keys"><i class="fas fa-key"></i> <?= __("API Keys"); ?></a></li>
 								<li><a class="dropdown-item" href="<?php echo site_url('radio'); ?>" title="Interface with one or more radios"><i class="fas fa-broadcast-tower"></i> <?= __("Hardware Interfaces"); ?></a></li>
+
+								<?php if (($this->config->item('internal_tools') ?? false) && ($this->session->userdata('user_type') == 99)) { ?>
+								<div class="dropdown-divider"></div>
+								<li><a class="dropdown-item dropdown-toggle dropdown-toggle-submenu" data-bs-toggle="dropdown"><i class="fas fa-wrench"></i> <?= __("Internal tools"); ?></a>
+									<ul class="submenu submenu-left dropdown-menu">
+										<li><a class="dropdown-item" href="<?php echo site_url('calltester'); ?>" title="Callsign DXCC checker"><i class="fas fa-wrench"></i> <?= __("Callsign DXCC checker"); ?></a></li>
+										<li><a class="dropdown-item" href="<?php echo site_url('map/qso_map'); ?>" title="GeoJSON QSO Map"><i class="fas fa-wrench"></i> <?= __("GeoJSON QSO Map"); ?></a></li>
+										<li><a class="dropdown-item" href="<?php echo site_url('zonechecker'); ?>" title="Gridsquare Zone checker"><i class="fas fa-wrench"></i> <?= __("Gridsquare Zone checker"); ?></a></li>
+									</ul>
+								</li>
+								<?php } ?>
+
 								<div class="dropdown-divider"></div>
 								<li><a class="dropdown-item" href="javascript:displayVersionDialog();" title="Version Information"><i class="fas fa-star"></i> <?= __("Version Info"); ?></a></li>
-								<li><a class="dropdown-item" target="_blank" href="https://github.com/wavelog/wavelog/wiki" title="Help"><i class="fas fa-question"></i> <?= __("Help"); ?></a></li>
+								<li><a class="dropdown-item" target="_blank" href="https://docs.wavelog.org/" title="Help"><i class="fas fa-question"></i> <?= __("Help"); ?></a></li>
 								<li><a class="dropdown-item" target="_blank" href="https://github.com/wavelog/wavelog/discussions" title="Forum"><i class="far fa-comment-dots"></i> <?= __("Forum"); ?></a></li>
 								<div class="dropdown-divider"></div>
 								<?php if ($this->session->userdata('impersonate') == 1) { ?>

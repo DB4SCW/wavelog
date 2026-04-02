@@ -4,6 +4,7 @@
 			<option value="">-</option>
 			<optgroup label="<?= __("QSO details"); ?>">
 				<option value="band"><?= __("Band"); ?></option>
+				<option value="frequency"><?= __("Frequency"); ?></option>
 				<option value="comment"><?= __("Comment"); ?></option>
 				<option value="contest"><?= __("Contest"); ?></option>
 				<option value="stxstring"><?= __("Contest Exch (S)"); ?></option>
@@ -22,7 +23,7 @@
 			<optgroup label="<?= __("Awards"); ?>">
 				<option value="continent"><?= __("Continent"); ?></option>
 				<option value="cqz"><?= __("CQ Zone"); ?></option>
-				<option value="dok"><?= __("DOK"); ?></option>
+				<option value="dok"><?= __("DARC DOK"); ?></option>
 				<option value="dxcc"><?= __("DXCC"); ?></option>
 				<option value="gridsquare"><?= __("Gridsquare"); ?></option>
 				<option value="iota"><?= __("IOTA"); ?></option>
@@ -62,6 +63,7 @@
 
 		<!-- CQ Zone -->
 		<select style="display:none" class="form-select form-select-sm w-auto" id="editCqz" name="cqz" required>
+			<option value="null">-</option>
 			<?php
 			for ($i = 1; $i <= 40; $i++) {
 				echo '<option value="' . $i . '">' . $i . '</option>';
@@ -71,6 +73,7 @@
 
 		<!-- ITU Zone -->
 		<select style="display:none" class="form-select form-select-sm w-auto" id="editItuz" name="ituz" required>
+			<option value="null">-</option>
 			<?php
 			for ($i = 1; $i <= 90; $i++) {
 				echo '<option value="' . $i . '">' . $i . '</option>';
@@ -131,6 +134,12 @@
 			?>
 		</select>
 
+		<label style="display:none" id="editFrequencyTxLabel" class="mx-2 w-auto" for="editFrequency"><?= __("Frequency TX (Hz)"); ?></label>
+		<input style="display:none" class="form-control form-control-sm w-auto" id="editFrequency" type="text" name="editFrequency" placeholder="" aria-label="editFrequency">
+
+		<label style="display:none" id="editFrequencyRxLabel" class="mx-2 w-auto" for="editFrequencyRx"><?= __("Frequency RX (Hz)"); ?></label>
+		<input style="display:none" class="form-control form-control-sm w-auto" id="editFrequencyRx" type="text" name="editFrequencyRx" placeholder="" aria-label="editFrequencyRx">
+
 		<select style="display:none" id="editMode" class="form-select mode form-select-sm w-auto" name="editMode">
 		<?php
 			foreach($modes->result() as $mode){
@@ -173,8 +182,8 @@
 			<option value="Y"><?= __("Yes"); ?></option>
 			<option value="N"><?= __("No"); ?></option>
 			<option value="R"><?= __("Requested"); ?></option>
+			<option value="Q"><?= __("Queued"); ?></option>
 			<option value="I"><?= __("Invalid"); ?></option>
-			<option value="V"><?= __("Verified"); ?></option>
 		</select>
 
 		<select style="display:none" class="form-select w-auto form-select-sm w-auto" id="editQrz"  name="qrz">

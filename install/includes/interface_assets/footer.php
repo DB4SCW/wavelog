@@ -4,7 +4,6 @@
 		$('#install_form input').each(function() {
 			var inputId = $(this).attr('id');
 			if (inputId !== 'directory' && inputId !== 'websiteurl') { // do not restore directory and websiteurl for legacy reasons
-				console.log('Updated inputId: ', inputId);
 				if (localStorage.getItem(inputId)) {
 					$(this).val(localStorage.getItem(inputId));
 				}
@@ -83,5 +82,6 @@
 		<?= __("Spanish"); ?>
 		<?= __("Swedish"); ?>
 		<?= __("Turkish"); ?>
+    	<?= __("Ukrainian"); ?>
 	</div>
 </footer>

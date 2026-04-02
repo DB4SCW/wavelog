@@ -6,6 +6,7 @@ let inStateFixing = false;
 let stateFixStats = {fixed: 0, skipped: 0, fixedDxcc: new Set(), skippedDxcc: new Set(), skipReasons: new Set(), skippedDetails: []};
 let lastChecked = null;
 let silentReset = false;
+const filterDefaults = {};
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('.dropdown').forEach(dd => {
@@ -62,6 +63,12 @@ function updateRow(qso) {
 	let c = 1;
 	if ((user_options.datetime.show ?? 'true') == "true"){
 		cells.eq(c++).text(qso.qsoDateTime);
+	}
+	if ((user_options.duration.show ?? 'true') == "true"){
+		cells.eq(c++).text(qso.duration);
+	}
+	if ((user_options.last_modification.show ?? 'true') == "true"){
+		cells.eq(c++).text(qso.last_modified);
 	}
 	if ((user_options.de.show ?? 'true') == "true"){
 		cells.eq(c++).text(qso.de);
@@ -199,6 +206,10 @@ function loadQSOTable(rows) {
 
 	// Prevent initializing if already a DataTable
 	if ($.fn.DataTable.isDataTable($table)) {
+		// Remove ALL buttons containers to prevent duplicates
+		$('#qsoList').prev('.dt-buttons').remove();
+		$('#qsoList_wrapper').find('.dt-buttons').remove();
+		$('.dt-buttons').remove();
 		$table.DataTable().clear().destroy();
 	}
 
@@ -225,14 +236,15 @@ function loadQSOTable(rows) {
 				{ targets: $(".antennaelevation-column-sort").index(), type: "numbersort" },
 				{ targets: $(".stationpower-column-sort").index(), type: "numbersort" },
 			],
-			dom: 'Bfrtip',
+			dom: 'frtip',
 			buttons: [
 						{
 							extend: 'csv',
-							className: 'mb-1 btn btn-sm btn-primary', // Bootstrap classes
-								init: function(api, node, config) {
-									$(node).removeClass('dt-button').addClass('btn btn-primary'); // Ensure Bootstrap class applies
-								},
+							text: 'CSV',
+							className: 'mb-1 btn btn-sm btn-primary',
+							filename: function() {
+								return 'qso_export_' + new Date().toISOString().slice(0,10);
+							},
 								exportOptions: {
 								columns: ':visible:not(:eq(0))', // export all visible except column 4
 								format: {
@@ -245,7 +257,7 @@ function loadQSOTable(rows) {
 											data = data.replace(/<[^>]*>/g, '');
 										}
 										// then replace Ø with 0 in specific columns
-										if (column === 1 || column === 2 || column === 3) {
+										if (column === 1 || column === 2 || column === 3 || column === 4) {
 											// remove a trailing "L" and trim whitespaces
 											data = data.replace(/\s*L\s*$/, '').trim();
 											if (typeof data === 'string' && data.includes('Ø')) {
@@ -268,6 +280,9 @@ function loadQSOTable(rows) {
                     ]
 		});
 
+		// Place buttons in custom container
+		table.buttons().container().appendTo('#csv-button-container');
+
 	for (i = 0; i < rows.length; i++) {
 		let qso = rows[i];
 
@@ -279,6 +294,12 @@ function loadQSOTable(rows) {
 			} else {
 				data.push(qso.qsoDateTime);
 			}
+		}
+		if ((user_options.duration.show ?? 'true') == "true"){
+			data.push(qso.duration);
+		}
+		if ((user_options.last_modification.show ?? 'true') == "true"){
+			data.push(qso.last_modified);
 		}
 		if ((user_options.de.show ?? 'true') == "true"){
 			data.push(qso.de.replaceAll('0', 'Ø'));
@@ -614,7 +635,22 @@ function unselectQsoID(qsoID) {
 	$('#checkBoxAll').prop("checked", false);
 }
 
+// Capture default values for all filter fields on page load
+function captureFilterDefaults() {
+	$('.filter-field').each(function() {
+		const $el = $(this);
+		const id = $el.attr('id');
+		const name = $el.attr('name');
+		// Use id as key if available, otherwise use name
+		const key = id ? '#' + id : '[name="' + name + '"]';
+		filterDefaults[key] = $el.val();
+	});
+}
+
 $(document).ready(function () {
+	// Capture default filter values BEFORE any other initialization
+	captureFilterDefaults();
+
 	// initialize multiselect dropdown for locations
 	// Documentation: https://davidstutz.github.io/bootstrap-multiselect/index.html
 
@@ -634,7 +670,7 @@ $(document).ready(function () {
 	$('#dxcc').multiselect({
 		// template is needed for bs5 support
 		templates: {
-		  button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-secondary me-2 w-auto" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
+			button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-secondary me-2 w-auto" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
 		},
 		enableFiltering: true,
 		enableFullValueFiltering: false,
@@ -678,7 +714,7 @@ $(document).ready(function () {
 					callback: function (result) {
 					}
 				});
-				return false;
+			return false;
 		}
 
 		if(container != null){
@@ -745,6 +781,10 @@ $(document).ready(function () {
 				wwff: this.wwff.value,
 				qslimages: this.qslimages.value,
 				dupes: this.dupes.value,
+				dupedate: this.dupedate.value,
+				dupemode: this.dupemode.value,
+				dupeband: this.dupeband.value,
+				dupesat: this.dupesat.value,
 				contest: this.contest.value,
 				invalid: this.invalid.value,
 				continent: this.continent.value,
@@ -754,6 +794,9 @@ $(document).ready(function () {
 				qrzSent: this.qrzSent.value,
 				qrzReceived: this.qrzReceived.value,
 				distance: this.distance.value,
+				sortcolumn: this.sortcolumn.value,
+				sortdirection: this.sortdirection.value,
+				duration: this.duration.value,
 			},
 			dataType: 'json',
 			success: function (data) {
@@ -819,7 +862,7 @@ $(document).ready(function () {
 					buttons: [
 					{
 						label: lang_admin_close,
-						cssClass: 'btn-sm btn-secondary',
+						cssClass: 'btn btn-sm btn-secondary',
 						id: 'closeButton',
 						action: function (dialogItself) {
 							dialogItself.close();
@@ -827,7 +870,7 @@ $(document).ready(function () {
 					},
 					{
 						label: 'Update',
-						cssClass: 'btn-sm btn-primary',
+						cssClass: 'btn btn-sm btn-primary',
 						id: 'updateButton',
 						action: function (dialogItself) {
 							startProcessingCallbook(nElements, $('[name="gridsquareaccuracycheck"]').is(":checked"));
@@ -972,7 +1015,7 @@ $(document).ready(function () {
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			// You should set responseType as blob for binary responses
 			xhttp.responseType = 'blob';
-			xhttp.send("id=" + JSON.stringify(id_list, null, 2)+"&sortorder=" +$('.table').DataTable().order());
+			xhttp.send("id=" + JSON.stringify(id_list, null, 2)+"&sortcolumn=" +$('#sortcolumn').val()+"&sortdirection=" +$('#sortdirection').val());
 		} else {
 
 			// Post data to URL which handles post request
@@ -1088,7 +1131,7 @@ $(document).ready(function () {
 	});
 
 	$('#dupeButton').click(function (event) {
-		dupeSearch();
+		dupeSearchDialog();
 	});
 
 	$('#invalidButton').click(function (event) {
@@ -1242,26 +1285,19 @@ $(document).ready(function () {
 		});
 	});
 
-	$('#fixContinent').click(function (event) {
+	$('#dbtools').click(function (event) {
 		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/continentDialog',
+			url: base_url + 'index.php/logbookadvanced/dbtoolsDialog',
 			type: 'post',
 			success: function (html) {
 				BootstrapDialog.show({
-					title: lang_gen_advanced_logbook_continent_fix,
-					size: BootstrapDialog.SIZE_NORMAL,
+					title: 'Database tools',
+					size: BootstrapDialog.SIZE_EXTRAWIDE,
 					cssClass: 'options',
 					nl2br: false,
+					closable: false,
 					message: html,
 					buttons: [
-					{
-						label: lang_gen_advanced_logbook_update_now + ' <div class="ld ld-ring ld-spin"></div>',
-						cssClass: 'btn btn-sm btn-primary ld-ext-right',
-						id: 'updateContinentButton',
-						action: function (dialogItself) {
-							runContinentFix(dialogItself);
-						}
-					},
 					{
 						label: lang_admin_close,
 						cssClass: 'btn btn-sm btn-secondary',
@@ -1274,93 +1310,6 @@ $(document).ready(function () {
 			}
 		});
 	});
-
-	function runContinentFix(dialogItself) {
-		$('#updateContinentButton').prop("disabled", true).addClass("running");
-		$('#closeButton').prop("disabled", true);
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/fixContinent',
-			type: 'POST',
-			success: function (response) {
-				$('#updateContinentButton').prop("disabled", false).removeClass("running");
-				dialogItself.close();
-				BootstrapDialog.alert({
-					title: lang_gen_advanced_logbook_success,
-					message: lang_gen_advanced_logbook_continents_updated + ' ' + response + ' ' + lang_gen_advanced_logbook_records_updated,
-					type: BootstrapDialog.TYPE_SUCCESS
-				});
-			},
-			error: function () {
-				$('#updateContinentButton').prop("disabled", false).removeClass("running");
-				dialogItself.close();
-				BootstrapDialog.alert({
-					title: lang_gen_advanced_logbook_error,
-					message: lang_gen_advanced_logbook_problem_fixing_continents,
-					type: BootstrapDialog.TYPE_DANGER
-				});
-			}
-		});
-	}
-
-	$('#updateDistances').click(function (event) {
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/distanceDialog',
-			type: 'post',
-			success: function (html) {
-				BootstrapDialog.show({
-					title: lang_gen_advanced_logbook_update_distances,
-					size: BootstrapDialog.SIZE_NORMAL,
-					cssClass: 'options',
-					nl2br: false,
-					message: html,
-					buttons: [
-					{
-						label: lang_gen_advanced_logbook_update_now  + ' <div class="ld ld-ring ld-spin"></div>',
-						cssClass: 'btn btn-sm btn-primary ld-ext-right',
-						id: 'updateDistanceButton',
-						action: function (dialogItself) {
-							runUpdateDistancesFix(dialogItself);
-						}
-					},
-					{
-						label: lang_admin_close,
-						cssClass: 'btn btn-sm btn-secondary',
-						id: 'closeButton',
-						action: function (dialogItself) {
-							dialogItself.close();
-						}
-					}],
-				});
-			}
-		});
-	});
-
-	function runUpdateDistancesFix(dialogItself) {
-		$('#updateDistanceButton').prop("disabled", true).addClass("running");
-		$('#closeButton').prop("disabled", true);
-		$.ajax({
-			url: base_url + 'index.php/logbookadvanced/updateDistances',
-			type: 'POST',
-			success: function (response) {
-				$('#updateDistanceButton').prop("disabled", false).removeClass("running");
-				dialogItself.close();
-				BootstrapDialog.alert({
-					title: lang_gen_advanced_logbook_success,
-					message: lang_gen_advanced_logbook_distances_updated + ' ' + response + ' ' + lang_gen_advanced_logbook_records_updated,
-					type: BootstrapDialog.TYPE_SUCCESS
-				});
-			},
-			error: function () {
-				$('#updateDistanceButton').prop("disabled", false).removeClass("running");
-				dialogItself.close();
-				BootstrapDialog.alert({
-					title: lang_gen_advanced_logbook_error,
-					message: lang_gen_advanced_logbook_problem_updating_distances,
-					type: BootstrapDialog.TYPE_DANGER
-				});
-			}
-		});
-	}
 
 	$('#fixItuZones').click(function (event) {
 		const id_list = getSelectedIds();
@@ -1484,6 +1433,171 @@ $(document).ready(function () {
 		});
 	});
 
+	// Merge QSOs button handler
+	$('#mergeQsos').click(function (event) {
+		const id_list = getSelectedIds();
+
+		if (id_list.length === 0 || id_list.length === 1 || id_list.length > 2) {
+			BootstrapDialog.alert({
+				title: lang_gen_advanced_logbook_info,
+				message: lang_gen_advanced_logbook_select_row_merge_qso,
+				type: BootstrapDialog.TYPE_INFO,
+				closable: false,
+				draggable: false,
+				callback: function (result) {
+				}
+			});
+			return;
+		}
+
+		// Load merge dialog
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/mergeDialog',
+			type: 'post',
+			data: {
+				qsoIds: id_list
+			},
+			success: function (html) {
+				BootstrapDialog.show({
+					title: lang_gen_advanced_logbook_merge_qsos,
+					size: BootstrapDialog.SIZE_WIDE,
+					cssClass: 'merge-dialog',
+					nl2br: false,
+					message: html,
+					buttons: [
+					{
+						label: 'Merge QSOs <div class="ld ld-ring ld-spin"></div>',
+						cssClass: 'btn btn-sm btn-danger ld-ext-right',
+						id: 'mergeButton',
+						action: function (dialogItself) {
+							// Show confirmation dialog
+							BootstrapDialog.confirm({
+								title: lang_gen_advanced_logbook_danger,
+								message: lang_gen_advanced_logbook_confirm_merge_qsos,
+								type: BootstrapDialog.TYPE_DANGER,
+								closable: true,
+								draggable: true,
+								btnCancelLabel: lang_gen_advanced_logbook_cancel,
+								btnOKLabel: lang_gen_advanced_logbook_yes_merge_qsos,
+								btnOKClass: 'btn-danger',
+								callback: function(result) {
+									if (result) {
+										// User confirmed, proceed with merge
+										const formData = $('#mergeForm').serialize();
+
+										$('#mergeButton').prop("disabled", true).addClass("running");
+										$('#closeMergeButton').prop("disabled", true);
+
+										$.ajax({
+											url: base_url + 'index.php/logbookadvanced/mergeQsos',
+											type: 'post',
+											data: formData,
+											dataType: 'json',
+											success: function (response) {
+												dialogItself.close();
+												if (response.success) {
+													BootstrapDialog.alert({
+														title: lang_gen_advanced_logbook_success,
+														message: lang_gen_advanced_logbook_qsos_merged,
+														type: BootstrapDialog.TYPE_SUCCESS,
+														closable: false,
+														draggable: false,
+														callback: function (result) {
+															$('#searchButton').click();
+														}
+													});
+												} else {
+													BootstrapDialog.alert({
+														title: lang_gen_advanced_logbook_error,
+														message: response.message || lang_gen_advanced_logbook_error_merging_qsos,
+														type: BootstrapDialog.TYPE_DANGER,
+														closable: false,
+														draggable: false,
+														callback: function (result) {
+														}
+													});
+												}
+											},
+											error: function () {
+												dialogItself.close();
+												BootstrapDialog.alert({
+													title: lang_gen_advanced_logbook_error,
+													message: lang_gen_advanced_logbook_error_merging_qsos,
+													type: BootstrapDialog.TYPE_DANGER,
+													closable: false,
+													draggable: false,
+													callback: function (result) {
+													}
+												});
+											}
+										});
+									}
+								}
+							});
+						}
+					},
+					{
+						label: lang_admin_close,
+						cssClass: 'btn btn-sm btn-secondary',
+						id: 'closeMergeButton',
+						action: function (dialogItself) {
+							dialogItself.close();
+						}
+					}],
+				});
+			},
+			error: function () {
+				BootstrapDialog.alert({
+					title: lang_gen_advanced_logbook_error,
+					message: lang_gen_advanced_logbook_error_loading_merge_dialog,
+					type: BootstrapDialog.TYPE_DANGER,
+					closable: false,
+					draggable: false,
+					callback: function (result) {
+					}
+				});
+			}
+		});
+	});
+
+	function dupeSearchDialog() {
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/dupeSearchDialog',
+			type: 'post',
+			success: function (html) {
+				BootstrapDialog.show({
+					title: lang_gen_advanced_logbook_dupe_search,
+					size: BootstrapDialog.SIZE_NORMAL,
+					cssClass: 'options',
+					nl2br: false,
+					message: html,
+					buttons: [
+						{
+							label: lang_gen_advanced_logbook_search + ' <div class="ld ld-ring ld-spin"></div>',
+							cssClass: 'btn btn-sm btn-primary ld-ext-right',
+							id: 'dupeSearchButton',
+							action: function (dialogItself) {
+								dialogItself.close();
+								$('#dupedate').val($('#date_check').is(':checked') ? "Y" : "N");
+								$('#dupemode').val($('#mode_check').is(':checked') ? "Y" : "N");
+								$('#dupeband').val($('#band_check').is(':checked') ? "Y" : "N");
+								$('#dupesat').val($('#satellite_check').is(':checked') ? "Y" : "N");
+								dupeSearch();
+							}
+						},
+						{
+							label: lang_admin_close,
+							cssClass: 'btn btn-sm btn-secondary',
+							id: 'closeDupeDialogButton',
+							action: function (dialogItself) {
+								dialogItself.close();
+							}
+						}],
+				});
+			}
+		});
+	}
+
 	function dupeSearch() {
 		$("#dupes").val("Y");
 		$('#dupeButton').prop('disabled', true).addClass('running');
@@ -1550,85 +1664,96 @@ $(document).ready(function () {
 				case 'date': 		col1 = currentRow.find("td:eq(1)").text(); break;
 			}
 			if (col1.length == 0) return;
+
+			// Preserve selected locations before reset
+			const selectedLocations = $('#de').val();
+
 			silentReset = true;
 			$('#searchForm').trigger("reset");
+
+			// Restore selected locations after reset
+			if (selectedLocations && selectedLocations.length > 0) {
+				$("#de").multiselect('deselectAll');
+				$('#de').multiselect('select', selectedLocations);
+			}
 
 			if (type == 'date') {
 				let dateParts;
 				let formattedDate;
 
-			switch (custom_date_format) {
-				case "DD/MM/YY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[1]}-${dateParts[0]}`;
-					break;
+				switch (custom_date_format) {
+					case "DD/MM/YY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[1]}-${dateParts[0]}`;
+						break;
 
-				case "DD/MM/YYYY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-					break;
+					case "DD/MM/YYYY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+						break;
 
-				case "MM/DD/YY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[0]}-${dateParts[1]}`;
-					break;
+					case "MM/DD/YY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${ensureFourDigitYear(dateParts[2])}-${dateParts[0]}-${dateParts[1]}`;
+						break;
 
-				case "MM/DD/YYYY":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
-					break;
+					case "MM/DD/YYYY":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`;
+						break;
 
-				case "DD.MM.YYYY":
-					dateParts = col1.split(' ')[0].split('.');
-					formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-					break;
+					case "DD.MM.YYYY":
+						dateParts = col1.split(' ')[0].split('.');
+						formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+						break;
 
-				case "YY/MM/DD":
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${ensureFourDigitYear(dateParts[0])}-${dateParts[1]}-${dateParts[2]}`;
-					break;
+					case "YY/MM/DD":
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${ensureFourDigitYear(dateParts[0])}-${dateParts[1]}-${dateParts[2]}`;
+						break;
 
-				case "YYYY-MM-DD":
-					dateParts = col1.split(' ')[0].split('-');
-					formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
-					break;
+					case "YYYY-MM-DD":
+						dateParts = col1.split(' ')[0].split('-');
+						formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
+						break;
 
-				case "MMM DD, YY":
-				case "MMM DD, YYYY":
-					const monthNames = {
-						Jan: "01",
-						Feb: "02",
-						Mar: "03",
-						Apr: "04",
-						May: "05",
-						Jun: "06",
-						Jul: "07",
-						Aug: "08",
-						Sep: "09",
-						Oct: "10",
-						Nov: "11",
-						Dec: "12"
-					};
+					case "MMM DD, YY":
+					case "MMM DD, YYYY":
+						const monthNames = {
+							Jan: "01",
+							Feb: "02",
+							Mar: "03",
+							Apr: "04",
+							May: "05",
+							Jun: "06",
+							Jul: "07",
+							Aug: "08",
+							Sep: "09",
+							Oct: "10",
+							Nov: "11",
+							Dec: "12"
+						};
 
-					// Split by space and comma
-					const parts = col1.replace(',', '').split(' '); // Example: ["Dec", "03", "24"]
+						// Split by space and comma
+						const parts = col1.replace(',', '').split(' '); // Example: ["Dec", "03", "24"]
 
-					const month = monthNames[parts[0]]; // Convert month name to numeric format
-					const day = parts[1].padStart(2, '0'); // Ensure day has leading zero
-					const year = ensureFourDigitYear(parts[2]); // Ensure 4-digit year
+						const month = monthNames[parts[0]]; // Convert month name to numeric format
+						const day = parts[1].padStart(2, '0'); // Ensure day has leading zero
+						const year = ensureFourDigitYear(parts[2]); // Ensure 4-digit year
 
-					formattedDate = `${year}-${month}-${day}`; // Convert to 'YYYY-MM-DD'
-					break;
+						formattedDate = `${year}-${month}-${day}`; // Convert to 'YYYY-MM-DD'
+						break;
 
-				default:
-					dateParts = col1.split(' ')[0].split('/');
-					formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-			}
+					default:
+						dateParts = col1.split(' ')[0].split('/');
+						formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+				}
 				$("#dateFrom").val(formattedDate);
 				$("#dateTo").val(formattedDate);
 			} else {
 				$("#"+type).val(col1);
 			}
+			updateFilterButtonStates();
 			$('#searchForm').submit();
 		});
 	}
@@ -1664,7 +1789,7 @@ $(document).ready(function () {
 			type: 'post',
 			success: function (html) {
 				BootstrapDialog.show({
-					title: lang_gen_advanced_logbook_start_printing_at_which_label,
+					title: '<i class="fas fa-print me-2"></i>'+lang_label_print_options,
 					size: BootstrapDialog.SIZE_NORMAL,
 					cssClass: 'qso-dialog',
 					nl2br: false,
@@ -1673,7 +1798,7 @@ $(document).ready(function () {
 					},
 					buttons: [{
 						label: 'Print',
-						cssClass: 'btn-primary btn-sm',
+						cssClass: 'btn btn-primary btn-sm',
 						action: function (dialogItself) {
 							printlabel(id_list);
 							dialogItself.close();
@@ -1681,6 +1806,7 @@ $(document).ready(function () {
 					},
 						{
 						label: lang_admin_close,
+						cssClass: 'btn btn-secondary btn-sm',
 						action: function (dialogItself) {
 							$('#printLabel').prop("disabled", false);
 							dialogItself.close();
@@ -1698,17 +1824,64 @@ $(document).ready(function () {
 		if (silentReset) {
     	    silentReset = false; // reset flag
         	return; // skip submit
-    	}
+		}
+
+		// Preserve selected locations during normal reset
+		const selectedLocations = $('#de').val();
+
+		requestAnimationFrame(function() {
+			// Restore locations after reset
+			if (selectedLocations && selectedLocations.length > 0) {
+				$("#de").multiselect('deselectAll');
+				$('#de').multiselect('select', selectedLocations);
+			}
+			updateFilterButtonStates();
+		});
 		setTimeout(function() {
 			$('#searchForm').submit();
 		});
+	});
+
+	$('#searchForm').on('change', 'input, select', function() {
+		updateFilterButtonStates();
 	});
 
 	rebind_checkbox_trigger();
 
 	$('#searchForm').submit();
 
+	setTimeout(function() {
+		updateFilterButtonStates();
+	}, 100);
+
 });
+
+function hasActiveFilters() {
+	return Object.keys(filterDefaults).some(selector => {
+		const $el = $(selector);
+		if (!$el.length) return false;
+		const currentVal = $el.val();
+		const defaultVal = filterDefaults[selector];
+
+		// Handle arrays (multi-select)
+		if (Array.isArray(currentVal)) {
+			return false; // Multi-selects not currently used
+		}
+
+		// Compare current value to stored default
+		return currentVal !== defaultVal;
+	});
+}
+
+function updateFilterButtonStates() {
+	const hasActive = hasActiveFilters();
+
+	if (hasActive) {
+		$('#filterDropdown').addClass('btn-filter-active');
+	} else {
+		$('#filterDropdown').removeClass('btn-filter-active');
+	}
+}
 
 function rebind_checkbox_trigger() {
 	$('#checkBoxAll').change(function (event) {
@@ -1808,7 +1981,8 @@ function printlabel(id_list) {
 				'via': $('#via')[0].checked,
 				'tnxmsg': $('#tnxmsg')[0].checked,
 				'qslmsg': $('#qslmsg')[0].checked,
-				'reference': $('#reference')[0].checked
+				'reference': $('#reference')[0].checked,
+				'mycall': $('#mycall')[0].checked
 			},
 		xhr:function(){
 			var xhr = new XMLHttpRequest();
@@ -1860,6 +2034,8 @@ function saveOptions() {
 			type: 'post',
 			data: {
 				datetime: $('input[name="datetime"]').is(':checked') ? true : false,
+				duration: $('input[name="duration"]').is(':checked') ? true : false,
+				last_modification: $('input[name="last_modification"]').is(':checked') ? true : false,
 				de: $('input[name="de"]').is(':checked') ? true : false,
 				dx: $('input[name="dx"]').is(':checked') ? true : false,
 				mode: $('input[name="mode"]').is(':checked') ? true : false,
@@ -1906,7 +2082,7 @@ function saveOptions() {
 				nightshadow_layer: $('input[name="nightshadow"]').is(':checked') ? true : false,
 				qth: $('input[name="qth"]').is(':checked') ? true : false,
 				frequency: $('input[name="frequency"]').is(':checked') ? true : false,
-				dcl: $('input[name="dcl"]').is(':checked') ? true : false,
+				dcl: $('input[name="dcl"]').is(':checked') ? true : false
 			},
 			success: function(data) {
 				$('#saveButton').prop("disabled", false);
@@ -1928,9 +2104,9 @@ function saveOptions() {
 
         // Format date as YYYY-MM-DD
         function formatDate(date) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
+            const year = date.getUTCFullYear();
+            const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(date.getUTCDate()).padStart(2, '0');
             return `${year}-${month}-${day}`;
         }
 
@@ -1942,48 +2118,48 @@ function saveOptions() {
 
             case 'yesterday':
                 const yesterday = new Date(today);
-                yesterday.setDate(yesterday.getDate() - 1);
+                yesterday.setDate(yesterday.getUTCDate() - 1);
                 dateFrom.value = formatDate(yesterday);
                 dateTo.value = formatDate(yesterday);
                 break;
 
             case 'last7days':
                 const sevenDaysAgo = new Date(today);
-                sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+                sevenDaysAgo.setDate(sevenDaysAgo.getUTCDate() - 7);
                 dateFrom.value = formatDate(sevenDaysAgo);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'last30days':
                 const thirtyDaysAgo = new Date(today);
-                thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                thirtyDaysAgo.setDate(thirtyDaysAgo.getUTCDate() - 30);
                 dateFrom.value = formatDate(thirtyDaysAgo);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'thismonth':
-                const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                const firstDayOfMonth = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 1));
                 dateFrom.value = formatDate(firstDayOfMonth);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastmonth':
-                const firstDayOfLastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
-                const lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                const firstDayOfLastMonth = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() - 1, 1));
+                const lastDayOfLastMonth = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 0));
                 dateFrom.value = formatDate(firstDayOfLastMonth);
                 dateTo.value = formatDate(lastDayOfLastMonth);
                 break;
 
             case 'thisyear':
-                const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+                const firstDayOfYear = new Date(Date.UTC(today.getUTCFullYear(), 0, 1));
                 dateFrom.value = formatDate(firstDayOfYear);
                 dateTo.value = formatDate(today);
                 break;
 
             case 'lastyear':
-                const lastYear = today.getFullYear() - 1;
-                const firstDayOfLastYear = new Date(lastYear, 0, 1);
-                const lastDayOfLastYear = new Date(lastYear, 11, 31);
+                const lastYear = today.getUTCFullYear() - 1;
+                const firstDayOfLastYear = new Date(Date.UTC(lastYear, 0, 1));
+                const lastDayOfLastYear = new Date(Date.UTC(lastYear, 11, 31));
                 dateFrom.value = formatDate(firstDayOfLastYear);
                 dateTo.value = formatDate(lastDayOfLastYear);
                 break;
@@ -1993,6 +2169,7 @@ function saveOptions() {
                 dateTo.value = '';
                 break;
         }
+        updateFilterButtonStates();
     }
 
     // Reset dates function
@@ -2001,4 +2178,1204 @@ function saveOptions() {
         const dateTo = document.getElementById('dateTo');
         dateFrom.value = '';
         dateTo.value = '';
+        updateFilterButtonStates();
     }
+
+	function checkUpdateDistances() {
+		$('#checkUpdateDistancesBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkdistance',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkUpdateDistancesBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+
+				$('.result').html(response);
+			},
+			error: function(xhr, status, error) {
+				$('#checkUpdateDistancesBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+
+				let errorMsg = 'Error checking distance information';
+				if (xhr.responseJSON && xhr.responseJSON.message) {
+					errorMsg += ': ' + xhr.responseJSON.message;
+				}
+
+				BootstrapDialog.alert({
+					title: 'Error',
+					message: errorMsg,
+					type: BootstrapDialog.TYPE_DANGER
+				});
+			}
+		});
+	}
+
+	function checkFixContinent() {
+		$('#checkFixContinentBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkcontinent',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkFixContinentBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+			},
+			error: function(xhr, status, error) {
+				$('#checkFixContinentBtn').prop('disabled', false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+
+				let errorMsg = 'Error checking continent information';
+				if (xhr.responseJSON && xhr.responseJSON.message) {
+					errorMsg += ': ' + xhr.responseJSON.message;
+				}
+
+				BootstrapDialog.alert({
+					title: 'Error',
+					message: errorMsg,
+					type: BootstrapDialog.TYPE_DANGER
+				});
+			}
+		});
+	}
+
+	function checkFixState() {
+		$('#checkFixStateBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkstate',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkFixStateBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+
+				$('.result').html(response);
+			},
+			error: function(xhr, status, error) {
+				$('#checkFixStateBtn').prop('disabled', false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+
+				let errorMsg = 'Error checking state information';
+				if (xhr.responseJSON && xhr.responseJSON.message) {
+					errorMsg += ': ' + xhr.responseJSON.message;
+				}
+
+				BootstrapDialog.alert({
+					title: 'Error',
+					message: errorMsg,
+					type: BootstrapDialog.TYPE_DANGER
+				});
+			}
+		});
+	}
+
+	function fixState(dxcc, country) {
+		$('#fixStateBtn_' + dxcc).prop("disabled", true).addClass("running");
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/fixStateBatch',
+			type: 'post',
+			data: {
+				dxcc: dxcc,
+				country: country,
+				stationid: $('#dbtools_station_id').val()
+			},
+			success: function (response) {
+				$('#fixStateBtn_' + dxcc).prop("disabled", false).removeClass("running");
+				$('.result').html(response);
+			},
+			error: function () {
+				$('#fixStateBtn_' + dxcc).prop("disabled", false).removeClass("running");
+			}
+		});
+	}
+
+	function openStateList(dxcc, country) {
+		$('#openStateListBtn_' + dxcc).prop("disabled", true).addClass("running");
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/openStateList',
+			type: 'post',
+			data: {
+				dxcc: dxcc,
+				country: country,
+				stationid: $('#dbtools_station_id').val()
+			},
+			success: function (response) {
+				$('#openStateListBtn_' + dxcc).prop("disabled", false).removeClass("running");
+				BootstrapDialog.show({
+					title: 'QSO List',
+					size: BootstrapDialog.SIZE_WIDE,
+					cssClass: 'options',
+					nl2br: false,
+					message: response,
+					buttons: [
+					{
+						label: lang_admin_close,
+						cssClass: 'btn-sm btn-secondary',
+						id: 'closeButton',
+						action: function (dialogItself) {
+							dialogItself.close();
+						}
+					}],
+					onhide: function(dialogRef){
+						return;
+					},
+				});
+			},
+			error: function () {
+				$('#openStateListBtn_' + dxcc).prop("disabled", false).removeClass("running");
+			}
+		});
+	}
+
+	function runUpdateDistancesFix(dialogItself) {
+		$('#updateDistanceButton').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/updateDistances',
+			data: {
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function (response) {
+				$('#updateDistanceButton').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				if (dialogItself != '') {
+					dialogItself.close();
+				}
+				$('.result').html(response);
+			},
+			error: function(xhr, status, error) {
+				$('#updateDistanceButton').prop("disabled", false).removeClass("running");
+				if (dialogItself != '') {
+					dialogItself.close();
+				}
+				$('.result').html(error);
+				$('#closeButton').prop("disabled", false);
+			}
+		});
+	}
+
+	function runContinentFix(dialogItself) {
+		$('#updateContinentButton').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/fixContinent',
+			data: {
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function (response) {
+				$('#updateContinentButton').prop("disabled", false).removeClass("running");
+				if (dialogItself != '') {
+					dialogItself.close();
+				}
+				$('.result').html(response);
+				$('#closeButton').prop("disabled", false);
+			},
+			error: function(xhr, status, error) {
+				$('#updateContinentButton').prop("disabled", false).removeClass("running");
+				$('.result').html(error);
+				$('#closeButton').prop("disabled", false);
+			}
+		});
+	}
+
+	function checkGrids() {
+		$('#checkGridsBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkgrids',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkGridsBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+			},
+			error: function(xhr, status, error) {
+				$('#checkGridsBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function fixMissingGrids() {
+		$('#updateGridsBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/fixMissingGrids',
+			data: {
+				type: 'grids',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function (response) {
+				$('#updateGridsBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+			},
+			error: function(xhr, status, error) {
+				$('#updateGridsBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function checkDxcc() {
+		$('#checkDxccBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkdxcc',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkDxccBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+				$('#dxccCheckTable').DataTable({
+					"pageLength": 25,
+					responsive: false,
+					ordering: true,
+					"scrollY": "510px",
+					"scrollCollapse": true,
+					"paging": false,
+					"scrollX": false,
+					"language": {
+						url: getDataTablesLanguageUrl(),
+					},
+					initComplete: function () {
+						this.api()
+							.columns('.select-filter')
+							.every(function () {
+								var column = this;
+								var select = $('<select class="form-select form-select-sm"><option value=""></option></select>')
+									.appendTo($(column.footer()).empty())
+									.on('change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
+									});
+
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
+							});
+							rebind_checkbox_trigger_dxcc();
+					},
+				});
+			},
+			error: function(xhr, status, error) {
+				$('#checkDxccBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function checkIncorrectCqZones() {
+		$('#checkIncorrectCqZonesBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkincorrectcqzones',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkIncorrectCqZonesBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+				$('#incorrectcqzonetable').DataTable({
+					"pageLength": 25,
+					responsive: false,
+					ordering: false,
+					"scrollY": "510px",
+					"scrollCollapse": true,
+					"paging": false,
+					"scrollX": false,
+					"language": {
+						url: getDataTablesLanguageUrl(),
+					},
+					initComplete: function () {
+						this.api()
+							.columns('.select-filter')
+							.every(function () {
+								var column = this;
+								var select = $('<select class="form-select form-select-sm"><option value=""></option></select>')
+									.appendTo($(column.footer()).empty())
+									.on('change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
+									});
+
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
+							});
+						rebind_checkbox_trigger_cq_zone();
+
+						$('#forceMultiZoneUpdateCq').on('change', function() {
+							$('#incorrectcqzonetable').DataTable().column(8).search('').draw();
+							$('#checkBoxAllCqZones').prop('checked', false);
+							$('#incorrectcqzonetable tbody input[type="checkbox"]').prop('checked', false);
+							$('#incorrectcqzonetable tbody tr.activeRow').removeClass('activeRow');
+						});
+					},
+				});
+			},
+			error: function(xhr, status, error) {
+				$('#checkIncorrectCqZonesBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function checkIncorrectItuZones() {
+		$('#checkIncorrectItuZonesBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkincorrectituzones',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkIncorrectItuZonesBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+				$('#incorrectituzonetable').DataTable({
+					"pageLength": 25,
+					responsive: false,
+					ordering: false,
+					"scrollY": "510px",
+					"scrollCollapse": true,
+					"paging": false,
+					"scrollX": false,
+					"language": {
+						url: getDataTablesLanguageUrl(),
+					},
+					initComplete: function () {
+						this.api()
+							.columns('.select-filter')
+							.every(function () {
+								var column = this;
+								var select = $('<select class="form-select form-select-sm"><option value=""></option></select>')
+									.appendTo($(column.footer()).empty())
+									.on('change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
+									});
+
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
+							});
+							rebind_checkbox_trigger_itu_zone();
+					},
+				});
+
+				$('#forceMultiZoneUpdate').on('change', function() {
+					$('#incorrectituzonetable').DataTable().column(8).search('').draw();
+					$('#checkBoxAllItuZones').prop('checked', false);
+					$('#incorrectituzonetable tbody input[type="checkbox"]').prop('checked', false);
+					$('#incorrectituzonetable tbody tr.activeRow').removeClass('activeRow');
+				});
+
+			},
+			error: function(xhr, status, error) {
+				$('#checkIncorrectItuZonesBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function rebind_checkbox_trigger_dxcc() {
+		$('#checkBoxAllDxcc').change(function (event) {
+			if (this.checked) {
+				$('#dxccCheckTable tbody tr').each(function (i) {
+					selectQsoIdDxcc($(this).first().closest('tr').attr('id')?.replace(/\D/g, ''), 'dxccCheckTable');
+				});
+			} else {
+				$('#dxccCheckTable tbody tr').each(function (i) {
+					unselectQsoIdDxcc($(this).first().closest('tr').attr('id')?.replace(/\D/g, ''), 'dxccCheckTable');
+				});
+			}
+		});
+	}
+
+	function selectQsoIdDxcc(qsoID, tablename) {
+		var element = $("#" + tablename + " tbody tr#qsoID-" + qsoID);
+		element.find(".row-check").prop("checked", true);
+		element.addClass('activeRow');
+	}
+
+	function unselectQsoIdDxcc(qsoID, tablename) {
+		var element = $("#" + tablename + " tbody tr#qsoID-" + qsoID);
+		element.find(".row-check").prop("checked", false);
+		element.removeClass('activeRow');
+	}
+
+	function rebind_checkbox_trigger_cq_zone() {
+		$('#checkBoxAllCqZones').change(function (event) {
+			if (this.checked) {
+				$('#incorrectcqzonetable tbody tr').each(function (i) {
+					if (!$(this).first().closest('tr').find("td[id='cqZones']").text().includes(',') || $('#forceMultiZoneUpdateCq').prop("checked")) {
+						selectQsoIdDxcc($(this).first().closest('tr').attr('id')?.replace(/\D/g, ''), 'incorrectcqzonetable');
+					}
+				});
+				if (!$('#forceMultiZoneUpdateCq').prop("checked")) {
+					$('#incorrectcqzonetable').DataTable().column(8).search('^[^,]*$', true, false).draw();
+				}
+			} else {
+				$('#incorrectcqzonetable tbody tr').each(function (i) {
+					unselectQsoIdDxcc($(this).first().closest('tr').attr('id')?.replace(/\D/g, ''), 'incorrectcqzonetable');
+				});
+				$('#incorrectcqzonetable').DataTable().column(8).search('').draw();
+			}
+		});
+	}
+
+	function rebind_checkbox_trigger_itu_zone() {
+		$('#checkBoxAllItuZones').change(function (event) {
+			if (this.checked) {
+				$('#incorrectituzonetable tbody tr').each(function (i) {
+					if (!$(this).first().closest('tr').find("td[id='ituZones']").text().includes(',') || $('#forceMultiZoneUpdate').prop("checked")) {
+						selectQsoIdDxcc($(this).first().closest('tr').attr('id')?.replace(/\D/g, ''), 'incorrectituzonetable');
+					}
+				});
+				if (!$('#forceMultiZoneUpdate').prop("checked")) {
+					$('#incorrectituzonetable').DataTable().column(8).search('^[^,]*$', true, false).draw();
+				}
+			} else {
+				$('#incorrectituzonetable tbody tr').each(function (i) {
+					unselectQsoIdDxcc($(this).first().closest('tr').attr('id')?.replace(/\D/g, ''), 'incorrectituzonetable');
+				});
+				$('#incorrectituzonetable').DataTable().column(8).search('').draw();
+			}
+		});
+	}
+
+	function fixDxccSelected() {
+		let id_list = [];
+		$('#dxccCheckTable tbody input:checked').each(function () {
+			let id = $(this).closest('tr').attr('id')?.replace(/\D/g, '');
+			id_list.push(id);
+		});
+
+		if (id_list.length === 0) {
+			BootstrapDialog.alert({
+				title: lang_gen_advanced_logbook_info,
+				message: lang_gen_advanced_logbook_select_at_least_one_row,
+				type: BootstrapDialog.TYPE_INFO,
+				closable: false,
+				draggable: false,
+				callback: function (result) {
+				}
+			});
+			return;
+		}
+
+		let table = $('#dxccCheckTable').DataTable();
+
+		$('#fixSelectedDxccBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/fixDxccSelected',
+			type: 'post',
+			data: {'ids': JSON.stringify(id_list, null, 2)},
+			success: function(data) {
+				$('#fixSelectedDxccBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				id_list.forEach(function(id) {
+					let row = $("#dxccCheckTable tbody tr#qsoID-" + id);
+					table.row(row).remove();
+					$('#checkBoxAllDxcc').prop('checked', false);
+				});
+				table.draw(false);
+				$('.dxcctablediv').html(data.message);
+			},
+			error: function(xhr, status, error) {
+				$('#fixSelectedDxccBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function checkIncorrectGridsquares() {
+		$('#checkIncorrectGridsquaresBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkincorrectgridsquares',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkIncorrectGridsquaresBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(response);
+				$('#gridsquareCheckTable').DataTable({
+					"pageLength": 25,
+					responsive: false,
+					ordering: false,
+					"scrollY": "510px",
+					"scrollCollapse": true,
+					"paging": false,
+					"scrollX": false,
+					"language": {
+						url: getDataTablesLanguageUrl(),
+					},
+					initComplete: function () {
+						this.api()
+							.columns('.select-filter')
+							.every(function () {
+								var column = this;
+								var select = $('<select class="form-select form-select-sm"><option value=""></option></select>')
+									.appendTo($(column.footer()).empty())
+									.on('change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
+									});
+
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									var text = $(this).text().trim();
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
+							});
+					},
+				});
+			},
+			error: function(xhr, status, error) {
+				$('#checkIncorrectGridsquaresBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function toggleGridsquare(id) {
+		const shortSpan = document.getElementById(id + '-short');
+		const fullSpan = document.getElementById(id + '-full');
+		const link = document.getElementById(id + '-link');
+
+		if (shortSpan.style.display === 'none') {
+			shortSpan.style.display = 'inline';
+			fullSpan.style.display = 'none';
+			link.textContent = lang_gen_advanced_logbook_show_more;
+		} else {
+			shortSpan.style.display = 'none';
+			fullSpan.style.display = 'inline';
+			link.textContent = lang_gen_advanced_logbook_show_less;
+		}
+	}
+
+	function fixCqZoneSelected() {
+		let id_list = [];
+		$('#incorrectcqzonetable tbody input:checked').each(function () {
+			let id = $(this).closest('tr').attr('id')?.replace(/\D/g, '');
+			// Skip entry if DXCC covers multiple CQ zones as the matching one cannot be identified automagically atm or force update
+			if (!$(this).closest('tr').find("td[id='cqZones']").text().includes(',') || $('#forceMultiZoneUpdateCq').prop("checked")) {
+				id_list.push(id);
+			}
+		});
+
+		if (id_list.length === 0) {
+			BootstrapDialog.alert({
+				title: lang_gen_advanced_logbook_info,
+				message: lang_gen_advanced_logbook_select_at_least_one_row,
+				type: BootstrapDialog.TYPE_INFO,
+				closable: false,
+				draggable: false,
+				callback: function (result) {
+				}
+			});
+			return;
+		}
+
+		let table = $('#incorrectcqzonetable').DataTable();
+
+		$('#fixSelectedCqZoneBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/fixCqZones',
+			type: 'post',
+			data: {'ids': JSON.stringify(id_list, null, 2)},
+			success: function(data) {
+				$('#fixSelectedCqZoneBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				id_list.forEach(function(id) {
+					let row = $("#incorrectcqzonetable tbody tr#qsoID-" + id);
+					table.row(row).remove();
+				});
+				table.draw(false);
+			},
+			error: function(xhr, status, error) {
+				$('#fixSelectedCqZoneBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function fixItuZoneSelected() {
+		let id_list = [];
+		$('#incorrectituzonetable tbody input:checked').each(function () {
+			let id = $(this).closest('tr').attr('id')?.replace(/\D/g, '');
+			// Skip entry if DXCC covers multiple ITU zones as the matching one cannot be identified automagically atm or force update
+			if (!$(this).closest('tr').find("td[id='ituZones']").text().includes(',') || $('#forceMultiZoneUpdate').prop("checked")) {
+				id_list.push(id);
+			}
+		});
+
+		if (id_list.length === 0) {
+			BootstrapDialog.alert({
+				title: lang_gen_advanced_logbook_info,
+				message: lang_gen_advanced_logbook_select_at_least_one_row,
+				type: BootstrapDialog.TYPE_INFO,
+				closable: false,
+				draggable: false,
+				callback: function (result) {
+				}
+			});
+			return;
+		}
+
+		let table = $('#incorrectituzonetable').DataTable();
+
+		$('#fixSelectedItuZoneBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/fixItuZones',
+			type: 'post',
+			data: {'ids': JSON.stringify(id_list, null, 2)},
+			success: function(data) {
+				$('#fixSelectedItuZoneBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				id_list.forEach(function(id) {
+					let row = $("#incorrectituzonetable tbody tr#qsoID-" + id);
+					table.row(row).remove();
+				});
+				table.draw(false);
+			},
+			error: function(xhr, status, error) {
+				$('#fixSelectedItuZoneBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+				$('.result').html(error);
+			}
+		});
+	}
+
+	function checkIota() {
+		$('#checkIotaBtn').prop("disabled", true).addClass("running");
+		$('#closeButton').prop("disabled", true);
+
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/checkDb',
+			data: {
+				type: 'checkiota',
+				stationid: $('#dbtools_station_id').val()
+			},
+			type: 'POST',
+			success: function(response) {
+				$('#checkIotaBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop("disabled", false);
+
+				$('.result').html(response);
+				$('#iotaCheckTable').DataTable({
+					"pageLength": 25,
+					responsive: false,
+					ordering: false,
+					"scrollY": "510px",
+					"scrollCollapse": true,
+					"paging": false,
+					"scrollX": false,
+					"language": {
+						url: getDataTablesLanguageUrl(),
+					},
+					initComplete: function () {
+						this.api()
+							.columns('.select-filter')
+							.every(function () {
+								var column = this;
+								var select = $('<select class="form-select form-select-sm"><option value=""></option></select>')
+									.appendTo($(column.footer()).empty())
+									.on('change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+										// Search in rendered content, not just data
+										column.search(val ? val : '', true, false).draw();
+									});
+
+								// Count occurrences of each unique value
+								var counts = {};
+								column.nodes().flatten().to$().each(function () {
+									// Get text from the first anchor link which contains the IOTA reference
+									var $anchor = $(this).find('a').first();
+									var text = $anchor.length ? $anchor.text().trim() : $(this).text().trim();
+									// Remove any extra whitespace
+									text = text.split(/\s+/)[0];
+									if (text) {
+										counts[text] = (counts[text] || 0) + 1;
+									}
+								});
+
+								// Add options with counts
+								for (var text in counts) {
+									if (!select.find('option[value="' + text + '"]').length) {
+										select.append('<option value="' + text + '">' + text + ' (' + counts[text] + ')</option>');
+									}
+								}
+
+								// Sort options
+								select.find('option:not(:first)').sort(function(a, b) {
+									return a.text.localeCompare(b.text);
+								}).appendTo(select);
+							});
+					},
+				});
+			},
+			error: function(xhr, status, error) {
+				$('#checkIotaBtn').prop("disabled", false).removeClass("running");
+				$('#closeButton').prop('disabled', false);
+
+				let errorMsg = 'Error checking iota information';
+				if (xhr.responseJSON && xhr.responseJSON.message) {
+					errorMsg += ': ' + xhr.responseJSON.message;
+				}
+
+				BootstrapDialog.alert({
+					title: 'Error',
+					message: errorMsg,
+					type: BootstrapDialog.TYPE_DANGER
+				});
+			}
+		});
+	}
+
+	// Helper function to convert maidenhead grid to lat/lng bounds
+	function maidenheadToBounds(grid) {
+		if (!grid || grid.length < 2) return null;
+
+		grid = grid.toUpperCase();
+		const d1 = "ABCDEFGHIJKLMNOPQR";
+		const d2 = "ABCDEFGHIJKLMNOPQRSTUVWX";
+
+		let lon = -180;
+		let lat = -90;
+		let lonWidth = 20;
+		let latHeight = 10;
+
+		// First pair (field)
+		if (grid.length >= 2) {
+			const lonIdx = d1.indexOf(grid[0]);
+			const latIdx = d1.indexOf(grid[1]);
+			if (lonIdx >= 0 && latIdx >= 0) {
+				lon += lonIdx * 20;
+				lat += latIdx * 10;
+				lonWidth = 20;
+				latHeight = 10;
+			}
+		}
+
+		// Second pair (square)
+		if (grid.length >= 4) {
+			const lonIdx = parseInt(grid[2]);
+			const latIdx = parseInt(grid[3]);
+			if (!isNaN(lonIdx) && !isNaN(latIdx)) {
+				lon += lonIdx * 2;
+				lat += latIdx * 1;
+				lonWidth = 2;
+				latHeight = 1;
+			}
+		}
+
+		// Third pair (subsquare)
+		if (grid.length >= 6) {
+			const lonIdx = d2.indexOf(grid[4]);
+			const latIdx = d2.indexOf(grid[5]);
+			if (lonIdx >= 0 && latIdx >= 0) {
+				lon += lonIdx * (2 / 24);
+				lat += latIdx * (1 / 24);
+				lonWidth = 2 / 24;
+				latHeight = 1 / 24;
+			}
+		}
+
+		return L.latLngBounds([lat, lon], [lat + latHeight, lon + lonWidth]);
+	}
+
+	function showMapForIncorrectGrid(gridsquare, dxcc, dxccname) {
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/showMapForIncorrectGrid',
+			type: 'post',
+			data: {
+				gridsquare: gridsquare,
+				dxcc: dxcc,
+				dxccname: dxccname
+			},
+			success: function (data) {
+				// Add metadata to data object
+				data.gridsquareDisplay = gridsquare;
+				data.dxccnameDisplay = dxccname;
+
+				BootstrapDialog.show({
+					title: data.title,
+					size: BootstrapDialog.SIZE_WIDE,
+					cssClass: 'mapdialog',
+					nl2br: false,
+					message: '<div class="mapgridcontent"><div id="mapgridcontainer" style="Height: 70vh"></div></div>',
+					onshown: function(dialog) {
+						drawMap(data);
+					},
+					buttons: [{
+						label: lang_admin_close,
+						action: function (dialogItself) {
+							dialogItself.close();
+						}
+					}]
+				});
+			}
+		});
+	}
+
+	function drawMap(data) {
+		if (typeof(user_map_custom.qsoconfirm) !== 'undefined') {
+			confirmedColor = user_map_custom.qsoconfirm.color;
+		}
+		if (typeof(user_map_custom.qso) !== 'undefined') {
+			workedColor = user_map_custom.qso.color;
+		}
+		let container = L.DomUtil.get('mapgridcontainer');
+
+		if(container != null){
+			container._leaflet_id = null;
+			container.remove();
+			$(".mapgridcontent").html('<div id="mapgridcontainer" style="Height:70vh"></div>');
+		}
+
+		// Initialize global arrays for colored maidenhead overlay
+		if (typeof grid_two === 'undefined') grid_two = [];
+		if (typeof grid_four === 'undefined') grid_four = [];
+		if (typeof grid_six === 'undefined') grid_six = [];
+		if (typeof grid_two_confirmed === 'undefined') grid_two_confirmed = [];
+		if (typeof grid_four_confirmed === 'undefined') grid_four_confirmed = [];
+		if (typeof grid_six_confirmed === 'undefined') grid_six_confirmed = [];
+
+		// Clear arrays
+		grid_two.length = 0;
+		grid_four.length = 0;
+		grid_six.length = 0;
+		grid_two_confirmed.length = 0;
+		grid_four_confirmed.length = 0;
+		grid_six_confirmed.length = 0;
+		grids = data.grids;
+
+		// Process data.grids - mark in green (confirmed)
+		if (data.grids) {
+			// data.grids can be a comma-separated string or an array
+			let gridsArray = Array.isArray(data.grids) ? data.grids : data.grids.split(',').map(g => g.trim());
+			gridsArray.forEach(function(grid) {
+				let gridUpper = grid.toUpperCase();
+				if (gridUpper.length === 2) {
+					grid_two_confirmed.push(gridUpper);
+					grid_two.push(gridUpper); // Also add to worked so it shows up
+				} else if (gridUpper.length === 4) {
+					grid_four_confirmed.push(gridUpper);
+					grid_four.push(gridUpper); // Also add to worked so it shows up
+				} else if (gridUpper.length === 6) {
+					grid_six_confirmed.push(gridUpper);
+					grid_six.push(gridUpper); // Also add to worked so it shows up
+				}
+			});
+		}
+
+		// Process data.gridsquare - mark first 4 letters in red (worked)
+		if (data.gridsquare) {
+			let gridsquareUpper = data.gridsquare.toUpperCase().substring(0, 4);
+			if (gridsquareUpper.length >= 2) {
+				let twoChar = gridsquareUpper.substring(0, 2);
+				if (!grid_two_confirmed.includes(twoChar)) {
+					grid_two.push(twoChar);
+				}
+			}
+			if (gridsquareUpper.length >= 4) {
+				let fourChar = gridsquareUpper.substring(0, 4);
+				if (!grid_four_confirmed.includes(fourChar)) {
+					grid_four.push(fourChar);
+				}
+			}
+		}
+
+		// Collect all grids to calculate bounds for auto-zoom
+		// Include both data.grids (green) and data.gridsquare (red)
+		let allGrids = [];
+		if (data.grids) {
+			let gridsArray = Array.isArray(data.grids) ? data.grids : data.grids.split(',').map(g => g.trim());
+			allGrids = allGrids.concat(gridsArray);
+		}
+		if (data.gridsquare) {
+			allGrids.push(data.gridsquare.substring(0, Math.min(4, data.gridsquare.length)));
+		}
+
+		// Calculate bounds and center for auto-zoom
+		let bounds = null;
+		let centerLat = 0;
+		let centerLng = 0;
+		let minLat = 90;
+		let maxLat = -90;
+		let allLngs = [];
+
+		allGrids.forEach(function(grid) {
+			let gridBounds = maidenheadToBounds(grid);
+			if (gridBounds) {
+				// Track center points and extents for better handling
+				let gridCenter = gridBounds.getCenter();
+				centerLat += gridCenter.lat;
+				allLngs.push(gridCenter.lng);
+
+				if (gridBounds.getSouth() < minLat) minLat = gridBounds.getSouth();
+				if (gridBounds.getNorth() > maxLat) maxLat = gridBounds.getNorth();
+
+				if (bounds) {
+					bounds.extend(gridBounds);
+				} else {
+					bounds = gridBounds;
+				}
+			}
+		});
+
+		// Calculate average center
+		if (allLngs.length > 0) {
+			centerLat = centerLat / allGrids.length;
+
+			// Check if longitudes span more than 180° (crossing antimeridian or covering large area)
+			let minLng = Math.min(...allLngs);
+			let maxLng = Math.max(...allLngs);
+			let lngSpan = maxLng - minLng;
+
+			if (lngSpan > 300) {
+				// Spans nearly the entire globe (like Asiatic Russia from -180 to 180)
+				// Use a predefined sensible center for such cases
+				centerLng = 120; // Center of Asiatic Russia/mainland Russia
+			} else if (lngSpan > 180) {
+				// When spanning >180°, we should go the "other way around" the globe
+				// Add 360° to any negative longitudes, then average, then normalize back
+				let wrappedLngs = allLngs.map(lng => lng < 0 ? lng + 360 : lng);
+				let avgWrapped = wrappedLngs.reduce((a, b) => a + b, 0) / wrappedLngs.length;
+
+				// Normalize to -180 to 180 range
+				if (avgWrapped > 180) avgWrapped -= 360;
+				centerLng = avgWrapped;
+			} else {
+				// Normal case - simple average
+				centerLng = allLngs.reduce((a, b) => a + b, 0) / allLngs.length;
+			}
+		}
+
+		// Make map global for L.MaidenheadColouredGridMap.js
+		window.map = new L.Map('mapgridcontainer', {
+			fullscreenControl: true,
+			fullscreenControlOptions: {
+				position: 'topleft'
+			},
+		});
+
+		let maidenhead = L.maidenhead().addTo(window.map);
+
+		let osmUrl = option_map_tile_server;
+		let osmAttrib= option_map_tile_server_copyright;
+		let osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 12, attribution: osmAttrib});
+
+		let redIcon = L.icon({
+						iconUrl: icon_dot_url,
+						iconSize:     [10, 10], // size of the icon
+					});
+
+		window.map.addLayer(osm);
+
+		// Add legend
+		let legend = L.control({position: 'topright'});
+		legend.onAdd = function (map) {
+			let div = L.DomUtil.create('div', 'info legend');
+			div.style.backgroundColor = 'white';
+			div.style.padding = '10px';
+			div.style.borderRadius = '5px';
+			div.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
+
+			div.innerHTML =
+				'<div style="display: flex; align-items: center; margin-bottom: 8px;">' +
+					'<div style="width: 20px; height: 20px; background-color: ' + confirmedColor + '; border: 1px solid #ccc; margin-right: 8px;"></div>' +
+					'<span style="font-size: 12px;">' + lang_gen_advanced_logbook_confirmedLabel + ' ' + data.dxccnameDisplay + '</span>' +
+				'</div>' +
+				'<div style="display: flex; align-items: center;">' +
+					'<div style="width: 20px; height: 20px; background-color: ' + workedColor + '; border: 1px solid #ccc; margin-right: 8px;"></div>' +
+					'<span style="font-size: 12px;">' + lang_gen_advanced_logbook_workedLabel + ' ' + data.gridsquareDisplay + '</span>' +
+				'</div>';
+			return div;
+		};
+		legend.addTo(window.map);
+
+		// Zoom to fit all grids with padding
+		if (bounds) {
+			const latSpan = maxLat - minLat;
+			const lngSpan = Math.max(...allLngs) - Math.min(...allLngs);
+
+			// For extremely large spans (near 360° like Asiatic Russia), use manual center
+			// For moderate spans (100-200° like Japan+GM05), use fitBounds with lower maxZoom
+			// For smaller spans, use fitBounds normally
+
+			if (lngSpan > 300) {
+				// Spans nearly the entire globe - use calculated center with fixed zoom
+				let zoom = 3; // Increased from 2 to 3 for better detail
+				window.map.setView([centerLat, centerLng], zoom);
+			} else if (lngSpan > 100) {
+				// Large span (like Japan to western hemisphere) - use fitBounds but limit zoom
+				window.map.fitBounds(bounds, { padding: [30, 30], maxZoom: 3 });
+			} else {
+				// Normal case - use fitBounds
+				let maxZoom = 10;
+				if (lngSpan < 50) maxZoom = 7;
+				if (lngSpan < 20) maxZoom = 10;
+				window.map.fitBounds(bounds, { padding: [50, 50], maxZoom: maxZoom });
+			}
+		} else {
+			window.map.setView([30, 0], 1.5);
+		}
+	}
+
+	function selectAllQso1Fields() {
+		$('#primaryQso').val($('input[name="primaryQsoRadio"]:checked').val());
+		$('#mergeForm input[type="radio"][name="secondaryQsoRadio"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso1"]').prop('checked', true);
+	}
+
+	function selectAllQso2Fields() {
+		$('#primaryQso').val($('input[name="secondaryQsoRadio"]:checked').val());
+		$('#mergeForm input[type="radio"][name="primaryQsoRadio"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"]').prop('checked', false);
+		$('#mergeForm input[type="radio"][name^="mergeData"][value="qso2"]').prop('checked', true);
+	}
+
+	function getQsos(id) {
+		$.ajax({
+			url: base_url + 'index.php/logbookadvanced/getQsos',
+			type: 'post',
+			data: {
+				id: id
+			},
+			success: function (data) {
+				updateRow(data);
+			}
+		});
+	}

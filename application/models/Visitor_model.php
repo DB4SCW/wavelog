@@ -13,9 +13,11 @@ class Visitor_model extends CI_Model {
 
 		if ($day != '') {
 			if ($day == 'today') {
-				$this->db->where('DATE('.$this->config->item('table_name').'.COL_TIME_ON) = CURDATE()');
+				$this->db->where($this->config->item('table_name').'.COL_TIME_ON >= CURDATE()');
+				$this->db->where($this->config->item('table_name').'.COL_TIME_ON < CURDATE() + INTERVAL 1 DAY');
 			} elseif ($day == 'yesterday') {
-				$this->db->where('DATE('.$this->config->item('table_name').'.COL_TIME_ON) = CURDATE() - INTERVAL 1 DAY');
+				$this->db->where($this->config->item('table_name').'.COL_TIME_ON >= CURDATE() - INTERVAL 1 DAY');
+				$this->db->where($this->config->item('table_name').'.COL_TIME_ON < CURDATE()');
 			}
 		} else {
 			if ($start_date != '') {

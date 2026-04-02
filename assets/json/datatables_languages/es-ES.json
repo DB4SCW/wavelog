@@ -20,9 +20,9 @@
     "buttons": {
         "copy": "Copiar",
         "colvis": "Visibilidad",
-        "collection": "Colección",
+        "collection": "Colección<span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"></span>",
         "colvisRestore": "Restaurar visibilidad",
-        "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br /> <br /> Para cancelar, haga clic en este mensaje o presione escape.",
+        "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br /><br />Para cancelar, haga clic en este mensaje o presione escape.",
         "copySuccess": {
             "1": "Copiada 1 fila al portapapeles",
             "_": "Copiadas %ds fila al portapapeles"
@@ -33,7 +33,7 @@
         "pageLength": {
             "-1": "Mostrar todas las filas",
             "_": "Mostrar %d filas",
-            "1": "Show 1 row"
+            "1": "Mostrar 1 fila"
         },
         "pdf": "PDF",
         "print": "Imprimir",
@@ -50,7 +50,7 @@
         "fill": "Rellene todas las celdas con <i>%d</i>",
         "fillHorizontal": "Rellenar celdas horizontalmente",
         "fillVertical": "Rellenar celdas verticalmente",
-        "info": "AutoFill info example"
+        "info": "Autocompletar ejemplo de información"
     },
     "decimal": ",",
     "searchBuilder": {
@@ -126,7 +126,7 @@
         "count": "{total}",
         "countFiltered": "{shown} ({total})",
         "emptyPanes": "Sin paneles de búsqueda",
-        "loadMessage": "Cargando paneles de búsqueda",
+        "loadMessage": "Cargando paneles de búsqueda...",
         "title": "Filtros Activos - %d",
         "showMessage": "Mostrar Todo",
         "collapseMessage": "Colapsar Todo"
@@ -171,13 +171,13 @@
             "9": "Octubre"
         },
         "weekdays": [
-            "Sun",
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat"
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mié",
+            "Jue",
+            "Vie",
+            "Sáb"
         ],
         "next": "Próximo"
     },
@@ -239,7 +239,7 @@
         "renameTitle": "Cambiar Nombre Estado",
         "emptyError": "El nombre no puede estar vacío.",
         "removeConfirm": "¿Seguro que quiere eliminar %s?",
-        "removeError": "Error al eliminar el Estado",
+        "removeError": "Error al eliminar el estado.",
         "renameLabel": "Nuevo nombre para %s:"
     },
     "infoThousands": "."

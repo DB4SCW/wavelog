@@ -9,7 +9,7 @@ class adif extends CI_Controller {
 	private $tab_method_mapping = [
 		'import' => ['import'],
 		'export' => ['export_custom', 'exportall', 'exportsat', 'exportsatlotw'],
-		'lotw' => ['lotw', 'mark_lotw', 'export_lotw'],
+		'lotw' => ['lotw', 'export_lotw'],
 		'dcl' => ['dcl'],
 		'pota' => ['pota'],
 		'cbr' => []
@@ -103,7 +103,7 @@ class adif extends CI_Controller {
 		header('Content-Disposition: attachment; filename="'.$filename.'"');
 
 		// Output ADIF header // No chance to use exportall-view any longer, because of chunking logic
-		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'));
+		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'), $this->optionslib->get_option('adif_version'));
 
 		// Stream QSOs in 5K chunks
 		$offset = 0;
@@ -176,6 +176,7 @@ class adif extends CI_Controller {
 
 		$this->load->model('adif_data');
 		$this->load->library('AdifHelper');
+		$this->load->model('logbook_model');
 
 		// Get parameters
 		$station_id = $this->security->xss_clean($this->input->post('station_profile'));
@@ -200,7 +201,7 @@ class adif extends CI_Controller {
 		header('Content-Type: text/plain; charset=utf-8');
 		header('Content-Disposition: attachment; filename="'.$filename.'"');
 
-		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'));
+		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'), $this->optionslib->get_option('adif_version'));
 
 		// Collect QSO IDs for LoTW marking (since we can't access all at once)
 		$qso_ids_for_lotw = [];
@@ -228,32 +229,12 @@ class adif extends CI_Controller {
 		// Handle LoTW marking after export
 		if ((clubaccess_check(9)) && ($this->input->post('markLotw') == 1) && !empty($qso_ids_for_lotw)) {
 			foreach ($qso_ids_for_lotw as $qso_id) {
-				$this->adif_data->mark_lotw_sent($qso_id);
+				$this->logbook_model->mark_lotw_sent($qso_id);
 			}
 		}
 
 		// Stop execution
 		exit;
-	}
-
-	public function mark_lotw() {
-		// Check if user has access to lotw tab
-		$this->require_tab_access('lotw');
-
-		// Set memory limit to unlimited to allow heavy usage
-		ini_set('memory_limit', '-1');
-
-		$station_id = $this->security->xss_clean($this->input->post('station_profile'));
-		$this->load->model('adif_data');
-
-		$data['qsos'] = $this->adif_data->export_custom($this->input->post('from'), $this->input->post('to'), $station_id);
-
-		foreach ($data['qsos']->result() as $qso)
-		{
-			$this->adif_data->mark_lotw_sent($qso->COL_PRIMARY_KEY);
-		}
-
-		$this->load->view('adif/mark_lotw', $data);
 	}
 
 	public function export_lotw() {
@@ -264,13 +245,14 @@ class adif extends CI_Controller {
 		ini_set('memory_limit', '-1');
 
 		$this->load->model('adif_data');
+		$this->load->model('logbook_model');
 
 		$data['qsos'] = $this->adif_data->export_lotw();
 
 		$this->load->view('adif/data/exportall', $data);
 
 		foreach ($data['qsos']->result() as $qso) {
-			$this->adif_data->mark_lotw_sent($qso->COL_PRIMARY_KEY);
+			$this->logbook_model->mark_lotw_sent($qso->COL_PRIMARY_KEY);
 		}
 	}
 
@@ -385,7 +367,9 @@ class adif extends CI_Controller {
 					while($record = $this->adif_parser->get_record()) {
 
 						// Handle slashed zeros
-						$record['call'] = str_replace('Ø', "0", $record['call']);
+						if (isset($record['call'])) {
+							$record['call'] = str_replace('Ø', "0", $record['call']);
+						}
 						if (($record['operator'] ?? '') != '') {
 							$record['operator'] = str_replace('Ø', "0", $record['operator']);
 						}
@@ -438,7 +422,7 @@ class adif extends CI_Controller {
 						} else {
 							$skipDups=true;		// Box not ticked? Means: Skip Dupes, don't import them
 						}
-						$custom_errors = $this->logbook_model->import_bulk($alladif, $this->input->post('station_profile', TRUE), $skipDups, $this->input->post('markClublog'),$this->input->post('markLotw'), $this->input->post('dxccAdif'), $this->input->post('markQrz'), $this->input->post('markEqsl'), $this->input->post('markHrd'), $this->input->post('markDcl'), true, $this->input->post('operatorName') ?? false, false, $this->input->post('skipStationCheck'));
+						$custom_errors = $this->logbook_model->import_bulk($alladif, $this->input->post('station_profile', TRUE), $skipDups, $this->input->post('markClublog'),$this->input->post('markLotw'), $this->input->post('dxccAdif'), $this->input->post('markQrz'), $this->input->post('markEqsl'), $this->input->post('markHrd'), $this->input->post('markDcl'), true, $this->input->post('operatorName') ?? false, false, $this->input->post('skipStationCheck'), $this->input->post('skipGridCheck'));
 					} catch (Exception $e) {
 						log_message('error', 'Import error: '.$e->getMessage());
 						$data['page_title'] = __("ADIF Import failed!");

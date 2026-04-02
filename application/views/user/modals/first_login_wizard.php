@@ -8,7 +8,7 @@
             <div class="modal-body" id="firstloginwizard_modal_content" style="overflow-y: auto; max-height: 75vh;">
                     <div class="row" style="margin-top: 20px;">
                         <div class="col-md-5" id="logo-container">
-                            <img src="<?php echo base_url(); ?>assets/logo/wavelog_logo_darkly.png" alt="" style="max-width: 100%; height: auto; margin-top: 70px;">
+                            <img src="<?php echo $this->paths->cache_buster('/assets/logo/wavelog_logo_darkly.png'); ?>" alt="" style="max-width: 100%; height: auto; margin-top: 70px;">
                         </div>
 
                         <div class="col-md-7">
@@ -18,7 +18,7 @@
                                 </div>
                             <?php } ?>
                             <h4 style="margin-top: 10px;"><?= __("Hello and Welcome to Wavelog!"); ?></h4>
-                            <p style="margin-top: 20px;"><?= sprintf(__("Before you can start logging QSOs, we need to set up your first Station Location. You can find more information about how Station Locations and Logbooks work in our %sWiki here%s!"), '<a href="https://github.com/wavelog/wavelog/wiki/Stationsetup" target="_blank">', '</a>'); ?></p>
+                            <p style="margin-top: 20px;"><?= sprintf(__("Before you can start logging QSOs, we need to set up your first Station Location. You can find more information about how Station Locations and Logbooks work in our %sWiki here%s!"), '<a href="https://docs.wavelog.org/admin-guide/administration/station-setup/" target="_blank">', '</a>'); ?></p>
                             <p><?= __("Please provide some additional information so that Wavelog can create your first Station:"); ?></p>
                             <div class="container">
                                 <div class="row mb-3 align-items-center">

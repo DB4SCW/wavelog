@@ -26,7 +26,7 @@
                         <th>SIG Info</th>
                         <th>eQSL Nickname</th>
                         <th>eQSL default QSLmsg</th>
-                        <th>QRZ realtime upload</th>
+                        <th>QRZ upload</th>
                         <th>OQRS enabled</th>
                         <th>OQRS Text</th>
                         <th>OQRS Email alert</th>
@@ -40,7 +40,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($locations as $loc): ?>
+                    <?php foreach ($locations as $loc): 
+				$qrzr=($loc->qrzrealtime ?? -1);
+				if ($qrzr == -1) {
+					$qrzr=__("No");
+				} else if ($qrzr == 0) {
+					$qrzr=__("Yes");
+				} else {
+					$qrzr=__("Realtime");
+				}
+				$hrdr=($loc->hrdlogrealtime ?? -1);
+				if ($hrdr == -1) {
+					$hrdr=__("Disabled");
+				} else if ($hrdr == 0) {
+					$hrdr=__("No");
+				} else {
+					$hrdr=__("Yes");
+				}
+			?>
                         <tr>
                             <td><?php echo $loc->station_id; ?></td>
                             <td><?php echo $loc->station_active ? 'Yes' : 'No' ?></td>
@@ -71,14 +88,14 @@
                             <td><?php echo $loc->station_sig_info; ?></td>
                             <td><?php echo $loc->eqslqthnickname; ?></td>
                             <td><?php echo $loc->eqsl_default_qslmsg; ?></td>
-                            <td><?php echo $loc->qrzrealtime ? 'Yes' : 'No'; ?></td>
+                            <td><?php echo $qrzr; ?></td>
                             <td><?php echo $loc->oqrs ? 'Yes' : 'No'; ?></td>
                             <td><?php echo $loc->oqrs_text; ?></td>
                             <td><?php echo $loc->oqrs_email ? 'Yes' : 'No' ?></td>
                             <td><?php echo $loc->webadifrealtime ? 'Yes' : 'No' ?></td>
                             <td><?php echo $loc->clublogrealtime ? 'Yes' : 'No' ?></td>
                             <td><?php echo $loc->clublogignore ? 'Yes' : 'No' ?></td>
-                            <td><?php echo $loc->hrdlogrealtime ? 'Yes' : 'No' ?></td>
+                            <td><?php echo $hrdr; ?></td>
                             <td><?php echo $loc->hrdlog_username; ?></td>
                             <td><?php echo $loc->creation_date; ?></td>
                             <td><?php echo $loc->last_modified; ?></td>

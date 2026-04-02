@@ -199,7 +199,8 @@ function load_itu_map2(data) {
 
     legend.onAdd = function(map) {
         var div = L.DomUtil.create("div", "legend");
-        div.innerHTML += "<h4>" + lang_general_word_colors + "</h4>";
+        var band = $('#band2').val();
+		div.innerHTML += "<h4>Band: " + band + "</h4>";
         div.innerHTML += "<i style='background: " + confirmedColor + "'></i><span>" + lang_general_word_confirmed + " (" + confirmed + ")</span><br>";
         div.innerHTML += "<i style='background: " + workedColor + "'></i><span>" + lang_general_word_worked_not_confirmed + " (" + workednotconfirmed + ")</span><br>";
         div.innerHTML += "<i style='background: " + unworkedColor + "'></i><span>" + lang_general_word_not_worked + " (" + notworked + ")</span><br>";
@@ -277,14 +278,14 @@ function style(feature) {
 
 function onClick(e) {
     var marker = e.target;
-    displayContactsOnMap($("#itumap"),marker.options.title, $('#band2').val(), 'All', 'All', $('#mode').val(), 'ITU');
+    displayContactsOnMap($("#itumap"),marker.options.title, $('#band2').val(), 'All', 'All', $('#mode').val(), 'ITUZone');
 }
 
 function onClick2(e) {
 	zoomToFeature(e);
 	console.log(e);
     var marker = e.target;
-    displayContactsOnMap($("#itumap"),marker.feature.properties.itu_zone_number, $('#band2').val(), 'All', 'All', $('#mode').val(), 'ITU');
+    displayContactsOnMap($("#itumap"),marker.feature.properties.itu_zone_number, $('#band2').val(), 'All', 'All', $('#mode').val(), 'ITUZone');
 }
 
 function createContentITU(zone, text){

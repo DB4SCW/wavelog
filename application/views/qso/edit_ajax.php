@@ -5,18 +5,18 @@
 
     <!-- Bootstrap CSS -->
     <?php if ($this->optionslib->get_theme()) { ?>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/<?php echo $this->optionslib->get_theme(); ?>/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/general.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/<?php echo $this->optionslib->get_theme(); ?>/overrides.css">
+        <link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/' . $this->optionslib->get_theme() . '/bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/general.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/' . $this->optionslib->get_theme() . '/overrides.css'); ?>">
     <?php } ?>
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/fontawesome/css/all.min.css'); ?>">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="<?php echo $this->paths->cache_buster('/assets/css/jquery.fancybox.min.css'); ?>" />
 
-    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/jquery.fancybox.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo $this->paths->cache_buster('/assets/js/jquery-3.3.1.min.js'); ?>"></script>
+    <script src="<?php echo $this->paths->cache_buster('/assets/js/jquery.fancybox.min.js'); ?>"></script>
+    <script src="<?php echo $this->paths->cache_buster('/assets/js/bootstrap.bundle.min.js'); ?>"></script>
 </head>
 
 <body class="container-fluid qso-edit-box">
@@ -307,7 +307,8 @@
                                         <div class="mb-3 col-sm-6">
                                             <label for="cqz"><?= __("CQ Zone"); ?></label>
                                             <select class="form-select" id="cqz_edit" name="cqz" required>
-                                                <?php for ($i = 1; $i <= 40; $i++) { ?>
+												<option value=''></option>
+												<?php for ($i = 1; $i <= 40; $i++) { ?>
                                                     <option value="<?= $i; ?>" <?php if ($qso->COL_CQZ == $i) echo "selected=\"selected\""; ?>><?= $i; ?></option>
                                                 <?php } ?>
                                             </select>

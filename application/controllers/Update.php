@@ -272,6 +272,8 @@ class Update extends CI_Controller {
 			$this->db->query($sql);
 			$this->db->trans_complete();
 
+			$this->_invalidate_dxcc_cache();
+
 			$this->update_status(__("DONE"));
 
 			echo 'success';
@@ -290,6 +292,26 @@ class Update extends CI_Controller {
 			}
 		}
 
+	}
+
+	private function _invalidate_dxcc_cache() {
+		$this->load->is_loaded('cache') ?: $this->load->driver('cache', [
+			'adapter' => $this->config->item('cache_adapter') ?? 'file', 
+			'backup' => $this->config->item('cache_backup') ?? 'file',
+			'key_prefix' => $this->config->item('cache_key_prefix') ?? ''
+		]);
+		
+		$possible_cachekeys = [
+			'dxcc_exceptions',
+			'dxcc_prefixes',
+		];
+
+		foreach ($possible_cachekeys as $cache_key) {
+			if ($this->cache->get($cache_key) !== false) {
+				$this->cache->delete($cache_key);
+				log_message('info', "Deleted cache for key: " . $cache_key);
+			}
+		}
 	}
 
 	public function update_status($done=""){
@@ -325,17 +347,6 @@ class Update extends CI_Controller {
 				$this->db->query("UPDATE migrations SET version=7");
 			}
 		}
-	}
-
-	public function check_missing_dxcc($all = false){
-		$this->load->model('user_model');
-		if (!$this->user_model->authorize(99)) {
-			$this->session->set_flashdata('error', __("You're not allowed to do that!"));
-			redirect('dashboard');
-		}
-
-		$this->load->model('logbook_model');
-		$this->logbook_model->check_missing_dxcc_id($all);
 	}
 
 	public function update_clublog_scp() {

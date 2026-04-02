@@ -69,12 +69,12 @@ class Csv_model extends CI_Model
 
 		// If date is set, we format the date and add it to the where-statement
 		if ($fromdate != "") {
-			$sql .= " and date(COL_TIME_ON) >= ?";
-			$binds[]=$fromdate;
+			$sql .= " and COL_TIME_ON >= ?";
+			$binds[]=$fromdate . ' 00:00:00';
 		}
 		if ($todate != "") {
-			$sql .= " and date(COL_TIME_ON) <= ?"; 
-			$binds[]=$todate;
+			$sql .= " and COL_TIME_ON <= ?";
+			$binds[]=$todate . ' 23:59:59';
 		}
 
 		$sql .= ' and station_profile.user_id = ?';

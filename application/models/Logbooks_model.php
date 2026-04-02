@@ -178,7 +178,6 @@ class Logbooks_model extends CI_Model {
 	function public_slug_exists_logbook_id($slug) {
 		$this->db->where('public_slug', $this->security->xss_clean($slug));
 		$query = $this->db->get('station_logbooks');
-
 		if ($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				return $row->logbook_id;
@@ -186,6 +185,31 @@ class Logbooks_model extends CI_Model {
 		} else {
 			return false;
 		}
+	}
+
+	function exists_logbook_id($logbook_id) {
+		$this->db->where('logbook_id', $this->security->xss_clean($logbook_id));
+		$query = $this->db->get('station_logbooks');
+
+		if ($query->num_rows() > 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function public_slug_belongs_to_user($slug, $user_id) {
+		$this->db->where('public_slug', $this->security->xss_clean($slug));
+		$this->db->where('user_id', $user_id);
+		$query = $this->db->get('station_logbooks');
+		return $query->num_rows() > 0;
+	}
+
+	function logbook_id_belongs_to_user($logbook_id, $user_id) {
+		$this->db->where('logbook_id', $this->security->xss_clean($logbook_id));
+		$this->db->where('user_id', $user_id);
+		$query = $this->db->get('station_logbooks');
+		return $query->num_rows() > 0;
 	}
 
 	function is_public_slug_available($slug) {
