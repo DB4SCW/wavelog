@@ -2721,7 +2721,7 @@ $("#locator").on("input focus", function () {
 						mymap.panTo([result[0], result[1]]);
 						mymap.setView([result[0], result[1]], 8);
 						markers.addLayer(marker).addTo(mymap);
-						bannerText = "📡 Location is fetched from provided gridsquare: " + qra;
+						bannerText = "📡 "+lang_qso_location_is_fetched_from_provided_gridsquare+": " + qra.toUpperCase();
 						window.mapBanner.addTo(mymap);
 					}
 				},
@@ -2857,12 +2857,12 @@ $('#dxcc_id').on('change', function () {
 
 					mymap.setZoom(8);
 					mymap.panTo([result.dxcc.lat, result.dxcc.long]);
-					bannerText = "🌍 Location is fetched from DXCC coordinates (no gridsquare provided): " + $('#dxcc_id option:selected').text();
+					bannerText = "🌍 "+lang_qso_location_is_fetched_from_dxcc_coordinates+": " + $('#dxcc_id option:selected').text();
 					window.mapBanner.addTo(mymap);
 				} else {
 					mymap.setZoom(1);
 					mymap.panTo([0, 0]);
-					bannerText = "🌍 Location could not be determined as gridsquare is empty and DXCC is NONE";
+					bannerText = "🌍 "+lang_qso_dxcc_none_location;
 					window.mapBanner.addTo(mymap);
 				}
 			}
