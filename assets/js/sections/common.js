@@ -198,14 +198,14 @@ function displayQso(id) {
                     var qsoid = $("#qsoid").text();
                     $(".editButton").html('<a class="btn btn-primary" id="edit_qso" href="javascript:qso_edit('+qsoid+')"><i class="fas fa-edit"></i>'+lang_general_edit_qso+'</a>');
                     var lat = $("#lat").text();
-                    var long = $("#long").text();
+                    var lng = $("#lng").text();
                     var dxcc = $("#dxcc").text();
                     var callsign = $("#callsign").text();
                     var zoom = 5;
                     if (dxcc == 0) {
                         zoom = 1;
                     }
-                    var mymap = L.map('mapqso').setView([lat,long], zoom);
+                    var mymap = L.map('mapqso').setView([lat,lng], zoom);
 
                     var tiles = L.tileLayer(option_map_tile_server, {
                         maxZoom: 18,
@@ -227,7 +227,7 @@ function displayQso(id) {
                             iconSize:     [18, 18], // size of the icon
                         });
 
-                        L.marker([lat,long], {icon: redIcon}).addTo(mymap)
+                        L.marker([lat,lng], {icon: redIcon}).addTo(mymap)
                             .bindPopup(callsign);
                     }
 
