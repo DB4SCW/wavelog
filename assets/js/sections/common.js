@@ -197,15 +197,15 @@ function displayQso(id) {
                 onshown: function(dialog) {
                     var qsoid = $("#qsoid").text();
                     $(".editButton").html('<a class="btn btn-primary" id="edit_qso" href="javascript:qso_edit('+qsoid+')"><i class="fas fa-edit"></i>'+lang_general_edit_qso+'</a>');
-                    var lat = 0;
-                    var lon = 0;
-                    var gridsquare = $("#gridsquare").text();
-                    if ($("#lat").text() != '' && $("#long").text() != '') {
-                        lat = $("#lat").text();
-                        lon = $("#long").text();
-                    }
+                    var lat = $("#lat").text();
+                    var long = $("#long").text();
+                    var dxcc = $("#dxcc").text();
                     var callsign = $("#callsign").text();
-                    var mymap = L.map('mapqso').setView([lat,lon], 5);
+                    var zoom = 5;
+                    if (dxcc == 0) {
+                        zoom = 1;
+                    }
+                    var mymap = L.map('mapqso').setView([lat,long], zoom);
 
                     var tiles = L.tileLayer(option_map_tile_server, {
                         maxZoom: 18,
@@ -221,13 +221,13 @@ function displayQso(id) {
                         hideControlContainer: true
                     }).addTo(mymap);
 
-                    if (gridsquare != '') {
+                    if (dxcc != 0) {
                         var redIcon = L.icon({
                             iconUrl: icon_dot_url,
                             iconSize:     [18, 18], // size of the icon
                         });
 
-                        L.marker([lat,lon], {icon: redIcon}).addTo(mymap)
+                        L.marker([lat,long], {icon: redIcon}).addTo(mymap)
                             .bindPopup(callsign);
                     }
 
