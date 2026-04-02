@@ -1665,7 +1665,11 @@ $("#callsign").on("focusout", function () {
 				} else {
 					mymap.panTo([result.dxcc.lat, result.dxcc.long]);
 					mymap.setView([result.dxcc.lat, result.dxcc.long], 8);
-					bannerText = "🌍 "+lang_qso_location_is_fetched_from_dxcc_coordinates+": " + $('#dxcc_id option:selected').text();
+					if (result.dxcc.adif != 0) {
+						bannerText = "🌍 "+lang_qso_location_is_fetched_from_dxcc_coordinates+": " + $('#dxcc_id option:selected').text();
+					} else {
+						bannerText = "🌍 "+lang_qso_dxcc_none_location;
+					}
 				}
 
 
