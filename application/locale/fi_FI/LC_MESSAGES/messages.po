@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-02 10:46+0000\n"
+"POT-Creation-Date: 2026-04-02 10:47+0000\n"
 "PO-Revision-Date: 2026-03-26 03:04+0000\n"
 "Last-Translator: \"Juuso W.\" <oh1jw@tuta.io>\n"
 "Language-Team: Finnish <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3732,7 +3732,7 @@ msgid "Duplicate for"
 msgstr "Kaksoiskappale"
 
 #: application/models/Logbook_model.php:5784
-#: application/models/Logbook_model.php:5879
+#: application/models/Logbook_model.php:5884
 msgid "QSO could not be matched"
 msgstr "QSOa ei voitu yhdistää"
 
@@ -3763,15 +3763,15 @@ msgstr "vahvistamaton"
 msgid "unknown"
 msgstr "tuntematon"
 
-#: application/models/Logbook_model.php:5882
+#: application/models/Logbook_model.php:5887
 msgid "POTA reference already in log"
 msgstr "POTA-referenssi on jo lokissa"
 
-#: application/models/Logbook_model.php:5885
+#: application/models/Logbook_model.php:5890
 msgid "QSO updated"
 msgstr "QSO päivitetty"
 
-#: application/models/Logbook_model.php:6282
+#: application/models/Logbook_model.php:6287
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58

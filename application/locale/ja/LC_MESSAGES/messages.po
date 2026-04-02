@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-02 10:46+0000\n"
+"POT-Creation-Date: 2026-04-02 10:47+0000\n"
 "PO-Revision-Date: 2026-04-01 19:01+0000\n"
 "Last-Translator: \"S.NAKAO(JG3HLX)\" <hlx.nakao@gmail.com>\n"
 "Language-Team: Japanese <https://translate.wavelog.org/projects/wavelog/main-"
@@ -3738,7 +3738,7 @@ msgid "Duplicate for"
 msgstr "複製用"
 
 #: application/models/Logbook_model.php:5784
-#: application/models/Logbook_model.php:5879
+#: application/models/Logbook_model.php:5884
 msgid "QSO could not be matched"
 msgstr "QSOが一致しませんでした"
 
@@ -3769,15 +3769,15 @@ msgstr "未確認"
 msgid "unknown"
 msgstr "不明"
 
-#: application/models/Logbook_model.php:5882
+#: application/models/Logbook_model.php:5887
 msgid "POTA reference already in log"
 msgstr "POTA 参照。既にログに存在します"
 
-#: application/models/Logbook_model.php:5885
+#: application/models/Logbook_model.php:5890
 msgid "QSO updated"
 msgstr "QSOが更新されました"
 
-#: application/models/Logbook_model.php:6282
+#: application/models/Logbook_model.php:6287
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58

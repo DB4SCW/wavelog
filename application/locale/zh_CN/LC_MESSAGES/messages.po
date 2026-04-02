@@ -30,7 +30,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-02 10:46+0000\n"
+"POT-Creation-Date: 2026-04-02 10:47+0000\n"
 "PO-Revision-Date: 2026-04-01 10:59+0000\n"
 "Last-Translator: Florian Wolters <wavelog@df2et.de>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.wavelog."
@@ -3688,7 +3688,7 @@ msgid "Duplicate for"
 msgstr "内容重复"
 
 #: application/models/Logbook_model.php:5784
-#: application/models/Logbook_model.php:5879
+#: application/models/Logbook_model.php:5884
 msgid "QSO could not be matched"
 msgstr "QSO 无法匹配"
 
@@ -3719,15 +3719,15 @@ msgstr "未确认"
 msgid "unknown"
 msgstr "未知"
 
-#: application/models/Logbook_model.php:5882
+#: application/models/Logbook_model.php:5887
 msgid "POTA reference already in log"
 msgstr "日志中已存在 POTA 编号"
 
-#: application/models/Logbook_model.php:5885
+#: application/models/Logbook_model.php:5890
 msgid "QSO updated"
 msgstr "QSO已上传"
 
-#: application/models/Logbook_model.php:6282
+#: application/models/Logbook_model.php:6287
 #: application/views/activated_gridmap/index.php:114
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:58
