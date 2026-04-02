@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-04-01 14:13+0000\n"
+"POT-Creation-Date: 2026-04-02 10:19+0000\n"
 "PO-Revision-Date: 2026-03-21 17:42+0000\n"
 "Last-Translator: Dariusz Koryto <dariusz@koryto.eu>\n"
 "Language-Team: Serbian <https://translate.wavelog.org/projects/wavelog/main-"
@@ -2007,7 +2007,7 @@ msgstr "Operator"
 #: application/views/awards/wae/index.php:217
 #: application/views/csv/index.php:65 application/views/dashboard/index.php:29
 #: application/views/dxatlas/index.php:65
-#: application/views/interface_assets/footer.php:821
+#: application/views/interface_assets/footer.php:822
 #: application/views/kml/index.php:54
 #: application/views/logbookadvanced/index.php:363
 #: application/views/lookup/index.php:47
@@ -2541,8 +2541,8 @@ msgstr "последње ажурирање"
 #: application/views/api/index.php:74 application/views/bands/bandedges.php:32
 #: application/views/club/permissions.php:274
 #: application/views/contesting/add.php:59 application/views/cron/index.php:72
-#: application/views/interface_assets/footer.php:681
-#: application/views/interface_assets/footer.php:690
+#: application/views/interface_assets/footer.php:682
+#: application/views/interface_assets/footer.php:691
 #: application/views/labels/index.php:48 application/views/labels/index.php:84
 #: application/views/logbookadvanced/index.php:887
 #: application/views/mode/index.php:64 application/views/satellite/edit.php:56
@@ -2562,10 +2562,10 @@ msgstr "Уредите"
 #: application/views/club/permissions.php:353
 #: application/views/contesting/add.php:62
 #: application/views/interface_assets/footer.php:65
-#: application/views/interface_assets/footer.php:2642
-#: application/views/interface_assets/footer.php:2660
-#: application/views/interface_assets/footer.php:2681
-#: application/views/interface_assets/footer.php:2699
+#: application/views/interface_assets/footer.php:2643
+#: application/views/interface_assets/footer.php:2661
+#: application/views/interface_assets/footer.php:2682
+#: application/views/interface_assets/footer.php:2700
 #: application/views/labels/index.php:49 application/views/labels/index.php:85
 #: application/views/logbookadvanced/index.php:906
 #: application/views/lotw_views/index.php:134
@@ -3767,7 +3767,7 @@ msgid ""
 msgstr ""
 
 #: application/models/Logbookadvanced_model.php:2412
-#: application/views/view_log/qso.php:945
+#: application/views/view_log/qso.php:946
 msgid "QSO not found"
 msgstr "QSO није пронађен"
 
@@ -3975,8 +3975,8 @@ msgstr "Разлика"
 #: application/views/gridmap/index.php:144
 #: application/views/gridmap/index.php:158
 #: application/views/interface_assets/footer.php:48
-#: application/views/interface_assets/footer.php:1520
-#: application/views/interface_assets/footer.php:1659
+#: application/views/interface_assets/footer.php:1521
+#: application/views/interface_assets/footer.php:1660
 #: application/views/kml/index.php:21 application/views/kml/index.php:33
 #: application/views/kml/index.php:49 application/views/kml/index.php:67
 #: application/views/kml/index.php:79
@@ -4872,8 +4872,8 @@ msgstr ""
 
 #: application/views/adif/import.php:162 application/views/adif/import.php:169
 #: application/views/interface_assets/footer.php:34
-#: application/views/interface_assets/footer.php:641
-#: application/views/interface_assets/footer.php:2399
+#: application/views/interface_assets/footer.php:642
+#: application/views/interface_assets/footer.php:2400
 msgid "DANGER"
 msgstr "ОПАСНОСТ"
 
@@ -5254,7 +5254,7 @@ msgstr "Једноставно име као опис за шта користи
 #: application/views/club/permissions.php:324
 #: application/views/contesting/edit.php:55 application/views/cron/edit.php:73
 #: application/views/interface_assets/footer.php:51
-#: application/views/interface_assets/footer.php:676
+#: application/views/interface_assets/footer.php:677
 #: application/views/logbookadvanced/index.php:56
 #: application/views/operator/index.php:23
 #: application/views/options/appearance.php:91
@@ -5881,7 +5881,7 @@ msgstr "Прикажи QSO са врстом QSL"
 #: application/views/awards/iota/index.php:64
 #: application/views/awards/itu/index.php:112
 #: application/views/awards/wac/index.php:26
-#: application/views/interface_assets/footer.php:2378
+#: application/views/interface_assets/footer.php:2379
 #: application/views/logbookadvanced/index.php:54
 #: application/views/qso/edit_ajax.php:420
 #: application/views/view_log/qso.php:25
@@ -9140,7 +9140,7 @@ msgid "Callsign DXCC identification"
 msgstr "Идентификација DXCC позивног знака"
 
 #: application/views/calltester/index.php:10
-#: application/views/interface_assets/footer.php:877
+#: application/views/interface_assets/footer.php:878
 #: application/views/logbookadvanced/index.php:871
 #: application/views/zonechecker/index.php:10
 msgid "Callsign: "
@@ -11743,10 +11743,10 @@ msgid "QSL Date"
 msgstr "QSL datum"
 
 #: application/views/eqslcard/index.php:64
-#: application/views/interface_assets/footer.php:2643
-#: application/views/interface_assets/footer.php:2661
-#: application/views/interface_assets/footer.php:2682
-#: application/views/interface_assets/footer.php:2700
+#: application/views/interface_assets/footer.php:2644
+#: application/views/interface_assets/footer.php:2662
+#: application/views/interface_assets/footer.php:2683
+#: application/views/interface_assets/footer.php:2701
 #: application/views/qslcard/index.php:77
 #: application/views/view_log/qso.php:798
 msgid "View"
@@ -12210,103 +12210,108 @@ msgstr "Lokacija se preuzima iz navedenog polja"
 msgid "Location is fetched from DXCC coordinates (no gridsquare provided)"
 msgstr "Lokacija se preuzima iz DXCC koordinata (nije navedeno polje)"
 
-#: application/views/interface_assets/footer.php:137
+#: application/views/interface_assets/footer.php:135
+msgid ""
+"Location could not be determined as gridsquare is empty and DXCC is -NONE-"
+msgstr ""
+
+#: application/views/interface_assets/footer.php:138
 msgid "Working without CAT connection"
 msgstr "Rad bez CAT veze"
 
-#: application/views/interface_assets/footer.php:138
+#: application/views/interface_assets/footer.php:139
 msgid ""
 "CAT connection is currently disabled. Enable CAT connection to work in "
 "online mode with your radio."
 msgstr ""
 
-#: application/views/interface_assets/footer.php:139
+#: application/views/interface_assets/footer.php:140
 msgid ""
 "To connect your radio to Wavelog, visit the Wavelog Wiki for setup "
 "instructions."
 msgstr ""
 
-#: application/views/interface_assets/footer.php:218
+#: application/views/interface_assets/footer.php:219
 #: application/views/interface_assets/header.php:553
 #: application/views/options/sidebar.php:10
 msgid "Version Info"
 msgstr "Informacija o verziji"
 
-#: application/views/interface_assets/footer.php:272
-#: application/views/interface_assets/footer.php:287
+#: application/views/interface_assets/footer.php:273
+#: application/views/interface_assets/footer.php:288
 msgid "Failed to load the modal. Please try again."
 msgstr "Neuspešno učitavanje modala. Molimo pokušajte ponovo."
 
-#: application/views/interface_assets/footer.php:531
+#: application/views/interface_assets/footer.php:532
 msgid "Description:"
 msgstr "Opis:"
 
-#: application/views/interface_assets/footer.php:534
+#: application/views/interface_assets/footer.php:535
 msgid "Query description"
 msgstr "Opis upita"
 
-#: application/views/interface_assets/footer.php:550
+#: application/views/interface_assets/footer.php:551
 msgid "Your query has been saved!"
 msgstr "Vaš upit je sačuvan!"
 
-#: application/views/interface_assets/footer.php:552
+#: application/views/interface_assets/footer.php:553
 #: application/views/search/filter.php:43
 msgid "Edit queries"
 msgstr "Uredi upite"
 
-#: application/views/interface_assets/footer.php:554
+#: application/views/interface_assets/footer.php:555
 msgid "Stored queries:"
 msgstr "Sačuvani upiti:"
 
-#: application/views/interface_assets/footer.php:559
+#: application/views/interface_assets/footer.php:560
 #: application/views/search/filter.php:57
 msgid "Run Query"
 msgstr "Pokreni upit"
 
-#: application/views/interface_assets/footer.php:571
-#: application/views/interface_assets/footer.php:707
-#: application/views/interface_assets/footer.php:777
+#: application/views/interface_assets/footer.php:572
+#: application/views/interface_assets/footer.php:708
+#: application/views/interface_assets/footer.php:778
 msgid "Stored Queries"
 msgstr "Sačuvani upiti"
 
-#: application/views/interface_assets/footer.php:576
-#: application/views/interface_assets/footer.php:782
+#: application/views/interface_assets/footer.php:577
+#: application/views/interface_assets/footer.php:783
 msgid "You need to make a query before you search!"
 msgstr "Morate napraviti upit prije pretrage!"
 
-#: application/views/interface_assets/footer.php:597
-#: application/views/interface_assets/footer.php:734
+#: application/views/interface_assets/footer.php:598
+#: application/views/interface_assets/footer.php:735
 #: application/views/search/filter.php:76
 msgid "Export to ADIF"
 msgstr "Izvoz u ADIF"
 
-#: application/views/interface_assets/footer.php:598
-#: application/views/interface_assets/footer.php:735
+#: application/views/interface_assets/footer.php:599
+#: application/views/interface_assets/footer.php:736
 #: application/views/search/main.php:31
 msgid "Open in the Advanced Logbook"
 msgstr "Otvori u naprednom dnevniku"
 
-#: application/views/interface_assets/footer.php:642
+#: application/views/interface_assets/footer.php:643
 msgid "Warning! Are you sure you want delete this stored query?"
 msgstr "Upozorenje! Da li ste sigurni da želite obrisati ovaj sačuvani upit?"
 
-#: application/views/interface_assets/footer.php:656
+#: application/views/interface_assets/footer.php:657
 msgid "The stored query has been deleted!"
 msgstr "Sačuvani upit je obrisan!"
 
-#: application/views/interface_assets/footer.php:665
+#: application/views/interface_assets/footer.php:666
 msgid "The stored query could not be deleted. Please try again!"
 msgstr "Sačuvani upit ne može biti obrisan. Molim pokušajte ponovo!"
 
-#: application/views/interface_assets/footer.php:691
+#: application/views/interface_assets/footer.php:692
 msgid "The query description has been updated!"
 msgstr "Opis upita je ažuriran!"
 
-#: application/views/interface_assets/footer.php:695
+#: application/views/interface_assets/footer.php:696
 msgid "Something went wrong with the save. Please try again!"
 msgstr "Nešto je bilo pogrešno prilikom čuvanja. Molimo pokušajte ponovo!"
 
-#: application/views/interface_assets/footer.php:824
+#: application/views/interface_assets/footer.php:825
 msgid ""
 "Stop here for a Moment. Your chosen DXCC is outdated and not valid anymore. "
 "Check which DXCC for this particular location is the correct one. If you are "
@@ -12316,15 +12321,15 @@ msgstr ""
 "nije validna. Proverite koja DXCC je ispravna za ovu lokaciju. Ako ste "
 "sigurni da ste upisali tačne podatke, ignorišite ovo upozrenje."
 
-#: application/views/interface_assets/footer.php:878
+#: application/views/interface_assets/footer.php:879
 msgid "Count: "
 msgstr "Broj: "
 
-#: application/views/interface_assets/footer.php:879
+#: application/views/interface_assets/footer.php:880
 msgid "Grids: "
 msgstr "Polja: "
 
-#: application/views/interface_assets/footer.php:1102
+#: application/views/interface_assets/footer.php:1103
 #: application/views/logbookadvanced/index.php:13
 #: application/views/map/qso_map.php:7
 #: application/views/satellite/flightpath.php:11
@@ -12332,61 +12337,61 @@ msgctxt "Map Options"
 msgid "Gridsquares"
 msgstr "Polja"
 
-#: application/views/interface_assets/footer.php:1296
+#: application/views/interface_assets/footer.php:1297
 msgid "Location Lookup failed. Please check browser console."
 msgstr "Pretraga lokacije nije uspela. Molimo proverite konzolu pregledača."
 
-#: application/views/interface_assets/footer.php:1447
-#: application/views/interface_assets/footer.php:1451
-#: application/views/interface_assets/footer.php:1454
-#: application/views/interface_assets/footer.php:1591
-#: application/views/interface_assets/footer.php:1595
-#: application/views/interface_assets/footer.php:1598
+#: application/views/interface_assets/footer.php:1448
+#: application/views/interface_assets/footer.php:1452
+#: application/views/interface_assets/footer.php:1455
+#: application/views/interface_assets/footer.php:1592
+#: application/views/interface_assets/footer.php:1596
+#: application/views/interface_assets/footer.php:1599
 msgid "grid square"
 msgstr "polje"
 
-#: application/views/interface_assets/footer.php:1454
-#: application/views/interface_assets/footer.php:1598
+#: application/views/interface_assets/footer.php:1455
+#: application/views/interface_assets/footer.php:1599
 msgid "Total count"
 msgstr "Ukupan broj"
 
-#: application/views/interface_assets/footer.php:2380
+#: application/views/interface_assets/footer.php:2381
 msgid "QSL Card for "
 msgstr "QSL karta za "
 
-#: application/views/interface_assets/footer.php:2400
+#: application/views/interface_assets/footer.php:2401
 msgid "Warning! Are you sure you want to delete this QSL card?"
 msgstr "Upozorenje! Da li ste sigurni da želite izbrisati ovu QSL kartu?"
 
-#: application/views/interface_assets/footer.php:2440
+#: application/views/interface_assets/footer.php:2441
 #: application/views/view_log/qso.php:43
 msgid "eQSL Card"
 msgstr "eQSL karta"
 
-#: application/views/interface_assets/footer.php:2442
+#: application/views/interface_assets/footer.php:2443
 msgid "eQSL Card for "
 msgstr "eQSL karta za "
 
-#: application/views/interface_assets/footer.php:2654
-#: application/views/interface_assets/footer.php:2693
+#: application/views/interface_assets/footer.php:2655
+#: application/views/interface_assets/footer.php:2694
 #: application/views/view_log/qso.php:788
 msgid "QSL image file"
 msgstr "Datoteka slike QSL karte"
 
-#: application/views/interface_assets/footer.php:2673
+#: application/views/interface_assets/footer.php:2674
 msgid "Front QSL Card:"
 msgstr "Prednja strana QSL karte:"
 
-#: application/views/interface_assets/footer.php:2711
+#: application/views/interface_assets/footer.php:2712
 msgid "Back QSL Card:"
 msgstr "Zadnja strana QSL karte:"
 
-#: application/views/interface_assets/footer.php:2722
-#: application/views/interface_assets/footer.php:2747
+#: application/views/interface_assets/footer.php:2723
+#: application/views/interface_assets/footer.php:2748
 msgid "Add additional QSOs to a QSL Card"
 msgstr "Dodajte dodatne QSOe na QSL kartu"
 
-#: application/views/interface_assets/footer.php:2758
+#: application/views/interface_assets/footer.php:2759
 msgid "Something went wrong. Please try again!"
 msgstr "Nešto je pošlo naopako. Molimo pokušajte ponovo!"
 
