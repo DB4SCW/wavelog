@@ -4807,6 +4807,9 @@ class Logbook_model extends CI_Model {
 	function import_bulk($records, $station_id = "0", $skipDuplicate = true, $markClublog = false, $markLotw = false, $dxccAdif = false, $markQrz = false, $markEqsl = false, $markHrd = false, $markDcl = false, $skipexport = false, $operatorName = false, $apicall = false, $skipStationCheck = false, $skipGridCheck = false) {
 		$this->load->model('user_model');
 		$custom_errors['errormessage'] = '';
+		$critical_errors = [];
+		$validation_errors = [];
+		$duplicate_errors = [];
 		$a_qsos = [];
 		$amsat_qsos = [];
 		$today = time();
@@ -4823,8 +4826,15 @@ class Logbook_model extends CI_Model {
 
 		foreach ($records as $record) {
 			$one_error = $this->import($record, $station_id, $skipDuplicate, $markClublog, $markLotw, $dxccAdif, $markQrz, $markEqsl, $markHrd, $markDcl, $skipexport, trim($operatorName), $apicall, $skipStationCheck, true, $station_id_ok, $station_profile, $station_qslmsg, $skipGridCheck);
-			if ($one_error['error'] ?? '' != '') {
-				$custom_errors['errormessage'] .= $one_error['error'];
+			if (($one_error['error'] ?? '') != '') {
+				$category = $one_error['error_category'] ?? 'other';
+				if ($category === 'critical') {
+					$critical_errors[] = $one_error['error'];
+				} elseif ($category === 'duplicate') {
+					$duplicate_errors[] = $one_error['error'];
+				} else {
+					$validation_errors[] = $one_error['error'];
+				}
 			} else {	// No Errors / QSO doesn't exist so far
 				array_push($a_qsos, $one_error['raw_qso'] ?? '');
 				if (isset($record['prop_mode']) && (($record['prop_mode'] ?? '')== 'SAT') && (($record['sat_name'] ?? '') != '') && $amsat_status_upload) {
@@ -4845,6 +4855,14 @@ class Logbook_model extends CI_Model {
 				}
 			}
 		}
+
+		$custom_errors['errormessage'] = implode('', $critical_errors) . implode('', $validation_errors) . implode('', $duplicate_errors);
+
+		$custom_errors['structured_errors'] = [
+			'critical' => $critical_errors,
+			'validation' => $validation_errors,
+			'duplicate' => $duplicate_errors,
+		];
 
 		// if there are any static map images for this station, remove them so they can be regenerated
 		if (!$this->load->is_loaded('staticmap_model')) {
@@ -4897,12 +4915,14 @@ class Logbook_model extends CI_Model {
 				"<br>",
 				'<b>'.htmlentities($record['station_callsign'] ?? '').'</b>',($record['call'] ?? ''),'<b>'.($station_profile_call ?? '').'</b>');
 			return ($returner);
+				$returner['error_category'] = 'critical';
 		}
 		if ((!$skipGridCheck) && ($station_id != 0) && ($adif_grid != '') && ($station_profile_grid != '')) {
 			if (!$this->adif_grid_check_location($adif_grid, $station_profile_grid)) {
 				$returner['error'] = sprintf(__("Differing locator %s while importing QSO with %s for station locator %s: SKIPPED") .
 					"<br>",
 					'<b>'.htmlentities($adif_grid ?? '').'</b>', ($record['call'] ?? ''), '<b>'.htmlentities($station_profile_grid ?? '').'</b>');
+				$returner['error_category'] = 'critical';
 				return ($returner);
 			}
 		}
@@ -4917,6 +4937,7 @@ class Logbook_model extends CI_Model {
 			log_message("Error", "Trying to import QSO with invalid date: " . $qso_date. " for station_id " . $station_id . ". Call: " . $call . " Mode: " . $mode . " Band: " . $band);
 			$returner['error']=__("You tried to import a QSO without valid date. This QSO wasn't imported. It's invalid") . ". Call: " . $call . ", Mode: " . $mode . ", Band: " . $band . "<br>";
 			return($returner);
+			$returner['error_category'] = 'validation';
 		}
 
 		// Join date+time
@@ -4926,6 +4947,7 @@ class Logbook_model extends CI_Model {
 			log_message("Error", "Trying to import QSO without Call for station_id " . $station_id . ". QSO Date/Time: " . $time_on . " Mode: " . ($record['mode'] ?? '') . " Band: " . ($record['band'] ?? ''));
 			$returner['error']=__("QSO on")." ".$time_on.": ".__("You tried to import a QSO without any given CALL. This QSO wasn't imported. It's invalid") . "<br>";
 			return($returner);
+			$returner['error_category'] = 'validation';
 		}
 
 		if (isset($record['time_off'])) {
@@ -4976,6 +4998,7 @@ class Logbook_model extends CI_Model {
 			$returner['error']=sprintf(__("QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't imported. It's invalid"), $time_on) . '<br>';
 
 			return($returner);
+			$returner['error_category'] = 'validation';
 		}
 
 		if (isset($record['band_rx'])) {
@@ -5696,7 +5719,9 @@ class Logbook_model extends CI_Model {
 
 		if ($batchmode) {
 			$returner['error'] = $my_error ?? '';
+			if (($my_error ?? '') != '') { $returner['error_category'] = 'duplicate'; }
 		} else {
+			if (($my_error ?? '') != '') { $returner['error_category'] = 'duplicate'; }
 			$returner = $my_error;
 		}
 		$record = [];

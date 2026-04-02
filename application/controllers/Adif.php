@@ -444,6 +444,7 @@ class adif extends CI_Controller {
 
 			log_message("Error","ADIF End");
 			$data['adif_errors'] = $custom_errors['errormessage'];
+			$data['structured_errors'] = $custom_errors['structured_errors'] ?? [];
 			$data['qsocount'] = $custom_errors['qsocount'] ?? 0;
 			$data['skip_dupes'] = $this->input->post('skipDuplicate');
 			$data['imported_contests'] = $contest_qso_infos;
