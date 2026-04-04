@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
 "POT-Creation-Date: 2026-04-02 10:47+0000\n"
-"PO-Revision-Date: 2026-04-03 00:52+0000\n"
+"PO-Revision-Date: 2026-04-04 17:59+0000\n"
 "Last-Translator: \"Jorgen Dahl, NU1T\" <sm6srw@arrl.net>\n"
 "Language-Team: Swedish <https://translate.wavelog.org/projects/wavelog/main-"
 "translation/sv/>\n"
@@ -10147,7 +10147,7 @@ msgstr "Serienummer (S)"
 
 #: application/views/contesting/index.php:192
 msgid "Gridsquare (S)"
-msgstr "Loaktorruta (S)"
+msgstr "Lokatorruta (S)"
 
 #: application/views/contesting/index.php:197
 #: application/views/contesting/index.php:268
@@ -17187,7 +17187,7 @@ msgstr "Ej kontaktad"
 
 #: application/views/search/result.php:58
 msgid "Grid is auto-detected by callbook and probably wrong"
-msgstr "Loaktorrutan beräknas automatiskt av callbook och är förmodligen fel"
+msgstr "Lokatorrutan beräknas automatiskt av callbook och är förmodligen fel"
 
 #: application/views/search/result.php:65
 msgid "Source callbook"
