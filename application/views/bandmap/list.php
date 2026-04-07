@@ -176,16 +176,19 @@
 	var map_tile_server_copyright = '<?php echo $this->optionslib->get_option('option_map_tile_server_copyright');?>';
 	var icon_dot_url = "<?php echo $this->paths->cache_buster('/assets/images/dot.png'); ?>";
 
-	// User gridsquare for home position marker
-	var user_gridsquare = '<?php
-		if (($this->optionslib->get_option("station_gridsquare") ?? "") != "") {
-			echo $this->optionslib->get_option("station_gridsquare");
-		} else if (null !== $this->config->item("locator")) {
-			echo $this->config->item("locator");
-		} else {
-			echo "IO91WM";
+	// User gridsquare for home position marker (from active station location)
+	<?php
+		$active_station_id = $this->stations->find_active();
+		$station_profile = $this->stations->profile($active_station_id);
+		$active_station_info = $station_profile->row();
+		$user_gridsquare = $active_station_info->station_gridsquare ?? '';
+
+		// Fallback to config locator if station gridsquare is empty
+		if ($user_gridsquare === '') {
+			$user_gridsquare = $this->config->item('locator') ?? 'JJ00';
 		}
-	?>';
+	?>
+	var user_gridsquare = '<?php echo $user_gridsquare; ?>';
 </script>
 
 <link rel="stylesheet" type="text/css" href="<?php echo $this->paths->cache_buster('/assets/css/bandmap_list.css'); ?>" />
