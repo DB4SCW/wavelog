@@ -181,12 +181,11 @@
 		$active_station_id = $this->stations->find_active();
 		$station_profile = $this->stations->profile($active_station_id);
 		$active_station_info = $station_profile->row();
+		$user_gridsquare = $active_station_info->station_gridsquare ?? '';
 
-		if (strpos(($active_station_info->station_gridsquare ?? ''), ',') !== false) {
-			$gridsquareArray = explode(',', $active_station_info->station_gridsquare);
-			$user_gridsquare = $gridsquareArray[0];
-		} else {
-			$user_gridsquare = ($active_station_info->station_gridsquare ?? '');
+		// Fallback to config locator if station gridsquare is empty
+		if ($user_gridsquare === '') {
+			$user_gridsquare = $this->config->item('locator') ?? 'JJ00';
 		}
 	?>
 	var user_gridsquare = '<?php echo $user_gridsquare; ?>';
