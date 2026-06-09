@@ -675,7 +675,7 @@ class Contesting_model extends CI_Model {
 				//if we still don't have a candidate, create contest session and load it immediately
 				if(!$assignment_candidate){
 					$this->create_contest_session($contest_id,$row->COL_TIME_ON, $row->COL_TIME_ON, $row->station_id, $notes, false);
-					$assignment_candidate = $this->getcontestsessionassignmentcandidatefromdb($row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);	
+					$assignment_candidate = $this->getcontestsessionassignmentcandidatefromdb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 				}
 			}
 
@@ -683,11 +683,11 @@ class Contesting_model extends CI_Model {
 			if($assignment_candidate){
 				
 				//modify start and end of contest session, for now only in cache
-				if($row->COL_TIME_ON < $assignment_candidate['time_start']){
+				if($row->COL_TIME_ON <= $assignment_candidate['time_start']){
 					$assignment_candidate['time_start'] = $row->COL_TIME_ON;
 				}
 
-				if($row->COL_TIME_ON > $assignment_candidate['time_end']){
+				if($row->COL_TIME_ON >= $assignment_candidate['time_end']){
 					$assignment_candidate['time_end'] = $row->COL_TIME_ON;
 				}
 
@@ -720,6 +720,16 @@ class Contesting_model extends CI_Model {
 			//save affected row count
 			$updated_rows = $this->db->affected_rows();
 
+			//update each contest session with the new start and end times from built cache
+			foreach ($contest_sessions as $session_id => $session) {
+				$this->db
+					->where('id', $session_id)
+					->update('contest_session', [
+						'time_start' => $session['time_start'],
+						'time_end' => $session['time_end'],
+					]);
+			}
+
 			//finally drop temporary table
 			$this->droptemporaryassignmenttable($tmp_table);
 
@@ -735,14 +745,13 @@ class Contesting_model extends CI_Model {
 
 		//try to find a candidate from cache
 		foreach ($contest_sessions as $session) {
-			if ($session['contest_adifname'] !== $contest_adifname) {
+			
+			//abort if static values are not matching
+			if ($session['contest_adifname'] !== $contest_adifname or $session['station_id'] !== $station_id) {
 				continue;
 			}
 
-			if ($session['station_id'] !== $station_id) {
-				continue;
-			}
-
+			//contest QSOs are usually within 48 hours of each other
 			$start_ts = strtotime($session['time_start']) - (48 * 60 * 60);
 			$end_ts   = strtotime($session['time_end']) + (48 * 60 * 60);
 
@@ -752,6 +761,7 @@ class Contesting_model extends CI_Model {
 			}
 		}
 
+		//return null if nothing is found
 		return null;
 	}
 
@@ -763,7 +773,8 @@ class Contesting_model extends CI_Model {
 		//prepare bindings
 		$binding = [];
 
-		//declare sql
+		//declare sql - contest QSOs are usually within 48 hours of each other
+		//if there are multiple candidates, prefer the one with the later end time
 		$sql = "SELECT cs.id AS contest_session_id,
 				cs.time_start AS time_start,
 				cs.time_end AS time_end,
@@ -779,17 +790,14 @@ class Contesting_model extends CI_Model {
 			JOIN contest c ON c.id = cs.contest_adif_id
 			JOIN station_profile sp ON sp.station_id = cs.station_id
 			WHERE cs.user_id = ? and c.adifname = ? and cs.station_id = ?
-			AND ? > DATE_SUB(cs.time_start, INTERVAL 48 HOUR)
-			AND ? < DATE_ADD(cs.time_end, INTERVAL 48 HOUR)
+			AND ? >= DATE_SUB(cs.time_start, INTERVAL 48 HOUR)
+			AND ? <= DATE_ADD(cs.time_end, INTERVAL 48 HOUR)
+			ORDER BY cs.time_end DESC
 			LIMIT 1";
 		
 		//create bindings
-		$binding[] = $user_id;
-		$binding[] = $contest_id;
-		$binding[] = $station_id;
-		$binding[] = $time;
-		$binding[] = $time;
-
+		$binding = [$user_id, $contest_id, $station_id, $time, $time];
+		
 		//execute sql
 		$query = $this->db->query($sql, $binding);
 		
