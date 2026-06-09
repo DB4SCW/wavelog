@@ -637,7 +637,7 @@ class Contesting_model extends CI_Model {
 		//iterate through each qso
 		foreach ($queryresult as $row) {
 			
-			//try to find assignment candidate from database
+			//try to find assignment candidate from cache
 			$assignment_candidate = $this->getcontestsessionassignmentcandidatefromcache($contest_sessions, in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 			
 			//if not found, try the database
@@ -659,7 +659,7 @@ class Contesting_model extends CI_Model {
 					$contest_names_to_other[] = $row->COL_CONTEST_ID;
 
 					//recheck cache and db now that we know it is "other"
-					//try to find assignment candidate from database
+					//try to find assignment candidate from cache
 					$assignment_candidate = $this->getcontestsessionassignmentcandidatefromcache($contest_sessions, in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 					
 					//if not found, try the database
