@@ -623,7 +623,7 @@ class Contesting_model extends CI_Model {
 
 		//abort if empty
 		if(count($queryresult) < 1) {
-			$this->droptemporaryassignmenttable($tmp_table);
+			$this->dropTemporaryAssignmentTable($tmp_table);
 			return;
 		}
 
@@ -695,7 +695,7 @@ class Contesting_model extends CI_Model {
 				$contest_sessions[$assignment_candidate['contest_session_id']] = $assignment_candidate;
 
 				//update temporary table
-				$this->updatetemporaryassignmenttable($tmp_table, $row->qso_id, $assignment_candidate['contest_session_id']);
+				$this->updateTemporaryAssignmentTable($tmp_table, $row->qso_id, $assignment_candidate['contest_session_id']);
 
 			}
 			
@@ -731,7 +731,7 @@ class Contesting_model extends CI_Model {
 			}
 
 			//finally drop temporary table
-			$this->droptemporaryassignmenttable($tmp_table);
+			$this->dropTemporaryAssignmentTable($tmp_table);
 
 			//return updated rows
 			return $updated_rows;
@@ -805,11 +805,11 @@ class Contesting_model extends CI_Model {
 		return $query->row_array();
 	}
 
-	function droptemporaryassignmenttable($tablename) {
+	function dropTemporaryAssignmentTable($tablename) {
 		$this->db->query("DROP TEMPORARY TABLE IF EXISTS " . $tablename . ";");
 	}
 
-	function updatetemporaryassignmenttable($tmp_table, $qso_id, $contest_session_id)
+	function updateTemporaryAssignmentTable($tmp_table, $qso_id, $contest_session_id)
 	{
 		
 		//sanity checks
