@@ -638,12 +638,12 @@ class Contesting_model extends CI_Model {
 		foreach ($queryresult as $row) {
 			
 			//try to find assignment candidate from cache
-			$assignment_candidate = $this->getcontestsessionassignmentcandidatefromcache($contest_sessions, in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
+			$assignment_candidate = $this->getContestSessionAssignmentCandidateFromCache($contest_sessions, in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 			
 			//if not found, try the database
 			if($assignment_candidate == null)
 			{
-				$assignment_candidate = $this->getcontestsessionassignmentcandidatefromdb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
+				$assignment_candidate = $this->getContestSessionAssignmentCandidateFromDb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 			}
 
 			//if we found nothing, create a new one and load it asap
@@ -660,12 +660,12 @@ class Contesting_model extends CI_Model {
 
 					//recheck cache and db now that we know it is "other"
 					//try to find assignment candidate from cache
-					$assignment_candidate = $this->getcontestsessionassignmentcandidatefromcache($contest_sessions, in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
+					$assignment_candidate = $this->getContestSessionAssignmentCandidateFromCache($contest_sessions, in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 					
 					//if not found, try the database
 					if($assignment_candidate == null)
 					{
-						$assignment_candidate = $this->getcontestsessionassignmentcandidatefromdb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
+						$assignment_candidate = $this->getContestSessionAssignmentCandidateFromDb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 					}
 				}else{
 					$contest_id = $contest_info->id;
@@ -675,7 +675,7 @@ class Contesting_model extends CI_Model {
 				//if we still don't have a candidate, create contest session and load it immediately
 				if(!$assignment_candidate){
 					$this->create_contest_session($contest_id,$row->COL_TIME_ON, $row->COL_TIME_ON, $row->station_id, $notes, false);
-					$assignment_candidate = $this->getcontestsessionassignmentcandidatefromdb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
+					$assignment_candidate = $this->getContestSessionAssignmentCandidateFromDb(in_array($row->COL_CONTEST_ID, $contest_names_to_other) ? "Other" : $row->COL_CONTEST_ID, $row->COL_TIME_ON, $row->station_id);
 				}
 			}
 
@@ -738,7 +738,7 @@ class Contesting_model extends CI_Model {
 
 	}
 
-	function getcontestsessionassignmentcandidatefromcache(array $contest_sessions, $contest_adifname, $qso_datetime, $station_id) {
+	function getContestSessionAssignmentCandidateFromCache(array $contest_sessions, $contest_adifname, $qso_datetime, $station_id) {
 		
 		//get qso timestamp
 		$qso_ts = strtotime($qso_datetime);
@@ -765,7 +765,7 @@ class Contesting_model extends CI_Model {
 		return null;
 	}
 
-	function getcontestsessionassignmentcandidatefromdb($contest_id, $time, $station_id) {
+	function getContestSessionAssignmentCandidateFromDb($contest_id, $time, $station_id) {
 		
 		//get user id from session
 		$user_id = $this->session->userdata('user_id');
